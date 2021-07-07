@@ -1,0 +1,58 @@
+$ff-main: 'ObjectSans', sans-serif;
+
+$fs: 16px;
+
+@mixin f-main($font-weight: 400) {
+  font-family: $ff-main;
+  font-weight: $font-weight;
+}
+
+@mixin fsl($font-size, $line-height: null) {
+  font-size: unquote("#{($font-size / $fs)}rem");
+  @if $line-height {
+    line-height: $line-height;
+  }
+}
+
+
+
+$transition: 0.5s;
+
+
+
+$color-white: white;
+$color-black: black;
+
+
+
+$col-count-m: 6;
+$col-count-d: $col-count-m * 4;
+
+$col-pad-m: 15px;
+$col-pad-d: 30px;
+
+$col-width-m: '((100vw - (#{$col-pad-m} * 2)) / #{$col-count-m})';
+$col-width-d: '((100vw - (#{$col-pad-d} * 2)) / #{$col-count-d})';
+
+
+
+$breakpoint-s: 576px;
+$breakpoint-m: 768px;
+$breakpoint-m: 768px;
+$breakpoint-t: 1024px;
+$breakpoint: 1280px;
+$breakpoint-l: 1366px;
+$breakpoint-ll: 1440px;
+$breakpoint-xl: 1680px;
+$breakpoint-xxl: 1920px;
+
+
+
+@mixin scrollbar-hidden() {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
