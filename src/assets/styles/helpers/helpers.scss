@@ -1,6 +1,6 @@
-$ff-main: 'ObjectSans', sans-serif;
-
 $fs: 16px;
+
+$ff-main: 'ObjectSans', sans-serif;
 
 @mixin f-main($font-weight: 400) {
   font-family: $ff-main;
