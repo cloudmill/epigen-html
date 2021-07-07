@@ -1,0 +1,39 @@
+.copyright-link {
+  $min-height: 31px;
+
+  padding: 4px;
+  padding-right: 15px;
+  min-height: $min-height;
+  display: flex;
+
+  background-color: $color-white;
+  border: 1px solid $color-blue-light;
+  border-radius: $min-height / 2;
+
+  &__mark {
+    $size: 23px;
+    
+    width: $size;
+    height: $size;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: $color-blue-light;
+    border-radius: 50%;
+  }
+  &__mark-text {
+    @include fsl(15px, 15px);
+    color: $color-blue;
+  }
+
+  &__text {
+    margin-left: 15px;
+    padding: 6px 0 4px;
+    flex-grow: 1;
+
+    @include fsl(13px, 13px);
+    text-align: right;
+  }
+}

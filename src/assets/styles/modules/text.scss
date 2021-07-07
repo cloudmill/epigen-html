@@ -1,6 +1,6 @@
 .text {
   &--aside {
-    width: calc(#{$col-width-d} * (#{$aside-col-count} - 1));
+    margin-bottom: 15px;
 
     @include fsl(25px, 120%);
   }
