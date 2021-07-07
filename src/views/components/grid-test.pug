@@ -1,4 +1,6 @@
 mixin grid-test
   .grid-test
     .container
-      |grid-test
+      .grid-test__row
+        - for (let i = 0; i < 24; i++)
+          .grid-test__col

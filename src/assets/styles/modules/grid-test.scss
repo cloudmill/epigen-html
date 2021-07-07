@@ -1,4 +1,39 @@
 .grid-test {
-  @include fsl(32px, 120%);
-  color: red;
+  $color: rgba(black, 0.25);
+
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+
+  width: 100vw;
+  overflow: hidden;
+  pointer-events: none;
+
+  &__row {
+    display: flex;
+  }
+
+  &__col {
+    width: calc(#{$col-width-m});
+    @media (min-width: $breakpoint) {
+      width: calc(#{$col-width-d});
+    }
+
+    flex-shrink: 0;
+    height: 100vh;
+
+    border-left: 1px solid $color;
+
+    &:last-child {
+      border-right: 1px dashed $color;
+    }
+
+    &:nth-child(-n + #{$col-count-d - $col-count-m}) {
+      @media (max-width: $breakpoint - 1px) {
+        display: none;
+      }
+    }
+  }
 }
