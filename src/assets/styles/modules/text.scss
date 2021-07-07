@@ -1,5 +1,7 @@
 .text {
   &--aside {
+    width: calc(#{$col-width-d} * (#{$aside-col-count} - 1));
+
     @include fsl(25px, 120%);
   }
 }
