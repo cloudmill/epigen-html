@@ -1,7 +1,42 @@
 extends ../layouts/master.pug
 
-block grid-test
+//- block grid-test
 block header
+
+mixin nav-page-d
+  nav.nav-page-d
+    ul.nav-page-d__list
+      -
+        var items = [
+          {
+            href: '#',
+            title: 'Эпиген',
+          },
+          {
+            href: '#',
+            title: 'Экспертиза',
+          },
+          {
+            href: '#',
+            title: 'Актуальное',
+          },
+          {
+            href: '#',
+            title: 'Отзывы',
+          },
+        ]
+      each item, index in items
+        li.nav-page-d__item(class = ((index === 0) ? 'nav-page-d__item--active' : ''))
+          a.nav-page-d__link(href=item.href)
+            |!{item.title}
+
+mixin copyright-link
+  a.copyright-link(href=attributes.href)
+    .copyright-link__mark
+      .copyright-link__mark-text
+        |©
+    .copyright-link__text
+      block
 
 block content
   .main
@@ -12,34 +47,12 @@ block content
             .aside__inner
               .aside__container
                 .aside__top
-                  nav.nav-page-d
-                    ul.nav-page-d__list
-                      -
-                        var items = [
-                          {
-                            href: '#',
-                            title: 'Эпиген',
-                          },
-                          {
-                            href: '#',
-                            title: 'Экспертиза',
-                          },
-                          {
-                            href: '#',
-                            title: 'Актуальное',
-                          },
-                          {
-                            href: '#',
-                            title: 'Отзывы',
-                          },
-                        ]
-                      each item, index in items
-                        li.nav-page-d__item(class = ((index === 0) ? 'nav-page-d__item--active' : ''))
-                          a.nav-page-d__link(href=item.href)
-                            |!{item.title}
+                  +nav-page-d
                 .aside__bottom
                   .text.text--aside
                     |Эпиген Интим — линия средств для женского интимного здоровья на основе активированной глицирризиновой кислоты из экстракта корня солодки
+                  +copyright-link(href='#')
+                    |Компания «Инвар», 2021
         .row__col.row__col--main
           .qwe
             |main
