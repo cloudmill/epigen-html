@@ -1,0 +1,54 @@
+.nav-page-d {
+  $comp: &;
+
+  &__list {}
+  &__item {
+    $dot-size: 7px;
+
+    position: relative;
+    z-index: 0;
+
+    padding-left: calc(#{$dot-size} + 15px);
+    display: flex;
+
+    &::before {
+      position: absolute;
+      top: 3px;
+      left: 0;
+
+      content: '';
+      width: $dot-size;
+      height: $dot-size;
+      pointer-events: none;
+
+      background-color: $color-blue;
+      border-radius: 50%;
+      opacity: 0;
+      transition: $transition;
+    }
+    
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
+
+    &--active {
+      &::before {
+        opacity: 1;
+      }
+
+      #{$comp}__link {
+        color: $color-blue;
+      }
+    }
+  }
+
+  &__link {
+    @include fsl(14px, 120%);
+    color: $color-gray;
+    transition: $transition;
+
+    &:hover {
+      color: $color-blue;
+    }
+  }
+}
