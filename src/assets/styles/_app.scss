@@ -1,54 +1,31 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300&subset=latin,cyrillic);
-//@import 'normalize.css';
-
-//
-//sass/
-////
-//– base/
-//   |– _forms.scss        # Forms rules
-//   |– _typography.scss   # Typography rules
-//   |– _buttons.scss      # Buttons
-//   |– _forms.scss        # Forms
-//   …                     # Etc.
-//
-//– modules/
-//   |– _carousel.scss     # Carousel
-//   |– _cover.scss        # Cover
-//   |– _dropdown.scss     # Dropdown
-//   …                     # Etc.
-//
-//– partials/
-//   |– _navigation.scss   # Navigation
-//   |– _grid.scss         # Grid system
-//   |– _header.scss       # Header
-//   |– _footer.scss       # Footer
-//   |– _sidebar.scss      # Sidebar
-//   …                     # Etc.
-//
-//– pages/
-//   |– _home.scss         # Home specific styles
-//   |– _contact.scss      # Contact specific styles
-//   …                     # Etc.
-//
-//– themes/
-//   |– _theme.scss        # Default theme
-//   |– _admin.scss        # Admin theme
-//   …                     # Etc.
-//
-//– helpers/
-//   |– _variables.scss    # Sass Variables
-//   |– _functions.scss    # Sass Functions
-//   |– _mixins.scss       # Sass Mixins
-//   |– _placeholders.scss # Sass Placeholders
-//
-//– vendors/
-//   |– _reset.scss         # Reset
-//   |– _debug.scss         # Debug mode
-//   …                      # Etc.
-//
-//– main.scss              # Main Sass file
-//
-
+@font-face {
+  font-family: 'ObjectSans';
+  src: url('../fonts/ObjectSans-Regular.otf') format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ObjectSans';
+  src: url('../fonts/ObjectSans-Slanted.otf') format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ObjectSans';
+  src: url('../fonts/ObjectSans-Medium.otf') format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ObjectSans';
+  src: url('../fonts/ObjectSans-MediumSlanted.otf') format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
 
 //*
 // Which objects and abstractions would you like to use?
