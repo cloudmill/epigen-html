@@ -1,0 +1,5 @@
+.text {
+  &--aside {
+    @include fsl(25px, 120%);
+  }
+}
