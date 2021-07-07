@@ -1,0 +1,37 @@
+.index {
+  &__inner {
+    padding: 100px 0;
+  }
+
+  &__title {}
+
+  &__nav {
+    margin-top: 30px;
+  }
+
+  &__list {}
+  &__item {
+    display: flex;
+
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
+  }
+
+  &__link {
+    padding: 0.5rem;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+
+    border: 1px solid $color-black;
+    border-radius: 0.25rem;
+    transition: $transition;
+
+    &:hover {
+      background-color: $color-black;
+      color: $color-white;
+    }
+  }
+  &__link-text {}
+}

@@ -1,6 +1,27 @@
 extends ../layouts/master.pug
 
+block header
+block footer
+block grid-test
+
 block content
-  |Главная
-  +mixin
-  |Главная
+  -
+    var pages = [
+      {
+        href: 'main.html',
+        title: 'Главная',
+      },
+    ]
+  .index
+    .container
+      .index__inner
+        h1.index__title
+          |Эпиген (верстка):
+        nav.index__nav
+          ul.index__list
+            each page in pages
+              li.index__item
+                a.index__link(href = page.href)
+                  span.index__link-text
+                    |!{page.title}
+
