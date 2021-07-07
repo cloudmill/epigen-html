@@ -1,4 +1,18 @@
 extends ../layouts/master.pug
 
+//- block grid-test
+block header
+
 block content
-  |главная
+  .main
+    .container
+      .row
+        .row__col.row__col--aside
+          .aside
+            .aside__top
+              |test
+            .aside__bottom
+              |test
+        .row__col.row__col--main
+          .qwe
+            |main
