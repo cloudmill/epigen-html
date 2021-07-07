@@ -15,8 +15,8 @@ $ff-main: 'ObjectSans', sans-serif;
 }
 
 
-
-$transition: 0.5s;
+$timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+$transition: 0.5s $timing-function;
 
 
 
