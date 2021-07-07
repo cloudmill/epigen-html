@@ -18,11 +18,12 @@ html(lang='ru')
     meta(name="format-detection", content="address=no")
 
   body.body
-    block header
-      +header
-    main.main
-      block content
-    block footer
-      +footer
+    .wrapper
+      block header
+        +header
+      main.main
+        block content
+      block footer
+        +footer
     block grid-test
       +grid-test
