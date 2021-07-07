@@ -1,0 +1,13 @@
+.aside {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+
+  width: calc(#{$col-width-d} * #{$aside-col-count});
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__top {}
+  &__bottom {}
+}
