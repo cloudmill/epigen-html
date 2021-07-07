@@ -1,0 +1,19 @@
+.row {
+  display: flex;
+
+  &__col {
+    flex-shrink: 0;
+
+    &--aside {
+      width: calc(#{$col-width-d} * #{$aside-col-count});
+      @media (max-width: $breakpoint - 1px) {
+        display: none;
+      }
+    }
+    &--main {
+      @media (min-width: $breakpoint) {
+        width: calc(#{$col-width-d} * (#{$col-count-d} - #{$aside-col-count}));
+      }
+    }
+  }
+}
