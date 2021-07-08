@@ -32,11 +32,46 @@ import 'Styles/_app.scss'
 	})
 })()
 
-// mock: burger button (aside, header)
+// burger btn
 {
 	$(() => {
 		$('.aside__menu').on('click', function () {
 			$(this).toggleClass('aside__menu--active')
 		})
+	})
+}
+
+// panel
+{
+	$(() => {
+		const panels = $('.panel')
+
+		const fps = 60
+
+		let scrollTop = $(window).scrollTop()
+
+		$(window).one('scroll', scroll)
+
+		function scroll() {
+			update()
+
+			setTimeout(() => {
+				$(window).one('scroll', scroll)
+			}, 1000 / fps)
+		}
+
+		function update() {
+			const newScrollTop = $(window).scrollTop()
+
+			if (Math.abs(scrollTop - newScrollTop) >= 1) {
+				if (newScrollTop > scrollTop) {
+					panels.addClass('panel--hidden')
+				} else {
+					panels.removeClass('panel--hidden')
+				}
+			}
+
+			scrollTop = newScrollTop
+		}
 	})
 }

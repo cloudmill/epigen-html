@@ -1,6 +1,6 @@
 extends ../layouts/master.pug
 
-//- block grid-test
+block grid-test
 block header
 
 mixin nav-page-d
@@ -61,5 +61,27 @@ block content
                   +copyright-link(href='#')
                     |Компания «Инвар», 2021
         .row__col.row__col--main
-          .qwe
-            |main
+          .panel
+            .panel__panel
+              .panel__row
+                .panel__col
+                  .panel__product
+                .panel__col
+                  a.panel__where-buy(href='#')
+                    |Где купить
+                .panel__col
+                  .panel__choice
+                    .panel__choice-item(data-count=8)
+                      |Симптомы
+                    .panel__choice-item(data-count=12)
+                      |Заболевания
+                .panel__col
+                  .panel__consultation
+                    +consultation-svg.panel__consultation-svg
+                    .panel__consultation-text
+                      |Консультация эксперта
+          .main__content
+            - for (let i = 0; i < 10; i++)
+              |main
+              br
+            .qwe
