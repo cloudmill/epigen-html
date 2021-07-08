@@ -31,3 +31,12 @@ import 'Styles/_app.scss'
 		})
 	})
 })()
+
+// mock: burger button (aside, header)
+{
+	$(() => {
+		$('.aside__menu').on('click', function () {
+			$(this).toggleClass('aside__menu--active')
+		})
+	})
+}

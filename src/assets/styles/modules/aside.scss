@@ -60,15 +60,42 @@
   &__logo-svg {}
 
   &__menu {
+    $comp: &;
+
     display: flex;
     align-items: center;
+
+    cursor: pointer;
+
+    &:hover {
+      #{$comp}-button {
+        background-color: $color-blue;
+      }
+    }
+
+    &--active {
+      #{$comp}-button {
+        background-color: $color-blue;
+      }
+    }
   }
   &__menu-text {
     margin-right: 15px;
     
     @include fsl(15px, 15px);
   }
-  &__menu-button {}
+  &__menu-button {
+    $size: 45px;
+
+    width: $size;
+    height: $size;
+    min-width: $size;
+    min-height: $size;
+
+    background-color: $color-blue-light;
+    border-radius: 50%;
+    transition: $transition;
+  }
 
   &__text {
     @include fsl(25px, 120%);
