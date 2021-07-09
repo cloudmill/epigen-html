@@ -1,11 +1,8 @@
 .panel {
   $comp: &;
 
-  $width: calc(#{$col-width-d} * 18);
-  $height: 103px;
-
-  width: $width;
-  height: $height;
+  width: calc(#{$panel-width});
+  height: $panel-height;
   @media (max-width: $breakpoint - 1px) {
     display: none;
   }
@@ -18,12 +15,10 @@
 
   &__panel {
     position: fixed;
-    z-index: 0;
-    top: 0;
-    transform: none;
+    transform: translateY(0);
 
-    width: $width;
-    height: $height;
+    width: calc(#{$panel-width});
+    height: $panel-height;
 
     background-color: $color-white;
     transition: $transition;
@@ -42,7 +37,7 @@
       width: calc(#{$col-width-d} * 6);
     }
 
-    @media (max-width: $breakpoint-xl) {
+    @media (max-width: $breakpoint-xl - 1px) {
       &:nth-child(2) {
         width: calc(#{$col-width-d} * 3);
       }
@@ -51,6 +46,18 @@
       }
     }
 
+    @media (max-width: $breakpoint-ll - 1px) {
+      &:nth-child(1) {
+        width: calc(#{$col-width-d} * 5);
+      }
+      &:nth-child(4) {
+        width: calc(#{$col-width-d} * 5);
+      }
+    }
+  }
+
+  &__inner {
+    height: 100%;
     display: flex;
     align-items: center;
   }
@@ -58,9 +65,8 @@
   &__consultation {
     $comp: &;
 
-    width: 100%;
+    margin-left: auto;
     display: flex;
-    justify-content: flex-end;
     align-items: center;
 
     cursor: pointer;

@@ -15,8 +15,9 @@ $ff-main: 'ObjectSans', sans-serif;
 }
 
 
-$timing-function: cubic-bezier(0.33, 1, 0.68, 1);
-$transition: 0.5s $timing-function;
+$transition-duration: 0.5s;
+$transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+$transition: $transition-duration $transition-timing-function;
 
 
 
@@ -64,4 +65,13 @@ $breakpoint-xxl: 1920px;
 
 
 
-$aside-col-count: 6;
+$row-aside-cols: 6;
+$row-main-cols: $col-count-d - $row-aside-cols; // 24 - 6 === 18
+
+$row-aside-width: '(#{$col-width-d} * #{$row-aside-cols})';
+$row-main-width: '(#{$col-width-d} * #{$row-main-cols})';
+
+
+
+$panel-width: $row-main-width;
+$panel-height: 103px;

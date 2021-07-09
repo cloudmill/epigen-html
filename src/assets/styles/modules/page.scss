@@ -1,0 +1,13 @@
+.page {
+  &__header {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__main {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__footer {}
+}

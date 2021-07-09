@@ -1,7 +1,5 @@
 extends ../layouts/master.pug
 
-block header
-block footer
 block grid-test
 
 block content
@@ -21,7 +19,7 @@ block content
           ul.index__list
             each page in pages
               li.index__item
-                a.index__link(href = page.href)
+                a.index__link(href=page.href)
                   span.index__link-text
                     |!{page.title}
 

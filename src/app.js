@@ -56,6 +56,8 @@ import 'Styles/_app.scss'
 			update()
 
 			setTimeout(() => {
+				update()
+				
 				$(window).one('scroll', scroll)
 			}, 1000 / fps)
 		}

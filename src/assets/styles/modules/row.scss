@@ -1,18 +1,42 @@
 .row {
   display: flex;
+  align-items: stretch;
 
   &__col {
     flex-shrink: 0;
 
     &--aside {
-      width: calc(#{$col-width-d} * #{$aside-col-count});
+      width: calc(#{$row-aside-width});
       @media (max-width: $breakpoint - 1px) {
         display: none;
       }
     }
     &--main {
       @media (min-width: $breakpoint) {
-        width: calc(#{$col-width-d} * (#{$col-count-d} - #{$aside-col-count}));
+        width: calc(#{$row-main-width});
+      }
+    }
+
+    &--rail {
+      position: relative;
+
+      &::before {
+        $offset: 10px;
+    
+        position: absolute;
+        top: $offset;
+        bottom: 0;
+        right: 0;
+    
+        content: '';
+        width: calc(#{$col-width-d} / 2);
+    
+        border: 1px solid $color-blue-light;
+        border-radius: 10px;
+        border-bottom: none;
+        border-right: none;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 0;
       }
     }
   }

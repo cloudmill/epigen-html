@@ -2,9 +2,6 @@ include ../mixins/mixins.pug
 
 include ../components/svg.pug
 
-include ../components/header.pug
-include ../components/footer.pug
-
 include ../components/grid-test.pug
 
 doctype html
@@ -21,11 +18,6 @@ html(lang='ru')
 
   body.body
     .wrapper
-      block header
-        +header
-      main.main
-        block content
-      block footer
-        +footer
+      block content
     block grid-test
       +grid-test
