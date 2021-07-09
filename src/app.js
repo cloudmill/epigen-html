@@ -77,3 +77,38 @@ import 'Styles/_app.scss'
 		}
 	})
 }
+
+// cookies
+{
+	const DELAY = 1000
+
+	$(() => {
+		const component = $('.cookies')
+
+		if (component.length !== 0) {
+			let isActive = false
+
+			const btn = component.find('.cookies__btn')
+
+			setTimeout(() => {
+				component.addClass('cookies--active')
+
+				component.on('transitionend', event => {
+					if (event.target === component[0]) {
+						if (isActive) {
+							component.addClass('cookies--disabled')
+						} else {
+							isActive = true
+						}
+					}
+				})
+
+				btn.on('click', () => {
+					if (isActive) {
+						component.removeClass('cookies--active')
+					}
+				})
+		 	}, DELAY)
+		}
+	})
+}

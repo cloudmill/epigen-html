@@ -2,6 +2,7 @@ include ../mixins/mixins.pug
 
 include ../components/svg.pug
 
+include ../components/cookies.pug
 include ../components/grid-test.pug
 
 doctype html
@@ -19,5 +20,7 @@ html(lang='ru')
   body.body
     .wrapper
       block content
+    block cookies
+      +cookies
     block grid-test
       +grid-test

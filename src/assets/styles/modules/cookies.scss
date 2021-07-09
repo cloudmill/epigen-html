@@ -1,0 +1,76 @@
+.cookies {
+  position: fixed;
+  z-index: 500;
+  top: 100%;
+  left: 0;
+  right: 0;
+  transform: translateY(0);
+
+  width: 100vw;
+
+  background-color: $color-blue;
+  transition: transform $transition;
+
+  &--active {
+    transform: translateY(-100%);
+  }
+
+  &--disabled {
+    display: none;
+    pointer-events: none;
+    visibility: hidden;
+
+    opacity: 0;
+  }
+
+  &__inner {
+    padding: 23px calc(#{$col-width-d});
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__col {
+    flex-shrink: 0;
+
+    &:nth-child(1) {
+      width: calc(#{$col-width-d} * 17);
+    }
+  }
+
+  &__text {
+    @include fsl(13px, 140%);
+    color: $color-white;
+  }
+
+  &__btn {
+    $comp: &;
+
+    width: 105px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid $color-white;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: $transition;
+
+    &:hover {
+      background-color: $color-white;
+
+      #{$comp}-text {
+        color: $color-blue;
+      }
+    }
+  }
+  &__btn-text {
+    $fs: 15px;
+    @include fsl($fs, $fs);
+    color: $color-white;
+    transition: $transition;
+  }
+}
