@@ -39,72 +39,86 @@ mixin copyright-link
       block
 
 block content
-  .container
-    .row
-      .row__col.row__col--aside.row__col--rail
-        .aside
-          .aside__inner
-            .aside__container
-              .aside__top
-                header.aside__header.aside__header--margin-bottom--default
-                  a.aside__logo(href='#')
-                    +logo-svg.aside__logo-svg
-                  .aside__menu
-                    .aside__menu-text
-                      |Меню
-                    .aside__menu-button
-                +nav-page-d
-              .aside__bottom
-                .aside__text.aside__text--margin-bottom--default
-                  |Эпиген Интим — линия средств для женского интимного здоровья на основе активированной глицирризиновой кислоты из экстракта корня солодки
-                +copyright-link(href='#')
-                  |Компания «Инвар», 2021
-      .row__col.row__col--main
-        .page
-          header.page__header
-            .panel
-              .panel__panel
-                .panel__row
-                  .panel__col
-                    .panel__inner
-                      .panel__product
-                        //- .panel__product-item--active
-                        a.panel__product-item(href='#')
-                          .panel__product-mark
-                          .panel__product-text
-                            |Спрей
-                        a.panel__product-item.panel__product-item--purple(href='#')
-                          .panel__product-mark
-                          .panel__product-text
-                            |Гель
-                  .panel__col
-                    .panel__inner
-                      a.panel__where-buy(href='#')
-                        |Где купить
-                  .panel__col
-                    .panel__inner
-                      .panel__choice
-                        .panel__choice-item(data-count=8)
-                          |Симптомы
-                        .panel__choice-item(data-count=12)
-                          |Заболевания
-                  .panel__col
-                    .panel__inner
-                      .panel__consultation
-                        +consultation-svg.panel__consultation-svg
-                        .panel__consultation-text
-                          |Консультация эксперта
-          main.page__main
-            .frame
-              img.frame__img(src='assets/images/frame.jpeg')
-              .frame__btn.frame__btn--spray.plus-btn
-                .plus-btn__border
-                .plus-btn__circle
-                .plus-btn__plus
-              .frame__btn.frame__btn--gel.plus-btn.plus-btn--purple
-                .plus-btn__border
-                .plus-btn__circle
-                .plus-btn__plus
-            .qwe
-          footer.page__footer
-            |footer
+  .main-page
+    .container
+      .row
+        .row__col.row__col--aside.row__col--rail
+          .aside
+            .aside__inner
+              .aside__container
+                .aside__top
+                  header.aside__header.aside__header--margin-bottom--default
+                    a.aside__logo(href='#')
+                      +logo-svg.aside__logo-svg
+                    .aside__menu
+                      .aside__menu-text
+                        |Меню
+                      .aside__menu-button
+                  +nav-page-d
+                .aside__bottom
+                  .aside__text.aside__text--margin-bottom--default
+                    |Эпиген Интим — линия средств для женского интимного здоровья на основе активированной глицирризиновой кислоты из экстракта корня солодки
+                  +copyright-link(href='#')
+                    |Компания «Инвар», 2021
+        .row__col.row__col--main
+          .page
+            header.page__header
+              .panel
+                .panel__panel
+                  .panel__row
+                    .panel__col
+                      .panel__inner
+                        .panel__product
+                          //- .panel__product-item--active
+                          a.panel__product-item(href='#')
+                            .panel__product-mark
+                            .panel__product-text
+                              |Спрей
+                          a.panel__product-item.panel__product-item--purple(href='#')
+                            .panel__product-mark
+                            .panel__product-text
+                              |Гель
+                    .panel__col
+                      .panel__inner
+                        a.panel__where-buy(href='#')
+                          |Где купить
+                    .panel__col
+                      .panel__inner
+                        .panel__choice
+                          .panel__choice-item(data-count=8)
+                            |Симптомы
+                          .panel__choice-item(data-count=12)
+                            |Заболевания
+                    .panel__col
+                      .panel__inner
+                        .panel__consultation
+                          +consultation-svg.panel__consultation-svg
+                          .panel__consultation-text
+                            |Консультация эксперта
+            main.page__main
+              .frame
+                img.frame__img(src='assets/images/frame.jpeg')
+                .frame__btn.frame__btn--spray.plus-btn
+                  .plus-btn__border
+                  .plus-btn__circle
+                  .plus-btn__plus
+                .frame__btn.frame__btn--gel.plus-btn.plus-btn--purple
+                  .plus-btn__border
+                  .plus-btn__circle
+                  .plus-btn__plus
+              ul.main-page__features
+                li.main-page__features-item
+                  .main-page__features-text
+                    |Произведено в Испании
+                li.main-page__features-item
+                  .main-page__features-text
+                    |Оригинальное средство, не имеющее аналогов на российском рынке
+                li.main-page__features-item
+                  .main-page__features-text
+                    |Рекомендуется гинекологами с заботой о женском здоровье
+                li.main-page__features-item
+                  .main-page__features-text
+                    |Более 20 лет в России
+              .qwe
+            footer.page__footer
+              |footer
