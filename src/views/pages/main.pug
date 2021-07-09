@@ -1,6 +1,6 @@
 extends ../layouts/master.pug
 
-//- block grid-test
+block grid-test
 block header
 
 mixin nav-page-d
@@ -91,4 +91,12 @@ block content
                       |Консультация эксперта
           .frame
             img.frame__img(src='assets/images/frame.jpeg')
+            .frame__btn.frame__btn--spray.plus-btn
+              .plus-btn__border
+              .plus-btn__circle
+              .plus-btn__plus
+            .frame__btn.frame__btn--gel.plus-btn.plus-btn--purple
+              .plus-btn__border
+              .plus-btn__circle
+              .plus-btn__plus
           .qwe
