@@ -33,8 +33,7 @@ mixin nav-page-d
 mixin copyright-link
   a.copyright-link(href=attributes.href)
     .copyright-link__mark
-      .copyright-link__mark-text
-        |©
+      +copyright-svg.copyright-link__mark-svg
     .copyright-link__text
       block
 

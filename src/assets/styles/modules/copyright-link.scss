@@ -23,10 +23,7 @@
     background-color: $color-blue-light;
     border-radius: 50%;
   }
-  &__mark-text {
-    @include fsl(15px, 15px);
-    color: $color-blue;
-  }
+  &__mark-svg {}
 
   &__text {
     margin-left: 15px;
