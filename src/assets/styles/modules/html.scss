@@ -1,0 +1,26 @@
+.html {
+  // ie
+  scrollbar-track-color: $color-blue-light;
+  scrollbar-darkshadow-color: $color-blue-light;
+  scrollbar-arrow-color: $color-blue-light;
+  scrollbar-3dlight-color: $color-blue-light;
+
+  scrollbar-highlight-color: $color-blue;
+  scrollbar-shadow-color: $color-blue;
+  scrollbar-face-color: $color-blue;
+
+  // firefox
+  scrollbar-width: thin;
+  scrollbar-color: $color-blue $color-blue-light;
+
+  // chrome, edge, opera, safari
+  &::-webkit-scrollbar {
+    width: 3px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: $color-blue-light;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-blue;
+  }
+}
