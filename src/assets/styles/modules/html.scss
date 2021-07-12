@@ -1,10 +1,12 @@
 .html {
+  // scrollbar
   // ie
   scrollbar-track-color: $color-blue-light;
   scrollbar-darkshadow-color: $color-blue-light;
-  scrollbar-arrow-color: $color-blue-light;
   scrollbar-3dlight-color: $color-blue-light;
-
+  
+  scrollbar-arrow-color: $color-blue;
+  
   scrollbar-highlight-color: $color-blue;
   scrollbar-shadow-color: $color-blue;
   scrollbar-face-color: $color-blue;
