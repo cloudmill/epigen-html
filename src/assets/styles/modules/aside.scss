@@ -79,7 +79,13 @@
   }
 
   &__text {
-    @include fsl(25px, 120%);
+    font-size: calc((((19 / 1366) + (25 / 1680) + (28 / 1920)) / 3) * 100vw);
+    @media (max-width: $breakpoint-l - 1px) {
+      @include fsl(19px);
+    }
+    @media (min-width: $breakpoint-xxl) {
+      @include fsl(28px);
+    }
 
     &--margin-bottom {
       &--default {
