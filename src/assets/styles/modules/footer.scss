@@ -5,18 +5,9 @@
     display: flex;
     align-items: stretch;
   }
-  &__col {
+  &__row-col {
+    width: calc(#{$col-width-d} * 9);
     flex-shrink: 0;
-
-    &:nth-child(1) {
-      width: calc(#{$col-width-d} * 9);
-    }
-    &:nth-child(2) {
-      width: calc(#{$col-width-d} * 5);
-    }
-    &:nth-child(3) {
-      width: calc(#{$col-width-d} * 4);
-    }
   }
 
   &__product {
@@ -30,39 +21,58 @@
       margin-left: 15px;
     }
   }
-}
 
-.image-card {
-  $comp: &;
+  &__block {
+    height: 100%;
+    display: flex;
+  }
+  &__block-col {
+    height: 100%;
+    flex-shrink: 0;
 
-  position: relative;
-  z-index: 0;
-
-  display: block;
-  overflow: hidden;
-
-  border-radius: 10px;
-
-  &--footer {
-    width: 195px;
-
-    #{$comp}__image {
-      height: 260px;
+    &:nth-child(1) {
+      width: calc(#{$col-width-d} * 5);
+    }
+    &:nth-child(2) {
+      width: calc(#{$col-width-d} * 4);
     }
   }
 
-  &__image {
+  &__nav {}
+  &__nav-list {}
+  $gap: 17px;
+  &__nav-col {
+    &:not(:first-child) {
+      margin-top: $gap;
+    }
+  }
+  &__nav-item {
     display: flex;
-    justify-content: center;
-    overflow: hidden;
 
-    border-radius: 10px;
+    &:not(:first-child) {
+      margin-top: $gap;
+    }
+  }
+  &__nav-link {
+    @include fsl(15px, 120%);
+    transition: $transition;
+
+    &:hover {
+      color: $color-blue;
+    }
   }
 
-  &__text {
-    margin-top: 15px;
+  &__col {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
-    $fs: 20px;
-    @include fsl($fs, $fs);
+  &__bottom {
+    margin-top: 60px;
+    @media (min-width: $breakpoint-xl) {
+      margin-top: 90px;
+    }
   }
 }
