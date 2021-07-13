@@ -1,5 +1,7 @@
 extends ../layouts/master.pug
 
+include ../components/footer.pug
+
 //- block cookies
 block grid-test
 
@@ -118,6 +120,4 @@ block content
                 li.main-page__features-item
                   .main-page__features-text
                     |Более 20 лет в России
-              .qwe
-            footer.page__footer
-              |footer
+            +footer

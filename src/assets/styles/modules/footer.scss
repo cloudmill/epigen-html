@@ -1,4 +1,8 @@
 .footer {
+  padding: 30px 0;
+
+  border-top: 1px solid $color-blue-light;
+
   &__top {}
 
   &__row {
@@ -73,6 +77,84 @@
     margin-top: 60px;
     @media (min-width: $breakpoint-xl) {
       margin-top: 90px;
+    }
+  }
+
+  &__disclaimer {
+    padding: 10px 30px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+
+    border: 1px solid $color-blue-light;
+    border-radius: 10px;
+    @include fsl(12px);
+    color: $color-blue-light;
+    text-transform: uppercase;
+  }
+
+  &__dev {
+    margin-top: 40px;
+
+    white-space: nowrap;
+  }
+  &__dev-text {
+    display: inline-block;
+
+    @include fsl(13px, 120%);
+  }
+  &__dev-link {
+    color: $color-blue;
+    transition: $transition;
+
+    &:hover {
+      color: $color-purple;
+    }
+  }
+
+  &__doc {}
+  &__doc-item {
+    display: flex;
+
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
+  }
+  &__doc-link {
+    @include fsl(11px, 120%);
+    transition: $transition;
+
+    &:hover {
+      color: $color-blue;
+    }
+  }
+
+  &__address {
+    @include fsl(13px, 120%);
+  }
+
+  &__contact {}
+  &__contact-item {
+    &:not(:first-child) {
+      margin-top: 30px;
+    }
+  }
+
+  &__phone {}
+  &__phone-item {
+    display: flex;
+
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
+  }
+  &__phone-link {
+    @include fsl(13px, 120%);
+    color: $color-blue;
+    transition: $transition;
+
+    &:hover {
+      color: $color-purple;
     }
   }
 }
