@@ -1,8 +1,27 @@
 extends ../layouts/master.pug
 
+include ../components/footer.pug
+
 block cookies
 //- block grid-test
 
 block content
-  p.link-text
-    |Вы всегда можете задать вопрос нашим экспертам в #[a.link-text__link(href='#') специальном разделе] или найти ответы в наших #[a.link-text__link(href='#') статьях] и #[a.link-text__link(href='#') видео-публикациях]
+  .container
+    .row
+      .row__col.row__col--aside
+        .qwe
+        |aside
+        .sticky
+          .sticky__btn
+            |btn
+          .sticky__drop
+            - for (let i = 0; i < 300; i++)
+              .sticky__drop-text
+                |drop
+      .row__col.row__col--main
+        .page
+          main.page__main
+            |main
+            .qwe
+            |main
+          +footer.page__footer

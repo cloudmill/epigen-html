@@ -112,3 +112,113 @@ import 'Styles/_app.scss'
 		}
 	})
 }
+
+// sticky (test)
+;(() => {
+	$(window).on('load', () => {
+		const components = $('.sticky')
+	
+		components.each(function () {
+			const component = $(this)
+			
+			const clone = component.clone()
+			clone.css('display', 'none')
+			clone.css('position', 'fixed')
+			component.parent().append(clone)
+	
+			const btn = component.find('.sticky__btn')
+			const drop = component.find('.sticky__drop')
+	
+			btn.on('click', () => {
+				drop.slideToggle({
+					progress: update,
+				})
+			})
+	
+			const options = {
+				top: 100,
+				bottom: 200,
+			}
+		
+			const state = {
+				start: {
+					pos: {
+						x: null,
+						y: null,
+					},
+				},
+				current: {
+					pos: {
+						x: null,
+						y: null,
+					},
+				},
+			}
+
+			init()
+
+			update()
+
+			$(window).on('scroll', update)
+	
+			function init() {
+				[state.start.pos.x, state.start.pos.y] = getPos()
+			}
+
+			function update() {
+				[state.current.pos.x, state.current.pos.y] = getPos()
+
+				const zone = getZone()
+
+				if (zone === 'in') {
+					component.css('display', 'none')
+					clone.css('display', '')
+					clone.css('top', `${options.top}px`)
+				} else {
+					component.css('display', '')
+					clone.css('display', 'none')
+				}
+			}
+	
+			function getPos() {
+				let elem = component
+
+				let x = 0
+				let y = 0
+
+				while (elem.length !== 0 && elem[0] !== document.body) {
+					x += elem[0].offsetLeft
+					y += elem[0].offsetTop
+
+					elem = $(elem[0].offsetParent)
+				}
+
+				return [x, y]
+			}
+
+			function getZone() {
+				const y_scroll = pageYOffset
+				const y_sticky = state.current.pos.y
+
+				if (y_scroll < (y_sticky - options.top)) {
+					return 'before'
+				} else if ((y_scroll + getViewportHeight()) >= (getDocumentHeight() - options.bottom)) {
+					return 'after'
+				}
+				return 'in'
+			}
+
+			function getDocumentHeight() {
+				return Math.max(
+					document.body.scrollHeight, document.documentElement.scrollHeight,
+					document.body.offsetHeight, document.documentElement.offsetHeight,
+					document.body.clientHeight, document.documentElement.clientHeight
+				)
+			}
+
+			function getViewportHeight() {
+				return document.documentElement.clientHeight
+			}
+		})
+	})
+})()
