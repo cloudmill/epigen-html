@@ -1,0 +1,19 @@
+.link-text {
+  @include fsl(40px, 130%);
+
+  &__link {
+    margin: 0 -4px;
+    padding: 4px 5px;
+
+    border: 1px solid $color-blue;
+    border-radius: 10px;
+    color: $color-blue;
+    white-space: nowrap;
+    transition: $transition;
+
+    &:hover {
+      background-color: $color-blue;
+      color: $color-white;
+    }
+  }
+}
