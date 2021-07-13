@@ -1,0 +1,91 @@
+extends ../layouts/master.pug
+
+include ../components/footer.pug
+
+block cookies
+block grid-test
+
+mixin copyright-link
+  a.copyright-link(href=attributes.href)
+    .copyright-link__mark
+      +copyright-svg.copyright-link__mark-svg
+    .copyright-link__text
+      block
+
+
+block content
+  .video-page
+    .container
+      .row
+        .row__col.row__col--aside.row__col--rail
+          .aside
+            .aside__inner
+              .aside__container
+                .aside__top
+                  header.aside__header.aside__header--margin-bottom--default
+                    a.aside__logo(href='#')
+                      +logo-svg.aside__logo-svg
+                    .aside__menu
+                      .aside__menu-text
+                        |Меню
+                      .aside__menu-button
+                .aside__bottom
+                  +copyright-link(href='#')
+                    |Компания «Инвар», 2021
+        .row__col.row__col--main
+          .page
+            header.page__header
+              .panel
+                .panel__panel
+                  .panel__row
+                    .panel__col
+                      .panel__inner
+                        .panel__product
+                          //- .panel__product-item--active
+                          a.panel__product-item(href='#')
+                            .panel__product-mark
+                            .panel__product-text
+                              |Спрей
+                          a.panel__product-item.panel__product-item--purple(href='#')
+                            .panel__product-mark
+                            .panel__product-text
+                              |Гель
+                    .panel__col
+                      .panel__inner
+                        a.panel__where-buy(href='#')
+                          |Где купить
+                    .panel__col
+                      .panel__inner
+                        .panel__choice
+                          .panel__choice-item(data-count=8)
+                            |Симптомы
+                          .panel__choice-item(data-count=12)
+                            |Заболевания
+                    .panel__col
+                      .panel__inner
+                        .panel__consultation
+                          +consultation-svg.panel__consultation-svg
+                          .panel__consultation-text
+                            |Консультация эксперта
+            main.page__main
+              .title
+                |Видео
+              .rail
+              .video-page__video
+                ul.video-page__video-list
+                  li.video-page__video-item
+                    .video-page__video-container
+                      .video-page__video-row
+                        .video-page__video-col
+                          .video
+                            .video__container
+                              .video__frame
+                                img.video__img(src="assets/images/video.jpg", alt="")
+                              .video__button
+                                .video__button-icon
+                                  +start-svg.video__button-svg
+                        .video-page__video-col
+                    .rail.rail--blue
+
+            +footer.page__footer
+

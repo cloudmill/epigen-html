@@ -1,0 +1,32 @@
+.video-page {
+
+  &__video {
+    margin-top: 30px;
+  }
+  &__video-list {
+
+  }
+  &__video-item {
+
+    &:not(:first-child) {
+      margin-top: 60px;
+    }
+  }
+  &__video-container {
+    padding-bottom: 30px;
+  }
+  &__video-row {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__video-col {
+
+    &:nth-child(1) {
+      width: calc(#{$col-width-d} * 10);
+    }
+    &:nth-child(2) {
+      width: calc(#{$col-width-d} * 6);
+    }
+  }
+}
+

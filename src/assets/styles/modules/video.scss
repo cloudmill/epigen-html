@@ -1,0 +1,37 @@
+.video {
+  cursor: pointer;
+
+  &__container {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__frame {
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  &__button {
+    position: absolute;
+  }
+  &__button-icon {
+    $size-d: 105px;
+
+    width: $size-d;
+    height: $size-d;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: $color-blue;
+    border-radius: 50%;
+  }
+
+}
