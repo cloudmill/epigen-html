@@ -57,4 +57,37 @@
   &__features-text {
     @include fsl(25px, 120%);
   }
+
+  &__title {
+    margin-bottom: 20px;
+    @media (min-width: $breakpoint) {
+      margin-bottom: 30px;
+    }
+
+    font-weight: 400;
+    @include fsl(13px, 120%);
+    text-transform: uppercase;
+  }
+
+  &__expert {
+    margin-top: 60px;
+    @media (min-width: $breakpoint) {
+      margin-top: 120px;
+    }
+    @media (min-width: $breakpoint-xl) {
+      margin-top: 140px;
+    }
+  }
+  &__expert-text {
+    &--mobile {
+      @media (min-width: $breakpoint) {
+        display: none;
+      }
+    }
+    &--desktop {
+      @media (max-width: $breakpoint - 1px) {
+        display: none;
+      }
+    }
+  }
 }

@@ -1,12 +1,29 @@
 .link-text {
-  @include fsl(40px, 130%);
+  @include fsl(20px, 140%);
+  @media (min-width: $breakpoint) {
+    @include fsl(34px, 130%);
+  }
+  @media (min-width: $breakpoint-xl) {
+    @include fsl(40px);
+  }
 
   &__link {
     margin: 0 -4px;
     padding: 4px 5px;
+    @media (max-width: $breakpoint-xl - 1px) {
+      margin: 0 -3px;
+      padding: 3px 4px;
+    }
+    @media (max-width: $breakpoint - 1px) {
+      margin: 0 -2px;
+      padding: 0 2px;
+    }
 
     border: 1px solid $color-blue;
     border-radius: 10px;
+    @media (max-width: $breakpoint - 1px) {
+      border-radius: 4px;
+    }
     color: $color-blue;
     white-space: nowrap;
     transition: $transition;

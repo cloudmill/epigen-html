@@ -9,5 +9,10 @@
     z-index: 1;
   }
 
-  &__footer {}
+  &__footer {
+    margin-top: 60px;
+    @media (min-width: $breakpoint) {
+      margin-top: 140px;
+    }
+  }
 }
