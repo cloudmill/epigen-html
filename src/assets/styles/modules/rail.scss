@@ -1,0 +1,13 @@
+.rail {
+  width: 100%;
+  height: 30px;
+
+  border: 1px solid $color-blue-light;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+
+  &--blue {
+    border-color: $color-blue;
+  }
+}
+
