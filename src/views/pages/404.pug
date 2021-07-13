@@ -1,0 +1,64 @@
+extends ../layouts/master.pug
+
+
+
+block cookies
+//- block grid-test
+
+block content
+  .page-404
+    .container
+      .row
+        .row__col.row__col--aside
+          .aside
+            .aside__inner
+              .aside__container
+                .aside__top
+                  header.aside__header
+                    a.aside__logo(href='#')
+                      +logo-svg.aside__logo-svg
+                    .aside__menu
+                      .aside__menu-text
+                        |Меню
+                      .aside__menu-button
+        .row__col.row__col--main
+          .page
+            header.page__header
+              .panel
+                .panel__panel
+                  .panel__row
+                    .panel__col
+                      .panel__inner
+                        .panel__product
+                          //- .panel__product-item--active
+                          a.panel__product-item(href='#')
+                            .panel__product-mark
+                            .panel__product-text
+                              |Спрей
+                          a.panel__product-item.panel__product-item--purple(href='#')
+                            .panel__product-mark
+                            .panel__product-text
+                              |Гель
+                    .panel__col
+                      .panel__inner
+                        a.panel__where-buy(href='#')
+                          |Где купить
+                    .panel__col
+                      .panel__inner
+                        .panel__choice
+                          .panel__choice-item(data-count=8)
+                            |Симптомы
+                          .panel__choice-item(data-count=12)
+                            |Заболевания
+                    .panel__col
+                      .panel__inner
+                        .panel__consultation
+                          +consultation-svg.panel__consultation-svg
+                          .panel__consultation-text
+                            |Консультация эксперта
+      p.link-text.page-404__text
+        |Страница не найдена, но вы можете#[br]перейти на страницы нашей#[br]продукции: #[a.link-text__link(href='#') Спрей Эпиген Интим]#[br]#[a.link-text__link(href='#') Гель Эпиген Интим] или на #[a.link-text__link(href='#') Главную]
+      .page-404__404
+        +404-svg.page-404__404-img
+        +star-svg.page-404__404-star
+        +moon-svg.page-404__404-moon

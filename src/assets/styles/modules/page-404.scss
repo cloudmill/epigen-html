@@ -1,0 +1,32 @@
+.page-404 {
+
+  &__text {
+    margin-top: calc(107px - 30px);
+  }
+
+  &__404 {
+    width: calc(#{$col-width-d} * 9);
+    display: flex;
+
+    position: fixed;
+    bottom: calc((106 / 800) * 100%);
+    right: calc(#{$col-width-d} * 3 + 30px);
+  }
+  &__404-img {
+    width: 100%;
+    height: auto;
+  }
+  &__404-star {
+    position: absolute;
+    top: 0;
+    left: calc((((46 / 2) - 12) / 610) * 100%);
+    transform: translateX(-50%);
+  }
+  &__404-moon {
+    position: absolute;
+    right: calc((((41 / 2) + 20) / 610) * 100%);
+    bottom: -9px;
+    transform: translateX(50%);
+  }
+}
+
