@@ -1,0 +1,6 @@
+.title {
+  margin: 60px 0;
+
+  @include fsl(60px, 110%);
+  font-weight: 400;
+}
