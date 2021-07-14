@@ -5,6 +5,12 @@
 
   width: calc(#{$row-aside-width});
 
+  &--position {
+    &--static {
+      position: static;
+    }
+  }
+
   &__inner {
     padding: 30px 0;
     height: 100%;

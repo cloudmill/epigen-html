@@ -2,7 +2,7 @@ extends ../layouts/master.pug
 
 include ../components/footer.pug
 
-block cookies
+//- block cookies
 block grid-test
 
 mixin copyright-link
@@ -22,7 +22,7 @@ block content
             .aside__inner
               .aside__container
                 .aside__top
-                  header.aside__header.aside__header--margin-bottom--default
+                  header.aside__header
                     a.aside__logo(href='#')
                       +logo-svg.aside__logo-svg
                     .aside__menu
