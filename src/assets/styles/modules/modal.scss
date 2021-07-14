@@ -48,8 +48,14 @@
   // transition: $transition; //?
 
   &__container {
+    @media (max-width: $breakpoint - 1px) {
+      padding-bottom: 30px;
+    }
     position: relative;
-    width: calc(#{$col-width-d} * 18); // container 30px * 2
+    width: calc(#{$col-width-d} * 18);
+    @media (max-width: $breakpoint - 1px) {
+      width: calc(#{$col-width-m} * 6);
+    }
 
     border-radius: 10px;
     background-color: $color-white;
@@ -57,28 +63,51 @@
 
   &__row {
     display: flex;
-    justify-content: space-between;
+    @media (min-width: $breakpoint) {
+      justify-content: space-between;
+    }
+    @media (max-width: $breakpoint - 1px) {
+      flex-direction: column;
+    }
   }
 
   &__col {
     flex-shrink: 0;
 
     &:nth-child(1) {
-      padding-left: calc(#{$col-width-d});
-      width: calc(#{$col-width-d} * 5);
+      @media (min-width: $breakpoint) {
+        padding-left: calc(#{$col-width-d});
+        width: calc(#{$col-width-d} * 5);
+      }
+      @media (max-width: $breakpoint - 1px) {
+        padding: 0 30px;
+        order: 2;
+      }
     }
     &:nth-child(2) {
-      width: calc(#{$col-width-d} * 12);
+      @media (min-width: $breakpoint) {
+        width: calc(#{$col-width-d} * 12);
+      }
+      @media (max-width: $breakpoint - 1px) {
+        order: 1;
+      }
     }
   }
 
   &__content {
     padding-top: 30px;
+    @media (max-width: $breakpoint - 1px) {
+      padding-top: 20px;
+    }
   }
 
   &__title {
     margin-bottom: 30px;
+    @media (max-width: $breakpoint - 1px) {
+      margin-bottom: 20px;
 
+      @include fsl(15px);
+    }
     @include fsl(18px, 140%);
     font-weight: 400;
   }
@@ -87,5 +116,9 @@
     position: absolute;
     top: 0;
     right: -55px;
+    @media (max-width: $breakpoint - 1px) {
+      top: -10px;
+      right: -10px;
+    }
   }
 }
