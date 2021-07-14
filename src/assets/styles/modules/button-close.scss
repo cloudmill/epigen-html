@@ -1,0 +1,14 @@
+.button-close {
+  $size: 45px;
+
+  width: $size;
+  height: $size;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: $color-white;
+  border-radius: 50%;
+  cursor: pointer;
+}

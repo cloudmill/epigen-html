@@ -1,0 +1,44 @@
+.modal-video {
+  display: none;
+
+  &__container {
+    position: relative;
+    width: calc(#{$col-width-d} * 18); // container 30px * 2
+
+    border-radius: 10px;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__col {
+    flex-shrink: 0;
+
+    &:nth-child(1) {
+      padding-left: calc(#{$col-width-d});
+      width: calc(#{$col-width-d} * 5);
+    }
+    &:nth-child(2) {
+      width: calc(#{$col-width-d} * 12);
+    }
+  }
+
+  &__content {
+    padding-top: 30px;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+
+    @include fsl(18px, 140%);
+    font-weight: 400;
+  }
+
+  &__button {
+    position: absolute;
+    top: 0;
+    right: -55px;
+  }
+}

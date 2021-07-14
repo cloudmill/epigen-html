@@ -1,0 +1,31 @@
+.reason-list {
+
+  &__item {
+    position: relative;
+
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
+
+    &::before {
+      $size: 7px;
+
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 0;
+
+      width: $size;
+      height: $size;
+
+      background-color: $color-blue;
+      border-radius: 50%;
+    }
+  }
+
+  &__text {
+    padding-left: 27px;
+
+    @include fsl(13px, 140%);
+  }
+}

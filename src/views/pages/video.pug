@@ -77,7 +77,7 @@ block content
                     li.video-page__video-item
                       .video-page__video-row
                         .video-page__video-col
-                          .video
+                          .video(data-modal-button='1')
                             .video__container
                               .video__frame
                                 img.video__img(src="assets/images/video.jpg", alt="")
@@ -113,4 +113,27 @@ block content
                     |показать еще
 
             +footer.page__footer
-
+  .modal-video(data-modal='1')
+    .modal-video__wrapper
+      .modal-video__container
+        .modal-video__row
+          .modal-video__col
+            .modal-video__content
+              h3.modal-video__title
+                |В этом видео вы найдете ответы на следующие вопросы:
+              ul.reason-list
+                each item in ['Прием антибиотиков широкого спектра действия', 'Несоблюдение интимной гигиены', 'Гормональный дисбаланс', 'Несоблюдение интимной гигиены', 'Гормональный дисбаланс']
+                  li.reason-list__item
+                    p.reason-list__text
+                      |#{item}
+          .modal-video__col
+            .video
+              .video__container
+                .video__frame
+                  img.video__img(src="assets/images/video.jpg", alt="")
+                .video__button
+                  .video__button-icon
+                    +start-svg.video__button-svg
+        .modal-video__button
+          .button-close
+            +cross-svg.button-close__svg
