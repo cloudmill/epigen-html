@@ -3,10 +3,8 @@
 
   &--active {
     #{$comp}__wrapper {
-      &::before {
-        visibility: visible;
-        opacity: 1;
-      }
+      visibility: visible;
+      opacity: 1;
     }
 
     #{$comp}-video {
@@ -17,28 +15,23 @@
   }
 
   &__wrapper {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
 
-    &::before {
-      content: "";
-
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 2;
-
-      visibility: hidden;
-      opacity: 0;
-      transition: $transition;
-      background-color: rgba($color-black, 0.2);
-    }
+    visibility: hidden;
+    opacity: 0;
+    transition: $transition;
+    background-color: rgba($color-black, 0.2);
   }
 }
 
 .modal-video {
   position: fixed;
-  z-index: 2;
+  z-index: 1;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
