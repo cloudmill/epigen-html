@@ -119,15 +119,36 @@ import 'Styles/_app.scss'
     const modal = $('[data-modal]');
 
     if (modal.length !== 0) {
-      const buttonModal = $('[data-modal-button]');
+      // open
+      const buttonOpenModal = $('[data-button-open]');
 
-      buttonModal.each(function () {
+      buttonOpenModal.each(function () {
         const button = $(this);
-        const buttonId = button.data('modal-button');
+        const buttonId = button.data('button-open');
 
         button.on('click', function() {
-          $(`[data-modal='${buttonId}']`).addClass('modal--active')
+          $(`[data-modal='${buttonId}']`).addClass('modal--active');
         });
+      });
+
+      // close
+      const buttonCloseModal = $('[data-button-close]');
+
+      buttonCloseModal.each(function() {
+        const button = $(this);
+        const buttonId = button.data('button-close');
+
+        button.on('click', function() {
+          $(`[data-modal='${buttonId}']`).removeClass('modal--active');
+        });
+      });
+
+      $(window).on('click', function(event) {
+        const target = event.target;
+
+        if (target == $('.modal__wrapper')[0]) {
+          modal.removeClass('modal--active');
+        }
       });
     }
   });

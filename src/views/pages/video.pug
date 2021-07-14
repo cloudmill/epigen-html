@@ -77,7 +77,7 @@ block content
                     li.video-page__video-item
                       .video-page__video-row
                         .video-page__video-col
-                          .video(data-modal-button='1')
+                          .video(data-button-open='1')
                             .video__container
                               .video__frame
                                 img.video__img(src="assets/images/video.jpg", alt="")
@@ -115,8 +115,8 @@ block content
             +footer.page__footer
 
   .modal(data-modal='1')
-    .modal-video
-      .modal-video__wrapper
+    .modal__wrapper
+      .modal-video
         .modal-video__container
           .modal-video__row
             .modal-video__col
@@ -137,5 +137,5 @@ block content
                     .video__button-icon
                       +start-svg.video__button-svg
           .modal-video__button
-            .button-close
+            .button-close(data-button-close='1')
               +cross-svg.button-close__svg
