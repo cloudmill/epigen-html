@@ -1,0 +1,36 @@
+.doctor-card {
+
+  &__row {
+    display: flex;
+  }
+
+  &__col {
+    &:nth-child(1) {
+      flex-shrink: 0;
+      width: calc(#{$col-width-d} * 2);
+    }
+    &:nth-child(2) {
+      margin-left: 30px;
+    }
+  }
+
+  &__frame {
+
+  }
+
+  &__portrait {
+
+  }
+
+  &__name {
+    margin-bottom: 10px;
+
+    @include fsl(15px, 140%);
+    font-weight: 400;
+  }
+
+  &__pos {
+    @include fsl(12px, 140%);
+    color: $color-gray;
+  }
+}
