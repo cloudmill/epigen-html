@@ -158,53 +158,40 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
   });
 }
 
-// video text
+// crop text
 {
   $(() => {
-    $('.video-page__video-item').each(function () {
-      const comp = $(this)
-      const title = comp.find('.video-page__content-text')
+    $('[data-crop-text]').each(function () {
+      const text = $(this)
 
-      const originalText = title.text()
+      const originalText = text.text()
 
       let lineCount = 3
-      // if (comp.hasClass('product-announcement--small')) {
-      //   lineCount = 2
-      // }
 
       const lineHeightM = 18
       const lineHeightD = 21
 
 
       function getLineHeight() {
-        // if (comp.hasClass('product-announcement--small')) {
-        //   return 16
-        // }
-        // if (comp.hasClass('product-announcement--large')) {
-        //   return 22
-        // }
         return BREAKPOINT_MEDIA.matches ? lineHeightD : lineHeightM
       }
 
-      let lineHeight = getLineHeight()
-      BREAKPOINT_MEDIA.addListener(() => {
-        lineHeight = getLineHeight()
-      })
-
       function updateTitle() {
-        title.text(originalText)
+        const lineHeight = getLineHeight()
 
-        if (title.height() > (lineHeight * lineCount)) {
+        text.text(originalText)
+
+        if (text.height() > (lineHeight * lineCount)) {
           let newText = originalText
 
-          while (title.height() > (lineHeight * lineCount)) {
+          while (text.height() > (lineHeight * lineCount)) {
             newText = newText.substring(0, newText.length - 1).trim()
 
-            title.text(newText)
+            text.text(newText)
           }
 
           newText = newText.substring(0, newText.length - 5).trim() + '...'
-          title.text(newText)
+          text.text(newText)
         }
       }
 
@@ -218,6 +205,8 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
         updateTitle()
 
         setTimeout(() => {
+          updateTitle()
+
           window.addEventListener('resize', handleResize, {
             once: true,
           })

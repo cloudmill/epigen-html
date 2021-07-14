@@ -10,7 +10,7 @@
     #{$comp}-video {
       opacity: 1;
       pointer-events: auto;
-      transition: $transition; // ?
+      // transition: $transition; // ?
     }
   }
 
@@ -38,7 +38,7 @@
 
   pointer-events: none;
   opacity: 0;
-  // transition: $transition; //?
+  transition: $transition; //?
 
   &__container {
     @media (max-width: $breakpoint - 1px) {
