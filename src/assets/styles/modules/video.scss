@@ -22,9 +22,14 @@
   }
   &__button-icon {
     $size-d: 105px;
+    $size-m: 77px;
 
     width: $size-d;
     height: $size-d;
+    @media (max-width: $breakpoint - 1px) {
+      width: $size-m;
+      height: $size-m;
+    }
 
     display: flex;
     align-items: center;
@@ -32,6 +37,12 @@
 
     background-color: $color-blue;
     border-radius: 50%;
+  }
+  &__button-svg {
+    @media (max-width: $breakpoint - 1px) {
+      width: 13px;
+      height: 11px;
+    }
   }
 
 }

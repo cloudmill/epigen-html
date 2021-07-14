@@ -3,7 +3,9 @@
   align-items: stretch;
 
   &__col {
-    flex-shrink: 0;
+    @media (min-width: $breakpoint) {
+      flex-shrink: 0;
+    }
 
     &--aside {
       width: calc(#{$row-aside-width});
@@ -22,15 +24,15 @@
 
       &::before {
         $offset: 10px;
-    
+
         position: absolute;
         top: $offset;
         bottom: 0;
         right: 0;
-    
+
         content: '';
         width: calc(#{$col-width-d} / 2);
-    
+
         border: 1px solid $color-blue-light;
         border-radius: 10px;
         border-bottom: none;
