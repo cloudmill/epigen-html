@@ -5,12 +5,24 @@
   }
 
   &__col {
+    $size-d: calc(#{$col-width-d} * 2);
+    $size-m: 90px;
+
     &:nth-child(1) {
       flex-shrink: 0;
-      width: calc(#{$col-width-d} * 2);
+
+      @media (min-width: $breakpoint) {
+        width: $size-d;
+        height: $size-d;
+      }
+      width: $size-m;
+      height: $size-m;
     }
     &:nth-child(2) {
       margin-left: 30px;
+      @media (max-width: $breakpoint - 1px) {
+        margin-left: 15px;
+      }
     }
   }
 
@@ -26,11 +38,17 @@
     margin-bottom: 10px;
 
     @include fsl(15px, 140%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(13px)
+    }
     font-weight: 400;
   }
 
   &__pos {
     @include fsl(12px, 140%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(11px)
+    }
     color: $color-gray;
   }
 }

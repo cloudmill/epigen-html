@@ -1,0 +1,117 @@
+.modal {
+  $comp: &;
+
+  &--active {
+    #{$comp}__wrapper {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    #{$comp}-video {
+      opacity: 1;
+      pointer-events: auto;
+      // transition: $transition; // ?
+    }
+  }
+
+  &__wrapper {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: $transition;
+    background-color: rgba($color-black, 0.2);
+  }
+}
+
+.modal-video {
+  position: fixed;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  pointer-events: none;
+  opacity: 0;
+  transition: $transition; //?
+
+  &__container {
+    @media (max-width: $breakpoint - 1px) {
+      padding-bottom: 30px;
+    }
+    position: relative;
+    width: calc(#{$col-width-d} * 18);
+    @media (max-width: $breakpoint - 1px) {
+      width: calc(#{$col-width-m} * 6);
+    }
+
+    border-radius: 10px;
+    background-color: $color-white;
+  }
+
+  &__row {
+    display: flex;
+    @media (min-width: $breakpoint) {
+      justify-content: space-between;
+    }
+    @media (max-width: $breakpoint - 1px) {
+      flex-direction: column;
+    }
+  }
+
+  &__col {
+    flex-shrink: 0;
+
+    &:nth-child(1) {
+      @media (min-width: $breakpoint) {
+        padding-left: calc(#{$col-width-d});
+        width: calc(#{$col-width-d} * 5);
+      }
+      @media (max-width: $breakpoint - 1px) {
+        padding: 0 30px;
+        order: 2;
+      }
+    }
+    &:nth-child(2) {
+      @media (min-width: $breakpoint) {
+        width: calc(#{$col-width-d} * 12);
+      }
+      @media (max-width: $breakpoint - 1px) {
+        order: 1;
+      }
+    }
+  }
+
+  &__content {
+    padding-top: 30px;
+    @media (max-width: $breakpoint - 1px) {
+      padding-top: 20px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    @media (max-width: $breakpoint - 1px) {
+      margin-bottom: 20px;
+
+      @include fsl(15px);
+    }
+    @include fsl(18px, 140%);
+    font-weight: 400;
+  }
+
+  &__button {
+    position: absolute;
+    top: 0;
+    right: -55px;
+    @media (max-width: $breakpoint - 1px) {
+      top: -10px;
+      right: -10px;
+    }
+  }
+}

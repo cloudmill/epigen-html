@@ -12,6 +12,16 @@
 
   &--margin-top--default {
     margin-top: 30px;
+    @media (max-width: $breakpoint - 1px) {
+      margin-top: 15px;
+    }
+  }
+
+  &--desctop {
+    display: none;
+    @media (min-width: $breakpoint) {
+      display: block;
+    }
   }
 }
 

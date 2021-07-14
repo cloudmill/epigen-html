@@ -1,5 +1,9 @@
 import 'Styles/_app.scss'
 
+// vars
+const BREAKPOINT = 1280
+const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
+
 // nav-page-d
 ;(() => {
 	$(() => {
@@ -10,7 +14,7 @@ import 'Styles/_app.scss'
 
 			const state = {
 				activeItem: component.find('.nav-page-d__item--active'),
-				
+
 				setActiveItem: item => {
 					state.activeItem.removeClass('nav-page-d__item--active')
 					state.activeItem = item
@@ -19,7 +23,7 @@ import 'Styles/_app.scss'
 			}
 
 			const links = component.find('.nav-page-d__link')
-			
+
 			links.on('click', function (event) {
 				event.preventDefault()
 
@@ -57,7 +61,7 @@ import 'Styles/_app.scss'
 
 			setTimeout(() => {
 				update()
-				
+
 				$(window).one('scroll', scroll)
 			}, 1000 / fps)
 		}
@@ -111,4 +115,103 @@ import 'Styles/_app.scss'
 		 	}, DELAY)
 		}
 	})
+}
+
+// modal
+{
+  $(() => {
+    const modal = $('[data-modal]');
+
+    if (modal.length !== 0) {
+      // open
+      const buttonOpenModal = $('[data-button-open]');
+
+      buttonOpenModal.each(function () {
+        const button = $(this);
+        const buttonId = button.data('button-open');
+
+        button.on('click', function() {
+          $(`[data-modal='${buttonId}']`).addClass('modal--active');
+        });
+      });
+
+      // close
+      const buttonCloseModal = $('[data-button-close]');
+
+      buttonCloseModal.each(function() {
+        const button = $(this);
+        const buttonId = button.data('button-close');
+
+        button.on('click', function() {
+          $(`[data-modal='${buttonId}']`).removeClass('modal--active');
+        });
+      });
+
+      $(window).on('click', function(event) {
+        const target = event.target;
+
+        if (target == $('.modal__wrapper')[0]) {
+          modal.removeClass('modal--active');
+        }
+      });
+    }
+  });
+}
+
+// crop text
+{
+  $(() => {
+    $('[data-crop-text]').each(function () {
+      const text = $(this)
+
+      const originalText = text.text()
+
+      let lineCount = 3
+
+      const lineHeightM = 18
+      const lineHeightD = 21
+
+
+      function getLineHeight() {
+        return BREAKPOINT_MEDIA.matches ? lineHeightD : lineHeightM
+      }
+
+      function updateTitle() {
+        const lineHeight = getLineHeight()
+
+        text.text(originalText)
+
+        if (text.height() > (lineHeight * lineCount)) {
+          let newText = originalText
+
+          while (text.height() > (lineHeight * lineCount)) {
+            newText = newText.substring(0, newText.length - 1).trim()
+
+            text.text(newText)
+          }
+
+          newText = newText.substring(0, newText.length - 5).trim() + '...'
+          text.text(newText)
+        }
+      }
+
+      updateTitle()
+
+      window.addEventListener('resize', handleResize, {
+        once: true,
+      })
+
+      function handleResize() {
+        updateTitle()
+
+        setTimeout(() => {
+          updateTitle()
+
+          window.addEventListener('resize', handleResize, {
+            once: true,
+          })
+        }, 1000)
+      }
+    })
+  });
 }
