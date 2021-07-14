@@ -9,19 +9,22 @@ block content
   .container
     .row
       .row__col.row__col--aside
-        .qwe
-        |aside
+        - for (let i = 0; i < 10; i++)
+          p
+            |aside
         .sticky
-          .sticky__btn
-            |btn
-          .sticky__drop
-            - for (let i = 0; i < 300; i++)
-              .sticky__drop-text
-                |drop
+          p
+            |sticky
+          .drop.drop--aside
+            .drop__btn
+              |btn
+            .drop__drop(data-drop-id=1)
+              |drop
       .row__col.row__col--main
-        .page
-          main.page__main
-            |main
-            .qwe
-            |main
-          +footer.page__footer
+        p
+          |main
+        .drop.drop--main
+          .drop__btn
+            |btn
+          .drop__drop(data-drop-id=2)
+            |drop

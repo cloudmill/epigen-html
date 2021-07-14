@@ -34,8 +34,31 @@
   }
 }
 
-.sticky {
+.drop {
+  $comp: &;
+
+  &--aside {
+    #{$comp}__drop {
+      height: 50vh;
+    }
+  }
+  &--main {
+    #{$comp}__drop {
+      height: 300vh;
+    }
+  }
+
+  &__btn {
+    background-color: lightgrey;
+  }
+
   &__drop {
     display: none;
+
+    background-color: lightsteelblue;
   }
+}
+
+.sticky {
+  border: 1px solid forestgreen;
 }
