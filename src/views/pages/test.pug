@@ -1,30 +1,7 @@
 extends ../layouts/master.pug
 
-include ../components/footer.pug
-
 block cookies
 //- block grid-test
 
 block content
-  .container
-    .row
-      .row__col.row__col--aside
-        - for (let i = 0; i < 10; i++)
-          p
-            |aside
-        .sticky
-          p
-            |sticky
-          .drop.drop--aside
-            .drop__btn
-              |btn
-            .drop__drop(data-drop-id=1)
-              |drop
-      .row__col.row__col--main
-        p
-          |main
-        .drop.drop--main
-          .drop__btn
-            |btn
-          .drop__drop(data-drop-id=2)
-            |drop
+  |test
