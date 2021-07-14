@@ -115,116 +115,6 @@ import 'Styles/_app.scss'
 }
 
 // sticky (test)
-// ;(() => {
-// 	$(window).on('load', () => {
-// 		const components = $('.sticky')
-	
-// 		components.each(function () {
-// 			const component = $(this)
-			
-// 			const clone = component.clone()
-// 			clone.css('display', 'none')
-// 			clone.css('position', 'fixed')
-// 			component.parent().append(clone)
-	
-// 			const btn = component.find('.sticky__btn')
-// 			const drop = component.find('.sticky__drop')
-	
-// 			btn.on('click', () => {
-// 				drop.slideToggle({
-// 					progress: update,
-// 				})
-// 			})
-	
-// 			const options = {
-// 				top: 100,
-// 				bottom: 200,
-// 			}
-		
-// 			const state = {
-// 				start: {
-// 					pos: {
-// 						x: null,
-// 						y: null,
-// 					},
-// 				},
-// 				current: {
-// 					pos: {
-// 						x: null,
-// 						y: null,
-// 					},
-// 				},
-// 			}
-
-// 			init()
-
-// 			update()
-
-// 			$(window).on('scroll', update)
-	
-// 			function init() {
-// 				[state.start.pos.x, state.start.pos.y] = getPos()
-// 			}
-
-// 			function update() {
-// 				[state.current.pos.x, state.current.pos.y] = getPos()
-
-// 				const zone = getZone()
-
-// 				if (zone === 'in') {
-// 					component.css('display', 'none')
-// 					clone.css('display', '')
-// 					clone.css('top', `${options.top}px`)
-// 				} else {
-// 					component.css('display', '')
-// 					clone.css('display', 'none')
-// 				}
-// 			}
-	
-// 			function getPos() {
-// 				let elem = component
-
-// 				let x = 0
-// 				let y = 0
-
-// 				while (elem.length !== 0 && elem[0] !== document.body) {
-// 					x += elem[0].offsetLeft
-// 					y += elem[0].offsetTop
-
-// 					elem = $(elem[0].offsetParent)
-// 				}
-
-// 				return [x, y]
-// 			}
-
-// 			function getZone() {
-// 				const y_scroll = pageYOffset
-// 				const y_sticky = state.current.pos.y
-
-// 				if (y_scroll < (y_sticky - options.top)) {
-// 					return 'before'
-// 				} else if ((y_scroll + getViewportHeight()) >= (getDocumentHeight() - options.bottom)) {
-// 					return 'after'
-// 				}
-// 				return 'in'
-// 			}
-
-// 			function getDocumentHeight() {
-// 				return Math.max(
-// 					document.body.scrollHeight, document.documentElement.scrollHeight,
-// 					document.body.offsetHeight, document.documentElement.offsetHeight,
-// 					document.body.clientHeight, document.documentElement.clientHeight
-// 				)
-// 			}
-
-// 			function getViewportHeight() {
-// 				return document.documentElement.clientHeight
-// 			}
-// 		})
-// 	})
-// })()
-
-// sticky (test)
 var stickyUpdate
 {
 	$(() => {
@@ -236,7 +126,7 @@ var stickyUpdate
 			const state = {
 				// offset
 				top: 100,
-				bottom: 200,
+				bottom: 1000,
 				// pos
 				startY: null,
 				y: null,
@@ -252,8 +142,8 @@ var stickyUpdate
 
 			const stickyBottom = sticky.clone()
 			// готовим stickyBottom
-			// stickyBottom.css('opacity', 0)
-			// stickyBottom.css('pointer-events', 'none')
+			stickyBottom.css('opacity', 0)
+			stickyBottom.css('pointer-events', 'none')
 			stickyBottom.css('position', 'absolute')
 			stickyBottom.css('top', `${sticky[0].offsetTop}px`)
 			stickyBottom.css('width', `${sticky[0].offsetWidth}px`)
@@ -261,8 +151,8 @@ var stickyUpdate
 
 			const stickyFixed = sticky.clone()
 			// готовим stickyFixed
-			// stickyFixed.css('opacity', 0)
-			// stickyFixed.css('pointer-events', 'none')
+			stickyFixed.css('opacity', 0)
+			stickyFixed.css('pointer-events', 'none')
 			stickyFixed.css('position', 'fixed')
 			stickyFixed.css('top', `${state.top}px`)
 			stickyFixed.css('width', `${sticky[0].offsetWidth}px`)
@@ -270,14 +160,70 @@ var stickyUpdate
 
 			update()
 
-			function update() {
-				console.log('update');
+			$(window).on('scroll', update)
+			$(window).on('resize', update)
 
+			function update() {
+				// console.log('update');
+
+				// апдейтим размеры (width) копий
+				stickyBottom.css('width', `${sticky[0].offsetWidth}px`)
+				stickyFixed.css('width', `${sticky[0].offsetWidth}px`)
+
+				// апдейтим позицию stickyFixed
+				stickyFixed.css('top', `${state.top}px`)
+
+				// апдейтим позицию stickyBottom
+				stickyBottom.css('top', `${sticky[0].offsetTop}px`)
 				const stickyBottomYBottom = getY(stickyBottom) + stickyBottom.height()
-				const bottomY = getDocumentHeight() - state.top
+				const bottomY = getDocumentHeight() - state.bottom
 				stickyBottom.css('transform', `
 					translateY(${bottomY - stickyBottomYBottom}px)	
 				`)
+
+				const scrollY = $(window).scrollTop()
+				if (scrollY < (getY(sticky) - state.top)) {
+					state.mode = 'default'
+				} else if ((scrollY + state.top) < getDocumentHeight() - state.bottom - stickyFixed.height()) {
+					state.mode = 'fixed'
+				} else {
+					state.mode = 'bottom'
+				}
+
+				switch (state.mode) {
+					case 'fixed':
+						console.log('fixed');
+
+						sticky.css('opacity', 0)
+						sticky.css('pointer-events', 'none')
+						stickyBottom.css('opacity', 0)
+						stickyBottom.css('pointer-events', 'none')
+
+						stickyFixed.css('opacity', '')
+						stickyFixed.css('pointer-events', '')
+						break
+					case 'bottom':
+						console.log('bottom')
+
+						sticky.css('opacity', 0)
+						sticky.css('pointer-events', 'none')
+						stickyFixed.css('opacity', 0)
+						stickyFixed.css('pointer-events', 'none')
+
+						stickyBottom.css('opacity', '')
+						stickyBottom.css('pointer-events', '')
+						break
+					default:
+						console.log('default');
+
+						stickyFixed.css('opacity', 0)
+						stickyFixed.css('pointer-events', 'none')
+						stickyBottom.css('opacity', '0')
+						stickyBottom.css('pointer-events', 'none')
+
+						sticky.css('opacity', '')
+						sticky.css('pointer-events', '')
+				}
 			}
 
 			stickyUpdate = update
