@@ -71,7 +71,7 @@ block content
               h1.title
                 |Видео
               .rail
-              .video-page__video
+              section.video-page__video
                 ul.video-page__video-list
                   - for (i = 0; i < 6; i++)
                     li.video-page__video-item
@@ -113,27 +113,29 @@ block content
                     |показать еще
 
             +footer.page__footer
-  .modal-video(data-modal='1')
-    .modal-video__wrapper
-      .modal-video__container
-        .modal-video__row
-          .modal-video__col
-            .modal-video__content
-              h3.modal-video__title
-                |В этом видео вы найдете ответы на следующие вопросы:
-              ul.reason-list
-                each item in ['Прием антибиотиков широкого спектра действия', 'Несоблюдение интимной гигиены', 'Гормональный дисбаланс', 'Несоблюдение интимной гигиены', 'Гормональный дисбаланс']
-                  li.reason-list__item
-                    p.reason-list__text
-                      |#{item}
-          .modal-video__col
-            .video
-              .video__container
-                .video__frame
-                  img.video__img(src="assets/images/video.jpg", alt="")
-                .video__button
-                  .video__button-icon
-                    +start-svg.video__button-svg
-        .modal-video__button
-          .button-close
-            +cross-svg.button-close__svg
+
+  .modal(data-modal='1')
+    .modal-video
+      .modal-video__wrapper
+        .modal-video__container
+          .modal-video__row
+            .modal-video__col
+              .modal-video__content
+                h3.modal-video__title
+                  |В этом видео вы найдете ответы на следующие вопросы:
+                ul.reason-list
+                  each item in ['Прием антибиотиков широкого спектра действия', 'Несоблюдение интимной гигиены', 'Гормональный дисбаланс', 'Несоблюдение интимной гигиены', 'Гормональный дисбаланс']
+                    li.reason-list__item
+                      p.reason-list__text
+                        |#{item}
+            .modal-video__col
+              .video
+                .video__container
+                  .video__frame
+                    img.video__img(src="assets/images/video.jpg", alt="")
+                  .video__button
+                    .video__button-icon
+                      +start-svg.video__button-svg
+          .modal-video__button
+            .button-close
+              +cross-svg.button-close__svg

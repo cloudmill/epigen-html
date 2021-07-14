@@ -1,11 +1,49 @@
+.modal {
+  $comp: &;
+
+  &--active {
+    &::before {
+      background-color: red;
+    }
+
+    #{$comp}-video {
+      display: block;
+    }
+  }
+}
+
 .modal-video {
+
   display: none;
+
+  &::before {
+    content: "";
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+
+    background-color: rgba($color-black, 0.2);
+    // pointer-events: none;
+  }
+
+  &__wrapper {
+    position: fixed;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
   &__container {
     position: relative;
     width: calc(#{$col-width-d} * 18); // container 30px * 2
 
     border-radius: 10px;
+    background-color: $color-white;
   }
 
   &__row {

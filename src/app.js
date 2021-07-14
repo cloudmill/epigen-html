@@ -10,7 +10,7 @@ import 'Styles/_app.scss'
 
 			const state = {
 				activeItem: component.find('.nav-page-d__item--active'),
-				
+
 				setActiveItem: item => {
 					state.activeItem.removeClass('nav-page-d__item--active')
 					state.activeItem = item
@@ -19,7 +19,7 @@ import 'Styles/_app.scss'
 			}
 
 			const links = component.find('.nav-page-d__link')
-			
+
 			links.on('click', function (event) {
 				event.preventDefault()
 
@@ -57,7 +57,7 @@ import 'Styles/_app.scss'
 
 			setTimeout(() => {
 				update()
-				
+
 				$(window).one('scroll', scroll)
 			}, 1000 / fps)
 		}
@@ -111,4 +111,24 @@ import 'Styles/_app.scss'
 		 	}, DELAY)
 		}
 	})
+}
+
+// modal
+{
+  $(() => {
+    const modal = $('[data-modal]');
+
+    if (modal.length !== 0) {
+      const buttonModal = $('[data-modal-button]');
+
+      buttonModal.each(function () {
+        const button = $(this);
+        const buttonId = button.data('modal-button');
+
+        button.on('click', function() {
+          $(`[data-modal='${buttonId}']`).addClass('modal--active')
+        });
+      });
+    }
+  });
 }
