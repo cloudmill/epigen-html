@@ -38,6 +38,9 @@
       &--default {
         margin-bottom: 60px;
       }
+      &--large {
+        margin-bottom: 80px;
+      }
     }
   }
 
@@ -68,7 +71,7 @@
   }
   &__menu-text {
     margin-right: 15px;
-    
+
     @include fsl(15px, 15px);
   }
   &__menu-button {

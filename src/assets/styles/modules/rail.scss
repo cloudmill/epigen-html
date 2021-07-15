@@ -29,5 +29,11 @@
       display: none;
     }
   }
+
+  &--reverse {
+    border: 1px solid $color-blue-light;
+    border-bottom: 0;
+    border-radius: 10px 10px 0 0;
+  }
 }
 
