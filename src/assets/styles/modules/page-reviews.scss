@@ -1,0 +1,28 @@
+.page-reviews {
+  $list-gap: 15px;
+
+  &__filter {}
+  &__filter-item {
+    &:not(:first-child) {
+      margin-top: 15px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+  &__list-item {
+    width: calc(((#{$col-width-d} * #{$row-main-cols}) - #{$list-gap}) / 2);
+    flex-shrink: 0;
+
+    &:not(:nth-child(-n + 2)) {
+      margin-top: $list-gap;
+    }
+
+    &:nth-child(even) {
+      margin-left: $list-gap;
+    }
+  }
+}
