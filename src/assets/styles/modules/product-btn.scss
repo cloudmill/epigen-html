@@ -1,0 +1,77 @@
+.product-btn {
+  $comp: &;
+
+  @mixin active() {
+    background-color: $color-blue;
+
+    #{$comp}__svg {
+      .spray-svg__background {
+        fill: $color-blue;
+      }
+  
+      .spray-svg__line {
+        &--stroke {
+          stroke: $color-white;
+        }
+        &--fill {
+          fill: $color-white;
+        }
+      }
+    }
+
+    #{$comp}__text {
+      color: $color-white;
+    }
+  }
+
+  padding: 10px;
+  height: 100%;
+  min-height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: $color-blue-light;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: $transition;
+
+  &:hover {
+    @include active();
+  }
+
+  &--active {
+    @include active();
+  }
+
+  &__svg {
+    flex-shrink: 0;
+
+    .spray-svg__background,
+    .spray-svg__line {
+      transition: $transition;
+    }
+
+    .spray-svg__background {
+      fill: $color-blue-light;
+    }
+
+    .spray-svg__line {
+      &--stroke {
+        stroke: $color-black;
+      }
+      &--fill {
+        fill: $color-black;
+      }
+    }
+  }
+
+  &__text {
+    margin-left: 25px;
+    flex-shrink: 0;
+
+    @include fsl(13px, 120%);
+    white-space: nowrap;
+    transition: $transition;
+  }
+}

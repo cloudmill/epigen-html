@@ -1,0 +1,21 @@
+.product-choice {
+  $gap: 15px;
+
+  display: flex;
+  align-items: stretch;
+
+  &--margin-bottom {
+    &--default {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__item {
+    width: calc(((#{$col-width-d} * #{$row-main-cols}) - #{$gap}) / 2);
+    flex-shrink: 0;
+
+    &:not(:first-child) {
+      margin-left: $gap;
+    }
+  }
+}

@@ -57,7 +57,26 @@ mixin plus-svg
     path(fill-rule="evenodd" clip-rule="evenodd" d="M14.3345 0.750183H5.66549C2.64449 0.750183 0.750488 2.88918 0.750488 5.91618V14.0842C0.750488 17.1112 2.63549 19.2502 5.66549 19.2502H14.3335C17.3645 19.2502 19.2505 17.1112 19.2505 14.0842V5.91618C19.2505 2.88918 17.3645 0.750183 14.3345 0.750183Z" stroke="#31AFF2" stroke-linecap="round" stroke-linejoin="round")
 
 mixin cross-svg
-  svg(class=attributes.classwidth="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg")
+  svg(class=attributes.class width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg")
     path(d="M13.9926 1.00598L1.0061 13.9924" stroke="#282828" stroke-linecap="round" stroke-linejoin="round")
     path(d="M13.9973 14L1 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round")
 
+mixin spray-svg
+  svg.spray-svg(class=attributes.class xmlns="http://www.w3.org/2000/svg" width="19" height="65" viewBox="0 0 19 65" fill="none")
+    rect.spray-svg__background.spray-svg__line.spray-svg__line--stroke(x="5.01389" y="0.5" width="8.02778" height="8.02778" rx="1.5" fill="#31AFF2" stroke="white")
+    rect.spray-svg__background.spray-svg__line.spray-svg__line--stroke(x="4.11111" y="7.72223" width="9.83333" height="8.02778" rx="1.5" fill="#31AFF2" stroke="white")
+    rect.spray-svg__background.spray-svg__line.spray-svg__line--stroke(x="3.20833" y="13.1389" width="11.6389" height="11.6389" rx="1.5" fill="#31AFF2" stroke="white")
+    line.spray-svg__line.spray-svg__line--stroke(x1="5.5" y1="13" x2="5.5" y2="23" stroke="white")
+    path.spray-svg__line.spray-svg__line--stroke(d="M9 13L9 23" stroke="white")
+    line.spray-svg__line.spray-svg__line--stroke(x1="12.5" y1="13" x2="12.5" y2="23" stroke="white")
+    path.spray-svg__background.spray-svg__line.spray-svg__line--stroke(d="M0.5 26.4102C0.5 25.8833 0.776449 25.395 1.22826 25.1239L4.29611 23.2832C4.52924 23.1433 4.79599 23.0695 5.06786 23.0695H12.9877C13.2596 23.0695 13.5263 23.1433 13.7594 23.2832L16.8273 25.1239C17.2791 25.395 17.5556 25.8833 17.5556 26.4102V63C17.5556 63.8284 16.884 64.5 16.0556 64.5H2C1.17157 64.5 0.5 63.8284 0.5 63V26.4102Z" fill="#31AFF2" stroke="white")
+    circle.spray-svg__background.spray-svg__line.spray-svg__line--fill(cx="9.02778" cy="3.61109" r="0.902778" fill="white")
+
+mixin gel-svg
+  svg(class=attributes.class xmlns="http://www.w3.org/2000/svg" width="35" height="65" viewBox="0 0 35 65" fill="none")
+    rect.spray-svg__background.spray-svg__line.spray-svg__line--stroke(x="10.8435" y="17.6616" width="11.2828" height="8.69697" rx="1.5" fill="#E0F3FD" stroke="#282828")
+    path.spray-svg__background.spray-svg__line.spray-svg__line--stroke(d="M1.89404 39.5C1.89404 31.2157 8.60977 24.5 16.894 24.5C25.1783 24.5 31.894 31.2157 31.894 39.5V61.5H1.89404V39.5Z" fill="#E0F3FD" stroke="#282828")
+    rect.spray-svg__background.spray-svg__line.spray-svg__line--stroke(x="9.55045" y="20.8939" width="13.8687" height="1.58586" rx="0.792929" fill="#E0F3FD" stroke="#282828")
+    rect.spray-svg__background.spray-svg__line.spray-svg__line--stroke(x="9.55045" y="10.5505" width="13.8687" height="8.69697" rx="1.5" fill="#E0F3FD" stroke="#282828")
+    path.spray-svg__background.spray-svg__line.spray-svg__line--stroke(d="M19.3938 10.0505V5.05617C19.3938 3.9516 20.2893 3.05617 21.3938 3.05617H29.6789C30.2467 3.05617 30.707 2.59588 30.707 2.02808V2.02808C30.707 1.46029 30.2467 1 29.6789 1H19.2195C18.909 1 18.6028 1.07229 18.3251 1.21115L17.7104 1.51846C17.5421 1.60264 17.3565 1.64646 17.1682 1.64646H13.3573C12.6835 1.64646 12.5302 2.59091 13.1695 2.804V2.804C13.412 2.88486 13.5757 3.11185 13.5757 3.36753V10.0505" stroke="#282828")
+    path.spray-svg__background.spray-svg__line.spray-svg__line--stroke(d="M0.5 61.1212C0.5 60.3263 1.14444 59.6818 1.93939 59.6818H32.3232C33.1182 59.6818 33.7626 60.3263 33.7626 61.1212C33.7626 62.9873 32.2499 64.5 30.3838 64.5H3.87879C2.01274 64.5 0.5 62.9873 0.5 61.1212Z" fill="#E0F3FD" stroke="#282828")
