@@ -10,11 +10,14 @@
     border-color: $color-blue;
   }
 
-  &--margin-top--default {
-    margin-top: 30px;
-    @media (max-width: $breakpoint - 1px) {
-      margin-top: 15px;
+  &--margin-top {
+    &--default {
+      margin-top: 30px;
+      @media (max-width: $breakpoint - 1px) {
+        margin-top: 15px;
+      }
     }
+
   }
 
   &--desctop {
