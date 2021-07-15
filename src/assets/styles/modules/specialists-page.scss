@@ -63,14 +63,134 @@
     }
 
     p {
-      @include fsl(18px, 140%);
+      @include fsl(15px, 140%);
 
       &:not(:first-child) {
         margin-top: 30px;
       }
     }
+
+    ul {
+      counter-reset: index;
+      li {
+        padding-left: 30px;
+
+        counter-increment: index;
+        position: relative;
+
+        @include fsl(13px, 140%);
+
+        &::before {
+          content: counter(index) '.';
+
+          position: absolute;
+          left: 0;
+          top: 0;
+
+          color: $color-blue;
+          @include fsl(13px, 140%);
+        }
+
+        &:not(:first-child) {
+          margin-top: 10px;
+        }
+      }
+    }
   }
   &__content-wrapper {
     padding-left: calc(#{$col-width-d} * 3);
+  }
+  &__content-container {
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  &__content-label {
+    margin-top: 15px;
+
+    @include fsl(13px, 140%);
+    font-style: italic;
+  }
+
+  &__wish {
+    padding-left: calc(#{$col-width-d} * 6);
+  }
+  &__wish-container {
+    padding: 20px calc(#{$col-width-d});
+
+    position: relative;
+
+    &::before {
+      $size: 130px;
+
+      content: "";
+
+      position: absolute;
+      z-index: -1;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+
+      width: $size;
+      height: $size;
+
+      border-radius: 50%;
+      background-color: #8BD7FF;
+      filter: blur(40px);
+    }
+  }
+  &__wish-text {
+    @include fsl(18px, 140%);
+    font-style: italic;
+  }
+
+  &__table {
+    padding-left: calc(#{$col-width-d} * 3);
+
+  }
+  &__table-table {
+    width: 100%;
+
+    border: 1px solid $color-blue-light;
+    border-bottom: none;
+    border-right: none;
+    border-radius: 10px;
+    border-spacing: 0;
+
+    th, td {
+      border-style: solid;
+      border-width: 0 1px 1px 0;
+      border-color: $color-blue-light;
+      }
+    td {
+      padding: 18px;
+
+      width: calc(#{$col-width-d} * 3);
+    }
+    tr:first-child {
+      td:last-child {
+        border-top-right-radius: 10px;
+      }
+    }
+    tr:last-child {
+      td:first-child {
+        border-bottom-left-radius: 10px;
+      }
+      td:last-child {
+        border-bottom-right-radius: 10px;
+      }
+    }
+  }
+  &__table-title {
+    @include fsl(15px, 140%);
+  }
+  &__table-text {
+    text-align: center;
+    @include fsl(12px, 120%);
+  }
+  &__table-subtitle {
+    @include fsl(12px, 120%);
   }
 }
