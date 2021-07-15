@@ -57,6 +57,11 @@ block content
                     |Наши эксперты
                   +nav-page-d
                 .aside__bottom
+                  a.download-link.download-link--margin-bot--default(href="#")
+                    .download-link__icon
+                      +download-svg
+                    .download-link__text
+                      |Скачать статью в PDF
                   +copyright-link(href='#')
                     |Компания «Инвар», 2021
         .row__col.row__col--main
@@ -224,7 +229,20 @@ block content
                           li
                             |#{item}
                 .margin-top
-                  .specialists-page__
+                  .specialists-page__bottom
+                    .specialists-page__bottom-row
+                      .specialists-page__bottom-col
+                        .specialists-page__bottom-container
+                          img.specialists-page__bottom-img(src="assets/images/epigen-spray.jpg", alt="")
+                      .specialists-page__bottom-col
+                        .specialists-page__bottom-content
+                          h3.specialists-page__bottom-title
+                            |Спрей#[br]Эпиген Интим
+                          .specialists-page__bottom-btn
+                            a.button(href="#")
+                              |Подробнее
+                    .specialists-page__bottom-column
+
 
 
             +footer.page__footer
