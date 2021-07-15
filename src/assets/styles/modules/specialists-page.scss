@@ -3,4 +3,74 @@
   &__specialists {
     padding-top: 30px;
   }
+
+  &__article {
+
+  }
+  &__article-row {
+    display: flex;
+  }
+  &__article-col {
+    flex-shrink: 0;
+
+    &:nth-child(1) {
+      width: calc(#{$col-width-d} * 6);
+    }
+    &:nth-child(2) {
+      width: calc(#{$col-width-d} * 10);
+    }
+  }
+  &__article-label {
+    text-transform: uppercase;
+    color: $color-blue;
+    @include fsl(13px, 120%);
+  }
+  &__article-text {
+    margin-top: 10px;
+
+    text-transform: uppercase;
+    @include fsl(15px, 140%);
+  }
+
+  &__info {
+
+  }
+  &__info-row {
+    display: flex;
+  }
+  &__info-col {
+    flex-shrink: 0;
+
+    &:nth-child(1) {
+      width: calc(#{$col-width-d} * 2);
+    }
+    &:nth-child(2) {
+      width: calc(#{$col-width-d} * 8);
+    }
+  }
+
+  &__inner {
+    padding-left: calc(#{$col-width-d} * 3);
+    padding-right: calc(#{$col-width-d} * 2);
+  }
+
+  &__content {
+    h3 {
+      margin-bottom: 40px;
+
+      font-weight: 400;
+      @include fsl(25px, 120%);
+    }
+
+    p {
+      @include fsl(18px, 140%);
+
+      &:not(:first-child) {
+        margin-top: 30px;
+      }
+    }
+  }
+  &__content-wrapper {
+    padding-left: calc(#{$col-width-d} * 3);
+  }
 }

@@ -1,0 +1,111 @@
+extends ../layouts/master.pug
+
+include ../components/footer.pug
+
+block cookies
+//- block grid-test
+
+
+mixin copyright-link
+  a.copyright-link(href=attributes.href)
+    .copyright-link__mark
+      +copyright-svg.copyright-link__mark-svg
+    .copyright-link__text
+      block
+
+
+block content
+  .specialists-page
+    .container
+      .row
+        .row__col.row__col--aside.row__col--rail
+          .aside
+            .aside__inner
+              .aside__container
+                .aside__top
+                  header.aside__header.aside__header--margin-bottom--large
+                    a.aside__logo(href='#')
+                      +logo-svg.aside__logo-svg
+                    .aside__menu
+                      .aside__menu-text
+                        |Меню
+                      .aside__menu-button
+                  h3.title.title--small.title--margin-bot--s
+                    |Наши эксперты
+                  ul.reason-list
+                    each item in ['Н.М. Назаров', 'д.м.н., В.Н. Прилепская', 'Е.Г. Сычев',]
+                      li.reason-list__item
+                        a.reason-list__text.reason-list__text--small(href="#")
+                          |#{item}
+                .aside__bottom
+                  +copyright-link(href='#')
+                    |Компания «Инвар», 2021
+        .row__col.row__col--main
+          .page
+            header.page__header
+              .panel
+                .panel__panel
+                  .panel__row
+                    .panel__col
+                      .panel__inner
+                        .panel__product
+                          //- .panel__product-item--active
+                          a.panel__product-item(href='#')
+                            .panel__product-mark
+                            .panel__product-text
+                              |Спрей
+                          a.panel__product-item.panel__product-item--purple(href='#')
+                            .panel__product-mark
+                            .panel__product-text
+                              |Гель
+                    .panel__col
+                      .panel__inner
+                        a.panel__where-buy(href='#')
+                          |Где купить
+                    .panel__col
+                      .panel__inner
+                        .panel__choice
+                          .panel__choice-item(data-count=8)
+                            |Симптомы
+                          .panel__choice-item(data-count=12)
+                            |Заболевания
+                    .panel__col
+                      .panel__inner
+                        .panel__consultation
+                          +consultation-svg.panel__consultation-svg
+                          .panel__consultation-text
+                            |Консультация эксперта
+            main.page__main
+              h1.title.title--md.title--margin-bot--l
+                |Комбинированное лечение доброкачественных заболеваний шейки матки
+              .rail.rail--desctop
+              section.specialists-page__specialists
+                .specialists-page__article
+                  .specialists-page__article-row
+                    .specialists-page__article-col
+                      .specialists-page__article-label
+                        |категория
+                      .specialists-page__article-text
+                        |ВПЧ
+                    .specialists-page__article-col
+                      .specialists-page__info
+                        .specialists-page__info-row
+                          .specialists-page__info-col
+                            .specialists-page__article-label
+                              |Авторы статьи
+                          .specialists-page__info-col
+                            .doctor-card
+                              .doctor-card__name
+                                |Н.М. Назаров, д.м.н., В.Н. Прилепская, Е.Г. Сычев
+                              .doctor-card__pos
+                                |«ФГБУ национальный медицинский исследовательский центр акушерства, гинекологии и перинатологии им. академика В.И. Кулакова» Минздрав России, Москва
+                .specialists-page__inner.margin-top
+                  .specialists-page__content
+                    .specialists-page__content-wrapper
+                      p
+                        |Проведен сравнительный анализ результатов лечения 290 женщин в возрасте от 19 до 48 лет с неопухолевыми заболеваниями шейки матки, ассоциированными с вирусом папилломы человека. Установлено, что  использование  спрея  эпиген интим  при  традиционном  криолечении  доброкачественной  патологии шейки  матки  способствует  достоверному  сокращению  сроков  эпителизации,  увеличению  процента излеченных больных после одного сеанса криовоздействия и уменьшению количества рецидивов.
+                      p
+                        |Актуальность проблемы лечения доброкачественных заболеваний шейки матки обусловлена широкой распространенностью патологии шейки матки, которая встречается, по данным В.Н. Прилепской [8], у 10—15% женщин репродуктивного возраста. Кроме того, известно, что доброкачественные процессы могут предшествовать злокачественным новообразованиям шейки матки, заболеваемость которыми в настоящее время, согласно исследованиям В.И. Краснопольского, В.Н. Прилепской [5,7], не имеет тенденции к снижению.
+
+            +footer.page__footer
+
