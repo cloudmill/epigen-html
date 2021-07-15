@@ -1,0 +1,62 @@
+.review-card {
+  $gap: 30px;
+
+  height: 100%;
+  display: block;
+
+  background-color: $color-white;
+  border: 1px solid $color-blue-light;
+  border-radius: 20px;
+  border-bottom-right-radius: 0;
+  transition: $transition;
+  
+  &:hover {
+    border-color: $color-blue;
+  }
+
+  &__top {
+    padding: $gap $gap 0 $gap;
+  }
+  &__bottom {
+    margin-top: $gap;
+  }
+
+  &__row {
+    display: flex;
+  }
+  &__row-col {
+    &:not(:first-child) {
+      margin-left: $gap;
+    }
+
+    &--flex-shrink {
+      &--0 {
+        flex-shrink: 0;
+      }
+    }
+  }
+
+  &__img {
+    max-width: 105px;
+    border-radius: 10px;
+  }
+
+  &__title {
+    font-weight: 400;
+    @include fsl(20px, 140%);
+  }
+
+  &__caption {
+    margin-top: 10px;
+
+    font-style: italic;
+    @include fsl(13px, 140%);
+    color: $color-blue-dark;
+  }
+
+  &__text {
+    margin-top: 20px;
+
+    @include fsl(15px, 140%);
+  }
+}
