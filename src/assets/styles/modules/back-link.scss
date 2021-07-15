@@ -1,0 +1,15 @@
+.back-link {
+  margin-bottom: 30px;
+
+  display: flex;
+  align-items: center;
+
+  transition: $transition;
+
+  &__text {
+    margin-left: 15px;
+
+    text-transform: uppercase;
+    @include fsl(13px, 120%);
+  }
+}
