@@ -1,8 +1,9 @@
 extends ../layouts/master.pug
 
+include ../components/border-link.pug
 include ../components/footer.pug
 
-block cookies
+//- block cookies
 block grid-test
 
 
@@ -80,26 +81,18 @@ block content
               .rail.rail--desctop
               section.specialists-page__specialists
                 ul.nav-list.nav-list--wrap
-                  li.nav-list__item.nav-list__item--active
-                    .nav-list__container(data-count=29)
-                      .nav-list__link
-                        |Все
-                      .nav-list__border
                   li.nav-list__item
-                    .nav-list__container(data-count=5)
-                      .nav-list__link
-                        |Клинические рекомендации
-                      .nav-list__border
+                    +border-link(href='#' active count=29)
+                      |Все
                   li.nav-list__item
-                    .nav-list__container(data-count=5)
-                      .nav-list__link
-                        |Опыт применения
-                      .nav-list__border
+                    +border-link(href='#' count=5)
+                      |Клинические рекомендации
                   li.nav-list__item
-                    .nav-list__container(data-count=29)
-                      .nav-list__link
-                        |Исследования
-                      .nav-list__border
+                    +border-link(href='#' count=5)
+                      |Опыт применения
+                  li.nav-list__item
+                    +border-link(href='#' count=29)
+                      |Исследования
                 ul.cards-grid
                   - for (i = 0; i < 9; i++)
                     li.cards-grid__item
