@@ -219,9 +219,7 @@
     overflow: hidden;
     border-radius: 10px;
   }
-  &__bottom-content {
-    width: calc(#{$col-width-d} * 4);
-  }
+  &__bottom-content {}
   &__bottom-title {
     margin-bottom: 30px;
 
