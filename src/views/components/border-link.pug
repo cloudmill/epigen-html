@@ -1,0 +1,6 @@
+//- example:
+//-   +border-link.my-class(href='#' active count=7)
+//-     |text
+mixin border-link
+  a.border-link(class=attributes.class class=(attributes.active ? 'border-link--active' : undefined) href=attributes.href data-count=(attributes.count ? attributes.count : undefined))
+    block
