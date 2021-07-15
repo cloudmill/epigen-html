@@ -93,6 +93,15 @@ block content
                       .nav-list__link
                         |Исследования
                       .nav-list__border
-
+                ul.cards-grid
+                  - for (i = 0; i < 9; i++)
+                    li.cards-grid__item
+                      a.card(href="#")
+                        .card__container
+                          img.card__img(src="assets/images/card-1.jpg", alt="")
+                          .card__label
+                            |Клинические рекомендации
+                        h3.card__title
+                          |Молочница: все, что нужно знать о заболевании
 
             +footer.page__footer
