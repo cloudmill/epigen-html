@@ -27,5 +27,9 @@
     padding-left: 27px;
 
     @include fsl(13px, 140%);
+
+    &--small {
+      @include fsl(12px);
+    }
   }
 }

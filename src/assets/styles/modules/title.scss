@@ -9,4 +9,16 @@
   @media (max-width: $breakpoint - 1px) {
     @include fsl(25px);
   }
+
+  &--small {
+    text-transform: uppercase;
+    @include fsl(13px, 120%);
+  }
+
+  &--margin-bot {
+
+    &--s {
+      margin: 0 0 20px;
+    }
+  }
 }
