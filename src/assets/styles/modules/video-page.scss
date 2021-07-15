@@ -1,14 +1,5 @@
 .video-page {
-
-  &__video {
-    margin-top: 30px;
-    @media (max-width: $breakpoint - 1px) {
-      margin-top: 0;
-    }
-  }
-  &__video-list {
-
-  }
+  &__video-list {}
   &__video-item {
 
     &:not(:first-child) {
