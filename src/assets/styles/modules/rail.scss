@@ -10,17 +10,23 @@
     border-color: $color-blue;
   }
 
-  &--margin-top--default {
-    margin-top: 30px;
-    @media (max-width: $breakpoint - 1px) {
-      margin-top: 15px;
+  &--margin-top {
+    &--default {
+      margin-top: 30px;
+      @media (max-width: $breakpoint - 1px) {
+        margin-top: 15px;
+      }
+    }
+  }
+  &--margin-bottom {
+    &--default {
+      margin-bottom: 30px;
     }
   }
 
-  &--desctop {
-    display: none;
-    @media (min-width: $breakpoint) {
-      display: block;
+  &--desktop {
+    @media (max-width: $breakpoint - 1px) {
+      display: none;
     }
   }
 }
