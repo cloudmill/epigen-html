@@ -69,11 +69,6 @@ block content
                       .aside__menu-button
                   +nav-page-d
                 .aside__bottom
-                  a.download-link.download-link--margin-bot--default(href="#")
-                    .download-link__icon
-                      +download-svg
-                    .download-link__text
-                      |Скачать статью в PDF
                   +copyright-link(href='#')
                     |Компания «Инвар», 2021
         .row__col.row__col--main
@@ -116,23 +111,30 @@ block content
                 |Генитальный герпес I и II типа
               .rail.rail--desctop
               section.disease-page__section
-
+                .disease-page__section-label
+                  |Возможные симптомы
+                ul.disease-page__list
+                  each item in ['Зуд', 'Жжение', 'Выделения, пузырьки ', 'Пузырьки, язвочки', 'Болезненность, выделения', 'Болезненность при половом контакте', 'Боль внизу живота', 'Боль при мочеиспускании', ]
+                    li.disease-page__list-item
+                      .category-item
+                        |#{item}
                 .disease-page__section-row.margin-top.margin-top--md
                   .disease-page__section-col
-                    .disease-page__section-label.disease-page__section-label--margin-bot--big
+                    .disease-page__section-label
                       |Автор статьи
-                    .disease-page__section-container
-                      .doctor-card.doctor-card--col
-                        .doctor-card__row
-                          .doctor-card__col
-                            .doctor-card__frame.doctor-card__frame--size--default
-                              .doctor-card__portrait
-                          .doctor-card__col
-                            .doctor-card__name
-                              |Бебнева Тамара Николаевна
-                            .doctor-card__pos
-                              |Врач акушер-гинеколог ФГБУ «НМИЦ эндокринологии» Минздрава России, к.м.н, доцент Кафедры акушерства, гинекологии и репродуктивной медицины РУДН
-                    .rail
+                    .disease-page__section-bot
+                      .disease-page__section-container
+                        .doctor-card.doctor-card--col
+                          .doctor-card__row
+                            .doctor-card__col
+                              .doctor-card__frame.doctor-card__frame--size--default
+                                .doctor-card__portrait
+                            .doctor-card__col
+                              .doctor-card__name
+                                |Бебнева Тамара Николаевна
+                              .doctor-card__pos
+                                |Врач акушер-гинеколог ФГБУ «НМИЦ эндокринологии» Минздрава России, к.м.н, доцент Кафедры акушерства, гинекологии и репродуктивной медицины РУДН
+                      .rail
                   .disease-page__section-col.specialists-page__content-container
                     img(src="assets/images/woman.jpg", alt="")
                 .disease-page__content-row.margin-top.disease-page__content
