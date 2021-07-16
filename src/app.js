@@ -215,3 +215,78 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     })
   });
 }
+
+// mdl
+{
+	$(() => {
+		const state = {
+			isActive: checkActive(),
+		}
+
+		if (!state.isActive) {
+			waitOpen()
+		}
+
+		$('.review-card--modal').on('click', event => {
+			event.preventDefault()
+		})
+
+		function checkActive() {
+			return $('.mdl').hasClass('mdl--active')
+		}
+
+		function waitOpen() {
+			$('.review-card--modal').on('click', handleClick)
+
+			function handleClick() {
+				console.log('open click');
+
+				$('.review-card--modal').off('click', handleClick)
+
+				open()
+			}
+		}
+
+		function open() {
+			state.isActive = true;
+
+			$('.mdl').addClass('mdl--active')
+
+			setTimeout(() => {
+				waitClose()
+			}, 0)
+		}
+
+		function waitClose() {
+			$(window).on('click', handleClick)
+
+			function handleClick(event) {
+				console.log('click close');
+
+				const clickTarget = event.target
+
+				const mdlClose = $('.mdl__close')[0]
+				const mdlContent = $('.mdl__content')[0]
+
+				if (
+					clickTarget === mdlClose
+					|| clickTarget !== mdlContent
+				) {
+					$(window).off('click', handleClick)
+
+					close()
+				}
+			}
+		}
+
+		function close() {
+			state.isActive = false
+
+			$('.mdl').removeClass('mdl--active')
+
+			setTimeout(() => {
+				waitOpen()
+			}, 0)
+		}
+	})
+}
