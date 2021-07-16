@@ -1,0 +1,295 @@
+extends ../layouts/master.pug
+
+include ../components/footer.pug
+
+block cookies
+block grid-test
+
+mixin nav-page-d
+  nav.nav-page-d
+    ul.nav-page-d__list
+      -
+        var items = [
+          {
+            href: '#',
+            title: 'Виды генитального герпеса',
+          },
+          {
+            href: '#',
+            title: 'Причины возникновения',
+          },
+          {
+            href: '#',
+            title: 'Симптомы',
+          },
+          {
+            href: '#',
+            title: 'Генитальный герпес во время беременности',
+          },
+          {
+            href: '#',
+            title: 'Диагностика',
+          },
+          {
+            href: '#',
+            title: 'Лечение генитального герпеса',
+          },
+          {
+            href: '#',
+            title: 'Последствия',
+          },
+        ]
+      each item, index in items
+        li.nav-page-d__item(class = ((index === 0) ? 'nav-page-d__item--active' : ''))
+          a.nav-page-d__link(href=item.href)
+            |!{item.title}
+
+mixin copyright-link
+  a.copyright-link(href=attributes.href)
+    .copyright-link__mark
+      +copyright-svg.copyright-link__mark-svg
+    .copyright-link__text
+      block
+
+block content
+  .specialists-page.disease-page
+    .container
+      .row
+        .row__col.row__col--aside.row__col--rail
+          .aside
+            .aside__inner
+              .aside__container
+                .aside__top
+                  header.aside__header.aside__header--margin-bottom--large
+                    a.aside__logo(href='#')
+                      +logo-svg.aside__logo-svg
+                    .aside__menu
+                      .aside__menu-text
+                        |Меню
+                      .aside__menu-button
+                  +nav-page-d
+                .aside__bottom
+                  a.download-link.download-link--margin-bot--default(href="#")
+                    .download-link__icon
+                      +download-svg
+                    .download-link__text
+                      |Скачать статью в PDF
+                  +copyright-link(href='#')
+                    |Компания «Инвар», 2021
+        .row__col.row__col--main
+          .page
+            header.page__header
+              .panel
+                .panel__panel
+                  .panel__row
+                    .panel__col
+                      .panel__inner
+                        .panel__product
+                          //- .panel__product-item--active
+                          a.panel__product-item(href='#')
+                            .panel__product-mark
+                            .panel__product-text
+                              |Спрей
+                          a.panel__product-item.panel__product-item--purple(href='#')
+                            .panel__product-mark
+                            .panel__product-text
+                              |Гель
+                    .panel__col
+                      .panel__inner
+                        a.panel__where-buy(href='#')
+                          |Где купить
+                    .panel__col
+                      .panel__inner
+                        .panel__choice
+                          .panel__choice-item(data-count=8)
+                            |Симптомы
+                          .panel__choice-item(data-count=12)
+                            |Заболевания
+                    .panel__col
+                      .panel__inner
+                        .panel__consultation
+                          +consultation-svg.panel__consultation-svg
+                          .panel__consultation-text
+                            |Консультация эксперта
+            main.page__main
+              h1.title.title--md.title--margin-bot--default
+                |Генитальный герпес I и II типа
+              .rail.rail--desctop
+              section.disease-page__section
+
+                .disease-page__section-row.margin-top.margin-top--md
+                  .disease-page__section-col
+                    .disease-page__section-label.disease-page__section-label--margin-bot--big
+                      |Автор статьи
+                    .disease-page__section-container
+                      .doctor-card.doctor-card--col
+                        .doctor-card__row
+                          .doctor-card__col
+                            .doctor-card__frame.doctor-card__frame--size--default
+                              .doctor-card__portrait
+                          .doctor-card__col
+                            .doctor-card__name
+                              |Бебнева Тамара Николаевна
+                            .doctor-card__pos
+                              |Врач акушер-гинеколог ФГБУ «НМИЦ эндокринологии» Минздрава России, к.м.н, доцент Кафедры акушерства, гинекологии и репродуктивной медицины РУДН
+                    .rail
+                  .disease-page__section-col.specialists-page__content-container
+                    img(src="assets/images/woman.jpg", alt="")
+                .disease-page__content-row.margin-top.disease-page__content
+                  .disease-page__content-col
+                  .disease-page__content-col
+                      p.max-width
+                        |Генитальный герпес — это вирусная инфекция, которая передается половым путем. Считается, что примерно каждый десятый житель России заражен или был заражен ею. Чаще всего заболевание диагностируется у женщин: вирус передается более эффективно от мужчины к женщине, чем от женщины к мужчине.
+                .disease-page__content-row.margin-top
+                  .disease-page__content-col.disease-page__content
+                    h3
+                      |Виды генитального герпеса
+                  .disease-page__content-col.specialists-page__content
+                    .max-width
+                      p
+                        |Обычно врачи выделяют первичный и рецидивирующий герпес. В первом случае симптомы герпеса проявляются впервые. Во втором — заболевание повторяется периодически.
+                      p
+                        |От количества рецидивов зависит тяжесть болезни: при легкой обострения проявляются до четырех раз в год, средней — до шести, а при тяжелой еще чаще. Обострения герпеса могут возникать каждый месяц, в том числе вследствие естественного снижения иммунитета во вторую фазу менструального цикла.
+                .disease-page__content-row.margin-top.margin-top--big
+                  .disease-page__content-col.disease-page__content
+                    h3
+                      |Причины генитального герпеса
+                  .disease-page__content-col
+                    .max-width.specialists-page__content
+                      p
+                        |Возбудители болезни — представители семейства герпесвирусов: ВПГ-1 или ВПГ-2.
+                      p
+                        |Обычно второй. Заразиться им можно во время полового контакта: вагинального, анального или орального. При этом у сексуального партнера может и не быть видимых проявлений, он даже может не знать, что инфицирован.
+                    .disease-page__content
+                      ul
+                        li
+                          |Появлению заболевания способствует беспорядочная половая жизнь, отказ от презервативов, использование маточных спиралей, сниженный иммунитет и наличие сопутствующих генитальных инфекций.
+                        li
+                          |Если у партнера есть на лице герпес (ВПГ-1), при занятиях оральным сексом он может передаться и на ваши половые органы. Заразить проще всего во время обострения, но даже если высыпаний нет, риск передачи герпеса остается.
+                        li
+                          |Инфицироваться можно при поцелуях, используя одни предметы гигиены и даже воздушно-капельным путем.
+                .disease-page__content-row.margin-top
+                  .disease-page__content-col
+                  .disease-page__content-col.disease-page__content-type
+                    h4
+                      |Вопреки распространенному заблуждению, заразиться через сидение унитаза нельзя: вирус быстро погибает вне тела человека.
+                .disease-page__content-row.margin-top
+                  .disease-page__content-col.disease-page__content
+                    h3
+                      |Симптомы генитального герпеса
+                  .disease-page__content-col.specialists-page__content
+                    p.max-width
+                      |Большинство людей, инфицированных генитальным герпесом (около 80%), не имеют никаких признаков болезни вообще. Либо симптомы выражены настолько слабо, что их можно принять за воспаления кожи, прыщи или вросшие волосы. Можно вообще не знать о болезни много лет, являясь при этом источником инфекции.
+                .disease-page__content-row.margin-top.margin-top--md
+                  .disease-page__content-col
+                  .disease-page__content-col.specialists-page__content-container
+                    img(src="assets/images/symptom.jpg", alt="")
+                .disease-page__content-row.margin-top.margin-top--md
+                  .disease-page__content-col
+                  .disease-page__content-col
+                    .max-width.specialists-page__content
+                      p
+                        |Обычно генитальный герпес проявляется так: в области половых органов появляются пузырьки, затем они начинают объединяться друг с другом, образуя участки величиной до двух-двух с половиной сантиметров. Через несколько дней пузырьки лопаются, и на их месте появляются болезненные язвочки. Заживают они довольно долго: на протяжении месяца. Но рубцы на коже не остаются. При первом проявлении герпеса часто появляются симптомы интоксикации: повышается температура, появляется слабость и боль в теле. Могут появиться боль в малом тазу и пояснице.
+                      p
+                        |Но в последнее время все чаще герпес протекает атипично: возникает небольшая отечность, зудящие пятна, обильные бели или на слизистых половых органов появляются трещины.
+                .disease-page__content-row.margin-top
+                  .disease-page__content-col.disease-page__content
+                    h3
+                      |Генитальный герпес во время беременности
+                  .disease-page__content-col.disease-page__disease
+                    .disease-page__disease-row
+                      .disease-page__disease-col
+                        img(src="assets/images/pregnant.jpg", alt="")
+                      .disease-page__disease-col.specialists-page__content
+                        p
+                          |Если заражение происходит впервые во время беременности, то может пострадать плод: в крови у матери еще отсутствуют антитела к вирусу простого герпеса — иммуноглобулины G и M. Особенно опасно, если вы заразились им в первом или последнем триместре. Ряд исследований доказывает, что инфекция может спровоцировать преждевременные роды, выкидыш и замершую беременность. Возрастает риск рождения ребенка с аномалиями развития.
+                        p
+                          |Рецидив генитального герпеса не столь опасен: в этом случае в крови беременной уже есть антитела к вирусу, которые ограничивают инфекцию. Но при обострении герпеса новорожденный может заразиться во время родов, проходя через родовые пути.
+                .disease-page__content-row.margin-top
+                  .disease-page__content-col
+                  .disease-page__content-col.disease-page__content-type
+                    h4
+                      |Поэтому, если вы беременны или планируете беременность, важно сдать анализ на наличие антител к вирусу простого герпеса.
+                    p.max-width
+                      |Он покажет были ли вы инфицированы им ранее. Также необходимо регулярно проводить обследования, проходить пренатальный скрининг. Не стесняйтесь врача: обязательно расскажите ему, если у вас были симптомы генитального герпеса или если диагноз уже подтверждали ранее.
+                .disease-page__content-row.margin-top
+                  .disease-page__content-col.disease-page__content
+                    h3
+                      |Диагностика генитального герпеса
+                  .disease-page__content-col.disease-page__content
+                    p.max-width
+                      |Симптомы генитального герпеса легко спутать с другими болезнями: сифилисом, пузырчаткой, красным плоским лишаем. Поэтому на этапе диагностики главная задача врача — определить, с какой именно болезнью он имеет дело. Для этого проводится врачебный осмотр и лабораторные исследования.
+                    .disease-page__diagnostics
+                      p
+                        |Сначала доктор осмотрит высыпания и соберет анамнез — расспросит о том, какие у вас жалобы, как вы ведете половую жизнь, имели ли вы контакты с больными герпесом и предохраняетесь ли вы во время секса.
+                      p
+                        |Затем нужно сдать ПЦР-анализ. Дополнительно может потребоваться исследование крови методом ИФА для определения специфических антител к герпесвирусной инфекции.
+                .disease-page__content-row.margin-top
+                  .disease-page__content-col.disease-page__content
+                    h3
+                      |Лечение генитального герпеса
+                  .disease-page__content-col.specialists-page__content
+                    .max-width
+                      p
+                        |Полностью вылечиться от болезни нельзя: вирус простого герпеса сохраняется в организме на протяжении всей жизни. Он живет в нервных ганглиях и проявляет себя только в случае неблагоприятного состояния иммунной системы. Лекарственные препараты могут только сократить сроки болезни или убрать симптомы, но не избавить от генитального герпеса навсегда.
+                      p
+                        |Обычно для лечения герпеса применяются противовирусные препараты — ациклические нуклеозиды: ацикловир, валацикловир, фамцикловир. Но сейчас все чаще появляются вирусы, устойчивые к этим активным веществам. Поэтому врач может назначить комплексную терапию: дополнить лечение интерфероном или его аналогами, а также другими средствами, например, Спреем Эпиген Интим.
+                .disease-page__spray.margin-top
+                  .disease-page__spray-container
+                    .disease-page__spray-row
+                      .disease-page__spray-col
+                        .disease-page__spray-image
+                          img(src="assets/images/epigen-spray.jpg", alt="")
+                        .disease-page__spray-buttons
+                          .disease-page__spray-item
+                            a.button.button--wide(href="#")
+                              |Подробнее
+                          .disease-page__spray-item
+                            a.button.button--wide.button--purple(href="#")
+                              |Купить
+
+                      .disease-page__spray-col.specialists-page__content
+                        h3
+                          |Спрей Эпиген Интим
+                        .disease-page__spray-column.disease-page__content
+                          p
+                            |Терапия противогрибковыми препаратами может не оказать нужного эффекта, если кандидоз протекает в сочетании с вирусной инфекцией: вирусом папилломы человека, вирусом простого герпеса или цитомегаловирусом. При этом диагностируют их редко: расширенное ПЦР-исследование, которое позволяет их выявить, не входит в ОМС. В результате после лечения противогрибковыми препаратами вирус сохраняется и способствует поддержанию воспаления в области влагалища и шейки матки. Это может спровоцировать постоянные рецидивы кандидоза.
+                          p
+                            |Поэтому в случае частых рецидивов молочницы лечение противогрибковыми препаратами целесообразно дополнить спреем Эпиген Интим — противовирусным иммуностимулирующим препаратом. Он содержит активированную глицирризиновую кислоту, которую получают из экстракта корня солодки. Она обладает быстро устраняет зуд, уменьшает воспаление и повышает местный иммунитет — то, что нужно при лечении молочницы.
+                          p
+                            |Удобная конструкция насадки позволяет глубоко вводить препарат и равномерно орошать стенки влагалища, а распылитель четко дозирует средство. В отличие от многих свечей, Спрей Эпиген Интим не нужно хранить в холодильнике. Его можно брать с собой повсюду: на работу, в командировки или отпуск.
+                          p
+                            |Поскольку Спрей Эпиген Интим оказывает только местное воздействие, его можно использовать беременным и кормящим женщинам. Спрей совместим с другими лекарственными препаратами, поэтому его используют в составе комплексной терапии. При таком комплексном подходе противогрибковый препарат подавляет активный рост грибков, а спрей Эпиген Интим помогает скорее справиться с зудом, воспалением и жжением, а также повышает местный иммунитет. А в случае сопутствующего вирусоносительства снижает активность вирусов, предотвращая рецидивы.
+                .disease-page__content-row.margin-top
+                  .disease-page__content-col.disease-page__content
+                    h3
+                      |Последствия генитального герпеса
+                  .disease-page__content-col.specialists-page__content
+                    .max-width
+                      p
+                        |Постоянные рецидивы генитального герпеса оказывают негативное воздействие на иммунную систему человека, что может приводить к вторичному иммунодефициту. Заражение вирусом во время беременности может стать причиной прерывания беременности или преждевременных родов.
+                    .margin-top.rail.rail--reverse
+                    .specialists-page__wish-container
+                      p.specialists-page__wish-text
+                        |Во время обострения герпеса на слизистых — во рту, влагалище или прямой кишке — появляются язвы. Это повышает риск проникновения ВИЧ в организм. Если вы уже инфицированы генитальным герпесом, даже в случае отсутствия видимых проявлений время полового акта стоит использовать презервативы. В идеале со смазкой: так они реже рвутся и соскальзывают.
+                    .rail.rail--blue
+                .disease-page__content-row.margin-top
+                  .disease-page__content-col
+                  .disease-page__content-col
+                    p.link-text.link-text--small
+                      |Если у вас остались вопросы, вы можете задать их на странице #[a.link-text__link(href="#") консультация эксперта]
+                .specialists-page__bottom.margin-top
+                  .specialists-page__bottom-row
+                    .specialists-page__bottom-col
+                      .specialists-page__bottom-container
+                        img.specialists-page__bottom-img(src="assets/images/epigen-spray.jpg", alt="")
+                    .specialists-page__bottom-col
+                      .specialists-page__bottom-content
+                        h3.specialists-page__bottom-title
+                          |Спрей#[br]Эпиген Интим
+                        .specialists-page__bottom-btn
+                          a.button(href="#")
+                            |Подробнее
+                  .specialists-page__bottom-column
+
+            +footer.page__footer

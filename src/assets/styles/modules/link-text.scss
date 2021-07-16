@@ -7,6 +7,10 @@
     @include fsl(40px);
   }
 
+  &--small {
+    @include fsl(25px, 140%);
+  }
+
   &__link {
     margin: 0 -4px;
     padding: 4px 5px;

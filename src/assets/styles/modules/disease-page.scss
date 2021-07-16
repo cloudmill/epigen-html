@@ -1,0 +1,250 @@
+.disease-page {
+
+  &__section {}
+  &__section-row {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__section-col {
+    flex-shrink: 0;
+    &:nth-child(1) {
+      width: calc(#{$col-width-d} * 5);
+    }
+    &:nth-child(2) {
+      width: calc(#{$col-width-d} * 12);
+    }
+  }
+  &__section-label {
+    text-transform: uppercase;
+    color: $color-blue;
+    @include fsl(13px, 120%);
+
+    &--margin-bot {
+
+      &--default {
+        margin-bottom: 15px;
+      }
+
+      &--big {
+        margin-bottom: 25px;
+      }
+    }
+  }
+  &__section-container {
+    padding: 0 calc(#{$col-width-d});
+  }
+
+  &__content {
+    h3 {
+      color: $color-blue;
+      font-weight: 400;
+      @include fsl(35px, 130%);
+    }
+
+    p {
+      @include fsl(18px, 140%);
+    }
+
+    ul {
+      margin-top: 20px;
+
+      counter-reset: index;
+    }
+
+    li {
+      padding-bottom: 50px;
+      padding-left: calc(#{$col-width-d} * 2);
+      padding-right: calc(#{$col-width-d});
+
+      position: relative;
+      counter-increment: index;
+      min-height: 117px;
+
+      @include fsl(16px, 140%);
+      font-style: italic;
+
+      &:not(:first-child) {
+        margin-top: 40px;
+      }
+
+      &::before {
+        $size-d: calc(#{$col-width-d});
+
+        content: counter(index);
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: $size-d;
+        height: $size-d;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 50%;
+        border: 1px solid $color-blue;
+        background-color: $color-white;
+        @include fsl(18px, 140%);
+        font-style: normal;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        height: 30px;
+
+        border: 1px solid $color-blue;
+        border-top: none;
+        border-radius: 0 0 10px 10px;
+      }
+    }
+  }
+  &__content-type {
+    padding-bottom: 30px;
+
+    border-bottom: 1px solid $color-blue;
+
+    h4 {
+      font-weight: 400;
+      @include fsl(25px, 120%);
+    }
+
+    p {
+      margin-top: 15px;
+
+      @include fsl(15px, 140%);
+      font-style: italic;
+    }
+  }
+  &__content-row {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__content-col {
+    flex-shrink: 0;
+    &:nth-child(1) {
+      width: calc((#{$col-width-d} * 5) + 5px);
+    }
+
+    &:nth-child(2) {
+      width: calc(#{$col-width-d} * 12);
+    }
+  }
+
+  &__disease {
+    img {
+      $size-d: calc(#{$col-width-d} * 3);
+
+      flex-shrink: 0;
+      width: $size-d;
+      height: $size-d;
+
+      border-radius: 10px;
+    }
+  }
+  &__disease-row {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__disease-col {
+    flex-shrink: 0;
+
+    &:nth-child(1) {
+      width: calc(#{$col-width-d} * 3);
+    }
+    &:nth-child(2) {
+      width: calc(#{$col-width-d} * 8);
+    }
+  }
+
+  &__diagnostics {
+    margin-top: 40px;
+
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      padding: 50px 30px;
+
+      position: relative;
+      width: calc((#{$col-width-d} * 12) / 2 - 10px);
+      flex-shrink: 0;
+
+      @include fsl(15px, 140%);
+      font-style: italic;
+
+      &::after,
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+
+        height: 30px;
+      }
+
+      &::before {
+        top: 0;
+
+        border: 1px solid $color-blue-light;
+        border-bottom: none;
+        border-radius: 10px 10px 0 0;
+      }
+
+      &::after {
+        bottom: 0;
+
+        border: 1px solid $color-blue;
+        border-top: none;
+        border-radius: 0 0 10px 10px;
+      }
+    }
+  }
+
+  &__spray {
+    padding: 0 calc(#{$col-width-d});
+
+    background-color:#E0F3FD;
+    border-radius: 10px;
+  }
+  &__spray-container {
+    padding: 68px 0;
+  }
+  &__spray-row {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__spray-col {
+    flex-shrink: 0;
+
+    &:nth-child(1) {
+      width: calc(#{$col-width-d} * 6);
+    }
+    &:nth-child(2) {
+      width: calc(#{$col-width-d} * 9);
+    }
+  }
+  &__spray-image {
+    display: flex;
+    align-items: center;
+
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  &__spray-buttons {
+    margin-top: 15px;
+  }
+  &__spray-item {
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
+  }
+  &__spray-column {
+    padding-left: calc(#{$col-width-d});
+  }
+}
