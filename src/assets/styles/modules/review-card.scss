@@ -1,43 +1,54 @@
 .review-card {
-  $gap: 30px;
+  $comp: &;
 
   height: 100%;
-  display: block;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
 
   background-color: $color-white;
   border: 1px solid $color-blue-light;
   border-radius: 20px;
   border-bottom-right-radius: 0;
+  cursor: pointer;
   transition: $transition;
   
   &:hover {
     border-color: $color-blue;
+
+    #{$comp}__btn {
+      border-color: $color-blue;
+    }
   }
 
   &__top {
-    padding: $gap $gap 0 $gap;
-  }
-  &__bottom {
-    margin-top: $gap;
+    padding: 30px;
+    padding-bottom: 0;
   }
 
-  &__row {
+  &__top-row {
     display: flex;
   }
-  &__row-col {
-    &:not(:first-child) {
-      margin-left: $gap;
-    }
-
+  &__top-col {
     &--flex-shrink {
       &--0 {
         flex-shrink: 0;
+      }
+    }
+
+    &--margin-right {
+      &--default {
+        margin-right: 30px;
       }
     }
   }
 
   &__img {
     max-width: 105px;
+    display: block;
+
     border-radius: 10px;
   }
 
@@ -45,7 +56,6 @@
     font-weight: 400;
     @include fsl(20px, 140%);
   }
-
   &__caption {
     margin-top: 10px;
 
@@ -53,10 +63,74 @@
     @include fsl(13px, 140%);
     color: $color-blue-dark;
   }
-
   &__text {
     margin-top: 20px;
 
     @include fsl(15px, 140%);
+  }
+
+  &__bottom {
+    margin-top: 30px;
+    padding: 0 15px 0 30px;
+  }
+
+  &__bottom-row {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  &__bottom-col {
+    &--width {
+      &--100p {
+        width: 100%;
+      }
+    }
+
+    &--margin-right {
+      &--default {
+        margin-right: 70px;
+      }
+    }
+  }
+  &__bottom-inner {
+    &--source {
+      padding-bottom: 10px;
+    }
+
+    &--btn {
+      padding-bottom: 15px;
+    }
+  }
+
+  &__source {
+    padding-top: 11px;
+
+    border-top: 1px solid $color-blue-light;
+    @include fsl(13px, 140%);
+    color: $color-blue-dark;
+  }
+
+  &__btn {
+    $size: 40px;
+
+    width: $size;
+    height: $size;
+    min-width: $size;
+    min-height: $size;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: $transition;
+  }
+
+  &__svg {
+    &--tilt {
+      transform: rotate(-45deg);
+    }
   }
 }

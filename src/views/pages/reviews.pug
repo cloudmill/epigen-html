@@ -2,26 +2,11 @@ extends ../layouts/master.pug
 
 include ../components/border-link.pug
 include ../components/copyright-link.pug
+include ../components/review-card.pug
 include ../components/footer.pug
 
 //- block cookies
 block grid-test
-
-mixin review-card
-  a.review-card(href='#')
-    .review-card__top
-      .review-card__row
-        if (attributes.image)
-          .review-card__row-col.review-card__row-col--flex-shrink--0
-            img.review-card__img(src=`assets/images/review-${attributes.image}.jpeg`)
-        .review-card__row-col
-          h3.review-card__title
-            |Nadine Zakharova
-          p.review-card__caption
-            |Врач акушер - гинеколог, врач УЗИ.
-          p.review-card__text
-            |Купила я данное средство, прочитав изначально множество положительных отзывов на различных сайтах. Почему мой выбор пал на него? Несколько лет я пыталась найти своё средство для интимной гигиены, так как везде писали, что нельзя использовать обычный гель для душа или мыло...
-    .review-card__bottom
 
 block content
   .page-reviews
@@ -104,21 +89,21 @@ block content
                       |Гель
               ul.page-reviews__list
                 li.page-reviews__list-item
-                  +review-card
+                  +review-card(source='irecommend.ru')
                 li.page-reviews__list-item
-                  +review-card(image=1)
+                  +review-card(image=2 caption='Врач акушер - гинеколог, врач УЗИ.' plus=true)
                 li.page-reviews__list-item
-                  +review-card(image=2)
+                  +review-card(image=1 caption='Врач акушер-гинеколог, гинеколог-эндокринолог, врач высшей категории, заместитель главного врача по медицинской части..' plus=true)
                 li.page-reviews__list-item
-                  +review-card
+                  +review-card(source='wildberries.ru')
                 li.page-reviews__list-item
-                  +review-card(image=3)
+                  +review-card(image=3 caption='Врач акушер-гинеколог, гинеколог-эндокринолог, лучший врач корпорации' plus=true)
                 li.page-reviews__list-item
-                  +review-card(image=2)
+                  +review-card(image=2 caption='Врач акушер - гинеколог, врач УЗИ.' plus=true)
                 li.page-reviews__list-item
-                  +review-card
+                  +review-card(source='irecommend.ru')
                 li.page-reviews__list-item
-                  +review-card(image=2)
+                  +review-card(image=4 caption='Акушер гинеколог, стаж 40 лет.' plus=true)
               .button-show-wrapper
                 .button-show
                   .button-show__icon
