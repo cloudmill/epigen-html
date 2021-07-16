@@ -17,4 +17,10 @@
     text-transform: uppercase;
     @include fsl(13px, 120%);
   }
+
+  &__svg {
+    &--swap {
+      transform: rotate(180deg);
+    }
+  }
 }
