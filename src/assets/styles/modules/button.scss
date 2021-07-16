@@ -5,4 +5,9 @@
   border-radius: 40px;
   @include fsl(15px, 140%);
   transition: $transition;
+  cursor: pointer;
+
+  &--small {
+    padding: 19px 45px;
+  }
 }

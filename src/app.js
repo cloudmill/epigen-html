@@ -202,3 +202,38 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     })
   });
 }
+
+// alert specialists page
+{
+  const DELAY = 1000
+
+  $(() => {
+    const alert = $('.alert');
+
+    if (alert.length !== 0) {
+      let isActive = false
+
+      const btn = alert.find('.button-close')
+
+      setTimeout(() => {
+				alert.addClass('alert--active');
+
+				alert.on('transitionend', event => {
+					if (event.target === alert[0]) {
+						if (isActive) {
+							alert.addClass('alert--disabled')
+						} else {
+							isActive = true
+						}
+					}
+				})
+
+				btn.on('click', () => {
+					if (isActive) {
+						alert.removeClass('alert--active')
+					}
+				})
+      }, DELAY)
+    }
+  });
+}
