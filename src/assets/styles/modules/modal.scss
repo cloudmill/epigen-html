@@ -1,20 +1,8 @@
 .modal {
   $comp: &;
 
-  &--active {
-    #{$comp}__wrapper {
-      visibility: visible;
-      opacity: 1;
-    }
-
-    #{$comp}-video {
-      opacity: 1;
-      pointer-events: auto;
-      // transition: $transition; // ?
-    }
-  }
-
-  &__wrapper {
+  &::before {
+    content: "";
     position: fixed;
     top: 0;
     bottom: 0;
@@ -23,15 +11,27 @@
     z-index: 2;
 
     visibility: hidden;
-    opacity: 0;
     transition: $transition;
-    background-color: rgba($color-black, 0.2);
+    background-color: transparent;
+  }
+
+  &--active {
+    &::before {
+      background-color: rgba($color-black, 0.2);
+      visibility: visible;
+    }
+
+    #{$comp}-video {
+      opacity: 1;
+      pointer-events: auto;
+      // transition: $transition; // ?
+    }
   }
 }
 
 .modal-video {
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
