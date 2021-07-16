@@ -1,22 +1,25 @@
 .doctor-card {
+  $comp: &;
+
+  &--col {
+    #{$comp}__row {
+      display: block;
+    }
+    #{$comp}__col {
+      &:nth-child(2) {
+        margin-top: 15px;
+        margin-left: 0;
+      }
+    }
+  }
 
   &__row {
     display: flex;
   }
 
   &__col {
-    $size-d: calc(#{$col-width-d} * 2);
-    $size-m: 90px;
-
     &:nth-child(1) {
-      flex-shrink: 0;
 
-      @media (min-width: $breakpoint) {
-        width: $size-d;
-        height: $size-d;
-      }
-      width: $size-m;
-      height: $size-m;
     }
     &:nth-child(2) {
       margin-left: 30px;
@@ -27,7 +30,27 @@
   }
 
   &__frame {
+    $size-d: calc(#{$col-width-d} * 2);
+    $size-m: 90px;
 
+    flex-shrink: 0;
+
+    @media (max-width: $breakpoint - 1px) {
+      width: $size-m;
+      height: $size-m;
+    }
+    width: $size-d;
+    height: $size-d;
+
+    &--size {
+
+      &--default {
+        $size-d: 179px;
+
+        width: $size-d;
+        height: $size-d;
+      }
+    }
   }
 
   &__portrait {

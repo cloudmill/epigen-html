@@ -1,0 +1,9 @@
+.category-item {
+  padding: 5px 10px;
+
+  border: 1px solid $color-blue;
+  border-radius: 40px;
+  @include fsl(15px, 140%);
+  background-color: $color-white;
+  cursor: pointer;
+}

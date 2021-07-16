@@ -1,8 +1,27 @@
 .button {
   padding: 19px 61px;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   border: 1px solid $color-blue;
   border-radius: 40px;
   @include fsl(15px, 140%);
   transition: $transition;
+  cursor: pointer;
+
+  &--small {
+    padding: 19px 45px;
+  }
+
+  &--wide {
+    padding: 19px 0;
+
+    width: 100%;
+  }
+
+  &--purple {
+    border-color: $color-purple;
+  }
 }

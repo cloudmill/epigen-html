@@ -123,34 +123,21 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     const modal = $('[data-modal]');
 
     if (modal.length !== 0) {
-      // open
-      const buttonOpenModal = $('[data-button-open]');
+      const buttonModal = $('[data-button]');
 
-      buttonOpenModal.each(function () {
+      buttonModal.each(function () {
         const button = $(this);
-        const buttonId = button.data('button-open');
+        const buttonId = button.data('button');
 
         button.on('click', function() {
-          $(`[data-modal='${buttonId}']`).addClass('modal--active');
-        });
-      });
-
-      // close
-      const buttonCloseModal = $('[data-button-close]');
-
-      buttonCloseModal.each(function() {
-        const button = $(this);
-        const buttonId = button.data('button-close');
-
-        button.on('click', function() {
-          $(`[data-modal='${buttonId}']`).removeClass('modal--active');
+          $(`[data-modal='${buttonId}']`).toggleClass('modal--active');
         });
       });
 
       $(window).on('click', function(event) {
         const target = event.target;
 
-        if (target == $('.modal__wrapper')[0]) {
+        if (target == $('.modal--active')[0]) {
           modal.removeClass('modal--active');
         }
       });
@@ -289,4 +276,39 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 			}, 0)
 		}
 	})
+}
+
+// alert specialists page
+{
+  const DELAY = 1000
+
+  $(() => {
+    const alert = $('.alert');
+
+    if (alert.length !== 0) {
+      let isActive = false
+
+      const btn = alert.find('.button-close')
+
+      setTimeout(() => {
+				alert.addClass('alert--active');
+
+				alert.on('transitionend', event => {
+					if (event.target === alert[0]) {
+						if (isActive) {
+							alert.addClass('alert--disabled')
+						} else {
+							isActive = true
+						}
+					}
+				})
+
+				btn.on('click', () => {
+					if (isActive) {
+						alert.removeClass('alert--active')
+					}
+				})
+      }, DELAY)
+    }
+  });
 }

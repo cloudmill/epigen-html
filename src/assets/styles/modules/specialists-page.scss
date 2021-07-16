@@ -101,11 +101,12 @@
     padding-left: calc(#{$col-width-d} * 3);
   }
   &__content-container {
-    display: flex;
-    align-items: center;
+    img {
+      display: block;
 
-    overflow: hidden;
-    border-radius: 10px;
+      border-radius: 10px;
+    }
+
   }
   &__content-label {
     margin-top: 15px;
