@@ -16,10 +16,8 @@
   }
 
   &__icon {
-    $size: 19px;
-
-    width: $size;
-    height: $size;
+    display: flex;
+    align-items: center;
   }
 
   &__text {

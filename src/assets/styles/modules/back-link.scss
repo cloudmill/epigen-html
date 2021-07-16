@@ -6,6 +6,11 @@
 
   transition: $transition;
 
+  &__icon {
+    display: flex;
+    align-items: center;
+  }
+
   &__text {
     margin-left: 15px;
 
