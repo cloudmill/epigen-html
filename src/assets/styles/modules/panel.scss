@@ -112,7 +112,7 @@
     white-space: nowrap;
     cursor: pointer;
     transition: $transition;
-    
+
     &::before {
       position: absolute;
       bottom: calc(100% - 3px);
@@ -187,12 +187,12 @@
       &#{$comp}-item--active {
         #{$comp}-mark {
           background-color: $color-purple;
-  
+
           &::before {
             opacity: 0;
           }
         }
-  
+
         #{$comp}-text {
           color: $color-purple;
         }
@@ -235,5 +235,17 @@
     $fs: 20px;
     @include fsl($fs, $fs);
     transition: $transition;
+  }
+
+  &__list {
+    transform: translateY(10px);
+    // transition: $transition;
+    opacity: 0;
+    pointer-events: none;
+
+    &--scroll {
+      opacity: 1;
+      pointer-events: auto;
+    }
   }
 }

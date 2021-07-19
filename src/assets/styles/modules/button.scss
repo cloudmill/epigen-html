@@ -15,6 +15,12 @@
     padding: 19px 45px;
   }
 
+  &--m {
+    padding: 11px 27px;
+
+    @include fsl(13px, 140%);
+  }
+
   &--wide {
     padding: 19px 0;
 

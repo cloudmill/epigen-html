@@ -1,0 +1,45 @@
+mixin accordion
+  .accordion
+    .accordion__head
+      .accordion__head-row
+        .accordion__head-col
+          h3.accordion__head-title
+            |Что такое активированная глицирризиновая кислота, содержащаяся в Спрее Эпиген Интим?
+        .accordion__head-col
+          .category-item.category-item--light-blue
+            |Состав
+          .accordion__head-button
+            +plus-svg.accordion__head-icon
+    .accordion__body
+      .accordion__body-container
+        .accordion__body-row
+          .accordion__body-col
+            p.accordion__body-text
+              |Спрей Эпиген Интим применятся для профилактики рецидивов (повторного возникновения) различных генитальных вирусных инфекций (например, генитального герпеса, ВПЧ), профилактики состояний, сопровождающихся снижением местного иммунитета (например, молочницы, бактериального вагиноза). Возможно, Вы перенесли одно из указанных состояний, либо специалист принял решение о необходимости назначения Спрея Эпиген Интим на основании результатов исследований и анализов.
+          .accordion__body-col
+            .accordion__spray
+              .accordion__spray-row
+                .accordion__spray-col
+                  img.accordion__spray-img(src="assets/images/epigen-spray.jpg", alt="")
+                .accordion__spray-col
+                  .accordion__spray-content
+                    h3.accordion__spray-title
+                      |Спрей#[br]Эпиген Интим
+                    .accordion__spray-link
+                      a.button.button--m(href="#")
+                        |Подробнее
+      .accordion__links
+        .accordion__links-container
+          .accordion__links-label
+            |Статьи на эту тему
+          ul.accordion__links-list
+            - for (i = 0; i < 3; i++)
+              li.accordion__links-item
+                a.accordion__link(href="#")
+                  .accordion__link-row
+                    .accordion__link-col
+                      .accordion__link-text
+                        |Спрей Эпиген Интим помогает не только при заболевнии
+                    .accordion__link-col
+                      .accordion__link-button
+                        +arrow-svg.accordion__link-icon
