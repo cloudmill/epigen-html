@@ -1,0 +1,28 @@
+.faq-page {
+
+  &__item {
+    &:not(:first-child) {
+      margin-top: 15px;
+    }
+  }
+
+  &__form {}
+  &__form-row {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__form-col {
+    flex-shrink: 0;
+
+    &:nth-child(1) {
+      width: calc(#{$col-width-d} * 7);
+    }
+    &:nth-child(2) {
+      width: calc(#{$col-width-d} * 9);
+    }
+  }
+  &__form-title {
+    font-weight: 400;
+    @include fsl(35px, 130%);
+  }
+}
