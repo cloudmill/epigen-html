@@ -93,6 +93,10 @@ mixin arrow-svg
     path(d='M9.67102 0.671886L15.721 6.69589L9.67102 12.7209' stroke='#31AFF2' stroke-linecap='round' stroke-linejoin='round')
 
 mixin plus-svg
-  svg(xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewbox='0 0 20 20' fill='none')
+  svg(class=attributes.class xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewbox='0 0 20 20' fill='none')
     path(d='M19.3752 10.1914H1.00964' stroke='#31AFF2' stroke-linecap='round' stroke-linejoin='round')
     path(d='M10.1905 19.3829L10.1924 1' stroke='#31AFF2' stroke-linecap='round' stroke-linejoin='round')
+
+mixin simple-arrow-svg
+  svg(class=attributes.class xmlns='http://www.w3.org/2000/svg' width='9' height='16' viewbox='0 0 9 16' fill='none')
+    path(d='M8 15L1 8L8 1' stroke='#282828' stroke-linecap='round' stroke-linejoin='round')

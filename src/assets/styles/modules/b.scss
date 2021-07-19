@@ -1,0 +1,140 @@
+.b {
+  $comp: &;
+
+  // row, секция альтуальное, главная, текст + ссылка
+  &--text-with-link-row-in-main-page {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  // ссылка (как кнопка), скругленная
+  &--border-link {
+    padding: 11px 20px;
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+
+    border: 1px solid $color-blue;
+    border-radius: 40px;
+    $fs: 15px;
+    @include fsl($fs, $fs);
+  }
+
+  // верхний отступ carousel-slider'a на гравной, десктоп
+  &--carousel-slider-desktop-margin-top-in-main-page {
+    margin-top: 60px;
+  }
+
+  // "карусель" слайдер, на главной, десктоп
+  &--carousel-slider-desktop {
+    position: relative;
+    z-index: 0;
+
+    #{$comp}__btn {
+      position: absolute;
+      z-index: 0;
+      top: 60px;
+
+      $size: 60px;
+      width: $size;
+      height: $size;
+      min-width: $size;
+      min-height: $size;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background-color: $color-white;
+      border: 1px solid $color-blue;
+      border-radius: 50%;
+      cursor: pointer;
+
+      &--left {
+        left: calc(#{$col-width-d} * 5);
+        transform: translateX(-50%);
+      }
+      &--right {
+        right: calc(#{$col-width-d} * 5);
+        transform: translateX(50%);
+      }
+    }
+
+    #{$comp}__svg {
+      &--swap {
+        transform: rotate(180deg);
+      }
+    }
+
+    #{$comp}__slide {
+      display: none;
+
+      &--active {
+        display: block;
+      }
+    }
+
+    #{$comp}__row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    #{$comp}__col {
+      position: relative;
+      z-index: 0;
+
+      display: block;
+
+      &:nth-child(1),
+      &:nth-child(3) {
+        $width: 217px;
+        width: $width;
+        min-width: $width;
+        max-width: $width;
+        @media (min-width: $breakpoint-xl) {
+          $width: 270px;
+          width: $width;
+          min-width: $width;
+          max-width: $width;
+        }
+      }
+      &:nth-child(2) {
+        $width: 327px;
+        width: $width;
+        min-width: $width;
+        max-width: $width;
+        @media (min-width: $breakpoint-xl) {
+          $width: 405px;
+          width: $width;
+          min-width: $width;
+          max-width: $width;
+        }
+      }
+    }
+
+    #{$comp}__label {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+
+      padding: 6px 10px;
+
+      background-color: $color-white;
+      border: 1px solid $color-blue-light;
+      border-radius: 40px;
+      @include fsl(12px, 140%);
+    }
+
+    #{$comp}__title {
+      margin-top: 15px;
+
+      font-weight: 400;
+      @include fsl(18px, 140%);
+    }
+
+    #{$comp}__img {
+      display: block;
+
+      border-radius: 10px;
+    }
+  }
+}

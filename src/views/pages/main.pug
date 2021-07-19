@@ -127,4 +127,42 @@ block content
                 |Вы всегда можете задать вопрос#[br]нашим экспертам в #[a.link-text__link(href='#') специальном]#[br]#[a.link-text__link(href='#') разделе] или найти ответы в наших#[br]#[a.link-text__link(href='#') статьях] и #[a.link-text__link(href='#') видео-публикациях]
               p.link-text.main-page__expert-text.main-page__expert-text--desktop
                 |Вы всегда можете задать вопрос нашим#[br]экспертам в #[a.link-text__link(href='#') специальном разделе]#[br]или найти ответы в наших #[a.link-text__link(href='#') статьях]#[br]и #[a.link-text__link(href='#') видео-публикациях]
+            .main-page__actual
+              h3.main-page__title
+                |актуальное
+              .b.b--text-with-link-row-in-main-page
+                .b__text
+                  p.link-text.main-page__expert-text.main-page__expert-text--mobile
+                    |Мы постянно публикуем свежие статьи о проблемах, возможном лечении и рекомендациях экспертов
+                  p.link-text.main-page__expert-text.main-page__expert-text--desktop
+                    |Мы постянно публикуем свежие статьи#[br]о проблемах, возможном лечении#[br]и рекомендациях экспертов
+                .b__link
+                  a.b.b--border-link(href='#')
+                    |Все статьи
+              .b.b--carousel-slider-desktop.b--carousel-slider-desktop-margin-top-in-main-page
+                .b__btn.b__btn--left
+                  +simple-arrow-svg.b__svg.b__svg
+                .b__btn.b__btn--right
+                  +simple-arrow-svg.b__svg.b__svg--swap
+                each slide in [1, 2, 3]
+                  .b__slide(class=(slide === 1 ? 'b__slide--active' : ''))
+                    .b__row
+                      a.b__col(href='#')
+                        img.b__img(src='assets/images/carousel-1.jpeg')
+                        h3.b__title
+                          |Миома матки: симптомы, лечение, профилактика
+                        span.b__label
+                          |Клинические рекомендации
+                      a.b__col(href='#')
+                        img.b__img(src='assets/images/carousel-2.jpeg')
+                        h3.b__title
+                          |Кровотечение при миоме
+                        span.b__label
+                          |Обучение
+                      a.b__col(href='#')
+                        img.b__img(src='assets/images/carousel-3.jpeg')
+                        h3.b__title
+                          |Непроходимость маточных труб
+                        span.b__label
+                          |Исследования
             +footer.page__footer
