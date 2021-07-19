@@ -367,3 +367,18 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     }
   });
 }
+
+// accordion
+{
+  $(() => {
+
+    $('.accordion').each(function() {
+      const accordion = $(this);
+      const accordionButton = accordion.find('.accordion__head');
+
+      accordionButton.on('click', function() {
+        accordion.toggleClass('accordion--active');
+      });
+    });
+  });
+}

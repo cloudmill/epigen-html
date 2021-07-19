@@ -2,6 +2,7 @@ extends ../layouts/master.pug
 
 include ../components/border-link.pug
 include ../components/copyright-link.pug
+include ../components/accordion.pug
 include ../components/footer.pug
 
 block cookies
@@ -98,6 +99,27 @@ block content
                         |Эпиген Интим
                         br
                         |Гель
+                ul.faq-page__section-list
+                  li.faq-page__section-item
+                    +accordion
+                  li.faq-page__section-item
+                    +accordion
+                  li.faq-page__section-item
+                    +accordion
+                  li.faq-page__section-item
+                    +accordion
+                  li.faq-page__section-item
+                    +accordion
+                  li.faq-page__section-item
+                    +accordion
+                  li.faq-page__section-item
+                    +accordion
+                  li.faq-page__section-item
+                    +accordion
+                  li.faq-page__section-item
+                    +accordion
+                  li.faq-page__section-item
+                    +accordion
 
                 .button-show-wrapper
                   .button-show

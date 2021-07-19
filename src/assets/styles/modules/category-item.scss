@@ -6,4 +6,9 @@
   @include fsl(15px, 140%);
   background-color: $color-white;
   cursor: pointer;
+
+  &--light-blue {
+    border-color: $color-blue-light;
+    background-color: $color-aqua;
+  }
 }
