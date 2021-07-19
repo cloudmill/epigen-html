@@ -241,9 +241,11 @@
     transform: translateY(10px);
     // transition: $transition;
     opacity: 0;
+    pointer-events: none;
 
     &--scroll {
       opacity: 1;
+      pointer-events: auto;
     }
   }
 }
