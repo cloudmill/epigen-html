@@ -1,0 +1,79 @@
+extends ../layouts/master.pug
+
+include ../components/copyright-link.pug
+include ../components/footer.pug
+
+block cookies
+//- block grid-test
+
+block content
+  .page-consultation
+    .container
+      .row
+        .row__col.row__col--aside.row__col--rail
+          .aside
+            .aside__inner
+              .aside__container
+                .aside__top
+                  header.aside__header
+                    a.aside__logo(href='#')
+                      +logo-svg.aside__logo-svg
+                    .aside__menu
+                      .aside__menu-text
+                        |Меню
+                      .aside__menu-button
+                .aside__bottom
+                  +copyright-link(href='#')
+                    |Компания «Инвар», 2021
+        .row__col.row__col--main
+          .page
+            header.page__header
+              .panel
+                .panel__panel
+                  .panel__row
+                    .panel__col
+                      .panel__inner
+                        .panel__product
+                          a.panel__product-item(href='#')
+                            .panel__product-mark
+                            .panel__product-text
+                              |Спрей
+                          a.panel__product-item.panel__product-item--purple(href='#')
+                            .panel__product-mark
+                            .panel__product-text
+                              |Гель
+                    .panel__col
+                      .panel__inner
+                        a.panel__where-buy(href='#')
+                          |Где купить
+                    .panel__col
+                      .panel__inner
+                        .panel__choice
+                          .panel__choice-item(data-count=8)
+                            |Симптомы
+                          .panel__choice-item(data-count=12)
+                            |Заболевания
+                    .panel__col
+                      .panel__inner
+                        .panel__consultation
+                          +consultation-svg.panel__consultation-svg
+                          .panel__consultation-text
+                            |Консультация эксперта
+            main.page__main
+              h1.title
+                |Консультация эксперта
+              .rail.rail--margin-bottom--large.rail--desktop
+              section.row.row--in-main--desc
+                .row__col
+                  p.page-consultation__text.page-consultation__text--desc--default.max-width.max-width--col--9
+                    |Вы можете задать вопросы по применению линии средств Эпиген Интим, а также уточнить интересующие вас моменты по проблемам интимного здоровья и вагинальных инфекций.
+                .row__col
+                  p.page-consultation__text.page-consultation__text--desc--mini
+                    |Внимание! Консультация на сайте не исключает очного визита к врачу. Только при личном осмотре, после проведения диагностических процедур и изучения результатов анализов возможно определить причину появления симптомов и назначить правильное лечение. Информация в данном разделе является исключительно ознакомительной и не может быть использована в качестве замены непосредственной консультации с врачом.
+              .button-show-wrapper
+                .button-show
+                  .button-show__icon
+                    +btn-plus-svg.button-show__svg
+                  .button-show__text
+                    |показать еще
+            +footer.page__footer
