@@ -312,3 +312,22 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     }
   });
 }
+
+// test
+{
+  const list = $('[data-list]');
+  const listOffset = list.offset().top;
+  const listHeight = list.height();
+  const listPos = listOffset + listHeight;
+
+  $(window).on('scroll', function() {
+    const scrollPos = this.pageYOffset;
+
+    if (scrollPos > listPos) {
+      $('.panel__list').addClass('panel__list--scroll');
+    } else {
+      $('.panel__list').removeClass('panel__list--scroll')
+    }
+
+  });
+}

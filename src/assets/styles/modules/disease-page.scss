@@ -28,16 +28,25 @@
     padding: 0 calc(#{$col-width-d});
   }
 
+  &__container {
+    padding: 15px;
+
+    background-color: #E0F3FD;
+    border-radius: 10px;
+  }
+
   &__list {
     margin-top: -5px;
     margin-left: -5px;
-    padding: 15px;
 
     display: flex;
     flex-wrap: wrap;
 
-    background-color: #E0F3FD;
-    border-radius: 10px;
+    &--scroll {
+      position: fixed;
+      top: 10px;
+
+    }
   }
   &__list-item {
     margin-left: 5px;
