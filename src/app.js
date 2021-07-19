@@ -318,19 +318,21 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
   $(() => {
     if ($('.disease-page').length !== 0) {
       const list = $('[data-list]');
-      const listOffset = list.offset().top;
-      const listHeight = list.height();
-      const listPos = listOffset + listHeight;
+      const listOffset = list.offset().top - 10;
+      const panelHeight = $('.panel__panel').height();
 
       $(window).on('scroll', function() {
         const scrollPos = this.pageYOffset;
 
-        if (scrollPos > listPos) {
+        if (scrollPos > listOffset) {
+          list.addClass('disease-page__container--hidden')
           $('.panel__list').addClass('panel__list--scroll');
-        } else {
-          $('.panel__list').removeClass('panel__list--scroll')
         }
 
+        if ((scrollPos + panelHeight) < listOffset) {
+          list.removeClass('disease-page__container--hidden')
+          $('.panel__list').removeClass('panel__list--scroll')
+        }
       });
     }
   })
@@ -340,18 +342,26 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 {
   $(() => {
     if ($('.nav-page-d').length !== 0) {
-      const panelHeight = $('.panel__list').height() + 10;
-      console.log(panelHeight);
+
       $('[data-scroll]').on('click', function(event) {
         event.preventDefault();
 
-        const headerHeight = $('.panel__panel').height();
-        const panelHeight = $('.panel__list').height() + 10;
         const elementId = $(this).data('scroll');
         const elementOffset = $(elementId).offset().top;
 
+        let windowOffset;
+        const headerHeight = $('.panel__panel').height();
+
+        if ($('.panel__list').length !== 0) {
+          const panelHeight = $('.panel__list').height() + 10;
+
+          windowOffset = headerHeight + panelHeight;
+        } else {
+          windowOffset = headerHeight;
+        }
+
         $('html, body').animate({
-          scrollTop: elementOffset - panelHeight - headerHeight,
+          scrollTop: elementOffset - windowOffset,
         }, 700);
       });
     }

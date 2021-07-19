@@ -238,14 +238,12 @@
   }
 
   &__list {
-    // transform: translateY(-200%);
     transform: translateY(10px);
-    transition: $transition;
+    // transition: $transition;
     opacity: 0;
 
     &--scroll {
       opacity: 1;
-      // transform: translateY(10px);
     }
   }
 }
