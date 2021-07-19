@@ -1,5 +1,11 @@
 .faq-page {
 
+  &__item {
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
+  }
+
   &__section-item {
     &:not(:first-child) {
       margin-top: 10px;
