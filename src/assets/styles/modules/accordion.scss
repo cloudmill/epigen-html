@@ -160,11 +160,14 @@
   }
   &__links-list {
     display: flex;
-    justify-content: space-between;
   }
   &__links-item {
     width: calc((100% / 3) - 10px);
     min-height: 146px;
+
+    &:not(:first-child) {
+      margin-left: 15px;
+    }
   }
 
   &__link {
