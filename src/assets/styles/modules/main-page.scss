@@ -1,4 +1,4 @@
-.main-page {
+.main-page {  
   $comp: &;
 
   &__features {
@@ -24,6 +24,7 @@
 
       content: counter(index);
 
+      @include fsl(25px, 120%);
       color: $color-blue;
     }
 
@@ -70,7 +71,10 @@
   }
 
   &__expert {
+    position: relative;
+
     margin-top: 60px;
+    margin-bottom: 420px;
     @media (min-width: $breakpoint) {
       margin-top: 120px;
     }
@@ -89,6 +93,37 @@
         display: none;
       }
     }
+  }
+  &__expert-img {
+    position: absolute;
+    top: calc(100% + 30px);
+    right: 0;
+
+    max-width: 676px;
+    max-height: none;
+  }
+  &__expert-wave {
+    position: absolute;
+    top: calc(100% + 110px);
+    right: 70px;
+    @media (min-width: $breakpoint-l) {
+      right: 130px;
+    }
+
+    display: flex;
+  }
+  &__expert-svg {}
+  &__expert-moon {
+    position: absolute;
+    top: 39%;
+    left: 8%;
+    transform: translate(-50%, -50%);
+  }
+  &__expert-star {
+    position: absolute;
+    top: 3%;
+    left: 25%;
+    transform: translate(-50%, -50%);
   }
 
   &__actual {}
