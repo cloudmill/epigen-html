@@ -1,0 +1,80 @@
+.spray-page {
+
+  &__intro {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    right: 30px;
+    bottom: 20px;
+  }
+  &__intro-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: 100%;
+  }
+  &__intro-col {
+
+    &:nth-child(1) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  &__intro-label {
+    color: $color-blue;
+    @include fsl(15px, 140%);
+  }
+  &__intro-item {
+    display: flex;
+    justify-content: flex-end;
+
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
+  }
+  &__intro-title {
+    font-weight: 400;
+    @include fsl(70px, 110%);
+  }
+
+  &__section {}
+  &__section-row {
+    display: flex;
+  }
+  &__section-col {
+    flex-shrink: 0;
+
+    &:nth-child(1) {
+      width: calc(#{$col-width-d} * 10);
+    }
+    &:nth-child(2) {
+      margin-left: calc(#{$col-width-d} * 2);
+
+      width: calc(#{$col-width-d} * 5);
+    }
+  }
+  &__section-title {
+    font-weight: 400;
+    @include fsl(35px, 130%);
+  }
+  &__section-text {
+    @include fsl(18px, 140%);
+  }
+
+  &__slider {}
+  &__slider-slide {
+    position: relative;
+  }
+  &__slider-img {
+    display: block; // svg blur ??
+    border-radius: 10px;
+  }
+  &__slider-conent {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    bottom: 0;
+    right: 0;
+  }
+}

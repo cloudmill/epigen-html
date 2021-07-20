@@ -11,4 +11,10 @@
     border-color: $color-blue-light;
     background-color: $color-aqua;
   }
+
+  &--blue {
+    border-color: $color-blue;
+    background-color: $color-blue;
+    color: $color-white;
+  }
 }
