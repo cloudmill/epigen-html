@@ -1,0 +1,27 @@
+.form-container {
+  padding: 60px calc(#{$col-width-d});
+
+  border: 1px solid $color-blue;
+  border-radius: 10px;
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__col {
+    flex-shrink: 0;
+
+    &:nth-child(1) {
+      width: calc(#{$col-width-d} * 4);
+    }
+    &:nth-child(2) {
+      width: calc(#{$col-width-d} * 11);
+    }
+  }
+
+  &__title {
+    font-weight: 400;
+    @include fsl(35px, 130%);
+  }
+}

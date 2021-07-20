@@ -1,5 +1,6 @@
 extends ../layouts/master.pug
 
+include ../components/footer.pug
 
 block cookies
 block grid-test
@@ -98,10 +99,36 @@ block content
                           img.buy-page__partners-img(src='assets/images/' + partner + '.jpg', alt="")
                 h2.buy-page__section-title.margin-top
                   |Подпишитесь на рассылку и узнавайте об акциях и спецпредложениях интернет-аптек на продукцию Эпиген
-                .buy-page__form.margin-top.margin-top--md
-                  .buy-page__form-row
-                    .buy-page__form-col
-                      h3.buy-page__form-title
+                .form-container.margin-top.margin-top--md
+                  .form-container__row
+                    .form-container__col
+                      h3.form-container__title
                         |Подписаться на обновления
-                    .buy-page__form-col
+                    .form-container__col
+                      form.form.form--follow(action="/")
+                        .form__row
+                          .form__item
+                            input.form__input(type="text" name="name" placeholder="Имя")
+                          .form__item
+                            input.form__input(type="email" name="email" placeholder="E-mail")
+                        .form__row
+                          .form__item
+                            .checkbox
+                              label.checkbox__label(for="checkbox")
+                                input.checkbox__input(type="checkbox" id="checkbox")
+                                .checkbox__box
+                                  +check-svg.checkbox__icon
+                                .checkbox__text
+                                  |Согласен на обработку персональных данных в соответствии с #[a.checkbox__link(href="#") политикой конфиденциальности]
+                          .form__item
+                            .form__button
+                              button.button.button--wide(type='submit')
+                                |Отправить
+                .buy-page__warning.margin-top
+                  p.buy-page__warning-text
+                    |Данные о наличии, ценах на товар, порядке и условиях приобретения предоставляются аптечной организацией, которая несет ответственность за достоверность информации. Владелец сайта не несет ответственности за содержание публикуемых прайс-листов аптек, информации, предоставленной на сайте аптечной организации, а также за ее действия. Информация на сайте не должна быть истолкована как призыв к неспециалистам самостоятельно приобретать или использовать описываемые товары. Информация предоставлена исключительно в информационных целях.
+
+            +footer.page__footer
+
+
 

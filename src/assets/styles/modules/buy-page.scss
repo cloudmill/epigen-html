@@ -28,5 +28,17 @@
     align-items: center;
     justify-content: center;
   }
+
+  &__section-title {
+    width: calc(#{$col-width-d} * 12);
+
+    font-weight: 400;
+    @include fsl(35px, 130%);
+  }
+
+  &__warning-text {
+    color: $color-gray;
+    @include fsl(13px, 140%);
+  }
 }
 
