@@ -23,6 +23,12 @@
     @include fsl(13px, 140%);
   }
 
+  &--t {
+    padding: 12px 0;
+
+    line-height: 100%;
+  }
+
   &--wide {
     padding: 19px 0;
 
