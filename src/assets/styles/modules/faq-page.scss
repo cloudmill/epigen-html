@@ -12,7 +12,9 @@
     }
   }
 
-  &__form {}
+  &__form {
+    position: relative;
+  }
   &__form-row {
     display: flex;
     justify-content: space-between;
@@ -30,5 +32,44 @@
   &__form-title {
     font-weight: 400;
     @include fsl(35px, 130%);
+  }
+
+  &__response {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    width: calc(#{$col-width-d} * 14);
+
+    opacity: 0;
+    pointer-events: none;
+  }
+  &__response-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  &__response-col {
+    flex-shrink: 0;
+
+    &:nth-child(1) {
+      width: calc(#{$col-width-d} * 11);
+    }
+
+    &:nth-child(2) {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+  &__response-title {
+    font-weight: 400;
+    @include fsl(35px, 130%);
+  }
+  &__response-button {
+    flex-shrink: 0;
+    width: calc(#{$col-width-d} * 5);
   }
 }

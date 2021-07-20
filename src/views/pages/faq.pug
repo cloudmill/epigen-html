@@ -150,7 +150,17 @@ block content
                                 .checkbox__text
                                   |Согласен на обработку персональных данных в соответствии с #[a.checkbox__link(href="#") политикой конфиденциальности]
                           .form__button
-                            .button.button--wide
+                            button.button.button--wide(type='submit')
                               |Отправить
+                  .faq-page__response
+                    .faq-page__response-row
+                      .faq-page__response-col
+                        h3.faq-page__response-title
+                          |Мы получили ваше сообщение и ответим на него в ближайшее время.
+                      .faq-page__response-col
+                        .faq-page__response-button
+                          .button.button--wide
+                            |Отправить
+
 
             +footer.page__footer
