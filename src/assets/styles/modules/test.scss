@@ -55,11 +55,44 @@
     height: 100%;
 
     background-color: $color-white;
+
+    &--md {
+      width: calc((#{$col-width-d} * 6) + #{$col-pad-d});
+    }
   }
 
   &__close {
     position: absolute;
+    top: 15px;
+    left: calc(100% + 15px);
+  }
+
+  &__inner {
+    padding-top: 60px;
+  }
+
+  &__form {
+    padding: 0 30px;
+  }
+  &__form-container {
+    position: relative;
+  }
+  &__form-title {
+    margin-bottom: 30px;
+
+    font-weight: 400;
+    @include fsl(25px, 120%);
+  }
+
+  &__response {
+    position: absolute;
+
     top: 0;
-    left: 100%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    opacity: 0;
+    pointer-events: none;
   }
 }
