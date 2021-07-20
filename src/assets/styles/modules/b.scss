@@ -32,22 +32,7 @@
 
     #{$comp}__btn {
       position: absolute;
-      z-index: 0;
       top: 60px;
-
-      $size: 60px;
-      width: $size;
-      height: $size;
-      min-width: $size;
-      min-height: $size;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      background-color: $color-white;
-      border: 1px solid $color-blue;
-      border-radius: 50%;
-      cursor: pointer;
 
       &--left {
         left: calc(#{$col-width-d} * 5);
@@ -56,12 +41,6 @@
       &--right {
         right: calc(#{$col-width-d} * 5);
         transform: translateX(50%);
-      }
-    }
-
-    #{$comp}__svg {
-      &--swap {
-        transform: rotate(180deg);
       }
     }
 
@@ -135,6 +114,181 @@
       display: block;
 
       border-radius: 10px;
+    }
+  }
+
+  // слайдер отзывов, главная
+  &--reviews-slider-main-page {
+    #{$comp}__top {}
+    #{$comp}__bottom {
+      margin-top: 80px;
+    }
+
+    #{$comp}__top-row {
+      display: flex;
+      justify-content: space-between;
+    }
+    #{$comp}__top-col {
+      flex-shrink: 0;
+
+      &:not(:first-child) {
+        margin-left: calc(#{$col-width-d});
+      }
+    }
+
+    #{$comp}__title {
+      font-weight: 400;
+      @media (min-width: $breakpoint) {
+        @include fsl(34px, 130%);        
+      }
+      @media (min-width: $breakpoint-xl) {
+        @include fsl(40px);
+      }
+    }
+
+    #{$comp}__slide {
+      display: none;
+
+      &--active {
+        display: block;
+      }
+    }
+
+    #{$comp}__slide-row {
+      display: flex;
+      align-items: stretch;
+    }
+    #{$comp}__slide-col {
+      flex-shrink: 0;
+
+      &:nth-child(1) {
+        width: calc(#{$col-width-d} * 6);
+      }
+      &:nth-child(2) {
+        width: calc(#{$col-width-d} * 12);
+      }
+    }
+
+    #{$comp}__img {
+      max-width: 270px;
+
+      border-radius: 10px;
+    }
+
+    #{$comp}__content {
+      padding-top: 15px;
+      height: 100%;
+
+      border-top: 1px solid $color-blue;
+    }
+
+    #{$comp}__content-row {
+      height: 100%;
+      display: flex;
+      align-items: stretch;
+    }
+    #{$comp}__content-col {
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      &:nth-child(1) {
+        width: calc(#{$col-width-d} * 8);
+      }
+      &:nth-child(2) {
+        width: calc(#{$col-width-d} * 4);
+      }
+    }
+    #{$comp}__content-top {}
+    #{$comp}__content-bottom {
+      margin-top: 55px;
+    }
+
+    #{$comp}__content-wrapper {
+      padding-left: 70px;
+    }
+
+    #{$comp}__slide-title {
+      font-weight: 400;
+      @include fsl(25px, 120%);
+    }
+    #{$comp}__desc {
+      margin-top: 10px;
+      max-width: 406px;
+
+      font-style: italic;
+      @include fsl(13px, 140%);
+      color: $color-blue-dark;
+    }
+    #{$comp}__review {
+      margin-top: 30px;
+      max-width: 405px;
+
+      font-style: italic;
+      @include fsl(15px, 140%);
+    }
+
+    #{$comp}__link {
+      margin-right: 30px;
+      padding-bottom: 2px;
+
+      border-bottom: 1px solid $color-black;
+      $fs: 15px;
+      @include fsl($fs, $fs);
+    }
+
+    #{$comp}__control {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    #{$comp}__control-item {
+      &:not(:first-child) {
+        margin-left: 15px;
+      }
+    }
+
+    #{$comp}__preview {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+    #{$comp}__preview-img {
+      margin-left: 30px;
+      max-width: 135px;
+
+      border-radius: 10px;
+    }
+    #{$comp}__preview-counter {
+      @include fsl(15px, 120%);
+    }
+    #{$comp}__preview-count {
+      margin-right: 14px;
+
+      @include fsl(25px);
+    }
+  }
+
+  // кнопки управления слайдером
+  &--btn-left-right-slider {
+    $size: 60px;
+    width: $size;
+    height: $size;
+    min-width: $size;
+    min-height: $size;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid $color-blue;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &#{$comp}--right {
+      #{$comp}__svg {
+        transform: rotate(180deg);
+      }
     }
   }
 }

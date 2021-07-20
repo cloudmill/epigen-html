@@ -90,4 +90,26 @@
       }
     }
   }
+
+  &__actual {}
+
+  &__reviews {
+    position: relative;
+
+    margin-top: 140px;
+    padding: 30px 0 76px 0;
+  }
+  &__reviews-bg {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: calc((#{$col-width-d} / 2) * -1);
+    right: calc(-#{$col-pad-d});
+
+    background-color: $color-blue-bg;
+    background-image: url('assets/svg/main-reviews-slider.svg');
+    background-repeat: no-repeat;
+    background-position: left top;
+  }
 }

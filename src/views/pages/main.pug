@@ -140,10 +140,10 @@ block content
                   a.b.b--border-link(href='#')
                     |Все статьи
               .b.b--carousel-slider-desktop.b--carousel-slider-desktop-margin-top-in-main-page
-                .b__btn.b__btn--left
-                  +simple-arrow-svg.b__svg.b__svg
-                .b__btn.b__btn--right
-                  +simple-arrow-svg.b__svg.b__svg--swap
+                .b.b--btn-left-right-slider.b--left.b__btn.b__btn--left
+                  +simple-arrow-svg.b__svg
+                .b.b--btn-left-right-slider.b--right.b__btn.b__btn--right
+                  +simple-arrow-svg.b__svg
                 each slide in [1, 2, 3]
                   .b__slide(class=(slide === 1 ? 'b__slide--active' : ''))
                     .b__row
@@ -165,4 +165,71 @@ block content
                           |Непроходимость маточных труб
                         span.b__label
                           |Исследования
+            .main-page__reviews
+              .main-page__reviews-bg
+              h3.main-page__title
+                |отзывы
+              .b.b--reviews-slider-main-page
+                .b__top
+                  .b__top-row
+                    .b__top-col
+                      h4.b__title
+                        |Использовали Эпиген Интим
+                        br
+                        |и остались довольны
+                    .b__top-col
+                      ul.product-choice.product-choice--reviews-slider--default
+                        li.product-choice__item
+                          a.product-btn.product-btn--white(href='#')
+                            +spray-svg.product-btn__svg
+                            p.product-btn__text
+                              |Эпиген Интим
+                              br
+                              |Спрей
+                        li.product-choice__item
+                          a.product-btn.product-btn--white.product-btn--active(href='#')
+                            +gel-svg.product-btn__svg
+                            p.product-btn__text
+                              |Эпиген Интим
+                              br
+                              |Гель
+                .b__bottom
+                  each slide in [1, 2, 3, 4]
+                    .b__slide(class=(slide === 1 ? 'b__slide--active' : undefined))
+                      .b__slide-row
+                        .b__slide-col
+                          img.b__img(src='assets/images/reviews-slider-1.jpeg')
+                        .b__slide-col
+                          .b__content
+                            .b__content-row
+                              .b__content-col
+                                .b__content-top
+                                  h5.b__slide-title
+                                    |Манукян Наринэ Георгиевна
+                                  p.b__desc
+                                    |Врач акушер-гинеколог, гинеколог-эндокринолог, лучший врач корпорации
+                                  .b__content-wrapper
+                                    p.b__review 
+                                      |Спрей Эпиген Интим представляет собой эффективное и безопасное средство для лечения, профилактики генитальных вирусных инфекций, а гель предназначен для интимной гигиены на каждый день...
+                                .b__content-bottom
+                                  a.b__link(href="#")
+                                    |Читать отзыв
+                                  a.button.button--reviews-slider(href='#')
+                                    |Все отзывы
+                              .b__content-col
+                                .b__content-top
+                                  .b__control
+                                    .b__control-item
+                                      .b.b--btn-left-right-slider
+                                        +simple-arrow-svg.b__svg
+                                    .b__control-item
+                                      .b.b--btn-left-right-slider.b--right
+                                        +simple-arrow-svg.b__svg
+                                .b__content-bottom
+                                  .b__preview
+                                    .b__preview-counter
+                                      span.b__preview-count
+                                        |1
+                                      |/4
+                                    img.b__preview-img(src='assets/images/reviews-slider-2.jpeg')
             +footer.page__footer

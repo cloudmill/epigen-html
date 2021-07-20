@@ -30,4 +30,12 @@
   &--purple {
     border-color: $color-purple;
   }
+
+  &--reviews-slider {
+    padding: 12px 20px;
+    display: inline-flex;
+
+    $fs: 15px;
+    @include fsl($fs, $fs);
+  }
 }
