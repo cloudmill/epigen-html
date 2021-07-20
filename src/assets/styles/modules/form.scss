@@ -1,6 +1,8 @@
 .form {
   $comp: &;
 
+  transition: $transition;
+
   &--follow {
 
     #{$comp}__item {
@@ -74,3 +76,10 @@
   }
 
 }
+
+[data-form-hidden] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+

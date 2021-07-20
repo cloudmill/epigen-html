@@ -391,36 +391,68 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 // nav links
 {
   $(() => {
+    const navLink = $('.nav-page-d__item')
 
-    $(window).on('scroll', () => {
-      const scrollPos = window.scrollY;
+    if (navLink.length !== 0) {
+      $(window).on('scroll', () => {
+        const scrollPos = window.scrollY;
 
-      const scrollSection = $('[data-section]');
+        const scrollSection = $('[data-section]');
 
-      scrollSection.each(function(i, el) {
-        const elemOffset = el.offsetTop;
+        scrollSection.each(function(i, el) {
+          const elemOffset = el.offsetTop;
 
-        let windowOffset;
+          let windowOffset;
 
-        if ($('.panel__list').length !== 0) {
-          const panelHeight = $('.panel__list').height() + 10;
+          if ($('.panel__list').length !== 0) {
+            const panelHeight = $('.panel__list').height() + 10;
 
-          windowOffset = $('.panel').height() + panelHeight;
-        } else {
-          windowOffset = $('.panel').height();
-        }
+            windowOffset = $('.panel').height() + panelHeight;
+          } else {
+            windowOffset = $('.panel').height();
+          }
 
-        if (elemOffset - windowOffset < scrollPos) {
-          const navLink = $('.nav-page-d__item')
-          navLink.each( function () {
-            if ($(this).hasClass('nav-page-d__item--active')) {
-              $(this).removeClass('nav-page-d__item--active')
-            }
-          });
+          if (elemOffset - windowOffset < scrollPos) {
+            navLink.each( function () {
+              if ($(this).hasClass('nav-page-d__item--active')) {
+                $(this).removeClass('nav-page-d__item--active')
+              }
+            });
 
-          navLink.eq(i).addClass('nav-page-d__item--active');
-        }
+            navLink.eq(i).addClass('nav-page-d__item--active');
+          }
+        });
       });
-    });
+    }
+  });
+}
+
+// form response
+{
+  $(() => {
+    const form = $('[data-form]');
+
+    if(form.length !== 0) {
+      const formButton = form.find('[data-form-button]');
+
+      formButton.on('click', function(event) {
+        event.preventDefault();
+
+        const formButtonId = $(this).data('form-button');
+
+        $(`[data-form='${formButtonId}']`).attr('data-form-hidden', '');
+        $(`[data-response='${formButtonId}']`).attr('data-response-active', '');
+      });
+
+      const response = $('[data-response]');
+      const responseButton = response.find('[data-response-button]');
+
+      responseButton.on('click', function() {
+        const responseButtonId = $(this).data('response-button');
+
+        $(`[data-form='${responseButtonId}']`).removeAttr('data-form-hidden');
+        $(`[data-response='${responseButtonId}']`).removeAttr('data-response-active');
+      });
+    }
   });
 }

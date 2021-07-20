@@ -18,6 +18,8 @@
   &__form-row {
     display: flex;
     justify-content: space-between;
+
+    transition: $transition;
   }
   &__form-col {
     flex-shrink: 0;
@@ -45,6 +47,7 @@
 
     opacity: 0;
     pointer-events: none;
+    transition: $transition;
   }
   &__response-row {
     display: flex;

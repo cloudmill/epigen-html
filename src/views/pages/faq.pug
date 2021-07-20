@@ -130,7 +130,7 @@ block content
                     .button-show__text
                       |показать еще
                 .faq-page__form
-                  .faq-page__form-row
+                  .faq-page__form-row(data-form='1')
                     .faq-page__form-col
                       h3.faq-page__form-title
                         |Задать свой вопрос
@@ -152,17 +152,17 @@ block content
                                 .checkbox__text
                                   |Согласен на обработку персональных данных в соответствии с #[a.checkbox__link(href="#") политикой конфиденциальности]
                           .form__button
-                            button.button.button--wide(type='submit')
+                            button.button.button--wide(type='submit' data-form-button='1')
                               |Отправить
-                  .faq-page__response
+                  .faq-page__response(data-response='1')
                     .faq-page__response-row
                       .faq-page__response-col
                         h3.faq-page__response-title
                           |Мы получили ваше сообщение и ответим на него в ближайшее время.
                       .faq-page__response-col
                         .faq-page__response-button
-                          .button.button--wide
-                            |Отправить
+                          .button.button--wide(data-response-button='1')
+                            |Отправить еще
 
 
             +footer.page__footer
@@ -173,30 +173,31 @@ block content
         .mdl__inner
           .mdl__form
             .mdl__form-container
-              h3.mdl__form-title
-                |Задать вопрос
-              form.form(action="/")
-                .form__item
-                  input.form__input(type="text" name="name" placeholder="Имя")
-                .form__item
-                  input.form__input(type="email" name="email" placeholder="E-mail")
-                .form__item
-                  textarea.form__textarea(name="message" placeholder="Сообщение", cols="30", rows="10")
-                .form__inner
-                  .checkbox
-                    label.checkbox__label(for="checkbox-1")
-                      input.checkbox__input(type="checkbox" id="checkbox-1")
-                      .checkbox__box
-                        +check-svg.checkbox__icon
-                      .checkbox__text
-                        |Согласен на обработку персональных данных в соответствии с #[a.checkbox__link(href="#") политикой конфиденциальности]
-                .form__button
-                  button.button.button--wide(type='submit')
-                    |Отправить
-              .mdl__response
+              .mdl__form-form(data-form='2')
+                h3.mdl__form-title
+                  |Задать вопрос
+                form.form(action="/")
+                  .form__item
+                    input.form__input(type="text" name="name" placeholder="Имя")
+                  .form__item
+                    input.form__input(type="email" name="email" placeholder="E-mail")
+                  .form__item
+                    textarea.form__textarea(name="message" placeholder="Сообщение", cols="30", rows="10")
+                  .form__inner
+                    .checkbox
+                      label.checkbox__label(for="checkbox-1")
+                        input.checkbox__input(type="checkbox" id="checkbox-1")
+                        .checkbox__box
+                          +check-svg.checkbox__icon
+                        .checkbox__text
+                          |Согласен на обработку персональных данных в соответствии с #[a.checkbox__link(href="#") политикой конфиденциальности]
+                  .form__button
+                    button.button.button--wide(type='' data-form-button='2')
+                      |Отправить
+              .mdl__response(data-response='2')
                 h3.mdl__form-title
                   |Мы получили ваше сообщение и ответим на него в ближайшее время.
-                .button.button--wide
+                .button.button--wide(data-response-button='2')
                   |Отправить еще
 
         .mdl__close.mdl__interactive.button-close(data-button-close='1')

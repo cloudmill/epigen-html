@@ -74,6 +74,9 @@
   &__form {
     padding: 0 30px;
   }
+  &__form-form {
+    transition: $transition;
+  }
   &__form-container {
     position: relative;
   }
@@ -94,5 +97,12 @@
 
     opacity: 0;
     pointer-events: none;
+    transition: $transition;
   }
+}
+
+
+[data-response-active] {
+  opacity: 1;
+  pointer-events: all;
 }
