@@ -1,0 +1,107 @@
+extends ../layouts/master.pug
+
+
+block cookies
+block grid-test
+
+
+
+mixin copyright-link
+  a.copyright-link(href=attributes.href)
+    .copyright-link__mark
+      +copyright-svg.copyright-link__mark-svg
+    .copyright-link__text
+      block
+
+
+block content
+  .buy-page
+    .container
+      .row
+        .row__col.row__col--aside.row__col--rail
+          .aside
+            .aside__inner
+              .aside__container
+                .aside__top
+                  header.aside__header.aside__header--margin-bottom--large
+                    a.aside__logo(href='#')
+                      +logo-svg.aside__logo-svg
+                    .aside__menu
+                      .aside__menu-text
+                        |Меню
+                      .aside__menu-button
+                .aside__bottom
+                  +copyright-link(href='#')
+                    |Компания «Инвар», 2021
+        .row__col.row__col--main
+          .page
+            header.page__header
+              .panel
+                .panel__panel
+                  .panel__row
+                    .panel__col
+                      .panel__inner
+                        .panel__product
+                          //- .panel__product-item--active
+                          a.panel__product-item(href='#')
+                            .panel__product-mark
+                            .panel__product-text
+                              |Спрей
+                          a.panel__product-item.panel__product-item--purple(href='#')
+                            .panel__product-mark
+                            .panel__product-text
+                              |Гель
+                    .panel__col
+                      .panel__inner
+                        a.panel__where-buy(href='#')
+                          |Где купить
+                    .panel__col
+                      .panel__inner
+                        .panel__choice
+                          .panel__choice-item(data-count=8)
+                            |Симптомы
+                          .panel__choice-item(data-count=12)
+                            |Заболевания
+                    .panel__col
+                      .panel__inner
+                        .panel__consultation
+                          +consultation-svg.panel__consultation-svg
+                          .panel__consultation-text
+                            |Консультация эксперта
+            main.page__main
+              h1.title
+                |Где купить
+              .rail.rail--margin-bottom--default.rail--desctop
+              section.buy-page__section
+                ul.product-choice.product-choice--margin-bottom--default
+                  li.product-choice__item
+                    a.product-btn.product-btn--active(href='#')
+                      +spray-svg.product-btn__svg
+                      p.product-btn__text
+                        |Эпиген Интим
+                        br
+                        |Спрей
+                  li.product-choice__item
+                    a.product-btn(href='#')
+                      +gel-svg.product-btn__svg
+                      p.product-btn__text
+                        |Эпиген Интим
+                        br
+                        |Гель
+                .buy-page__map
+                  img(src="assets/images/map.jpg", alt="")
+                .buy-page__partners
+                  ul.buy-page__partners-list
+                    each partner in ['ozon', 'yandex-market', 'wildberries', 'zdravcity', 'apteka', 'sberapteka']
+                      li.buy-page__partners-item
+                        a.buy-page__partners-card(href="#")
+                          img.buy-page__partners-img(src='assets/images/' + partner + '.jpg', alt="")
+                h2.buy-page__section-title.margin-top
+                  |Подпишитесь на рассылку и узнавайте об акциях и спецпредложениях интернет-аптек на продукцию Эпиген
+                .buy-page__form.margin-top.margin-top--md
+                  .buy-page__form-row
+                    .buy-page__form-col
+                      h3.buy-page__form-title
+                        |Подписаться на обновления
+                    .buy-page__form-col
+
