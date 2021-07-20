@@ -5,6 +5,19 @@
   border-radius: 10px;
   transition: $transition;
 
+  &:hover {
+    border-color: $color-blue;
+
+    #{$comp}__head-button {
+      background-color: $color-blue;
+    }
+    #{$comp}__head-icon {
+      path {
+        stroke: $color-white;
+      }
+    }
+  }
+
   &--active {
     border-color: $color-blue;
 
