@@ -206,6 +206,12 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 // mdl
 {
 	$(() => {
+		const triggers = [
+			'.review-card--modal',
+			'.button-modal',
+			'[data-mdl-open]',
+		].join(', ')
+
 		const state = {
 			isActive: checkActive(),
 		}
@@ -214,7 +220,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 			waitOpen()
 		}
 
-		$('.review-card--modal').on('click', event => {
+		$(triggers).on('click', event => {
 			event.preventDefault()
 		})
 
@@ -223,14 +229,12 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 		}
 
 		function waitOpen() {
-			$('.review-card--modal').on('click', handleClick)
-      $('.button-modal').on('click', handleClick)
+			$(triggers).on('click', handleClick)
 
 			function handleClick() {
 				console.log('open click');
 
-				$('.review-card--modal').off('click', handleClick)
-				$('.button-modal').off('click', handleClick)
+				$(triggers).off('click', handleClick)
 
 				open()
 			}

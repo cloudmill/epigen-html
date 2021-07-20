@@ -29,4 +29,10 @@
       margin: 0 0 20px;
     }
   }
+
+  &--margin-bottom {
+    &--none {
+      margin-bottom: 0;
+    }
+  }
 }

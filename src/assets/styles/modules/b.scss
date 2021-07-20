@@ -119,10 +119,10 @@
 
   // слайдер отзывов, главная
   &--reviews-slider-main-page {
-    #{$comp}__top {}
-    #{$comp}__bottom {
-      margin-top: 80px;
+    #{$comp}__top {
+      margin-bottom: 80px;
     }
+    #{$comp}__bottom {}
 
     #{$comp}__top-row {
       display: flex;
@@ -289,6 +289,54 @@
       #{$comp}__svg {
         transform: rotate(180deg);
       }
+    }
+  }
+
+  // строка поиска, вопросы-ответы, Консультация
+  &--search-consultation {
+    $btn-size: 60px;
+    $input-btn-gap: $btn-size / 2;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid $color-blue;
+
+    #{$comp}__row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #{$comp}__input {
+      width: calc(100% - (#{$btn-size} + #{$input-btn-gap}));
+      display: block;
+
+      background: none;
+      border: none;
+      @include fsl(70px, 110%);
+      color: $color-blue;
+
+      @include placeholder {
+        color: $color-blue-light;
+      }
+    }
+
+    #{$comp}__btn {
+      $size: $btn-size;
+
+      padding: 5px;
+      width: $size;
+      height: $size;
+      min-width: $size;
+      min-height: $size;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background: none;
+      border: 1px solid $color-blue;
+      border-radius: 50%;
+      cursor: pointer;
     }
   }
 }
