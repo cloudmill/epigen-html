@@ -1,0 +1,13 @@
+.page-consultation {
+  &__text {
+    &--desc {
+      &--default {
+        @include fsl(18px, 140%);
+      }
+      &--mini { // fs + color
+        @include fsl(11px, 140%);
+        color: $color-gray;
+      }
+    }
+  }
+}

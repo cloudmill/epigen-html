@@ -1,6 +1,26 @@
 .row {
+  $comp: &;
+
   display: flex;
   align-items: stretch;
+
+  // "кастомые" row, находящиеся в <main> (18 кол. справа из 24)
+  &--in-main {
+    // desc - 12 (слева) + 6 (справа) колонок
+    &--desc {
+      #{$comp}__col {
+        // пока только desktop
+        @media (min-width: $breakpoint) {
+          &:nth-child(1) {
+            width: calc(#{$col-width-d} * 12);
+          }
+          &:nth-child(2) {
+            width: calc(#{$col-width-d} * 6);
+          }
+        }
+      }
+    }
+  }
 
   &__col {
     @media (min-width: $breakpoint) {

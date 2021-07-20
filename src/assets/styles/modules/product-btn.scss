@@ -40,6 +40,16 @@
     @include active();
   }
 
+  &--white {
+    background-color: $color-white;
+
+    #{$comp}__svg {
+      .spray-svg__background {
+        fill: $color-white;
+      }
+    }
+  }
+
   &--active {
     @include active();
   }
