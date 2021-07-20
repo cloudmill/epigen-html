@@ -5,6 +5,19 @@
   border-radius: 10px;
   transition: $transition;
 
+  &:hover {
+    border-color: $color-blue;
+
+    #{$comp}__head-button {
+      background-color: $color-blue;
+    }
+    #{$comp}__head-icon {
+      path {
+        stroke: $color-white;
+      }
+    }
+  }
+
   &--active {
     border-color: $color-blue;
 
@@ -147,11 +160,14 @@
   }
   &__links-list {
     display: flex;
-    justify-content: space-between;
   }
   &__links-item {
     width: calc((100% / 3) - 10px);
     min-height: 146px;
+
+    &:not(:first-child) {
+      margin-left: 15px;
+    }
   }
 
   &__link {

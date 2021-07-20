@@ -224,11 +224,13 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
 		function waitOpen() {
 			$('.review-card--modal').on('click', handleClick)
+      $('.button-modal').on('click', handleClick)
 
 			function handleClick() {
 				console.log('open click');
 
 				$('.review-card--modal').off('click', handleClick)
+				$('.button-modal').off('click', handleClick)
 
 				open()
 			}
@@ -250,14 +252,16 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 			function handleClick(event) {
 				console.log('click close');
 
-				const clickTarget = event.target
+				const clickTarget = $(event.target)
 
-				const mdlClose = $('.mdl__close')[0]
-				const mdlContent = $('.mdl__content')[0]
+				// const mdlClose = $('.mdl__close')[0]
+				const mdlClose = clickTarget.closest('.mdl__close')
+				// const mdlContent = $('.mdl__content')[0]
+				const mdlContent = clickTarget.closest('.mdl__content')
 
 				if (
-					clickTarget === mdlClose
-					|| clickTarget !== mdlContent
+					mdlClose.length === 1
+					|| mdlContent.length === 0
 				) {
 					$(window).off('click', handleClick)
 

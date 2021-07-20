@@ -8,8 +8,10 @@
   border: 1px solid $color-blue;
   border-radius: 40px;
   @include fsl(15px, 140%);
+  @include f-main();
   transition: $transition;
   cursor: pointer;
+  background-color: inherit;
 
   &--small {
     padding: 19px 45px;
@@ -19,6 +21,12 @@
     padding: 11px 27px;
 
     @include fsl(13px, 140%);
+  }
+
+  &--t {
+    padding: 12px 0;
+
+    line-height: 100%;
   }
 
   &--wide {

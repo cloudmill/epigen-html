@@ -42,6 +42,8 @@ block content
                         +border-link(href='#')
                           |!{link}
                 .aside__bottom
+                  .button.button--t.margin-bottom.margin-bottom--m.button-modal
+                    |Задать вопрос
                   +copyright-link(href='#')
                     |Компания «Инвар», 2021
         .row__col.row__col--main
@@ -101,25 +103,25 @@ block content
                         |Гель
                 ul.faq-page__section-list
                   li.faq-page__section-item
-                    +accordion
+                    +accordion(caption='Что такое активированная глицирризиновая кислота, содержащаяся в Спрее Эпиген Интим?' category='Состав')
                   li.faq-page__section-item
-                    +accordion
+                    +accordion(caption='Почему рекомендуется Спрей Эпиген Интим при генитальном герпесе и вирусе папилломы человека (ВПЧ)?' category='Использование')
                   li.faq-page__section-item
-                    +accordion
+                    +accordion(caption='Может ли при использовании Спрея Эпиген Интим возникать жжение или ощущение тепла в месте введения?' category='Использование')
                   li.faq-page__section-item
-                    +accordion
+                    +accordion(caption='Можно ли использовать Спрей Эпиген Интим совместно с другими местными препаратами?' category='Использование')
                   li.faq-page__section-item
-                    +accordion
+                    +accordion(caption='Можно ли использовать Спрей Эпиген Интим совместно с другими местными препаратами?' category='Использование')
                   li.faq-page__section-item
-                    +accordion
+                    +accordion(caption='В упаковке Спрея Эпиген Интим есть дополнительная насадка, как её использовать?' category='Использование')
                   li.faq-page__section-item
-                    +accordion
+                    +accordion(caption='Хватит мне одного флакона Спрея Эпиген Интим на полный курс лечения?' category='Использование')
                   li.faq-page__section-item
-                    +accordion
+                    +accordion(caption='Безопасно ли использовать Спрей Эпиген Интим в период беременности?' category='Использование')
                   li.faq-page__section-item
-                    +accordion
+                    +accordion(caption='Можно ли использовать Спрей Эпиген Интим при кормлении грудью?' category='Использование')
                   li.faq-page__section-item
-                    +accordion
+                    +accordion(caption='Почему необходимо включить Спрей Эпиген Интим в дорожную аптечку? ' category='Использование')
 
                 .button-show-wrapper
                   .button-show
@@ -150,7 +152,52 @@ block content
                                 .checkbox__text
                                   |Согласен на обработку персональных данных в соответствии с #[a.checkbox__link(href="#") политикой конфиденциальности]
                           .form__button
-                            .button.button--wide
+                            button.button.button--wide(type='submit')
                               |Отправить
+                  .faq-page__response
+                    .faq-page__response-row
+                      .faq-page__response-col
+                        h3.faq-page__response-title
+                          |Мы получили ваше сообщение и ответим на него в ближайшее время.
+                      .faq-page__response-col
+                        .faq-page__response-button
+                          .button.button--wide
+                            |Отправить
+
 
             +footer.page__footer
+
+  .mdl
+    .mdl__container
+      .mdl__content.mdl__content--md.mdl__interactive
+        .mdl__inner
+          .mdl__form
+            .mdl__form-container
+              h3.mdl__form-title
+                |Задать вопрос
+              form.form(action="/")
+                .form__item
+                  input.form__input(type="text" name="name" placeholder="Имя")
+                .form__item
+                  input.form__input(type="email" name="email" placeholder="E-mail")
+                .form__item
+                  textarea.form__textarea(name="message" placeholder="Сообщение", cols="30", rows="10")
+                .form__inner
+                  .checkbox
+                    label.checkbox__label(for="checkbox-1")
+                      input.checkbox__input(type="checkbox" id="checkbox-1")
+                      .checkbox__box
+                        +check-svg.checkbox__icon
+                      .checkbox__text
+                        |Согласен на обработку персональных данных в соответствии с #[a.checkbox__link(href="#") политикой конфиденциальности]
+                .form__button
+                  button.button.button--wide(type='submit')
+                    |Отправить
+              .mdl__response
+                h3.mdl__form-title
+                  |Мы получили ваше сообщение и ответим на него в ближайшее время.
+                .button.button--wide
+                  |Отправить еще
+
+        .mdl__close.mdl__interactive.button-close(data-button-close='1')
+          +cross-svg.button-close__svg
