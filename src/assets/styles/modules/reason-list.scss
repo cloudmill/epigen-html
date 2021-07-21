@@ -1,4 +1,13 @@
 .reason-list {
+  $comp: &;
+
+  &--italic {
+
+    #{$comp}__text {
+      @include fsl(18px, 140%);
+      font-style: italic;
+    }
+  }
 
   &__item {
     position: relative;
