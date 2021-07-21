@@ -599,4 +599,23 @@
       margin-top: 20px;
     }
   }
+
+  &__video {}
+  &__video-row {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__video-col {
+    flex-shrink: 0;
+
+    &:nth-child(1) {
+      width: calc(#{$col-width-d} * 4);
+    }
+    &:nth-child(2) {
+      width: calc(#{$col-width-d} * 12);
+    }
+  }
+  &__video-button {
+    display: flex;
+  }
 }

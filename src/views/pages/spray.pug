@@ -2,8 +2,8 @@ extends ../layouts/master.pug
 
 include ../components/footer.pug
 
-block cookies
-//- block grid-test
+//- block cookies
+block grid-test
 
 mixin nav-page-d
   nav.nav-page-d
@@ -385,6 +385,27 @@ block content
                               |!{item.text}
                             .spray-page__structure-num
                               |!{item.num}
+              section.spray-page__section.margin-top.margin-top--l
+                .spray-page__video
+                  .spray-page__video-row
+                    .spray-page__video-col
+                      h3.spray-page__section-title.margin-botto.margin-bottom--m
+                        |Способ применения
+                      .spray-page__video-button
+                        a.download-link.download-link--default(href="#")
+                          .download-link__icon
+                            +download-svg
+                          .download-link__text
+                            |Скачать инструкцию
+                    .spray-page__video-col
+                      .video
+                        .video__container
+                          .video__frame
+                            img.video__img(src="assets/images/video.jpg", alt="")
+                          .video__button
+                            .video__button-icon
+                              +start-svg.video__button-svg
+              section.spray-page__section.margin-top.margin-top--l
 
 
             +footer.page__footer
