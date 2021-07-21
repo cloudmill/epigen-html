@@ -263,4 +263,59 @@
     font-weight: 400;
     @include fsl(20px, 140%);
   }
+
+  &__use {}
+  &__use-list {
+    margin-top: -20px;
+    margin-left: -20px;
+
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
+  &__use-item {
+    margin-left: 20px;
+    margin-top: 20px;
+
+    width: calc(((#{$col-width-d} * 18) / 2) - 10px);
+    min-height: 190px;
+
+    flex-shrink: 0;
+    display: flex;
+  }
+  &__use-card {
+    width: calc((100% / 2) - 10px);
+    flex-shrink: 0;
+
+    background: linear-gradient(180deg, #E0F3FD 0%, rgba(224, 243, 253, 0) 100%);
+    border-radius: 10px;
+
+    &:not(:first-child) {
+      margin-left: 20px;
+    }
+
+    &--big {
+      width: 100%;
+    }
+  }
+  &__use-container {
+    padding: 20px 30px;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__use-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__use-text {
+    margin-top: 30px;
+
+    @include fsl(15px, 140%);
+  }
 }
