@@ -3,7 +3,7 @@ extends ../layouts/master.pug
 include ../components/footer.pug
 
 block cookies
-block grid-test
+//- block grid-test
 
 mixin nav-page-d
   nav.nav-page-d
@@ -293,7 +293,21 @@ block content
                             +spray-use-6-svg
                           .spray-page__use-text
                             |При беременности
-
+              section.spray-page__section.margin-top.margin-top--l
+                .spray-page__content
+                  .spray-page__content-layout
+                    +star-svg.spray-page__content-img
+                    +moon-svg.spray-page__content-icon
+                    +triangle-bg-svg.spray-page__content-bg
+                  .spray-page__content-content
+                    h3.spray-page__content-title
+                      |Ощущаете дискомфорт в интимной зоне?
+                    .spray-page__content-row
+                      .spray-page__content-col
+                        .spray-page__content-button
+                      .spray-page__content-col
+                        .spray-page__content-text
+                          |Пройдите тест и узнайте больше о решении данной проблемы
 
 
 
