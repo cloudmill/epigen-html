@@ -3,7 +3,7 @@ extends ../layouts/master.pug
 include ../components/footer.pug
 
 block cookies
-block grid-test
+//- block grid-test
 
 mixin nav-page-d
   nav.nav-page-d
@@ -328,6 +328,63 @@ block content
                               |#{item}
                   .spray-page__test-index
                     |1
+              section.spray-page__section.margin-top.margin-top--l
+                .spray-page__structure
+                  .spray-page__structure-row
+                    .spray-page__structure-col
+                      h3.spray-page__section-title
+                        |Состав
+                      .spray-page__structure-label
+                        |на 100 мл. препарата
+                    .spray-page__structure-col
+                      h4.spray-page__structure-title
+                        |Действущее вещество
+                      .spray-page__structure-content
+                        .spray-page__structure-text.max-width.max-width--col--5
+                          |Глицирризиновая кислота активированная (эквивалентно аммонию глицирризинату)
+                        .spray-page__structure-num
+                          |0,1 г
+                    .spray-page__structure-col
+                      h4.spray-page__structure-title
+                        |Вспомогательные вещества
+                      ul.spray-page__structure-list
+                        -
+                          var items = [
+                            {
+                              text: 'Яблочная кислота',
+                              num: '3 г',
+                            },
+                            {
+                              text: 'Фумаровая кислота',
+                              num: '2 г',
+                            },
+                            {
+                              text: 'Аскорбиновая кислота',
+                              num: '0,3 г',
+                            },
+                            {
+                              text: 'Фолиевая кислота',
+                              num: '0,08 г',
+                            },
+                            {
+                              text: 'Пропиленгликоль',
+                              num: '50 г',
+                            },
+                            {
+                              text: 'Твин-80 (полисорбат-80)',
+                              num: '0,9 г',
+                            },
+                            {
+                              text: 'Вода очищенная',
+                              num: 'до 100 мл',
+                            },
+                          ]
+                        each item in items
+                          li.spray-page__structure-item
+                            .spray-page__structure-text
+                              |!{item.text}
+                            .spray-page__structure-num
+                              |!{item.num}
 
 
             +footer.page__footer

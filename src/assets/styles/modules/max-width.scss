@@ -7,5 +7,10 @@
         max-width: calc(#{$col-width-d} * 9);
       }
     }
+    &--5 {
+      @media (min-width: $breakpoint) {
+        max-width: calc(#{$col-width-d} * 5);
+      }
+    }
   }
 }
