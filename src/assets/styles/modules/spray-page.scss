@@ -64,12 +64,29 @@
     @include fsl(18px, 140%);
   }
 
-  &__slider {}
+  &__slider {
+    padding-top: 140px;
+
+    overflow-x: hidden;
+  }
+  &__slider-container {
+    position: relative;
+  }
   &__slider-slide {
     position: relative;
 
-    &:nth-child(2) {
-      display: none;
+    transform: translateX(-100%);
+    visibility: hidden;
+    transition: transform $transition; // ?
+
+    &--active {
+      transform: translateX(0);
+      visibility: visible;
+    }
+
+    &--absolute {
+      position: absolute;
+      top: 0;
     }
   }
   &__slider-img {
@@ -121,6 +138,7 @@
   }
   &__slider-icon {
     position: absolute;
+    z-index: 2;
     left: calc(#{$col-width-d} * 15);
     top: 0;
     transform: translateY(-50%);
@@ -133,17 +151,41 @@
   }
   &__tabs-item {
     flex-shrink: 0;
-    // width: calc((#{$col-width-d} * 3) - 30px);
 
     background-color: $color-white;
     border-radius: 10px;
     cursor: pointer;
+    transition: $transition;
 
     &:not(:first-child) {
       margin-left: 10px;
     }
 
     &--active {
+      background-color: $color-blue;
+
+      #{$comp}__tabs-icon {
+
+        .spray-svg__background {
+          fill: $color-blue;
+        }
+
+        .spray-svg__line {
+          &--stroke {
+            stroke: $color-white;
+          }
+          &--fill {
+            fill: $color-white;
+          }
+        }
+      }
+
+      #{$comp}__tabs-num {
+        color: $color-white;
+      }
+    }
+
+    &:hover {
       background-color: $color-blue;
 
       #{$comp}__tabs-icon {
@@ -212,12 +254,14 @@
     display: flex;
 
     @include fsl(40px, 120%);
+    transition: $transition;
 
     &::after {
       content: 'мл';
       display: block;
 
       @include fsl(13px, 120%);
+      transition: $transition;
     }
   }
 
@@ -409,6 +453,14 @@
       border-color: transparent transparent $color-black $color-black;
       transform: rotate(-45deg);
       transition: $transition;
+    }
+
+    &:hover {
+      background-color: $color-blue;
+
+      &::before {
+        border-color: transparent transparent $color-white $color-white;
+      }
     }
   }
   &__content-text {
