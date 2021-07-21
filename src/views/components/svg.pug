@@ -267,3 +267,11 @@ mixin spray-use-6-svg
         stop(offset='0.423547' stop-color='#31AFF2')
         stop(offset='1' stop-color='#5553F0')
 
+mixin triangle-bg-svg
+  svg(class=attributes.class width='540' height='626' viewbox='0 0 540 626' fill='none' xmlns='http://www.w3.org/2000/svg')
+    path(d='M270 124L415.492 502H124.508L270 124Z' fill='#8BD7FF')
+    filter#filter0_f(x='0.507751' y='0' width='538.984' height='626' filterunits='userSpaceOnUse' color-interpolation-filters='sRGB')
+      feflood(flood-opacity='0' result='BackgroundImageFix')
+        feblend(mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape')
+          fegaussianblur(stddeviation='62' result='effect1_foregroundBlur')
+
