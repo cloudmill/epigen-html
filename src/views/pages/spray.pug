@@ -3,7 +3,7 @@ extends ../layouts/master.pug
 include ../components/footer.pug
 
 block cookies
-block grid-test
+//- block grid-test
 
 mixin nav-page-d
   nav.nav-page-d
@@ -133,7 +133,7 @@ block content
                   .spray-page__section-col
                     p.spray-page__section-text
                       |Разрешен к применению на любом сроке беременности и в период прегравидарной подготовки, не противопоказан детям.
-              section.spray-page__section
+              section.spray-page__section.margin-top.margin-top--l
                 .spray-page__slider
                   .spray-page__slider-slide
                     .spray-page__slider-container
@@ -142,8 +142,173 @@ block content
                       .spray-page__slider-row
                         .spray-page__slider-col
                           .spray-page__tabs
-
+                            .spray-page__tabs-item.spray-page__tabs-item--active
+                              .spray-page__tabs-container
+                                .spray-page__tabs-row
+                                  .spray-page__tabs-col
+                                    +spray-svg.spray-page__tabs-icon
+                                  .spray-page__tabs-col
+                                    .spray-page__tabs-num
+                                      |15
+                            .spray-page__tabs-item
+                              .spray-page__tabs-container
+                                .spray-page__tabs-row
+                                  .spray-page__tabs-col
+                                    +spray-svg.spray-page__tabs-icon
+                                  .spray-page__tabs-col
+                                    .spray-page__tabs-num
+                                      |60
+                          ul.reason-list.reason-list--italic.spray-page__slider-list
+                            li.reason-list__item
+                              p.reason-list__text
+                                |Для лечения острого заболевания
+                            li.reason-list__item
+                              p.reason-list__text
+                                |Для курса профилактики 2-3 курса лечения или профилактики
                         .spray-page__slider-col
+                          .spray-page__slider-bottom
+                            .spray-page__slider-num
+                              |115
+                              .spray-page__slider-label
+                                |Доз
+                    .spray-page__slider-layout
+                      +star-svg.spray-page__slider-icon
+                  .spray-page__slider-slide
+                    .spray-page__slider-container
+                      img.spray-page__slider-img(src="assets/images/spray-page.jpg", alt="")
+                    .spray-page__slider-content
+                      .spray-page__slider-row
+                        .spray-page__slider-col
+                          .spray-page__tabs
+                            .spray-page__tabs-item
+                              .spray-page__tabs-container
+                                .spray-page__tabs-row
+                                  .spray-page__tabs-col
+                                    +spray-svg.spray-page__tabs-icon
+                                  .spray-page__tabs-col
+                                    .spray-page__tabs-num
+                                      |15
+                            .spray-page__tabs-item.spray-page__tabs-item--active
+                              .spray-page__tabs-container
+                                .spray-page__tabs-row
+                                  .spray-page__tabs-col
+                                    +spray-svg.spray-page__tabs-icon
+                                  .spray-page__tabs-col
+                                    .spray-page__tabs-num
+                                      |60
+                          ul.reason-list.reason-list--italic.spray-page__slider-list
+                            li.reason-list__item
+                              p.reason-list__text
+                                |Во время беремнности
+                            li.reason-list__item
+                              p.reason-list__text
+                                |Для применения вместе с партнером 1 год использования по требованию
+                        .spray-page__slider-col
+                          .spray-page__slider-bottom
+                            .spray-page__slider-num
+                              |460
+                              .spray-page__slider-label.spray-page__slider-label--top
+                                |более
+                              .spray-page__slider-label
+                                |Доз
+                    .spray-page__slider-layout
+                      +star-svg.spray-page__slider-icon
+              section.spray-page__section.margin-top.margin-top--l
+                ul.spray-page__list
+                  li.spray-page__list-item.spray-page__list-item--default
+                    p.spray-page__list-text
+                      |Широта показаний для применения обеспечивается разнообразием эффектов активированной глицирризиновой кислоты
+                  li.spray-page__list-item
+                    .spray-page__list-container
+                      .spray-page__list-img
+                        +spray-1-svg
+                      h3.spray-page__list-title
+                        |Противовирусный
+                  li.spray-page__list-item
+                    .spray-page__list-container
+                      .spray-page__list-img
+                        +spray-2-svg
+                      h3.spray-page__list-title
+                        |Противовоспалительный
+                  li.spray-page__list-item
+                    .spray-page__list-container
+                      .spray-page__list-img
+                        +spray-3-svg
+                      h3.spray-page__list-title
+                        |Противозудный
+                  li.spray-page__list-item
+                    .spray-page__list-container
+                      .spray-page__list-img
+                        +spray-4-svg
+                      h3.spray-page__list-title
+                        |Регенерирующий
+                  li.spray-page__list-item
+                    .spray-page__list-container
+                      .spray-page__list-img
+                        +spray-5-svg
+                      h3.spray-page__list-title
+                        |Иммуностимулирующий
+              section.spray-page__section.margin-top.margin-top--l
+                h3.spray-page__section-title
+                  |Применяется при лечении
+                .spray-page__use.margin-top.margin-top--md
+                  ul.spray-page__use-list
+                    li.spray-page__use-item
+                      .spray-page__use-card
+                        .spray-page__use-container
+                          .spray-page__use-img
+                            +spray-use-1-svg
+                          .spray-page__use-text
+                            |Генитальный герпес
+                      .spray-page__use-card
+                        .spray-page__use-container
+                          .spray-page__use-img
+                            +spray-use-2-svg
+                          .spray-page__use-text
+                            |ВПЧ
+                    li.spray-page__use-item
+                      .spray-page__use-card.spray-page__use-card--big
+                        .spray-page__use-container
+                          .spray-page__use-img
+                            +spray-use-3-svg
+                          .spray-page__use-text
+                            |Бактериальный вагиноз, неспецифический вагинит
+                    li.spray-page__use-item
+                      .spray-page__use-card.spray-page__use-card--big
+                        .spray-page__use-container
+                          .spray-page__use-img
+                            +spray-use-4-svg
+                          .spray-page__use-text
+                            |Дискомфорт, связанный с половым актом
+                    li.spray-page__use-item
+                      .spray-page__use-card
+                        .spray-page__use-container
+                          .spray-page__use-img
+                            +spray-use-5-svg
+                          .spray-page__use-text
+                            |Молочница, заболевание шейки матки
+                      .spray-page__use-card
+                        .spray-page__use-container
+                          .spray-page__use-img
+                            +spray-use-6-svg
+                          .spray-page__use-text
+                            |При беременности
+              section.spray-page__section.margin-top.margin-top--l
+                .spray-page__content
+                  .spray-page__content-layout
+                    +star-svg.spray-page__content-img
+                    +moon-svg.spray-page__content-icon
+                    +triangle-bg-svg.spray-page__content-bg
+                  .spray-page__content-content
+                    h3.spray-page__content-title
+                      |Ощущаете дискомфорт в интимной зоне?
+                    .spray-page__content-row
+                      .spray-page__content-col
+                        .spray-page__content-button
+                      .spray-page__content-col
+                        .spray-page__content-text
+                          |Пройдите тест и узнайте больше о решении данной проблемы
+
 
 
             +footer.page__footer

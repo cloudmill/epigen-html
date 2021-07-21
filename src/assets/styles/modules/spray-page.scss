@@ -1,4 +1,6 @@
 .spray-page {
+  $comp: &;
+
 
   &__intro {
     position: absolute;
@@ -65,16 +67,353 @@
   &__slider {}
   &__slider-slide {
     position: relative;
+
+    &:nth-child(2) {
+      display: none;
+    }
   }
   &__slider-img {
     display: block; // svg blur ??
     border-radius: 10px;
   }
-  &__slider-conent {
+  &__slider-content {
     position: absolute;
     top: 30px;
     left: 30px;
     bottom: 0;
     right: 0;
+  }
+  &__slider-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  &__slider-list {
+    margin-left: calc((#{$col-width-d} * 3) - 30px);
+
+    width: calc(#{$col-width-d} * 6);
+  }
+  &__slider-bottom {
+    margin-top: 15px;
+
+    display: flex;
+  }
+  &__slider-num {
+    position: relative;
+    // @include fsl(140px, 110%);
+    font-size: calc((110 / 1680) * 100vw);
+    line-height: 110%;
+  }
+  &__slider-label {
+    position: absolute;
+    top: 0;
+    left: 100%;
+
+    @include fsl(13px, 120%);
+    text-transform: uppercase;
+
+    &--top {
+      bottom: 100%;
+      top: auto;
+      left: 0;
+    }
+  }
+  &__slider-icon {
+    position: absolute;
+    left: calc(#{$col-width-d} * 15);
+    top: 0;
+    transform: translateY(-50%);
+  }
+
+  &__tabs {
+    margin-bottom: 60px;
+
+    display: flex;
+  }
+  &__tabs-item {
+    flex-shrink: 0;
+    // width: calc((#{$col-width-d} * 3) - 30px);
+
+    background-color: $color-white;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &:not(:first-child) {
+      margin-left: 10px;
+    }
+
+    &--active {
+      background-color: $color-blue;
+
+      #{$comp}__tabs-icon {
+
+        .spray-svg__background {
+          fill: $color-blue;
+        }
+
+        .spray-svg__line {
+          &--stroke {
+            stroke: $color-white;
+          }
+          &--fill {
+            fill: $color-white;
+          }
+        }
+      }
+
+      #{$comp}__tabs-num {
+        color: $color-white;
+      }
+    }
+  }
+  &__tabs-container {
+    padding: 16px 32px; //?
+  }
+  &__tabs-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__tabs-col {
+    flex-shrink: 0;
+
+    &:nth-child(1) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &:nth-child(2) {
+      margin-left: 30px;
+    }
+  }
+  &__tabs-icon {
+
+    .spray-svg__background,
+    .spray-svg__line {
+      transition: $transition;
+    }
+
+    .spray-svg__background {
+      fill: $color-white;
+    }
+
+    .spray-svg__line {
+      &--stroke {
+        stroke: $color-black;
+      }
+      &--fill {
+        fill: $color-black;
+      }
+    }
+  }
+  &__tabs-num {
+    display: flex;
+
+    @include fsl(40px, 120%);
+
+    &::after {
+      content: 'мл';
+      display: block;
+
+      @include fsl(13px, 120%);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__list-item {
+    width: calc(#{$col-width-d} * 6);
+    min-height: 210px;
+
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid $color-blue-light;
+    border-radius: 10px;
+
+    &--default {
+      display: block;
+
+      border: none;
+    }
+
+    &:not(:first-child) {
+      margin-left: -1px;
+    }
+  }
+  &__list-text {
+    width: calc(#{$col-width-d} * 4);
+
+    @include fsl(15px, 140%);
+  }
+  &__list-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__list-title {
+    margin-top: 18px;
+
+    font-weight: 400;
+    @include fsl(20px, 140%);
+  }
+
+  &__use {}
+  &__use-list {
+    margin-top: -20px;
+    margin-left: -20px;
+
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
+  &__use-item {
+    margin-left: 20px;
+    margin-top: 20px;
+
+    width: calc(((#{$col-width-d} * 18) / 2) - 10px);
+    min-height: 190px;
+
+    flex-shrink: 0;
+    display: flex;
+  }
+  &__use-card {
+    width: calc((100% / 2) - 10px);
+    flex-shrink: 0;
+
+    background: linear-gradient(180deg, #E0F3FD 0%, rgba(224, 243, 253, 0) 100%);
+    border-radius: 10px;
+
+    &:not(:first-child) {
+      margin-left: 20px;
+    }
+
+    &--big {
+      width: 100%;
+    }
+  }
+  &__use-container {
+    padding: 20px 30px;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__use-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__use-text {
+    margin-top: 30px;
+
+    @include fsl(15px, 140%);
+  }
+
+  &__content {
+    padding-left: calc(#{$col-width-d} * 5);
+
+    position: relative;
+    display: flex;
+  }
+  &__content-layout {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  &__content-img {
+    position: absolute;
+    left: calc(#{$col-width-d} * 3);
+    bottom: 100%;
+  }
+  &__content-icon {
+    position: absolute;
+    top: 15px;
+    left: calc(#{$col-width-d} * 15);
+
+    width: 27px;
+    height: 30px;
+  }
+  &__content-bg {
+    position: absolute;
+    left: 50%;
+    bottom: -180px;
+
+    transform: translateX(-50%);
+
+    path {
+      filter: blur(80px);
+    }
+  }
+  &__content-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__content-title {
+    margin-bottom: 30px;
+
+    width: 444px;
+
+    text-align: center;
+    font-weight: 400;
+    @include fsl(35px, 130%);
+  }
+  &__content-row {
+    display: flex;
+  }
+  &__content-col {
+    flex-shrink: 0;
+
+    &:nth-child(1) {
+      width: calc(#{$col-width-d} * 4);
+    }
+    &:nth-child(2) {
+      margin-left: 40px;
+    }
+  }
+  &__content-button {
+    padding: 21px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid $color-blue;
+    border-radius: 70px;
+    cursor: pointer;
+    transition: $transition;
+
+    &::before {
+      $size: 10px;
+
+      margin-top: -5px;
+
+      content: "";
+      width: $size;
+      height: $size;
+
+      border: 1px solid $color-black;
+      border-color: transparent transparent $color-black $color-black;
+      transform: rotate(-45deg);
+      transition: $transition;
+    }
+  }
+  &__content-text {
+    width: 313px;
+
+    @include fsl(18px, 140%);
   }
 }
