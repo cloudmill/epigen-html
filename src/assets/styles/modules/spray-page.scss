@@ -416,4 +416,126 @@
 
     @include fsl(18px, 140%);
   }
+
+  &__test {
+    border-radius: 10px;
+    background-color: $color-aqua;
+  }
+  &__test-container {
+    padding: 62px calc(#{$col-width-d});
+
+    position: relative;
+  }
+  &__test-row {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__test-col {
+    flex-shrink: 0;
+
+    &:nth-child(1) {
+      width: calc(#{$col-width-d} * 6);
+    }
+    &:nth-child(2) {
+      width: calc(#{$col-width-d} * 8);
+    }
+  }
+  &__test-question {
+    @include fsl(25px, 120%);
+  }
+  &__test-dots {
+    display: flex;
+  }
+  &__test-dot {
+    $size: 13px;
+
+    width: $size;
+    height: $size;
+
+    border-radius: 50%;
+    background-color: $color-white;
+    cursor: pointer;
+
+    &:not(:first-child) {
+      margin-left: 15px;
+    }
+
+    &--active {
+      background-color: $color-blue;
+    }
+  }
+  &__test-label {
+    padding: 10px 15px;
+
+    display: flex;
+
+    background-color: $color-white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: $transition;
+
+    &:not(:first-child) {
+      margin-top: 5px;
+    }
+
+    &:hover {
+      background-color: $color-blue;
+
+      #{$comp}__test-icon {
+        background-color: $color-blue;
+      }
+      #{$comp}__test-text {
+        color: $color-white;
+      }
+
+    }
+  }
+  &__test-radio {
+    position: absolute;
+
+    opacity: 0;
+    visibility: hidden;
+  }
+  &__test-icon {
+    $size-d: 34px;
+
+    margin-right: 15px;
+
+    width: $size-d;
+    height: $size-d;
+
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: $color-aqua;
+    border-radius: 10px;
+    transition: $transition;
+  }
+  &__test-text {
+    padding-top: 7px;
+
+    @include fsl(15px, 140%);
+    transition: $transition;
+  }
+  &__test-index {
+    $size: 40px;
+
+    position: absolute;
+    top: 12px;
+    left: 10px;
+
+    width: $size;
+    height: $size;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: $color-white;
+    background-color: $color-blue;
+    border-radius: 50%;
+    @include fsl(18px, 140%);
+  }
 }
