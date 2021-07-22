@@ -5,6 +5,7 @@
     #{$comp}__row {
       display: block;
     }
+
     #{$comp}__col {
       &:nth-child(2) {
         margin-top: 15px;
@@ -18,11 +19,11 @@
   }
 
   &__col {
-    &:nth-child(1) {
+    &:nth-child(1) {}
 
-    }
     &:nth-child(2) {
       margin-left: 30px;
+
       @media (max-width: $breakpoint - 1px) {
         margin-left: 15px;
       }
@@ -39,8 +40,11 @@
       width: $size-m;
       height: $size-m;
     }
+
     width: $size-d;
     height: $size-d;
+
+    overflow: hidden;
 
     &--size {
 
@@ -50,28 +54,45 @@
         width: $size-d;
         height: $size-d;
       }
+
+      &--md {
+        $size-d: 120px;
+
+        width: $size-d;
+        height: $size-d;
+      }
     }
-  }
 
-  &__portrait {
+    &--radius {
+      &--right {
+        border-radius: 190px 190px 0px 190px;
+      }
 
+      &--left {
+        border-radius: 190px 190px 190px 0px;
+      }
+    }
   }
 
   &__name {
     margin-bottom: 10px;
 
     @include fsl(15px, 140%);
+
     @media (max-width: $breakpoint - 1px) {
       @include fsl(13px)
     }
+
     font-weight: 400;
   }
 
   &__pos {
     @include fsl(12px, 140%);
+
     @media (max-width: $breakpoint - 1px) {
       @include fsl(11px)
     }
+
     color: $color-gray;
   }
 }

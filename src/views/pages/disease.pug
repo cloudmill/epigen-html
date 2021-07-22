@@ -2,7 +2,7 @@ extends ../layouts/master.pug
 
 include ../components/footer.pug
 
-block cookies
+//- block cookies
 block grid-test
 
 mixin nav-page-d
@@ -142,8 +142,8 @@ block content
                         .doctor-card.doctor-card--col
                           .doctor-card__row
                             .doctor-card__col
-                              .doctor-card__frame.doctor-card__frame--size--default
-                                .doctor-card__portrait
+                              .doctor-card__frame.doctor-card__frame--size--default.doctor-card__frame--radius--left
+                                img(src="assets/images/doctor.jpg", alt="")
                             .doctor-card__col
                               .doctor-card__name
                                 |Бебнева Тамара Николаевна
