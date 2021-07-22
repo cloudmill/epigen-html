@@ -1,0 +1,47 @@
+.articles-page {
+
+  &__aside {}
+
+  &__aside-label {
+    margin-bottom: 30px;
+
+    text-transform: uppercase;
+    @include fsl(13px, 120%);
+  }
+
+  &__aside-title {
+    margin-bottom: 15px;
+
+    font-weight: 400;
+    @include fsl(20px, 140%);
+  }
+
+  &__aside-text {
+    @include fsl(15px, 140%);
+    color: $color-gray;
+  }
+
+  &__section {}
+
+  &__section-row {
+    display: flex;
+  }
+
+  &__section-col {
+    flex-shrink: 0;
+
+    &:nth-child(1) {
+      width: calc(#{$col-width-d} * 2);
+    }
+
+    &:nth-child(2) {
+      width: 420px;
+    }
+  }
+
+  &__section-label {
+    text-transform: uppercase;
+    color: $color-blue;
+    @include fsl(13px, 120%);
+  }
+}

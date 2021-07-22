@@ -31,4 +31,37 @@
     font-weight: 400;
     @include fsl(18px, 140%);
   }
+
+  &__row {
+    display: flex;
+  }
+
+  &__doctor {
+    margin-top: 10px;
+    padding: 4px 10px 4px 4px;
+
+    display: flex;
+    align-items: center;
+
+    border: 1px solid $color-blue-light;
+    border-radius: 50px;
+  }
+
+  &__avatar {
+    $size: 34px;
+
+    width: $size;
+    height: $size;
+
+  }
+
+  &__icon {
+    border-radius: 50%;
+  }
+
+  &__name {
+    margin-left: 10px;
+
+    @include fsl(13px, 120%);
+  }
 }

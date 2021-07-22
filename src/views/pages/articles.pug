@@ -1,0 +1,144 @@
+extends ../layouts/master.pug
+
+include ../components/border-link.pug
+include ../components/footer.pug
+
+
+block cookies
+//- block grid-test
+
+
+mixin copyright-link
+  a.copyright-link(href=attributes.href)
+    .copyright-link__mark
+      +copyright-svg.copyright-link__mark-svg
+    .copyright-link__text
+      block
+
+
+block content
+  .articles-page
+    .container
+      .row
+        .row__col.row__col--aside.row__col--rail
+          .aside
+            .aside__inner
+              .aside__container
+                .aside__top
+                  header.aside__header.aside__header--margin-bottom--default
+                    a.aside__logo(href='#')
+                      +logo-svg.aside__logo-svg
+                    .aside__menu
+                      .aside__menu-text
+                        |Меню
+                      .aside__menu-button
+                  .articles-page__aside
+                    .articles-page__aside-label 
+                      |О категории
+                    h4.articles-page__aside-title
+                      |Генитальный герпес
+                    p.articles-page__aside-text 
+                      |Герпес является распространенным заболеванием, передающимся половым путем (ЗППП), которым может заболеть любой человек, ведущий половую жизнь. У большинства людей с вирусом симптомы отсутствуют. Даже без признаков заболевания герпес по-прежнему может распространяться на сексуальных партнеров.
+                .aside__bottom
+                  +copyright-link(href='#')
+                    |Компания «Инвар», 2021
+        .row__col.row__col--main
+          .page
+            header.page__header
+              .panel
+                .panel__panel
+                  .panel__row
+                    .panel__col
+                      .panel__inner
+                        .panel__product
+                          //- .panel__product-item--active
+                          a.panel__product-item(href='#')
+                            .panel__product-mark
+                            .panel__product-text
+                              |Спрей
+                          a.panel__product-item.panel__product-item--purple(href='#')
+                            .panel__product-mark
+                            .panel__product-text
+                              |Гель
+                    .panel__col
+                      .panel__inner
+                        a.panel__where-buy(href='#')
+                          |Где купить
+                    .panel__col
+                      .panel__inner
+                        .panel__choice
+                          .panel__choice-item(data-count=8)
+                            |Симптомы
+                          .panel__choice-item(data-count=12)
+                            |Заболевания
+                    .panel__col
+                      .panel__inner
+                        .panel__consultation
+                          +consultation-svg.panel__consultation-svg
+                          .panel__consultation-text
+                            |Консультация эксперта
+            main.page__main
+              h1.title
+                |Статьи экспертов
+              .rail.rail--margin-bottom--default.rail--desctop
+              section.articles-page__section
+                .articles-page__section-row 
+                  .articles-page__section-col
+                    .articles-page__section-label 
+                      |эксперт
+                  .articles-page__section-col
+                    .doctor-card
+                      .doctor-card__row
+                        .doctor-card__col
+                          .doctor-card__frame
+                            .doctor-card__portrait
+                        .doctor-card__col
+                          .doctor-card__name
+                            |Бебнева Тамара Николаевна
+                          .doctor-card__pos
+                            |Врач акушер-гинеколог ФГБУ «НМИЦ эндокринологии» Минздрава России, к.м.н, доцент Кафедры акушерства, гинекологии и репродуктивной медицины РУДН
+                section.articles-page__section.margin-top.margin-top--md 
+                  ul.nav-list.nav-list--wrap
+                    li.nav-list__item
+                      +border-link(href='#' active count=29)
+                        |Все
+                    li.nav-list__item
+                      +border-link(href='#' count=5)
+                        |Статьи эксперта
+                    li.nav-list__item
+                      +border-link(href='#' count=5)
+                        |Генитальный герпес
+                    li.nav-list__item
+                      +border-link(href='#' count=29)
+                        |Молочница
+                    li.nav-list__item
+                      +border-link(href='#' count=3)
+                        |Бактериальный вагиноз
+                    li.nav-list__item
+                      +border-link(href='#' count=4)
+                        |При беременности
+                    li.nav-list__item
+                      +border-link(href='#' count=6)
+                        |ВПЧ
+                  ul.cards-grid
+                    - for (i = 0; i < 9; i++)
+                      li.cards-grid__item
+                        a.card(href="#")
+                          .card__container
+                            img.card__img(src="assets/images/card-1.jpg", alt="")
+                            .card__label
+                              |Клинические рекомендации
+                          .card__row
+                            .card__doctor
+                              .card__avatar 
+                                img.card__icon(src="assets/images/doctor.jpg", alt="")
+                              .card__name
+                                |Пустотина Ольга Анатольевна
+                          h3.card__title
+                            |Молочница: все, что нужно знать о заболевании
+                .button-show-wrapper
+                  .button-show
+                    .button-show__icon
+                      +btn-plus-svg.button-show__svg
+                    .button-show__text
+                      |показать еще
