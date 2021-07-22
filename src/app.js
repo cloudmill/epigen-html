@@ -4,117 +4,117 @@ import 'Styles/_app.scss'
 const BREAKPOINT = 1280
 const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
-// nav-page-d
-;(() => {
-	$(() => {
-		const components = $('.nav-page-d')
+  // nav-page-d
+  ; (() => {
+    $(() => {
+      const components = $('.nav-page-d')
 
-		components.each(function () {
-			const component = $(this)
+      components.each(function () {
+        const component = $(this)
 
-			const state = {
-				activeItem: component.find('.nav-page-d__item--active'),
+        const state = {
+          activeItem: component.find('.nav-page-d__item--active'),
 
-				setActiveItem: item => {
-					state.activeItem.removeClass('nav-page-d__item--active')
-					state.activeItem = item
-					state.activeItem.addClass('nav-page-d__item--active')
-				},
-			}
+          setActiveItem: item => {
+            state.activeItem.removeClass('nav-page-d__item--active')
+            state.activeItem = item
+            state.activeItem.addClass('nav-page-d__item--active')
+          },
+        }
 
-			const links = component.find('.nav-page-d__link')
+        const links = component.find('.nav-page-d__link')
 
-			links.on('click', function (event) {
-				event.preventDefault()
+        links.on('click', function (event) {
+          event.preventDefault()
 
-				const link = $(this)
-				const item = link.closest('.nav-page-d__item')
+          const link = $(this)
+          const item = link.closest('.nav-page-d__item')
 
-				state.setActiveItem(item)
-			})
-		})
-	})
-})()
+          state.setActiveItem(item)
+        })
+      })
+    })
+  })()
 
 // burger btn
 {
-	$(() => {
-		$('.aside__menu').on('click', function () {
-			$(this).toggleClass('aside__menu--active')
-		})
-	})
+  $(() => {
+    $('.aside__menu').on('click', function () {
+      $(this).toggleClass('aside__menu--active')
+    })
+  })
 }
 
 // panel
 {
-	$(() => {
-		const panels = $('.panel')
+  $(() => {
+    const panels = $('.panel')
 
-		const fps = 60
+    const fps = 60
 
-		let scrollTop = $(window).scrollTop()
+    let scrollTop = $(window).scrollTop()
 
-		$(window).one('scroll', scroll)
+    $(window).one('scroll', scroll)
 
-		function scroll() {
-			update()
+    function scroll() {
+      update()
 
-			setTimeout(() => {
-				update()
+      setTimeout(() => {
+        update()
 
-				$(window).one('scroll', scroll)
-			}, 1000 / fps)
-		}
+        $(window).one('scroll', scroll)
+      }, 1000 / fps)
+    }
 
-		function update() {
-			const newScrollTop = $(window).scrollTop()
+    function update() {
+      const newScrollTop = $(window).scrollTop()
 
-			if (Math.abs(scrollTop - newScrollTop) >= 1) {
-				if (newScrollTop > scrollTop) {
-					panels.addClass('panel--hidden')
-				} else {
-					panels.removeClass('panel--hidden')
-				}
-			}
+      if (Math.abs(scrollTop - newScrollTop) >= 1) {
+        if (newScrollTop > scrollTop) {
+          panels.addClass('panel--hidden')
+        } else {
+          panels.removeClass('panel--hidden')
+        }
+      }
 
-			scrollTop = newScrollTop
-		}
-	})
+      scrollTop = newScrollTop
+    }
+  })
 }
 
 // cookies
 {
-	const DELAY = 1000
+  const DELAY = 1000
 
-	$(() => {
-		const component = $('.cookies')
+  $(() => {
+    const component = $('.cookies')
 
-		if (component.length !== 0) {
-			let isActive = false
+    if (component.length !== 0) {
+      let isActive = false
 
-			const btn = component.find('.cookies__btn')
+      const btn = component.find('.cookies__btn')
 
-			setTimeout(() => {
-				component.addClass('cookies--active')
+      setTimeout(() => {
+        component.addClass('cookies--active')
 
-				component.on('transitionend', event => {
-					if (event.target === component[0]) {
-						if (isActive) {
-							component.addClass('cookies--disabled')
-						} else {
-							isActive = true
-						}
-					}
-				})
+        component.on('transitionend', event => {
+          if (event.target === component[0]) {
+            if (isActive) {
+              component.addClass('cookies--disabled')
+            } else {
+              isActive = true
+            }
+          }
+        })
 
-				btn.on('click', () => {
-					if (isActive) {
-						component.removeClass('cookies--active')
-					}
-				})
-		 	}, DELAY)
-		}
-	})
+        btn.on('click', () => {
+          if (isActive) {
+            component.removeClass('cookies--active')
+          }
+        })
+      }, DELAY)
+    }
+  })
 }
 
 // modal
@@ -129,12 +129,12 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
         const button = $(this);
         const buttonId = button.data('button');
 
-        button.on('click', function() {
+        button.on('click', function () {
           $(`[data-modal='${buttonId}']`).toggleClass('modal--active');
         });
       });
 
-      $(window).on('click', function(event) {
+      $(window).on('click', function (event) {
         const target = event.target;
 
         if (target == $('.modal--active')[0]) {
@@ -205,81 +205,81 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
 // mdl
 {
-	$(() => {
-		const state = {
-			isActive: checkActive(),
-		}
+  $(() => {
+    const state = {
+      isActive: checkActive(),
+    }
 
-		if (!state.isActive) {
-			waitOpen()
-		}
+    if (!state.isActive) {
+      waitOpen()
+    }
 
-		$('.review-card--modal').on('click', event => {
-			event.preventDefault()
-		})
+    $('.review-card--modal').on('click', event => {
+      event.preventDefault()
+    })
 
-		function checkActive() {
-			return $('.mdl').hasClass('mdl--active')
-		}
+    function checkActive() {
+      return $('.mdl').hasClass('mdl--active')
+    }
 
-		function waitOpen() {
-			$('.review-card--modal').on('click', handleClick)
+    function waitOpen() {
+      $('.review-card--modal').on('click', handleClick)
       $('.button-modal').on('click', handleClick)
 
-			function handleClick() {
-				console.log('open click');
+      function handleClick() {
+        console.log('open click');
 
-				$('.review-card--modal').off('click', handleClick)
-				$('.button-modal').off('click', handleClick)
+        $('.review-card--modal').off('click', handleClick)
+        $('.button-modal').off('click', handleClick)
 
-				open()
-			}
-		}
+        open()
+      }
+    }
 
-		function open() {
-			state.isActive = true;
+    function open() {
+      state.isActive = true;
 
-			$('.mdl').addClass('mdl--active')
+      $('.mdl').addClass('mdl--active')
 
-			setTimeout(() => {
-				waitClose()
-			}, 0)
-		}
+      setTimeout(() => {
+        waitClose()
+      }, 0)
+    }
 
-		function waitClose() {
-			$(window).on('click', handleClick)
+    function waitClose() {
+      $(window).on('click', handleClick)
 
-			function handleClick(event) {
-				console.log('click close');
+      function handleClick(event) {
+        console.log('click close');
 
-				const clickTarget = $(event.target)
+        const clickTarget = $(event.target)
 
-				// const mdlClose = $('.mdl__close')[0]
-				const mdlClose = clickTarget.closest('.mdl__close')
-				// const mdlContent = $('.mdl__content')[0]
-				const mdlContent = clickTarget.closest('.mdl__content')
+        // const mdlClose = $('.mdl__close')[0]
+        const mdlClose = clickTarget.closest('.mdl__close')
+        // const mdlContent = $('.mdl__content')[0]
+        const mdlContent = clickTarget.closest('.mdl__content')
 
-				if (
-					mdlClose.length === 1
-					|| mdlContent.length === 0
-				) {
-					$(window).off('click', handleClick)
+        if (
+          mdlClose.length === 1
+          || mdlContent.length === 0
+        ) {
+          $(window).off('click', handleClick)
 
-					close()
-				}
-			}
-		}
+          close()
+        }
+      }
+    }
 
-		function close() {
-			state.isActive = false
+    function close() {
+      state.isActive = false
 
-			$('.mdl').removeClass('mdl--active')
+      $('.mdl').removeClass('mdl--active')
 
-			setTimeout(() => {
-				waitOpen()
-			}, 0)
-		}
-	})
+      setTimeout(() => {
+        waitOpen()
+      }, 0)
+    }
+  })
 }
 
 // alert specialists page
@@ -295,23 +295,23 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       const btn = alert.find('.button-close')
 
       setTimeout(() => {
-				alert.addClass('alert--active');
+        alert.addClass('alert--active');
 
-				alert.on('transitionend', event => {
-					if (event.target === alert[0]) {
-						if (isActive) {
-							alert.addClass('alert--disabled')
-						} else {
-							isActive = true
-						}
-					}
-				})
+        alert.on('transitionend', event => {
+          if (event.target === alert[0]) {
+            if (isActive) {
+              alert.addClass('alert--disabled')
+            } else {
+              isActive = true
+            }
+          }
+        })
 
-				btn.on('click', () => {
-					if (isActive) {
-						alert.removeClass('alert--active')
-					}
-				})
+        btn.on('click', () => {
+          if (isActive) {
+            alert.removeClass('alert--active')
+          }
+        })
       }, DELAY)
     }
   });
@@ -320,12 +320,13 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 // disease page scroll
 {
   $(() => {
-    if ($('.disease-page').length !== 0) {
-      const list = $('[data-list]');
+    const list = $('[data-list]');
+
+    if (list.length !== 0) {
       const listOffset = list.offset().top - 10;
       const panelHeight = $('.panel__panel').height();
 
-      $(window).on('scroll', function() {
+      $(window).on('scroll', function () {
         const scrollPos = this.pageYOffset;
 
         if (scrollPos > listOffset) {
@@ -347,7 +348,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
   $(() => {
     if ($('.nav-page-d').length !== 0) {
 
-      $('[data-scroll]').on('click', function(event) {
+      $('[data-scroll]').on('click', function (event) {
         event.preventDefault();
 
         const elementId = $(this).data('scroll');
@@ -376,11 +377,11 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 {
   $(() => {
 
-    $('.accordion').each(function() {
+    $('.accordion').each(function () {
       const accordion = $(this);
       const accordionButton = accordion.find('.accordion__head');
 
-      accordionButton.on('click', function() {
+      accordionButton.on('click', function () {
         accordion.toggleClass('accordion--active');
       });
     });
@@ -399,7 +400,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
         const scrollSection = $('[data-section]');
 
-        scrollSection.each(function(i, el) {
+        scrollSection.each(function (i, el) {
           const elemOffset = el.offsetTop;
 
           let windowOffset;
@@ -413,7 +414,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           }
 
           if (elemOffset - windowOffset < scrollPos) {
-            navLink.each( function () {
+            navLink.each(function () {
               if ($(this).hasClass('nav-page-d__item--active')) {
                 $(this).removeClass('nav-page-d__item--active')
               }
@@ -432,10 +433,10 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
   $(() => {
     const form = $('[data-form]');
 
-    if(form.length !== 0) {
+    if (form.length !== 0) {
       const formButton = form.find('[data-form-button]');
 
-      formButton.on('click', function(event) {
+      formButton.on('click', function (event) {
         event.preventDefault();
 
         const formButtonId = $(this).data('form-button');
@@ -447,7 +448,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       const response = $('[data-response]');
       const responseButton = response.find('[data-response-button]');
 
-      responseButton.on('click', function() {
+      responseButton.on('click', function () {
         const responseButtonId = $(this).data('response-button');
 
         $(`[data-form='${responseButtonId}']`).removeAttr('data-form-hidden');
@@ -462,29 +463,31 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
   $(() => {
     const tabs = $('[data-tab]');
 
-    tabs.each(function () {
-      const tab = $(this);
-      const tabId = tab.data('tab');
-      const slides = $('[data-slide]');
-      const slide = $(`[data-slide='${tabId}']`);
+    if (tabs.length !== 0) {
+      tabs.each(function () {
+        const tab = $(this);
+        const tabId = tab.data('tab');
+        const slides = $('[data-slide]');
+        const slide = $(`[data-slide='${tabId}']`);
 
-      tab.on('click', function() {
+        tab.on('click', function () {
 
-        if (!slide.hasClass('spray-page__slider-slide--active')) {
-          removeActive();
-          slide.addClass('spray-page__slider-slide--active');
-          slide.css('z-index', '1');
-          setTimeout (() => {
-            slide.css('z-index', '0');
-          }, 700)
-        }
+          if (!slide.hasClass('spray-page__slider-slide--active')) {
+            removeActive();
+            slide.addClass('spray-page__slider-slide--active');
+            slide.css('z-index', '1');
+            setTimeout(() => {
+              slide.css('z-index', '0');
+            }, 700)
+          }
 
-        function removeActive() {
-          setTimeout(() => {
-            slides.not(slide).removeClass('spray-page__slider-slide--active');
-          }, 500)
-        }
+          function removeActive() {
+            setTimeout(() => {
+              slides.not(slide).removeClass('spray-page__slider-slide--active');
+            }, 500)
+          }
+        });
       });
-    });
+    }
   });
 }
