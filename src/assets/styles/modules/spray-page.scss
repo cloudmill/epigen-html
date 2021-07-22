@@ -9,6 +9,7 @@
     right: 30px;
     bottom: 20px;
   }
+
   &__intro-row {
     display: flex;
     flex-direction: column;
@@ -16,6 +17,7 @@
 
     height: 100%;
   }
+
   &__intro-col {
 
     &:nth-child(1) {
@@ -23,10 +25,12 @@
       justify-content: space-between;
     }
   }
+
   &__intro-label {
     color: $color-blue;
     @include fsl(15px, 140%);
   }
+
   &__intro-item {
     display: flex;
     justify-content: flex-end;
@@ -35,31 +39,37 @@
       margin-top: 10px;
     }
   }
+
   &__intro-title {
     font-weight: 400;
     @include fsl(70px, 110%);
   }
 
   &__section {}
+
   &__section-row {
     display: flex;
   }
+
   &__section-col {
     flex-shrink: 0;
 
     &:nth-child(1) {
       width: calc(#{$col-width-d} * 10);
     }
+
     &:nth-child(2) {
       margin-left: calc(#{$col-width-d} * 2);
 
       width: calc(#{$col-width-d} * 5);
     }
   }
+
   &__section-title {
     font-weight: 400;
     @include fsl(35px, 130%);
   }
+
   &__section-text {
     @include fsl(18px, 140%);
   }
@@ -67,11 +77,13 @@
   &__slider {
     padding-top: 140px;
 
-    overflow-x: hidden;
+    overflow: hidden;
   }
+
   &__slider-container {
     position: relative;
   }
+
   &__slider-slide {
     position: relative;
 
@@ -89,10 +101,12 @@
       top: 0;
     }
   }
+
   &__slider-img {
     display: block; // svg blur ??
     border-radius: 10px;
   }
+
   &__slider-content {
     position: absolute;
     top: 30px;
@@ -100,28 +114,33 @@
     bottom: 0;
     right: 0;
   }
+
   &__slider-row {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
   }
+
   &__slider-list {
     margin-left: calc((#{$col-width-d} * 3) - 30px);
 
     width: calc(#{$col-width-d} * 6);
   }
+
   &__slider-bottom {
     margin-top: 15px;
 
     display: flex;
   }
+
   &__slider-num {
     position: relative;
     // @include fsl(140px, 110%);
     font-size: calc((110 / 1680) * 100vw);
     line-height: 110%;
   }
+
   &__slider-label {
     position: absolute;
     top: 0;
@@ -136,6 +155,7 @@
       left: 0;
     }
   }
+
   &__slider-icon {
     position: absolute;
     z-index: 2;
@@ -149,6 +169,7 @@
 
     display: flex;
   }
+
   &__tabs-item {
     flex-shrink: 0;
 
@@ -174,6 +195,7 @@
           &--stroke {
             stroke: $color-white;
           }
+
           &--fill {
             fill: $color-white;
           }
@@ -198,6 +220,7 @@
           &--stroke {
             stroke: $color-white;
           }
+
           &--fill {
             fill: $color-white;
           }
@@ -209,14 +232,17 @@
       }
     }
   }
+
   &__tabs-container {
     padding: 16px 32px; //?
   }
+
   &__tabs-row {
     display: flex;
     align-items: center;
     justify-content: center;
   }
+
   &__tabs-col {
     flex-shrink: 0;
 
@@ -230,6 +256,7 @@
       margin-left: 30px;
     }
   }
+
   &__tabs-icon {
 
     .spray-svg__background,
@@ -245,11 +272,13 @@
       &--stroke {
         stroke: $color-black;
       }
+
       &--fill {
         fill: $color-black;
       }
     }
   }
+
   &__tabs-num {
     display: flex;
 
@@ -269,6 +298,7 @@
     display: flex;
     flex-wrap: wrap;
   }
+
   &__list-item {
     width: calc(#{$col-width-d} * 6);
     min-height: 210px;
@@ -291,16 +321,19 @@
       margin-left: -1px;
     }
   }
+
   &__list-text {
     width: calc(#{$col-width-d} * 4);
 
     @include fsl(15px, 140%);
   }
+
   &__list-img {
     display: flex;
     align-items: center;
     justify-content: center;
   }
+
   &__list-title {
     margin-top: 18px;
 
@@ -309,6 +342,7 @@
   }
 
   &__use {}
+
   &__use-list {
     margin-top: -20px;
     margin-left: -20px;
@@ -317,6 +351,7 @@
     align-items: stretch;
     flex-wrap: wrap;
   }
+
   &__use-item {
     margin-left: 20px;
     margin-top: 20px;
@@ -327,6 +362,7 @@
     flex-shrink: 0;
     display: flex;
   }
+
   &__use-card {
     width: calc((100% / 2) - 10px);
     flex-shrink: 0;
@@ -342,6 +378,7 @@
       width: 100%;
     }
   }
+
   &__use-container {
     padding: 20px 30px;
 
@@ -352,11 +389,13 @@
     flex-direction: column;
     justify-content: space-between;
   }
+
   &__use-img {
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
   &__use-text {
     margin-top: 30px;
 
@@ -369,6 +408,7 @@
     position: relative;
     display: flex;
   }
+
   &__content-layout {
     position: absolute;
     z-index: -1;
@@ -377,11 +417,13 @@
     bottom: 0;
     right: 0;
   }
+
   &__content-img {
     position: absolute;
     left: calc(#{$col-width-d} * 3);
     bottom: 100%;
   }
+
   &__content-icon {
     position: absolute;
     top: 15px;
@@ -390,6 +432,7 @@
     width: 27px;
     height: 30px;
   }
+
   &__content-bg {
     position: absolute;
     left: 50%;
@@ -401,11 +444,13 @@
       filter: blur(80px);
     }
   }
+
   &__content-content {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+
   &__content-title {
     margin-bottom: 30px;
 
@@ -415,19 +460,23 @@
     font-weight: 400;
     @include fsl(35px, 130%);
   }
+
   &__content-row {
     display: flex;
   }
+
   &__content-col {
     flex-shrink: 0;
 
     &:nth-child(1) {
       width: calc(#{$col-width-d} * 4);
     }
+
     &:nth-child(2) {
       margin-left: 40px;
     }
   }
+
   &__content-button {
     padding: 21px 0;
 
@@ -463,6 +512,7 @@
       }
     }
   }
+
   &__content-text {
     width: 313px;
 
@@ -473,31 +523,38 @@
     border-radius: 10px;
     background-color: $color-aqua;
   }
+
   &__test-container {
     padding: 62px calc(#{$col-width-d});
 
     position: relative;
   }
+
   &__test-row {
     display: flex;
     justify-content: space-between;
   }
+
   &__test-col {
     flex-shrink: 0;
 
     &:nth-child(1) {
       width: calc(#{$col-width-d} * 6);
     }
+
     &:nth-child(2) {
       width: calc(#{$col-width-d} * 8);
     }
   }
+
   &__test-question {
     @include fsl(25px, 120%);
   }
+
   &__test-dots {
     display: flex;
   }
+
   &__test-dot {
     $size: 13px;
 
@@ -516,6 +573,7 @@
       background-color: $color-blue;
     }
   }
+
   &__test-label {
     padding: 10px 15px;
 
@@ -536,18 +594,21 @@
       #{$comp}__test-icon {
         background-color: $color-blue;
       }
+
       #{$comp}__test-text {
         color: $color-white;
       }
 
     }
   }
+
   &__test-radio {
     position: absolute;
 
     opacity: 0;
     visibility: hidden;
   }
+
   &__test-icon {
     $size-d: 34px;
 
@@ -565,12 +626,14 @@
     border-radius: 10px;
     transition: $transition;
   }
+
   &__test-text {
     padding-top: 7px;
 
     @include fsl(15px, 140%);
     transition: $transition;
   }
+
   &__test-index {
     $size: 40px;
 
@@ -596,9 +659,11 @@
 
     border-top: 1px solid $color-blue;
   }
+
   &__structure-row {
     display: flex;
   }
+
   &__structure-col {
     flex-shrink: 0;
     width: calc((#{$col-width-d} * 18) / 3);
@@ -606,21 +671,25 @@
     &:nth-child(2) {
       padding-right: 20px;
     }
+
     &:nth-child(3) {
       padding-left: 20px;
     }
   }
+
   &__structure-label {
     margin-top: 5px;
 
     @include fsl(13px, 120%);
   }
+
   &__structure-title {
     margin-bottom: 40px;
 
     font-weight: 400;
     @include fsl(20px, 120%);
   }
+
   &__structure-content {
     padding-bottom: 15px;
 
@@ -629,16 +698,18 @@
 
     border-bottom: 1px solid $color-blue-light;
   }
+
   &__structure-text {
     @include fsl(13px, 140%);
   }
+
   &__structure-num {
     font-weight: 500; //?
     @include fsl(13px, 140%);
   }
-  &__structure-list {
 
-  }
+  &__structure-list {}
+
   &__structure-item {
     padding-bottom: 10px;
 
@@ -653,20 +724,24 @@
   }
 
   &__video {}
+
   &__video-row {
     display: flex;
     justify-content: space-between;
   }
+
   &__video-col {
     flex-shrink: 0;
 
     &:nth-child(1) {
       width: calc(#{$col-width-d} * 4);
     }
+
     &:nth-child(2) {
       width: calc(#{$col-width-d} * 12);
     }
   }
+
   &__video-button {
     display: flex;
   }
