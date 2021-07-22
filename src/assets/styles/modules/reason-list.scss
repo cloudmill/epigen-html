@@ -9,6 +9,20 @@
     }
   }
 
+  &--big {
+    #{$comp}__item {
+
+      &::before {
+        top: 50%;
+        transform: translateY(-50%)
+      }
+    }
+    
+    #{$comp}__text {
+      @include fsl(18px, 170%);
+    } 
+  }
+
   &__item {
     position: relative;
 
@@ -40,5 +54,6 @@
     &--small {
       @include fsl(12px);
     }
+
   }
 }

@@ -1,0 +1,186 @@
+extends ../layouts/master.pug
+
+include ../components/footer.pug
+
+
+//- block cookies
+block grid-test
+
+mixin nav-page-d
+  nav.nav-page-d
+    ul.nav-page-d__list
+      -
+        var items = [
+          {
+            href: '#',
+            title: 'Причины возникновения молочницы',
+          },
+          {
+            href: '#',
+            title: 'Симптомы',
+          },
+          {
+            href: '#',
+            title: 'Диагностика',
+          },
+          {
+            href: '#',
+            title: 'Средства от молочницы',
+          },
+          {
+            href: '#',
+            title: 'Таблетки и капсулы',
+          },
+          {
+            href: '#',
+            title: 'Свечи',
+          },
+          {
+            href: '#',
+            title: 'Спрей',
+          },
+          {
+            href: '#',
+            title: 'Лечение',
+          },
+          {
+            href: '#',
+            title: 'Профилактика',
+          },
+        ]
+      each item, index in items
+        li.nav-page-d__item(class = ((index === 0) ? 'nav-page-d__item--active' : ''))
+          a.nav-page-d__link(href=item.href)
+            |!{item.title}
+
+mixin copyright-link
+  a.copyright-link(href=attributes.href)
+    .copyright-link__mark
+      +copyright-svg.copyright-link__mark-svg
+    .copyright-link__text
+      block
+
+
+block content
+  .specialists-page.article-page.disease-page
+    .container
+      .row
+        .row__col.row__col--aside.row__col--rail
+          .aside
+            .aside__inner
+              .aside__container
+                .aside__top
+                  header.aside__header.aside__header--margin-bottom--large
+                    a.aside__logo(href='#')
+                      +logo-svg.aside__logo-svg
+                    .aside__menu
+                      .aside__menu-text
+                        |Меню
+                      .aside__menu-button
+                  a.back-link(href="#")
+                    .back-link__icon
+                      +arrow-svg.back-link__svg.back-link__svg--swap
+                    .back-link__text
+                      |вернуться к статьям
+                  +nav-page-d
+                .aside__bottom
+                  +copyright-link(href='#')
+                    |Компания «Инвар», 2021
+        .row__col.row__col--main
+          .page
+            header.page__header
+              .panel
+                .panel__panel
+                  .panel__row
+                    .panel__col
+                      .panel__inner
+                        .panel__product
+                          //- .panel__product-item--active
+                          a.panel__product-item(href='#')
+                            .panel__product-mark
+                            .panel__product-text
+                              |Спрей
+                          a.panel__product-item.panel__product-item--purple(href='#')
+                            .panel__product-mark
+                            .panel__product-text
+                              |Гель
+                    .panel__col
+                      .panel__inner
+                        a.panel__where-buy(href='#')
+                          |Где купить
+                    .panel__col
+                      .panel__inner
+                        .panel__choice
+                          .panel__choice-item(data-count=8)
+                            |Симптомы
+                          .panel__choice-item(data-count=12)
+                            |Заболевания
+                    .panel__col
+                      .panel__inner
+                        .panel__consultation
+                          +consultation-svg.panel__consultation-svg
+                          .panel__consultation-text
+                            |Консультация эксперта
+            main.page__main
+              h1.title.title--md
+                |Молочница: все, что нужно знать о заболевании
+              .rail.rail--desctop.rail--margin-bottom--default
+            section.disease-page__section-row
+              .disease-page__section-col
+                .disease-page__section-label
+                  |Автор статьи
+                .disease-page__section-bot
+                  .disease-page__section-container
+                    .doctor-card.doctor-card--col
+                      .doctor-card__row
+                        .doctor-card__col
+                          .doctor-card__frame.doctor-card__frame--size--default.doctor-card__frame--radius--left
+                            img(src="assets/images/doctor.jpg", alt="")
+                        .doctor-card__col
+                          .doctor-card__name
+                            |Бебнева Тамара Николаевна
+                          .doctor-card__pos
+                            |Врач акушер-гинеколог ФГБУ «НМИЦ эндокринологии» Минздрава России, к.м.н, доцент Кафедры акушерства, гинекологии и репродуктивной медицины РУДН
+                  .rail
+              .disease-page__section-col.specialists-page__content-container
+                .disease-page__section-content.margin-bottom.margin-bottom--m
+                  .disease-page__section-label
+                    |категория
+                  .disease-page__section-category
+                    .category-item 
+                      |Молочница
+                img(src="assets/images/woman.jpg", alt="")
+            section.specialists-page__inner.margin-top
+              .specialists-page__content.specialists-page__content-wrapper
+                p  
+                  |Вагинальный кандидоз или молочница — одна из самых частых причин влагалищных выделений и зуда в области вульвы. По меньшей мере 75% женщин сталкивались с этим заболеванием хотя бы один раз в жизни. Всему виной — грибок Candida albicans. Он любит теплые места с нейтральной щелочной средой, поэтому обитает на слизистых во рту, кишечнике и влагалище, и обычно никак не мешает. 
+                p 
+                  |Проблемы начинаются, когда количество грибка начинает возрастать и вытеснять нормальную микрофлору влагалища: появляется дискомфорт и выделения. 
+                p  
+                  |Конкретной причины появления молочницы нет: у одних она появляется после длительного курса антибиотиков, у других — после праздничного ужина с кучей углеводов. Разбираемся, почему так происходит и как бороться с заболеванием. 
+            section.specialists-page__inner.margin-top
+              .specialists-page__content
+                h3
+                  |Причины возникновения молочницы
+                .specialists-page__content-wrapper
+                  p 
+                    |Чтобы грибки из рода Candida начали активно размножаться, нужны особые условия: должен изменится кислотно-щелочной баланс влагалища или снизиться иммунитет. Такие изменения подавляют нормальную микрофлору, а освободившееся место оперативно занимают грибки.
+                  p 
+                    |Чтобы грибки из рода Candida начали активно размножаться, нужны особые условия: должен изменится кислотно-щелочной баланс влагалища или снизиться иммунитет. Такие изменения подавляют нормальную микрофлору, а освободившееся место оперативно занимают грибки.
+            section.specialists-page__inner.margin-top
+              .specialists-page__content
+                h3
+                  |Причины возникновения молочницы
+              .specialists-page__content-wrapper
+                ul.reason-list.reason-list--big
+                  each item in ['Прием антибиотиков широкого спектра действия', 'Несоблюдение интимной гигиены', 'Гормональный дисбаланс', 'Несоблюдение интимной гигиены', 'Гормональный дисбаланс', 'Нарушения иммунитета', 'Нарушения обмена веществ', 'Ношение тесного или синтетического белья', 'Частое использование прокладок', 'Прием гормональных контрацептивов', 'Большое количество углеводов в рационе', 'Химиотерапия', 'Беременность', ]
+                    li.reason-list__item
+                      p.reason-list__text
+                        |#{item}
+                .margin-top.specialists-page__content
+                  p 
+                    |Пусковым фактором для развития молочницы могут быть нарушения гормонального баланса. Кандидоз встречается примерно у 35 % беременных и у 30 % женщин с эндокринными заболеваниями.
+            section
+
+
+            +footer.page__footer
