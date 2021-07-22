@@ -311,23 +311,31 @@ block content
                 .slider-section__col
                   h3.slider-section__title 
                     |Статьи по теме
-                .slider-section__col
-              .slider 
-                - for (i = 0; i < 3; i++)
-                  .slider__item 
-                    a.card(href="#")
-                      .card__container
-                        img.card__img(src="assets/images/card-1.jpg", alt="")
-                        .card__label
-                          |Клинические рекомендации
-                      .card__row
-                        .card__doctor
-                          .card__avatar 
-                            img.card__icon(src="assets/images/doctor.jpg", alt="")
-                          .card__name
-                            |Пустотина Ольга Анатольевна
-                      h3.card__title
-                        |Молочница: все, что нужно знать о заболевании
+                .slider-section__col.b.b--reviews-slider-main-page
+                  .b__control
+                    .b__control-item
+                      .b.b--btn-left-right-slider(data-slider-button="2")
+                        +simple-arrow-svg.b__svg
+                    .b__control-item
+                      .b.b--btn-left-right-slider.b--right(data-slider-button="1")
+                        +simple-arrow-svg.b__svg
+              .slider.swiper-container(data-slider-id="1" data-slider-next="1" data-slider-prev="2")
+                .swiper-wrapper
+                  - for (i = 0; i < 9; i++)
+                    .slider__item.swiper-slide
+                      a.card(href="#")
+                        .card__container
+                          img.card__img(src="assets/images/card-1.jpg", alt="")
+                          .card__label
+                            |Клинические рекомендации
+                        .card__row
+                          .card__doctor
+                            .card__avatar 
+                              img.card__icon(src="assets/images/doctor.jpg", alt="")
+                            .card__name
+                              |Пустотина Ольга Анатольевна
+                        h3.card__title
+                          |Молочница: все, что нужно знать о заболевании
 
 
 

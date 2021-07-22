@@ -5,7 +5,11 @@
   }
   
   &__col {
+    flex-shrink: 0;
 
+    &:nth-child(2) {
+      width: calc(#{$col-width-d} * 2);
+    }
   }
 
   &__title {
