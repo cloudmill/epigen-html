@@ -78,4 +78,17 @@
       margin-left: 10px;
     }
   }
+
+  &__content {}
+  &__content-row {
+    display: flex;
+    justify-content: flex-end;
+  }
+  &__content-col {
+    flex-shrink: 0;
+
+    &:nth-child(1) {
+      width: calc(#{$col-width-d} * 12);
+    }
+  }
 }
