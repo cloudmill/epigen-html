@@ -205,32 +205,36 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
 // mdl
 {
-  $(() => {
-    const state = {
-      isActive: checkActive(),
-    }
+	$(() => {
+		const triggers = [
+			'.review-card--modal',
+			'.button-modal',
+			'[data-mdl-open]',
+		].join(', ')
+
+		const state = {
+			isActive: checkActive(),
+		}
 
     if (!state.isActive) {
       waitOpen()
     }
 
-    $('.review-card--modal').on('click', event => {
-      event.preventDefault()
-    })
+		$(triggers).on('click', event => {
+			event.preventDefault()
+		})
 
     function checkActive() {
       return $('.mdl').hasClass('mdl--active')
     }
 
-    function waitOpen() {
-      $('.review-card--modal').on('click', handleClick)
-      $('.button-modal').on('click', handleClick)
+		function waitOpen() {
+			$(triggers).on('click', handleClick)
 
       function handleClick() {
         console.log('open click');
 
-        $('.review-card--modal').off('click', handleClick)
-        $('.button-modal').off('click', handleClick)
+				$(triggers).off('click', handleClick)
 
         open()
       }

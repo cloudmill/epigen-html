@@ -2,8 +2,9 @@ extends ../layouts/master.pug
 
 include ../components/copyright-link.pug
 include ../components/footer.pug
+include ../components/accordion.pug
 
-block cookies
+//- block cookies
 block grid-test
 
 block content
@@ -70,8 +71,78 @@ block content
                 .row__col
                   p.page-consultation__text.page-consultation__text--desc--mini
                     |Внимание! Консультация на сайте не исключает очного визита к врачу. Только при личном осмотре, после проведения диагностических процедур и изучения результатов анализов возможно определить причину появления симптомов и назначить правильное лечение. Информация в данном разделе является исключительно ознакомительной и не может быть использована в качестве замены непосредственной консультации с врачом.
-              h2.title.title--small
-                |Найти в заданных вопросах
+              section.page-consultation__expert
+                h2.page-consultation__expert-title
+                  |На вопросы отвечают наши эксперты
+                .page-consultation__expert-slider
+                  .b.b--reviews-slider-main-page
+                    .b__bottom
+                      each slide in [1, 2, 3, 4]
+                        .b__slide(class=(slide === 1 ? 'b__slide--active' : undefined))
+                          .b__slide-row
+                            .b__slide-col
+                              img.b__img(src='assets/images/reviews-slider-1.jpeg')
+                            .b__slide-col
+                              .b__content
+                                .b__content-row
+                                  .b__content-col
+                                    .b__content-top
+                                      h5.b__slide-title
+                                        |Сапрыкина Людмила Витальевна
+                                      p.b__desc
+                                        |Ассистент кафедры акушерства и гинекологии ЛФ ФГБОУ ВО им. Н.И. Пирогова МЗ РФ, врач акушер-гинеколог высшей категории, к.м.н. (Москва).
+                                      .b__content-wrapper
+                                        p.b__review 
+                                          |Осуществляет консультативный прием пациентов, обращающихся по вопросам лечения воспалительных процессов женской половой сферы, занимается проблемами невынашивания беременности и бесплодия, проводит оперативное лечение пациентам.
+                                    .b__content-bottom
+                                      .b__content-wrapper
+                                        a.button.button--reviews-slider(href='#' data-mdl-open='')
+                                          |Задать вопрос врачу
+                                  .b__content-col
+                                    .b__content-top
+                                      .b__control
+                                        .b__control-item
+                                          .b.b--btn-left-right-slider
+                                            +simple-arrow-svg.b__svg
+                                        .b__control-item
+                                          .b.b--btn-left-right-slider.b--right
+                                            +simple-arrow-svg.b__svg
+                                    .b__content-bottom
+                                      .b__preview
+                                        .b__preview-counter
+                                          span.b__preview-count
+                                            |1
+                                          |/4
+                                        img.b__preview-img(src='assets/images/reviews-slider-2.jpeg')
+              section.page-consultation__faq
+                h2.title.title--small.title--margin-bottom--none
+                  |Найти в заданных вопросах
+                form.page-consultation__search.b.b--search-consultation(action='#' method='get')
+                  .b__row
+                    input(type='text' name='search_request' placeholder='Что вас интересует?').b__input
+                    button.b__btn(type="submit")
+                      +search-svg.b__svg
+                ul.faq-page__section-list
+                  li.faq-page__section-item
+                    +accordion(caption='Что такое активированная глицирризиновая кислота, содержащаяся в Спрее Эпиген Интим?' category='Состав')
+                  li.faq-page__section-item
+                    +accordion(caption='Почему рекомендуется Спрей Эпиген Интим при генитальном герпесе и вирусе папилломы человека (ВПЧ)?' category='Использование')
+                  li.faq-page__section-item
+                    +accordion(caption='Может ли при использовании Спрея Эпиген Интим возникать жжение или ощущение тепла в месте введения?' category='Использование')
+                  li.faq-page__section-item
+                    +accordion(caption='Можно ли использовать Спрей Эпиген Интим совместно с другими местными препаратами?' category='Использование')
+                  li.faq-page__section-item
+                    +accordion(caption='Можно ли использовать Спрей Эпиген Интим совместно с другими местными препаратами?' category='Использование')
+                  li.faq-page__section-item
+                    +accordion(caption='В упаковке Спрея Эпиген Интим есть дополнительная насадка, как её использовать?' category='Использование')
+                  li.faq-page__section-item
+                    +accordion(caption='Хватит мне одного флакона Спрея Эпиген Интим на полный курс лечения?' category='Использование')
+                  li.faq-page__section-item
+                    +accordion(caption='Безопасно ли использовать Спрей Эпиген Интим в период беременности?' category='Использование')
+                  li.faq-page__section-item
+                    +accordion(caption='Можно ли использовать Спрей Эпиген Интим при кормлении грудью?' category='Использование')
+                  li.faq-page__section-item
+                    +accordion(caption='Почему необходимо включить Спрей Эпиген Интим в дорожную аптечку? ' category='Использование')
               .button-show-wrapper
                 .button-show
                   .button-show__icon
@@ -79,3 +150,36 @@ block content
                   .button-show__text
                     |показать еще
             +footer.page__footer
+  .mdl
+    .mdl__container
+      .mdl__content.mdl__content--md.mdl__interactive
+        .mdl__inner
+          .mdl__form
+            .mdl__form-container
+              h3.mdl__form-title
+                |Задать вопрос врачу
+              form.form(action="/")
+                .form__item
+                  input.form__input(type="text" name="name" placeholder="Имя")
+                .form__item
+                  input.form__input(type="email" name="email" placeholder="E-mail")
+                .form__item
+                  textarea.form__textarea(name="message" placeholder="Сообщение", cols="30", rows="10")
+                .form__inner
+                  .checkbox
+                    label.checkbox__label(for="checkbox-1")
+                      input.checkbox__input(type="checkbox" id="checkbox-1")
+                      .checkbox__box
+                        +check-svg.checkbox__icon
+                      .checkbox__text
+                        |Согласен на обработку персональных данных в соответствии с #[a.checkbox__link(href="#") политикой конфиденциальности]
+                .form__button
+                  button.button.button--wide(type='submit')
+                    |Отправить
+              .mdl__response
+                h3.mdl__form-title
+                  |Мы получили ваше сообщение и ответим на него в ближайшее время.
+                .button.button--wide
+                  |Отправить еще
+        .mdl__close.mdl__interactive.button-close(data-button-close='1')
+          +cross-svg.button-close__svg
