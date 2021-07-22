@@ -2,8 +2,8 @@ extends ../layouts/master.pug
 
 include ../components/footer.pug
 
-block cookies
-//- block grid-test
+//- block cookies
+block grid-test
 
 mixin nav-page-d
   nav.nav-page-d
@@ -133,86 +133,85 @@ block content
                   .spray-page__section-col
                     p.spray-page__section-text
                       |Разрешен к применению на любом сроке беременности и в период прегравидарной подготовки, не противопоказан детям.
-              section.spray-page__section.margin-top.margin-top--l
+              section.spray-page__section
                 .spray-page__slider
-                  .spray-page__slider-slide
-                    .spray-page__slider-container
-                      img.spray-page__slider-img(src="assets/images/spray-page.jpg", alt="")
-                    .spray-page__slider-content
-                      .spray-page__slider-row
-                        .spray-page__slider-col
-                          .spray-page__tabs
-                            .spray-page__tabs-item.spray-page__tabs-item--active
-                              .spray-page__tabs-container
-                                .spray-page__tabs-row
-                                  .spray-page__tabs-col
-                                    +spray-svg.spray-page__tabs-icon
-                                  .spray-page__tabs-col
-                                    .spray-page__tabs-num
-                                      |15
-                            .spray-page__tabs-item
-                              .spray-page__tabs-container
-                                .spray-page__tabs-row
-                                  .spray-page__tabs-col
-                                    +spray-svg.spray-page__tabs-icon
-                                  .spray-page__tabs-col
-                                    .spray-page__tabs-num
-                                      |60
-                          ul.reason-list.reason-list--italic.spray-page__slider-list
-                            li.reason-list__item
-                              p.reason-list__text
-                                |Для лечения острого заболевания
-                            li.reason-list__item
-                              p.reason-list__text
-                                |Для курса профилактики 2-3 курса лечения или профилактики
-                        .spray-page__slider-col
-                          .spray-page__slider-bottom
-                            .spray-page__slider-num
-                              |115
-                              .spray-page__slider-label
-                                |Доз
+                  .spray-page__slider-container
                     .spray-page__slider-layout
-                      +star-svg.spray-page__slider-icon
-                  .spray-page__slider-slide
-                    .spray-page__slider-container
-                      img.spray-page__slider-img(src="assets/images/spray-page.jpg", alt="")
-                    .spray-page__slider-content
-                      .spray-page__slider-row
-                        .spray-page__slider-col
-                          .spray-page__tabs
-                            .spray-page__tabs-item
-                              .spray-page__tabs-container
-                                .spray-page__tabs-row
-                                  .spray-page__tabs-col
-                                    +spray-svg.spray-page__tabs-icon
-                                  .spray-page__tabs-col
-                                    .spray-page__tabs-num
-                                      |15
-                            .spray-page__tabs-item.spray-page__tabs-item--active
-                              .spray-page__tabs-container
-                                .spray-page__tabs-row
-                                  .spray-page__tabs-col
-                                    +spray-svg.spray-page__tabs-icon
-                                  .spray-page__tabs-col
-                                    .spray-page__tabs-num
-                                      |60
-                          ul.reason-list.reason-list--italic.spray-page__slider-list
-                            li.reason-list__item
-                              p.reason-list__text
-                                |Во время беремнности
-                            li.reason-list__item
-                              p.reason-list__text
-                                |Для применения вместе с партнером 1 год использования по требованию
-                        .spray-page__slider-col
-                          .spray-page__slider-bottom
-                            .spray-page__slider-num
-                              |460
-                              .spray-page__slider-label.spray-page__slider-label--top
-                                |более
-                              .spray-page__slider-label
-                                |Доз
-                    .spray-page__slider-layout
-                      +star-svg.spray-page__slider-icon
+                        +star-svg.spray-page__slider-icon
+                    .spray-page__slider-slide.spray-page__slider-slide--active(data-slide='1')
+                      .spray-page__slider-container
+                        img.spray-page__slider-img(src="assets/images/spray-page-1.jpg", alt="")
+                      .spray-page__slider-content
+                        .spray-page__slider-row
+                          .spray-page__slider-col
+                            .spray-page__tabs
+                              .spray-page__tabs-item.spray-page__tabs-item--active(data-tab='1')
+                                .spray-page__tabs-container
+                                  .spray-page__tabs-row
+                                    .spray-page__tabs-col
+                                      +spray-svg.spray-page__tabs-icon
+                                    .spray-page__tabs-col
+                                      .spray-page__tabs-num
+                                        |15
+                              .spray-page__tabs-item(data-tab='2')
+                                .spray-page__tabs-container
+                                  .spray-page__tabs-row
+                                    .spray-page__tabs-col
+                                      +spray-svg.spray-page__tabs-icon
+                                    .spray-page__tabs-col
+                                      .spray-page__tabs-num
+                                        |60
+                            ul.reason-list.reason-list--italic.spray-page__slider-list
+                              li.reason-list__item
+                                p.reason-list__text
+                                  |Для лечения острого заболевания
+                              li.reason-list__item
+                                p.reason-list__text
+                                  |Для курса профилактики 2-3 курса лечения или профилактики
+                          .spray-page__slider-col
+                            .spray-page__slider-bottom
+                              .spray-page__slider-num
+                                |115
+                                .spray-page__slider-label
+                                  |Доз
+                    .spray-page__slider-slide.spray-page__slider-slide--absolute(data-slide='2')
+                      .spray-page__slider-container
+                        img.spray-page__slider-img(src="assets/images/spray-page-2.jpg", alt="")
+                      .spray-page__slider-content
+                        .spray-page__slider-row
+                          .spray-page__slider-col
+                            .spray-page__tabs
+                              .spray-page__tabs-item(data-tab='1')
+                                .spray-page__tabs-container
+                                  .spray-page__tabs-row
+                                    .spray-page__tabs-col
+                                      +spray-svg.spray-page__tabs-icon
+                                    .spray-page__tabs-col
+                                      .spray-page__tabs-num
+                                        |15
+                              .spray-page__tabs-item.spray-page__tabs-item--active(data-tab='2')
+                                .spray-page__tabs-container
+                                  .spray-page__tabs-row
+                                    .spray-page__tabs-col
+                                      +spray-svg.spray-page__tabs-icon
+                                    .spray-page__tabs-col
+                                      .spray-page__tabs-num
+                                        |60
+                            ul.reason-list.reason-list--italic.spray-page__slider-list
+                              li.reason-list__item
+                                p.reason-list__text
+                                  |Во время беремнности
+                              li.reason-list__item
+                                p.reason-list__text
+                                  |Для применения вместе с партнером 1 год использования по требованию
+                          .spray-page__slider-col
+                            .spray-page__slider-bottom
+                              .spray-page__slider-num
+                                |460
+                                .spray-page__slider-label.spray-page__slider-label--top
+                                  |более
+                                .spray-page__slider-label
+                                  |Доз
               section.spray-page__section.margin-top.margin-top--l
                 ul.spray-page__list
                   li.spray-page__list-item.spray-page__list-item--default
@@ -308,7 +307,104 @@ block content
                       .spray-page__content-col
                         .spray-page__content-text
                           |Пройдите тест и узнайте больше о решении данной проблемы
-
+              section.spray-page__test.margin-top.margin-top--md
+                form.spray-page__test-container(action="/")
+                  .spray-page__test-row
+                    .spray-page__test-col
+                      .spray-page__test-question
+                        |Какие проявления в интимной зоне вас беспокоят?
+                      ul.spray-page__test-dots.margin-top.margin-top--md
+                        - for (i = 0; i < 5; i++)
+                          li.spray-page__test-dot(class = ((i === 0) ? 'spray-page__test-dot--active' : ''))
+                    .spray-page__test-col
+                      .spray-page__test-options
+                        each item in ['Обильные выделения без неприятного запаха', 'Выделения с неприятным запахом', 'Болезненные пузырьки в интимной зоне, превращающиеся в язвы', 'Безболезненные папилломы, узелки, наросты или бородавки в интимной зоне', 'Что-то другое, не указанное выше']
+                          label.spray-page__test-label(for="#")
+                            input.spray-page__test-radio(type="radio")
+                            .spray-page__test-icon
+                              +check-svg
+                            .spray-page__test-text
+                              |#{item}
+                  .spray-page__test-index
+                    |1
+              section.spray-page__section.margin-top.margin-top--l
+                .spray-page__structure
+                  .spray-page__structure-row
+                    .spray-page__structure-col
+                      h3.spray-page__section-title
+                        |Состав
+                      .spray-page__structure-label
+                        |на 100 мл. препарата
+                    .spray-page__structure-col
+                      h4.spray-page__structure-title
+                        |Действущее вещество
+                      .spray-page__structure-content
+                        .spray-page__structure-text.max-width.max-width--col--5
+                          |Глицирризиновая кислота активированная (эквивалентно аммонию глицирризинату)
+                        .spray-page__structure-num
+                          |0,1 г
+                    .spray-page__structure-col
+                      h4.spray-page__structure-title
+                        |Вспомогательные вещества
+                      ul.spray-page__structure-list
+                        -
+                          var items = [
+                            {
+                              text: 'Яблочная кислота',
+                              num: '3 г',
+                            },
+                            {
+                              text: 'Фумаровая кислота',
+                              num: '2 г',
+                            },
+                            {
+                              text: 'Аскорбиновая кислота',
+                              num: '0,3 г',
+                            },
+                            {
+                              text: 'Фолиевая кислота',
+                              num: '0,08 г',
+                            },
+                            {
+                              text: 'Пропиленгликоль',
+                              num: '50 г',
+                            },
+                            {
+                              text: 'Твин-80 (полисорбат-80)',
+                              num: '0,9 г',
+                            },
+                            {
+                              text: 'Вода очищенная',
+                              num: 'до 100 мл',
+                            },
+                          ]
+                        each item in items
+                          li.spray-page__structure-item
+                            .spray-page__structure-text
+                              |!{item.text}
+                            .spray-page__structure-num
+                              |!{item.num}
+              section.spray-page__section.margin-top.margin-top--l
+                .spray-page__video
+                  .spray-page__video-row
+                    .spray-page__video-col
+                      h3.spray-page__section-title.margin-botto.margin-bottom--m
+                        |Способ применения
+                      .spray-page__video-button
+                        a.download-link.download-link--default(href="#")
+                          .download-link__icon
+                            +download-svg
+                          .download-link__text
+                            |Скачать инструкцию
+                    .spray-page__video-col
+                      .video
+                        .video__container
+                          .video__frame
+                            img.video__img(src="assets/images/video.jpg", alt="")
+                          .video__button
+                            .video__button-icon
+                              +start-svg.video__button-svg
+              section.spray-page__section.margin-top.margin-top--l
 
 
             +footer.page__footer
