@@ -180,7 +180,22 @@ block content
                 .margin-top.specialists-page__content
                   p 
                     |Пусковым фактором для развития молочницы могут быть нарушения гормонального баланса. Кандидоз встречается примерно у 35 % беременных и у 30 % женщин с эндокринными заболеваниями.
-            section
+            section.article-page__section.margin-top
+              .article-page__section-layout 
+                +star-svg.article-page__section-icon
+                +moon-svg.article-page__section-img
+              .article-page__section-content 
+                h3.article-page__section-title
+                  |Ощущаете дискомфорт в интимной зоне?
+                .article-page__section-caption 
+                  |Пройдите тест и узнайте больше о решении данной проблемы
+                .article-page__section-buttons 
+                  .article-page__section-item 
+                    a.button.button--l(href="#") 
+                      |Пройти тест
+                  .article-page__section-item 
+                    a.button.button--l.button--purple(href="#") 
+                      |Задать вопрос эксперту
 
 
             +footer.page__footer

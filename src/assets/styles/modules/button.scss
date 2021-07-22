@@ -29,6 +29,13 @@
     line-height: 100%;
   }
 
+  &--l {
+    padding: 19px 0;
+
+    width: 240px;
+    flex-shrink: 0;
+  }
+
   &--wide {
     padding: 19px 0;
 
