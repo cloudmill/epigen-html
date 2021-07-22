@@ -306,7 +306,29 @@ block content
                       a.button(href="#")
                         |Подробнее
                 .specialists-page__bottom-column
-            section.slider
+            section.section-slider.margin-top
+              .section-slider-row 
+                .section-slider-col
+                  h3.section-slider-title 
+                    |Статьи по теме
+                .section-slider-col
+              .slider 
+                - for (i = 0; i < 3; i++)
+                  .slider__item 
+                    a.card(href="#")
+                      .card__container
+                        img.card__img(src="assets/images/card-1.jpg", alt="")
+                        .card__label
+                          |Клинические рекомендации
+                      .card__row
+                        .card__doctor
+                          .card__avatar 
+                            img.card__icon(src="assets/images/doctor.jpg", alt="")
+                          .card__name
+                            |Пустотина Ольга Анатольевна
+                      h3.card__title
+                        |Молочница: все, что нужно знать о заболевании
+
 
 
             +footer.page__footer

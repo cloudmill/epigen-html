@@ -1,0 +1,9 @@
+.slider {
+  margin-top: 50px;
+
+  display: flex;
+  &__item {
+    width: calc((((100vw - (30px * 2)) / 24) * 18) / 3 - 20px);
+    // flex-shrink: 0;
+  }
+}
