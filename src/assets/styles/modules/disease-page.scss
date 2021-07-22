@@ -27,6 +27,9 @@
   &__section-container {
     padding: 0 calc(#{$col-width-d});
   }
+  &__section-category {
+    display: flex;
+  }
 
   &__container {
     padding: 15px;
@@ -59,7 +62,11 @@
     }
 
     p {
-      @include fsl(18px, 140%);
+      @include fsl(18px, 170%);
+
+      // &:not(:first-child) {
+      //   margin-top: 30px;
+      // }
     }
 
     ul {
@@ -128,14 +135,13 @@
 
     h4 {
       font-weight: 400;
-      @include fsl(25px, 120%);
+      @include fsl(25px, 150%);
     }
 
     p {
       margin-top: 15px;
 
-      @include fsl(15px, 140%);
-      font-style: italic;
+      @include fsl(18px, 170%);
     }
   }
   &__content-row {

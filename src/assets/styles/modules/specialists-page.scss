@@ -63,7 +63,7 @@
     }
 
     p {
-      @include fsl(15px, 140%);
+      @include fsl(18px, 170%);
 
       &:not(:first-child) {
         margin-top: 30px;
