@@ -1,3 +1,20 @@
+.slider-section {
+  &__row {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  &__col {
+
+  }
+
+  &__title {
+    font-weight: 400;
+    @include fsl(35px, 130%);
+  }
+}
+
+
 .slider {
   margin-top: 50px;
 
