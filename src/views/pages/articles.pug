@@ -97,48 +97,75 @@ block content
                             |Бебнева Тамара Николаевна
                           .doctor-card__pos
                             |Врач акушер-гинеколог ФГБУ «НМИЦ эндокринологии» Минздрава России, к.м.н, доцент Кафедры акушерства, гинекологии и репродуктивной медицины РУДН
-                section.articles-page__section.margin-top.margin-top--md 
-                  ul.nav-list.nav-list--wrap
-                    li.nav-list__item
-                      +border-link(href='#' active count=29)
-                        |Все
-                    li.nav-list__item
-                      +border-link(href='#' count=5)
-                        |Статьи эксперта
-                    li.nav-list__item
-                      +border-link(href='#' count=5)
-                        |Генитальный герпес
-                    li.nav-list__item
-                      +border-link(href='#' count=29)
-                        |Молочница
-                    li.nav-list__item
-                      +border-link(href='#' count=3)
-                        |Бактериальный вагиноз
-                    li.nav-list__item
-                      +border-link(href='#' count=4)
-                        |При беременности
-                    li.nav-list__item
-                      +border-link(href='#' count=6)
-                        |ВПЧ
-                  ul.cards-grid
-                    - for (i = 0; i < 9; i++)
-                      li.cards-grid__item
-                        a.card(href="#")
-                          .card__container
-                            img.card__img(src="assets/images/card-1.jpg", alt="")
-                            .card__label
-                              |Клинические рекомендации
-                          .card__row
-                            .card__doctor
-                              .card__avatar 
-                                img.card__icon(src="assets/images/doctor.jpg", alt="")
-                              .card__name
-                                |Пустотина Ольга Анатольевна
-                          h3.card__title
-                            |Молочница: все, что нужно знать о заболевании
+              section.articles-page__section.margin-top.margin-top--md 
+                ul.nav-list.nav-list--wrap
+                  li.nav-list__item
+                    +border-link(href='#' active count=29)
+                      |Все
+                  li.nav-list__item
+                    +border-link(href='#' count=5)
+                      |Статьи эксперта
+                  li.nav-list__item
+                    +border-link(href='#' count=5)
+                      |Генитальный герпес
+                  li.nav-list__item
+                    +border-link(href='#' count=29)
+                      |Молочница
+                  li.nav-list__item
+                    +border-link(href='#' count=3)
+                      |Бактериальный вагиноз
+                  li.nav-list__item
+                    +border-link(href='#' count=4)
+                      |При беременности
+                  li.nav-list__item
+                    +border-link(href='#' count=6)
+                      |ВПЧ
+                ul.cards-grid
+                  - for (i = 0; i < 9; i++)
+                    li.cards-grid__item
+                      a.card(href="#")
+                        .card__container
+                          img.card__img(src="assets/images/card-1.jpg", alt="")
+                          .card__label
+                            |Клинические рекомендации
+                        .card__row
+                          .card__doctor
+                            .card__avatar 
+                              img.card__icon(src="assets/images/doctor.jpg", alt="")
+                            .card__name
+                              |Пустотина Ольга Анатольевна
+                        h3.card__title
+                          |Молочница: все, что нужно знать о заболевании
                 .button-show-wrapper
                   .button-show
                     .button-show__icon
                       +btn-plus-svg.button-show__svg
                     .button-show__text
                       |показать еще
+              section.articles-page__section 
+                .form-container.margin-top.margin-top--md
+                  .form-container__row
+                    .form-container__col
+                      h3.form-container__title
+                        |Подписаться на обновления
+                    .form-container__col
+                      form.form.form--follow(action="/")
+                        .form__row
+                          .form__item
+                            input.form__input(type="text" name="name" placeholder="Имя")
+                          .form__item
+                            input.form__input(type="email" name="email" placeholder="E-mail")
+                        .form__row
+                          .form__item
+                            .checkbox
+                              label.checkbox__label(for="checkbox")
+                                input.checkbox__input(type="checkbox" id="checkbox")
+                                .checkbox__box
+                                  +check-svg.checkbox__icon
+                                .checkbox__text
+                                  |Согласен на обработку персональных данных в соответствии с #[a.checkbox__link(href="#") политикой конфиденциальности]
+                          .form__item
+                            .form__button
+                              button.button.button--wide(type='submit')
+                                |Отправить
+            +footer.page__footer
