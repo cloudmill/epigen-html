@@ -303,11 +303,11 @@ block content
                       |Ощущаете дискомфорт в интимной зоне?
                     .spray-page__content-row
                       .spray-page__content-col
-                        .spray-page__content-button
+                        a.spray-page__content-button(href="#" data-scroll='#test')
                       .spray-page__content-col
                         .spray-page__content-text
                           |Пройдите тест и узнайте больше о решении данной проблемы
-              section.spray-page__test.margin-top.margin-top--md
+              section.spray-page__test.margin-top.margin-top--md(id='test')
                 form.spray-page__test-container(action="/")
                   .spray-page__test-row
                     .spray-page__test-col
