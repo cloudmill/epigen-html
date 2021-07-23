@@ -1,0 +1,31 @@
+.pslider {
+  position: relative;
+  z-index: 0;
+
+  overflow: hidden;
+
+  border-radius: 10px;
+
+  &__slide {
+    position: absolute;
+    z-index: 0; // change
+    top: 0;
+    left: 0; // change
+
+    width: calc(#{$col-width-d} * #{$row-main-cols}); // animation
+    display: flex;
+    justify-content: flex-start; // change
+    overflow: hidden;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 0;
+
+    width: calc(#{$col-width-d} * #{$row-main-cols});
+    min-height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
