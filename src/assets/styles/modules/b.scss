@@ -119,10 +119,16 @@
 
   // слайдер отзывов, главная
   &--reviews-slider-main-page {
+    overflow: hidden;
+
+
+
     #{$comp}__top {
       margin-bottom: 80px;
     }
-    #{$comp}__bottom {}
+    #{$comp}__bottom {
+      display: flex;
+    }
 
     #{$comp}__top-row {
       display: flex;
@@ -139,7 +145,7 @@
     #{$comp}__title {
       font-weight: 400;
       @media (min-width: $breakpoint) {
-        @include fsl(34px, 130%);        
+        @include fsl(34px, 130%);
       }
       @media (min-width: $breakpoint-xl) {
         @include fsl(40px);
@@ -147,10 +153,24 @@
     }
 
     #{$comp}__slide {
-      display: none;
+      &.active {
 
-      &--active {
-        display: block;
+        #{$comp}__slide-img,
+        #{$comp}__review,
+        #{$comp}__content-wrapper,
+        #{$comp}__preview-img,
+        #{$comp}__control,
+        #{$comp}__preview-wrapper {
+          animation: fadeInUp $transition;
+          transform: translateY(0%);
+          opacity: 1;
+        }
+
+        #{$comp}__desc-span {
+          animation: textIn $transition;
+          transform: translateY(0);
+          transition: transform, opacity 0s;
+        }
       }
     }
 
@@ -167,6 +187,12 @@
       &:nth-child(2) {
         width: calc(#{$col-width-d} * 12);
       }
+    }
+    #{$comp}__slide-img {
+      animation: fadeOutUp $transition;
+      transform: translateY(50%);
+      opacity: 0;
+      transition: transform, opacity 0s;
     }
 
     #{$comp}__img {
@@ -207,11 +233,17 @@
 
     #{$comp}__content-wrapper {
       padding-left: 70px;
+
+      animation: fadeOutUp $transition;
+      transform: translateY(50%);
+      opacity: 0;
+      transition: transform, opacity 0s;
     }
 
     #{$comp}__slide-title {
       font-weight: 400;
       @include fsl(25px, 120%);
+      overflow: hidden;
     }
     #{$comp}__desc {
       margin-top: 10px;
@@ -220,6 +252,13 @@
       font-style: italic;
       @include fsl(13px, 140%);
       color: $color-blue-dark;
+      overflow: hidden;
+    }
+    #{$comp}__desc-span {
+      display: block;
+      animation: textOut $transition;
+      transform: translateY(100%);
+      transition: transform, opacity 0s;
     }
     #{$comp}__review {
       margin-top: 30px;
@@ -227,6 +266,10 @@
 
       font-style: italic;
       @include fsl(15px, 140%);
+      animation: fadeOutUp $transition;
+      transform: translateY(50%);
+      opacity: 0;
+      transition: transform, opacity 0s;
     }
 
     #{$comp}__link {
@@ -242,6 +285,11 @@
       display: flex;
       justify-content: flex-end;
       align-items: center;
+
+      animation: fadeOutUp $transition;
+      transform: translateY(50%);
+      opacity: 0;
+      transition: transform, opacity 0s;
     }
     #{$comp}__control-item {
       &:not(:first-child) {
@@ -254,14 +302,30 @@
       justify-content: flex-end;
       align-items: flex-end;
     }
+    #{$comp}__preview-image {
+      overflow: hidden;
+    }
     #{$comp}__preview-img {
       margin-left: 30px;
       max-width: 135px;
 
       border-radius: 10px;
+      animation: fadeOutUp $transition;
+      transform: translateY(50%);
+      opacity: 0;
+      transition: transform, opacity 0s;
     }
     #{$comp}__preview-counter {
       @include fsl(15px, 120%);
+      overflow: hidden;
+    }
+    #{$comp}__preview-wrapper {
+      padding-top: 5px;
+
+      animation: fadeOutUp $transition;
+      transform: translateY(50%);
+      opacity: 0;
+      transition: transform, opacity 0s;
     }
     #{$comp}__preview-count {
       margin-right: 14px;

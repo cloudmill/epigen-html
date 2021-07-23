@@ -1,10 +1,13 @@
 import 'Styles/_app.scss'
 
 import Swiper from 'swiper/bundle';
+import Slider from 'scripts/slider.js'
 
 // vars
 const BREAKPOINT = 1280
 const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
+
+
 
   // nav-page-d
   ; (() => {
@@ -594,3 +597,9 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
   });
 }
 
+// review slider
+{
+  $(() => {
+    const slider = new Slider(".page-consultation__expert-slider");
+  })
+}
