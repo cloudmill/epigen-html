@@ -1,1 +1,26 @@
-.page-gel {}
+.page-gel {
+  &__frame {
+    position: absolute;
+    $pad: 30px;
+    @each $prop in (top, bottom, left, right) {
+      #{$prop}: $pad;
+    }
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__frame-list {}
+  &__frame-item {
+    display: flex;
+
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
+  }
+  &__frame-title {
+    font-weight: 400;
+    @include fsl(70px, 110%);
+    color: $color-purple;
+  }
+}

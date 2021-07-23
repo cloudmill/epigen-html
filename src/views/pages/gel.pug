@@ -12,11 +12,15 @@ mixin nav-page-d
         var items = [
           {
             href: '#',
-            title: 'Спрей',
+            title: 'Гель',
           },
           {
             href: '#',
             title: 'Форма выпуска',
+          },
+          {
+            href: '#',
+            title: 'Преимущества',
           },
           {
             href: '#',
@@ -32,7 +36,7 @@ mixin nav-page-d
           },
           {
             href: '#',
-            title: 'Диагностический тест',
+            title: 'Вопрос эксперту',
           },
           {
             href: '#',
@@ -109,23 +113,17 @@ block content
                             |Консультация эксперта
             main.page__main
               section.spray-page__section
-                .frame
-                  img.frame__img(src='assets/images/frame.jpeg')
-                  .spray-page__intro
-                    .spray-page__intro-row
-                      .spray-page__intro-col
-                        .spray-page__intro-label
-                          |Spray Epigen® Intim
-                        ul.spray-page__intro-list
-                          li.spray-page__intro-item
-                            .category-item.category-item--blue
-                              |Сделано в Испании
-                          li.spray-page__intro-item
-                            .category-item.category-item--blue
-                              |Соответсвует стандартам GMP
-                      .spray-page__intro-col
-                        h1.spray-page__intro-title
-                          |Спрей#[br]Эпиген Интим
+                .frame.frame--gel
+                  img.frame__img(src='assets/images/gel-promo.jpeg')
+                  .page-gel__frame
+                    ul.page-gel__frame-list
+                      li.page-gel__frame-item
+                        .category-item.category-item--purple.cursor.cursor--default
+                          |Сделано в Испании
+                    h1.page-gel__frame-title
+                      |Гель
+                      br
+                      |Эпиген Интим
               section.spray-page__section.margin-top.margin-top--l
                 .spray-page__section-row
                   .spray-page__section-col

@@ -17,4 +17,10 @@
     background-color: $color-blue;
     color: $color-white;
   }
+
+  &--purple {
+    border-color: $color-purple;
+    background-color: $color-purple;
+    color: $color-white;
+  }
 }
