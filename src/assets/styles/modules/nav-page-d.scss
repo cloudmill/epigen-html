@@ -1,6 +1,26 @@
 .nav-page-d {
   $comp: &;
 
+  &--purple {
+    #{$comp}__link {
+      &:hover {
+        color: $color-purple;
+      }
+    }
+
+    #{$comp}__item {
+      &::before {
+        background-color: $color-purple;
+      }
+
+      &--active {
+        #{$comp}__link {
+          color: $color-purple;
+        }
+      }
+    }
+  }
+
   &__list {}
   &__item {
     $dot-size: 7px;

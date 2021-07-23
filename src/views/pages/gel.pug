@@ -1,0 +1,410 @@
+extends ../layouts/master.pug
+
+include ../components/footer.pug
+
+//- block cookies
+block grid-test
+
+mixin nav-page-d
+  nav.nav-page-d(class=attributes.class)
+    ul.nav-page-d__list
+      -
+        var items = [
+          {
+            href: '#',
+            title: 'Спрей',
+          },
+          {
+            href: '#',
+            title: 'Форма выпуска',
+          },
+          {
+            href: '#',
+            title: 'Назначение',
+          },
+          {
+            href: '#',
+            title: 'Состав',
+          },
+          {
+            href: '#',
+            title: 'Инструкция',
+          },
+          {
+            href: '#',
+            title: 'Диагностический тест',
+          },
+          {
+            href: '#',
+            title: 'Отзывы',
+          },
+        ]
+      each item, index in items
+        li.nav-page-d__item(class = ((index === 0) ? 'nav-page-d__item--active' : ''))
+          a.nav-page-d__link(href=item.href)
+            |!{item.title}
+
+mixin copyright-link
+  a.copyright-link(href=attributes.href)
+    .copyright-link__mark
+      +copyright-svg.copyright-link__mark-svg
+    .copyright-link__text
+      block
+
+block content
+  .spray-page
+    .container
+      .row
+        .row__col.row__col--aside.row__col--rail
+          .aside
+            .aside__inner
+              .aside__container
+                .aside__top
+                  header.aside__header.aside__header--margin-bottom--default
+                    a.aside__logo(href='#')
+                      +logo-svg.aside__logo-svg
+                    .aside__menu
+                      .aside__menu-text
+                        |Меню
+                      .aside__menu-button
+                  +nav-page-d.nav-page-d--purple
+                .aside__bottom
+                  +copyright-link(href='#')
+                    |Компания «Инвар», 2021
+        .row__col.row__col--main
+          .page
+            header.page__header
+              .panel
+                .panel__panel
+                  .panel__row
+                    .panel__col
+                      .panel__inner
+                        .panel__product
+                          //- .panel__product-item--active
+                          a.panel__product-item.panel__product-item--active(href='#')
+                            .panel__product-mark
+                            .panel__product-text
+                              |Спрей
+                          a.panel__product-item.panel__product-item--purple(href='#')
+                            .panel__product-mark
+                            .panel__product-text
+                              |Гель
+                    .panel__col
+                      .panel__inner
+                        a.panel__where-buy(href='#')
+                          |Где купить
+                    .panel__col
+                      .panel__inner
+                        .panel__choice
+                          .panel__choice-item(data-count=8)
+                            |Симптомы
+                          .panel__choice-item(data-count=12)
+                            |Заболевания
+                    .panel__col
+                      .panel__inner
+                        .panel__consultation
+                          +consultation-svg.panel__consultation-svg
+                          .panel__consultation-text
+                            |Консультация эксперта
+            main.page__main
+              section.spray-page__section
+                .frame
+                  img.frame__img(src='assets/images/frame.jpeg')
+                  .spray-page__intro
+                    .spray-page__intro-row
+                      .spray-page__intro-col
+                        .spray-page__intro-label
+                          |Spray Epigen® Intim
+                        ul.spray-page__intro-list
+                          li.spray-page__intro-item
+                            .category-item.category-item--blue
+                              |Сделано в Испании
+                          li.spray-page__intro-item
+                            .category-item.category-item--blue
+                              |Соответсвует стандартам GMP
+                      .spray-page__intro-col
+                        h1.spray-page__intro-title
+                          |Спрей#[br]Эпиген Интим
+              section.spray-page__section.margin-top.margin-top--l
+                .spray-page__section-row
+                  .spray-page__section-col
+                    h3.spray-page__section-title
+                      |Эпиген Интим Спрей предназначен для профилактики и лечения гинекологических заболеваний
+                  .spray-page__section-col
+                    p.spray-page__section-text
+                      |Разрешен к применению на любом сроке беременности и в период прегравидарной подготовки, не противопоказан детям.
+              section.spray-page__section
+                .spray-page__slider
+                  .spray-page__slider-container
+                    .spray-page__slider-layout
+                        +star-svg.spray-page__slider-icon
+                    .spray-page__slider-slide.spray-page__slider-slide--active(data-slide='1')
+                      .spray-page__slider-container
+                        img.spray-page__slider-img(src="assets/images/spray-page-1.jpg", alt="")
+                      .spray-page__slider-content
+                        .spray-page__slider-row
+                          .spray-page__slider-col
+                            .spray-page__tabs
+                              .spray-page__tabs-item.spray-page__tabs-item--active(data-tab='1')
+                                .spray-page__tabs-container
+                                  .spray-page__tabs-row
+                                    .spray-page__tabs-col
+                                      +spray-svg.spray-page__tabs-icon
+                                    .spray-page__tabs-col
+                                      .spray-page__tabs-num
+                                        |15
+                              .spray-page__tabs-item(data-tab='2')
+                                .spray-page__tabs-container
+                                  .spray-page__tabs-row
+                                    .spray-page__tabs-col
+                                      +spray-svg.spray-page__tabs-icon
+                                    .spray-page__tabs-col
+                                      .spray-page__tabs-num
+                                        |60
+                            ul.reason-list.reason-list--italic.spray-page__slider-list
+                              li.reason-list__item
+                                p.reason-list__text
+                                  |Для лечения острого заболевания
+                              li.reason-list__item
+                                p.reason-list__text
+                                  |Для курса профилактики 2-3 курса лечения или профилактики
+                          .spray-page__slider-col
+                            .spray-page__slider-bottom
+                              .spray-page__slider-num
+                                |115
+                                .spray-page__slider-label
+                                  |Доз
+                    .spray-page__slider-slide.spray-page__slider-slide--absolute(data-slide='2')
+                      .spray-page__slider-container
+                        img.spray-page__slider-img(src="assets/images/spray-page-2.jpg", alt="")
+                      .spray-page__slider-content
+                        .spray-page__slider-row
+                          .spray-page__slider-col
+                            .spray-page__tabs
+                              .spray-page__tabs-item(data-tab='1')
+                                .spray-page__tabs-container
+                                  .spray-page__tabs-row
+                                    .spray-page__tabs-col
+                                      +spray-svg.spray-page__tabs-icon
+                                    .spray-page__tabs-col
+                                      .spray-page__tabs-num
+                                        |15
+                              .spray-page__tabs-item.spray-page__tabs-item--active(data-tab='2')
+                                .spray-page__tabs-container
+                                  .spray-page__tabs-row
+                                    .spray-page__tabs-col
+                                      +spray-svg.spray-page__tabs-icon
+                                    .spray-page__tabs-col
+                                      .spray-page__tabs-num
+                                        |60
+                            ul.reason-list.reason-list--italic.spray-page__slider-list
+                              li.reason-list__item
+                                p.reason-list__text
+                                  |Во время беремнности
+                              li.reason-list__item
+                                p.reason-list__text
+                                  |Для применения вместе с партнером 1 год использования по требованию
+                          .spray-page__slider-col
+                            .spray-page__slider-bottom
+                              .spray-page__slider-num
+                                |460
+                                .spray-page__slider-label.spray-page__slider-label--top
+                                  |более
+                                .spray-page__slider-label
+                                  |Доз
+              section.spray-page__section.margin-top.margin-top--l
+                ul.spray-page__list
+                  li.spray-page__list-item.spray-page__list-item--default
+                    p.spray-page__list-text
+                      |Широта показаний для применения обеспечивается разнообразием эффектов активированной глицирризиновой кислоты
+                  li.spray-page__list-item
+                    .spray-page__list-container
+                      .spray-page__list-img
+                        +spray-1-svg
+                      h3.spray-page__list-title
+                        |Противовирусный
+                  li.spray-page__list-item
+                    .spray-page__list-container
+                      .spray-page__list-img
+                        +spray-2-svg
+                      h3.spray-page__list-title
+                        |Противовоспалительный
+                  li.spray-page__list-item
+                    .spray-page__list-container
+                      .spray-page__list-img
+                        +spray-3-svg
+                      h3.spray-page__list-title
+                        |Противозудный
+                  li.spray-page__list-item
+                    .spray-page__list-container
+                      .spray-page__list-img
+                        +spray-4-svg
+                      h3.spray-page__list-title
+                        |Регенерирующий
+                  li.spray-page__list-item
+                    .spray-page__list-container
+                      .spray-page__list-img
+                        +spray-5-svg
+                      h3.spray-page__list-title
+                        |Иммуностимулирующий
+              section.spray-page__section.margin-top.margin-top--l
+                h3.spray-page__section-title
+                  |Применяется при лечении
+                .spray-page__use.margin-top.margin-top--md
+                  ul.spray-page__use-list
+                    li.spray-page__use-item
+                      .spray-page__use-card
+                        .spray-page__use-container
+                          .spray-page__use-img
+                            +spray-use-1-svg
+                          .spray-page__use-text
+                            |Генитальный герпес
+                      .spray-page__use-card
+                        .spray-page__use-container
+                          .spray-page__use-img
+                            +spray-use-2-svg
+                          .spray-page__use-text
+                            |ВПЧ
+                    li.spray-page__use-item
+                      .spray-page__use-card.spray-page__use-card--big
+                        .spray-page__use-container
+                          .spray-page__use-img
+                            +spray-use-3-svg
+                          .spray-page__use-text
+                            |Бактериальный вагиноз, неспецифический вагинит
+                    li.spray-page__use-item
+                      .spray-page__use-card.spray-page__use-card--big
+                        .spray-page__use-container
+                          .spray-page__use-img
+                            +spray-use-4-svg
+                          .spray-page__use-text
+                            |Дискомфорт, связанный с половым актом
+                    li.spray-page__use-item
+                      .spray-page__use-card
+                        .spray-page__use-container
+                          .spray-page__use-img
+                            +spray-use-5-svg
+                          .spray-page__use-text
+                            |Молочница, заболевание шейки матки
+                      .spray-page__use-card
+                        .spray-page__use-container
+                          .spray-page__use-img
+                            +spray-use-6-svg
+                          .spray-page__use-text
+                            |При беременности
+              section.spray-page__section.margin-top.margin-top--l
+                .spray-page__content
+                  .spray-page__content-layout
+                    +star-svg.spray-page__content-img
+                    +moon-svg.spray-page__content-icon
+                    +triangle-bg-svg.spray-page__content-bg
+                  .spray-page__content-content
+                    h3.spray-page__content-title
+                      |Ощущаете дискомфорт в интимной зоне?
+                    .spray-page__content-row
+                      .spray-page__content-col
+                        a.spray-page__content-button(href="#" data-scroll='#test')
+                      .spray-page__content-col
+                        .spray-page__content-text
+                          |Пройдите тест и узнайте больше о решении данной проблемы
+              section.spray-page__test.margin-top.margin-top--md(id='test')
+                form.spray-page__test-container(action="/")
+                  .spray-page__test-row
+                    .spray-page__test-col
+                      .spray-page__test-question
+                        |Какие проявления в интимной зоне вас беспокоят?
+                      ul.spray-page__test-dots.margin-top.margin-top--md
+                        - for (i = 0; i < 5; i++)
+                          li.spray-page__test-dot(class = ((i === 0) ? 'spray-page__test-dot--active' : ''))
+                    .spray-page__test-col
+                      .spray-page__test-options
+                        each item in ['Обильные выделения без неприятного запаха', 'Выделения с неприятным запахом', 'Болезненные пузырьки в интимной зоне, превращающиеся в язвы', 'Безболезненные папилломы, узелки, наросты или бородавки в интимной зоне', 'Что-то другое, не указанное выше']
+                          label.spray-page__test-label(for="#")
+                            input.spray-page__test-radio(type="radio")
+                            .spray-page__test-icon
+                              +check-svg
+                            .spray-page__test-text
+                              |#{item}
+                  .spray-page__test-index
+                    |1
+              section.spray-page__section.margin-top.margin-top--l
+                .spray-page__structure
+                  .spray-page__structure-row
+                    .spray-page__structure-col
+                      h3.spray-page__section-title
+                        |Состав
+                      .spray-page__structure-label
+                        |на 100 мл. препарата
+                    .spray-page__structure-col
+                      h4.spray-page__structure-title
+                        |Действущее вещество
+                      .spray-page__structure-content
+                        .spray-page__structure-text.max-width.max-width--col--5
+                          |Глицирризиновая кислота активированная (эквивалентно аммонию глицирризинату)
+                        .spray-page__structure-num
+                          |0,1 г
+                    .spray-page__structure-col
+                      h4.spray-page__structure-title
+                        |Вспомогательные вещества
+                      ul.spray-page__structure-list
+                        -
+                          var items = [
+                            {
+                              text: 'Яблочная кислота',
+                              num: '3 г',
+                            },
+                            {
+                              text: 'Фумаровая кислота',
+                              num: '2 г',
+                            },
+                            {
+                              text: 'Аскорбиновая кислота',
+                              num: '0,3 г',
+                            },
+                            {
+                              text: 'Фолиевая кислота',
+                              num: '0,08 г',
+                            },
+                            {
+                              text: 'Пропиленгликоль',
+                              num: '50 г',
+                            },
+                            {
+                              text: 'Твин-80 (полисорбат-80)',
+                              num: '0,9 г',
+                            },
+                            {
+                              text: 'Вода очищенная',
+                              num: 'до 100 мл',
+                            },
+                          ]
+                        each item in items
+                          li.spray-page__structure-item
+                            .spray-page__structure-text
+                              |!{item.text}
+                            .spray-page__structure-num
+                              |!{item.num}
+              section.spray-page__section.margin-top.margin-top--l
+                .spray-page__video
+                  .spray-page__video-row
+                    .spray-page__video-col
+                      h3.spray-page__section-title.margin-botto.margin-bottom--m
+                        |Способ применения
+                      .spray-page__video-button
+                        a.download-link.download-link--default(href="#")
+                          .download-link__icon
+                            +download-svg
+                          .download-link__text
+                            |Скачать инструкцию
+                    .spray-page__video-col
+                      .video
+                        .video__container
+                          .video__frame
+                            img.video__img(src="assets/images/video.jpg", alt="")
+                          .video__button
+                            .video__button-icon
+                              +start-svg.video__button-svg
+              section.spray-page__section.margin-top.margin-top--l
+
+
+            +footer.page__footer
