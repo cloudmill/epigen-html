@@ -5,7 +5,7 @@ include ../components/footer.pug
 
 
 //- block cookies
-block grid-test
+//- block grid-test
 
 
 mixin copyright-link
@@ -33,11 +33,11 @@ block content
                         |Меню
                       .aside__menu-button
                   .articles-page__aside
-                    .articles-page__aside-label 
+                    .articles-page__aside-label
                       |О категории
                     h4.articles-page__aside-title
                       |Генитальный герпес
-                    p.articles-page__aside-text 
+                    p.articles-page__aside-text
                       |Герпес является распространенным заболеванием, передающимся половым путем (ЗППП), которым может заболеть любой человек, ведущий половую жизнь. У большинства людей с вирусом симптомы отсутствуют. Даже без признаков заболевания герпес по-прежнему может распространяться на сексуальных партнеров.
                 .aside__bottom
                   +copyright-link(href='#')
@@ -82,9 +82,9 @@ block content
                 |Статьи экспертов
               .rail.rail--margin-bottom--default.rail--desctop
               section.articles-page__section
-                .articles-page__section-row 
+                .articles-page__section-row
                   .articles-page__section-col
-                    .articles-page__section-label 
+                    .articles-page__section-label
                       |эксперт
                   .articles-page__section-col
                     .doctor-card
@@ -97,7 +97,7 @@ block content
                             |Бебнева Тамара Николаевна
                           .doctor-card__pos
                             |Врач акушер-гинеколог ФГБУ «НМИЦ эндокринологии» Минздрава России, к.м.н, доцент Кафедры акушерства, гинекологии и репродуктивной медицины РУДН
-              section.articles-page__section.margin-top.margin-top--md 
+              section.articles-page__section.margin-top.margin-top--md
                 ul.nav-list.nav-list--wrap
                   li.nav-list__item
                     +border-link(href='#' active count=29)
@@ -130,7 +130,7 @@ block content
                             |Клинические рекомендации
                         .card__row
                           .card__doctor
-                            .card__avatar 
+                            .card__avatar
                               img.card__icon(src="assets/images/doctor.jpg", alt="")
                             .card__name
                               |Пустотина Ольга Анатольевна
@@ -142,14 +142,14 @@ block content
                       +btn-plus-svg.button-show__svg
                     .button-show__text
                       |показать еще
-              section.articles-page__section 
+              section.articles-page__section
                 .form-container.margin-top.margin-top--md
-                  .form-container__row
+                  .form-container__row(data-form='1')
                     .form-container__col
                       h3.form-container__title
                         |Подписаться на обновления
                     .form-container__col
-                      form.form.form--follow(action="/")
+                      form.form.form--follow(action="/" )
                         .form__row
                           .form__item
                             input.form__input(type="text" name="name" placeholder="Имя")
@@ -166,6 +166,17 @@ block content
                                   |Согласен на обработку персональных данных в соответствии с #[a.checkbox__link(href="#") политикой конфиденциальности]
                           .form__item
                             .form__button
-                              button.button.button--wide(type='submit')
+                              button.button.button--wide(type='submit' data-form-button='1')
                                 |Отправить
+                  .form-container__response(data-response='1')
+                    .form-container__response-icon
+                      +form-check-svg.form-container__response-check
+                    .form-container__response-container
+                      .form-container__response-row
+                        .form-container__response-col
+                          h3.form-container__title
+                            |Подписка оформлена
+                        .form-container__response-col
+                          .button.button--wide(data-response-button='1')
+                            |Подписаться еще
             +footer.page__footer
