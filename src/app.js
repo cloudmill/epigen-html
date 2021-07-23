@@ -553,7 +553,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
   });
 }
 
-// test
+// input file
 {
   $(() => {
     if ($('.file').length !== 0) {
