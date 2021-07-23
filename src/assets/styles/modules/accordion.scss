@@ -5,6 +5,47 @@
   border-radius: 10px;
   transition: $transition;
 
+  &--consultation {
+
+    #{$comp}__head-col {
+      &:nth-child(1) {
+        width: calc(#{$col-width-d} * 4);
+      }
+      &:nth-child(2) {
+        padding-right: 0;
+
+        width: calc(#{$col-width-d} * 10);
+      }
+      &:nth-child(3) {
+        padding-right: 30px;
+
+        width: calc(#{$col-width-d} * 4);
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+    #{$comp}__head-title {
+      @include fsl(15px, 140%);
+    }
+
+    #{$comp}__body-container {
+      padding-left: calc(#{$col-width-d} * 4);
+    }
+    #{$comp}__body-col {
+
+      &:nth-child(1) {
+        padding-top: 15px;
+
+        width: calc(#{$col-width-d} * 7);
+
+        border-top: 1px solid $color-blue-light;
+      }
+    }
+    #{$comp}__body-text {
+      font-style: italic;
+    }
+  }
+
   &:hover {
     border-color: $color-blue;
 
@@ -66,6 +107,15 @@
       justify-content: space-between;
     }
   }
+  &__head-name {
+    @include fsl(20px, 140%);
+  }
+  &__head-date {
+    margin-top: 5px;
+
+    @include fsl(13px, 140%);
+    color: $color-gray;
+  }
   &__head-title {
     @include fsl(18px, 140%);
     font-weight: 400;
@@ -120,6 +170,12 @@
     &:nth-child(2) {
       width: calc(#{$col-width-d} * 4);
     }
+  }
+  &__body-text {
+    @include fsl(15px, 140%);
+  }
+  &__body-doctor {
+    margin-top: 30px;
   }
 
   &__spray {}

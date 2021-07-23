@@ -61,6 +61,13 @@
         width: $size-d;
         height: $size-d;
       }
+
+      &--s {
+        $size-d: 82px;
+
+        width: $size-d;
+        height: $size-d;
+      }
     }
 
     &--radius {
