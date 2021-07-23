@@ -1,7 +1,42 @@
 extends ../layouts/master.pug
 
-block cookies
+//- block cookies
 //- block grid-test
 
 block content
-  |test
+  .container
+    .row
+      .row__col.row__col--aside
+        .pslider.pslider__slide
+      .row__col.row__col--main
+        .pslider
+          each slide in [1, 2, 3]
+            .pslider__slide
+              .pslider__content
+                .pslider__layout
+                .pslider__top
+                  ul.pslider__btns
+                    li.pslider__btns-item
+                      button.psdlider__btn
+                        |btn
+                    li.pslider__btns-item
+                      button.psdlider__btn
+                        |btn
+                  ul.pslider__list
+                    li.psdlider__list-item
+                      |list-item
+                    li.psdlider__list-item
+                      |list-item
+                    li.psdlider__list-item
+                      |list-item
+                .pslider__bottom
+                  .pslider__count
+                    .pslider__count-top
+                      .pslider__count-text.pslider__count-text--small
+                        |до
+                    .pslider__count-bottom
+                      .pslider__count-text
+                        |115
+                      .pslider__count-text.pslider__count-text--small.pslider__count-text--alt-pos
+                        |доз
+              
