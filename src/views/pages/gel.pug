@@ -52,7 +52,7 @@ mixin copyright-link
       block
 
 block content
-  .spray-page
+  .spray-page.page-gel
     .container
       .row
         .row__col.row__col--aside.row__col--rail
@@ -82,12 +82,11 @@ block content
                     .panel__col
                       .panel__inner
                         .panel__product
-                          //- .panel__product-item--active
-                          a.panel__product-item.panel__product-item--active(href='#')
+                          a.panel__product-item(href='#')
                             .panel__product-mark
                             .panel__product-text
                               |Спрей
-                          a.panel__product-item.panel__product-item--purple(href='#')
+                          a.panel__product-item.panel__product-item--purple.panel__product-item--active(href='#')
                             .panel__product-mark
                             .panel__product-text
                               |Гель
@@ -407,6 +406,4 @@ block content
                             .video__button-icon
                               +start-svg.video__button-svg
               section.spray-page__section.margin-top.margin-top--l
-
-
             +footer.page__footer
