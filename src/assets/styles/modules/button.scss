@@ -25,6 +25,12 @@
 
   &--t {
     padding: 12px 0;
+    @media (max-width: $breakpoint-xl - 1px) {
+      padding: 12px 10px;
+    }
+    @media (max-width: $breakpoint - 1px) {
+      padding: 12px 0;
+    }
 
     line-height: 100%;
   }
