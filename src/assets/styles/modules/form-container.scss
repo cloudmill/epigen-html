@@ -1,12 +1,16 @@
 .form-container {
-  padding: 60px calc(#{$col-width-d});
 
-  border: 1px solid $color-blue;
-  border-radius: 10px;
+  position: relative;
 
   &__row {
+    padding: 60px calc(#{$col-width-d});
+
     display: flex;
     justify-content: space-between;
+
+    border: 1px solid $color-blue;
+    border-radius: 10px;
+    transition: $transition;
   }
 
   &__col {
@@ -23,5 +27,68 @@
   &__title {
     font-weight: 400;
     @include fsl(35px, 130%);
+  }
+
+  &__response {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    background-color: $color-aqua;
+    border-radius: 10px;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: $transition;
+
+    &::before {
+      $size: 352px;
+
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: calc(#{$col-width-d} + (#{$col-width-d} / 2));
+      transform: translateY(-50%);
+
+      width: $size;
+      height: $size;
+
+      background-color: #8BD7FF;
+      border-radius: 50%;
+      filter: blur(50px);
+    }
+  }
+  &__response-check {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    height: 270px;
+  }
+  &__response-container {
+    padding: 60px calc(#{$col-width-d});
+
+    height: 100%;
+  }
+  &__response-row {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+  }
+  &__response-col {
+    flex-shrink: 0;
+    &:nth-child(1) {
+      width: calc(#{$col-width-d} * 4);
+    }
+    &:nth-child(2) {
+      margin-top: auto;
+
+      width: calc(((#{$col-width-d} * 11) / 2) - 6px);
+    }
   }
 }

@@ -1,0 +1,76 @@
+.file {
+  margin-bottom: 40px;
+
+
+  &__input {
+    display: none;
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+  }
+
+  &__icon {
+    margin-right: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__text {
+    @include fsl(13px, 140%);
+  }
+
+  &__container {
+    display: flex;
+  }
+
+  &__item {
+    margin-bottom: 15px;
+
+    display: flex;
+
+    &:not(:first-child) {
+      margin-left: 15px;
+    }
+  }
+
+  &__name {
+    @include fsl(13px, 140%);
+  }
+
+  &__mark {
+    margin-left: 10px;
+    padding: 0 5px;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+
+      width: 1px;
+      height: 13px;
+
+      background-color: $color-blue;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+}

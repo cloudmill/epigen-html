@@ -1,13 +1,20 @@
 mixin accordion
-  .accordion
+  .accordion(class=(attributes.category ? undefiend : 'accordion--consultation'))
     .accordion__head
       .accordion__head-row
+        if (attributes.name)
+          .accordion__head-col
+            .accordion__head-name
+              |#{attributes.name}
+            .accordion__head-date
+              |#{attributes.date}
         .accordion__head-col
           h3.accordion__head-title
             |#{attributes.caption}
         .accordion__head-col
-          .category-item.category-item--light-blue
-            |#{attributes.category}
+          if (attributes.category)
+            .category-item.category-item--light-blue
+              |#{attributes.category}
           .accordion__head-button
             +plus-svg.accordion__head-icon
     .accordion__body
@@ -16,6 +23,18 @@ mixin accordion
           .accordion__body-col
             p.accordion__body-text
               |Спрей Эпиген Интим применятся для профилактики рецидивов (повторного возникновения) различных генитальных вирусных инфекций (например, генитального герпеса, ВПЧ), профилактики состояний, сопровождающихся снижением местного иммунитета (например, молочницы, бактериального вагиноза). Возможно, Вы перенесли одно из указанных состояний, либо специалист принял решение о необходимости назначения Спрея Эпиген Интим на основании результатов исследований и анализов.
+            if (attributes.doctor)
+              .accordion__body-doctor
+                .doctor-card
+                  .doctor-card__row
+                    .doctor-card__col
+                      .doctor-card__frame.doctor-card__frame--size--s.doctor-card__frame--radius--left
+                        img(src="assets/images/doctor.jpg", alt="")
+                    .doctor-card__col
+                      .doctor-card__name
+                        |Бебнева Тамара Николаевна
+                      .doctor-card__pos
+                        |Врач акушер-гинеколог ФГБУ «НМИЦ эндокринологии» Минздрава России, к.м.н, доцент Кафедры акушерства, гинекологии и репродуктивной медицины РУДН
           .accordion__body-col
             .accordion__spray
               .accordion__spray-row
