@@ -31,6 +31,8 @@
   margin-top: 50px;
   @media (max-width: $breakpoint - 1px) {
     margin-top: 30px;
+
+    width: calc(100% + 15px);
   }
 
   display: flex;
