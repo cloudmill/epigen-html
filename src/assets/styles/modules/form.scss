@@ -69,10 +69,16 @@
   &__container {
     flex-shrink: 0;
     width: calc(#{$col-width-d} * 5);
+    @media (max-width: $breakpoint - 1px) {
+      width: 100%;
+    }
   }
 
   &__inner {
     margin: 30px 0;
+    @media (max-width: $breakpoint - 1px) {
+      margin: 15px 0;
+    }
   }
 
 }
