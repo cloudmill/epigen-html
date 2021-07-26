@@ -519,7 +519,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
         let slider_options = {
           slidesPerView: 'auto',
 
-          spaceBetween: 30,
+          spaceBetween: 15,
 
           breakpoints: {
             [BREAKPOINT]: {

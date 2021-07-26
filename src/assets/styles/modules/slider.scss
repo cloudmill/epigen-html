@@ -3,28 +3,39 @@
     display: flex;
     justify-content: space-between;
   }
-  
+
   &__col {
     flex-shrink: 0;
 
     &:nth-child(2) {
       width: calc(#{$col-width-d} * 2);
+      @media (max-width: $breakpoint - 1px) {
+        display: none;
+      }
     }
   }
 
   &__title {
     font-weight: 400;
     @include fsl(35px, 130%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(20px);
+    }
   }
 }
 
 
 .slider {
   margin-top: 50px;
+  @media (max-width: $breakpoint - 1px) {
+    margin-top: 30px;
+  }
 
   display: flex;
   &__item {
     width: calc((((100vw - (30px * 2)) / 24) * 18) / 3 - 20px);
-    // flex-shrink: 0;
+    @media (max-width: $breakpoint - 1px) {
+      width: 330px;
+    }
   }
 }
