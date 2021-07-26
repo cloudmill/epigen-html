@@ -3,7 +3,10 @@
 
 
   &__input {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    width: 1px;
   }
 
   &__label {
