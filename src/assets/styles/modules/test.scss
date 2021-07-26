@@ -58,6 +58,9 @@
 
     &--md {
       width: calc((#{$col-width-d} * 6) + #{$col-pad-d});
+      @media (max-width: $breakpoint - 1px) {
+        width: calc((#{$col-width-m} * 5) + 15px);
+      }
     }
   }
 
@@ -65,14 +68,24 @@
     position: absolute;
     top: 15px;
     left: calc(100% + 15px);
+    @media (max-width: $breakpoint - 1px) {
+      top: 10px;
+      left: calc(100% + 10px);
+    }
   }
 
   &__inner {
     padding-top: 60px;
+    @media (max-width: $breakpoint - 1px) {
+      padding-top: 20px;
+    }
   }
 
   &__form {
     padding: 0 30px;
+    @media (max-width: $breakpoint - 1px) {
+      padding: 0 15px;
+    }
   }
   &__form-form {
     transition: $transition;
@@ -82,9 +95,15 @@
   }
   &__form-title {
     margin-bottom: 30px;
+    @media (max-width: $breakpoint - 1px) {
+      margin-bottom: 20px;
+    }
 
     font-weight: 400;
     @include fsl(25px, 120%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(20px);
+    }
   }
 
   &__response {
