@@ -83,25 +83,45 @@
 
   &__head {
     padding: 30px 0;
+    @media (max-width: $breakpoint - 1px) {
+      padding: 15px;
+    }
 
     cursor: pointer;
   }
   &__head-row {
     display: flex;
     justify-content: space-between;
+    @media (max-width: $breakpoint - 1px) {
+      flex-direction: column;
+    }
   }
   &__head-col {
     flex-shrink: 0;
 
     &:nth-child(1) {
       padding-left: 30px;
-
+      @media (max-width: $breakpoint - 1px) {
+        padding-left: 0;
+        padding-top: 15px;
+      }
       width: calc(#{$col-width-d} * 11);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
     }
     &:nth-child(2) {
       padding-right: 30px;
+      @media (max-width: $breakpoint - 1px) {
+        padding-right: 0;
+
+      }
 
       width: calc(#{$col-width-d} * 6);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+        order: -1;
+      }
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -118,13 +138,21 @@
   }
   &__head-title {
     @include fsl(18px, 140%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(15px);
+    }
     font-weight: 400;
   }
   &__head-button {
     $size-d: 45px;
+    $size-m: 35px;
 
     width: $size-d;
     height: $size-d;
+    @media (max-width: $breakpoint - 1px) {
+      width: $size-m;
+      height: $size-m;
+    }
 
     display: flex;
     align-items: center;
@@ -136,6 +164,10 @@
   }
   &__head-icon {
     transition: $transition;
+    @media (max-width: $breakpoint - 1px) {
+      width: 15px;
+      height: 15px;
+    }
     path {
       stroke: $color-black;
       transition: $transition;
@@ -154,25 +186,44 @@
   }
   &__body-container {
     padding: 0 calc(#{$col-width-d} * 2);
+    @media (max-width: $breakpoint - 1px) {
+      padding: 0 15px;
+    }
   }
   &__body-row {
     padding-bottom: 30px;
 
     display: flex;
-    justify-content: space-between; //!!!
+    @media (max-width: $breakpoint - 1px) {
+      display: block;
+    }
+    justify-content: space-between;
   }
   &__body-col {
     flex-shrink: 0;
 
     &:nth-child(1) {
       width: calc(#{$col-width-d} * 9);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
     }
     &:nth-child(2) {
+      @media (max-width: $breakpoint - 1px) {
+        margin-top: 30px;
+      }
+
       width: calc(#{$col-width-d} * 4);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
     }
   }
   &__body-text {
     @include fsl(15px, 140%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(13px);
+    }
   }
   &__body-doctor {
     margin-top: 30px;
@@ -188,6 +239,10 @@
       padding-right: 30px;
 
       width: calc(#{$col-width-d} * 2);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+        max-width: calc(105px + 30px);
+      }
     }
   }
   &__spray-img {
@@ -204,30 +259,50 @@
 
   &__links {
     padding: 0 30px;
+    @media (max-width: $breakpoint - 1px) {
+      padding: 0 15px;
+    }
   }
   &__links-container {
     border-top: 1px solid $color-blue-light;
   }
   &__links-label {
     margin: 15px 0 30px;
+    @media (max-width: $breakpoint - 1px) {
+      margin: 10px 0 15px;
+    }
 
     text-transform: uppercase;
     @include fsl(13px, 120%);
   }
   &__links-list {
     display: flex;
+    @media (max-width: $breakpoint - 1px) {
+      display: block;
+    }
   }
   &__links-item {
     width: calc((100% / 3) - 10px);
     min-height: 146px;
+    @media (max-width: $breakpoint - 1px) {
+      width: 100%;
+      min-height: auto;
+    }
 
     &:not(:first-child) {
       margin-left: 15px;
+      @media (max-width: $breakpoint - 1px) {
+        margin-left: 0;
+        margin-top: 10px;
+      }
     }
   }
 
   &__link {
     padding: 30px 15px 15px 30px;
+    @media (max-width: $breakpoint - 1px) {
+      padding: 15px;
+    }
 
     display: block;
     height: 100%;
@@ -242,6 +317,14 @@
     justify-content: space-between;
   }
   &__link-col {
+    flex-shrink: 0;
+
+    &:nth-child(1) {
+      width: calc(#{$col-width-d} * 4);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
+    }
 
     &:nth-child(2) {
       margin-top: 15px;
@@ -250,18 +333,12 @@
       justify-content: flex-end;
     }
   }
-}
-
-
-@keyframes accordionIn {
-  0% {
-    opacity: 0;
-    transform:scale(0.9) rotateX(-60deg);
-    transform-origin: 50% 0;
-  }
-  100% {
-    opacity:1;
-    transform:scale(1);
+  &__link-text {
+    @include fsl(15px, 140%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(13px);
+    }
   }
 }
+
 
