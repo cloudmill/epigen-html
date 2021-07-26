@@ -6,7 +6,7 @@ include ../components/accordion.pug
 include ../components/footer.pug
 
 block cookies
-block grid-test
+//- block grid-test
 
 
 mixin copyright-link
@@ -35,15 +35,15 @@ block content
                       .aside__menu-button
                   ul.faq-page__list
                     li.faq-page__item
-                        +border-link(href='#' active)
-                          |Все
+                      +border-link(href='#' active)
+                        |Все
                     each link in ['Состав', 'Противопоказания', 'Использование', 'Приобрести',]
                       li.faq-page__item
                         +border-link(href='#')
                           |!{link}
                 .aside__bottom
                   .button.button--t.margin-bottom.margin-bottom--m.button-modal
-                    |Задать вопрос
+                    |Задать вопрос о продукции Эпиген Интим
                   +copyright-link(href='#')
                     |Компания «Инвар», 2021
         .row__col.row__col--main
@@ -84,7 +84,18 @@ block content
             main.page__main
               h1.title
                 |Вопрос-ответ
-              .rail.rail--margin-bottom--default.rail--desctop
+              .rail.rail--margin-bottom--default
+              .faq-page__button
+                .button.button--t.margin-bottom.margin-bottom--m.button-modal
+                  |Задать вопрос о продукции Эпиген Интим
+              ul.faq-page__list.faq-page__list--mobile
+                li.faq-page__item
+                  +border-link(href='#' active)
+                    |Все
+                each link in ['Состав', 'Противопоказания', 'Использование', 'Приобрести',]
+                  li.faq-page__item
+                    +border-link(href='#')
+                      |!{link}
               section.faq-page__section
                 ul.product-choice.product-choice--margin-bottom--default
                   li.product-choice__item

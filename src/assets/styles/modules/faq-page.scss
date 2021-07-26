@@ -1,8 +1,34 @@
 .faq-page {
 
+  &__button {
+    display: none;
+    @media (max-width: $breakpoint - 1px) {
+      display: block;
+    }
+  }
+
+  &__list {
+
+    &--mobile {
+      @media (max-width: $breakpoint - 1px) {
+        margin-bottom: 30px;
+      }
+      display: none;
+      @media (max-width: $breakpoint - 1px) {
+        display: flex;
+        width: calc(100% + 15px);
+
+        overflow-x: auto;
+      }
+    }
+  }
   &__item {
     &:not(:first-child) {
       margin-top: 10px;
+      @media (max-width: $breakpoint - 1px) {
+        margin-top: 0;
+        margin-left: 15px;
+      }
     }
   }
 
@@ -17,6 +43,9 @@
   }
   &__form-row {
     display: flex;
+    @media (max-width: $breakpoint - 1px) {
+      display: block;
+    }
     justify-content: space-between;
 
     transition: $transition;
@@ -25,15 +54,28 @@
     flex-shrink: 0;
 
     &:nth-child(1) {
+      @media (max-width: $breakpoint - 1px) {
+        margin-bottom: 30px;
+      }
+
       width: calc(#{$col-width-d} * 7);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
     }
     &:nth-child(2) {
       width: calc(#{$col-width-d} * 9);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
     }
   }
   &__form-title {
     font-weight: 400;
     @include fsl(35px, 130%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(20px, 120%);
+    }
   }
 
   &__response {

@@ -21,6 +21,9 @@
   &--margin-bottom {
     &--default {
       margin-bottom: 30px;
+      @media (max-width: $breakpoint - 1px) {
+        margin-bottom: 15px;
+      }
     }
     &--large {
       margin-bottom: 60px;
