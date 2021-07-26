@@ -4,6 +4,9 @@
   border: 1px solid $color-blue;
   border-radius: 40px;
   @include fsl(15px, 140%);
+  @media (max-width: $breakpoint - 1px) {
+    @include fsl(12px);
+  }
   background-color: $color-white;
   cursor: pointer;
 
