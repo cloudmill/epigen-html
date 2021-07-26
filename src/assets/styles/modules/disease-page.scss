@@ -3,18 +3,31 @@
   &__section {}
   &__section-row {
     display: flex;
+    @media (max-width: $breakpoint - 1px) {
+      display: block;
+    }
     justify-content: space-between;
   }
   &__section-col {
     flex-shrink: 0;
     &:nth-child(1) {
+      @media (max-width: $breakpoint - 1px) {
+        margin-bottom: 30px;
+      }
+
       width: calc(#{$col-width-d} * 5);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
     &:nth-child(2) {
       width: calc(#{$col-width-d} * 12);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
     }
   }
   &__section-label {
@@ -26,6 +39,9 @@
   }
   &__section-container {
     padding: 0 calc(#{$col-width-d});
+    @media (max-width: $breakpoint - 1px) {
+      padding: 0;
+    }
   }
   &__section-category {
     display: flex;
@@ -228,25 +244,63 @@
 
   &__spray {
     padding: 0 calc(#{$col-width-d});
+    @media (max-width: $breakpoint - 1px) {
+      padding: 0 15px;
+    }
 
     background-color:#E0F3FD;
     border-radius: 10px;
   }
   &__spray-container {
     padding: 68px 0;
+    @media (max-width: $breakpoint - 1px) {
+      padding: 30px 0;
+    }
   }
   &__spray-row {
     display: flex;
+    @media (max-width: $breakpoint - 1px) {
+      display: block;
+    }
     justify-content: space-between;
   }
   &__spray-col {
     flex-shrink: 0;
 
     &:nth-child(1) {
+      @media (max-width: $breakpoint - 1px) {
+        margin-bottom: 30px;
+      }
+
       width: calc(#{$col-width-d} * 6);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
     }
     &:nth-child(2) {
       width: calc(#{$col-width-d} * 9);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
+    }
+  }
+  &__spray-title {
+    @media (max-width: $breakpoint - 1px) {
+      display: none;
+    }
+
+    font-weight: 400;
+    @include fsl(35px, 130%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(18px, 140%);
+    }
+
+    &--mobile {
+      @media (max-width: $breakpoint - 1px) {
+        margin-bottom: 20px;
+        display: block;
+      }
+      display: none;
     }
   }
   &__spray-image {
@@ -266,5 +320,8 @@
   }
   &__spray-column {
     padding-left: calc(#{$col-width-d});
+    @media (max-width: $breakpoint - 1px) {
+      padding-left: 0;
+    }
   }
 }
