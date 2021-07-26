@@ -23,13 +23,8 @@
       justify-content: space-between;
     }
   }
-  &__intro-label {
-    color: $color-blue;
-    @include fsl(15px, 140%);
-  }
   &__intro-item {
     display: flex;
-    justify-content: flex-end;
 
     &:not(:first-child) {
       margin-top: 10px;
@@ -37,7 +32,11 @@
   }
   &__intro-title {
     font-weight: 400;
+    color: $color-blue;
     @include fsl(70px, 110%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(25px, 120%);
+    }
   }
 
   &__section {}

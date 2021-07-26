@@ -4,8 +4,14 @@
 
   &__row {
     padding: 60px calc(#{$col-width-d});
+    @media (max-width: $breakpoint - 1px) {
+      padding: 30px 15px;
+    }
 
     display: flex;
+    @media (max-width: $breakpoint - 1px) {
+      display: block;
+    }
     justify-content: space-between;
 
     border: 1px solid $color-blue;
@@ -17,16 +23,29 @@
     flex-shrink: 0;
 
     &:nth-child(1) {
+      @media (max-width: $breakpoint - 1px) {
+        margin-bottom: 30px;
+      }
+
       width: calc(#{$col-width-d} * 4);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
     }
     &:nth-child(2) {
       width: calc(#{$col-width-d} * 11);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
     }
   }
 
   &__title {
     font-weight: 400;
     @include fsl(35px, 130%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(20px);
+    }
   }
 
   &__response {
@@ -45,7 +64,8 @@
     transition: $transition;
 
     &::before {
-      $size: 352px;
+      $size-d: 352px;
+      $size-m: 250px;
 
       content: "";
       position: absolute;
@@ -53,9 +73,18 @@
       top: 0;
       left: calc(#{$col-width-d} + (#{$col-width-d} / 2));
       transform: translateY(-50%);
+      @media (max-width: $breakpoint - 1px) {
+        left: 50%;
+        top: -67px;
+        transform: translateX(-50%);
+      }
 
-      width: $size;
-      height: $size;
+      width: $size-d;
+      height: $size-d;
+      @media (max-width: $breakpoint - 1px) {
+        width: $size-m;
+        height: $size-m;
+      }
 
       background-color: #8BD7FF;
       border-radius: 50%;
@@ -64,31 +93,55 @@
   }
   &__response-check {
     position: absolute;
-    bottom: 0;
+    z-index: -1;
+    bottom: -25px;
     left: 50%;
     transform: translateX(-50%);
+    @media (max-width: $breakpoint - 1px) {
+      left: -35px;
+      top: -45px;
+      transform: none;
 
-    height: 270px;
+      width: 400px;
+      height: 269px;
+    }
+
+    height: 330px;
   }
   &__response-container {
     padding: 60px calc(#{$col-width-d});
+    @media (max-width: $breakpoint - 1px) {
+      padding: 30px 15px;
+    }
 
     height: 100%;
   }
   &__response-row {
     display: flex;
     justify-content: space-between;
+    @media (max-width: $breakpoint - 1px) {
+      flex-direction: column;
+    }
     height: 100%;
   }
   &__response-col {
     flex-shrink: 0;
     &:nth-child(1) {
       width: calc(#{$col-width-d} * 4);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
     }
     &:nth-child(2) {
       margin-top: auto;
+      @media (max-width: $breakpoint - 1px) {
+        margin-top: 0;
+      }
 
       width: calc(((#{$col-width-d} * 11) / 2) - 6px);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
     }
   }
 }

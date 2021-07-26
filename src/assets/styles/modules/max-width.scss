@@ -1,5 +1,8 @@
 .max-width {
   max-width: calc(#{$col-width-d} * 10);
+  @media (max-width: $breakpoint - 1px) {
+    max-width: none;
+  }
 
   &--col {
     &--9 {

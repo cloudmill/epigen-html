@@ -2,10 +2,16 @@
 
   &__section {
     padding: 49px 0;
+    @media (max-width: $breakpoint - 1px) {
+      padding: 23px 0 0;
+    }
 
     position: relative;
-    
+
     border: 1px solid $color-blue-light;
+    @media (max-width: $breakpoint - 1px) {
+      border: 0;
+    }
     border-radius: 10px;
   }
   &__section-layout {
@@ -40,12 +46,24 @@
     top: 0;
     right: calc(#{$col-width-d} * 14);
     transform: translateY(-50%);
+    @media (max-width: $breakpoint - 1px) {
+      right: auto;
+      left: 0;
+      transform: none;
+    }
   }
   &__section-img {
     position: absolute;
     bottom: 0;
     left: calc(#{$col-width-d} * 14);
     transform: translateY(50%);
+    @media (max-width: $breakpoint - 1px) {
+      left: auto;
+      bottom: auto;
+      top: 50px;
+      right: 0;
+      transform: none;
+    }
 
     width: 27px;
     height: 30px;
@@ -57,25 +75,48 @@
   }
   &__section-title {
     margin-bottom: 20px;
+    @media (max-width: $breakpoint - 1px) {
+      margin-bottom: 10px;
+    }
 
     max-width: 444px;
+    @media (max-width: $breakpoint - 1px) {
+      max-width: 246px;
+    }
 
     font-weight: 400;
     text-align: center;
     @include fsl(35px, 130%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(20px);
+    }
   }
   &__section-caption {
     margin-bottom: 50px;
+    @media (max-width: $breakpoint - 1px) {
+      margin-bottom: 20px;
+    }
 
     @include fsl(18px, 140%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(15px);
+      text-align: center;
+    }
   }
   &__section-buttons {
     display: flex;
+    @media (max-width: $breakpoint - 1px) {
+      display: block;
+    }
   }
   &__section-item {
 
     &:not(:first-child) {
       margin-left: 10px;
+      @media (max-width: $breakpoint - 1px) {
+        margin-left: 0;
+        margin-top: 5px;
+      }
     }
   }
 
@@ -89,6 +130,9 @@
 
     flex-shrink: 0;
     width: calc(#{$col-width-d} * 12);
+    @media (max-width: $breakpoint - 1px) {
+      width: 100%;
+    }
   }
   &__content-layout {
     position: absolute;
@@ -101,15 +145,29 @@
     position: absolute;
     top: -20px;
     left: calc(#{$col-width-d});
+    @media (max-width: $breakpoint - 1px) {
+      left: 15px;
+
+      width: 74px;
+      height: 60px;
+    }
   }
   &__content-img {
     position: absolute;
     bottom: calc(11px + 30px);
     right: calc(#{$col-width-d});
+    @media (max-width: $breakpoint - 1px) {
+      bottom: 30px;
+      right: 15px;
+    }
     transform: matrix(-1, 0, 0, 1, 0, 0);
 
     width: 50px;
     height: 41px;
+    @media (max-width: $breakpoint - 1px) {
+      width: 42px;
+      height: 34px;
+    }
   }
   &__content-container {
     padding: 20px calc(#{$col-width-d});
@@ -118,6 +176,9 @@
   }
   &__content-text {
     text-align: center;
-    @include fsl(18px, 170%)
+    @include fsl(18px, 170%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(15px);
+    }
   }
 }

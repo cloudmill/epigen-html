@@ -1,5 +1,8 @@
 .button {
   padding: 19px 61px;
+  @media (max-width: $breakpoint - 1px) {
+    padding: 11px 27px;
+  }
 
   display: flex;
   align-items: center;
@@ -25,6 +28,12 @@
 
   &--t {
     padding: 12px 0;
+    @media (max-width: $breakpoint-xl - 1px) {
+      padding: 12px 10px;
+    }
+    @media (max-width: $breakpoint - 1px) {
+      padding: 12px 0;
+    }
 
     line-height: 100%;
   }

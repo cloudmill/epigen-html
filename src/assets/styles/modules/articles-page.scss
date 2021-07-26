@@ -16,20 +16,41 @@
   &__aside-text {
     @include fsl(15px, 140%);
     color: $color-gray;
+
+    &:last-child {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__mobile {
+    display: none;
+    @media (max-width: $breakpoint - 1px) {
+      display: block;
+    }
   }
 
   &__section {}
   &__section-row {
     display: flex;
+    @media (max-width: $breakpoint - 1px) {
+      display: block;
+    }
   }
   &__section-col {
     flex-shrink: 0;
 
     &:nth-child(1) {
+      @media (max-width: $breakpoint - 1px) {
+        margin-bottom: 15px;
+      }
+
       width: calc(#{$col-width-d} * 2);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
     }
     &:nth-child(2) {
-      width: 420px;
+      max-width: 420px;
     }
   }
   &__section-label {

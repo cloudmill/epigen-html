@@ -121,8 +121,6 @@
   &--reviews-slider-main-page {
     overflow: hidden;
 
-
-
     #{$comp}__top {
       margin-bottom: 80px;
     }
@@ -159,7 +157,7 @@
         #{$comp}__review,
         #{$comp}__content-wrapper,
         #{$comp}__preview-img,
-        #{$comp}__control,
+        #{$comp}__control--animated,
         #{$comp}__preview-wrapper {
           animation: fadeInUp $transition;
           transform: translateY(0%);
@@ -286,10 +284,14 @@
       justify-content: flex-end;
       align-items: center;
 
-      animation: fadeOutUp $transition;
-      transform: translateY(50%);
-      opacity: 0;
-      transition: transform, opacity 0s;
+
+
+      &--animated {
+        animation: fadeOutUp $transition;
+        transform: translateY(50%);
+        opacity: 0;
+        transition: transform, opacity 0s;
+      }
     }
     #{$comp}__control-item {
       &:not(:first-child) {

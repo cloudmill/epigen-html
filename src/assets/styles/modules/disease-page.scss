@@ -3,18 +3,31 @@
   &__section {}
   &__section-row {
     display: flex;
+    @media (max-width: $breakpoint - 1px) {
+      display: block;
+    }
     justify-content: space-between;
   }
   &__section-col {
     flex-shrink: 0;
     &:nth-child(1) {
+      @media (max-width: $breakpoint - 1px) {
+        margin-bottom: 30px;
+      }
+
       width: calc(#{$col-width-d} * 5);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
     &:nth-child(2) {
       width: calc(#{$col-width-d} * 12);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
     }
   }
   &__section-label {
@@ -26,6 +39,9 @@
   }
   &__section-container {
     padding: 0 calc(#{$col-width-d});
+    @media (max-width: $breakpoint - 1px) {
+      padding: 0;
+    }
   }
   &__section-category {
     display: flex;
@@ -56,39 +72,59 @@
 
   &__content {
     h3 {
+      @media (max-width: $breakpoint - 1px) {
+        margin-bottom: 20px;
+      }
+
       color: $color-blue;
       font-weight: 400;
       @include fsl(35px, 130%);
+      @media (max-width: $breakpoint - 1px) {
+        @include fsl(20px, 140%);
+      }
     }
 
     p {
       @include fsl(18px, 170%);
+      @media (max-width: $breakpoint - 1px) {
+        @include fsl(15px);
+      }
     }
 
     ul {
-      margin-top: 20px;
+      margin-top: 40px;
 
       counter-reset: index;
     }
 
     li {
-      padding-bottom: 50px;
+      padding-bottom: calc(30px + 20px);
       padding-left: calc(#{$col-width-d} * 2);
       padding-right: calc(#{$col-width-d});
+      @media (max-width: $breakpoint - 1px) {
+        padding-left: calc(#{$col-width-m});
+        padding-right: 0;
+      }
 
       position: relative;
       counter-increment: index;
       min-height: 117px;
 
-      @include fsl(16px, 140%);
-      font-style: italic;
+      @include fsl(18px, 140%);
+      @media (max-width: $breakpoint - 1px) {
+        @include fsl(15px);
+      }
 
       &:not(:first-child) {
         margin-top: 40px;
+        @media (max-width: $breakpoint - 1px) {
+          margin-top: 30px;
+        }
       }
 
       &::before {
         $size-d: calc(#{$col-width-d});
+        $size-m: 43px;
 
         content: counter(index);
         position: absolute;
@@ -97,6 +133,10 @@
 
         width: $size-d;
         height: $size-d;
+        @media (max-width: $breakpoint - 1px) {
+          width: $size-m;
+          height: $size-m;
+        }
 
         display: flex;
         align-items: center;
@@ -106,7 +146,6 @@
         border: 1px solid $color-blue;
         background-color: $color-white;
         @include fsl(18px, 140%);
-        font-style: normal;
       }
 
       &::after {
@@ -132,36 +171,56 @@
     h4 {
       font-weight: 400;
       @include fsl(25px, 150%);
+      @media (max-width: $breakpoint - 1px) {
+        @include fsl(18px);
+      }
     }
 
     p {
       margin-top: 15px;
 
       @include fsl(18px, 170%);
+      @media (max-width: $breakpoint - 1px) {
+        @include fsl(15px);
+      }
     }
   }
   &__content-row {
     display: flex;
+    @media (max-width: $breakpoint - 1px) {
+      display: block;
+    }
     justify-content: space-between;
   }
   &__content-col {
     flex-shrink: 0;
     &:nth-child(1) {
       width: calc((#{$col-width-d} * 5) + 5px);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
     }
 
     &:nth-child(2) {
       width: calc(#{$col-width-d} * 12);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
     }
   }
 
   &__disease {
     img {
       $size-d: calc(#{$col-width-d} * 3);
+      $size-m: 203px;
 
       flex-shrink: 0;
       width: $size-d;
       height: $size-d;
+      @media (max-width: $breakpoint - 1px) {
+        width: $size-m;
+        height: $size-m;
+      }
       display: block;
 
       border-radius: 10px;
@@ -169,34 +228,59 @@
   }
   &__disease-row {
     display: flex;
+    @media (max-width: $breakpoint - 1px) {
+      display: block;
+    }
     justify-content: space-between;
   }
   &__disease-col {
     flex-shrink: 0;
 
     &:nth-child(1) {
+      @media (max-width: $breakpoint - 1px) {
+        margin-bottom: 20px;
+      }
+
       width: calc(#{$col-width-d} * 3);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
     }
     &:nth-child(2) {
       width: calc(#{$col-width-d} * 8);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
     }
   }
 
   &__diagnostics {
     margin-top: 40px;
+    @media (max-width: $breakpoint - 1px) {
+      margin-top: 30px;
 
+      display: block;
+    }
     display: flex;
     justify-content: space-between;
 
     p {
       padding: 50px 30px;
+      @media (max-width: $breakpoint - 1px) {
+        padding: 50px 0;
+      }
 
       position: relative;
       width: calc((#{$col-width-d} * 12) / 2 - 10px);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
       flex-shrink: 0;
 
-      @include fsl(15px, 140%);
-      font-style: italic;
+      @include fsl(18px, 140%);
+      @media (max-width: $breakpoint - 1px) {
+        @include fsl(15px);
+      }
 
       &::after,
       &::before {
@@ -223,30 +307,74 @@
         border-top: none;
         border-radius: 0 0 10px 10px;
       }
+
+      &:not(:first-child) {
+        @media (max-width: $breakpoint - 1px) {
+          margin-top: 15px;
+        }
+      }
     }
   }
 
   &__spray {
     padding: 0 calc(#{$col-width-d});
+    @media (max-width: $breakpoint - 1px) {
+      padding: 0 15px;
+    }
 
     background-color:#E0F3FD;
     border-radius: 10px;
   }
   &__spray-container {
     padding: 68px 0;
+    @media (max-width: $breakpoint - 1px) {
+      padding: 30px 0;
+    }
   }
   &__spray-row {
     display: flex;
+    @media (max-width: $breakpoint - 1px) {
+      display: block;
+    }
     justify-content: space-between;
   }
   &__spray-col {
     flex-shrink: 0;
 
     &:nth-child(1) {
+      @media (max-width: $breakpoint - 1px) {
+        margin-bottom: 30px;
+      }
+
       width: calc(#{$col-width-d} * 6);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
     }
     &:nth-child(2) {
       width: calc(#{$col-width-d} * 9);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
+    }
+  }
+  &__spray-title {
+    @media (max-width: $breakpoint - 1px) {
+      display: none;
+    }
+
+    font-weight: 400;
+    @include fsl(35px, 130%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(18px, 140%);
+    }
+
+    &--mobile {
+      @media (max-width: $breakpoint - 1px) {
+        margin-bottom: 20px;
+        display: block;
+      }
+      display: none;
     }
   }
   &__spray-image {
@@ -266,5 +394,8 @@
   }
   &__spray-column {
     padding-left: calc(#{$col-width-d});
+    @media (max-width: $breakpoint - 1px) {
+      padding-left: 0;
+    }
   }
 }

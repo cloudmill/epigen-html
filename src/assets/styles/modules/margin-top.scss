@@ -1,5 +1,8 @@
 .margin-top {
   margin-top: 100px;
+  @media (max-width: $breakpoint - 1px) {
+    margin-top: 60px;
+  }
 
   &--md {
     margin-top: 60px;

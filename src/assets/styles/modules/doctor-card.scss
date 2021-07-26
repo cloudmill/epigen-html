@@ -2,16 +2,19 @@
   $comp: &;
 
   &--col {
-    #{$comp}__row {
-      display: block;
-    }
+    @media (min-width: $breakpoint) {
+      #{$comp}__row {
+        display: block;
+      }
 
-    #{$comp}__col {
-      &:nth-child(2) {
-        margin-top: 15px;
-        margin-left: 0;
+      #{$comp}__col {
+        &:nth-child(2) {
+          margin-top: 15px;
+          margin-left: 0;
+        }
       }
     }
+
   }
 
   &__row {
@@ -44,15 +47,24 @@
     width: $size-d;
     height: $size-d;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     overflow: hidden;
 
     &--size {
 
       &--default {
         $size-d: 179px;
+        $size-m: 93px;
 
         width: $size-d;
         height: $size-d;
+        @media (max-width: $breakpoint - 1px) {
+          width: $size-m;
+          height: $size-m;
+        }
       }
 
       &--md {

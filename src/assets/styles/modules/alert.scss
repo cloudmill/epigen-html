@@ -40,6 +40,9 @@
   &__container {
     position: relative;
     width: calc(#{$col-width-d} * 8);
+    @media (max-width: $breakpoint - 1px) {
+      width: calc(#{$col-width-m} * 6);
+    }
     flex-shrink: 0;
 
     background-color: $color-white;
@@ -49,28 +52,48 @@
   &__button {
     position: absolute;
     top: 0;
-    right: -55px;
+    left: calc(100% + 10px);
+    @media (max-width: $breakpoint - 1px) {
+      left: auto;
+      right: -22px;
+      top: -22px;
+    }
   }
 
   &__content {
     padding: 40px;
+    @media (max-width: $breakpoint - 1px) {
+      padding: 30px 15px;
+    }
   }
 
   &__top {
     margin-bottom: 40px;
+    @media (max-width: $breakpoint - 1px) {
+      margin-bottom: 20px;
+    }
   }
 
   &__text {
     text-align: center;
     @include fsl(13px, 140%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(11px);
+    }
     color: $color-gray;
   }
 
   &__work {
     margin-bottom: 30px;
+    @media (max-width: $breakpoint - 1px) {
+      margin-bottom: 20px;
+    }
 
     text-align: center;
     @include fsl(18px, 140%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(15px);
+    }
   }
 
   &__buttons {
