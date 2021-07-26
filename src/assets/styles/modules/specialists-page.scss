@@ -2,6 +2,9 @@
 
   &__specialists {
     padding-top: 30px;
+    @media (max-width: $breakpoint - 1px) {
+      padding-top: 15px;
+    }
   }
 
   &__article {
@@ -34,9 +37,7 @@
     }
   }
   &__article-label {
-    @media (max-width: $breakpoint - 1px) {
-      margin-bottom: 15px;
-    }
+    margin-bottom: 15px;
 
     text-transform: uppercase;
     color: $color-blue;
@@ -188,7 +189,7 @@
   }
   &__wish-text {
     @include fsl(18px, 170%);
-    @media (min-width: $breakpoint - 1px) {
+    @media (max-width: $breakpoint - 1px) {
       @include fsl(15px);
     }
   }
