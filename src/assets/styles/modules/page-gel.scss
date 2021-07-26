@@ -23,4 +23,114 @@
     @include fsl(70px, 110%);
     color: $color-purple;
   }
+
+  &__compound {
+    margin-top: 140px;
+
+    border-top: 1px solid $color-purple;
+  }
+  &__compound-row {
+    display: flex;
+  }
+  &__compound-col {
+    flex-shrink: 0;
+
+    &:nth-child(1) {
+      padding-top: 20px;
+      width: calc(#{$col-width-d} * 6);
+    }
+    &:nth-child(2) {
+      padding-top: 80px;
+      padding-bottom: 80px;
+      width: calc(#{$col-width-d} * 12);
+
+      border-bottom: 1px solid $color-blue-light;
+    }
+  }
+  &__compound-title {
+    font-weight: 400;
+    @include fsl(35px, 130%);
+  }
+  &__compound-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__compound-item {
+    margin-top: 60px;
+    padding-right: calc(#{$col-width-d});
+    width: calc(#{$col-width-d} * 6);
+
+    &:nth-child(-n + 2) {
+      margin-top: 0;
+    }
+  }
+  &__compound-item-title {
+    font-weight: 400;
+    @include fsl(25px, 120%);
+    color: $color-purple;
+  }
+  &__compound-item-text {
+    margin-top: 20px;
+    @include fsl(18px, 140%);
+  }
+
+  &__method {}
+  &__method-list {
+    counter-reset: index;
+
+    display: flex;
+    justify-content: space-between;
+  }
+  &__method-item {
+    width: calc((#{$col-width-d} * 12 - 15px) / 3);
+    flex-shrink: 0;
+  }
+  &__method-item-image {
+    counter-increment: index;
+
+    position: relative;
+    
+    display: flex;
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      content: attr(data-label);
+      pointer-events: none;
+
+      color: $color-white;
+    }
+
+    &::after {
+      position: absolute;
+      $offset: 10px;
+      top: $offset;
+      left: $offset;
+
+      content: counter(index);
+      $size: 40px;
+      width: $size;
+      height: $size;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background-color: $color-purple;
+      border-radius: 50%;
+      color: $color-white;
+    }
+  }
+  &__method-item-img {
+    border-radius: 10px;
+  }
+  &__method-item-title {
+    font-weight: 400;
+    @include fsl(15px, 140%);
+  }
+  &__method-item-title {
+  
+  }
 }
