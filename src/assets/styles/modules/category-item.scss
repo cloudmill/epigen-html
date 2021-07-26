@@ -15,6 +15,12 @@
     background-color: $color-aqua;
   }
 
+  &--background {
+    &--white {
+      background-color: $color-white;
+    }
+  }
+
   &--blue {
     border-color: $color-blue;
     background-color: $color-blue;

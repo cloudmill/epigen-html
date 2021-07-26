@@ -9,27 +9,41 @@
   }
   &__article-row {
     display: flex;
+    @media (max-width: $breakpoint - 1px) {
+      display: block;
+    }
   }
   &__article-col {
     flex-shrink: 0;
 
     &:nth-child(1) {
+      @media (max-width: $breakpoint - 1px) {
+        margin-bottom: 30px;
+      }
+
       width: calc(#{$col-width-d} * 6);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
     }
     &:nth-child(2) {
       width: calc(#{$col-width-d} * 10);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
     }
   }
   &__article-label {
+    @media (max-width: $breakpoint - 1px) {
+      margin-bottom: 15px;
+    }
+
     text-transform: uppercase;
     color: $color-blue;
     @include fsl(13px, 120%);
   }
-  &__article-text {
-    margin-top: 10px;
-
-    text-transform: uppercase;
-    @include fsl(15px, 140%);
+  &__article-category {
+    display: flex;
   }
 
   &__info {
@@ -37,15 +51,24 @@
   }
   &__info-row {
     display: flex;
+    @media (max-width: $breakpoint - 1px) {
+      display: block;
+    }
   }
   &__info-col {
     flex-shrink: 0;
 
     &:nth-child(1) {
       width: calc(#{$col-width-d} * 2);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
     }
     &:nth-child(2) {
       width: calc(#{$col-width-d} * 8);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
     }
   }
 
@@ -132,9 +155,15 @@
 
   &__wish {
     padding-left: calc(#{$col-width-d} * 6);
+    @media (max-width: $breakpoint - 1px) {
+      padding-left: 0;
+    }
   }
   &__wish-container {
     padding: 20px calc(#{$col-width-d});
+    @media (max-width: $breakpoint - 1px) {
+      padding: 20px 0;
+    }
 
     position: relative;
 
@@ -158,13 +187,17 @@
     }
   }
   &__wish-text {
-    @include fsl(18px, 140%);
-    font-style: italic;
+    @include fsl(18px, 170%);
+    @media (min-width: $breakpoint - 1px) {
+      @include fsl(15px);
+    }
   }
 
   &__table {
     padding-left: calc(#{$col-width-d} * 3);
-
+    @media (max-width: $breakpoint - 1px) {
+      padding-left: 0;
+    }
   }
   &__table-table {
     width: 100%;
