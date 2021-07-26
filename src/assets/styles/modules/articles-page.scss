@@ -16,6 +16,17 @@
   &__aside-text {
     @include fsl(15px, 140%);
     color: $color-gray;
+
+    &:last-child {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__mobile {
+    display: none;
+    @media (max-width: $breakpoint - 1px) {
+      display: block;
+    }
   }
 
   &__section {}

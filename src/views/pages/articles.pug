@@ -38,7 +38,9 @@ block content
                     h4.articles-page__aside-title
                       |Генитальный герпес
                     p.articles-page__aside-text
-                      |Герпес является распространенным заболеванием, передающимся половым путем (ЗППП), которым может заболеть любой человек, ведущий половую жизнь. У большинства людей с вирусом симптомы отсутствуют. Даже без признаков заболевания герпес по-прежнему может распространяться на сексуальных партнеров.
+                      |Герпес является распространенным заболеванием, передающимся половым путем (ЗППП), которым может заболеть любой человек, ведущий половую жизнь.
+                    p.articles-page__aside-text
+                      |У большинства людей с вирусом симптомы отсутствуют. Даже без признаков заболевания герпес по-прежнему может распространяться на сексуальных партнеров.
                 .aside__bottom
                   +copyright-link(href='#')
                     |Компания «Инвар», 2021
@@ -81,6 +83,13 @@ block content
               h1.title
                 |Статьи экспертов
               .rail.rail--margin-bottom--default.rail--desctop
+              .articles-page__mobile
+                h4.articles-page__aside-title
+                  |Генитальный герпес
+                p.articles-page__aside-text
+                  |Герпес является распространенным заболеванием, передающимся половым путем (ЗППП), которым может заболеть любой человек, ведущий половую жизнь.
+                p.articles-page__aside-text
+                  |У большинства людей с вирусом симптомы отсутствуют. Даже без признаков заболевания герпес по-прежнему может распространяться на сексуальных партнеров.
               section.articles-page__section
                 .articles-page__section-row
                   .articles-page__section-col
@@ -143,7 +152,7 @@ block content
                     .button-show__text
                       |показать еще
               section.articles-page__section
-                .form-container.margin-top.margin-top--md
+                .form-container
                   .form-container__row(data-form='1')
                     .form-container__col
                       h3.form-container__title
@@ -156,7 +165,7 @@ block content
                           .form__item
                             input.form__input(type="email" name="email" placeholder="E-mail")
                         .form__row
-                          .form__item
+                          .form__item.form__item--m
                             .checkbox
                               label.checkbox__label(for="checkbox")
                                 input.checkbox__input(type="checkbox" id="checkbox")
@@ -164,7 +173,7 @@ block content
                                   +check-svg.checkbox__icon
                                 .checkbox__text
                                   |Согласен на обработку персональных данных в соответствии с #[a.checkbox__link(href="#") политикой конфиденциальности]
-                          .form__item
+                          .form__item.form__item--m
                             .form__button
                               button.button.button--wide(type='submit' data-form-button='1')
                                 |Отправить
