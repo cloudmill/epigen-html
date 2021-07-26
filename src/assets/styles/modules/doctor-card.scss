@@ -47,6 +47,10 @@
     width: $size-d;
     height: $size-d;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     overflow: hidden;
 
     &--size {
