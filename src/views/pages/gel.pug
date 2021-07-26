@@ -3,7 +3,7 @@ extends ../layouts/master.pug
 include ../components/footer.pug
 
 block cookies
-//- block grid-test
+block grid-test 
 
 mixin nav-page-d
   nav.nav-page-d(class=attributes.class)
@@ -112,6 +112,56 @@ block content
                           .panel__consultation-text
                             |Консультация эксперта
             main.page__main
+              section.page-gel__method.spray-page__section.margin-top.margin-top--l
+                .spray-page__video
+                  .spray-page__video-row
+                    .spray-page__video-col
+                      h3.spray-page__section-title.margin-botto.margin-bottom--m
+                        |Способ применения
+                      .spray-page__video-button
+                        a.download-link.download-link--default(href="#")
+                          .download-link__icon
+                            +download-svg
+                          .download-link__text
+                            |Скачать инструкцию
+                    .spray-page__video-col
+                      ul.page-gel__method-list
+                        li.page-gel__method-item
+                          .page-gel__method-item-image
+                            img.page-gel__method-item-img(src='assets/images/method-1.jpeg')
+                        li.page-gel__method-item
+                          .page-gel__method-item-image
+                            img.page-gel__method-item-img(src='assets/images/method-2.jpeg')
+                        li.page-gel__method-item
+                          .page-gel__method-item-image(data-label='18+')
+                            img.page-gel__method-item-img(src='assets/images/method-3.jpeg')
+              section.page-gel__compound
+                .page-gel__compound-row
+                  .page-gel__compound-col
+                    h2.page-gel__compound-title
+                      |Состав
+                  .page-gel__compound-col
+                    ul.page-gel__compound-list
+                      li.page-gel__compound-item
+                        h3.page-gel__compound-item-title
+                          |Активированная глицирризиновая кислота
+                        p.page-gel__compound-item-text
+                          |Способствует устранению воспаления (красноты, зуда, ощущения дискомфорта), стимулирует восстановление кожных покровов и слизистой
+                      li.page-gel__compound-item
+                        h3.page-gel__compound-item-title
+                          |Молочная кислота
+                        p.page-gel__compound-item-text
+                          |Нормализует обычный для слизистой деликатных участков тела кислотно-щелочной баланс и микрофлору, которые защищают половые органы от инфекций и молочницы
+                      li.page-gel__compound-item
+                        h3.page-gel__compound-item-title
+                          |Глицерин
+                        p.page-gel__compound-item-text
+                          |Способствует увлажнению и смягчению кожных покровов и слизистой
+                      li.page-gel__compound-item
+                        h3.page-gel__compound-item-title
+                          |Фитосфингозины
+                        p.page-gel__compound-item-text
+                          |Обладают противовоспалительным эффектом и неспецифическими противомикробными свойствами
               section.spray-page__section
                 .frame.frame--gel
                   img.frame__img(src='assets/images/gel-promo.jpeg')
