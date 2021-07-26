@@ -12,6 +12,8 @@
       @media (max-width: $breakpoint - 1px) {
         display: none;
       }
+
+      overflow: visible;
     }
   }
 
