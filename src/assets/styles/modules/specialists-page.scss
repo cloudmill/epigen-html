@@ -198,10 +198,21 @@
     padding-left: calc(#{$col-width-d} * 3);
     @media (max-width: $breakpoint - 1px) {
       padding-left: 0;
+      margin-left: -15px;
+
+      width: calc(100% + (15px * 2));
+
+      overflow-x: auto;
     }
+  }
+  &__table-container {
+    padding: 0 15px;
   }
   &__table-table {
     width: 100%;
+    @media (max-width: $breakpoint - 1px) {
+      width: 1012px;
+    }
 
     border: 1px solid $color-blue-light;
     border-bottom: none;
@@ -218,6 +229,9 @@
       padding: 18px;
 
       width: calc(#{$col-width-d} * 3);
+      @media (max-width: $breakpoint - 1px) {
+        width: calc(100% / 5);
+      }
     }
     tr:first-child {
       td:last-child {
