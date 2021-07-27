@@ -1,7 +1,8 @@
 import 'Styles/_app.scss'
 
 import Swiper from 'swiper/bundle';
-import Slider from 'scripts/slider.js'
+import Slider from 'scripts/slider.js';
+import Sticky from 'sticky-js';
 
 // vars
 const BREAKPOINT = 1280
@@ -666,3 +667,13 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
   });
 }
 
+
+// sticky
+{
+  $(() => {
+    if ($('.sticky').length !== 0) {
+      const sticky = new Sticky('.sticky');
+
+    }
+  });
+}
