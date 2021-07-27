@@ -62,4 +62,12 @@
     $fs: 15px;
     @include fsl($fs, $fs);
   }
+
+  &--spray {
+    padding: 12px 0;
+
+    width: 100%;
+
+    @include fsl(15px, 100%);
+  }
 }

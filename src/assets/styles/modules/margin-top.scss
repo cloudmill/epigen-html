@@ -14,5 +14,8 @@
 
   &--l {
     margin-top: 140px;
+    @media (max-width: $breakpoint - 1px) {
+      margin-top: 60px;
+    }
   }
 }
