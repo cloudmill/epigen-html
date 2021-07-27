@@ -242,4 +242,26 @@
     margin-left: 10px;
     display: flex;
   }
+
+  &__features {
+
+  }
+  &__features-list {
+
+  }
+  &__features-item {
+    &--side {
+      padding-left: calc(#{$col-width-d} * 7);
+    }
+  }
+  &__features-title {
+    font-weight: 400;
+    @include fsl(70px, 110%);
+    color: $color-purple;
+  }
+  &__features-text {
+    padding-left: calc(#{$col-width-d});
+
+    @include fsl(20px, 140%);
+  }
 }

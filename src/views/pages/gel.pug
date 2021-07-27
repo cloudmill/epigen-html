@@ -3,7 +3,7 @@ extends ../layouts/master.pug
 include ../components/footer.pug
 
 block cookies
-block grid-test
+//- block grid-tests
 
 mixin nav-page-d
   nav.nav-page-d(class=attributes.class)
@@ -112,6 +112,38 @@ block content
                           .panel__consultation-text
                             |Консультация эксперта
             main.page__main
+              section.page-gel__features
+                ul.page-gel__features-list
+                  li.page-gel__features-item
+                    h3.page-gel__features-title.max-width.max-width--col--13
+                      |Натуральный приятный аромат и цвет
+                    p.page-gel__features-text.max-width.max-width--col--7
+                      |Бережно очищает интимную зону
+                      br
+                      |и обеспечивает ощущение чистоты
+                      br
+                      |и свежести в течение дня
+                  li.page-gel__features-item.page-gel__features-item--side
+                    h3.page-gel__features-title.max-width.max-width--col--10
+                      |Содержит молочную кислоту
+                    p.page-gel__features-text.max-width.max-width--col--7
+                      |Поддерживает физиологический pH
+                      br
+                      |и естественную микрофлору слизистых оболочек половых органов
+                  li.page-gel__features-item
+                    h3.page-gel__features-title.max-width.max-width--col--11
+                      |Активированная глицирризиновая кислота в составе
+                    p.page-gel__features-text.max-width.max-width--col--8
+                      |Обладает выраженными противовоспалительным и регенерирующим эффектами, способствует уменьшению дискомфорта
+                  li.page-gel__features-item.page-gel__features-item--side
+                    h3.page-gel__features-title.page-gel__features-title--small.max-width.max-width--col--10
+                      |Рекомендуется врачами гинекологами с заботой о женском интимном здоровье
+                    p.page-gel__features-text.max-width.max-width--col--7
+                      |Самый назначаемый гинекологами
+                      br
+                      |и дерматовенерологами гель
+                      br
+                      |для интимной гигиены*
               section.spray-page__section
                 .spray-page__slider
                   .spray-page__slider-container
