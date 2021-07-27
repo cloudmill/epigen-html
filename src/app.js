@@ -331,7 +331,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
   $(() => {
     const list = $('[data-list]');
 
-    if (list.length !== 0) {
+    if (list.length !== 0 && BREAKPOINT_MEDIA.matches) {
       const listOffset = list.offset().top - 10;
       const panelHeight = $('.panel__panel').height();
 

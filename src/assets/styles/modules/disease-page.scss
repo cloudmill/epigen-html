@@ -54,6 +54,11 @@
     background-color: #E0F3FD;
     border-radius: 10px;
 
+    @media (max-width: $breakpoint - 1px) {
+      width: calc(100% + 15px);
+      overflow-x: auto;
+    }
+
     &--hidden {
       opacity: 0;
     }
@@ -62,13 +67,30 @@
   &__list {
     margin-top: -5px;
     margin-left: -5px;
+    @media (max-width: $breakpoint - 1px) {
+      margin: 0;
+    }
 
     display: flex;
     flex-wrap: wrap;
+    @media (max-width: $breakpoint - 1px) {
+      flex-wrap: nowrap;
+    }
   }
   &__list-item {
     margin-left: 5px;
     margin-top: 5px;
+    @media (max-width: $breakpoint - 1px) {
+      margin: 0;
+
+      white-space: nowrap;
+    }
+
+    &:not(:first-child) {
+      @media (max-width: $breakpoint - 1px) {
+        margin-left: 5px;
+      }
+    }
   }
 
   &__content {
