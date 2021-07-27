@@ -19,6 +19,9 @@
     &--white {
       background-color: $color-white;
     }
+    &--none {
+      background: none;
+    }
   }
 
   &--blue {

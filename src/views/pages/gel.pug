@@ -3,7 +3,7 @@ extends ../layouts/master.pug
 include ../components/footer.pug
 
 block cookies
-//- block grid-test
+block grid-test
 
 mixin nav-page-d
   nav.nav-page-d(class=attributes.class)
@@ -114,7 +114,26 @@ block content
             main.page__main
               section.page-gel__reviews
                 .page-gel__reviews-layout
-                .swiper-container.swiper-container--visible.swiper-container--slide-width-auto.swiper-container--slide-height-max.js.js--main-reviews-slider
+                .page-gel__reviews-top
+                  .page-gel__reviews-left
+                    h2.page-gel__reviews-title
+                      |Отзывы 
+                    .page-gel__reviews-btns
+                      .page-gel__reviews-btns-item
+                        .b.b--btn-left-right-slider.js.js--gel-reviews-btn--prev
+                          +simple-arrow-svg.b__svg
+                      .page-gel__reviews-btns-item
+                        .b.b--btn-left-right-slider.b--right.js.js--gel-reviews-btn--next
+                          +simple-arrow-svg.b__svg
+                  .page-gel__reviews-right
+                    .page-gel__reviews-links
+                      .page-gel__reviews-links-item
+                        a.category-item.category-item--background--none(href='#')
+                          |Все отзывы
+                      .page-gel__reviews-links-item
+                        a.category-item.category-item--background--none(href='#')
+                          |Задать вопрос врачу
+                .swiper-container.swiper-container--visible.swiper-container--slide-width-auto.swiper-container--slide-height-max.js.js--gel-reviews-slider
                   .swiper-wrapper
                     - for (let i = 0; i < 10; i++)
                       .swiper-slide

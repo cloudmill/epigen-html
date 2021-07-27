@@ -602,10 +602,10 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
   })
 }
 
-// main reviews slider
+// gel reviews slider
 {
   $(() => {
-    const swiperContainer = $('.js--main-reviews-slider')
+    const swiperContainer = $('.js--gel-reviews-slider')
     
     if (swiperContainer.length) {
       const swiper = new Swiper(swiperContainer[0], {
@@ -613,6 +613,12 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
         spaceBetween: 20,
         loop: true,
       })
+
+      const btnPrev = $('.js--gel-reviews-btn--prev')
+      const btnNext = $('.js--gel-reviews-btn--next')
+      
+      btnPrev.on('click', () => swiper.slidePrev())
+      btnNext.on('click', () => swiper.slideNext())
     }
   })
 }
