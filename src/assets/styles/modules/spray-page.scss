@@ -3,11 +3,29 @@
 
 
   &__intro {
+    @media (max-width: $breakpoint - 1px) {
+      margin-top: 15px;
+    }
+
     position: absolute;
+    @media (max-width: $breakpoint - 1px) {
+      position: static;
+    }
     top: 30px;
     left: 30px;
     right: 30px;
     bottom: 20px;
+
+    @media (max-width: $breakpoint - 1px) {
+      display: none;
+    }
+
+    &--mobile {
+      display: none;
+      @media (max-width: $breakpoint - 1px) {
+        display: block;
+      }
+    }
   }
   &__intro-row {
     display: flex;
@@ -17,10 +35,24 @@
     height: 100%;
   }
   &__intro-col {
-
     &:nth-child(1) {
       display: flex;
       justify-content: space-between;
+    }
+
+    &:nth-child(3) {
+      @media (max-width: $breakpoint - 1px) {
+        width: 50%;
+      }
+      @media (max-width: $breakpoint-s - 1px) {
+        width: 100%;
+      }
+    }
+
+    &:not(:last-child) {
+      @media (max-width: $breakpoint - 1px) {
+        margin-bottom: 30px;
+      }
     }
   }
   &__intro-item {
@@ -28,6 +60,9 @@
 
     &:not(:first-child) {
       margin-top: 10px;
+      @media (max-width: $breakpoint - 1px) {
+        margin-top: 5px;
+      }
     }
   }
   &__intro-title {
@@ -42,26 +77,45 @@
   &__section {}
   &__section-row {
     display: flex;
+    @media (max-width: $breakpoint - 1px) {
+      display: block;
+    }
   }
   &__section-col {
     flex-shrink: 0;
 
     &:nth-child(1) {
       width: calc(#{$col-width-d} * 10);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
     }
 
     &:nth-child(2) {
       margin-left: calc(#{$col-width-d} * 2);
+      @media (max-width: $breakpoint - 1px) {
+        margin-left: 0;
+        margin-top: 15px;
+      }
 
       width: calc(#{$col-width-d} * 5);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
     }
   }
   &__section-title {
     font-weight: 400;
     @include fsl(35px, 130%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(20px);
+    }
   }
   &__section-text {
     @include fsl(18px, 140%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(15px);
+    }
   }
 
   &__slider {
@@ -275,6 +329,10 @@
   &__list-item {
     width: calc(#{$col-width-d} * 6);
     min-height: 210px;
+    @media (max-width: $breakpoint - 1px) {
+      width: 100%;
+      min-height: 148px;
+    }
 
     flex-shrink: 0;
     display: flex;
@@ -286,18 +344,36 @@
 
     &--default {
       display: block;
+      @media (max-width: $breakpoint - 1px) {
+        display: flex;
+      }
 
       border: none;
     }
 
     &:not(:first-child) {
       margin-left: -1px;
+      @media (max-width: $breakpoint - 1px) {
+        margin-left: 0;
+        margin-top: -1px;
+      }
+    }
+  }
+  &__list-container {
+    @media (max-width: $breakpoint - 1px) {
+      padding: 15px 0;
     }
   }
   &__list-text {
-    width: calc(#{$col-width-d} * 4);
+    width: calc(#{$col-width-d} * 5);
+    @media (max-width: $breakpoint - 1px) {
+      width: 100%;
+    }
 
-    @include fsl(15px, 140%);
+    @include fsl(20px, 140%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(18px)
+    }
   }
   &__list-img {
     display: flex;
@@ -315,6 +391,9 @@
   &__use-list {
     margin-top: -20px;
     margin-left: -20px;
+    @media (max-width: $breakpoint - 1px) {
+      margin: 0;
+    }
 
     display: flex;
     align-items: stretch;
@@ -323,15 +402,32 @@
   &__use-item {
     margin-left: 20px;
     margin-top: 20px;
+    @media (max-width: $breakpoint - 1px) {
+      margin: 0;
+    }
 
     width: calc(((#{$col-width-d} * 18) / 2) - 10px);
     min-height: 190px;
+    @media (max-width: $breakpoint - 1px) {
+      width: 100%;
+      min-height: 165px;
+    }
 
     flex-shrink: 0;
     display: flex;
+    @media (max-width: $breakpoint - 1px) {
+      flex-wrap: wrap;
+    }
+
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
   }
   &__use-card {
     width: calc((100% / 2) - 10px);
+    @media (max-width: $breakpoint - 1px) {
+      width: 100%;
+    }
     flex-shrink: 0;
 
     background: linear-gradient(180deg, #E0F3FD 0%, rgba(224, 243, 253, 0) 100%);
@@ -339,6 +435,10 @@
 
     &:not(:first-child) {
       margin-left: 20px;
+      @media (max-width: $breakpoint - 1px) {
+        margin-left: 0;
+        margin-top: 10px;
+      }
     }
 
     &--big {
@@ -365,11 +465,18 @@
 
     @include fsl(15px, 140%);
   }
+
   &__content {
     padding-left: calc(#{$col-width-d} * 5);
+    @media (max-width: $breakpoint - 1px) {
+      padding-left: 0;
+    }
 
     position: relative;
     display: flex;
+    @media (max-width: $breakpoint - 1px) {
+      flex-direction: column;
+    }
   }
   &__content-layout {
     position: absolute;
@@ -383,11 +490,19 @@
     position: absolute;
     left: calc(#{$col-width-d} * 3);
     bottom: 100%;
+    @media (max-width: $breakpoint - 1px) {
+      left: 0;
+      bottom: calc(100% - 14px);
+    }
   }
   &__content-icon {
     position: absolute;
     top: 15px;
     left: calc(#{$col-width-d} * 15);
+    @media (max-width: $breakpoint - 1px) {
+      left: auto;
+      right: 0;
+    }
 
     width: 27px;
     height: 30px;
@@ -400,7 +515,7 @@
     transform: translateX(-50%);
 
     path {
-      filter: blur(80px);
+      filter: blur(50px);
     }
   }
   &__content-content {
@@ -410,25 +525,46 @@
   }
   &__content-title {
     margin-bottom: 30px;
+    @media (max-width: $breakpoint - 1px) {
+      margin-bottom: 10px;
+    }
 
     max-width: 444px;
+    @media (max-width: $breakpoint - 1px) {
+      max-width: 246px;
+    }
 
     text-align: center;
     font-weight: 400;
     @include fsl(35px, 130%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(20px);
+    }
   }
   &__content-row {
     display: flex;
+    @media (max-width: $breakpoint - 1px) {
+      flex-direction: column;
+    }
   }
   &__content-col {
     flex-shrink: 0;
 
     &:nth-child(1) {
       width: calc(#{$col-width-d} * 4);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
     }
 
     &:nth-child(2) {
       margin-left: 40px;
+      @media (max-width: $breakpoint - 1px) {
+        margin-bottom: 20px;
+        margin-left: 0;
+
+        order: -1;
+      }
     }
   }
   &__content-button {
@@ -468,7 +604,12 @@
   }
   &__content-text {
     width: 313px;
+    @media (max-width: $breakpoint - 1px) {
+      width: 100%;
 
+      text-align: center;
+      @include fsl(15px);
+    }
     @include fsl(18px, 140%);
   }
 
@@ -483,30 +624,66 @@
   }
   &__test-row {
     display: flex;
+    @media (max-width: $breakpoint - 1px) {
+      display: block;
+    }
     justify-content: space-between;
   }
   &__test-col {
     flex-shrink: 0;
 
     &:nth-child(1) {
+      @media (max-width: $breakpoint - 1px) {
+        padding-left: calc(#{$col-width-m});
+      }
+
       width: calc(#{$col-width-d} * 6);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
     }
 
     &:nth-child(2) {
+      @media (max-width: $breakpoint - 1px) {
+        margin-top: 15px;
+      }
+
       width: calc(#{$col-width-d} * 8);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
     }
   }
   &__test-question {
     @include fsl(25px, 120%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(15px);
+    }
   }
   &__test-dots {
+    margin-top: 60px;
+    @media (max-width: $breakpoint - 1px) {
+      margin-top: 0;
+    }
+
     display: flex;
+
+    @media (max-width: $breakpoint - 1px) {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+    }
   }
   &__test-dot {
-    $size: 13px;
+    $size-d: 13px;
+    $size-m: 9px;
 
-    width: $size;
-    height: $size;
+    width: $size-d;
+    height: $size-d;
+    @media (max-width: $breakpoint - 1px) {
+      width: $size-m;
+      height: $size-m;
+    }
 
     border-radius: 50%;
     background-color: $color-white;
@@ -514,6 +691,9 @@
 
     &:not(:first-child) {
       margin-left: 15px;
+      @media (max-width: $breakpoint - 1px) {
+        margin-left: 10px;
+      }
     }
 
     &--active {
@@ -574,17 +754,30 @@
     padding-top: 7px;
 
     @include fsl(15px, 140%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(13px);
+    }
+
     transition: $transition;
   }
   &__test-index {
-    $size: 40px;
+    $size-d: 40px;
+    $size-m: 27px;
 
     position: absolute;
-    top: 12px;
+    top: 10px;
     left: 10px;
+    @media (max-width: $breakpoint - 1px) {
+      top: 15px;
+      left: 10px;
+    }
 
-    width: $size;
-    height: $size;
+    width: $size-d;
+    height: $size-d;
+    @media (max-width: $breakpoint - 1px) {
+      width: $size-m;
+      height: $size-m;
+    }
 
     display: flex;
     align-items: center;
@@ -594,38 +787,67 @@
     background-color: $color-blue;
     border-radius: 50%;
     @include fsl(18px, 140%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(13px);
+    }
   }
 
   &__structure {
     padding-top: 20px;
+    @media (max-width: $breakpoint - 1px) {
+      padding-top: 10px;
+    }
 
     border-top: 1px solid $color-blue;
   }
   &__structure-row {
     display: flex;
+    @media (max-width: $breakpoint - 1px) {
+      display: block;
+    }
   }
   &__structure-col {
     flex-shrink: 0;
     width: calc((#{$col-width-d} * 18) / 3);
+    @media (max-width: $breakpoint - 1px) {
+      width: 100%;
+    }
 
     &:nth-child(2) {
       padding-right: 20px;
+      @media (max-width: $breakpoint - 1px) {
+        padding-right: 0;
+      }
     }
 
     &:nth-child(3) {
       padding-left: 20px;
+      @media (max-width: $breakpoint - 1px) {
+        padding-left: 0;
+      }
+    }
+
+    &:not(:first-child) {
+      margin-top: 30px;
     }
   }
   &__structure-label {
     margin-top: 5px;
 
     @include fsl(13px, 120%);
+    text-transform: uppercase;
   }
   &__structure-title {
     margin-bottom: 40px;
+    @media (max-width: $breakpoint - 1px) {
+      margin-bottom: 20px;
+    }
 
     font-weight: 400;
     @include fsl(20px, 120%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(15px);
+    }
   }
   &__structure-content {
     padding-bottom: 15px;
@@ -639,8 +861,9 @@
     @include fsl(13px, 140%);
   }
   &__structure-num {
-    // font-weight: 500; //?
+    font-weight: 500; //?
     @include fsl(13px, 140%);
+    white-space: nowrap;
   }
   &__structure-head {
     display: flex;
@@ -660,17 +883,30 @@
   &__video {}
   &__video-row {
     display: flex;
+    @media (max-width: $breakpoint - 1px) {
+      display: block;
+    }
     justify-content: space-between;
   }
   &__video-col {
     flex-shrink: 0;
 
     &:nth-child(1) {
+      @media (max-width: $breakpoint - 1px) {
+        margin-bottom: 30px;
+      }
+
       width: calc(#{$col-width-d} * 4);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
     }
 
     &:nth-child(2) {
       width: calc(#{$col-width-d} * 12);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
     }
   }
   &__video-button {

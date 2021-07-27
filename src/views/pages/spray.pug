@@ -69,6 +69,8 @@ block content
                       .aside__menu-button
                   +nav-page-d
                 .aside__bottom
+                  a.button.button--spray.margin-bottom.margin-bottom--m(href="#")
+                    |Где купить
                   +copyright-link(href='#')
                     |Компания «Инвар», 2021
         .row__col.row__col--main
@@ -123,6 +125,22 @@ block content
                       .spray-page__intro-col
                         h1.spray-page__intro-title
                           |Спрей#[br]Эпиген Интим
+                .spray-page__intro.spray-page__intro--mobile
+                  .spray-page__intro-row
+                    .spray-page__intro-col
+                      h1.spray-page__intro-title
+                        |Спрей Эпиген Интим
+                    .spray-page__intro-col
+                      ul.spray-page__intro-list
+                        li.spray-page__intro-item
+                          .category-item.category-item--blue
+                            |Сделано в Испании
+                        li.spray-page__intro-item
+                          .category-item.category-item--blue
+                            |Соответсвует стандартам GMP
+                    .spray-page__intro-col
+                      a.button.button--spray.margin-bottom.margin-bottom--m(href="#")
+                        |Где купить
               section.spray-page__section.margin-top.margin-top--l
                 .spray-page__section-row
                   .spray-page__section-col
@@ -214,7 +232,7 @@ block content
                 ul.spray-page__list
                   li.spray-page__list-item.spray-page__list-item--default
                     p.spray-page__list-text
-                      |Широта показаний для применения обеспечивается разнообразием эффектов активированной глицирризиновой кислоты
+                      |5 эффектов спрея Эпиген Интим для помощи при различных заболеваниях интимной зоны
                   li.spray-page__list-item
                     .spray-page__list-container
                       .spray-page__list-img
@@ -311,7 +329,7 @@ block content
                     .spray-page__test-col
                       .spray-page__test-question
                         |Какие проявления в интимной зоне вас беспокоят?
-                      ul.spray-page__test-dots.margin-top.margin-top--md
+                      ul.spray-page__test-dots
                         - for (i = 0; i < 5; i++)
                           li.spray-page__test-dot(class = ((i === 0) ? 'spray-page__test-dot--active' : ''))
                     .spray-page__test-col

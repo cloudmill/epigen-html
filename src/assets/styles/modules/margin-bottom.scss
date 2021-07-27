@@ -2,5 +2,8 @@
 
   &--m {
     margin-bottom: 30px;
+    @media (max-width: $breakpoint - 1px) {
+      margin-bottom: 15px;
+    }
   }
 }
