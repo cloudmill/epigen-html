@@ -3,7 +3,7 @@ extends ../layouts/master.pug
 include ../components/footer.pug
 
 block cookies
-//- block grid-tests
+//- block grid-test
 
 mixin nav-page-d
   nav.nav-page-d(class=attributes.class)
@@ -112,38 +112,26 @@ block content
                           .panel__consultation-text
                             |Консультация эксперта
             main.page__main
-              section.page-gel__features
-                ul.page-gel__features-list
-                  li.page-gel__features-item
-                    h3.page-gel__features-title.max-width.max-width--col--13
-                      |Натуральный приятный аромат и цвет
-                    p.page-gel__features-text.max-width.max-width--col--7
-                      |Бережно очищает интимную зону
+              section.spray-page__section
+                .frame.frame--gel
+                  img.frame__img(src='assets/images/gel-promo.jpeg')
+                  .page-gel__frame
+                    ul.page-gel__frame-list
+                      li.page-gel__frame-item
+                        .category-item.category-item--purple.cursor.cursor--default
+                          |Сделано в Испании
+                    h1.page-gel__frame-title
+                      |Гель
                       br
-                      |и обеспечивает ощущение чистоты
-                      br
-                      |и свежести в течение дня
-                  li.page-gel__features-item.page-gel__features-item--side
-                    h3.page-gel__features-title.max-width.max-width--col--10
-                      |Содержит молочную кислоту
-                    p.page-gel__features-text.max-width.max-width--col--7
-                      |Поддерживает физиологический pH
-                      br
-                      |и естественную микрофлору слизистых оболочек половых органов
-                  li.page-gel__features-item
-                    h3.page-gel__features-title.max-width.max-width--col--11
-                      |Активированная глицирризиновая кислота в составе
-                    p.page-gel__features-text.max-width.max-width--col--8
-                      |Обладает выраженными противовоспалительным и регенерирующим эффектами, способствует уменьшению дискомфорта
-                  li.page-gel__features-item.page-gel__features-item--side
-                    h3.page-gel__features-title.page-gel__features-title--small.max-width.max-width--col--10
-                      |Рекомендуется врачами гинекологами с заботой о женском интимном здоровье
-                    p.page-gel__features-text.max-width.max-width--col--7
-                      |Самый назначаемый гинекологами
-                      br
-                      |и дерматовенерологами гель
-                      br
-                      |для интимной гигиены*
+                      |Эпиген Интим
+              section.spray-page__section.margin-top.margin-top--l
+                .spray-page__section-row
+                  .spray-page__section-col
+                    h3.spray-page__section-title
+                      |Единственный гель для интимной гигиены с уникальным сочетанием двух активных компонентов — активированной глицирризиновой и&nbsp;молочной кислоты
+                  .spray-page__section-col
+                    p.spray-page__section-text
+                      |Можно использовать на любом месяце беременности. Не имеет ограничений по возрасту и полу.
               section.spray-page__section
                 .spray-page__slider
                   .spray-page__slider-container
@@ -221,40 +209,65 @@ block content
                                   |более
                                 .spray-page__slider-label
                                   |Доз
-              section.page-gel__reviews
-                .page-gel__reviews-layout
-                .page-gel__reviews-top
-                  .page-gel__reviews-left
-                    h2.page-gel__reviews-title
-                      |Отзывы 
-                    .page-gel__reviews-btns
-                      .page-gel__reviews-btns-item
-                        .b.b--btn-left-right-slider.js.js--gel-reviews-btn--prev
-                          +simple-arrow-svg.b__svg
-                      .page-gel__reviews-btns-item
-                        .b.b--btn-left-right-slider.b--right.js.js--gel-reviews-btn--next
-                          +simple-arrow-svg.b__svg
-                  .page-gel__reviews-right
-                    .page-gel__reviews-links
-                      .page-gel__reviews-links-item
-                        a.category-item.category-item--background--none(href='#')
-                          |Все отзывы
-                      .page-gel__reviews-links-item
-                        a.category-item.category-item--background--none(href='#')
-                          |Задать вопрос врачу
-                .swiper-container.swiper-container--visible.swiper-container--slide-width-auto.swiper-container--slide-height-max.js.js--gel-reviews-slider
-                  .swiper-wrapper
-                    - for (let i = 0; i < 10; i++)
-                      .swiper-slide
-                        .page-gel__reviews-card
-                          .page-gel__reviews-card-top
-                            h3.page-gel__reviews-card-title
-                              |Nadine Zakharova
-                            p.page-gel__reviews-card-text
-                              |Купила я данное средство, прочитав изначально множество положительных отзывов на различных сайтах. Почему мой выбор пал на него? Несколько лет я пыталась найти своё средство для интимной гигиены, так как везде писали, что нельзя использовать обычный гель для душа или мыло...
-                          .page-gel__reviews-card-bottom
-                            a.page-gel__reviews-card-link(href='#')
-                              |irecommend.ru
+              section.page-gel__features
+                ul.page-gel__features-list
+                  li.page-gel__features-item
+                    h3.page-gel__features-title.max-width.max-width--col--13
+                      |Натуральный приятный аромат и цвет
+                    p.page-gel__features-text.max-width.max-width--col--7
+                      |Бережно очищает интимную зону
+                      br
+                      |и обеспечивает ощущение чистоты
+                      br
+                      |и свежести в течение дня
+                  li.page-gel__features-item.page-gel__features-item--side
+                    h3.page-gel__features-title.max-width.max-width--col--10
+                      |Содержит молочную кислоту
+                    p.page-gel__features-text.max-width.max-width--col--7
+                      |Поддерживает физиологический pH
+                      br
+                      |и естественную микрофлору слизистых оболочек половых органов
+                  li.page-gel__features-item
+                    h3.page-gel__features-title.max-width.max-width--col--11
+                      |Активированная глицирризиновая кислота в составе
+                    p.page-gel__features-text.max-width.max-width--col--8
+                      |Обладает выраженными противовоспалительным и регенерирующим эффектами, способствует уменьшению дискомфорта
+                  li.page-gel__features-item.page-gel__features-item--side
+                    h3.page-gel__features-title.page-gel__features-title--small.max-width.max-width--col--10
+                      |Рекомендуется врачами гинекологами с заботой о женском интимном здоровье
+                    p.page-gel__features-text.max-width.max-width--col--7
+                      |Самый назначаемый гинекологами
+                      br
+                      |и дерматовенерологами гель
+                      br
+                      |для интимной гигиены*
+              section.page-gel__compound
+                .page-gel__compound-row
+                  .page-gel__compound-col
+                    h2.page-gel__compound-title
+                      |Состав
+                  .page-gel__compound-col
+                    ul.page-gel__compound-list
+                      li.page-gel__compound-item
+                        h3.page-gel__compound-item-title
+                          |Активированная глицирризиновая кислота
+                        p.page-gel__compound-item-text
+                          |Способствует устранению воспаления (красноты, зуда, ощущения дискомфорта), стимулирует восстановление кожных покровов и слизистой
+                      li.page-gel__compound-item
+                        h3.page-gel__compound-item-title
+                          |Молочная кислота
+                        p.page-gel__compound-item-text
+                          |Нормализует обычный для слизистой деликатных участков тела кислотно-щелочной баланс и микрофлору, которые защищают половые органы от инфекций и молочницы
+                      li.page-gel__compound-item
+                        h3.page-gel__compound-item-title
+                          |Глицерин
+                        p.page-gel__compound-item-text
+                          |Способствует увлажнению и смягчению кожных покровов и слизистой
+                      li.page-gel__compound-item
+                        h3.page-gel__compound-item-title
+                          |Фитосфингозины
+                        p.page-gel__compound-item-text
+                          |Обладают противовоспалительным эффектом и неспецифическими противомикробными свойствами
               section.page-gel__method.spray-page__section.margin-top.margin-top--l
                 .spray-page__video
                   .spray-page__video-row
@@ -293,323 +306,38 @@ block content
                               |Использовать для интимной зоны, затем тщательно смыть
                           .page-gel__method-item-bottom
                             .rail.rail--small
-              section.page-gel__compound
-                .page-gel__compound-row
-                  .page-gel__compound-col
-                    h2.page-gel__compound-title
-                      |Состав
-                  .page-gel__compound-col
-                    ul.page-gel__compound-list
-                      li.page-gel__compound-item
-                        h3.page-gel__compound-item-title
-                          |Активированная глицирризиновая кислота
-                        p.page-gel__compound-item-text
-                          |Способствует устранению воспаления (красноты, зуда, ощущения дискомфорта), стимулирует восстановление кожных покровов и слизистой
-                      li.page-gel__compound-item
-                        h3.page-gel__compound-item-title
-                          |Молочная кислота
-                        p.page-gel__compound-item-text
-                          |Нормализует обычный для слизистой деликатных участков тела кислотно-щелочной баланс и микрофлору, которые защищают половые органы от инфекций и молочницы
-                      li.page-gel__compound-item
-                        h3.page-gel__compound-item-title
-                          |Глицерин
-                        p.page-gel__compound-item-text
-                          |Способствует увлажнению и смягчению кожных покровов и слизистой
-                      li.page-gel__compound-item
-                        h3.page-gel__compound-item-title
-                          |Фитосфингозины
-                        p.page-gel__compound-item-text
-                          |Обладают противовоспалительным эффектом и неспецифическими противомикробными свойствами
-              section.spray-page__section
-                .frame.frame--gel
-                  img.frame__img(src='assets/images/gel-promo.jpeg')
-                  .page-gel__frame
-                    ul.page-gel__frame-list
-                      li.page-gel__frame-item
-                        .category-item.category-item--purple.cursor.cursor--default
-                          |Сделано в Испании
-                    h1.page-gel__frame-title
-                      |Гель
-                      br
-                      |Эпиген Интим
-              section.spray-page__section.margin-top.margin-top--l
-                .spray-page__section-row
-                  .spray-page__section-col
-                    h3.spray-page__section-title
-                      |Единственный гель для интимной гигиены с уникальным сочетанием двух активных компонентов — активированной глицирризиновой и&nbsp;молочной кислоты
-                  .spray-page__section-col
-                    p.spray-page__section-text
-                      |Можно использовать на любом месяце беременности. Не имеет ограничений по возрасту и полу.
-              section.spray-page__section
-                .spray-page__slider
-                  .spray-page__slider-container
-                    .spray-page__slider-layout
-                        +star-svg.spray-page__slider-icon
-                    .spray-page__slider-slide.spray-page__slider-slide--active(data-slide='1')
-                      .spray-page__slider-container
-                        img.spray-page__slider-img(src="assets/images/spray-page-1.jpg", alt="")
-                      .spray-page__slider-content
-                        .spray-page__slider-row
-                          .spray-page__slider-col
-                            .spray-page__tabs
-                              .spray-page__tabs-item.spray-page__tabs-item--active(data-tab='1')
-                                .spray-page__tabs-container
-                                  .spray-page__tabs-row
-                                    .spray-page__tabs-col
-                                      +spray-svg.spray-page__tabs-icon
-                                    .spray-page__tabs-col
-                                      .spray-page__tabs-num
-                                        |15
-                              .spray-page__tabs-item(data-tab='2')
-                                .spray-page__tabs-container
-                                  .spray-page__tabs-row
-                                    .spray-page__tabs-col
-                                      +spray-svg.spray-page__tabs-icon
-                                    .spray-page__tabs-col
-                                      .spray-page__tabs-num
-                                        |60
-                            ul.reason-list.reason-list--italic.spray-page__slider-list
-                              li.reason-list__item
-                                p.reason-list__text
-                                  |Для лечения острого заболевания
-                              li.reason-list__item
-                                p.reason-list__text
-                                  |Для курса профилактики 2-3 курса лечения или профилактики
-                          .spray-page__slider-col
-                            .spray-page__slider-bottom
-                              .spray-page__slider-num
-                                |115
-                                .spray-page__slider-label
-                                  |Доз
-                    .spray-page__slider-slide.spray-page__slider-slide--absolute(data-slide='2')
-                      .spray-page__slider-container
-                        img.spray-page__slider-img(src="assets/images/spray-page-2.jpg", alt="")
-                      .spray-page__slider-content
-                        .spray-page__slider-row
-                          .spray-page__slider-col
-                            .spray-page__tabs
-                              .spray-page__tabs-item(data-tab='1')
-                                .spray-page__tabs-container
-                                  .spray-page__tabs-row
-                                    .spray-page__tabs-col
-                                      +spray-svg.spray-page__tabs-icon
-                                    .spray-page__tabs-col
-                                      .spray-page__tabs-num
-                                        |15
-                              .spray-page__tabs-item.spray-page__tabs-item--active(data-tab='2')
-                                .spray-page__tabs-container
-                                  .spray-page__tabs-row
-                                    .spray-page__tabs-col
-                                      +spray-svg.spray-page__tabs-icon
-                                    .spray-page__tabs-col
-                                      .spray-page__tabs-num
-                                        |60
-                            ul.reason-list.reason-list--italic.spray-page__slider-list
-                              li.reason-list__item
-                                p.reason-list__text
-                                  |Во время беремнности
-                              li.reason-list__item
-                                p.reason-list__text
-                                  |Для применения вместе с партнером 1 год использования по требованию
-                          .spray-page__slider-col
-                            .spray-page__slider-bottom
-                              .spray-page__slider-num
-                                |460
-                                .spray-page__slider-label.spray-page__slider-label--top
-                                  |более
-                                .spray-page__slider-label
-                                  |Доз
-              section.spray-page__section.margin-top.margin-top--l
-                ul.spray-page__list
-                  li.spray-page__list-item.spray-page__list-item--default
-                    p.spray-page__list-text
-                      |Широта показаний для применения обеспечивается разнообразием эффектов активированной глицирризиновой кислоты
-                  li.spray-page__list-item
-                    .spray-page__list-container
-                      .spray-page__list-img
-                        +spray-1-svg
-                      h3.spray-page__list-title
-                        |Противовирусный
-                  li.spray-page__list-item
-                    .spray-page__list-container
-                      .spray-page__list-img
-                        +spray-2-svg
-                      h3.spray-page__list-title
-                        |Противовоспалительный
-                  li.spray-page__list-item
-                    .spray-page__list-container
-                      .spray-page__list-img
-                        +spray-3-svg
-                      h3.spray-page__list-title
-                        |Противозудный
-                  li.spray-page__list-item
-                    .spray-page__list-container
-                      .spray-page__list-img
-                        +spray-4-svg
-                      h3.spray-page__list-title
-                        |Регенерирующий
-                  li.spray-page__list-item
-                    .spray-page__list-container
-                      .spray-page__list-img
-                        +spray-5-svg
-                      h3.spray-page__list-title
-                        |Иммуностимулирующий
-              section.spray-page__section.margin-top.margin-top--l
-                h3.spray-page__section-title
-                  |Применяется при лечении
-                .spray-page__use.margin-top.margin-top--md
-                  ul.spray-page__use-list
-                    li.spray-page__use-item
-                      .spray-page__use-card
-                        .spray-page__use-container
-                          .spray-page__use-img
-                            +spray-use-1-svg
-                          .spray-page__use-text
-                            |Генитальный герпес
-                      .spray-page__use-card
-                        .spray-page__use-container
-                          .spray-page__use-img
-                            +spray-use-2-svg
-                          .spray-page__use-text
-                            |ВПЧ
-                    li.spray-page__use-item
-                      .spray-page__use-card.spray-page__use-card--big
-                        .spray-page__use-container
-                          .spray-page__use-img
-                            +spray-use-3-svg
-                          .spray-page__use-text
-                            |Бактериальный вагиноз, неспецифический вагинит
-                    li.spray-page__use-item
-                      .spray-page__use-card.spray-page__use-card--big
-                        .spray-page__use-container
-                          .spray-page__use-img
-                            +spray-use-4-svg
-                          .spray-page__use-text
-                            |Дискомфорт, связанный с половым актом
-                    li.spray-page__use-item
-                      .spray-page__use-card
-                        .spray-page__use-container
-                          .spray-page__use-img
-                            +spray-use-5-svg
-                          .spray-page__use-text
-                            |Молочница, заболевание шейки матки
-                      .spray-page__use-card
-                        .spray-page__use-container
-                          .spray-page__use-img
-                            +spray-use-6-svg
-                          .spray-page__use-text
-                            |При беременности
-              section.spray-page__section.margin-top.margin-top--l
-                .spray-page__content
-                  .spray-page__content-layout
-                    +star-svg.spray-page__content-img
-                    +moon-svg.spray-page__content-icon
-                    +triangle-bg-svg.spray-page__content-bg
-                  .spray-page__content-content
-                    h3.spray-page__content-title
-                      |Ощущаете дискомфорт в интимной зоне?
-                    .spray-page__content-row
-                      .spray-page__content-col
-                        a.spray-page__content-button(href="#" data-scroll='#test')
-                      .spray-page__content-col
-                        .spray-page__content-text
-                          |Пройдите тест и узнайте больше о решении данной проблемы
-              section.spray-page__test.margin-top.margin-top--md(id='test')
-                form.spray-page__test-container(action="/")
-                  .spray-page__test-row
-                    .spray-page__test-col
-                      .spray-page__test-question
-                        |Какие проявления в интимной зоне вас беспокоят?
-                      ul.spray-page__test-dots.margin-top.margin-top--md
-                        - for (i = 0; i < 5; i++)
-                          li.spray-page__test-dot(class = ((i === 0) ? 'spray-page__test-dot--active' : ''))
-                    .spray-page__test-col
-                      .spray-page__test-options
-                        each item in ['Обильные выделения без неприятного запаха', 'Выделения с неприятным запахом', 'Болезненные пузырьки в интимной зоне, превращающиеся в язвы', 'Безболезненные папилломы, узелки, наросты или бородавки в интимной зоне', 'Что-то другое, не указанное выше']
-                          label.spray-page__test-label(for="#")
-                            input.spray-page__test-radio(type="radio")
-                            .spray-page__test-icon
-                              +check-svg
-                            .spray-page__test-text
-                              |#{item}
-                  .spray-page__test-index
-                    |1
-              section.spray-page__section.margin-top.margin-top--l
-                .spray-page__structure
-                  .spray-page__structure-row
-                    .spray-page__structure-col
-                      h3.spray-page__section-title
-                        |Состав
-                      .spray-page__structure-label
-                        |на 100 мл. препарата
-                    .spray-page__structure-col
-                      h4.spray-page__structure-title
-                        |Действущее вещество
-                      .spray-page__structure-content
-                        .spray-page__structure-text.max-width.max-width--col--5
-                          |Глицирризиновая кислота активированная (эквивалентно аммонию глицирризинату)
-                        .spray-page__structure-num
-                          |0,1 г
-                    .spray-page__structure-col
-                      h4.spray-page__structure-title
-                        |Вспомогательные вещества
-                      ul.spray-page__structure-list
-                        -
-                          var items = [
-                            {
-                              text: 'Яблочная кислота',
-                              num: '3 г',
-                            },
-                            {
-                              text: 'Фумаровая кислота',
-                              num: '2 г',
-                            },
-                            {
-                              text: 'Аскорбиновая кислота',
-                              num: '0,3 г',
-                            },
-                            {
-                              text: 'Фолиевая кислота',
-                              num: '0,08 г',
-                            },
-                            {
-                              text: 'Пропиленгликоль',
-                              num: '50 г',
-                            },
-                            {
-                              text: 'Твин-80 (полисорбат-80)',
-                              num: '0,9 г',
-                            },
-                            {
-                              text: 'Вода очищенная',
-                              num: 'до 100 мл',
-                            },
-                          ]
-                        each item in items
-                          li.spray-page__structure-item
-                            .spray-page__structure-text
-                              |!{item.text}
-                            .spray-page__structure-num
-                              |!{item.num}
-              section.spray-page__section.margin-top.margin-top--l
-                .spray-page__video
-                  .spray-page__video-row
-                    .spray-page__video-col
-                      h3.spray-page__section-title.margin-botto.margin-bottom--m
-                        |Способ применения
-                      .spray-page__video-button
-                        a.download-link.download-link--default(href="#")
-                          .download-link__icon
-                            +download-svg
-                          .download-link__text
-                            |Скачать инструкцию
-                    .spray-page__video-col
-                      .video
-                        .video__container
-                          .video__frame
-                            img.video__img(src="assets/images/video.jpg", alt="")
-                          .video__button
-                            .video__button-icon
-                              +start-svg.video__button-svg
-              section.spray-page__section.margin-top.margin-top--l
+              section.page-gel__reviews
+                .page-gel__reviews-layout
+                .page-gel__reviews-top
+                  .page-gel__reviews-left
+                    h2.page-gel__reviews-title
+                      |Отзывы 
+                    .page-gel__reviews-btns
+                      .page-gel__reviews-btns-item
+                        .b.b--btn-left-right-slider.js.js--gel-reviews-btn--prev
+                          +simple-arrow-svg.b__svg
+                      .page-gel__reviews-btns-item
+                        .b.b--btn-left-right-slider.b--right.js.js--gel-reviews-btn--next
+                          +simple-arrow-svg.b__svg
+                  .page-gel__reviews-right
+                    .page-gel__reviews-links
+                      .page-gel__reviews-links-item
+                        a.category-item.category-item--background--none(href='#')
+                          |Все отзывы
+                      .page-gel__reviews-links-item
+                        a.category-item.category-item--background--none(href='#')
+                          |Задать вопрос врачу
+                .swiper-container.swiper-container--visible.swiper-container--slide-width-auto.swiper-container--slide-height-max.js.js--gel-reviews-slider
+                  .swiper-wrapper
+                    - for (let i = 0; i < 10; i++)
+                      .swiper-slide
+                        .page-gel__reviews-card
+                          .page-gel__reviews-card-top
+                            h3.page-gel__reviews-card-title
+                              |Nadine Zakharova
+                            p.page-gel__reviews-card-text
+                              |Купила я данное средство, прочитав изначально множество положительных отзывов на различных сайтах. Почему мой выбор пал на него? Несколько лет я пыталась найти своё средство для интимной гигиены, так как везде писали, что нельзя использовать обычный гель для душа или мыло...
+                          .page-gel__reviews-card-bottom
+                            a.page-gel__reviews-card-link(href='#')
+                              |irecommend.ru
             +footer.page__footer
