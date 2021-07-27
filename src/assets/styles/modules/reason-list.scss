@@ -26,6 +26,14 @@
     }
   }
 
+  &--purple {
+    #{$comp}__item {
+      &::before {
+        background-color: $color-purple;
+      }
+    }
+  }
+
   &__item {
     position: relative;
 

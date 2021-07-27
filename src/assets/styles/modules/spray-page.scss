@@ -210,6 +210,28 @@
         color: $color-white;
       }
     }
+
+    &--purple {
+      &#{$comp}__tabs-item--active {
+        background-color: $color-purple;
+
+        #{$comp}__tabs-icon {
+          .spray-svg__background {
+            fill: $color-purple;
+          }
+        }
+      }
+
+      &:hover {
+        background-color: $color-purple;
+        
+        #{$comp}__tabs-icon {
+          .spray-svg__background {
+            fill: $color-purple;
+          }
+        }
+      }
+    }
   }
   &__tabs-container {
     padding: 16px 32px; //?
