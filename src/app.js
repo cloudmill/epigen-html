@@ -501,7 +501,6 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
   });
 }
 
-
 // slider
 {
   $(window).on('load', () => { // ?
@@ -600,5 +599,20 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 {
   $(() => {
     const slider = new Slider(".page-consultation__expert-slider");
+  })
+}
+
+// main reviews slider
+{
+  $(() => {
+    const swiperContainer = $('.js--main-reviews-slider')
+    
+    if (swiperContainer.length) {
+      const swiper = new Swiper(swiperContainer[0], {
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        loop: true,
+      })
+    }
   })
 }
