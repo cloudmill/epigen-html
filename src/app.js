@@ -602,3 +602,67 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     const slider = new Slider(".page-consultation__expert-slider");
   })
 }
+
+// spray-article text crop
+{
+  $(() => {
+    const section = $('.disease-page__spray');
+
+    if (!BREAKPOINT_MEDIA.matches && section.length !== 0) {
+      const height = 260;
+      const sectionContent = section.find('.disease-page__content');
+      const sectionButton = section.find('.disease-page__spray-button');
+
+      let isClicked = false;
+
+      update();
+
+      function update() {
+        const sectionContentHeight = sectionContent.height();
+
+        if (!isClicked) {
+          if (height < sectionContentHeight) {
+            section.addClass('disease-page__spray--crop');
+            sectionContent.css('max-height', height);
+          }
+
+          if (sectionContentHeight < height) {
+            section.removeClass('disease-page__spray--crop');
+            sectionContent.css('max-height', '');
+          }
+        } else {
+          sectionContent.css('max-height', '');
+        }
+      }
+
+      function resize() {
+        update();
+
+        setTimeout(() => {
+          $(window).one('resize', resize)
+        }, 1000 / 60)
+      }
+
+      $(window).one('resize', resize)
+
+
+      sectionButton.on('click', function() {
+        const buttonText = $(this).find('.button-show__text');
+
+        buttonText.toggleText('подробнее', 'скрыть');
+        sectionContent.toggleClass('disease-page__content--show');
+
+        (!isClicked) ? isClicked = true : isClicked = false;
+
+        update();
+      });
+
+      $.fn.extend({
+        toggleText: function(a, b) {
+          return this.text(this.text() == b ? a : b);
+        }
+      });
+    }
+  });
+}
+
