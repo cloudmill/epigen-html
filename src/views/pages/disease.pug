@@ -127,12 +127,13 @@ block content
               section.disease-page__section
                 .disease-page__section-label
                   |Возможные симптомы
-                .disease-page__container(data-list='')
-                  ul.disease-page__list
-                    each item in ['Зуд', 'Жжение', 'Выделения, пузырьки ', 'Пузырьки, язвочки', 'Болезненность, выделения', 'Болезненность при половом контакте', 'Боль внизу живота', 'Боль при мочеиспускании', ]
-                      li.disease-page__list-item
-                        .category-item
-                          |#{item}
+                .disease-page__section-list
+                  .disease-page__container(data-list='')
+                    ul.disease-page__list
+                      each item in ['Зуд', 'Жжение', 'Выделения, пузырьки ', 'Пузырьки, язвочки', 'Болезненность, выделения', 'Болезненность при половом контакте', 'Боль внизу живота', 'Боль при мочеиспускании', ]
+                        li.disease-page__list-item
+                          .category-item
+                            |#{item}
                 .disease-page__section-row.margin-top.margin-top--md
                   .disease-page__section-col
                     .disease-page__section-label
