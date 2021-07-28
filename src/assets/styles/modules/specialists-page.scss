@@ -8,7 +8,29 @@
   }
 
   &__article {
+    position: relative;
+  }
+  &__article-layout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  &__article-img {
+    position: absolute;
+    top: calc(100% + 30px);
+    right: -30px;
+    @media (max-width: $breakpoint - 1px) {
+      top: calc(100% + 20px);
+      right: -71px;
+    }
 
+    width: calc(#{$col-width-d} * 13);
+    @media (max-width: $breakpoint - 1px) {
+      width: 446px;
+      height: 39px;
+    }
   }
   &__article-row {
     display: flex;
