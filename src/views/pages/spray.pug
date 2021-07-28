@@ -323,25 +323,25 @@ block content
                       .spray-page__content-col
                         .spray-page__content-text
                           |Пройдите тест и узнайте больше о решении данной проблемы
-              section.spray-page__test.margin-top.margin-top--md(id='test')
-                form.spray-page__test-container(action="/")
-                  .spray-page__test-row
-                    .spray-page__test-col
-                      .spray-page__test-question
+              section.test.margin-top.margin-top--md(id='test')
+                form.test__container(action="/")
+                  .test__row
+                    .test__col
+                      .test__question
                         |Какие проявления в интимной зоне вас беспокоят?
-                      ul.spray-page__test-dots
+                      ul.test__dots
                         - for (i = 0; i < 5; i++)
-                          li.spray-page__test-dot(class = ((i === 0) ? 'spray-page__test-dot--active' : ''))
-                    .spray-page__test-col
-                      .spray-page__test-options
+                          li.test__dot(class = ((i === 0) ? 'test__dot--active' : ''))
+                    .test__col
+                      .test__options
                         each item in ['Обильные выделения без неприятного запаха', 'Выделения с неприятным запахом', 'Болезненные пузырьки в интимной зоне, превращающиеся в язвы', 'Безболезненные папилломы, узелки, наросты или бородавки в интимной зоне', 'Что-то другое, не указанное выше']
-                          label.spray-page__test-label(for="#")
-                            input.spray-page__test-radio(type="radio")
-                            .spray-page__test-icon
+                          label.test__label(for="#")
+                            input.test__radio(type="radio")
+                            .test__icon
                               +check-svg
-                            .spray-page__test-text
+                            .test__text
                               |#{item}
-                  .spray-page__test-index
+                  .test__index
                     |1
               section.spray-page__section.margin-top.margin-top--l
                 .spray-page__structure

@@ -1,7 +1,8 @@
 import 'Styles/_app.scss'
 
 import Swiper from 'swiper/bundle';
-import Slider from 'scripts/slider.js'
+import Slider from 'scripts/slider.js';
+import Sticky from 'sticky-js';
 
 // vars
 const BREAKPOINT = 1280
@@ -419,7 +420,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
             windowOffset = $('.panel').height() + panelHeight;
           } else {
-            windowOffset = $('.panel').height();
+            windowOffset = $('.panel').height() + 10;
           }
 
           if (elemOffset - windowOffset < scrollPos) {
@@ -682,6 +683,15 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           return this.text(this.text() == b ? a : b);
         }
       });
+    }
+  });
+}
+
+// sticky
+{
+  $(() => {
+    if ($('.sticky').length !== 0) {
+      const sticky = new Sticky('.sticky');
     }
   });
 }

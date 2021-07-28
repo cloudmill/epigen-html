@@ -13,44 +13,53 @@ mixin nav-page-d
         var items = [
           {
             href: '#',
+            scroll: '#reason',
             title: 'Причины возникновения молочницы',
           },
           {
             href: '#',
+            scroll: '#symptoms',
             title: 'Симптомы',
           },
           {
             href: '#',
+            scroll: '#diagnostics',
             title: 'Диагностика',
           },
           {
             href: '#',
+            scroll: '#funds',
             title: 'Средства от молочницы',
           },
           {
             href: '#',
+            scroll: '#pills',
             title: 'Таблетки и капсулы',
           },
           {
             href: '#',
+            scroll: '#candles',
             title: 'Свечи',
           },
           {
             href: '#',
+            scroll: '#spray',
             title: 'Спрей',
           },
           {
             href: '#',
+            scroll: '#treatment',
             title: 'Лечение',
           },
           {
             href: '#',
+            scroll: '#prevention',
             title: 'Профилактика',
           },
         ]
       each item, index in items
         li.nav-page-d__item(class = ((index === 0) ? 'nav-page-d__item--active' : ''))
-          a.nav-page-d__link(href=item.href)
+          a.nav-page-d__link(href=item.href data-scroll=item.scroll)
             |!{item.title}
 
 mixin copyright-link
@@ -158,7 +167,7 @@ block content
                   |Проблемы начинаются, когда количество грибка начинает возрастать и вытеснять нормальную микрофлору влагалища: появляется дискомфорт и выделения.
                 p
                   |Конкретной причины появления молочницы нет: у одних она появляется после длительного курса антибиотиков, у других — после праздничного ужина с кучей углеводов. Разбираемся, почему так происходит и как бороться с заболеванием.
-            section.specialists-page__inner.margin-top.specialists-page__content
+            section.specialists-page__inner.margin-top.specialists-page__content(id='reason' data-section)
               h3
                 |Причины возникновения молочницы
               .specialists-page__content-wrapper
@@ -195,7 +204,7 @@ block content
                   .article-page__section-item
                     a.button.button--l.button--purple(href="#")
                       |Задать вопрос эксперту
-            section.specialists-page__inner.margin-top.specialists-page__content
+            section.specialists-page__inner.margin-top.specialists-page__content(id='symptoms' data-section='')
               h3
                 |Симптомы
               .specialists-page__content-wrapper
@@ -203,13 +212,13 @@ block content
                   |Главный симптом молочницы у женщин — влагалищные выделения. Обычно они белые, густые и похожие на творог, но могут быть и прозрачными. Также возникает зуд, жжение и боль, которые усиливаются после принятия горячей ванны или душа. Кожа краснеет, отекает, постоянно чешется. Мочеиспускание и половой акт доставляют дискомфорт или болезненные ощущения.
                 p
                   |У мужчин признаки не такие явные, хотя их тоже может беспокоить зуд и покраснение половых органов. А на головке члена иногда появляется белый налет.
-            section.specialists-page__inner.margin-top.specialists-page__content
+            section.specialists-page__inner.margin-top.specialists-page__content(id='diagnostics' data-section='')
               h3
                 |Диагностика
               .specialists-page__content-wrapper
                 p
                   |Медикаментозное лечение молочницы у женщин включает местные противогрибковые препараты в форме свечей или кремов и лекарства для приема внутрь. Иногда терапию дополняют иммуностимулирующими средствами.
-            section.specialists-page__inner.margin-top.specialists-page__content
+            section.specialists-page__inner.margin-top.specialists-page__content(id='funds' data-section='')
               h3
                 |Средства от молочницы
               .specialists-page__content-wrapper
@@ -225,19 +234,19 @@ block content
                       .video__button
                         .video__button-icon
                           +start-svg.video__button-svg
-            section.specialists-page__inner.margin-top.specialists-page__content
+            section.specialists-page__inner.margin-top.specialists-page__content(id='pills' data-section='')
               h3
                 |Таблетки и капсулы
               .specialists-page__content-wrapper
                 p
                   |Для лечения вагинального кандидоза используют антимикотики — противогрибковые средства: флуконазол, кетоконазол, натамицин. Конкретное активное вещество выбирает врач, ориентируясь на течение молочницы, сопутствующие заболевания или возраст пациента.
-            section.specialists-page__inner.margin-top.specialists-page__content
+            section.specialists-page__inner.margin-top.specialists-page__content(id='candles' data-section='')
               h3
                 |Свечи
               .specialists-page__content-wrapper
                 p
                   |Для лечения молочницы во время беременности чаще используются местные средства, а не системные — так риск негативного влияния на плод минимален.
-            section.disease-page__spray.margin-top
+            section.disease-page__spray.margin-top(id='spray' data-section='')
               .disease-page__spray-container
                 .disease-page__spray-row
                   .disease-page__spray-col
@@ -273,7 +282,7 @@ block content
                         +btn-plus-svg.button-show__svg
                       .button-show__text
                         |подробнее
-            section.specialists-page__inner.margin-top.specialists-page__content
+            section.specialists-page__inner.margin-top.specialists-page__content(id='treatment' data-section='')
               h3
                 |Лечение
               .specialists-page__content-wrapper
@@ -290,10 +299,10 @@ block content
                     p.article-page__content-text
                       |Лечение молочницы у женщин должно обязательно включать противогрибковый препарат, который действует на возбудителя заболевания. Правильное активное вещество поможет подобрать врач на основании результатов лабораторных анализов.
                   .rail.rail--blue
-            section.specialists-page__inner.margin-top
+            section.specialists-page__inner.margin-top(id='prevention' data-section='')
               .specialists-page__content.margin-bottom.margin-bottom--m
                 h3
-                  |Средства от молочницы
+                  |Профилактика
                 .specialists-page__content-wrapper
                   p
                     |Медикаментозное лечение молочницы у женщин включает местные противогрибковые препараты в форме свечей или кремов и лекарства для приема внутрь. Иногда терапию дополняют иммуностимулирующими средствами.

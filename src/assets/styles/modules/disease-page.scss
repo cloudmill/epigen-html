@@ -47,6 +47,18 @@
   &__section-category {
     display: flex;
   }
+  &__section-list {
+
+    @media (max-width: $breakpoint - 1px) {
+      padding: 0 15px;
+      margin-left: -15px;
+
+      width: calc(100% + 30px);
+      display: flex;
+
+      overflow-x: auto;
+    }
+  }
 
   &__container {
     padding: 15px;
@@ -55,8 +67,7 @@
     border-radius: 10px;
 
     @media (max-width: $breakpoint - 1px) {
-      width: calc(100% + 15px);
-      overflow-x: auto;
+      flex-shrink: 0;
     }
 
     &--hidden {

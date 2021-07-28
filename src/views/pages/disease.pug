@@ -127,12 +127,13 @@ block content
               section.disease-page__section
                 .disease-page__section-label
                   |Возможные симптомы
-                .disease-page__container(data-list='')
-                  ul.disease-page__list
-                    each item in ['Зуд', 'Жжение', 'Выделения, пузырьки ', 'Пузырьки, язвочки', 'Болезненность, выделения', 'Болезненность при половом контакте', 'Боль внизу живота', 'Боль при мочеиспускании', ]
-                      li.disease-page__list-item
-                        .category-item
-                          |#{item}
+                .disease-page__section-list
+                  .disease-page__container(data-list='')
+                    ul.disease-page__list
+                      each item in ['Зуд', 'Жжение', 'Выделения, пузырьки ', 'Пузырьки, язвочки', 'Болезненность, выделения', 'Болезненность при половом контакте', 'Боль внизу живота', 'Боль при мочеиспускании', ]
+                        li.disease-page__list-item
+                          .category-item
+                            |#{item}
                 .disease-page__section-row.margin-top.margin-top--md
                   .disease-page__section-col
                     .disease-page__section-label
@@ -259,19 +260,20 @@ block content
                         |Обычно для лечения герпеса применяются противовирусные препараты — ациклические нуклеозиды: ацикловир, валацикловир, фамцикловир. Но сейчас все чаще появляются вирусы, устойчивые к этим активным веществам. Поэтому врач может назначить комплексную терапию: дополнить лечение интерфероном или его аналогами, а также другими средствами, например, Спреем Эпиген Интим.
                 .disease-page__spray.margin-top
                   .disease-page__spray-container
-                    .disease-page__spray-row
+                    .disease-page__spray-row(data-sticky-container)
                       .disease-page__spray-col
                         h3.disease-page__spray-title.disease-page__spray-title--mobile
                           |Спрей Эпиген Интим
-                        .disease-page__spray-image
-                          img(src="assets/images/epigen-spray.jpg", alt="")
-                        .disease-page__spray-buttons
-                          .disease-page__spray-item
-                            a.button.button--wide(href="#")
-                              |Подробнее
-                          .disease-page__spray-item
-                            a.button.button--wide.button--purple(href="#")
-                              |Купить
+                        .sticky(data-margin-top='150' data-sticky-for='1279' data-margin-bottom='0')
+                          .disease-page__spray-image
+                            img(src="assets/images/epigen-spray.jpg", alt="")
+                          .disease-page__spray-buttons
+                            .disease-page__spray-item
+                              a.button.button--wide(href="#")
+                                |Подробнее
+                            .disease-page__spray-item
+                              a.button.button--wide.button--purple(href="#")
+                                |Купить
 
                       .disease-page__spray-col.specialists-page__content
                         h3
