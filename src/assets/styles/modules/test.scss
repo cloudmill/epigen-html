@@ -125,3 +125,185 @@
   opacity: 1;
   pointer-events: all;
 }
+
+.test {
+  $comp: &;
+
+  border-radius: 10px;
+  background-color: $color-aqua;
+
+  &__container {
+    padding: 62px calc(#{$col-width-d});
+
+    position: relative;
+  }
+  &__row {
+    display: flex;
+    @media (max-width: $breakpoint - 1px) {
+      display: block;
+    }
+    justify-content: space-between;
+  }
+  &__col {
+    flex-shrink: 0;
+
+    &:nth-child(1) {
+      @media (max-width: $breakpoint - 1px) {
+        padding-left: calc(#{$col-width-m});
+      }
+
+      width: calc(#{$col-width-d} * 6);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
+    }
+
+    &:nth-child(2) {
+      @media (max-width: $breakpoint - 1px) {
+        margin-top: 15px;
+      }
+
+      width: calc(#{$col-width-d} * 8);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
+    }
+  }
+  &__question {
+    @include fsl(25px, 120%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(15px);
+    }
+  }
+  &__dots {
+    margin-top: 60px;
+    @media (max-width: $breakpoint - 1px) {
+      margin-top: 0;
+    }
+
+    display: flex;
+
+    @media (max-width: $breakpoint - 1px) {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+    }
+  }
+  &__dot {
+    $size-d: 13px;
+    $size-m: 9px;
+
+    width: $size-d;
+    height: $size-d;
+    @media (max-width: $breakpoint - 1px) {
+      width: $size-m;
+      height: $size-m;
+    }
+
+    border-radius: 50%;
+    background-color: $color-white;
+    cursor: pointer;
+
+    &:not(:first-child) {
+      margin-left: 15px;
+      @media (max-width: $breakpoint - 1px) {
+        margin-left: 10px;
+      }
+    }
+
+    &--active {
+      background-color: $color-blue;
+    }
+  }
+  &__label {
+    padding: 10px 15px;
+
+    display: flex;
+
+    background-color: $color-white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: $transition;
+
+    &:not(:first-child) {
+      margin-top: 5px;
+    }
+
+    &:hover {
+      background-color: $color-blue;
+
+      #{$comp}__icon {
+        background-color: $color-blue;
+      }
+
+      #{$comp}__text {
+        color: $color-white;
+      }
+
+    }
+  }
+  &__radio {
+    position: absolute;
+
+    opacity: 0;
+    visibility: hidden;
+  }
+  &__icon {
+    $size-d: 34px;
+
+    margin-right: 15px;
+
+    width: $size-d;
+    height: $size-d;
+
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: $color-aqua;
+    border-radius: 10px;
+    transition: $transition;
+  }
+  &__text {
+    padding-top: 7px;
+
+    @include fsl(15px, 140%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(13px);
+    }
+
+    transition: $transition;
+  }
+  &__index {
+    $size-d: 40px;
+    $size-m: 27px;
+
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    @media (max-width: $breakpoint - 1px) {
+      top: 15px;
+      left: 10px;
+    }
+
+    width: $size-d;
+    height: $size-d;
+    @media (max-width: $breakpoint - 1px) {
+      width: $size-m;
+      height: $size-m;
+    }
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: $color-white;
+    background-color: $color-blue;
+    border-radius: 50%;
+    @include fsl(18px, 140%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(13px);
+    }
+  }
+}
