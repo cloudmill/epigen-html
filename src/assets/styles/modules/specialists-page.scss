@@ -174,12 +174,13 @@
   }
   &__content-wave {
     position: absolute;
+    bottom: 0;
     right: -30px;
+    transform: translateY(46px);
     @media (max-width: $breakpoint - 1px) {
       right: -46px;
+      transform: translateY(30px);
     }
-    bottom: 0;
-    transform: translateY(50%);
 
     width: calc((#{$col-width-d} * 9) + 30px);
     @media (max-width: $breakpoint - 1px) {
