@@ -136,7 +136,7 @@ block content
                             |#{item}
                 .disease-page__layout
                   .disease-page__layout-layout
-                    +wave-articles-svg.disease-page__layout-icon
+
                   .disease-page__section-row.margin-top.margin-top--md
                     .disease-page__section-col
                       .disease-page__section-label
@@ -154,8 +154,10 @@ block content
                                 .doctor-card__pos
                                   |Врач акушер-гинеколог ФГБУ «НМИЦ эндокринологии» Минздрава России, к.м.н, доцент Кафедры акушерства, гинекологии и репродуктивной медицины РУДН
                         .rail.rail--desktop
-                    .disease-page__section-col.specialists-page__content-container
-                      img(src="assets/images/woman.jpg", alt="")
+                    .disease-page__section-col
+                      .specialists-page__content-container
+                        +wave-articles-svg.specialists-page__content-wave
+                        img(src="assets/images/woman.jpg", alt="")
                 .disease-page__content-row.margin-top.disease-page__content
                   .disease-page__content-col
                   .disease-page__content-col

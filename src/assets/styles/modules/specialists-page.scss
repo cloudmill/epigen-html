@@ -163,12 +163,29 @@
     }
   }
   &__content-container {
+    position: relative;
+
     img {
       display: block;
 
       border-radius: 10px;
     }
 
+  }
+  &__content-wave {
+    position: absolute;
+    right: -30px;
+    @media (max-width: $breakpoint - 1px) {
+      right: -46px;
+    }
+    bottom: 0;
+    transform: translateY(50%);
+
+    width: calc((#{$col-width-d} * 9) + 30px);
+    @media (max-width: $breakpoint - 1px) {
+      width: 367px;
+      height: 89px;
+    }
   }
   &__content-label {
     margin-top: 15px;

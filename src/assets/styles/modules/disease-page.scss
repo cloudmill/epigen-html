@@ -60,29 +60,6 @@
     }
   }
 
-  &__layout {
-    position: relative;
-  }
-  &__layout-layout {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-  }
-  &__layout-icon {
-    position: absolute;
-    bottom: -46px;
-    right: -30px;
-    @media (max-width: $breakpoint - 1px) {
-      right: -46px;
-      bottom: -30px;
-
-      width: 367px;
-      height: 89px;
-    }
-  }
-
   &__container {
     padding: 15px;
 
