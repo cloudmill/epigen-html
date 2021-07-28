@@ -1,9 +1,14 @@
 $fs: 16px;
 
 $ff-main: 'ObjectSans', sans-serif;
+$ff-alt: 'BigNoodleTitling', sans-serif;
 
 @mixin f-main($font-weight: 400) {
   font-family: $ff-main;
+  font-weight: $font-weight;
+}
+@mixin f-alt($font-weight: 400) {
+  font-family: $ff-alt;
   font-weight: $font-weight;
 }
 
@@ -88,7 +93,7 @@ $panel-height: 103px;
   &::-moz-placeholder {
     @content;
   }
-  &:-ms-input-placeholder{ 
+  &:-ms-input-placeholder{
     @content;
   }
   &:-moz-placeholder {
