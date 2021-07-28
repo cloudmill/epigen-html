@@ -81,14 +81,25 @@
   }
 
   &__disclaimer {
-    padding: 10px 30px;
+    padding: 14px 12px;
     min-height: 50px;
     display: flex;
     align-items: center;
 
     border: 1px solid $color-blue-light;
     border-radius: 10px;
-    @include fsl(12px);
+    @include f-alt();
+    @include fsl(24px, 120%);
+    @media (min-width: $breakpoint-l) {
+      @include fsl(20px);
+    }
+    @media (min-width: $breakpoint-xl) {
+      @include fsl(24px);
+    }
+    @media (min-width: $breakpoint-xxl) {
+      @include fsl(28px);
+    }
+
     color: $color-blue-light;
     text-transform: uppercase;
   }
