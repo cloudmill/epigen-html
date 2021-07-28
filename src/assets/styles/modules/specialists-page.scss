@@ -88,6 +88,7 @@
         margin-bottom: 20px;
       }
 
+      color: $color-blue;
       font-weight: 400;
       @include fsl(25px, 120%);
       @media (max-width: $breakpoint - 1px) {
@@ -250,6 +251,7 @@
     }
   }
   &__table-title {
+    font-weight: 500;
     @include fsl(15px, 140%);
   }
   &__table-text {
@@ -257,6 +259,7 @@
     @include fsl(12px, 120%);
   }
   &__table-subtitle {
+    font-weight: 500;
     @include fsl(12px, 120%);
   }
 
