@@ -254,12 +254,18 @@
   }
   &__features-item {
     &:nth-child(2) {
+      position: relative;
+
       margin-top: 608px;
     }
     &:nth-child(3) {
+      position: relative;
+
       margin-top: 165px;
     }
     &:nth-child(4) {
+      position: relative;
+
       margin-top: 228px;
     }
 
@@ -293,5 +299,69 @@
     top: 254px;
     left: calc(#{$col-width-d} * 9.5);
     transform: translateX(-50%);
+  }
+  &__features-moon {
+    position: absolute;
+    top: 1124px;
+    left: calc(#{$col-width-d} * 9.5 + 384px);
+    transform: translateX(-50%);
+  }
+  &__features-star {
+    position: absolute;
+    transform: translateX(-50%);
+
+    &--blue {
+      top: 533px;
+      left: calc(#{$col-width-d} * 9.5 - 379px);
+    }
+    &--purple {
+      top: 1808px;
+      left: calc(#{$col-width-d} * 9.5 - 492px);
+      transform: translateX(-50%) rotate(-45deg);
+
+      path {
+        fill: $color-purple;
+      }
+    }
+  }
+  &__features-img {
+    &-1 {
+      position: absolute;
+      top: 0;
+      left: calc(#{$col-width-d} * 12.5);
+      transform: translateX(-50%);
+
+      max-width: 473px;
+    }
+
+    &-2 {
+      position: absolute;
+      z-index: -1;
+      top: -66px;
+      left: calc(#{$col-width-d} * 4.5);
+      transform: translateX(-50%);
+
+      max-width: 586px;
+    }
+
+    &-3 {
+      position: absolute;
+      z-index: -1;
+      top: -109px;
+      left: calc(#{$col-width-d} * 13);
+      transform: translateX(-50%);
+
+      max-width: 540px;
+    }
+
+    &-4 {
+      position: absolute;
+      z-index: -1;
+      top: -125px;
+      left: calc(#{$col-width-d} * 3);
+      transform: translateX(-50%);
+
+      max-width: 405px;
+    }
   }
 }
