@@ -6,6 +6,9 @@
 
   padding-bottom: 20px;
   width: 195px;
+  @media (max-width: $breakpoint-l - 1px) {
+    width: 166px;
+  }
   display: block;
 
   border-radius: 10px;
@@ -73,6 +76,9 @@
 
     $fs: 20px;
     @include fsl($fs, $fs);
+    @media (max-width: $breakpoint-l - 1px) {
+      @include fsl(15px, 15px)
+    }
     transition: $transition;
   }
 }
