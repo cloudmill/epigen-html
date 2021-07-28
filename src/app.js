@@ -420,7 +420,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
             windowOffset = $('.panel').height() + panelHeight;
           } else {
-            windowOffset = $('.panel').height();
+            windowOffset = $('.panel').height() + 10;
           }
 
           if (elemOffset - windowOffset < scrollPos) {
