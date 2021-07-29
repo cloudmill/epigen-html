@@ -720,6 +720,30 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       $(window).on('load', updateSliderHeight)
       $(window).one('resize', handleWindowResize)
 
+      const btns = slider.find('.spray-page__tabs-item')
+      
+      if (btns.length > 1) {
+        const state = {
+          cur_index: 0,
+        }
+
+        btns.on('click', function () {
+          const new_index = $(this).closest('.product-slider__btns-item').index()
+
+          let dir = null
+          if (new_index > state.cur_index) {
+            dir = 'right'
+          } else if (new_index < state.cur_index) {
+            dir = 'left'
+          }
+          state.cur_index = new_index
+
+          if (dir) {
+            
+          }
+        })
+      }
+
       function getSlideMaxHeight() {
         let maxHeight = 0
 
@@ -731,7 +755,6 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
         return maxHeight
       }
-
       function updateSliderHeight() {
         const maxSlidesHeight = getSlideMaxHeight() + 'px'
 
@@ -741,7 +764,6 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
         slider.css('height', maxSlidesHeight)
       }
-
       function handleWindowResize() {
         setTimeout(() => {
           updateSliderHeight()

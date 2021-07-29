@@ -1,0 +1,64 @@
+slide
+  btns
+    btn
+    ...
+...
+
+btn count === slide count
+
+--front
+--mid
+--back
+
+
+1 front
+0 mid
+n - 1 back
+
+change slide
+  dir =
+    'left' ? new_index < cur_index
+    'right' ? new_index > cur_index
+    null ? other
+
+  if dir
+    cur: --mid
+    new: --front
+    other: --back
+
+    if dir === left
+      new: --right
+    else
+      new: --left
+
+    new: animation open
+
+    change slide disabled
+
+    handle "animationend"
+      change slide enabled
+
+
+
+mod
+  slide
+    // z-index
+    --mid
+    --front
+
+    // side (left/tight + js flex-start/end)
+    --right
+
+    // animation
+    --open
+
+init
+  html
+    --front
+
+js
+  handleChange
+    dir = left/right/null
+
+    if dir
+
