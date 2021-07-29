@@ -354,4 +354,16 @@
 
     min-height: $min-height;
   }
+
+  &__btns {
+    display: flex;
+  }
+  &__btns-item {
+    width: 173px;
+    flex-shrink: 0;
+
+    &:not(:first-child) {
+      margin-left: 10px;
+    }
+  }
 }

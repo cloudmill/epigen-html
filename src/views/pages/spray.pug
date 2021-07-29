@@ -158,9 +158,23 @@ block content
                       .product-slider__top
                         ul.product-slider__btns
                           li.product-slider__btns-item
-                            |active btn
+                            .spray-page__tabs-item.spray-page__tabs-item--active
+                              .spray-page__tabs-container
+                                .spray-page__tabs-row
+                                  .spray-page__tabs-col
+                                    +spray-svg.spray-page__tabs-icon
+                                  .spray-page__tabs-col
+                                    .spray-page__tabs-num
+                                      |15
                           li.product-slider__btns-item
-                            |btn
+                            .spray-page__tabs-item
+                              .spray-page__tabs-container
+                                .spray-page__tabs-row
+                                  .spray-page__tabs-col
+                                    +spray-svg.spray-page__tabs-icon
+                                  .spray-page__tabs-col
+                                    .spray-page__tabs-num
+                                      |60
                         ul.product-slider__list
                           - for (let i = 0; i < 70; i++)
                             li.product-slider__list-item
