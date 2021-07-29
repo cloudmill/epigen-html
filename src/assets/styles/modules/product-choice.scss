@@ -9,6 +9,23 @@
   }
   align-items: stretch;
 
+  &--faq {
+    @media (max-width: $breakpoint - 1px) {
+      display: flex;
+    }
+
+    #{$comp}__item {
+      @media (max-width: $breakpoint - 1px) {
+        width: calc(((#{$col-width-m} * 6) / 2) - 7px);
+      }
+
+      &:not(:first-child) {
+        margin-top: 0;
+        margin-left: 14px;
+      }
+    }
+  }
+
   &--margin-bottom {
     &--default {
       margin-bottom: 30px;
