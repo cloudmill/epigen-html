@@ -1,0 +1,31 @@
+.header-mobile {
+
+  width: 100%;
+  height: $panel-height-mobile;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    display: flex;
+  }
+
+  &__icon {
+    max-width: 77px;
+  }
+
+  &__button {
+    $size: 45px;
+
+    width: $size;
+    height: $size;
+    min-width: $size;
+    min-height: $size;
+
+    background-color: $color-blue-light;
+    border-radius: 50%;
+    transition: $transition;
+    cursor: pointer;
+  }
+}

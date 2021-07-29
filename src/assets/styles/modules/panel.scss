@@ -4,7 +4,8 @@
   width: calc(#{$panel-width});
   height: $panel-height;
   @media (max-width: $breakpoint - 1px) {
-    display: none;
+    width: 100%;
+    height: $panel-height-mobile;
   }
 
   &--hidden {
@@ -15,10 +16,18 @@
 
   &__panel {
     position: fixed;
+    @media (max-width: $breakpoint - 1px) {
+      left: 0;
+      right: 0;
+    }
     transform: translateY(0);
 
     width: calc(#{$panel-width});
     height: $panel-height;
+    @media (max-width: $breakpoint - 1px) {
+      width: 100%;
+      height: $panel-height-mobile;
+    }
 
     background-color: $color-white;
     transition: $transition;
@@ -27,6 +36,9 @@
   &__row {
     height: 100%;
     display: flex;
+    @media (max-width: $breakpoint - 1px) {
+      display: none;
+    }
   }
   &__col {
     width: calc(#{$col-width-d} * 4);
@@ -247,5 +259,14 @@
       opacity: 1;
       pointer-events: auto;
     }
+  }
+
+  &__mobile {
+    @media (max-width: $breakpoint - 1px) {
+      padding: 0 15px;
+
+      display: block;
+    }
+    display: none;
   }
 }
