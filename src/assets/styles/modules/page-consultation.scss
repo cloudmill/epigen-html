@@ -16,10 +16,16 @@
 
   &__expert {
     margin-top: 140px;
+    @media (max-width: $breakpoint - 1px) {
+      margin-top: 60px;
+    }
   }
   &__expert-title {
     font-weight: 400;
     @include fsl(35px, 130%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(20px);
+    }
   }
   &__expert-slider {
     position: relative;
