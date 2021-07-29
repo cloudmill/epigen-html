@@ -365,7 +365,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
         const elementOffset = $(elementId).offset().top;
 
         let windowOffset;
-        const headerHeight = $('.panel__panel').height();
+        const headerHeight = $('.panel').height();
 
         if ($('.panel__list').length !== 0) {
           const panelHeight = $('.panel__list').height() + 10;

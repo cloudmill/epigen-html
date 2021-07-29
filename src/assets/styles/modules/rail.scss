@@ -1,6 +1,9 @@
 .rail {
   width: 100%;
   height: 30px;
+  @media (max-width: $breakpoint - 1px) {
+    height: 15px;
+  }
 
   border: 1px solid $color-blue-light;
   border-top: none;
