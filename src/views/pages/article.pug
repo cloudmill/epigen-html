@@ -151,14 +151,16 @@ block content
                           .doctor-card__pos
                             |Врач акушер-гинеколог ФГБУ «НМИЦ эндокринологии» Минздрава России, к.м.н, доцент Кафедры акушерства, гинекологии и репродуктивной медицины РУДН
                   .rail.rail--desktop
-              .disease-page__section-col.specialists-page__content-container
+              .disease-page__section-col
                 .disease-page__section-content.margin-bottom.margin-bottom--m
                   .disease-page__section-label
                     |категория
                   .disease-page__section-category
                     .category-item
                       |Молочница
-                img(src="assets/images/woman.jpg", alt="")
+                .specialists-page__content-container
+                  +wave-articles-svg.specialists-page__content-wave
+                  img(src="assets/images/woman.jpg", alt="")
             section.specialists-page__inner.margin-top.specialists-page__content
               .specialists-page__content-wrapper
                 p

@@ -8,7 +8,29 @@
   }
 
   &__article {
+    position: relative;
+  }
+  &__article-layout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  &__article-img {
+    position: absolute;
+    top: calc(100% + 30px);
+    right: -30px;
+    @media (max-width: $breakpoint - 1px) {
+      top: calc(100% + 20px);
+      right: -71px;
+    }
 
+    width: calc(#{$col-width-d} * 13);
+    @media (max-width: $breakpoint - 1px) {
+      width: 446px;
+      height: 39px;
+    }
   }
   &__article-row {
     display: flex;
@@ -88,6 +110,7 @@
         margin-bottom: 20px;
       }
 
+      color: $color-blue;
       font-weight: 400;
       @include fsl(25px, 120%);
       @media (max-width: $breakpoint - 1px) {
@@ -140,12 +163,30 @@
     }
   }
   &__content-container {
+    position: relative;
+
     img {
       display: block;
 
       border-radius: 10px;
     }
 
+  }
+  &__content-wave {
+    position: absolute;
+    bottom: 0;
+    right: -30px;
+    transform: translateY(46px);
+    @media (max-width: $breakpoint - 1px) {
+      right: -46px;
+      transform: translateY(30px);
+    }
+
+    width: calc((#{$col-width-d} * 9) + 30px);
+    @media (max-width: $breakpoint - 1px) {
+      width: 367px;
+      height: 89px;
+    }
   }
   &__content-label {
     margin-top: 15px;
@@ -250,6 +291,7 @@
     }
   }
   &__table-title {
+    font-weight: 500;
     @include fsl(15px, 140%);
   }
   &__table-text {
@@ -257,6 +299,7 @@
     @include fsl(12px, 120%);
   }
   &__table-subtitle {
+    font-weight: 500;
     @include fsl(12px, 120%);
   }
 

@@ -10,6 +10,9 @@
 
   &--big {
     margin-top: 185px;
+    @media (max-width: $breakpoint - 1px) {
+      margin-top: 80px;
+    }
   }
 
   &--l {
