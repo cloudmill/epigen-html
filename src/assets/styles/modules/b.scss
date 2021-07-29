@@ -375,11 +375,17 @@
 
     #{$comp}__input {
       width: calc(100% - (#{$btn-size} + #{$input-btn-gap}));
+      @media (max-width: $breakpoint - 1px) {
+        width: calc(111);
+      }
       display: block;
 
       background: none;
       border: none;
       @include fsl(70px, 110%);
+      @media (max-width: $breakpoint - 1px) {
+        @include fsl(26px);
+      }
       color: $color-blue;
 
       @include placeholder {
@@ -389,12 +395,19 @@
 
     #{$comp}__btn {
       $size: $btn-size;
+      $size-m: 34px;
 
       padding: 5px;
       width: $size;
       height: $size;
       min-width: $size;
       min-height: $size;
+      @media (max-width: $breakpoint - 1px) {
+        width: $size-m;
+        height: $size-m;
+        min-width: $size-m;
+        min-height: $size-m;
+      }
       display: flex;
       justify-content: center;
       align-items: center;
@@ -403,6 +416,15 @@
       border: 1px solid $color-blue;
       border-radius: 50%;
       cursor: pointer;
+    }
+
+    #{$comp}__svg {
+      $size-m: 11px;
+
+      @media (max-width: $breakpoint - 1px) {
+        max-width: $size-m;
+        max-height: $size-m;
+      }
     }
   }
 }
