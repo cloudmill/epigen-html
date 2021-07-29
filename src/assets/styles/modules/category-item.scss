@@ -9,6 +9,7 @@
   }
   background-color: $color-white;
   cursor: pointer;
+  white-space: nowrap;
 
   &--light-blue {
     border-color: $color-blue-light;

@@ -31,6 +31,31 @@ mixin nav-page-d
           a.nav-page-d__link(href=item.href data-scroll=item.scroll)
             |!{item.title}
 
+mixin nav-page-m
+  nav.nav-page-d.nav-page-d--mobile.nav-page-d--mobile--blue
+    ul.nav-page-d__list
+      -
+        var items = [
+          {
+            href: '#',
+            scroll: '#materials',
+            title: 'Материалы и методы исследования',
+          },
+          {
+            href: '#',
+            scroll: '#results',
+            title: 'Результаты исследования и обсуждения',
+          },
+          {
+            href: '#',
+            scroll: '#literature',
+            title: 'Литература',
+          },
+        ]
+      each item, index in items
+        li.nav-page-d__item(class = ((index === 0) ? 'nav-page-d__item--active' : ''))
+          a.category-item.category-item--light-blue.category-item--background--white(href=item.href data-scroll=item.scroll)
+            |!{item.title}
 
 mixin copyright-link
   a.copyright-link(href=attributes.href)
@@ -105,6 +130,12 @@ block content
                           +consultation-svg.panel__consultation-svg
                           .panel__consultation-text
                             |Консультация эксперта
+                  .panel__mobile
+                    header.header-mobile
+                      a.header-mobile__logo(href="#")
+                        +logo-svg.header-mobile__icon
+                      .header-mobile__button
+                    +nav-page-m
             main.page__main
               h1.title.title--md.title--margin-bot--l
                 |Комбинированное лечение доброкачественных заболеваний шейки матки

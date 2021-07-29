@@ -402,9 +402,18 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 // nav links
 {
   $(() => {
-    const navLink = $('.nav-page-d__item')
+    const nav = $('.nav-page-d')
 
-    if (navLink.length !== 0) {
+    if (nav.length !== 0) {
+
+      let navLink;
+
+      if (BREAKPOINT_MEDIA.matches) {
+        navLink = nav.find('.nav-page-d__item')
+      } else {
+        navLink = $('.nav-page-d--mobile').find('.nav-page-d__item')
+      }
+
       $(window).on('scroll', () => {
         const scrollPos = window.scrollY;
 
