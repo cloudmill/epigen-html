@@ -8,6 +8,12 @@
     height: $panel-height-mobile;
   }
 
+  &--nav {
+    @media (max-width: $breakpoint - 1px) {
+      height: calc(#{$panel-height-mobile} + 29px + 10px);
+    }
+  }
+
   &--hidden {
     #{$comp}__panel {
       transform: translateY(-100%);
