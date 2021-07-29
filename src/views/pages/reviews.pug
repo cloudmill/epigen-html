@@ -9,7 +9,7 @@ include ../components/footer.pug
 block grid-test
 
 block content
-  .page-reviews
+  .page-reviews.faq-page
     .container
       .row
         .row__col.row__col--aside.row__col--rail
@@ -71,10 +71,24 @@ block content
                           +consultation-svg.panel__consultation-svg
                           .panel__consultation-text
                             |Консультация эксперта
+                  .panel__mobile
+                    header.header-mobile
+                      a.header-mobile__logo(href="#")
+                        +logo-svg.header-mobile__icon
+                      .header-mobile__button
             main.page__main
               h1.title
                 |Отзывы
               .rail.rail--margin-bottom--default
+              .faq-page
+                ul.faq-page__list.faq-page__list--mobile
+                  li.faq-page__item
+                    +border-link(href='#' active)
+                      |Все
+                  each link in ['Состав', 'Противопоказания', 'Использование', 'Приобрести',]
+                    li.faq-page__item
+                      +border-link(href='#')
+                        |!{link}
               ul.product-choice.product-choice--margin-bottom--default
                 li.product-choice__item
                   a.product-btn.product-btn--active(href='#')
