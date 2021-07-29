@@ -695,3 +695,51 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     }
   });
 }
+
+// product slider
+{
+  const FPS = 30
+
+  $(() => {
+    const sliders = $('.product-slider')
+
+    sliders.each(function () {
+      const slider = $(this)
+      const slides = slider.find('.product-slider__slide')
+
+      updateSliderHeight()
+      $(window).on('load', updateSliderHeight)
+      $(window).one('resize', handleWindowResize)
+
+      function getSlideMaxHeight() {
+        let maxHeight = 0
+
+        slides.each(function () {
+          const currentHeight = this.offsetHeight
+
+          maxHeight = currentHeight > maxHeight ? currentHeight : maxHeight
+        })
+
+        return maxHeight
+      }
+
+      function updateSliderHeight() {
+        const maxSlidesHeight = getSlideMaxHeight() + 'px'
+
+        slides.each(function () {
+          $(this).css('height', maxSlidesHeight)
+        })
+
+        slider.css('height', maxSlidesHeight)
+      }
+
+      function handleWindowResize() {
+        setTimeout(() => {
+          updateSliderHeight()
+
+          $(window).one('resize', handleWindowResize)
+        }, 1000 / FPS)
+      }
+    })
+  })
+}
