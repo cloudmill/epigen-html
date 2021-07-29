@@ -3,13 +3,18 @@ mixin review-card
     .review-card__top
       .review-card__top-row
         if (attributes.image)
-          .review-card__top-col.review-card__top-col--flex-shrink--0.review-card__top-col--margin-right--default
+          .review-card__top-col.review-card__top-col--flex-shrink--0.review-card__top-col--margin-right--default.review-card__top-col--flex
             img.review-card__img(src=`assets/images/review-${attributes.image}.jpeg`)
+            .review-card__card
+              h3.review-card__title
+                |Шахпазова Мадина Меджидовна
+              p.review-card__caption
+                |#{attributes.caption}
         .review-card__top-col
-          h3.review-card__title
+          h3.review-card__title(class=(attributes.plus ? 'review-card__title--desktop' : undefined))
             |Шахпазова Мадина Меджидовна
           if (attributes.caption)
-            p.review-card__caption
+            p.review-card__caption.review-card__caption--desktop
               |#{attributes.caption}
           p.review-card__text
             |Благодаря продуманному составу, Спрей Эпиген Интим – это препарат выбора для наружной терапии папилломавирусной инфекции и генитального герпеса.
