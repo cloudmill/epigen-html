@@ -14,7 +14,7 @@
   border-bottom-right-radius: 0;
   cursor: pointer;
   transition: $transition;
-  
+
   &:hover {
     border-color: $color-blue;
 
@@ -23,13 +23,21 @@
     }
   }
 
+
   &__top {
     padding: 30px;
+    @media (max-width: $breakpoint - 1px) {
+      padding: 20px;
+      padding-bottom: 0;
+    }
     padding-bottom: 0;
   }
 
   &__top-row {
     display: flex;
+    @media (max-width: $breakpoint - 1px) {
+      display: block;
+    }
   }
   &__top-col {
     &--flex-shrink {
@@ -41,27 +49,71 @@
     &--margin-right {
       &--default {
         margin-right: 30px;
+        @media (max-width: $breakpoint - 1px) {
+          margin-right: 0;
+        }
+      }
+    }
+
+    &--flex {
+      @media (max-width: $breakpoint - 1px) {
+        display: flex;
       }
     }
   }
 
   &__img {
     max-width: 105px;
+    @media (max-width: $breakpoint - 1px) {
+      max-width: 89px;
+      max-height: 105px;
+    }
     display: block;
 
     border-radius: 10px;
   }
 
+  &__card {
+    @media (max-width: $breakpoint - 1px) {
+      margin-left: 20px;
+    }
+
+    display: none;
+    @media (max-width: $breakpoint - 1px) {
+      display: block;
+    }
+  }
+
   &__title {
     font-weight: 400;
     @include fsl(20px, 140%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(18px);
+    }
+
+    &--desktop {
+      display: block;
+      @media (max-width: $breakpoint - 1px) {
+        display: none;
+      }
+    }
   }
   &__caption {
     margin-top: 10px;
 
     font-style: italic;
     @include fsl(13px, 140%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(11px);
+    }
     color: $color-blue-dark;
+
+    &--desktop {
+      display: block;
+      @media (max-width: $breakpoint - 1px) {
+        display: none;
+      }
+    }
   }
   &__text {
     margin-top: 20px;

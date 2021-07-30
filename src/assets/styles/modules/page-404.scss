@@ -2,31 +2,54 @@
 
   &__text {
     margin-top: calc(107px - 30px);
+    @media (max-width: $breakpoint - 1px) {
+      margin-top: 30px;
+    }
   }
 
   &__404 {
     width: calc(#{$col-width-d} * 9);
+    @media (max-width: $breakpoint - 1px) {
+      width: 100%;
+      max-width: 345px;
+    }
     display: flex;
 
     position: fixed;
     bottom: calc((106 / 800) * 100%);
     right: calc(#{$col-width-d} * 3 + 30px);
+    @media (max-width: $breakpoint - 1px) {
+      right: auto;
+      bottom: 177px;
+    }
   }
   &__404-img {
     width: 100%;
     height: auto;
   }
   &__404-star {
+    $size-m: 26px;
+
     position: absolute;
     top: 0;
     left: calc((((46 / 2) - 12) / 610) * 100%);
     transform: translateX(-50%);
+
+    @media (max-width: $breakpoint - 1px) {
+      max-width: $size-m;
+      max-height: $size-m;
+    }
   }
   &__404-moon {
     position: absolute;
     right: calc((((41 / 2) + 20) / 610) * 100%);
     bottom: -9px;
     transform: translateX(50%);
+
+    @media (max-width: $breakpoint - 1px) {
+      max-width: 23px;
+      max-height: 26px;
+    }
   }
 }
 

@@ -98,7 +98,7 @@ block content
         .row__col.row__col--main
           .page
             header.page__header
-              .panel
+              .panel.panel--nav
                 .panel__panel
                   .panel__row
                     .panel__col
@@ -117,8 +117,6 @@ block content
                       .panel__inner
                         a.panel__where-buy(href='#')
                           |Где купить
-                    .panel__col
-                      .panel__inner
                         .panel__choice
                           .panel__choice-item(data-count=8)
                             |Симптомы
@@ -126,6 +124,10 @@ block content
                             |Заболевания
                     .panel__col
                       .panel__inner
+                        .panel__test
+                          +calendar-test-svg.panel__test-icon
+                          .panel__test-text
+                            |Пройти тест
                         .panel__consultation
                           +consultation-svg.panel__consultation-svg
                           .panel__consultation-text
@@ -137,7 +139,7 @@ block content
                       .header-mobile__button
                     +nav-page-m
             main.page__main
-              h1.title.title--md.title--margin-bot--l
+              h1.title.title--md
                 |Комбинированное лечение доброкачественных заболеваний шейки матки
               a.back-link.back-link--mobile(href="#")
                 .back-link__icon

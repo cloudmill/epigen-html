@@ -467,3 +467,68 @@
     }
   }
 }
+
+.btn-test-btn {
+  width: 30px;
+  height: 30px;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  &:hover {
+    .btn-test {
+      height: 1px;
+
+      &::after {
+        transform: translate(-50%, -50%) rotate(-135deg);
+        transition-delay: .5s;
+      }
+
+      &::before {
+        transform: translate(-50%, -50%) rotate(-45deg);
+        transition-delay: .5s;
+      }
+    }
+  }
+
+}
+
+.btn-test {
+  position: relative;
+  width: 30px;
+  height: 20px;
+
+  transition: .35s;
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform-origin: 50% 50%;
+    transform: translate(-50%, 0);
+
+    width: 100%;
+    height: 1px;
+
+    transition: transform .35s;
+    background-color: $color-black;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+  &::before {
+    top: 0;
+  }
+
+}
+
+.btn-wrapper {
+  margin: 30px;
+}

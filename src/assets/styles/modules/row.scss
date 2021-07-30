@@ -8,6 +8,9 @@
   &--in-main {
     // desc - 12 (слева) + 6 (справа) колонок
     &--desc {
+      @media (max-width: $breakpoint - 1px) {
+        display: block;
+      }
       #{$comp}__col {
         // пока только desktop
         @media (min-width: $breakpoint) {
@@ -16,6 +19,11 @@
           }
           &:nth-child(2) {
             width: calc(#{$col-width-d} * 6);
+          }
+        }
+        @media (max-width: $breakpoint - 1px) {
+          &:nth-child(2) {
+            margin-top: 15px;
           }
         }
       }

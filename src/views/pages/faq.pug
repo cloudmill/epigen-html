@@ -5,8 +5,8 @@ include ../components/copyright-link.pug
 include ../components/accordion.pug
 include ../components/footer.pug
 
-block cookies
-//- block grid-test
+//- block cookies
+block grid-test
 
 
 mixin copyright-link
@@ -27,13 +27,13 @@ block content
               .aside__container
                 .aside__top
                   header.aside__header.aside__header--margin-bottom--large
-                    a.aside__logo(href='#')
+                    a.aside__logo(href='#' data-aos='fade-up')
                       +logo-svg.aside__logo-svg
-                    .aside__menu
+                    .aside__menu(data-aos='fade-up')
                       .aside__menu-text
                         |Меню
                       .aside__menu-button
-                  ul.faq-page__list
+                  ul.faq-page__list(data-aos='fade-up')
                     li.faq-page__item
                       +border-link(href='#' active)
                         |Все
@@ -41,7 +41,7 @@ block content
                       li.faq-page__item
                         +border-link(href='#')
                           |!{link}
-                .aside__bottom
+                .aside__bottom(data-aos='fade-up')
                   .button.button--t.margin-bottom.margin-bottom--m.button-modal
                     |Задать вопрос о продукции Эпиген Интим
                   +copyright-link(href='#')
@@ -68,8 +68,6 @@ block content
                       .panel__inner
                         a.panel__where-buy(href='#')
                           |Где купить
-                    .panel__col
-                      .panel__inner
                         .panel__choice
                           .panel__choice-item(data-count=8)
                             |Симптомы
@@ -77,18 +75,27 @@ block content
                             |Заболевания
                     .panel__col
                       .panel__inner
+                        .panel__test
+                          +calendar-test-svg.panel__test-icon
+                          .panel__test-text
+                            |Пройти тест
                         .panel__consultation
                           +consultation-svg.panel__consultation-svg
                           .panel__consultation-text
                             |Консультация эксперта
+                  .panel__mobile
+                    header.header-mobile(data-aos='fade-up')
+                      a.header-mobile__logo(href="#")
+                        +logo-svg.header-mobile__icon
+                      .header-mobile__button
             main.page__main
-              h1.title
+              h1.title(data-aos='fade-up')
                 |Вопрос-ответ
               .rail.rail--margin-bottom--default
-              .faq-page__button
+              .faq-page__button(data-aos='fade-up')
                 .button.button--t.margin-bottom.margin-bottom--m.button-modal
                   |Задать вопрос о продукции Эпиген Интим
-              ul.faq-page__list.faq-page__list--mobile
+              ul.faq-page__list.faq-page__list--mobile(data-aos='fade-up')
                 li.faq-page__item
                   +border-link(href='#' active)
                     |Все
@@ -97,15 +104,15 @@ block content
                     +border-link(href='#')
                       |!{link}
               section.faq-page__section
-                ul.product-choice.product-choice--margin-bottom--default
-                  li.product-choice__item
+                ul.product-choice.product-choice--margin-bottom--default.product-choice--faq
+                  li.product-choice__item(data-aos='fade-up')
                     a.product-btn.product-btn--active(href='#')
                       +spray-svg.product-btn__svg
                       p.product-btn__text
                         |Эпиген Интим
                         br
                         |Спрей
-                  li.product-choice__item
+                  li.product-choice__item(data-aos='fade-up')
                     a.product-btn(href='#')
                       +gel-svg.product-btn__svg
                       p.product-btn__text
@@ -113,28 +120,28 @@ block content
                         br
                         |Гель
                 ul.faq-page__section-list
-                  li.faq-page__section-item
+                  li.faq-page__section-item(data-aos='fade-up')
                     +accordion(caption='Что такое активированная глицирризиновая кислота, содержащаяся в Спрее Эпиген Интим?' category='Состав')
-                  li.faq-page__section-item
+                  li.faq-page__section-item(data-aos='fade-up')
                     +accordion(caption='Почему рекомендуется Спрей Эпиген Интим при генитальном герпесе и вирусе папилломы человека (ВПЧ)?' category='Использование')
-                  li.faq-page__section-item
+                  li.faq-page__section-item(data-aos='fade-up')
                     +accordion(caption='Может ли при использовании Спрея Эпиген Интим возникать жжение или ощущение тепла в месте введения?' category='Использование')
-                  li.faq-page__section-item
+                  li.faq-page__section-item(data-aos='fade-up')
                     +accordion(caption='Можно ли использовать Спрей Эпиген Интим совместно с другими местными препаратами?' category='Использование')
-                  li.faq-page__section-item
+                  li.faq-page__section-item(data-aos='fade-up')
                     +accordion(caption='Можно ли использовать Спрей Эпиген Интим совместно с другими местными препаратами?' category='Использование')
-                  li.faq-page__section-item
+                  li.faq-page__section-item(data-aos='fade-up')
                     +accordion(caption='В упаковке Спрея Эпиген Интим есть дополнительная насадка, как её использовать?' category='Использование')
-                  li.faq-page__section-item
+                  li.faq-page__section-item(data-aos='fade-up')
                     +accordion(caption='Хватит мне одного флакона Спрея Эпиген Интим на полный курс лечения?' category='Использование')
-                  li.faq-page__section-item
+                  li.faq-page__section-item(data-aos='fade-up')
                     +accordion(caption='Безопасно ли использовать Спрей Эпиген Интим в период беременности?' category='Использование')
-                  li.faq-page__section-item
+                  li.faq-page__section-item(data-aos='fade-up')
                     +accordion(caption='Можно ли использовать Спрей Эпиген Интим при кормлении грудью?' category='Использование')
-                  li.faq-page__section-item
+                  li.faq-page__section-item(data-aos='fade-up')
                     +accordion(caption='Почему необходимо включить Спрей Эпиген Интим в дорожную аптечку? ' category='Использование')
 
-                .button-show-wrapper
+                .button-show-wrapper(data-aos='fade-up')
                   .button-show
                     .button-show__icon
                       +plus-svg.button-show__svg
@@ -143,26 +150,26 @@ block content
                 .faq-page__form
                   .faq-page__form-row(data-form='1')
                     .faq-page__form-col
-                      h3.faq-page__form-title
+                      h3.faq-page__form-title(data-aos='fade-up')
                         |Задать свой вопрос
                     .faq-page__form-col
                       form.form(action="/")
-                        .form__item
+                        .form__item(data-aos='fade-up')
                           input.form__input(type="text" name="name" placeholder="Имя")
-                        .form__item
+                        .form__item(data-aos='fade-up')
                           input.form__input(type="email" name="email" placeholder="E-mail")
-                        .form__item
+                        .form__item(data-aos='fade-up')
                           textarea.form__textarea(name="message" placeholder="Сообщение", cols="30", rows="10")
                         .form__container
                           .form__inner
-                            .checkbox
+                            .checkbox(data-aos='fade-up')
                               label.checkbox__label(for="checkbox")
                                 input.checkbox__input(type="checkbox" id="checkbox")
                                 .checkbox__box
                                   +check-svg.checkbox__icon
                                 .checkbox__text
                                   |Согласен на обработку персональных данных в соответствии с #[a.checkbox__link(href="#") политикой конфиденциальности]
-                          .form__button
+                          .form__button(data-aos='fade-up')
                             button.button.button--wide(type='submit' data-form-button='1')
                               |Отправить
                   .faq-page__response(data-response='1')

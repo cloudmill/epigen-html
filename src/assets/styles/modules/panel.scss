@@ -8,6 +8,12 @@
     height: $panel-height-mobile;
   }
 
+  &--nav {
+    @media (max-width: $breakpoint - 1px) {
+      height: calc(#{$panel-height-mobile} + 29px + 10px);
+    }
+  }
+
   &--hidden {
     #{$comp}__panel {
       transform: translateY(-100%);
@@ -39,31 +45,24 @@
     @media (max-width: $breakpoint - 1px) {
       display: none;
     }
+    @media (max-width: $breakpoint-xl - 1px) {
+      justify-content: space-between;
+    }
   }
   &__col {
-    width: calc(#{$col-width-d} * 4);
+    width: calc(#{$col-width-d} * 6);
+    @media (max-width: $breakpoint-xl - 1px) {
+      width: auto;
+    }
     height: 100%;
     flex-shrink: 0;
 
-    &:nth-child(1) {
-      width: calc(#{$col-width-d} * 6);
-    }
-
-    @media (max-width: $breakpoint-xl - 1px) {
-      &:nth-child(2) {
-        width: calc(#{$col-width-d} * 3);
+    &:not(:first-child) {
+      @media (max-width: $breakpoint-xl - 1px) {
+        margin-left: 50px;
       }
-      &:nth-child(3) {
-        width: calc(#{$col-width-d} * 5);
-      }
-    }
-
-    @media (max-width: $breakpoint-ll - 1px) {
-      &:nth-child(1) {
-        width: calc(#{$col-width-d} * 5);
-      }
-      &:nth-child(4) {
-        width: calc(#{$col-width-d} * 5);
+      @media (max-width: $breakpoint-l - 1px) {
+        margin-left: 25px;
       }
     }
   }
@@ -77,7 +76,7 @@
   &__consultation {
     $comp: &;
 
-    margin-left: auto;
+    margin-left: 30px;
     display: flex;
     align-items: center;
 
@@ -102,6 +101,34 @@
     transition: $transition;
   }
 
+  &__test {
+    $comp: &;
+
+    margin-left: auto;
+
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+
+    &:hover {
+      #{$comp}-text {
+        color: $color-blue;
+      }
+    }
+  }
+  &__test-icon {
+    margin-right: 12px;
+
+    position: relative;
+    bottom: 2px;
+  }
+  &__test-text {
+    @include fsl(15px, 15px);
+    white-space: nowrap;
+    transition: $transition;
+  }
+
   &__where-buy {
     @include fsl(15px, 15px);
     white-space: nowrap;
@@ -113,6 +140,11 @@
   }
 
   &__choice {
+    margin-left: 30px;
+    @media (max-width: $breakpoint-xl - 1px) {
+      margin-left: 20px;
+    }
+
     display: flex;
   }
   &__choice-item {
@@ -143,7 +175,10 @@
     }
 
     &:not(:first-child) {
-      margin-left: 38px;
+      margin-left: 30px;
+      @media (max-width: $breakpoint-xl - 1px) {
+        margin-left: 20px;
+      }
     }
   }
 

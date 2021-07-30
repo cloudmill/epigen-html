@@ -9,7 +9,7 @@ include ../components/footer.pug
 block grid-test
 
 block content
-  .page-reviews
+  .page-reviews.faq-page
     .container
       .row
         .row__col.row__col--aside.row__col--rail
@@ -46,6 +46,7 @@ block content
                     .panel__col
                       .panel__inner
                         .panel__product
+                          //- .panel__product-item--active
                           a.panel__product-item(href='#')
                             .panel__product-mark
                             .panel__product-text
@@ -58,8 +59,6 @@ block content
                       .panel__inner
                         a.panel__where-buy(href='#')
                           |Где купить
-                    .panel__col
-                      .panel__inner
                         .panel__choice
                           .panel__choice-item(data-count=8)
                             |Симптомы
@@ -67,14 +66,32 @@ block content
                             |Заболевания
                     .panel__col
                       .panel__inner
+                        .panel__test
+                          +calendar-test-svg.panel__test-icon
+                          .panel__test-text
+                            |Пройти тест
                         .panel__consultation
                           +consultation-svg.panel__consultation-svg
                           .panel__consultation-text
                             |Консультация эксперта
+                  .panel__mobile
+                    header.header-mobile
+                      a.header-mobile__logo(href="#")
+                        +logo-svg.header-mobile__icon
+                      .header-mobile__button
             main.page__main
               h1.title
                 |Отзывы
               .rail.rail--margin-bottom--default
+              .faq-page
+                ul.faq-page__list.faq-page__list--mobile
+                  li.faq-page__item
+                    +border-link(href='#' active)
+                      |Все
+                  each link in ['Состав', 'Противопоказания', 'Использование', 'Приобрести',]
+                    li.faq-page__item
+                      +border-link(href='#')
+                        |!{link}
               ul.product-choice.product-choice--margin-bottom--default
                 li.product-choice__item
                   a.product-btn.product-btn--active(href='#')

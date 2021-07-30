@@ -7,19 +7,46 @@
 
   &--consultation {
 
+    #{$comp}__head-row {
+      @media (max-width: $breakpoint - 1px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+    }
+
     #{$comp}__head-col {
       &:nth-child(1) {
+        @media (max-width: $breakpoint - 1px) {
+          padding-top: 0;
+          padding-bottom: 15px;
+        }
+
         width: calc(#{$col-width-d} * 4);
+        @media (max-width: $breakpoint - 1px) {
+          width: 50%;
+          order: 1;
+        }
       }
       &:nth-child(2) {
         padding-right: 0;
 
         width: calc(#{$col-width-d} * 10);
+        @media (max-width: $breakpoint - 1px) {
+          width: 100%;
+          order: 3;
+        }
       }
       &:nth-child(3) {
         padding-right: 30px;
+        @media (max-width: $breakpoint - 1px) {
+          padding-right: 0;
+        }
 
         width: calc(#{$col-width-d} * 4);
+        @media (max-width: $breakpoint - 1px) {
+          width: 50%;
+          order: 2;
+        }
         display: flex;
         justify-content: flex-end;
       }
@@ -30,6 +57,9 @@
 
     #{$comp}__body-container {
       padding-left: calc(#{$col-width-d} * 4);
+      @media (max-width: $breakpoint - 1px) {
+        padding-left: 15px;
+      }
     }
     #{$comp}__body-col {
 
@@ -37,12 +67,16 @@
         padding-top: 15px;
 
         width: calc(#{$col-width-d} * 7);
+        @media (max-width: $breakpoint - 1px) {
+          width: 100%;
+        }
 
         border-top: 1px solid $color-blue-light;
       }
     }
     #{$comp}__body-text {
       font-style: italic;
+      @include fsl(15px);
     }
   }
 
@@ -129,6 +163,9 @@
   }
   &__head-name {
     @include fsl(20px, 140%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(18px);
+    }
   }
   &__head-date {
     margin-top: 5px;
@@ -227,6 +264,10 @@
   }
   &__body-doctor {
     margin-top: 30px;
+
+    @media (max-width: $breakpoint - 1px) {
+      display: none;
+    }
   }
 
   &__spray {}
@@ -309,6 +350,25 @@
 
     background-color: $color-aqua;
     border-radius: 10px;
+    transition: $transition;
+
+    &:hover {
+      background-color: $color-blue;
+
+
+
+      #{$comp}__link-text {
+        color: $color-white;
+      }
+      #{$comp}__link-button {
+        border-color: $color-white;
+      }
+      #{$comp}__link-icon {
+        path {
+          stroke: $color-white;
+        }
+      }
+    }
   }
   &__link-row {
     display: flex;
@@ -334,9 +394,32 @@
     }
   }
   &__link-text {
+    transition: $transition;
     @include fsl(15px, 140%);
     @media (max-width: $breakpoint - 1px) {
       @include fsl(13px);
+    }
+  }
+  &__link-button {
+    $size: 40px;
+
+    width: $size;
+    height: $size;
+    min-width: $size;
+    min-height: $size;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    border: 1px solid transparent;
+    transition: $transition;
+  }
+  &__link-icon {
+    transition: $transition;
+    path {
+      transition: $transition;
     }
   }
 }

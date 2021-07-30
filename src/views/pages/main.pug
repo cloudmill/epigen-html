@@ -3,7 +3,7 @@ extends ../layouts/master.pug
 include ../components/footer.pug
 
 //- block cookies
-block grid-test
+//- block grid-test
 
 mixin nav-page-d
   nav.nav-page-d
@@ -83,8 +83,6 @@ block content
                       .panel__inner
                         a.panel__where-buy(href='#')
                           |Где купить
-                    .panel__col
-                      .panel__inner
                         .panel__choice
                           .panel__choice-item(data-count=8)
                             |Симптомы
@@ -92,6 +90,10 @@ block content
                             |Заболевания
                     .panel__col
                       .panel__inner
+                        .panel__test
+                          +calendar-test-svg.panel__test-icon
+                          .panel__test-text
+                            |Пройти тест
                         .panel__consultation
                           +consultation-svg.panel__consultation-svg
                           .panel__consultation-text
@@ -214,7 +216,7 @@ block content
                                   p.b__desc
                                     |Врач акушер-гинеколог, гинеколог-эндокринолог, лучший врач корпорации
                                   .b__content-wrapper
-                                    p.b__review 
+                                    p.b__review
                                       |Спрей Эпиген Интим представляет собой эффективное и безопасное средство для лечения, профилактики генитальных вирусных инфекций, а гель предназначен для интимной гигиены на каждый день...
                                 .b__content-bottom
                                   a.b__link(href="#")

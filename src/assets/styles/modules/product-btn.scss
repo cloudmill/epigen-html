@@ -8,7 +8,7 @@
       .spray-svg__background {
         fill: $color-blue;
       }
-  
+
       .spray-svg__line {
         &--stroke {
           stroke: $color-white;
@@ -27,6 +27,9 @@
   padding: 10px;
   height: 100%;
   min-height: 90px;
+  @media (max-width: $breakpoint - 1px) {
+    min-height: 70px;
+  }
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,6 +59,9 @@
 
   &__svg {
     flex-shrink: 0;
+    @media (max-width: $breakpoint - 1px) {
+      max-height: 50px;
+    }
 
     .spray-svg__background,
     .spray-svg__line {
@@ -78,6 +84,9 @@
 
   &__text {
     margin-left: 25px;
+    @media (max-width: $breakpoint - 1px) {
+      margin-left: 20px;
+    }
     flex-shrink: 0;
 
     @include fsl(13px, 120%);

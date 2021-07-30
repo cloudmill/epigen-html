@@ -35,6 +35,7 @@ block content
                     .panel__col
                       .panel__inner
                         .panel__product
+                          //- .panel__product-item--active
                           a.panel__product-item(href='#')
                             .panel__product-mark
                             .panel__product-text
@@ -47,8 +48,6 @@ block content
                       .panel__inner
                         a.panel__where-buy(href='#')
                           |Где купить
-                    .panel__col
-                      .panel__inner
                         .panel__choice
                           .panel__choice-item(data-count=8)
                             |Симптомы
@@ -56,14 +55,23 @@ block content
                             |Заболевания
                     .panel__col
                       .panel__inner
+                        .panel__test
+                          +calendar-test-svg.panel__test-icon
+                          .panel__test-text
+                            |Пройти тест
                         .panel__consultation
                           +consultation-svg.panel__consultation-svg
                           .panel__consultation-text
                             |Консультация эксперта
+                  .panel__mobile
+                    header.header-mobile
+                      a.header-mobile__logo(href="#")
+                        +logo-svg.header-mobile__icon
+                      .header-mobile__button
             main.page__main
               h1.title
                 |Консультация эксперта
-              .rail.rail--margin-bottom--large.rail--desktop
+              .rail.rail--margin-bottom--large
               section.row.row--in-main--desc
                 .row__col
                   p.page-consultation__text.page-consultation__text--desc--default.max-width.max-width--col--9
@@ -79,7 +87,7 @@ block content
                     .b__bottom
                       each slide in [1, 2, 3, 4]
                         .b__slide
-                          .b__slide-row
+                          .b__slide-row.b__slide-row--desktop
                             .b__slide-col
                               .b__slide-img
                                 img.b__img(src='assets/images/reviews-slider-1.jpeg')
@@ -119,6 +127,34 @@ block content
                                             |/4
                                         .b__preview-image
                                           img.b__preview-img(src='assets/images/reviews-slider-2.jpeg')
+                          .b__slide-mobile
+                            .b__slide-row
+                              .b__slide-col
+                                .b__slide-top
+                                  .b__slide-img
+                                    img.b__img(src='assets/images/reviews-slider-1.jpeg')
+                                  .b__content
+                                    h5.b__slide-title
+                                      span.b__desc-span
+                                        |Сапрыкина Людмила Витальевна
+                                    .b__desc
+                                      span.b__desc-span
+                                        |Ассистент кафедры акушерства и гинекологии ЛФ ФГБОУ ВО им. Н.И. Пирогова МЗ РФ, врач акушер-гинеколог высшей категории, к.м.н. (Москва).
+                                .b__slide-bottom
+                                  p.b__review
+                                    |Осуществляет консультативный прием пациентов, обращающихся по вопросам лечения воспалительных процессов женской половой сферы, занимается проблемами невынашивания беременности и бесплодия, проводит оперативное лечение пациентам.
+                              .b__slide-col
+                                .b__content-top
+                                  .b__control.b__control--animated
+                                    .b__control-item
+                                      .b.b--btn-left-right-slider(data-command-slider-arrow='prev')
+                                        +simple-arrow-svg.b__svg
+                                    .b__control-item
+                                      .b.b--btn-left-right-slider.b--right(data-command-slider-arrow='next')
+                                        +simple-arrow-svg.b__svg
+                                .b__content-bottom
+                                  a.button.button--reviews-slider(href='#' data-mdl-open='')
+                                    |Задать вопрос врачу
               section.page-consultation__faq
                 h2.title.title--small.title--margin-bottom--none
                   |Найти в заданных вопросах
