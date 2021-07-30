@@ -336,30 +336,17 @@
     
     overflow: hidden;
 
-    &--mid {
-      z-index: 1;
-    }
+    transition: width $transition;
+
     &--front {
-      z-index: 2;
+      z-index: 1;
     }
 
     &--right {
+      left: auto;
       right: 0;
 
       justify-content: flex-end;
-    }
-
-    &--open {
-      @keyframes product-slider-open {
-        from {
-          width: 0;
-        }
-        to {
-          width: calc(#{$col-width-d} * #{$row-main-cols});
-        }
-      }
-
-      animation: product-slider-open 5s forwards;
     }
   }
 
@@ -390,10 +377,16 @@
     right: 0;
 
     background-color: $color-blue-bg;
-    background-image: url('assets/images/spray-page-1.jpg');
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: cover;
+
+    &--15 {
+      background-image: url('assets/images/spray-page-1.jpg');
+    }
+    &--60 {
+      background-image: url('assets/images/spray-page-2.jpg');
+    }
   }
 
   // [+]

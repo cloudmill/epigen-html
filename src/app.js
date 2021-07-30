@@ -573,10 +573,10 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       const filesContainer = $('.file__container');
       let files = [];
 
-      inputFile.on('change', function() {
+      inputFile.on('change', function () {
         const newFiles = [];
 
-        for(let index = 0; index < inputFile[0].files.length; index++) {
+        for (let index = 0; index < inputFile[0].files.length; index++) {
           const file = inputFile[0].files[index];
           newFiles.push(file);
           files.push(file);
@@ -585,11 +585,11 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
         newFiles.forEach(file => {
           const fileElement = $(
             `<div class=file__item><p class=file__name>${file.name}</p><div class=file__mark></div></div>`
-            );
+          );
           fileElement.data('fileData', file);
           filesContainer.append(fileElement);
 
-          fileElement.on('click', function(event) {
+          fileElement.on('click', function (event) {
             const target = $(event.target);
             const fileMark = target.closest('.file__mark')
             const indexToRemove = files.indexOf($(this).data('fileData'));
@@ -616,7 +616,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 {
   $(() => {
     const swiperContainer = $('.js--gel-reviews-slider')
-    
+
     if (swiperContainer.length) {
       const swiper = new Swiper(swiperContainer[0], {
         slidesPerView: 'auto',
@@ -626,7 +626,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
       const btnPrev = $('.js--gel-reviews-btn--prev')
       const btnNext = $('.js--gel-reviews-btn--next')
-      
+
       btnPrev.on('click', () => swiper.slidePrev())
       btnNext.on('click', () => swiper.slideNext())
     }
@@ -676,7 +676,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       $(window).one('resize', resize)
 
 
-      sectionButton.on('click', function() {
+      sectionButton.on('click', function () {
         const buttonText = $(this).find('.button-show__text');
 
         buttonText.toggleText('подробнее', 'скрыть');
@@ -688,7 +688,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       });
 
       $.fn.extend({
-        toggleText: function(a, b) {
+        toggleText: function (a, b) {
           return this.text(this.text() == b ? a : b);
         }
       });
@@ -708,6 +708,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 // product slider
 {
   const FPS = 30
+  const DURATION = 500
 
   $(() => {
     const sliders = $('.product-slider')
@@ -721,25 +722,48 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       $(window).one('resize', handleWindowResize)
 
       const btns = slider.find('.spray-page__tabs-item')
-      
+
       if (btns.length > 1) {
         const state = {
           cur_index: 0,
+          clickable: true,
         }
 
         btns.on('click', function () {
-          const new_index = $(this).closest('.product-slider__btns-item').index()
+          if (state.clickable) {
+            const new_index = $(this).closest('.product-slider__btns-item').index()
 
-          let dir = null
-          if (new_index > state.cur_index) {
-            dir = 'right'
-          } else if (new_index < state.cur_index) {
-            dir = 'left'
-          }
-          state.cur_index = new_index
+            if (new_index !== state.cur_index) {
+              slides.toggleClass('product-slider__slide--front')
 
-          if (dir) {
-            
+              const newSlide = slides.eq(new_index)
+              const layout = newSlide.find('.product-slider__layout')
+
+              if (new_index === 1) {
+                newSlide.addClass('product-slider__slide--right')
+              }
+
+              newSlide.css('width', 0)
+              setTimeout(() => {
+                newSlide.css('width', 'calc(((100vw - (30px * 2)) / 24) * 18)')
+              })
+
+              layout.css('transform', `scale(1.5)`)
+              setTimeout(() => {
+                layout.css('transition', '0.5s')
+                layout.css('transform', `scale(1)`)
+              })
+
+              state.cur_index = new_index
+              state.clickable = false
+
+              setTimeout(() => {
+                state.clickable = true
+                newSlide.css('width', '')
+                layout.css('transform', '')
+                layout.css('transition', '')
+              }, DURATION)
+            }
           }
         })
       }
