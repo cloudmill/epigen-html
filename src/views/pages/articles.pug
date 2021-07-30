@@ -52,7 +52,7 @@ block content
                   .panel__row
                     .panel__col
                       .panel__inner
-                        .panel__product(data-aos='fade-up')
+                        .panel__product
                           //- .panel__product-item--active
                           a.panel__product-item(href='#')
                             .panel__product-mark
@@ -63,18 +63,20 @@ block content
                             .panel__product-text
                               |Гель
                     .panel__col
-                      .panel__inner(data-aos='fade-up')
+                      .panel__inner
                         a.panel__where-buy(href='#')
                           |Где купить
-                    .panel__col
-                      .panel__inner
-                        .panel__choice(data-aos='fade-up')
+                        .panel__choice
                           .panel__choice-item(data-count=8)
                             |Симптомы
                           .panel__choice-item(data-count=12)
                             |Заболевания
                     .panel__col
-                      .panel__inner(data-aos='fade-up')
+                      .panel__inner
+                        .panel__test
+                          +calendar-test-svg.panel__test-icon
+                          .panel__test-text
+                            |Пройти тест
                         .panel__consultation
                           +consultation-svg.panel__consultation-svg
                           .panel__consultation-text
