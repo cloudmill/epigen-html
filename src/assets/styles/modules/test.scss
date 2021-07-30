@@ -310,6 +310,7 @@
 
 // [+]
 .product-slider {
+  $comp: &;
   $width: calc(#{$col-width-d} * #{$row-main-cols});
   $min-height: 550px;
 
@@ -387,6 +388,9 @@
     &--60 {
       background-image: url('assets/images/spray-page-2.jpg');
     }
+    &--250 {
+      background-image: url('assets/images/product-slider-gel.jpeg');
+    }
   }
 
   // [+]
@@ -406,6 +410,12 @@
     &:not(:first-child) {
       margin-left: 10px;
     }
+
+    &--width {
+      &--200 {
+        width: 200px;
+      }
+    }
   }
 
   // [+]
@@ -415,6 +425,14 @@
     padding-left: calc(#{$col-width-d} * 3);
 
     max-width: calc(#{$col-width-d} * (3 + 6));
+
+    &--purple {
+      #{$comp}__list-item {
+        &::before {
+          background-color: $color-purple;
+        }
+      }
+    }
   }
   &__list-item {
     position: relative;
