@@ -350,6 +350,25 @@
 
     background-color: $color-aqua;
     border-radius: 10px;
+    transition: $transition;
+
+    &:hover {
+      background-color: $color-blue;
+
+
+
+      #{$comp}__link-text {
+        color: $color-white;
+      }
+      #{$comp}__link-button {
+        border-color: $color-white;
+      }
+      #{$comp}__link-icon {
+        path {
+          stroke: $color-white;
+        }
+      }
+    }
   }
   &__link-row {
     display: flex;
@@ -375,9 +394,32 @@
     }
   }
   &__link-text {
+    transition: $transition;
     @include fsl(15px, 140%);
     @media (max-width: $breakpoint - 1px) {
       @include fsl(13px);
+    }
+  }
+  &__link-button {
+    $size: 40px;
+
+    width: $size;
+    height: $size;
+    min-width: $size;
+    min-height: $size;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    border: 1px solid transparent;
+    transition: $transition;
+  }
+  &__link-icon {
+    transition: $transition;
+    path {
+      transition: $transition;
     }
   }
 }
