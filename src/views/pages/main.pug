@@ -48,14 +48,14 @@ block content
             .aside__inner
               .aside__container
                 .aside__top
-                  header.aside__header.aside__header--margin-bottom--default
-                    a.aside__logo(href='#')
-                      +logo-svg.aside__logo-svg
-                    .aside__menu
-                      .aside__menu-text
+                  header.header.header--margin-bottom--default
+                    a.header__logo(href='#')
+                      +logo-svg.header__logo-svg
+                    .header__menu
+                      .header__text
                         |Меню
-                      .aside__menu-button
-                        .aside__menu-burger
+                      .header__button
+                        .header__burger
                   +nav-page-d
                 .aside__bottom
                   .aside__text.aside__text--margin-bottom--default
@@ -99,6 +99,13 @@ block content
                           +consultation-svg.panel__consultation-svg
                           .panel__consultation-text
                             |Консультация эксперта
+                  .panel__mobile
+                    header.header
+                      a.header__logo(href="#")
+                        +logo-svg.header__svg
+                      .header__menu
+                        .header__button
+                          .header__burger
             main.page__main
               .frame
                 img.frame__img(src='assets/images/frame.jpeg')

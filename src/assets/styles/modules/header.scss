@@ -1,0 +1,115 @@
+.header {
+  $comp: &;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: $breakpoint - 1px) {
+    height: $panel-height-mobile;
+  }
+
+  &--margin-bottom {
+    &--default {
+      margin-bottom: 60px;
+    }
+    &--large {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__logo {
+    display: flex;
+  }
+
+  &__svg {
+    @media (max-width: $breakpoint - 1px) {
+      max-width: 77px;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+
+    &:hover {
+      #{$comp}__button {
+        background-color: $color-blue;
+      }
+      #{$comp}__burger {
+
+        &::before,
+        &::after {
+          background-color: $color-white;
+          // transition: $transition;
+        }
+        &::before {
+          transform: translate(-50%, -2px);
+        }
+        &::after {
+          transform: translate(-50%, 2px);
+        }
+      }
+    }
+
+    &--active {
+      #{$comp}-button {
+        background-color: $color-blue;
+      }
+    }
+  }
+  &__text {
+    margin-right: 15px;
+
+    @include fsl(15px, 15px);
+  }
+  &__button {
+    $size: 45px;
+
+    width: $size;
+    height: $size;
+    min-width: $size;
+    min-height: $size;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: $color-blue-light;
+    border-radius: 50%;
+    transition: $transition;
+  }
+  &__burger {
+    padding: 5px 0;
+    position: relative;
+
+    width: 20px;
+    height: 2px;
+
+    transition: $transition;
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform-origin: 50% 50%;
+      transform: translate(-50%, 0);
+
+      width: 100%;
+      height: 1px;
+
+      transition: transform $transition;
+      background-color: $color-blue;
+    }
+
+    &::before {
+      top: 0;
+    }
+    &::after {
+      bottom: 0;
+    }
+  }
+}
