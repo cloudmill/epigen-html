@@ -61,6 +61,20 @@
       #{$comp}-button {
         background-color: $color-blue;
       }
+      #{$comp}-burger {
+
+        &::before,
+        &::after {
+          background-color: $color-white;
+          // transition: $transition;
+        }
+        &::before {
+          transform: translate(-50%, -2px);
+        }
+        &::after {
+          transform: translate(-50%, 2px);
+        }
+      }
     }
 
     &--active {
@@ -82,9 +96,44 @@
     min-width: $size;
     min-height: $size;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     background-color: $color-blue-light;
     border-radius: 50%;
     transition: $transition;
+  }
+  &__menu-burger {
+    padding: 5px 0;
+    position: relative;
+
+    width: 20px;
+    height: 2px;
+
+    transition: $transition;
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform-origin: 50% 50%;
+      transform: translate(-50%, 0);
+
+      width: 100%;
+      height: 1px;
+
+      transition: transform $transition;
+      background-color: $color-blue;
+    }
+
+    &::before {
+      top: 0;
+    }
+    &::after {
+      bottom: 0;
+    }
   }
 
   &__text {
