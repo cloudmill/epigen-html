@@ -58,6 +58,13 @@
     }
   }
 
+  &--modal {
+
+    #{$comp}__image {
+      height: 120px;
+    }
+  }
+
   &__image {
     height: 260px;
     display: flex;

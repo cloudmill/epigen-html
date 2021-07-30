@@ -709,3 +709,73 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     }
   });
 }
+
+// test
+{
+  $(() => {
+    const header = $('.panel');
+
+    if (header.length !== 0) {
+      // modal
+      {
+        const state = {
+          id: null,
+          close: function () {
+            $(`[data-modal-id="${this.id}"]`).removeAttr('data-modal-active');
+            $(`[data-modal-button="${this.id}"]`).removeAttr('data-modal-active');
+          },
+          open: function () {
+            $(`[data-modal-id="${this.id}"]`).attr('data-modal-active', '');
+            $(`[data-modal-button="${this.id}"]`).attr('data-modal-active', '');
+          },
+          update: function (id) {
+            this.id = id;
+          },
+          change: function (id) {
+            this.close();
+            this.update(id === this.id ? null : id);
+            this.open();
+          }
+        };
+
+        const btn = $('[data-modal-button]');
+        btn.on('click', function () {
+          const id = $(this).data('modal-button');
+          state.change(id);
+
+          const modalActive = header.find('[data-modal-active]');
+          if (modalActive.length !== 0) {
+            header.addClass('panel--modal-active')
+          } else {
+            header.removeClass('panel--modal-active')
+          }
+        });
+
+        // $(window).on('click', event => {
+        //   // const isClickArea = $(event.target).closest(header).length !== 0; ?
+
+        //   const isClickArea = ( // ?
+        //     // эл-ты header
+        //     $(event.target).closest('.header__container').length !== 0
+        //     && !$(event.target).hasClass('header__container')
+        //     // модальное окно
+        //     || $(event.target).closest('[data-modal-active]').length !== 0
+        //   );
+
+        //   if (!isClickArea) {
+        //     state.change(null);
+        //     header.removeClass('panel--modal')
+        //   }
+        // });
+
+        // media
+        // const breakpoint = window.matchMedia(`(min-width: ${BREAKPOINT}px)`);
+        // breakpoint.addListener((event) => {
+        //   state.change(null);
+        // });
+
+
+      }
+    }
+  });
+}

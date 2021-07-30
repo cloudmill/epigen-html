@@ -1,5 +1,11 @@
 extends ../layouts/master.pug
 
+mixin product-link
+  a.product-link(class=attributes.class href='#')
+    .product-link__image
+      img.product-link__img(src=attributes.src)
+    .product-link__text
+      block
 
 
 //- block cookies
@@ -63,9 +69,66 @@ block content
                     header.header
                       a.header__logo(href="#")
                         +logo-svg.header__svg
-                      .header__menu
+                      .header__menu(data-modal-button='1')
                         .header__button
                           .header__burger
+                  .panel__modals
+                    .modal-mobile(data-modal-id='1')
+                      .modal-mobile__inner
+                        .modal-mobile__container
+                          .modal-mobile__products
+                            .modal-mobile__products-item
+                              +product-link.product-link--modal(src='assets/images/spray.jpeg')
+                                |Спрей
+                            .modal-mobile__products-item
+                              +product-link.product-link--modal.product-link--purple(src='assets/images/gel.jpeg')
+                                |Гель
+                        .panel.panel--modal
+                          .panel__choice
+                            .modal-mobile__choice
+                              .modal-mobile__choice-button
+                                .panel__choice-item(data-count='8')
+                                  |Симптомы
+                                +spoiler-arrow-svg.modal-mobile__choice-svg
+                              .modal-mobile__choice-dropdown
+                            .modal-mobile__choice
+                              .modal-mobile__choice-button
+                                .panel__choice-item(data-count='12')
+                                  |Заболевания
+                                +spoiler-arrow-svg.modal-mobile__choice-svg
+                              .modal-mobile__choice-dropdown
+                          .modal-mobile__links
+                            .modal-mobile__container
+                              ul.modal-mobile__links-list
+                                li.modal-mobile__links-item
+                                  a.panel__test
+                                    +calendar-test-svg.panel__test-icon
+                                    .panel__test-text
+                                      |Пройти тест
+                                li.modal-mobile__links-item
+                                  .panel__consultation
+                                    +consultation-svg.panel__consultation-svg
+                                    .panel__consultation-text
+                                      |Консультация эксперта
+                                each item in ['Где купить', 'Вопрос эксперту', 'Отзывы Спрей Эпиген ', 'Отзывы Гель Эпиген ', 'Видео с экспертами', 'Статьи экспертов', 'Вопрос-ответ', 'Специалистам',]
+                                  li.modal-mobile__links-item
+                                    a.modal-mobile__links-link(href="#")
+                                      |#{item}
+                        .modal-mobile__bottom
+                          .modal-mobile__container
+                            ul.modal-mobile__bottom-links
+                              li.modal-mobile__bottom-item
+                                a.modal-mobile__bottom-doc(href="#")
+                                  |Политика конфиденциальности
+                              li.modal-mobile__bottom-item
+                                a.modal-mobile__bottom-doc(href="#")
+                                  |Положение о пользовании сайтом
+                              li.modal-mobile__bottom-item
+                                .modal-mobile__bottom-text
+                                  span
+                                    |Сделано в&nbsp;
+                                  a.modal-mobile__bottom-link(href="#")
+                                    |CloudMill
       p.link-text.page-404__text
         |Страница не найдена, но вы можете#[br]перейти на страницы нашей#[br]продукции: #[a.link-text__link(href='#') Спрей Эпиген Интим]#[br]#[a.link-text__link(href='#') Гель Эпиген Интим] или на #[a.link-text__link(href='#') Главную]
       .page-404__404
