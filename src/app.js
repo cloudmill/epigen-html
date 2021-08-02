@@ -713,9 +713,9 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 // test
 {
   $(() => {
-    const header = $('.panel');
+    const panel = $('.panel');
 
-    if (header.length !== 0) {
+    if (panel.length !== 0) {
       // modal
       {
         const state = {
@@ -743,19 +743,19 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           const id = $(this).data('modal-button');
           state.change(id);
 
-          const modalActive = header.find('[data-modal-active]');
+          const modalActive = panel.find('[data-modal-active]');
           if (modalActive.length !== 0) {
-            header.addClass('panel--modal-active')
+            panel.addClass('panel--modal-active')
           } else {
-            header.removeClass('panel--modal-active')
+            panel.removeClass('panel--modal-active')
           }
         });
 
         // $(window).on('click', event => {
-        //   // const isClickArea = $(event.target).closest(header).length !== 0; ?
+        //   // const isClickArea = $(event.target).closest(panel).length !== 0; ?
 
         //   const isClickArea = ( // ?
-        //     // эл-ты header
+        //     // эл-ты panel
         //     $(event.target).closest('.header__container').length !== 0
         //     && !$(event.target).hasClass('header__container')
         //     // модальное окно

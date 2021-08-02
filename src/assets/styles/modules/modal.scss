@@ -124,8 +124,15 @@
   width: calc((#{$col-width-m} * 6) + (15px * 2));
   transform: translate(100%, 0);
 
+  overflow-y: auto;
   transition: $transition;
   background-color: $color-white;
+
+  &--height {
+    &--100vh-60p {
+      height: calc(100vh - 60px);
+    }
+  }
 
   &__inner {
     padding: 30px 0;
