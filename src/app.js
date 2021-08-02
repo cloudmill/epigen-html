@@ -757,6 +757,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           const isClickArea = ( // ?
             // эл-ты panel
             $(event.target).closest('.panel__wrapper').length !== 0
+            && $(event.target).closest('.panel__test').length === 0
             // модальное окно
             || $(event.target).closest('[data-modal-active]').length !== 0
           );
