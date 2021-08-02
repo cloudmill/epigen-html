@@ -745,10 +745,8 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
           const modalActive = panel.find('[data-modal-active]');
           if (modalActive.length !== 0) {
-            $('.modal-wrapper').addClass('modal-wrapper--modal');
             panel.addClass('panel--modal-active')
           } else {
-            $('.modal-wrapper').removeClass('modal-wrapper--modal');
             panel.removeClass('panel--modal-active')
           }
         });
@@ -765,7 +763,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
           if (!isClickArea) {
             state.change(null);
-            header.removeClass('panel--modal')
+            panel.removeClass('panel--modal-active')
           }
         });
 
