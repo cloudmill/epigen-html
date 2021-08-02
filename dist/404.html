@@ -24,7 +24,7 @@
 								<div class="aside__inner">
 									<div class="aside__container">
 										<div class="aside__top">
-											<header class="aside__header"><a class="aside__logo" href="#"><svg class="aside__logo-svg" xmlns="http://www.w3.org/2000/svg" width="101" height="44" viewBox="0 0 101 44" fill="none">
+											<header class="header"><a class="header__logo" href="#"><svg class="header__logo-svg" xmlns="http://www.w3.org/2000/svg" width="101" height="44" viewBox="0 0 101 44" fill="none">
 														<path d="M35.911 43H101" stroke="#757575" stroke-width="0.408" stroke-miterlimit="4.04"></path>
 														<path fill-rule="evenodd" clip-rule="evenodd" d="M40.2562 27.6192L38.3283 37.5655H38.357L46.7737 27.5903H48.2124L45.6946 40.5062H43.9825L45.9248 30.5454H45.8673L37.4938 40.5494H36.0406L38.5585 27.6192" fill="#757575"></path>
 														<path fill-rule="evenodd" clip-rule="evenodd" d="M51.9675 34.7978L56.2838 34.7833L57.0175 30.9922L58.7296 30.9778L56.8736 40.4629H55.1615L56.0248 36.0663L51.7085 36.0807L50.8453 40.4917H49.1332L50.9892 31.021L52.7013 31.0066" fill="#757575"></path>
@@ -40,9 +40,11 @@
 														<path d="M50.946 28.0371H101" stroke="#757575" stroke-width="0.408" stroke-miterlimit="4.04"></path>
 														<path d="M0 28.0371H35.6377" stroke="#757575" stroke-width="0.408" stroke-miterlimit="4.04"></path>
 													</svg></a>
-												<div class="aside__menu">
-													<div class="aside__menu-text">Меню</div>
-													<div class="aside__menu-button"></div>
+												<div class="header__menu">
+													<div class="header__text">Меню</div>
+													<div class="header__button">
+														<div class="header__burger"></div>
+													</div>
 												</div>
 											</header>
 										</div>
@@ -96,7 +98,7 @@
 												</div>
 											</div>
 											<div class="panel__mobile">
-												<header class="header-mobile"><a class="header-mobile__logo" href="#"><svg class="header-mobile__icon" xmlns="http://www.w3.org/2000/svg" width="101" height="44" viewBox="0 0 101 44" fill="none">
+												<header class="header"><a class="header__logo" href="#"><svg class="header__svg" xmlns="http://www.w3.org/2000/svg" width="101" height="44" viewBox="0 0 101 44" fill="none">
 															<path d="M35.911 43H101" stroke="#757575" stroke-width="0.408" stroke-miterlimit="4.04"></path>
 															<path fill-rule="evenodd" clip-rule="evenodd" d="M40.2562 27.6192L38.3283 37.5655H38.357L46.7737 27.5903H48.2124L45.6946 40.5062H43.9825L45.9248 30.5454H45.8673L37.4938 40.5494H36.0406L38.5585 27.6192" fill="#757575"></path>
 															<path fill-rule="evenodd" clip-rule="evenodd" d="M51.9675 34.7978L56.2838 34.7833L57.0175 30.9922L58.7296 30.9778L56.8736 40.4629H55.1615L56.0248 36.0663L51.7085 36.0807L50.8453 40.4917H49.1332L50.9892 31.021L52.7013 31.0066" fill="#757575"></path>
@@ -112,8 +114,92 @@
 															<path d="M50.946 28.0371H101" stroke="#757575" stroke-width="0.408" stroke-miterlimit="4.04"></path>
 															<path d="M0 28.0371H35.6377" stroke="#757575" stroke-width="0.408" stroke-miterlimit="4.04"></path>
 														</svg></a>
-													<div class="header-mobile__button"></div>
+													<div class="header__menu" data-modal-button="1">
+														<div class="header__button">
+															<div class="header__burger"></div>
+														</div>
+													</div>
 												</header>
+											</div>
+											<div class="panel__modals">
+												<div class="modal-mobile" data-modal-id="1">
+													<div class="modal-mobile__inner">
+														<div class="modal-mobile__container">
+															<div class="modal-mobile__products">
+																<div class="modal-mobile__products-item"><a class="product-link product-link--modal" href="#">
+																		<div class="product-link__image"><img class="product-link__img" src="assets/images/spray.jpeg" /></div>
+																		<div class="product-link__text">Спрей</div>
+																	</a></div>
+																<div class="modal-mobile__products-item"><a class="product-link product-link--modal product-link--purple" href="#">
+																		<div class="product-link__image"><img class="product-link__img" src="assets/images/gel.jpeg" /></div>
+																		<div class="product-link__text">Гель</div>
+																	</a></div>
+															</div>
+														</div>
+														<div class="panel panel--modal">
+															<div class="panel__choice">
+																<div class="modal-mobile__choice">
+																	<div class="modal-mobile__choice-button">
+																		<div class="panel__choice-item" data-count="8">Симптомы</div><svg class="modal-mobile__choice-svg" width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+																			<path d="M1 1L8 8L15 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																		</svg>
+																	</div>
+																	<div class="modal-mobile__choice-dropdown"></div>
+																</div>
+																<div class="modal-mobile__choice">
+																	<div class="modal-mobile__choice-button">
+																		<div class="panel__choice-item" data-count="12">Заболевания</div><svg class="modal-mobile__choice-svg" width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+																			<path d="M1 1L8 8L15 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																		</svg>
+																	</div>
+																	<div class="modal-mobile__choice-dropdown"></div>
+																</div>
+															</div>
+															<div class="modal-mobile__links">
+																<div class="modal-mobile__container">
+																	<ul class="modal-mobile__links-list">
+																		<li class="modal-mobile__links-item"><a class="panel__test"><svg class="panel__test-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+																					<path d="M8 3V6M7 21H17C19.2091 21 21 19.2091 21 17V8C21 5.79086 19.2091 4 17 4H7C4.79086 4 3 5.79086 3 8V17C3 19.2091 4.79086 21 7 21Z" stroke="#31AFF2" stroke-linecap="round"></path>
+																					<path d="M16 3V6" stroke="#31AFF2" stroke-linecap="round"></path>
+																					<path d="M15 11L11.25 15L9 13.1818" stroke="#31AFF2" stroke-linecap="round" stroke-linejoin="round"></path>
+																				</svg>
+																				<div class="panel__test-text">Пройти тест</div>
+																			</a></li>
+																		<li class="modal-mobile__links-item">
+																			<div class="panel__consultation"><svg class="panel__consultation-svg" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+																					<path d="M11 21H19C20.1 21 21 20.1 21 19V11C21 5.5 16.5 1 11 1C5.5 1 1 5.5 1 11C1 16.6 5.4 21 11 21Z" stroke="#31AFF2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+																					<path d="M16 12C15.4477 12 15 11.5523 15 11C15 10.4477 15.4477 10 16 10C16.5523 10 17 10.4477 17 11C17 11.5523 16.5523 12 16 12Z" fill="#31AFF2"></path>
+																					<path d="M6 12C5.44771 12 5 11.5523 5 11C5 10.4477 5.44771 10 6 10C6.55228 10 7 10.4477 7 11C7 11.5523 6.55228 12 6 12Z" fill="#31AFF2"></path>
+																					<path d="M11 12C10.4477 12 10 11.5523 10 11C10 10.4477 10.4477 10 11 10C11.5523 10 12 10.4477 12 11C12 11.5523 11.5523 12 11 12Z" fill="#31AFF2"></path>
+																				</svg>
+																				<div class="panel__consultation-text">Консультация эксперта</div>
+																			</div>
+																		</li>
+																		<li class="modal-mobile__links-item"><a class="modal-mobile__links-link" href="#">Где купить</a></li>
+																		<li class="modal-mobile__links-item"><a class="modal-mobile__links-link" href="#">Вопрос эксперту</a></li>
+																		<li class="modal-mobile__links-item"><a class="modal-mobile__links-link" href="#">Отзывы Спрей Эпиген</a></li>
+																		<li class="modal-mobile__links-item"><a class="modal-mobile__links-link" href="#">Отзывы Гель Эпиген</a></li>
+																		<li class="modal-mobile__links-item"><a class="modal-mobile__links-link" href="#">Видео с экспертами</a></li>
+																		<li class="modal-mobile__links-item"><a class="modal-mobile__links-link" href="#">Статьи экспертов</a></li>
+																		<li class="modal-mobile__links-item"><a class="modal-mobile__links-link" href="#">Вопрос-ответ</a></li>
+																		<li class="modal-mobile__links-item"><a class="modal-mobile__links-link" href="#">Специалистам</a></li>
+																	</ul>
+																</div>
+															</div>
+														</div>
+														<div class="modal-mobile__bottom">
+															<div class="modal-mobile__container">
+																<ul class="modal-mobile__bottom-links">
+																	<li class="modal-mobile__bottom-item"><a class="modal-mobile__bottom-doc" href="#">Политика конфиденциальности</a></li>
+																	<li class="modal-mobile__bottom-item"><a class="modal-mobile__bottom-doc" href="#">Положение о пользовании сайтом</a></li>
+																	<li class="modal-mobile__bottom-item">
+																		<div class="modal-mobile__bottom-text"><span>Сделано в&nbsp;</span><a class="modal-mobile__bottom-link" href="#">CloudMill</a></div>
+																	</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
