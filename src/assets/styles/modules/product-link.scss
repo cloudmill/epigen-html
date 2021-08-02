@@ -59,9 +59,18 @@
   }
 
   &--modal {
+    &--mobile {
+      #{$comp}__image {
+        height: 120px;
+      }
+    }
 
-    #{$comp}__image {
-      height: 120px;
+    &--aside {
+      width: 240px;
+
+      #{$comp}__image {
+        height: 357px;
+      }
     }
   }
 

@@ -8,7 +8,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 2;
+    z-index: 3;
 
     visibility: hidden;
     transition: $transition;
@@ -34,6 +34,38 @@
     #{$comp}-test {
       opacity: 1;
       pointer-events: auto;
+    }
+
+    #{$comp}-aside {
+      transform: translate(0);
+    }
+
+    .header__menu {
+      .header__text {
+        color: $color-blue;
+      }
+
+      .header__button {
+        background-color: $color-blue;
+      }
+
+      .header__burger {
+        height: 1px;
+
+        &::before {
+          top: 50%;
+          transform: translate(-50%, -50%) rotate(-45deg);
+          transition-delay: .5s;
+          background-color: $color-white;
+        }
+        &::after {
+          bottom: auto;
+          top: 50%;
+          transform: translate(-50%, -50%) rotate(-135deg);
+          transition-delay: .5s;
+          background-color: $color-white;
+        }
+      }
     }
   }
 }
@@ -333,3 +365,107 @@
   }
 }
 
+.modal-aside {
+  position: absolute;
+  z-index: 3;
+  left: -15px;
+  top: 0;
+
+  width: calc((#{$col-width-d} * 18) + 30px);
+  min-height: 620px;
+  transform: translateY(-100%);
+
+  @media (max-width: $breakpoint - 1px) {
+    display: none;
+  }
+
+  transition: $transition;
+  background: $color-white;
+  border-radius: 0px 0px 10px 0px;
+
+  &__container {
+    padding: 30px calc(#{$col-width-d}) 30px 30px;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    min-height: 620px;
+  }
+
+  &__col {
+    flex-shrink: 0;
+
+    &:nth-child(1) {
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+    }
+
+    &:nth-child(2) {
+      display: flex;
+    }
+  }
+  &__col-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &:not(:first-child) {
+      margin-left: 15px;
+    }
+  }
+
+  &__nav {
+    margin-top: 150px;
+    // padding-right: 50px;
+
+    // flex-shrink: 0;
+    // width: calc(#{$col-width-d} * 7);
+  }
+  &__nav-col {
+    &:nth-child(2) {
+      padding-left: calc(#{$col-width-d} * 4);
+    }
+    &:not(:first-child) {
+      margin-top: 17px;
+    }
+  }
+  &__nav-item {
+
+    &:not(:first-child) {
+      margin-top: 17px;
+    }
+  }
+  &__nav-link {
+    @include fsl(15px, 120%);
+    transition: $transition;
+
+    &:hover {
+      color: $color-blue;
+    }
+  }
+
+  &__corp {
+    @include fsl(11px, 120%);
+  }
+  &__corp-link {
+    color: $color-blue;
+    transition: $transition;
+
+    &:hover {
+      color: $color-purple;
+    }
+  }
+
+  &__doc-link {
+    @include fsl(11px, 120%);
+    transition: $transition;
+
+    &:hover {
+      color: $color-blue;
+    }
+  }
+}
