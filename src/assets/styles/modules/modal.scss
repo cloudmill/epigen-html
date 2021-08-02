@@ -30,6 +30,11 @@
     #{$comp}-product {
       transform: translate(0);
     }
+
+    #{$comp}-test {
+      opacity: 1;
+      pointer-events: auto;
+    }
   }
 }
 
@@ -234,7 +239,7 @@
   @media (max-width: $breakpoint - 1px) {
     width: calc((#{$col-width-m} * 6) + (15px * 2));
   }
-  transform: translateX(110%);
+  transform: translateX(130%);
 
   transition: $transition;
   background-color: $color-white;
@@ -249,6 +254,7 @@
 
   &__img {
     max-width: none;
+    width: 100%;
     max-height: 430px;
     @media (max-width: $breakpoint - 1px) {
       max-height: 281px;
@@ -305,3 +311,26 @@
     }
   }
 }
+
+.modal-test {
+  position: fixed;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  pointer-events: none;
+  opacity: 0;
+  transition: $transition;
+
+  &__container {
+    width: calc(#{$col-width-d} * 18);
+  }
+
+  &__button {
+    position: absolute;
+    left: calc(100% + 10px);
+    top: 0;
+  }
+}
+

@@ -92,7 +92,7 @@ block content
                               |Заболевания
                       .panel__wrapper-col
                         .panel__inner
-                          .panel__test
+                          .panel__test(data-button='3')
                             +calendar-test-svg.panel__test-icon
                             .panel__test-text
                               |Пройти тест
@@ -365,5 +365,30 @@ block content
       .modal-product__button
         .button-close(data-button='2')
           +cross-svg.button-close__svg
-
+  .modal(data-modal='3')
+    .modal-test
+      .modal-test__container
+        .test
+          form.test__container(action="/")
+            .test__row
+              .test__col
+                .test__question
+                  |Какие проявления в интимной зоне вас беспокоят?
+                ul.test__dots
+                  - for (i = 0; i < 5; i++)
+                    li.test__dot(class = ((i === 0) ? 'test__dot--active' : ''))
+              .test__col
+                .test__options
+                  each item in ['Обильные выделения без неприятного запаха', 'Выделения с неприятным запахом', 'Болезненные пузырьки в интимной зоне, превращающиеся в язвы', 'Безболезненные папилломы, узелки, наросты или бородавки в интимной зоне', 'Что-то другое, не указанное выше']
+                    label.test__label(for="#")
+                      input.test__radio(type="radio")
+                      .test__icon
+                        +check-svg
+                      .test__text
+                        |#{item}
+            .test__index
+              |1
+      .modal-test__button
+        .button-close(data-button='3')
+          +cross-svg.button-close__svg
 
