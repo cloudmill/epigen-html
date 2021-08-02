@@ -892,3 +892,79 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     }
   });
 }
+
+// wave
+{
+  $(() => {
+    console.log('wave')
+
+    const canvas = $('.canvas')
+    const ctx = canvas[0].getContext('2d')
+    canvas[0].width = window.innerWidth
+    canvas[0].height = window.innerHeight
+
+    function render() {
+      ctx.clearRect(0, 0, window.innerWidth, window.innerHeight)
+    
+      var points = []
+
+      // const quality = 6;
+      // for (let i = 0; i < quality; i++) {
+      //   points.push({
+      //     x: Math.cos(i / quality * (Math.PI * 2)) * 100 + 100,
+      //     y: Math.sin(i / quality * (Math.PI * 2)) * 100 + 100,
+      //   })
+      // }
+
+      points = [
+        {
+          x: 0, y: 0,
+        },
+        {
+          x: 50, y: 25,
+        },
+        {
+          x: 100, y: 50,
+        },
+        {
+          x: 50, y: 100,
+        },
+        {
+          x: 0, y: 50,
+        },
+        {
+          x: 50, y: 25,
+        },
+        {
+          x: 100, y: 0,
+        },
+      ]
+
+      ctx.beginPath();
+
+      ctx.moveTo(points[0].x, points[0].y);
+
+      for (var i = 1; i < points.length - 2; i++)
+      {
+          var xc = (points[i].x + points[i + 1].x) / 2;
+          var yc = (points[i].y + points[i + 1].y) / 2;
+          ctx.quadraticCurveTo(points[i].x, points[i].y, xc, yc);
+      }
+
+      ctx.quadraticCurveTo(points[i].x, points[i].y, points[i+1].x,points[i+1].y);
+
+      ctx.closePath();
+
+      let gradient = ctx.createLinearGradient(0, 0, 100, 0);
+      gradient.addColorStop(0, 'green');
+      gradient.addColorStop(.7, 'white');
+      gradient.addColorStop(1, 'pink');
+
+      ctx.strokeStyle = gradient;
+      ctx.lineWidth = 5;
+      ctx.stroke()
+    }
+
+    render()
+  })
+}
