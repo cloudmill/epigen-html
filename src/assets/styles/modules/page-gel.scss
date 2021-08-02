@@ -200,6 +200,9 @@
   // card
   &__reviews-card {
     width: calc(#{$col-width-d} * 8);
+    @media (max-width: $breakpoint - 1px) {
+      width: calc(#{$col-width-m} * 6 - 15px);
+    }
     height: 100%;
     min-height: 280px;
     display: flex;
