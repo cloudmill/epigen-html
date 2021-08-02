@@ -50,6 +50,47 @@
     }
   }
 
+  &--modal-active {
+    [data-modal-active] {
+      transform: translate(0);
+    }
+
+    #{$comp}__choice-item[data-modal-active] {
+      color: $color-blue;
+    }
+
+    #{$comp}__panel {
+      &::before {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+
+    .header__menu[data-modal-active] {
+      .header__button {
+        background-color: $color-blue;
+      }
+
+      .header__burger {
+        height: 1px;
+
+        &::before {
+          top: 50%;
+          transform: translate(-50%, -50%) rotate(-45deg);
+          transition-delay: .5s;
+          background-color: $color-white;
+        }
+        &::after {
+          bottom: auto;
+          top: 50%;
+          transform: translate(-50%, -50%) rotate(-135deg);
+          transition-delay: .5s;
+          background-color: $color-white;
+        }
+      }
+    }
+  }
+
   &__panel {
     position: fixed;
     @media (max-width: $breakpoint - 1px) {
@@ -67,6 +108,26 @@
 
     background-color: $color-white;
     transition: $transition;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: -30px;
+      bottom: 0;
+
+      @media (max-width: $breakpoint - 1px) {
+        display: none;
+      }
+
+      height: 100vh;
+      width: 100vw;
+
+      opacity: 0;
+      transition: $transition;
+      background: rgba($color-black, 0.2);
+      pointer-events: none;
+    }
   }
 
   &__row {
@@ -78,14 +139,44 @@
     @media (max-width: $breakpoint-xl - 1px) {
       justify-content: space-between;
     }
+
+
   }
   &__col {
-    width: calc(#{$col-width-d} * 6);
+    width: calc(#{$col-width-d} * 5);
     @media (max-width: $breakpoint-xl - 1px) {
       width: auto;
     }
     height: 100%;
     flex-shrink: 0;
+  }
+  &__wrapper {
+    padding-right: 30px;
+    padding-left: calc(#{$col-width-d});
+    @media (max-width: $breakpoint-xl - 1px) {
+      padding-left: 50px;
+    }
+    @media (max-width: $breakpoint-l - 1px) {
+      padding-left: 25px;
+    }
+
+    position: relative;
+
+    flex-shrink: 0;
+    height: 100%;
+    width: calc((#{$col-width-d} * 13) + 30px);
+    @media (max-width: $breakpoint-xl - 1px) {
+      width: 100%;
+      flex-shrink: 1;
+    }
+
+    display: flex;
+    justify-content: space-between;
+
+    background-color: $color-white;
+  }
+  &__wrapper-col {
+    height: 100%;
 
     &:not(:first-child) {
       @media (max-width: $breakpoint-xl - 1px) {
@@ -333,5 +424,9 @@
       display: block;
     }
     display: none;
+  }
+
+  &__modals {
+    pointer-events: none;
   }
 }

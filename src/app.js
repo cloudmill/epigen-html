@@ -823,12 +823,12 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
   })
 }
 
-// test
+// header-modal
 {
   $(() => {
-    const header = $('.panel');
+    const panel = $('.panel');
 
-    if (header.length !== 0) {
+    if (panel.length !== 0) {
       // modal
       {
         const state = {
@@ -856,38 +856,39 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           const id = $(this).data('modal-button');
           state.change(id);
 
-          const modalActive = header.find('[data-modal-active]');
+          const modalActive = panel.find('[data-modal-active]');
           if (modalActive.length !== 0) {
-            header.addClass('panel--modal-active')
+            panel.addClass('panel--modal-active')
+            $('.body').css('overflow', 'hidden')
           } else {
-            header.removeClass('panel--modal-active')
+            panel.removeClass('panel--modal-active')
+            $('.body').css('overflow', '')
           }
         });
 
-        // $(window).on('click', event => {
-        //   // const isClickArea = $(event.target).closest(header).length !== 0; ?
+        $(window).on('click', event => {
+          // const isClickArea = $(event.target).closest(panel).length !== 0; ?
 
-        //   const isClickArea = ( // ?
-        //     // эл-ты header
-        //     $(event.target).closest('.header__container').length !== 0
-        //     && !$(event.target).hasClass('header__container')
-        //     // модальное окно
-        //     || $(event.target).closest('[data-modal-active]').length !== 0
-        //   );
+          const isClickArea = ( // ?
+            // эл-ты panel
+            $(event.target).closest('.panel__wrapper').length !== 0
+            && $(event.target).closest('.panel__test').length === 0
+            // модальное окно
+            || $(event.target).closest('[data-modal-active]').length !== 0
+          );
 
-        //   if (!isClickArea) {
-        //     state.change(null);
-        //     header.removeClass('panel--modal')
-        //   }
-        // });
+          if (!isClickArea) {
+            state.change(null);
+            $('.body').css('overflow', '')
+            panel.removeClass('panel--modal-active')
+          }
+        });
 
         // media
         // const breakpoint = window.matchMedia(`(min-width: ${BREAKPOINT}px)`);
         // breakpoint.addListener((event) => {
         //   state.change(null);
         // });
-
-
       }
     }
   });

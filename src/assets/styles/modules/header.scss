@@ -39,17 +39,11 @@
         background-color: $color-blue;
       }
       #{$comp}__burger {
+        height: 16px;
 
         &::before,
         &::after {
           background-color: $color-white;
-          // transition: $transition;
-        }
-        &::before {
-          transform: translate(-50%, -2px);
-        }
-        &::after {
-          transform: translate(-50%, 2px);
         }
       }
     }
@@ -82,13 +76,12 @@
     transition: $transition;
   }
   &__burger {
-    padding: 5px 0;
     position: relative;
 
     width: 20px;
-    height: 2px;
+    height: 12px;
 
-    transition: $transition;
+    transition: .35s $transition-timing-function;
 
     &::after,
     &::before {
@@ -101,7 +94,7 @@
       width: 100%;
       height: 1px;
 
-      transition: transform $transition;
+      transition: .35s $transition-timing-function;
       background-color: $color-blue;
     }
 
