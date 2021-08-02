@@ -11,6 +11,7 @@
   width: calc(#{$col-width-d} * 13);
   transform: translateY(-200%);
 
+  pointer-events: all;
   transition: $transition;
 
   &__container {

@@ -124,6 +124,7 @@
   width: calc((#{$col-width-m} * 6) + (15px * 2));
   transform: translate(100%, 0);
 
+  pointer-events: auto;
   overflow-y: auto;
   transition: $transition;
   background-color: $color-white;
@@ -213,7 +214,3 @@
     }
   }
 }
-
-// [data-modal-active] {
-//   transform: translate(0);
-// }
