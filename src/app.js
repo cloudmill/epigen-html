@@ -746,8 +746,10 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           const modalActive = panel.find('[data-modal-active]');
           if (modalActive.length !== 0) {
             panel.addClass('panel--modal-active')
+            $('.body').css('overflow', 'hidden')
           } else {
             panel.removeClass('panel--modal-active')
+            $('.body').css('overflow', '')
           }
         });
 
@@ -764,6 +766,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
           if (!isClickArea) {
             state.change(null);
+            $('.body').css('overflow', '')
             panel.removeClass('panel--modal-active')
           }
         });
