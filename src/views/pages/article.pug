@@ -62,6 +62,62 @@ mixin nav-page-d
           a.nav-page-d__link(href=item.href data-scroll=item.scroll)
             |!{item.title}
 
+mixin nav-page-m
+  nav.nav-page-d.nav-page-d--mobile.nav-page-d--mobile--blue
+    ul.nav-page-d__list
+      -
+        var items = [
+          {
+            href: '#',
+            scroll: '#reason',
+            title: 'Причины возникновения молочницы',
+          },
+          {
+            href: '#',
+            scroll: '#symptoms',
+            title: 'Симптомы',
+          },
+          {
+            href: '#',
+            scroll: '#diagnostics',
+            title: 'Диагностика',
+          },
+          {
+            href: '#',
+            scroll: '#funds',
+            title: 'Средства от молочницы',
+          },
+          {
+            href: '#',
+            scroll: '#pills',
+            title: 'Таблетки и капсулы',
+          },
+          {
+            href: '#',
+            scroll: '#candles',
+            title: 'Свечи',
+          },
+          {
+            href: '#',
+            scroll: '#spray',
+            title: 'Спрей',
+          },
+          {
+            href: '#',
+            scroll: '#treatment',
+            title: 'Лечение',
+          },
+          {
+            href: '#',
+            scroll: '#prevention',
+            title: 'Профилактика',
+          },
+        ]
+      each item, index in items
+        li.nav-page-d__item(class = ((index === 0) ? 'nav-page-d__item--active' : ''))
+          a.category-item.category-item--light-blue.category-item--background--white(href=item.href data-scroll=item.scroll)
+            |!{item.title}
+
 mixin copyright-link
   a.copyright-link(href=attributes.href)
     .copyright-link__mark
@@ -79,13 +135,14 @@ block content
             .aside__inner
               .aside__container
                 .aside__top
-                  header.aside__header.aside__header--margin-bottom--large
-                    a.aside__logo(href='#')
-                      +logo-svg.aside__logo-svg
-                    .aside__menu
-                      .aside__menu-text
+                  header.header.header--margin-bottom--default
+                    a.header__logo(href='#')
+                      +logo-svg.header__logo-svg
+                    .header__menu
+                      .header__text
                         |Меню
-                      .aside__menu-button
+                      .header__button
+                        .header__burger
                   a.back-link(href="#")
                     .back-link__icon
                       +arrow-svg.back-link__svg.back-link__svg--swap
@@ -98,7 +155,7 @@ block content
         .row__col.row__col--main
           .page
             header.page__header
-              .panel
+              .panel.panel--nav
                 .panel__panel
                   .panel__row
                     .panel__col
@@ -133,10 +190,13 @@ block content
                           .panel__consultation-text
                             |Консультация эксперта
                   .panel__mobile
-                    header.header-mobile
-                      a.header-mobile__logo(href="#")
-                        +logo-svg.header-mobile__icon
-                      .header-mobile__button
+                    header.header
+                      a.header__logo(href="#")
+                        +logo-svg.header__svg
+                      .header__menu
+                        .header__button
+                          .header__burger
+                    +nav-page-m
             main.page__main
               h1.title.title--md
                 |Молочница: все, что нужно знать о заболевании

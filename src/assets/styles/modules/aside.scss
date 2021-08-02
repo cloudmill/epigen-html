@@ -29,64 +29,6 @@
     margin-top: 30px;
   }
 
-  &__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    &--margin-bottom {
-      &--default {
-        margin-bottom: 60px;
-      }
-      &--large {
-        margin-bottom: 80px;
-      }
-    }
-  }
-
-  &__logo {
-    display: flex;
-  }
-  &__logo-svg {}
-
-  &__menu {
-    $comp: &;
-
-    display: flex;
-    align-items: center;
-
-    cursor: pointer;
-
-    &:hover {
-      #{$comp}-button {
-        background-color: $color-blue;
-      }
-    }
-
-    &--active {
-      #{$comp}-button {
-        background-color: $color-blue;
-      }
-    }
-  }
-  &__menu-text {
-    margin-right: 15px;
-
-    @include fsl(15px, 15px);
-  }
-  &__menu-button {
-    $size: 45px;
-
-    width: $size;
-    height: $size;
-    min-width: $size;
-    min-height: $size;
-
-    background-color: $color-blue-light;
-    border-radius: 50%;
-    transition: $transition;
-  }
-
   &__text {
     font-size: calc((((19 / 1366) + (25 / 1680) + (28 / 1920)) / 3) * 100vw);
     @media (max-width: $breakpoint-l - 1px) {

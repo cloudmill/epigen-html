@@ -20,6 +20,36 @@
     }
   }
 
+  &--modal {
+    margin-top: 30px;
+
+    width: 100%;
+    height: auto;
+
+    #{$comp}__choice {
+      margin-left: 0;
+
+      display: block;
+    }
+    #{$comp}__choice-item {
+
+      &::before {
+        bottom: auto;
+        top: 50%;
+        left: calc(100% + 8px);
+        transform: translateY(-50%);
+      }
+    }
+
+    #{$comp}__test {
+      margin-left: 0;
+    }
+
+    #{$comp}__consultation {
+      margin-left: 0;
+    }
+  }
+
   &__panel {
     position: fixed;
     @media (max-width: $breakpoint - 1px) {

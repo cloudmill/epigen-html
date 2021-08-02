@@ -17,13 +17,14 @@ block content
             .aside__inner
               .aside__container
                 .aside__top
-                  header.aside__header.aside__header--margin-bottom--default
-                    a.aside__logo(href='#')
-                      +logo-svg.aside__logo-svg
-                    .aside__menu
-                      .aside__menu-text
+                  header.header.header--margin-bottom--default
+                    a.header__logo(href='#')
+                      +logo-svg.header__logo-svg
+                    .header__menu
+                      .header__text
                         |Меню
-                      .aside__menu-button
+                      .header__button
+                        .header__burger
                   ul.page-reviews__filter
                     li.page-reviews__filter-item
                       +border-link(href='#' active)
@@ -75,10 +76,12 @@ block content
                           .panel__consultation-text
                             |Консультация эксперта
                   .panel__mobile
-                    header.header-mobile
-                      a.header-mobile__logo(href="#")
-                        +logo-svg.header-mobile__icon
-                      .header-mobile__button
+                    header.header
+                      a.header__logo(href="#")
+                        +logo-svg.header__svg
+                      .header__menu
+                        .header__button
+                          .header__burger
             main.page__main
               h1.title
                 |Отзывы
