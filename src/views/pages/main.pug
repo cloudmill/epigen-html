@@ -104,7 +104,7 @@ block content
                     header.header
                       a.header__logo(href="#")
                         +logo-svg.header__svg
-                      .header__menu
+                      .header__menu(data-modal-button='1')
                         .header__button
                           .header__burger
                   .panel__modals
@@ -198,11 +198,11 @@ block content
             main.page__main
               .frame
                 img.frame__img(src='assets/images/frame.jpeg')
-                .frame__btn.frame__btn--spray.plus-btn
+                .frame__btn.frame__btn--spray.plus-btn(data-button='1')
                   .plus-btn__border
                   .plus-btn__circle
                   .plus-btn__plus
-                .frame__btn.frame__btn--gel.plus-btn.plus-btn--purple
+                .frame__btn.frame__btn--gel.plus-btn.plus-btn--purple(data-button='2')
                   .plus-btn__border
                   .plus-btn__circle
                   .plus-btn__plus
@@ -337,3 +337,33 @@ block content
                                       |/4
                                     img.b__preview-img(src='assets/images/reviews-slider-2.jpeg')
             +footer.page__footer
+  .modal(data-modal='1')
+    .modal-product
+      .modal-product__container
+        .modal-product__top
+          img.modal-product__img(src="assets/images/spray.jpeg", alt="")
+        .modal-product__bottom
+          .modal-product__bottom-container
+            h3.modal-product__title
+              |Спрей Эпиген Интим
+            p.modal-product__text
+              |Оригинальный лекарственный препарат для лечения и профилактики различных заболеваний интимной зоны
+      .modal-product__button
+        .button-close(data-button='1')
+          +cross-svg.button-close__svg
+  .modal(data-modal='2')
+    .modal-product
+      .modal-product__container
+        .modal-product__top
+          img.modal-product__img(src="assets/images/gel.jpeg", alt="")
+        .modal-product__bottom
+          .modal-product__bottom-container
+            h3.modal-product__title
+              |Гель Эпиген Интим
+            p.modal-product__text
+              |Единственный гель для интимной гигиены с уникальным сочетанием двух активных компонентов — активированной глицирризиновой и молочной кислоты
+      .modal-product__button
+        .button-close(data-button='2')
+          +cross-svg.button-close__svg
+
+

@@ -26,6 +26,10 @@
       pointer-events: auto;
       // transition: $transition; // ?
     }
+
+    #{$comp}-product {
+      transform: translate(0);
+    }
   }
 }
 
@@ -211,6 +215,93 @@
 
     &:hover {
       color: $color-purple;
+    }
+  }
+}
+
+.modal-product {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  @media (max-width: $breakpoint - 1px) {
+    left: 0;
+    top: auto;
+  }
+
+  width: calc((#{$col-width-d} * 8) + 30px);
+  @media (max-width: $breakpoint - 1px) {
+    width: calc((#{$col-width-m} * 6) + (15px * 2));
+  }
+  transform: translateX(110%);
+
+  transition: $transition;
+  background-color: $color-white;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+  }
+
+  &__img {
+    max-width: none;
+    max-height: 430px;
+    @media (max-width: $breakpoint - 1px) {
+      max-height: 281px;
+    }
+  }
+
+  &__bottom {
+    margin: 68px 0;
+    @media (max-width: $breakpoint - 1px) {
+      margin: 30px 0;
+    }
+  }
+  &__bottom-container {
+    padding-left: calc(#{$col-width-d});
+    padding-right: 61px;
+    @media (max-width: $breakpoint - 1px) {
+      padding-left: calc(#{$col-width-m} + 15px);
+      padding-right: 45px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    @media (max-width: $breakpoint - 1px) {
+      margin-bottom: 15px;
+    }
+
+    font-weight: 400;
+    @include fsl(25px, 120%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(20px);
+    }
+  }
+
+  &__text {
+    padding-left: calc(#{$col-width-d});
+    @media (max-width: $breakpoint - 1px) {
+      padding-left: 0;
+    }
+
+    @include fsl(18px, 140%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(15px);
+    }
+  }
+
+  &__button {
+    position: absolute;
+    right: calc(100% + 15px);
+    top: 15px;
+    @media (max-width: $breakpoint - 1px) {
+      top: 10px;
+      right: 15px;
     }
   }
 }
