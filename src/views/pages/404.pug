@@ -46,25 +46,26 @@ block content
                             .panel__product-mark
                             .panel__product-text
                               |Гель
-                    .panel__col
-                      .panel__inner
-                        a.panel__where-buy(href='#')
-                          |Где купить
-                        .panel__choice
-                          .panel__choice-item(data-count=8)
-                            |Симптомы
-                          .panel__choice-item(data-count=12)
-                            |Заболевания
-                    .panel__col
-                      .panel__inner
-                        .panel__test
-                          +calendar-test-svg.panel__test-icon
-                          .panel__test-text
-                            |Пройти тест
-                        .panel__consultation
-                          +consultation-svg.panel__consultation-svg
-                          .panel__consultation-text
-                            |Консультация эксперта
+                    .panel__wrapper
+                      .panel__wrapper-col
+                        .panel__inner
+                          a.panel__where-buy(href='#')
+                            |Где купить
+                          .panel__choice
+                            .panel__choice-item(data-count=8 data-modal-button='3')
+                              |Симптомы
+                            .panel__choice-item(data-count=12 data-modal-button='2')
+                              |Заболевания
+                      .panel__wrapper-col
+                        .panel__inner
+                          .panel__test
+                            +calendar-test-svg.panel__test-icon
+                            .panel__test-text
+                              |Пройти тест
+                          .panel__consultation
+                            +consultation-svg.panel__consultation-svg
+                            .panel__consultation-text
+                              |Консультация эксперта
                   .panel__mobile
                     header.header
                       a.header__logo(href="#")
@@ -129,8 +130,37 @@ block content
                                     |Сделано в&nbsp;
                                   a.modal-mobile__bottom-link(href="#")
                                     |CloudMill
-                    .panel-modal
-                      
+                    .panel-modal(data-modal-id='2')
+                      .panel-modal__container
+                        .panel-modal__row
+                          .panel-modal__col
+                            ul.panel-modal__list
+                              each item in ['Генитальный герпес (I и II типа)', 'ВПЧ', 'Применение при беременности', 'Молочница', 'Бактериальный вагиноз',]
+                                li.panel-modal__item
+                                  a.panel-modal__link(href="#")
+                                    |#{item}
+                          .panel-modal__col
+                            ul.panel-modal__list
+                              each item in ['ВПЧ', 'Молочница',]
+                                li.panel-modal__item
+                                  a.panel-modal__link(href="#")
+                                    |#{item}
+                    .panel-modal(data-modal-id='3')
+                      .panel-modal__container
+                        .panel-modal__row
+                          .panel-modal__col
+                            ul.panel-modal__list
+                              each item in ['Зуд', 'Жжение', 'Выделения, пузырьки', 'Пузырьки, язвочки', 'Болезненность, выделения',]
+                                li.panel-modal__item
+                                  a.panel-modal__link(href="#")
+                                    |#{item}
+                          .panel-modal__col
+                            ul.panel-modal__list
+                              each item in ['Болезненность при половом контакте', 'Боль внизу живота', 'Боль при мочеиспускании']
+                                li.panel-modal__item
+                                  a.panel-modal__link(href="#")
+                                    |#{item}
+
       p.link-text.page-404__text
         |Страница не найдена, но вы можете#[br]перейти на страницы нашей#[br]продукции: #[a.link-text__link(href='#') Спрей Эпиген Интим]#[br]#[a.link-text__link(href='#') Гель Эпиген Интим] или на #[a.link-text__link(href='#') Главную]
       .page-404__404

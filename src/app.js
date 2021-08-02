@@ -710,7 +710,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
   });
 }
 
-// test
+// header-modal
 {
   $(() => {
     const panel = $('.panel');
@@ -745,36 +745,35 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
           const modalActive = panel.find('[data-modal-active]');
           if (modalActive.length !== 0) {
+            $('.modal-wrapper').addClass('modal-wrapper--modal');
             panel.addClass('panel--modal-active')
           } else {
+            $('.modal-wrapper').removeClass('modal-wrapper--modal');
             panel.removeClass('panel--modal-active')
           }
         });
 
-        // $(window).on('click', event => {
-        //   // const isClickArea = $(event.target).closest(panel).length !== 0; ?
+        $(window).on('click', event => {
+          // const isClickArea = $(event.target).closest(panel).length !== 0; ?
 
-        //   const isClickArea = ( // ?
-        //     // эл-ты panel
-        //     $(event.target).closest('.header__container').length !== 0
-        //     && !$(event.target).hasClass('header__container')
-        //     // модальное окно
-        //     || $(event.target).closest('[data-modal-active]').length !== 0
-        //   );
+          const isClickArea = ( // ?
+            // эл-ты panel
+            $(event.target).closest(panel).length !== 0
+            // модальное окно
+            || $(event.target).closest('[data-modal-active]').length !== 0
+          );
 
-        //   if (!isClickArea) {
-        //     state.change(null);
-        //     header.removeClass('panel--modal')
-        //   }
-        // });
+          if (!isClickArea) {
+            state.change(null);
+            header.removeClass('panel--modal')
+          }
+        });
 
         // media
         // const breakpoint = window.matchMedia(`(min-width: ${BREAKPOINT}px)`);
         // breakpoint.addListener((event) => {
         //   state.change(null);
         // });
-
-
       }
     }
   });

@@ -1,0 +1,46 @@
+.panel-modal {
+  // margin-left: auto;
+  position: absolute;
+  right: 0;
+
+  display: block;
+  @media (max-width: $breakpoint - 1px) {
+    display: none;
+  }
+
+  width: calc(#{$col-width-d} * 13);
+  transform: translateY(-200%);
+
+  transition: $transition;
+
+  &__container {
+    padding: 30px 0 60px;
+    padding-left: calc(#{$col-width-d});
+
+    width: calc(100% + 30px);
+
+    border-radius: 0px 0px 0px 10px;
+    overflow: hidden;
+    background-color: $color-white;
+  }
+
+  &__row {
+    display: flex;
+  }
+
+  &__col {
+    flex-shrink: 0;
+    width: calc(#{$col-width-d} * 6);
+  }
+
+  &__item {
+
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
+  }
+
+  &__link {
+    @include fsl(15px, 140%);
+  }
+}
