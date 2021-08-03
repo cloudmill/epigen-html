@@ -138,6 +138,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
         button.on('click', function () {
           $(`[data-modal='${buttonId}']`).toggleClass('modal--active');
+          $('.body').toggleClass('body--hidden')
         });
       });
 
@@ -146,6 +147,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
         if (target == $('.modal--active')[0]) {
           modal.removeClass('modal--active');
+          $('.body').removeClass('body--hidden')
         }
       });
     }
