@@ -47,15 +47,49 @@ block content
           .aside
             .aside__inner
               .aside__container
-                .aside__top
+                .aside__top.modal(data-modal='4')
                   header.header.header--margin-bottom--default
                     a.header__logo(href='#')
                       +logo-svg.header__logo-svg
-                    .header__menu
+                    .header__menu(data-button='4')
                       .header__text
                         |Меню
                       .header__button
                         .header__burger
+                  .modal-aside
+                    .modal-aside__container
+                      .modal-aside__row
+                        .modal-aside__col
+                          nav.modal-aside__nav
+                            ul.modal-aside__nav-list
+                              .modal-aside__nav-col
+                                each item in ['Где купить', 'Вопрос эксперту', 'Отзывы Спрей Эпиген ', 'Отзывы Гель Эпиген ',]
+                                  li.modal-aside__nav-item
+                                    a.modal-aside__nav-link(href="#")
+                                      |#{item}
+                              .modal-aside__nav-col
+                                each item in ['Видео с экспертами', 'Статьи экспертов', 'Вопрос-ответ', 'Специалистам',]
+                                  li.modal-aside__nav-item
+                                    a.modal-aside__nav-link(href="#")
+                                      |#{item}
+                          .modal-aside__corp
+                            span
+                              |Сделано в&nbsp;
+                            a.modal-aside__corp-link(href="#")
+                              |CloudMill
+                        .modal-aside__col
+                          .modal-aside__col-item
+                            +product-link.product-link--modal--aside(src='assets/images/spray.jpeg')
+                              |Спрей
+                            .modal-aside__doc
+                              a.modal-aside__doc-link(href="#")
+                                |Политика конфиденциальности
+                          .modal-aside__col-item
+                            +product-link.product-link--modal--aside.product-link--purple(src='assets/images/gel.jpeg')
+                              |Гель
+                            .modal-aside__doc
+                              a.modal-aside__doc-link(href="#")
+                                |Положение о пользовании сайтом
                   +nav-page-d
                 .aside__bottom
                   .aside__text.aside__text--margin-bottom--default
