@@ -1,6 +1,7 @@
 .file {
-  margin-bottom: 40px;
+  $comp: &;
 
+  margin-bottom: 40px;
 
   &__input {
     opacity: 0;
@@ -14,6 +15,12 @@
     align-items: center;
 
     cursor: pointer;
+
+    &:hover {
+      #{$comp}__text {
+        color: $color-blue;
+      }
+    }
   }
 
   &__icon {
@@ -26,6 +33,7 @@
 
   &__text {
     @include fsl(13px, 140%);
+    transition: $transition;
   }
 
   &__container {
