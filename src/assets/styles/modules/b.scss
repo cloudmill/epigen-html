@@ -12,6 +12,9 @@
     padding: 11px 20px;
     min-height: 40px;
     display: inline-flex;
+    @media (max-width: $breakpoint-l - 1px) {
+      display: none;
+    }
     align-items: center;
 
     border: 1px solid $color-blue;
