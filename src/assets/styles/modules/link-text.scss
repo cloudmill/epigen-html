@@ -1,4 +1,6 @@
 .link-text {
+  $comp: &;
+
   @include fsl(20px, 140%);
   @media (min-width: $breakpoint) {
     @include fsl(34px, 130%);
@@ -9,6 +11,15 @@
 
   &--small {
     @include fsl(25px, 140%);
+  }
+
+  &--s {
+    @include fsl(13px, 140%);
+
+    #{$comp}__link {
+      padding: 2px 2px 3px 4px;
+      border-radius: 4px;
+    }
   }
 
   &__link {

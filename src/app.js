@@ -138,6 +138,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
         button.on('click', function () {
           $(`[data-modal='${buttonId}']`).toggleClass('modal--active');
+          $('.body').toggleClass('body--hidden')
         });
       });
 
@@ -146,6 +147,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
         if (target == $('.modal--active')[0]) {
           modal.removeClass('modal--active');
+          $('.body').removeClass('body--hidden')
         }
       });
     }
@@ -968,4 +970,47 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
     render()
   })
+}
+
+// test
+{
+  $(() => {
+    // options change
+    const stepInput = $('.test__label')
+
+    stepInput.each(function() {
+
+      $(this).on('click', function() {
+        const step = $(this).closest('.test__options')
+        const stepNext = step.next()
+        const dot = $('.test__dot')
+        const index = $('.test__index')
+
+        step.removeClass('test__options--active')
+        stepNext.addClass('test__options--active')
+
+        dot.eq(stepNext.index()).addClass('test__dot--active')
+        index.text(stepNext.index() + 1)
+
+        if ($('.test__options--active').length === 0) {
+          $('.test__container').addClass('test__container--hidden')
+          $('.test__result').addClass('test__result--active')
+        }
+      });
+    })
+
+    // result response
+    const result = $('.test__form')
+    const resultResponse = result.find('.test__form-response')
+    const form = result.find('.form')
+    const formInput = form.find('.form__input')
+
+    $(document).on('submit', form, function(event) {
+      event.preventDefault();
+
+      $('.test__form-wrapper').addClass('test__form-wrapper--hidden')
+      resultResponse.addClass('test__form-response--active')
+      $('.test__form-email').text(formInput.val())
+    })
+  });
 }

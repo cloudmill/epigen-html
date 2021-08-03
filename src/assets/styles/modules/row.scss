@@ -50,6 +50,7 @@
 
     &--rail {
       position: relative;
+      z-index: 3;
 
       &::before {
         $offset: 10px;

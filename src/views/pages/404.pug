@@ -19,15 +19,51 @@ block content
           .aside.aside--position--static
             .aside__inner
               .aside__container
-                .aside__top
+                .aside__top.modal(data-modal='4')
                   header.header
                     a.header__logo(href='#')
                       +logo-svg.header__logo-svg
-                    .header__menu
+                    .header__menu(data-button='4')
                       .header__text
                         |Меню
                       .header__button
                         .header__burger
+                  .modal-aside
+                    .modal-aside__container
+                      .modal-aside__row
+                        .modal-aside__col
+                          nav.modal-aside__nav
+                            ul.modal-aside__nav-list
+                              .modal-aside__nav-col
+                                each item in ['Где купить', 'Вопрос эксперту', 'Отзывы Спрей Эпиген ', 'Отзывы Гель Эпиген ',]
+                                  li.modal-aside__nav-item
+                                    a.modal-aside__nav-link(href="#")
+                                      |#{item}
+                              .modal-aside__nav-col
+                                each item in ['Видео с экспертами', 'Статьи экспертов', 'Вопрос-ответ', 'Специалистам',]
+                                  li.modal-aside__nav-item
+                                    a.modal-aside__nav-link(href="#")
+                                      |#{item}
+                          .modal-aside__corp
+                            span
+                              |Сделано в&nbsp;
+                            a.modal-aside__corp-link(href="#")
+                              |CloudMill
+                        .modal-aside__col
+                          .modal-aside__col-item
+                            +product-link.product-link--modal--aside(src='assets/images/spray.jpeg')
+                              |Спрей
+                            .modal-aside__doc
+                              a.modal-aside__doc-link(href="#")
+                                |Политика конфиденциальности
+                          .modal-aside__col-item
+                            +product-link.product-link--modal--aside.product-link--purple(src='assets/images/gel.jpeg')
+                              |Гель
+                            .modal-aside__doc
+                              a.modal-aside__doc-link(href="#")
+                                |Положение о пользовании сайтом
+
+
         .row__col.row__col--main
           .page
             header.page__header
@@ -66,6 +102,37 @@ block content
                             +consultation-svg.panel__consultation-svg
                             .panel__consultation-text
                               |Консультация эксперта
+                      .panel__modals
+                        .panel-modal(data-modal-id='2')
+                          .panel-modal__container
+                            .panel-modal__row
+                              .panel-modal__col
+                                ul.panel-modal__list
+                                  each item in ['Генитальный герпес (I и II типа)', 'ВПЧ', 'Применение при беременности', 'Молочница', 'Бактериальный вагиноз',]
+                                    li.panel-modal__item
+                                      a.panel-modal__link(href="#")
+                                        |#{item}
+                              .panel-modal__col
+                                ul.panel-modal__list
+                                  each item in ['ВПЧ', 'Молочница',]
+                                    li.panel-modal__item
+                                      a.panel-modal__link(href="#")
+                                        |#{item}
+                        .panel-modal(data-modal-id='3')
+                          .panel-modal__container
+                            .panel-modal__row
+                              .panel-modal__col
+                                ul.panel-modal__list
+                                  each item in ['Зуд', 'Жжение', 'Выделения, пузырьки', 'Пузырьки, язвочки', 'Болезненность, выделения',]
+                                    li.panel-modal__item
+                                      a.panel-modal__link(href="#")
+                                        |#{item}
+                              .panel-modal__col
+                                ul.panel-modal__list
+                                  each item in ['Болезненность при половом контакте', 'Боль внизу живота', 'Боль при мочеиспускании']
+                                    li.panel-modal__item
+                                      a.panel-modal__link(href="#")
+                                        |#{item}
                   .panel__mobile
                     header.header
                       a.header__logo(href="#")
@@ -79,10 +146,10 @@ block content
                         .modal-mobile__container
                           .modal-mobile__products
                             .modal-mobile__products-item
-                              +product-link.product-link--modal(src='assets/images/spray.jpeg')
+                              +product-link.product-link--modal--mobile(src='assets/images/spray.jpeg')
                                 |Спрей
                             .modal-mobile__products-item
-                              +product-link.product-link--modal.product-link--purple(src='assets/images/gel.jpeg')
+                              +product-link.product-link--modal--mobile.product-link--purple(src='assets/images/gel.jpeg')
                                 |Гель
                         .panel.panel--modal
                           .panel__choice
@@ -130,36 +197,6 @@ block content
                                     |Сделано в&nbsp;
                                   a.modal-mobile__bottom-link(href="#")
                                     |CloudMill
-                    .panel-modal(data-modal-id='2')
-                      .panel-modal__container
-                        .panel-modal__row
-                          .panel-modal__col
-                            ul.panel-modal__list
-                              each item in ['Генитальный герпес (I и II типа)', 'ВПЧ', 'Применение при беременности', 'Молочница', 'Бактериальный вагиноз',]
-                                li.panel-modal__item
-                                  a.panel-modal__link(href="#")
-                                    |#{item}
-                          .panel-modal__col
-                            ul.panel-modal__list
-                              each item in ['ВПЧ', 'Молочница',]
-                                li.panel-modal__item
-                                  a.panel-modal__link(href="#")
-                                    |#{item}
-                    .panel-modal(data-modal-id='3')
-                      .panel-modal__container
-                        .panel-modal__row
-                          .panel-modal__col
-                            ul.panel-modal__list
-                              each item in ['Зуд', 'Жжение', 'Выделения, пузырьки', 'Пузырьки, язвочки', 'Болезненность, выделения',]
-                                li.panel-modal__item
-                                  a.panel-modal__link(href="#")
-                                    |#{item}
-                          .panel-modal__col
-                            ul.panel-modal__list
-                              each item in ['Болезненность при половом контакте', 'Боль внизу живота', 'Боль при мочеиспускании']
-                                li.panel-modal__item
-                                  a.panel-modal__link(href="#")
-                                    |#{item}
 
       p.link-text.page-404__text
         |Страница не найдена, но вы можете#[br]перейти на страницы нашей#[br]продукции: #[a.link-text__link(href='#') Спрей Эпиген Интим]#[br]#[a.link-text__link(href='#') Гель Эпиген Интим] или на #[a.link-text__link(href='#') Главную]
