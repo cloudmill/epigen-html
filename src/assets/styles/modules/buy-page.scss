@@ -1,9 +1,39 @@
 .buy-page {
+  $map-header-height: 56px;
+  &__map {
+    display: flex;
+    overflow: hidden;
 
+    border: 1px solid $color-blue-light;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+  }
+  &__map-header {
+    position: relative;
+
+    height: $map-header-height;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid $color-blue-light;
+    border-radius: 10px 10px 0 0;
+  }
   &__map-iframe {
     width: 100%;
-    height: 610px;
+    height: calc(610px - #{$map-header-height});
+
+    border: none;
+    outline: none;
   }
+  &__map-text {}
+  &__map-link {
+    position: absolute;
+    left: 44px;
+
+    height: 32px;
+  }
+  &__map-logo {}
 
   &__partners {
     margin-top: 30px;

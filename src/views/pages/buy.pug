@@ -99,8 +99,14 @@ block content
                         |Эпиген Интим
                         br
                         |Гель
+                .buy-page__map-header
+                  a.buy-page__map-link(href='#')
+                    img.buy-page__map-logo(src='https://widget.uteka.ru/static/img/widgets/logo-light.svg')
+                  p.buy-page__map-text
+                    |Выберите аптеку и сделайте заказ
                 .buy-page__map
-                  img(src="assets/images/map.jpg", alt="")
+                  //- img(src="assets/images/map.jpg", alt="")
+                  iframe.buy-page__map-iframe(allow="geolocation" src="https://widget.uteka.ru/widgets/full/?productId=99949")
                 .buy-page__partners
                   ul.buy-page__partners-list
                     each partner in ['ozon', 'yandex-market', 'wildberries', 'zdravcity', 'apteka', 'sberapteka']
