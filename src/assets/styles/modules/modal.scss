@@ -158,6 +158,9 @@
 }
 
 .modal-mobile {
+  position: absolute;
+  top: 100%;
+
   display: none;
   @media (max-width: $breakpoint - 1px) {
     display: block;
