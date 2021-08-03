@@ -23,7 +23,7 @@
 							<div class="aside">
 								<div class="aside__inner">
 									<div class="aside__container">
-										<div class="aside__top">
+										<div class="aside__top modal" data-modal="4">
 											<header class="header header--margin-bottom--default"><a class="header__logo" href="#"><svg class="header__logo-svg" xmlns="http://www.w3.org/2000/svg" width="101" height="44" viewBox="0 0 101 44" fill="none">
 														<path d="M35.911 43H101" stroke="#757575" stroke-width="0.408" stroke-miterlimit="4.04"></path>
 														<path fill-rule="evenodd" clip-rule="evenodd" d="M40.2562 27.6192L38.3283 37.5655H38.357L46.7737 27.5903H48.2124L45.6946 40.5062H43.9825L45.9248 30.5454H45.8673L37.4938 40.5494H36.0406L38.5585 27.6192" fill="#757575"></path>
@@ -40,13 +40,52 @@
 														<path d="M50.946 28.0371H101" stroke="#757575" stroke-width="0.408" stroke-miterlimit="4.04"></path>
 														<path d="M0 28.0371H35.6377" stroke="#757575" stroke-width="0.408" stroke-miterlimit="4.04"></path>
 													</svg></a>
-												<div class="header__menu">
+												<div class="header__menu" data-button="4">
 													<div class="header__text">Меню</div>
 													<div class="header__button">
 														<div class="header__burger"></div>
 													</div>
 												</div>
-											</header><a class="back-link" href="#">
+											</header>
+											<div class="modal-aside">
+												<div class="modal-aside__container">
+													<div class="modal-aside__row">
+														<div class="modal-aside__col">
+															<nav class="modal-aside__nav">
+																<ul class="modal-aside__nav-list">
+																	<div class="modal-aside__nav-col">
+																		<li class="modal-aside__nav-item"><a class="modal-aside__nav-link" href="#">Где купить</a></li>
+																		<li class="modal-aside__nav-item"><a class="modal-aside__nav-link" href="#">Вопрос эксперту</a></li>
+																		<li class="modal-aside__nav-item"><a class="modal-aside__nav-link" href="#">Отзывы Спрей Эпиген</a></li>
+																		<li class="modal-aside__nav-item"><a class="modal-aside__nav-link" href="#">Отзывы Гель Эпиген</a></li>
+																	</div>
+																	<div class="modal-aside__nav-col">
+																		<li class="modal-aside__nav-item"><a class="modal-aside__nav-link" href="#">Видео с экспертами</a></li>
+																		<li class="modal-aside__nav-item"><a class="modal-aside__nav-link" href="#">Статьи экспертов</a></li>
+																		<li class="modal-aside__nav-item"><a class="modal-aside__nav-link" href="#">Вопрос-ответ</a></li>
+																		<li class="modal-aside__nav-item"><a class="modal-aside__nav-link" href="#">Специалистам</a></li>
+																	</div>
+																</ul>
+															</nav>
+															<div class="modal-aside__corp"><span>Сделано в&nbsp;</span><a class="modal-aside__corp-link" href="#">CloudMill</a></div>
+														</div>
+														<div class="modal-aside__col">
+															<div class="modal-aside__col-item"><a class="product-link product-link--modal--aside" href="#">
+																	<div class="product-link__image"><img class="product-link__img" src="assets/images/spray.jpeg" /></div>
+																	<div class="product-link__text">Спрей</div>
+																</a>
+																<div class="modal-aside__doc"><a class="modal-aside__doc-link" href="#">Политика конфиденциальности</a></div>
+															</div>
+															<div class="modal-aside__col-item"><a class="product-link product-link--modal--aside product-link--purple" href="#">
+																	<div class="product-link__image"><img class="product-link__img" src="assets/images/gel.jpeg" /></div>
+																	<div class="product-link__text">Гель</div>
+																</a>
+																<div class="modal-aside__doc"><a class="modal-aside__doc-link" href="#">Положение о пользовании сайтом</a></div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div><a class="back-link" href="#">
 												<div class="back-link__icon"><svg class="back-link__svg back-link__svg--swap" width="17" height="14" viewbox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 														<path d="M15.7208 6.69629L0.720825 6.69629" stroke="#31AFF2" stroke-linecap="round" stroke-linejoin="round"></path>
 														<path d="M9.67102 0.671886L15.721 6.69589L9.67102 12.7209" stroke="#31AFF2" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -94,30 +133,77 @@
 															</a></div>
 													</div>
 												</div>
-												<div class="panel__col">
-													<div class="panel__inner"><a class="panel__where-buy" href="#">Где купить</a>
-														<div class="panel__choice">
-															<div class="panel__choice-item" data-count="8">Симптомы</div>
-															<div class="panel__choice-item" data-count="12">Заболевания</div>
+												<div class="panel__wrapper">
+													<div class="panel__wrapper-col">
+														<div class="panel__inner"><a class="panel__where-buy" href="#">Где купить</a>
+															<div class="panel__choice">
+																<div class="panel__choice-item" data-count="8" data-modal-button="3">Симптомы</div>
+																<div class="panel__choice-item" data-count="12" data-modal-button="2">Заболевания</div>
+															</div>
 														</div>
 													</div>
-												</div>
-												<div class="panel__col">
-													<div class="panel__inner">
-														<div class="panel__test"><svg class="panel__test-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-																<path d="M8 3V6M7 21H17C19.2091 21 21 19.2091 21 17V8C21 5.79086 19.2091 4 17 4H7C4.79086 4 3 5.79086 3 8V17C3 19.2091 4.79086 21 7 21Z" stroke="#31AFF2" stroke-linecap="round"></path>
-																<path d="M16 3V6" stroke="#31AFF2" stroke-linecap="round"></path>
-																<path d="M15 11L11.25 15L9 13.1818" stroke="#31AFF2" stroke-linecap="round" stroke-linejoin="round"></path>
-															</svg>
-															<div class="panel__test-text">Пройти тест</div>
+													<div class="panel__wrapper-col">
+														<div class="panel__inner">
+															<div class="panel__test" data-button="3"><svg class="panel__test-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+																	<path d="M8 3V6M7 21H17C19.2091 21 21 19.2091 21 17V8C21 5.79086 19.2091 4 17 4H7C4.79086 4 3 5.79086 3 8V17C3 19.2091 4.79086 21 7 21Z" stroke="#31AFF2" stroke-linecap="round"></path>
+																	<path d="M16 3V6" stroke="#31AFF2" stroke-linecap="round"></path>
+																	<path d="M15 11L11.25 15L9 13.1818" stroke="#31AFF2" stroke-linecap="round" stroke-linejoin="round"></path>
+																</svg>
+																<div class="panel__test-text">Пройти тест</div>
+															</div>
+															<div class="panel__consultation"><svg class="panel__consultation-svg" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+																	<path d="M11 21H19C20.1 21 21 20.1 21 19V11C21 5.5 16.5 1 11 1C5.5 1 1 5.5 1 11C1 16.6 5.4 21 11 21Z" stroke="#31AFF2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+																	<path d="M16 12C15.4477 12 15 11.5523 15 11C15 10.4477 15.4477 10 16 10C16.5523 10 17 10.4477 17 11C17 11.5523 16.5523 12 16 12Z" fill="#31AFF2"></path>
+																	<path d="M6 12C5.44771 12 5 11.5523 5 11C5 10.4477 5.44771 10 6 10C6.55228 10 7 10.4477 7 11C7 11.5523 6.55228 12 6 12Z" fill="#31AFF2"></path>
+																	<path d="M11 12C10.4477 12 10 11.5523 10 11C10 10.4477 10.4477 10 11 10C11.5523 10 12 10.4477 12 11C12 11.5523 11.5523 12 11 12Z" fill="#31AFF2"></path>
+																</svg>
+																<div class="panel__consultation-text">Консультация эксперта</div>
+															</div>
 														</div>
-														<div class="panel__consultation"><svg class="panel__consultation-svg" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
-																<path d="M11 21H19C20.1 21 21 20.1 21 19V11C21 5.5 16.5 1 11 1C5.5 1 1 5.5 1 11C1 16.6 5.4 21 11 21Z" stroke="#31AFF2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
-																<path d="M16 12C15.4477 12 15 11.5523 15 11C15 10.4477 15.4477 10 16 10C16.5523 10 17 10.4477 17 11C17 11.5523 16.5523 12 16 12Z" fill="#31AFF2"></path>
-																<path d="M6 12C5.44771 12 5 11.5523 5 11C5 10.4477 5.44771 10 6 10C6.55228 10 7 10.4477 7 11C7 11.5523 6.55228 12 6 12Z" fill="#31AFF2"></path>
-																<path d="M11 12C10.4477 12 10 11.5523 10 11C10 10.4477 10.4477 10 11 10C11.5523 10 12 10.4477 12 11C12 11.5523 11.5523 12 11 12Z" fill="#31AFF2"></path>
-															</svg>
-															<div class="panel__consultation-text">Консультация эксперта</div>
+													</div>
+													<div class="panel__modals">
+														<div class="panel-modal" data-modal-id="2">
+															<div class="panel-modal__container">
+																<div class="panel-modal__row">
+																	<div class="panel-modal__col">
+																		<ul class="panel-modal__list">
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">Генитальный герпес (I и II типа)</a></li>
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">ВПЧ</a></li>
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">Применение при беременности</a></li>
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">Молочница</a></li>
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">Бактериальный вагиноз</a></li>
+																		</ul>
+																	</div>
+																	<div class="panel-modal__col">
+																		<ul class="panel-modal__list">
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">ВПЧ</a></li>
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">Молочница</a></li>
+																		</ul>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="panel-modal" data-modal-id="3">
+															<div class="panel-modal__container">
+																<div class="panel-modal__row">
+																	<div class="panel-modal__col">
+																		<ul class="panel-modal__list">
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">Зуд</a></li>
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">Жжение</a></li>
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">Выделения, пузырьки</a></li>
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">Пузырьки, язвочки</a></li>
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">Болезненность, выделения</a></li>
+																		</ul>
+																	</div>
+																	<div class="panel-modal__col">
+																		<ul class="panel-modal__list">
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">Болезненность при половом контакте</a></li>
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">Боль внизу живота</a></li>
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">Боль при мочеиспускании</a></li>
+																		</ul>
+																	</div>
+																</div>
+															</div>
 														</div>
 													</div>
 												</div>
@@ -139,7 +225,7 @@
 															<path d="M50.946 28.0371H101" stroke="#757575" stroke-width="0.408" stroke-miterlimit="4.04"></path>
 															<path d="M0 28.0371H35.6377" stroke="#757575" stroke-width="0.408" stroke-miterlimit="4.04"></path>
 														</svg></a>
-													<div class="header__menu">
+													<div class="header__menu" data-modal-button="1">
 														<div class="header__button">
 															<div class="header__burger"></div>
 														</div>
@@ -159,416 +245,496 @@
 													</ul>
 												</nav>
 											</div>
+											<div class="panel__modals">
+												<div class="modal-mobile modal-mobile--height--100vh-60p" data-modal-id="1">
+													<div class="modal-mobile__inner">
+														<div class="modal-mobile__container">
+															<div class="modal-mobile__products">
+																<div class="modal-mobile__products-item"><a class="product-link product-link--modal--mobile" href="#">
+																		<div class="product-link__image"><img class="product-link__img" src="assets/images/spray.jpeg" /></div>
+																		<div class="product-link__text">Спрей</div>
+																	</a></div>
+																<div class="modal-mobile__products-item"><a class="product-link product-link--modal--mobile product-link--purple" href="#">
+																		<div class="product-link__image"><img class="product-link__img" src="assets/images/gel.jpeg" /></div>
+																		<div class="product-link__text">Гель</div>
+																	</a></div>
+															</div>
+														</div>
+														<div class="panel panel--modal">
+															<div class="panel__choice">
+																<div class="modal-mobile__choice">
+																	<div class="modal-mobile__choice-button">
+																		<div class="panel__choice-item" data-count="8">Симптомы</div><svg class="modal-mobile__choice-svg" width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+																			<path d="M1 1L8 8L15 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																		</svg>
+																	</div>
+																	<div class="modal-mobile__choice-dropdown"></div>
+																</div>
+																<div class="modal-mobile__choice">
+																	<div class="modal-mobile__choice-button">
+																		<div class="panel__choice-item" data-count="12">Заболевания</div><svg class="modal-mobile__choice-svg" width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+																			<path d="M1 1L8 8L15 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																		</svg>
+																	</div>
+																	<div class="modal-mobile__choice-dropdown"></div>
+																</div>
+															</div>
+															<div class="modal-mobile__links">
+																<div class="modal-mobile__container">
+																	<ul class="modal-mobile__links-list">
+																		<li class="modal-mobile__links-item"><a class="panel__test"><svg class="panel__test-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+																					<path d="M8 3V6M7 21H17C19.2091 21 21 19.2091 21 17V8C21 5.79086 19.2091 4 17 4H7C4.79086 4 3 5.79086 3 8V17C3 19.2091 4.79086 21 7 21Z" stroke="#31AFF2" stroke-linecap="round"></path>
+																					<path d="M16 3V6" stroke="#31AFF2" stroke-linecap="round"></path>
+																					<path d="M15 11L11.25 15L9 13.1818" stroke="#31AFF2" stroke-linecap="round" stroke-linejoin="round"></path>
+																				</svg>
+																				<div class="panel__test-text">Пройти тест</div>
+																			</a></li>
+																		<li class="modal-mobile__links-item">
+																			<div class="panel__consultation"><svg class="panel__consultation-svg" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+																					<path d="M11 21H19C20.1 21 21 20.1 21 19V11C21 5.5 16.5 1 11 1C5.5 1 1 5.5 1 11C1 16.6 5.4 21 11 21Z" stroke="#31AFF2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+																					<path d="M16 12C15.4477 12 15 11.5523 15 11C15 10.4477 15.4477 10 16 10C16.5523 10 17 10.4477 17 11C17 11.5523 16.5523 12 16 12Z" fill="#31AFF2"></path>
+																					<path d="M6 12C5.44771 12 5 11.5523 5 11C5 10.4477 5.44771 10 6 10C6.55228 10 7 10.4477 7 11C7 11.5523 6.55228 12 6 12Z" fill="#31AFF2"></path>
+																					<path d="M11 12C10.4477 12 10 11.5523 10 11C10 10.4477 10.4477 10 11 10C11.5523 10 12 10.4477 12 11C12 11.5523 11.5523 12 11 12Z" fill="#31AFF2"></path>
+																				</svg>
+																				<div class="panel__consultation-text">Консультация эксперта</div>
+																			</div>
+																		</li>
+																		<li class="modal-mobile__links-item"><a class="modal-mobile__links-link" href="#">Где купить</a></li>
+																		<li class="modal-mobile__links-item"><a class="modal-mobile__links-link" href="#">Вопрос эксперту</a></li>
+																		<li class="modal-mobile__links-item"><a class="modal-mobile__links-link" href="#">Отзывы Спрей Эпиген</a></li>
+																		<li class="modal-mobile__links-item"><a class="modal-mobile__links-link" href="#">Отзывы Гель Эпиген</a></li>
+																		<li class="modal-mobile__links-item"><a class="modal-mobile__links-link" href="#">Видео с экспертами</a></li>
+																		<li class="modal-mobile__links-item"><a class="modal-mobile__links-link" href="#">Статьи экспертов</a></li>
+																		<li class="modal-mobile__links-item"><a class="modal-mobile__links-link" href="#">Вопрос-ответ</a></li>
+																		<li class="modal-mobile__links-item"><a class="modal-mobile__links-link" href="#">Специалистам</a></li>
+																	</ul>
+																</div>
+															</div>
+														</div>
+														<div class="modal-mobile__bottom">
+															<div class="modal-mobile__container">
+																<ul class="modal-mobile__bottom-links">
+																	<li class="modal-mobile__bottom-item"><a class="modal-mobile__bottom-doc" href="#">Политика конфиденциальности</a></li>
+																	<li class="modal-mobile__bottom-item"><a class="modal-mobile__bottom-doc" href="#">Положение о пользовании сайтом</a></li>
+																	<li class="modal-mobile__bottom-item">
+																		<div class="modal-mobile__bottom-text"><span>Сделано в&nbsp;</span><a class="modal-mobile__bottom-link" href="#">CloudMill</a></div>
+																	</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
 										</div>
 									</div>
 								</header>
 								<main class="page__main">
 									<h1 class="title title--md">Молочница: все, что нужно знать о заболевании</h1>
 									<div class="rail rail--desctop rail--margin-bottom--default"></div>
-								</main>
-								<section class="disease-page__section-row">
-									<div class="disease-page__section-col">
-										<div class="disease-page__section-label">Автор статьи</div>
-										<div class="disease-page__section-bot">
-											<div class="disease-page__section-container">
-												<div class="doctor-card doctor-card--col">
-													<div class="doctor-card__row">
-														<div class="doctor-card__col">
-															<div class="doctor-card__frame doctor-card__frame--size--default doctor-card__frame--radius--left"><img src="assets/images/doctor.jpg" alt=""></div>
+									<section class="disease-page__section-row">
+										<div class="disease-page__section-col">
+											<div class="disease-page__section-label">Автор статьи</div>
+											<div class="disease-page__section-bot">
+												<div class="disease-page__section-container">
+													<div class="doctor-card doctor-card--col">
+														<div class="doctor-card__row">
+															<div class="doctor-card__col">
+																<div class="doctor-card__frame doctor-card__frame--size--default doctor-card__frame--radius--left"><img src="assets/images/doctor.jpg" alt=""></div>
+															</div>
+															<div class="doctor-card__col">
+																<div class="doctor-card__name">Бебнева Тамара Николаевна</div>
+																<div class="doctor-card__pos">Врач акушер-гинеколог ФГБУ «НМИЦ эндокринологии» Минздрава России, к.м.н, доцент Кафедры акушерства, гинекологии и репродуктивной медицины РУДН</div>
+															</div>
 														</div>
-														<div class="doctor-card__col">
-															<div class="doctor-card__name">Бебнева Тамара Николаевна</div>
-															<div class="doctor-card__pos">Врач акушер-гинеколог ФГБУ «НМИЦ эндокринологии» Минздрава России, к.м.н, доцент Кафедры акушерства, гинекологии и репродуктивной медицины РУДН</div>
+													</div>
+												</div>
+												<div class="rail rail--desktop"></div>
+											</div>
+										</div>
+										<div class="disease-page__section-col">
+											<div class="disease-page__section-content margin-bottom margin-bottom--m">
+												<div class="disease-page__section-label">категория</div>
+												<div class="disease-page__section-category">
+													<div class="category-item">Молочница</div>
+												</div>
+											</div>
+											<div class="specialists-page__content-container"><svg class="specialists-page__content-wave" width="638" height="157" viewbox="0 0 638 157" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M1.62318 45.8946C1.62318 45.8946 -13.596 149.119 106.387 114.314C198.064 87.7197 217.498 24.2716 204.824 9.69208C183.304 -15.0628 115.048 17.3868 89.0655 52.7558C51.7538 103.547 117.758 162.636 204.824 155.394C300.092 147.47 359.63 81.3114 448.125 81.3114C577.181 81.3114 638 155.394 638 155.394" stroke="url(#paint0_linear)"></path>
+													<defs>
+														<lineargradient id="paint0_linear" x1="54.2677" y1="99.4896" x2="212.089" y2="60.2601" gradientunits="userSpaceOnUse">
+															<stop offset="0.385417" stop-color="#31AFF2"></stop>
+															<stop offset="1" stop-color="#5553F0"></stop>
+														</lineargradient>
+													</defs>
+												</svg><img src="assets/images/woman.jpg" alt=""></div>
+										</div>
+									</section>
+									<section class="specialists-page__inner margin-top specialists-page__content">
+										<div class="specialists-page__content-wrapper">
+											<p>Вагинальный кандидоз или молочница — одна из самых частых причин влагалищных выделений и зуда в области вульвы. По меньшей мере 75% женщин сталкивались с этим заболеванием хотя бы один раз в жизни. Всему виной — грибок Candida albicans. Он любит теплые места с нейтральной щелочной средой, поэтому обитает на слизистых во рту, кишечнике и влагалище, и обычно никак не мешает.</p>
+											<p>Проблемы начинаются, когда количество грибка начинает возрастать и вытеснять нормальную микрофлору влагалища: появляется дискомфорт и выделения.</p>
+											<p>Конкретной причины появления молочницы нет: у одних она появляется после длительного курса антибиотиков, у других — после праздничного ужина с кучей углеводов. Разбираемся, почему так происходит и как бороться с заболеванием.</p>
+										</div>
+									</section>
+									<section class="specialists-page__inner margin-top specialists-page__content" id="reason" data-section>
+										<h3>Причины возникновения молочницы</h3>
+										<div class="specialists-page__content-wrapper">
+											<p>Чтобы грибки из рода Candida начали активно размножаться, нужны особые условия: должен изменится кислотно-щелочной баланс влагалища или снизиться иммунитет. Такие изменения подавляют нормальную микрофлору, а освободившееся место оперативно занимают грибки.</p>
+											<p>Чтобы грибки из рода Candida начали активно размножаться, нужны особые условия: должен изменится кислотно-щелочной баланс влагалища или снизиться иммунитет. Такие изменения подавляют нормальную микрофлору, а освободившееся место оперативно занимают грибки.</p>
+										</div>
+									</section>
+									<section class="specialists-page__inner margin-top">
+										<div class="specialists-page__content">
+											<h3>Причины возникновения молочницы</h3>
+										</div>
+										<div class="specialists-page__content-wrapper">
+											<ul class="reason-list reason-list--big">
+												<li class="reason-list__item">
+													<p class="reason-list__text">Прием антибиотиков широкого спектра действия</p>
+												</li>
+												<li class="reason-list__item">
+													<p class="reason-list__text">Несоблюдение интимной гигиены</p>
+												</li>
+												<li class="reason-list__item">
+													<p class="reason-list__text">Гормональный дисбаланс</p>
+												</li>
+												<li class="reason-list__item">
+													<p class="reason-list__text">Несоблюдение интимной гигиены</p>
+												</li>
+												<li class="reason-list__item">
+													<p class="reason-list__text">Гормональный дисбаланс</p>
+												</li>
+												<li class="reason-list__item">
+													<p class="reason-list__text">Нарушения иммунитета</p>
+												</li>
+												<li class="reason-list__item">
+													<p class="reason-list__text">Нарушения обмена веществ</p>
+												</li>
+												<li class="reason-list__item">
+													<p class="reason-list__text">Ношение тесного или синтетического белья</p>
+												</li>
+												<li class="reason-list__item">
+													<p class="reason-list__text">Частое использование прокладок</p>
+												</li>
+												<li class="reason-list__item">
+													<p class="reason-list__text">Прием гормональных контрацептивов</p>
+												</li>
+												<li class="reason-list__item">
+													<p class="reason-list__text">Большое количество углеводов в рационе</p>
+												</li>
+												<li class="reason-list__item">
+													<p class="reason-list__text">Химиотерапия</p>
+												</li>
+												<li class="reason-list__item">
+													<p class="reason-list__text">Беременность</p>
+												</li>
+											</ul>
+											<div class="margin-top specialists-page__content">
+												<p>Пусковым фактором для развития молочницы могут быть нарушения гормонального баланса. Кандидоз встречается примерно у 35 % беременных и у 30 % женщин с эндокринными заболеваниями.</p>
+											</div>
+										</div>
+									</section>
+									<section class="article-page__section margin-top">
+										<div class="article-page__section-layout"><svg class="article-page__section-icon" xmlns="http://www.w3.org/2000/svg" width="46" height="47" viewBox="0 0 46 47" fill="none">
+												<path d="M26.8217 10.843C26.8217 10.843 23.1678 17.2667 23.0632 17.5393L6.59172 18.5158L20.1323 23.2201L11.206 36.8455L23.5661 26.798L31.8278 42.2308L27.893 22.4372L38.168 21.9497L27.9985 19.1068L28.7534 12.0385L29.1692 6.7761L26.8217 10.843Z" fill="#31AFF2"></path>
+											</svg><svg class="article-page__section-img" width="41" height="45" viewBox="0 0 41 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M26.1615 1.68279C23.9451 0.761264 21.8474 0.280466 20.1851 0C26.5177 7.25204 28.8132 16.7077 25.3303 25.3221C21.5703 34.6576 11.9923 40.5874 0.989466 41.6291C0.831151 41.6692 0.712415 41.6692 0.593679 41.6692H0.554101C0.197893 41.7093 0 41.6692 0 41.6692C0 41.6692 8.58856 46.1566 19.1165 44.7142C29.0903 43.352 38.1934 37.5023 40.4098 27.6459C43.4969 14.0634 33.8397 4.72785 26.1615 1.68279Z" fill="#6953F0"></path>
+											</svg></div>
+										<div class="article-page__section-content">
+											<h3 class="article-page__section-title">Ощущаете дискомфорт в интимной зоне?</h3>
+											<div class="article-page__section-caption">Пройдите тест и узнайте больше о решении данной проблемы</div>
+											<div class="article-page__section-buttons">
+												<div class="article-page__section-item"><a class="button button--l" href="#">Пройти тест</a></div>
+												<div class="article-page__section-item"><a class="button button--l button--purple" href="#">Задать вопрос эксперту</a></div>
+											</div>
+										</div>
+									</section>
+									<section class="specialists-page__inner margin-top specialists-page__content" id="symptoms" data-section="">
+										<h3>Симптомы</h3>
+										<div class="specialists-page__content-wrapper">
+											<p>Главный симптом молочницы у женщин — влагалищные выделения. Обычно они белые, густые и похожие на творог, но могут быть и прозрачными. Также возникает зуд, жжение и боль, которые усиливаются после принятия горячей ванны или душа. Кожа краснеет, отекает, постоянно чешется. Мочеиспускание и половой акт доставляют дискомфорт или болезненные ощущения.</p>
+											<p>У мужчин признаки не такие явные, хотя их тоже может беспокоить зуд и покраснение половых органов. А на головке члена иногда появляется белый налет.</p>
+										</div>
+									</section>
+									<section class="specialists-page__inner margin-top specialists-page__content" id="diagnostics" data-section="">
+										<h3>Диагностика</h3>
+										<div class="specialists-page__content-wrapper">
+											<p>Медикаментозное лечение молочницы у женщин включает местные противогрибковые препараты в форме свечей или кремов и лекарства для приема внутрь. Иногда терапию дополняют иммуностимулирующими средствами.</p>
+										</div>
+									</section>
+									<section class="specialists-page__inner margin-top specialists-page__content" id="funds" data-section="">
+										<h3>Средства от молочницы</h3>
+										<div class="specialists-page__content-wrapper">
+											<p>Медикаментозное лечение молочницы у женщин включает местные противогрибковые препараты в форме свечей или кремов и лекарства для приема внутрь. Иногда терапию дополняют иммуностимулирующими средствами.</p>
+										</div>
+									</section>
+									<section class="article-page__content margin-top">
+										<div class="article-page__content-row">
+											<div class="article-page__content-col">
+												<div class="video">
+													<div class="video__container">
+														<div class="video__frame"><img class="video__img" src="assets/images/video.jpg" alt=""></div>
+														<div class="video__button">
+															<div class="video__button-icon"><svg class="video__button-svg" width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+																	<path d="M15 7.26795C16.3333 8.03775 16.3333 9.96225 15 10.7321L3 17.6603C1.66667 18.4301 1.01267e-06 17.4678 1.07997e-06 15.9282L1.68565e-06 2.0718C1.75295e-06 0.532196 1.66667 -0.430054 3 0.339746L15 7.26795Z" fill="white"></path>
+																</svg></div>
 														</div>
 													</div>
 												</div>
 											</div>
-											<div class="rail rail--desktop"></div>
 										</div>
-									</div>
-									<div class="disease-page__section-col">
-										<div class="disease-page__section-content margin-bottom margin-bottom--m">
-											<div class="disease-page__section-label">категория</div>
-											<div class="disease-page__section-category">
-												<div class="category-item">Молочница</div>
+									</section>
+									<section class="specialists-page__inner margin-top specialists-page__content" id="pills" data-section="">
+										<h3>Таблетки и капсулы</h3>
+										<div class="specialists-page__content-wrapper">
+											<p>Для лечения вагинального кандидоза используют антимикотики — противогрибковые средства: флуконазол, кетоконазол, натамицин. Конкретное активное вещество выбирает врач, ориентируясь на течение молочницы, сопутствующие заболевания или возраст пациента.</p>
+										</div>
+									</section>
+									<section class="specialists-page__inner margin-top specialists-page__content" id="candles" data-section="">
+										<h3>Свечи</h3>
+										<div class="specialists-page__content-wrapper">
+											<p>Для лечения молочницы во время беременности чаще используются местные средства, а не системные — так риск негативного влияния на плод минимален.</p>
+										</div>
+									</section>
+									<section class="disease-page__spray margin-top" id="spray" data-section="">
+										<div class="disease-page__spray-container">
+											<div class="disease-page__spray-row">
+												<div class="disease-page__spray-col">
+													<h3 class="disease-page__spray-title disease-page__spray-title--mobile">Спрей Эпиген Интим</h3>
+													<div class="disease-page__spray-image"><img src="assets/images/epigen-spray.jpg" alt=""></div>
+													<div class="disease-page__spray-buttons">
+														<div class="disease-page__spray-item"><a class="button button--wide" href="#">Подробнее</a></div>
+														<div class="disease-page__spray-item"><a class="button button--wide button--purple" href="#">Купить</a></div>
+													</div>
+												</div>
+												<div class="disease-page__spray-col specialists-page__content">
+													<h3 class="disease-page__spray-title">Спрей Эпиген Интим</h3>
+													<div class="disease-page__spray-column disease-page__content">
+														<p>Терапия противогрибковыми препаратами может не оказать нужного эффекта, если кандидоз протекает в сочетании с вирусной инфекцией: вирусом папилломы человека, вирусом простого герпеса или цитомегаловирусом. При этом диагностируют их редко: расширенное ПЦР-исследование, которое позволяет их выявить, не входит в ОМС. В результате после лечения противогрибковыми препаратами вирус сохраняется и способствует поддержанию воспаления в области влагалища и шейки матки. Это может спровоцировать постоянные рецидивы кандидоза.</p>
+														<p>Поэтому в случае частых рецидивов молочницы лечение противогрибковыми препаратами целесообразно дополнить спреем Эпиген Интим — противовирусным иммуностимулирующим препаратом. Он содержит активированную глицирризиновую кислоту, которую получают из экстракта корня солодки. Она обладает быстро устраняет зуд, уменьшает воспаление и повышает местный иммунитет — то, что нужно при лечении молочницы.</p>
+														<p>Удобная конструкция насадки позволяет глубоко вводить препарат и равномерно орошать стенки влагалища, а распылитель четко дозирует средство. В отличие от многих свечей, Спрей Эпиген Интим не нужно хранить в холодильнике. Его можно брать с собой повсюду: на работу, в командировки или отпуск.</p>
+														<p>Поскольку Спрей Эпиген Интим оказывает только местное воздействие, его можно использовать беременным и кормящим женщинам. Спрей совместим с другими лекарственными препаратами, поэтому его используют в составе комплексной терапии. При таком комплексном подходе противогрибковый препарат подавляет активный рост грибков, а спрей Эпиген Интим помогает скорее справиться с зудом, воспалением и жжением, а также повышает местный иммунитет. А в случае сопутствующего вирусоносительства снижает активность вирусов, предотвращая рецидивы.</p>
+														<div class="disease-page__spray-gradient"></div>
+													</div>
+												</div>
+											</div>
+											<div class="disease-page__spray-wrapper">
+												<div class="disease-page__spray-button">
+													<div class="button-show button-show--default">
+														<div class="button-show__icon"><svg class="button-show__svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+																<path d="M9.99881 6.60257V13.3795" stroke="#31AFF2" stroke-linecap="round" stroke-linejoin="round"></path>
+																<path d="M13.3907 9.99161L6.60742 9.99091" stroke="#31AFF2" stroke-linecap="round" stroke-linejoin="round"></path>
+																<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3345 0.750183H5.66549C2.64449 0.750183 0.750488 2.88918 0.750488 5.91618V14.0842C0.750488 17.1112 2.63549 19.2502 5.66549 19.2502H14.3335C17.3645 19.2502 19.2505 17.1112 19.2505 14.0842V5.91618C19.2505 2.88918 17.3645 0.750183 14.3345 0.750183Z" stroke="#31AFF2" stroke-linecap="round" stroke-linejoin="round"></path>
+															</svg></div>
+														<div class="button-show__text">подробнее</div>
+													</div>
+												</div>
 											</div>
 										</div>
-										<div class="specialists-page__content-container"><svg class="specialists-page__content-wave" width="638" height="157" viewbox="0 0 638 157" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M1.62318 45.8946C1.62318 45.8946 -13.596 149.119 106.387 114.314C198.064 87.7197 217.498 24.2716 204.824 9.69208C183.304 -15.0628 115.048 17.3868 89.0655 52.7558C51.7538 103.547 117.758 162.636 204.824 155.394C300.092 147.47 359.63 81.3114 448.125 81.3114C577.181 81.3114 638 155.394 638 155.394" stroke="url(#paint0_linear)"></path>
-												<defs>
-													<lineargradient id="paint0_linear" x1="54.2677" y1="99.4896" x2="212.089" y2="60.2601" gradientunits="userSpaceOnUse">
-														<stop offset="0.385417" stop-color="#31AFF2"></stop>
-														<stop offset="1" stop-color="#5553F0"></stop>
-													</lineargradient>
-												</defs>
-											</svg><img src="assets/images/woman.jpg" alt=""></div>
-									</div>
-								</section>
-								<section class="specialists-page__inner margin-top specialists-page__content">
-									<div class="specialists-page__content-wrapper">
-										<p>Вагинальный кандидоз или молочница — одна из самых частых причин влагалищных выделений и зуда в области вульвы. По меньшей мере 75% женщин сталкивались с этим заболеванием хотя бы один раз в жизни. Всему виной — грибок Candida albicans. Он любит теплые места с нейтральной щелочной средой, поэтому обитает на слизистых во рту, кишечнике и влагалище, и обычно никак не мешает.</p>
-										<p>Проблемы начинаются, когда количество грибка начинает возрастать и вытеснять нормальную микрофлору влагалища: появляется дискомфорт и выделения.</p>
-										<p>Конкретной причины появления молочницы нет: у одних она появляется после длительного курса антибиотиков, у других — после праздничного ужина с кучей углеводов. Разбираемся, почему так происходит и как бороться с заболеванием.</p>
-									</div>
-								</section>
-								<section class="specialists-page__inner margin-top specialists-page__content" id="reason" data-section>
-									<h3>Причины возникновения молочницы</h3>
-									<div class="specialists-page__content-wrapper">
-										<p>Чтобы грибки из рода Candida начали активно размножаться, нужны особые условия: должен изменится кислотно-щелочной баланс влагалища или снизиться иммунитет. Такие изменения подавляют нормальную микрофлору, а освободившееся место оперативно занимают грибки.</p>
-										<p>Чтобы грибки из рода Candida начали активно размножаться, нужны особые условия: должен изменится кислотно-щелочной баланс влагалища или снизиться иммунитет. Такие изменения подавляют нормальную микрофлору, а освободившееся место оперативно занимают грибки.</p>
-									</div>
-								</section>
-								<section class="specialists-page__inner margin-top">
-									<div class="specialists-page__content">
-										<h3>Причины возникновения молочницы</h3>
-									</div>
-									<div class="specialists-page__content-wrapper">
-										<ul class="reason-list reason-list--big">
-											<li class="reason-list__item">
-												<p class="reason-list__text">Прием антибиотиков широкого спектра действия</p>
-											</li>
-											<li class="reason-list__item">
-												<p class="reason-list__text">Несоблюдение интимной гигиены</p>
-											</li>
-											<li class="reason-list__item">
-												<p class="reason-list__text">Гормональный дисбаланс</p>
-											</li>
-											<li class="reason-list__item">
-												<p class="reason-list__text">Несоблюдение интимной гигиены</p>
-											</li>
-											<li class="reason-list__item">
-												<p class="reason-list__text">Гормональный дисбаланс</p>
-											</li>
-											<li class="reason-list__item">
-												<p class="reason-list__text">Нарушения иммунитета</p>
-											</li>
-											<li class="reason-list__item">
-												<p class="reason-list__text">Нарушения обмена веществ</p>
-											</li>
-											<li class="reason-list__item">
-												<p class="reason-list__text">Ношение тесного или синтетического белья</p>
-											</li>
-											<li class="reason-list__item">
-												<p class="reason-list__text">Частое использование прокладок</p>
-											</li>
-											<li class="reason-list__item">
-												<p class="reason-list__text">Прием гормональных контрацептивов</p>
-											</li>
-											<li class="reason-list__item">
-												<p class="reason-list__text">Большое количество углеводов в рационе</p>
-											</li>
-											<li class="reason-list__item">
-												<p class="reason-list__text">Химиотерапия</p>
-											</li>
-											<li class="reason-list__item">
-												<p class="reason-list__text">Беременность</p>
-											</li>
-										</ul>
-										<div class="margin-top specialists-page__content">
-											<p>Пусковым фактором для развития молочницы могут быть нарушения гормонального баланса. Кандидоз встречается примерно у 35 % беременных и у 30 % женщин с эндокринными заболеваниями.</p>
+									</section>
+									<section class="specialists-page__inner margin-top specialists-page__content" id="treatment" data-section="">
+										<h3>Лечение</h3>
+										<div class="specialists-page__content-wrapper">
+											<p>Если вы заметили первые признаки молочницы, обратиться к врачу и начать лечение стоит как можно скорее. Иначе рискуете запустить заболевание и получить хронический кандидоз, с которым бороться гораздо труднее.</p>
 										</div>
-									</div>
-								</section>
-								<section class="article-page__section margin-top">
-									<div class="article-page__section-layout"><svg class="article-page__section-icon" xmlns="http://www.w3.org/2000/svg" width="46" height="47" viewBox="0 0 46 47" fill="none">
-											<path d="M26.8217 10.843C26.8217 10.843 23.1678 17.2667 23.0632 17.5393L6.59172 18.5158L20.1323 23.2201L11.206 36.8455L23.5661 26.798L31.8278 42.2308L27.893 22.4372L38.168 21.9497L27.9985 19.1068L28.7534 12.0385L29.1692 6.7761L26.8217 10.843Z" fill="#31AFF2"></path>
-										</svg><svg class="article-page__section-img" width="41" height="45" viewBox="0 0 41 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path d="M26.1615 1.68279C23.9451 0.761264 21.8474 0.280466 20.1851 0C26.5177 7.25204 28.8132 16.7077 25.3303 25.3221C21.5703 34.6576 11.9923 40.5874 0.989466 41.6291C0.831151 41.6692 0.712415 41.6692 0.593679 41.6692H0.554101C0.197893 41.7093 0 41.6692 0 41.6692C0 41.6692 8.58856 46.1566 19.1165 44.7142C29.0903 43.352 38.1934 37.5023 40.4098 27.6459C43.4969 14.0634 33.8397 4.72785 26.1615 1.68279Z" fill="#6953F0"></path>
-										</svg></div>
-									<div class="article-page__section-content">
-										<h3 class="article-page__section-title">Ощущаете дискомфорт в интимной зоне?</h3>
-										<div class="article-page__section-caption">Пройдите тест и узнайте больше о решении данной проблемы</div>
-										<div class="article-page__section-buttons">
-											<div class="article-page__section-item"><a class="button button--l" href="#">Пройти тест</a></div>
-											<div class="article-page__section-item"><a class="button button--l button--purple" href="#">Задать вопрос эксперту</a></div>
+									</section>
+									<section class="article-page__content margin-top">
+										<div class="article-page__content-row">
+											<div class="article-page__content-col">
+												<div class="article-page__content-layout"><svg class="article-page__content-icon" width="109" height="89" viewBox="0 0 109 89" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M45.08 5.32001L29.68 0L5.88 46.48C1.96 53.48 0 59.92 0 65.52C0 72.24 2.24 77.84 6.72 82.32C11.2 86.8 17.08 88.76 24.08 88.76C31.08 88.76 36.96 86.8 41.44 82.32C45.92 77.84 48.44 72.24 48.44 65.52C48.44 59.92 46.48 54.88 43.12 50.68C39.76 46.48 35.28 43.68 29.68 42.56L45.08 5.32001ZM105.56 5.32001L90.16 0L66.36 46.48C62.44 53.48 60.48 59.92 60.48 65.52C60.48 72.24 62.72 77.84 67.2 82.32C71.68 86.8 77.56 88.76 84.84 88.76C91.56 88.76 97.44 86.8 101.92 82.32C106.4 77.84 108.92 72.24 108.92 65.52C108.92 59.92 106.96 54.88 103.6 50.68C100.24 46.48 95.76 43.68 90.16 42.56L105.56 5.32001Z" fill="#E0F3FD"></path>
+													</svg><svg class="article-page__content-img" width="109" height="89" viewBox="0 0 109 89" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M45.08 5.32001L29.68 0L5.88 46.48C1.96 53.48 0 59.92 0 65.52C0 72.24 2.24 77.84 6.72 82.32C11.2 86.8 17.08 88.76 24.08 88.76C31.08 88.76 36.96 86.8 41.44 82.32C45.92 77.84 48.44 72.24 48.44 65.52C48.44 59.92 46.48 54.88 43.12 50.68C39.76 46.48 35.28 43.68 29.68 42.56L45.08 5.32001ZM105.56 5.32001L90.16 0L66.36 46.48C62.44 53.48 60.48 59.92 60.48 65.52C60.48 72.24 62.72 77.84 67.2 82.32C71.68 86.8 77.56 88.76 84.84 88.76C91.56 88.76 97.44 86.8 101.92 82.32C106.4 77.84 108.92 72.24 108.92 65.52C108.92 59.92 106.96 54.88 103.6 50.68C100.24 46.48 95.76 43.68 90.16 42.56L105.56 5.32001Z" fill="#E0F3FD"></path>
+													</svg></div>
+												<div class="rail rail--reverse"></div>
+												<div class="article-page__content-container">
+													<p class="article-page__content-text">Лечение молочницы у женщин должно обязательно включать противогрибковый препарат, который действует на возбудителя заболевания. Правильное активное вещество поможет подобрать врач на основании результатов лабораторных анализов.</p>
+												</div>
+												<div class="rail rail--blue"></div>
+											</div>
 										</div>
-									</div>
-								</section>
-								<section class="specialists-page__inner margin-top specialists-page__content" id="symptoms" data-section="">
-									<h3>Симптомы</h3>
-									<div class="specialists-page__content-wrapper">
-										<p>Главный симптом молочницы у женщин — влагалищные выделения. Обычно они белые, густые и похожие на творог, но могут быть и прозрачными. Также возникает зуд, жжение и боль, которые усиливаются после принятия горячей ванны или душа. Кожа краснеет, отекает, постоянно чешется. Мочеиспускание и половой акт доставляют дискомфорт или болезненные ощущения.</p>
-										<p>У мужчин признаки не такие явные, хотя их тоже может беспокоить зуд и покраснение половых органов. А на головке члена иногда появляется белый налет.</p>
-									</div>
-								</section>
-								<section class="specialists-page__inner margin-top specialists-page__content" id="diagnostics" data-section="">
-									<h3>Диагностика</h3>
-									<div class="specialists-page__content-wrapper">
-										<p>Медикаментозное лечение молочницы у женщин включает местные противогрибковые препараты в форме свечей или кремов и лекарства для приема внутрь. Иногда терапию дополняют иммуностимулирующими средствами.</p>
-									</div>
-								</section>
-								<section class="specialists-page__inner margin-top specialists-page__content" id="funds" data-section="">
-									<h3>Средства от молочницы</h3>
-									<div class="specialists-page__content-wrapper">
-										<p>Медикаментозное лечение молочницы у женщин включает местные противогрибковые препараты в форме свечей или кремов и лекарства для приема внутрь. Иногда терапию дополняют иммуностимулирующими средствами.</p>
-									</div>
-								</section>
-								<section class="article-page__content margin-top">
-									<div class="article-page__content-row">
-										<div class="article-page__content-col">
-											<div class="video">
-												<div class="video__container">
-													<div class="video__frame"><img class="video__img" src="assets/images/video.jpg" alt=""></div>
-													<div class="video__button">
-														<div class="video__button-icon"><svg class="video__button-svg" width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-																<path d="M15 7.26795C16.3333 8.03775 16.3333 9.96225 15 10.7321L3 17.6603C1.66667 18.4301 1.01267e-06 17.4678 1.07997e-06 15.9282L1.68565e-06 2.0718C1.75295e-06 0.532196 1.66667 -0.430054 3 0.339746L15 7.26795Z" fill="white"></path>
+									</section>
+									<section class="specialists-page__inner margin-top" id="prevention" data-section="">
+										<div class="specialists-page__content margin-bottom margin-bottom--m">
+											<h3>Профилактика</h3>
+											<div class="specialists-page__content-wrapper">
+												<p>Медикаментозное лечение молочницы у женщин включает местные противогрибковые препараты в форме свечей или кремов и лекарства для приема внутрь. Иногда терапию дополняют иммуностимулирующими средствами.</p>
+											</div>
+										</div>
+										<div class="specialists-page__content-wrapper">
+											<ul class="reason-list reason-list--big">
+												<li class="reason-list__item">
+													<p class="reason-list__text">Старайтесь носить нижнее белье из хлопка, а не синтетики</p>
+												</li>
+												<li class="reason-list__item">
+													<p class="reason-list__text">Не надевайте капроновые колготки в жару</p>
+												</li>
+												<li class="reason-list__item">
+													<p class="reason-list__text">Не находитесь долго в сыром купальнике: тепло и влага — рай для грибков</p>
+												</li>
+												<li class="reason-list__item">
+													<p class="reason-list__text">Следите за рационом: в нем должно быть много кисломолочных продуктов и мало сладкого и мучного</p>
+												</li>
+												<li class="reason-list__item">
+													<p class="reason-list__text">Не используйте ароматизированные туалетную бумагу и прокладки</p>
+												</li>
+												<li class="reason-list__item">
+													<p class="reason-list__text">Тщательно следите за гигиеной: подмывайтесь каждый день, пользуйтесь личной бритвой и отдельным полотенцем</p>
+												</li>
+												<li class="reason-list__item">
+													<p class="reason-list__text">Забудьте про спринцевание как про способ гигиены: процедура нарушает микросреду влагалища и провоцирует воспалительные процессы</p>
+												</li>
+											</ul>
+										</div>
+									</section>
+									<section class="specialists-page__bottom margin-top">
+										<div class="specialists-page__bottom-row">
+											<div class="specialists-page__bottom-col">
+												<div class="specialists-page__bottom-container"><img class="specialists-page__bottom-img" src="assets/images/epigen-spray.jpg" alt=""></div>
+											</div>
+											<div class="specialists-page__bottom-col">
+												<div class="specialists-page__bottom-content">
+													<h3 class="specialists-page__bottom-title">Спрей<br>Эпиген Интим</h3>
+													<div class="specialists-page__bottom-btn"><a class="button" href="#">Подробнее</a></div>
+												</div>
+											</div>
+											<div class="specialists-page__bottom-column"></div>
+										</div>
+									</section>
+									<section class="slider-section margin-top">
+										<div class="slider-section__row">
+											<div class="slider-section__col">
+												<h3 class="slider-section__title">Статьи по теме</h3>
+											</div>
+											<div class="slider-section__col b b--reviews-slider-main-page">
+												<div class="b__control">
+													<div class="b__control-item">
+														<div class="b b--btn-left-right-slider" data-slider-button="2"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
+																<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+															</svg></div>
+													</div>
+													<div class="b__control-item">
+														<div class="b b--btn-left-right-slider b--right" data-slider-button="1"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
+																<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
 															</svg></div>
 													</div>
 												</div>
 											</div>
 										</div>
-									</div>
-								</section>
-								<section class="specialists-page__inner margin-top specialists-page__content" id="pills" data-section="">
-									<h3>Таблетки и капсулы</h3>
-									<div class="specialists-page__content-wrapper">
-										<p>Для лечения вагинального кандидоза используют антимикотики — противогрибковые средства: флуконазол, кетоконазол, натамицин. Конкретное активное вещество выбирает врач, ориентируясь на течение молочницы, сопутствующие заболевания или возраст пациента.</p>
-									</div>
-								</section>
-								<section class="specialists-page__inner margin-top specialists-page__content" id="candles" data-section="">
-									<h3>Свечи</h3>
-									<div class="specialists-page__content-wrapper">
-										<p>Для лечения молочницы во время беременности чаще используются местные средства, а не системные — так риск негативного влияния на плод минимален.</p>
-									</div>
-								</section>
-								<section class="disease-page__spray margin-top" id="spray" data-section="">
-									<div class="disease-page__spray-container">
-										<div class="disease-page__spray-row">
-											<div class="disease-page__spray-col">
-												<h3 class="disease-page__spray-title disease-page__spray-title--mobile">Спрей Эпиген Интим</h3>
-												<div class="disease-page__spray-image"><img src="assets/images/epigen-spray.jpg" alt=""></div>
-												<div class="disease-page__spray-buttons">
-													<div class="disease-page__spray-item"><a class="button button--wide" href="#">Подробнее</a></div>
-													<div class="disease-page__spray-item"><a class="button button--wide button--purple" href="#">Купить</a></div>
-												</div>
-											</div>
-											<div class="disease-page__spray-col specialists-page__content">
-												<h3 class="disease-page__spray-title">Спрей Эпиген Интим</h3>
-												<div class="disease-page__spray-column disease-page__content">
-													<p>Терапия противогрибковыми препаратами может не оказать нужного эффекта, если кандидоз протекает в сочетании с вирусной инфекцией: вирусом папилломы человека, вирусом простого герпеса или цитомегаловирусом. При этом диагностируют их редко: расширенное ПЦР-исследование, которое позволяет их выявить, не входит в ОМС. В результате после лечения противогрибковыми препаратами вирус сохраняется и способствует поддержанию воспаления в области влагалища и шейки матки. Это может спровоцировать постоянные рецидивы кандидоза.</p>
-													<p>Поэтому в случае частых рецидивов молочницы лечение противогрибковыми препаратами целесообразно дополнить спреем Эпиген Интим — противовирусным иммуностимулирующим препаратом. Он содержит активированную глицирризиновую кислоту, которую получают из экстракта корня солодки. Она обладает быстро устраняет зуд, уменьшает воспаление и повышает местный иммунитет — то, что нужно при лечении молочницы.</p>
-													<p>Удобная конструкция насадки позволяет глубоко вводить препарат и равномерно орошать стенки влагалища, а распылитель четко дозирует средство. В отличие от многих свечей, Спрей Эпиген Интим не нужно хранить в холодильнике. Его можно брать с собой повсюду: на работу, в командировки или отпуск.</p>
-													<p>Поскольку Спрей Эпиген Интим оказывает только местное воздействие, его можно использовать беременным и кормящим женщинам. Спрей совместим с другими лекарственными препаратами, поэтому его используют в составе комплексной терапии. При таком комплексном подходе противогрибковый препарат подавляет активный рост грибков, а спрей Эпиген Интим помогает скорее справиться с зудом, воспалением и жжением, а также повышает местный иммунитет. А в случае сопутствующего вирусоносительства снижает активность вирусов, предотвращая рецидивы.</p>
-													<div class="disease-page__spray-gradient"></div>
-												</div>
-											</div>
-										</div>
-										<div class="disease-page__spray-wrapper">
-											<div class="disease-page__spray-button">
-												<div class="button-show button-show--default">
-													<div class="button-show__icon"><svg class="button-show__svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-															<path d="M9.99881 6.60257V13.3795" stroke="#31AFF2" stroke-linecap="round" stroke-linejoin="round"></path>
-															<path d="M13.3907 9.99161L6.60742 9.99091" stroke="#31AFF2" stroke-linecap="round" stroke-linejoin="round"></path>
-															<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3345 0.750183H5.66549C2.64449 0.750183 0.750488 2.88918 0.750488 5.91618V14.0842C0.750488 17.1112 2.63549 19.2502 5.66549 19.2502H14.3335C17.3645 19.2502 19.2505 17.1112 19.2505 14.0842V5.91618C19.2505 2.88918 17.3645 0.750183 14.3345 0.750183Z" stroke="#31AFF2" stroke-linecap="round" stroke-linejoin="round"></path>
-														</svg></div>
-													<div class="button-show__text">подробнее</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</section>
-								<section class="specialists-page__inner margin-top specialists-page__content" id="treatment" data-section="">
-									<h3>Лечение</h3>
-									<div class="specialists-page__content-wrapper">
-										<p>Если вы заметили первые признаки молочницы, обратиться к врачу и начать лечение стоит как можно скорее. Иначе рискуете запустить заболевание и получить хронический кандидоз, с которым бороться гораздо труднее.</p>
-									</div>
-								</section>
-								<section class="article-page__content margin-top">
-									<div class="article-page__content-row">
-										<div class="article-page__content-col">
-											<div class="article-page__content-layout"><svg class="article-page__content-icon" width="109" height="89" viewBox="0 0 109 89" fill="none" xmlns="http://www.w3.org/2000/svg">
-													<path d="M45.08 5.32001L29.68 0L5.88 46.48C1.96 53.48 0 59.92 0 65.52C0 72.24 2.24 77.84 6.72 82.32C11.2 86.8 17.08 88.76 24.08 88.76C31.08 88.76 36.96 86.8 41.44 82.32C45.92 77.84 48.44 72.24 48.44 65.52C48.44 59.92 46.48 54.88 43.12 50.68C39.76 46.48 35.28 43.68 29.68 42.56L45.08 5.32001ZM105.56 5.32001L90.16 0L66.36 46.48C62.44 53.48 60.48 59.92 60.48 65.52C60.48 72.24 62.72 77.84 67.2 82.32C71.68 86.8 77.56 88.76 84.84 88.76C91.56 88.76 97.44 86.8 101.92 82.32C106.4 77.84 108.92 72.24 108.92 65.52C108.92 59.92 106.96 54.88 103.6 50.68C100.24 46.48 95.76 43.68 90.16 42.56L105.56 5.32001Z" fill="#E0F3FD"></path>
-												</svg><svg class="article-page__content-img" width="109" height="89" viewBox="0 0 109 89" fill="none" xmlns="http://www.w3.org/2000/svg">
-													<path d="M45.08 5.32001L29.68 0L5.88 46.48C1.96 53.48 0 59.92 0 65.52C0 72.24 2.24 77.84 6.72 82.32C11.2 86.8 17.08 88.76 24.08 88.76C31.08 88.76 36.96 86.8 41.44 82.32C45.92 77.84 48.44 72.24 48.44 65.52C48.44 59.92 46.48 54.88 43.12 50.68C39.76 46.48 35.28 43.68 29.68 42.56L45.08 5.32001ZM105.56 5.32001L90.16 0L66.36 46.48C62.44 53.48 60.48 59.92 60.48 65.52C60.48 72.24 62.72 77.84 67.2 82.32C71.68 86.8 77.56 88.76 84.84 88.76C91.56 88.76 97.44 86.8 101.92 82.32C106.4 77.84 108.92 72.24 108.92 65.52C108.92 59.92 106.96 54.88 103.6 50.68C100.24 46.48 95.76 43.68 90.16 42.56L105.56 5.32001Z" fill="#E0F3FD"></path>
-												</svg></div>
-											<div class="rail rail--reverse"></div>
-											<div class="article-page__content-container">
-												<p class="article-page__content-text">Лечение молочницы у женщин должно обязательно включать противогрибковый препарат, который действует на возбудителя заболевания. Правильное активное вещество поможет подобрать врач на основании результатов лабораторных анализов.</p>
-											</div>
-											<div class="rail rail--blue"></div>
-										</div>
-									</div>
-								</section>
-								<section class="specialists-page__inner margin-top" id="prevention" data-section="">
-									<div class="specialists-page__content margin-bottom margin-bottom--m">
-										<h3>Профилактика</h3>
-										<div class="specialists-page__content-wrapper">
-											<p>Медикаментозное лечение молочницы у женщин включает местные противогрибковые препараты в форме свечей или кремов и лекарства для приема внутрь. Иногда терапию дополняют иммуностимулирующими средствами.</p>
-										</div>
-									</div>
-									<div class="specialists-page__content-wrapper">
-										<ul class="reason-list reason-list--big">
-											<li class="reason-list__item">
-												<p class="reason-list__text">Старайтесь носить нижнее белье из хлопка, а не синтетики</p>
-											</li>
-											<li class="reason-list__item">
-												<p class="reason-list__text">Не надевайте капроновые колготки в жару</p>
-											</li>
-											<li class="reason-list__item">
-												<p class="reason-list__text">Не находитесь долго в сыром купальнике: тепло и влага — рай для грибков</p>
-											</li>
-											<li class="reason-list__item">
-												<p class="reason-list__text">Следите за рационом: в нем должно быть много кисломолочных продуктов и мало сладкого и мучного</p>
-											</li>
-											<li class="reason-list__item">
-												<p class="reason-list__text">Не используйте ароматизированные туалетную бумагу и прокладки</p>
-											</li>
-											<li class="reason-list__item">
-												<p class="reason-list__text">Тщательно следите за гигиеной: подмывайтесь каждый день, пользуйтесь личной бритвой и отдельным полотенцем</p>
-											</li>
-											<li class="reason-list__item">
-												<p class="reason-list__text">Забудьте про спринцевание как про способ гигиены: процедура нарушает микросреду влагалища и провоцирует воспалительные процессы</p>
-											</li>
-										</ul>
-									</div>
-								</section>
-								<section class="specialists-page__bottom margin-top">
-									<div class="specialists-page__bottom-row">
-										<div class="specialists-page__bottom-col">
-											<div class="specialists-page__bottom-container"><img class="specialists-page__bottom-img" src="assets/images/epigen-spray.jpg" alt=""></div>
-										</div>
-										<div class="specialists-page__bottom-col">
-											<div class="specialists-page__bottom-content">
-												<h3 class="specialists-page__bottom-title">Спрей<br>Эпиген Интим</h3>
-												<div class="specialists-page__bottom-btn"><a class="button" href="#">Подробнее</a></div>
+										<div class="slider swiper-container" data-slider-id="1" data-slider-next="1" data-slider-prev="2">
+											<div class="swiper-wrapper">
+												<div class="slider__item swiper-slide"><a class="card" href="#">
+														<div class="card__container"><img class="card__img" src="assets/images/card-1.jpg" alt="">
+															<div class="card__label">Клинические рекомендации</div>
+														</div>
+														<div class="card__row">
+															<div class="card__doctor">
+																<div class="card__avatar"><img class="card__icon" src="assets/images/doctor.jpg" alt=""></div>
+																<div class="card__name">Пустотина Ольга Анатольевна</div>
+															</div>
+														</div>
+														<h3 class="card__title">Молочница: все, что нужно знать о заболевании</h3>
+													</a></div>
+												<div class="slider__item swiper-slide"><a class="card" href="#">
+														<div class="card__container"><img class="card__img" src="assets/images/card-1.jpg" alt="">
+															<div class="card__label">Клинические рекомендации</div>
+														</div>
+														<div class="card__row">
+															<div class="card__doctor">
+																<div class="card__avatar"><img class="card__icon" src="assets/images/doctor.jpg" alt=""></div>
+																<div class="card__name">Пустотина Ольга Анатольевна</div>
+															</div>
+														</div>
+														<h3 class="card__title">Молочница: все, что нужно знать о заболевании</h3>
+													</a></div>
+												<div class="slider__item swiper-slide"><a class="card" href="#">
+														<div class="card__container"><img class="card__img" src="assets/images/card-1.jpg" alt="">
+															<div class="card__label">Клинические рекомендации</div>
+														</div>
+														<div class="card__row">
+															<div class="card__doctor">
+																<div class="card__avatar"><img class="card__icon" src="assets/images/doctor.jpg" alt=""></div>
+																<div class="card__name">Пустотина Ольга Анатольевна</div>
+															</div>
+														</div>
+														<h3 class="card__title">Молочница: все, что нужно знать о заболевании</h3>
+													</a></div>
+												<div class="slider__item swiper-slide"><a class="card" href="#">
+														<div class="card__container"><img class="card__img" src="assets/images/card-1.jpg" alt="">
+															<div class="card__label">Клинические рекомендации</div>
+														</div>
+														<div class="card__row">
+															<div class="card__doctor">
+																<div class="card__avatar"><img class="card__icon" src="assets/images/doctor.jpg" alt=""></div>
+																<div class="card__name">Пустотина Ольга Анатольевна</div>
+															</div>
+														</div>
+														<h3 class="card__title">Молочница: все, что нужно знать о заболевании</h3>
+													</a></div>
+												<div class="slider__item swiper-slide"><a class="card" href="#">
+														<div class="card__container"><img class="card__img" src="assets/images/card-1.jpg" alt="">
+															<div class="card__label">Клинические рекомендации</div>
+														</div>
+														<div class="card__row">
+															<div class="card__doctor">
+																<div class="card__avatar"><img class="card__icon" src="assets/images/doctor.jpg" alt=""></div>
+																<div class="card__name">Пустотина Ольга Анатольевна</div>
+															</div>
+														</div>
+														<h3 class="card__title">Молочница: все, что нужно знать о заболевании</h3>
+													</a></div>
+												<div class="slider__item swiper-slide"><a class="card" href="#">
+														<div class="card__container"><img class="card__img" src="assets/images/card-1.jpg" alt="">
+															<div class="card__label">Клинические рекомендации</div>
+														</div>
+														<div class="card__row">
+															<div class="card__doctor">
+																<div class="card__avatar"><img class="card__icon" src="assets/images/doctor.jpg" alt=""></div>
+																<div class="card__name">Пустотина Ольга Анатольевна</div>
+															</div>
+														</div>
+														<h3 class="card__title">Молочница: все, что нужно знать о заболевании</h3>
+													</a></div>
+												<div class="slider__item swiper-slide"><a class="card" href="#">
+														<div class="card__container"><img class="card__img" src="assets/images/card-1.jpg" alt="">
+															<div class="card__label">Клинические рекомендации</div>
+														</div>
+														<div class="card__row">
+															<div class="card__doctor">
+																<div class="card__avatar"><img class="card__icon" src="assets/images/doctor.jpg" alt=""></div>
+																<div class="card__name">Пустотина Ольга Анатольевна</div>
+															</div>
+														</div>
+														<h3 class="card__title">Молочница: все, что нужно знать о заболевании</h3>
+													</a></div>
+												<div class="slider__item swiper-slide"><a class="card" href="#">
+														<div class="card__container"><img class="card__img" src="assets/images/card-1.jpg" alt="">
+															<div class="card__label">Клинические рекомендации</div>
+														</div>
+														<div class="card__row">
+															<div class="card__doctor">
+																<div class="card__avatar"><img class="card__icon" src="assets/images/doctor.jpg" alt=""></div>
+																<div class="card__name">Пустотина Ольга Анатольевна</div>
+															</div>
+														</div>
+														<h3 class="card__title">Молочница: все, что нужно знать о заболевании</h3>
+													</a></div>
+												<div class="slider__item swiper-slide"><a class="card" href="#">
+														<div class="card__container"><img class="card__img" src="assets/images/card-1.jpg" alt="">
+															<div class="card__label">Клинические рекомендации</div>
+														</div>
+														<div class="card__row">
+															<div class="card__doctor">
+																<div class="card__avatar"><img class="card__icon" src="assets/images/doctor.jpg" alt=""></div>
+																<div class="card__name">Пустотина Ольга Анатольевна</div>
+															</div>
+														</div>
+														<h3 class="card__title">Молочница: все, что нужно знать о заболевании</h3>
+													</a></div>
 											</div>
 										</div>
-										<div class="specialists-page__bottom-column"></div>
-									</div>
-								</section>
-								<section class="slider-section margin-top">
-									<div class="slider-section__row">
-										<div class="slider-section__col">
-											<h3 class="slider-section__title">Статьи по теме</h3>
-										</div>
-										<div class="slider-section__col b b--reviews-slider-main-page">
-											<div class="b__control">
-												<div class="b__control-item">
-													<div class="b b--btn-left-right-slider" data-slider-button="2"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
-															<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
-														</svg></div>
-												</div>
-												<div class="b__control-item">
-													<div class="b b--btn-left-right-slider b--right" data-slider-button="1"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
-															<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
-														</svg></div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="slider swiper-container" data-slider-id="1" data-slider-next="1" data-slider-prev="2">
-										<div class="swiper-wrapper">
-											<div class="slider__item swiper-slide"><a class="card" href="#">
-													<div class="card__container"><img class="card__img" src="assets/images/card-1.jpg" alt="">
-														<div class="card__label">Клинические рекомендации</div>
-													</div>
-													<div class="card__row">
-														<div class="card__doctor">
-															<div class="card__avatar"><img class="card__icon" src="assets/images/doctor.jpg" alt=""></div>
-															<div class="card__name">Пустотина Ольга Анатольевна</div>
-														</div>
-													</div>
-													<h3 class="card__title">Молочница: все, что нужно знать о заболевании</h3>
-												</a></div>
-											<div class="slider__item swiper-slide"><a class="card" href="#">
-													<div class="card__container"><img class="card__img" src="assets/images/card-1.jpg" alt="">
-														<div class="card__label">Клинические рекомендации</div>
-													</div>
-													<div class="card__row">
-														<div class="card__doctor">
-															<div class="card__avatar"><img class="card__icon" src="assets/images/doctor.jpg" alt=""></div>
-															<div class="card__name">Пустотина Ольга Анатольевна</div>
-														</div>
-													</div>
-													<h3 class="card__title">Молочница: все, что нужно знать о заболевании</h3>
-												</a></div>
-											<div class="slider__item swiper-slide"><a class="card" href="#">
-													<div class="card__container"><img class="card__img" src="assets/images/card-1.jpg" alt="">
-														<div class="card__label">Клинические рекомендации</div>
-													</div>
-													<div class="card__row">
-														<div class="card__doctor">
-															<div class="card__avatar"><img class="card__icon" src="assets/images/doctor.jpg" alt=""></div>
-															<div class="card__name">Пустотина Ольга Анатольевна</div>
-														</div>
-													</div>
-													<h3 class="card__title">Молочница: все, что нужно знать о заболевании</h3>
-												</a></div>
-											<div class="slider__item swiper-slide"><a class="card" href="#">
-													<div class="card__container"><img class="card__img" src="assets/images/card-1.jpg" alt="">
-														<div class="card__label">Клинические рекомендации</div>
-													</div>
-													<div class="card__row">
-														<div class="card__doctor">
-															<div class="card__avatar"><img class="card__icon" src="assets/images/doctor.jpg" alt=""></div>
-															<div class="card__name">Пустотина Ольга Анатольевна</div>
-														</div>
-													</div>
-													<h3 class="card__title">Молочница: все, что нужно знать о заболевании</h3>
-												</a></div>
-											<div class="slider__item swiper-slide"><a class="card" href="#">
-													<div class="card__container"><img class="card__img" src="assets/images/card-1.jpg" alt="">
-														<div class="card__label">Клинические рекомендации</div>
-													</div>
-													<div class="card__row">
-														<div class="card__doctor">
-															<div class="card__avatar"><img class="card__icon" src="assets/images/doctor.jpg" alt=""></div>
-															<div class="card__name">Пустотина Ольга Анатольевна</div>
-														</div>
-													</div>
-													<h3 class="card__title">Молочница: все, что нужно знать о заболевании</h3>
-												</a></div>
-											<div class="slider__item swiper-slide"><a class="card" href="#">
-													<div class="card__container"><img class="card__img" src="assets/images/card-1.jpg" alt="">
-														<div class="card__label">Клинические рекомендации</div>
-													</div>
-													<div class="card__row">
-														<div class="card__doctor">
-															<div class="card__avatar"><img class="card__icon" src="assets/images/doctor.jpg" alt=""></div>
-															<div class="card__name">Пустотина Ольга Анатольевна</div>
-														</div>
-													</div>
-													<h3 class="card__title">Молочница: все, что нужно знать о заболевании</h3>
-												</a></div>
-											<div class="slider__item swiper-slide"><a class="card" href="#">
-													<div class="card__container"><img class="card__img" src="assets/images/card-1.jpg" alt="">
-														<div class="card__label">Клинические рекомендации</div>
-													</div>
-													<div class="card__row">
-														<div class="card__doctor">
-															<div class="card__avatar"><img class="card__icon" src="assets/images/doctor.jpg" alt=""></div>
-															<div class="card__name">Пустотина Ольга Анатольевна</div>
-														</div>
-													</div>
-													<h3 class="card__title">Молочница: все, что нужно знать о заболевании</h3>
-												</a></div>
-											<div class="slider__item swiper-slide"><a class="card" href="#">
-													<div class="card__container"><img class="card__img" src="assets/images/card-1.jpg" alt="">
-														<div class="card__label">Клинические рекомендации</div>
-													</div>
-													<div class="card__row">
-														<div class="card__doctor">
-															<div class="card__avatar"><img class="card__icon" src="assets/images/doctor.jpg" alt=""></div>
-															<div class="card__name">Пустотина Ольга Анатольевна</div>
-														</div>
-													</div>
-													<h3 class="card__title">Молочница: все, что нужно знать о заболевании</h3>
-												</a></div>
-											<div class="slider__item swiper-slide"><a class="card" href="#">
-													<div class="card__container"><img class="card__img" src="assets/images/card-1.jpg" alt="">
-														<div class="card__label">Клинические рекомендации</div>
-													</div>
-													<div class="card__row">
-														<div class="card__doctor">
-															<div class="card__avatar"><img class="card__icon" src="assets/images/doctor.jpg" alt=""></div>
-															<div class="card__name">Пустотина Ольга Анатольевна</div>
-														</div>
-													</div>
-													<h3 class="card__title">Молочница: все, что нужно знать о заболевании</h3>
-												</a></div>
-										</div>
-									</div>
-								</section>
+									</section>
+								</main>
 								<footer class="footer page__footer" data-aos="fade-up">
 									<div class="footer__top">
 										<div class="footer__row">
@@ -635,6 +801,193 @@
 								</footer>
 							</div>
 						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal" data-modal="3">
+				<div class="modal-test">
+					<div class="modal-test__container">
+						<div class="test">
+							<form class="test__container" action="/">
+								<div class="test__row">
+									<div class="test__col">
+										<div class="test__question">Какие проявления в интимной зоне вас беспокоят?</div>
+										<ul class="test__dots">
+											<li class="test__dot test__dot--active"></li>
+											<li class="test__dot"></li>
+											<li class="test__dot"></li>
+											<li class="test__dot"></li>
+											<li class="test__dot"></li>
+										</ul>
+									</div>
+									<div class="test__col">
+										<div class="test__options test__options--active"><label class="test__label" for="#"><input class="test__radio" type="radio">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Обильные выделения без неприятного запаха</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Выделения с неприятным запахом</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Болезненные пузырьки в интимной зоне, превращающиеся в язвы</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Безболезненные папилломы, узелки, наросты или бородавки в интимной зоне</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Что-то другое, не указанное выше</div>
+											</label></div>
+										<div class="test__options"><label class="test__label" for="#"><input class="test__radio" type="radio">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Обильные выделения без неприятного запаха</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Выделения с неприятным запахом</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Болезненные пузырьки в интимной зоне, превращающиеся в язвы</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Безболезненные папилломы, узелки, наросты или бородавки в интимной зоне</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Что-то другое, не указанное выше</div>
+											</label></div>
+										<div class="test__options"><label class="test__label" for="#"><input class="test__radio" type="radio">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Обильные выделения без неприятного запаха</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Выделения с неприятным запахом</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Болезненные пузырьки в интимной зоне, превращающиеся в язвы</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Безболезненные папилломы, узелки, наросты или бородавки в интимной зоне</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Что-то другое, не указанное выше</div>
+											</label></div>
+										<div class="test__options"><label class="test__label" for="#"><input class="test__radio" type="radio">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Обильные выделения без неприятного запаха</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Выделения с неприятным запахом</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Болезненные пузырьки в интимной зоне, превращающиеся в язвы</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Безболезненные папилломы, узелки, наросты или бородавки в интимной зоне</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Что-то другое, не указанное выше</div>
+											</label></div>
+										<div class="test__options"><label class="test__label" for="#"><input class="test__radio" type="radio">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Обильные выделения без неприятного запаха</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Выделения с неприятным запахом</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Болезненные пузырьки в интимной зоне, превращающиеся в язвы</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Безболезненные папилломы, узелки, наросты или бородавки в интимной зоне</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Что-то другое, не указанное выше</div>
+											</label></div>
+									</div>
+								</div>
+								<div class="test__index">1</div>
+							</form>
+							<div class="test__result">
+								<div class="test__result-container">
+									<div class="test__result-row">
+										<div class="test__result-col">
+											<div class="test__result-caption">возможный диагноз</div>
+											<h3 class="test__result-title">Бактериальный вагиноз</h3>
+											<p class="test__result-text">Неприятный запах выделений из половых путей часто сопровождает бактериальный вагиноз. Для уточнения диагноза и исключения инфекций, передаваемых половым путем, необходимо обратиться к врачу и сдать дополнительные анализы, без них разобраться в проблеме будет сложно.</p>
+											<div class="test__result-label">
+												<div class="link-text link-text--s">Для повышения эффективности лечения попробуйте спрей <a class="link-text__link" href="#">Эпиген Интим</a> . Он обладает противовоспалительным и местным иммуностимулирующим эффектом.</div>
+											</div>
+										</div>
+										<div class="test__result-col">
+											<div class="test__form">
+												<div class="test__form-wrapper">
+													<h4 class="test__form-title">Для получения результатов теста укажите E&#8209;mail</h4>
+													<form class="form" action="/">
+														<div class="test__form-item"><input class="form__input" name="email" placeholder="E-mail"></div>
+														<div class="test__form-item"><button class="button button--wide" type="submit">Отправить результаты теста на почту</button></div>
+													</form>
+												</div>
+												<div class="test__form-response">Результат отправлен на почту<br><span class="test__form-email"></span></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-test__button">
+						<div class="button-close" data-button="3"><svg class="button-close__svg" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M13.9926 1.00598L1.0061 13.9924" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+								<path d="M13.9973 14L1 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+							</svg></div>
 					</div>
 				</div>
 			</div>
