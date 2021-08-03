@@ -129,6 +129,10 @@
 .test {
   $comp: &;
 
+  position: relative;
+
+  min-height: 444px;
+
   border-radius: 10px;
   background-color: $color-aqua;
 
@@ -136,6 +140,13 @@
     padding: 62px calc(#{$col-width-d});
 
     position: relative;
+
+    transition: $transition;
+
+    &--hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
   }
   &__row {
     display: flex;
@@ -163,10 +174,14 @@
         margin-top: 15px;
       }
 
+      display: flex;
+
       width: calc(#{$col-width-d} * 8);
       @media (max-width: $breakpoint - 1px) {
         width: 100%;
       }
+
+      overflow: hidden
     }
   }
   &__question {
@@ -200,9 +215,9 @@
       height: $size-m;
     }
 
+    transition: $transition;
     border-radius: 50%;
     background-color: $color-white;
-    cursor: pointer;
 
     &:not(:first-child) {
       margin-left: 15px;
@@ -213,6 +228,22 @@
 
     &--active {
       background-color: $color-blue;
+    }
+  }
+  &__options {
+    position: absolute;
+
+    width: 100%;
+    flex-shrink: 0;
+
+    opacity: 0;
+    pointer-events: none;
+
+    &--active {
+      position: static;
+
+      opacity: 1;
+      pointer-events: all;
     }
   }
   &__label {
@@ -305,5 +336,101 @@
     @media (max-width: $breakpoint - 1px) {
       @include fsl(13px);
     }
+  }
+
+  &__result {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: $transition;
+
+    &--active {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+  &__result-container {
+    padding: 40px calc(#{$col-width-d});
+  }
+  &__result-row {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__result-col {
+    flex-shrink: 0;
+
+    width: calc(#{$col-width-d} * 7);
+  }
+  &__result-caption {
+    margin-bottom: 10px;
+
+    text-transform: uppercase;
+    @include fsl(13px, 120%);
+  }
+  &__result-title {
+    margin-bottom: 30px;
+
+    font-weight: 400;
+    color: $color-blue;
+    @include fsl(25px, 120%);
+  }
+  &__result-text {
+    margin-bottom: 15px;
+
+    @include fsl(13px, 140%);
+  }
+  &__result-label {
+    padding: 20px;
+
+    background-color: $color-white;
+    border-radius: 10px;
+  }
+
+  &__form {
+    position: relative;
+  }
+  &__form-wrapper {
+    transition: $transition;
+
+    &--hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+  &__form-title {
+    margin-bottom: 30px;
+
+    width: calc(#{$col-width-d} * 6);
+
+    font-weight: 400;
+    @include fsl(20px, 140%);
+  }
+  &__form-item {
+
+    &:not(:first-child) {
+      margin-top: 15px;
+    }
+  }
+  &__form-response {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: $transition;
+    @include fsl(20px, 140%);
+
+    &--active {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+  &__form-email {
+    font-weight: 500;
   }
 }

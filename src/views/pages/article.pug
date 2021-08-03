@@ -564,16 +564,44 @@ block content
                   - for (i = 0; i < 5; i++)
                     li.test__dot(class = ((i === 0) ? 'test__dot--active' : ''))
               .test__col
-                .test__options
-                  each item in ['Обильные выделения без неприятного запаха', 'Выделения с неприятным запахом', 'Болезненные пузырьки в интимной зоне, превращающиеся в язвы', 'Безболезненные папилломы, узелки, наросты или бородавки в интимной зоне', 'Что-то другое, не указанное выше']
-                    label.test__label(for="#")
-                      input.test__radio(type="radio")
-                      .test__icon
-                        +check-svg
-                      .test__text
-                        |#{item}
+                - for (i = 0; i < 5; i++)
+                  .test__options(class = ((i === 0) ? 'test__options--active' : ''))
+                    each item in ['Обильные выделения без неприятного запаха', 'Выделения с неприятным запахом', 'Болезненные пузырьки в интимной зоне, превращающиеся в язвы', 'Безболезненные папилломы, узелки, наросты или бородавки в интимной зоне', 'Что-то другое, не указанное выше']
+                      label.test__label(for="#")
+                        input.test__radio(type="radio")
+                        .test__icon
+                          +check-svg
+                        .test__text
+                          |#{item}
             .test__index
               |1
+          .test__result
+            .test__result-container
+              .test__result-row
+                .test__result-col
+                  .test__result-caption
+                    |возможный диагноз
+                  h3.test__result-title
+                    |Бактериальный вагиноз
+                  p.test__result-text
+                    |Неприятный запах выделений из половых путей часто сопровождает бактериальный вагиноз. Для уточнения диагноза и исключения инфекций, передаваемых половым путем, необходимо обратиться к врачу и сдать дополнительные анализы, без них разобраться в проблеме будет сложно.
+                  .test__result-label
+                    .link-text.link-text--s
+                      |Для повышения эффективности лечения попробуйте спрей #[a.link-text__link(href='#') Эпиген Интим] . Он обладает противовоспалительным и местным иммуностимулирующим эффектом.
+                .test__result-col
+                  .test__form
+                    .test__form-wrapper
+                      h4.test__form-title
+                        |Для получения результатов теста укажите E&#8209;mail
+                      form.form(action='/')
+                        .test__form-item
+                          input.form__input(type="text" name="email" placeholder="E-mail")
+                        .test__form-item
+                          button.button.button--wide(type='submit')
+                            |Отправить результаты теста на почту
+                    .test__form-response
+                      |Результат отправлен на почту#[br]
+                      span.test__form-email
       .modal-test__button
         .button-close(data-button='3')
           +cross-svg.button-close__svg
