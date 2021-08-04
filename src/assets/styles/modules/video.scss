@@ -1,5 +1,14 @@
 .video {
+  $comp: &;
+
   cursor: pointer;
+
+  &:hover {
+    #{$comp}__button-icon {
+      transform: scale(1.35);
+      background-color: $color-purple;
+    }
+  }
 
   &__container {
     position: relative;
@@ -35,6 +44,7 @@
     align-items: center;
     justify-content: center;
 
+    transition: $transition;
     background-color: $color-blue;
     border-radius: 50%;
   }
