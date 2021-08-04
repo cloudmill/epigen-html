@@ -1,0 +1,16 @@
+//-
+  __frame
+    --left / --right
+    --front
+    --open
+
+mixin block
+  .block
+    .block__frame.block__frame--left.block__frame--open
+      +block__slide
+    .block__frame.block__frame--right.block__frame--open
+      +block__slide
+
+mixin block__slide
+  .block__slide
+    |block slide

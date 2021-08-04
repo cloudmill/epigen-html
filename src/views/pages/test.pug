@@ -1,14 +1,15 @@
 extends ../layouts/master.pug
 
-//- block cookies
+block cookies
 //- block grid-test
 
-mixin product-link
-  a.product-link(class=attributes.class href='#')
-    .product-link__image
-      img.product-link__img(src=attributes.src)
-    .product-link__text
-      block
+include ../components/block.pug
 
 block content
-  canvas.canvas
+  .container
+    .row
+      .row__col.row__col--aside
+        |test
+      .row__col.row__col--main
+        |test
+        +block

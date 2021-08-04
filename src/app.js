@@ -11,37 +11,37 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
 
 
-  // nav-page-d
-  ; (() => {
-    $(() => {
-      const components = $('.nav-page-d')
+// nav-page-d
+; (() => {
+  $(() => {
+    const components = $('.nav-page-d')
 
-      components.each(function () {
-        const component = $(this)
+    components.each(function () {
+      const component = $(this)
 
-        const state = {
-          activeItem: component.find('.nav-page-d__item--active'),
+      const state = {
+        activeItem: component.find('.nav-page-d__item--active'),
 
-          setActiveItem: item => {
-            state.activeItem.removeClass('nav-page-d__item--active')
-            state.activeItem = item
-            state.activeItem.addClass('nav-page-d__item--active')
-          },
-        }
+        setActiveItem: item => {
+          state.activeItem.removeClass('nav-page-d__item--active')
+          state.activeItem = item
+          state.activeItem.addClass('nav-page-d__item--active')
+        },
+      }
 
-        const links = component.find('.nav-page-d__link')
+      const links = component.find('.nav-page-d__link')
 
-        links.on('click', function (event) {
-          event.preventDefault()
+      links.on('click', function (event) {
+        event.preventDefault()
 
-          const link = $(this)
-          const item = link.closest('.nav-page-d__item')
+        const link = $(this)
+        const item = link.closest('.nav-page-d__item')
 
-          state.setActiveItem(item)
-        })
+        state.setActiveItem(item)
       })
     })
-  })()
+  })
+})()
 
 // burger btn
 {
@@ -1013,4 +1013,17 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       $('.test__form-email').text(formInput.val())
     })
   });
+}
+
+// block
+{
+  $(() => {
+    const blocks = $('.block')
+
+    blocks.each(function () {
+      const block = $(this)
+
+      console.log('block')
+    })
+  })
 }
