@@ -15,9 +15,10 @@ export default class Slider {
     this.setActive(this.$slides[0]);
 
     this.$root.addEventListener('click', (e) => {
+      // const $target = e.target;
       const $target = e.target.closest('.b--btn-left-right-slider');
 
-      if ($target.dataset.commandSliderArrow) {
+      if ($target) {
         switch($target.dataset.commandSliderArrow) {
           case 'prev':
             if (this.$active.previousElementSibling) {

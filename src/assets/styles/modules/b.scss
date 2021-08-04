@@ -12,7 +12,7 @@
     padding: 11px 20px;
     min-height: 40px;
     display: inline-flex;
-    @media (max-width: $breakpoint-l - 1px) {
+    @media (max-width: $breakpoint - 1px) {
       display: none;
     }
     align-items: center;
@@ -26,6 +26,9 @@
   // верхний отступ carousel-slider'a на гравной, десктоп
   &--carousel-slider-desktop-margin-top-in-main-page {
     margin-top: 60px;
+    @media (max-width: $breakpoint - 1px) {
+      margin-top: 30px;
+    }
   }
 
   // "карусель" слайдер, на главной, десктоп
@@ -126,6 +129,9 @@
 
     #{$comp}__top {
       margin-bottom: 80px;
+      @media (max-width: $breakpoint - 1px) {
+        margin-bottom: 30px;
+      }
     }
     #{$comp}__bottom {
       display: flex;
@@ -133,6 +139,9 @@
 
     #{$comp}__top-row {
       display: flex;
+      @media (max-width: $breakpoint - 1px) {
+        display: block;
+      }
       justify-content: space-between;
     }
     #{$comp}__top-col {
@@ -140,6 +149,10 @@
 
       &:not(:first-child) {
         margin-left: calc(#{$col-width-d});
+        @media (max-width: $breakpoint - 1px) {
+          margin-left: 0;
+          margin-top: 30px;
+        }
       }
     }
 

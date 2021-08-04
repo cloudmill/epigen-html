@@ -612,7 +612,8 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 // review slider
 {
   $(() => {
-    const slider = new Slider(".page-consultation__expert-slider");
+    // const slider = new Slider(".page-consultation__expert-slider");
+    const slider = new Slider(".b--reviews-slider-main-page");
   })
 }
 
