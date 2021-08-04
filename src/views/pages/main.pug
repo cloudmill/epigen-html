@@ -115,25 +115,26 @@ block content
                             .panel__product-text
                               |Гель
                     .panel__wrapper
-                      .panel__wrapper-col
-                        .panel__inner
-                          a.panel__where-buy(href='#')
-                            |Где купить
-                          .panel__choice
-                            .panel__choice-item(data-count=8 data-modal-button='3')
-                              |Симптомы
-                            .panel__choice-item(data-count=12 data-modal-button='2')
-                              |Заболевания
-                      .panel__wrapper-col
-                        .panel__inner
-                          .panel__test(data-button='3')
-                            +calendar-test-svg.panel__test-icon
-                            .panel__test-text
-                              |Пройти тест
-                          .panel__consultation
-                            +consultation-svg.panel__consultation-svg
-                            .panel__consultation-text
-                              |Консультация эксперта
+                      .panel__wrapper-row
+                        .panel__wrapper-col
+                          .panel__inner
+                            a.panel__where-buy(href='#')
+                              |Где купить
+                            .panel__choice
+                              .panel__choice-item(data-count=8 data-modal-button='3')
+                                |Симптомы
+                              .panel__choice-item(data-count=12 data-modal-button='2')
+                                |Заболевания
+                        .panel__wrapper-col
+                          .panel__inner
+                            .panel__test(data-button='3')
+                              +calendar-test-svg.panel__test-icon
+                              .panel__test-text
+                                |Пройти тест
+                            .panel__consultation
+                              +consultation-svg.panel__consultation-svg
+                              .panel__consultation-text
+                                |Консультация эксперта
                       .panel__modals
                         .panel-modal(data-modal-id='2')
                           .panel-modal__container

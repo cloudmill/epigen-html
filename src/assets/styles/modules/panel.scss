@@ -171,10 +171,12 @@
       flex-shrink: 1;
     }
 
+    background-color: $color-white;
+  }
+  &__wrapper-row {
     display: flex;
     justify-content: space-between;
-
-    background-color: $color-white;
+    height: 100%;
   }
   &__wrapper-col {
     height: 100%;
