@@ -4,6 +4,7 @@ import Swiper from 'swiper/bundle';
 import Slider from 'scripts/slider.js';
 import Sticky from 'sticky-js';
 import AOS from 'aos';
+import 'parsleyjs';
 
 // vars
 const BREAKPOINT = 1280
@@ -831,5 +832,13 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       resultResponse.addClass('test__form-response--active')
       $('.test__form-email').text(formInput.val())
     })
+  });
+}
+
+// parsley
+{
+  $(() => {
+    $("form").parsley();
+
   });
 }
