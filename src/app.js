@@ -617,6 +617,13 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
   })
 }
 
+// main page carousel slider
+{
+  $(() => {
+    const slider = new Slider('.b--carousel-slider-desktop')
+  })
+}
+
 // spray-article text crop
 {
   $(() => {

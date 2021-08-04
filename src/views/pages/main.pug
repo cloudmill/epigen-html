@@ -280,12 +280,13 @@ block content
                   a.b.b--border-link(href='#')
                     |Все статьи
               .b.b--carousel-slider-desktop.b--carousel-slider-desktop-margin-top-in-main-page
-                .b.b--btn-left-right-slider.b--left.b__btn.b__btn--left
-                  +simple-arrow-svg.b__svg
-                .b.b--btn-left-right-slider.b--right.b__btn.b__btn--right
-                  +simple-arrow-svg.b__svg
-                each slide in [1, 2, 3]
-                  .b__slide(class=(slide === 1 ? 'b__slide--active' : ''))
+                .b__bottom
+                  .b__slide
+                    .b__buttons
+                      .b.b--btn-left-right-slider.b--left.b__btn.b__btn--left(data-command-slider-arrow='prev')
+                        +simple-arrow-svg.b__svg
+                      .b.b--btn-left-right-slider.b--right.b__btn.b__btn--right(data-command-slider-arrow='next')
+                        +simple-arrow-svg.b__svg
                     .b__row
                       a.b__col(href='#')
                         img.b__img(src='assets/images/carousel-1.jpeg')
@@ -305,6 +306,77 @@ block content
                           |Непроходимость маточных труб
                         span.b__label
                           |Исследования
+                  .b__slide
+                    .b__buttons
+                      .b.b--btn-left-right-slider.b--left.b__btn.b__btn--left(data-command-slider-arrow='prev')
+                        +simple-arrow-svg.b__svg
+                      .b.b--btn-left-right-slider.b--right.b__btn.b__btn--right(data-command-slider-arrow='next')
+                        +simple-arrow-svg.b__svg
+                    .b__row
+                      a.b__col(href='#')
+                        img.b__img(src='assets/images/carousel-3.jpeg')
+                        h3.b__title
+                          |Миома матки: симптомы, лечение, профилактика
+                        span.b__label
+                          |Клинические рекомендации
+                      a.b__col(href='#')
+                        img.b__img(src='assets/images/carousel-1.jpeg')
+                        h3.b__title
+                          |Кровотечение при миоме
+                        span.b__label
+                          |Обучение
+                      a.b__col(href='#')
+                        img.b__img(src='assets/images/carousel-2.jpeg')
+                        h3.b__title
+                          |Непроходимость маточных труб
+                        span.b__label
+                          |Исследования
+                  .b__slide
+                    .b__buttons
+                      .b.b--btn-left-right-slider.b--left.b__btn.b__btn--left(data-command-slider-arrow='prev')
+                        +simple-arrow-svg.b__svg
+                      .b.b--btn-left-right-slider.b--right.b__btn.b__btn--right(data-command-slider-arrow='next')
+                        +simple-arrow-svg.b__svg
+                    .b__row
+                      a.b__col(href='#')
+                        img.b__img(src='assets/images/carousel-2.jpeg')
+                        h3.b__title
+                          |Миома матки: симптомы, лечение, профилактика
+                        span.b__label
+                          |Клинические рекомендации
+                      a.b__col(href='#')
+                        img.b__img(src='assets/images/carousel-3.jpeg')
+                        h3.b__title
+                          |Кровотечение при миоме
+                        span.b__label
+                          |Обучение
+                      a.b__col(href='#')
+                        img.b__img(src='assets/images/carousel-1.jpeg')
+                        h3.b__title
+                          |Непроходимость маточных труб
+                        span.b__label
+                          |Исследования
+              .b.b--carousel-slider-mobile.swiper-container(data-slider-id='2')
+                .swiper-wrapper
+                  - for (i = 0; i < 3; i++)
+                    .b__slide.swiper-slide
+                      img.b__img(src="assets/images/carousel-1.jpeg", alt="")
+                      h3.b__title
+                        |Миома матки: симптомы, лечение, профилактика
+                      .b__label
+                        |Клинические рекомендации
+                    .b__slide.swiper-slide
+                      img.b__img(src="assets/images/carousel-2.jpeg", alt="")
+                      h3.b__title
+                        |Кровотечение при миоме
+                      .b__label
+                        |Исследования
+                    .b__slide.swiper-slide
+                      img.b__img(src="assets/images/carousel-3.jpeg", alt="")
+                      h3.b__title
+                        |Непроходимость маточных труб
+                      .b__label
+                        |Исследования
             .main-page__reviews
               .main-page__reviews-bg
               h3.main-page__title
