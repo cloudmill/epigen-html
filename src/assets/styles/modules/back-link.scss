@@ -1,4 +1,6 @@
 .back-link {
+  $comp: &;
+
   margin-bottom: 30px;
   @media (max-width: $breakpoint - 1px) {
     margin-bottom: 15px;
@@ -8,6 +10,13 @@
   align-items: center;
 
   transition: $transition;
+
+  &:hover {
+    #{$comp}__text {
+      margin-left: 0;
+      color: $color-blue;
+    }
+  }
 
   &--mobile {
     display: none;
@@ -26,10 +35,14 @@
 
     text-transform: uppercase;
     @include fsl(13px, 120%);
+    transition: $transition;
   }
 
   &__svg {
     &--swap {
+      position: relative;
+      bottom: 1px;
+
       transform: rotate(180deg);
     }
   }
