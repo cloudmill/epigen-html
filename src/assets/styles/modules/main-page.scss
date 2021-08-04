@@ -1,8 +1,46 @@
 .main-page {
   $comp: &;
 
+  &__intro-title {
+    margin-top: 20px;
+
+    display: none;
+
+    font-weight: 400;
+    @include fsl(24px, 140%);
+
+    &--m {
+      @media (max-width: $breakpoint - 1px) {
+        display: block;
+      }
+      @media (max-width: $breakpoint-m - 1px) {
+        display: none;
+      }
+    }
+
+    &--s {
+      @media (max-width: $breakpoint-m - 1px) {
+        display: block;
+        @include fsl(22px, 130%);
+      }
+    }
+  }
+  &__intro-span {
+    color: $color-blue;
+  }
+
   &__features {
     margin-top: 140px;
+    @media (max-width: $breakpoint-xl - 1px) {
+      margin-top: 120px;
+    }
+    @media (max-width: $breakpoint - 1px) {
+      margin-top: 155px;
+    }
+    @media (max-width: $breakpoint-m - 1px) {
+      margin-top: 100px;
+    }
+
     display: flex;
     flex-wrap: wrap;
     counter-reset: index;

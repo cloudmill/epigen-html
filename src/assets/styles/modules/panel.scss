@@ -30,6 +30,8 @@
       margin-left: 0;
 
       display: block;
+
+      border-bottom: 1px solid $color-blue-light;
     }
     #{$comp}__choice-item {
 
