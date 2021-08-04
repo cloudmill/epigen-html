@@ -171,7 +171,7 @@
     position: absolute;
     top: calc(100% + 30px);
     @media (max-width: $breakpoint - 1px) {
-      top: 76px;
+      top: 96px;
     }
     @media (max-width: $breakpoint-m - 1px) {
       top: calc(100% + 40px);
@@ -193,21 +193,61 @@
     @media (min-width: $breakpoint-l) {
       right: 130px;
     }
+    @media (max-width: $breakpoint - 1px) {
+      top: calc(100% + 30px);
+      right: 65px;
+    }
+    @media (max-width: $breakpoint-m - 1px) {
+      top: calc(100% + 147px);
+      right: auto;
+      left: 20px;
+    }
 
     display: flex;
   }
-  &__expert-svg {}
+  &__expert-svg {
+    @media (max-width: $breakpoint - 1px) {
+      max-width: 361px;
+      max-height: 91px;
+    }
+  }
   &__expert-moon {
     position: absolute;
     top: 39%;
     left: 8%;
     transform: translate(-50%, -50%);
+    @media (max-width: $breakpoint - 1px) {
+      transform: none;
+      top: auto;
+      left: auto;
+      bottom: 0;
+      right: 80px;
+
+      max-width: 26px;
+      max-height: 28px;
+    }
+    @media (max-width: $breakpoint - 1px) {
+      right: 105px;
+      bottom: -5px;
+    }
   }
   &__expert-star {
     position: absolute;
     top: 3%;
     left: 25%;
     transform: translate(-50%, -50%);
+    @media (max-width: $breakpoint - 1px) {
+      transform: none;
+      top: 42px;
+      left: 80px;
+
+      max-width: 35px;
+      max-height: 36px;
+    }
+    @media (max-width: $breakpoint-m - 1px) {
+      top: 45px;
+      left: 44px;
+    }
   }
 
   &__actual {}
@@ -216,6 +256,9 @@
     position: relative;
 
     margin-top: 140px;
+    @media (max-width: $breakpoint - 1px) {
+      margin-top: 60px;
+    }
     padding: 30px 0 76px 0;
   }
   &__reviews-bg {

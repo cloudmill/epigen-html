@@ -12,11 +12,11 @@ mixin nav-page-d
         var items = [
           {
             href: '#',
-            title: 'Эпиген',
+            title: 'Продукция Эпиген Интим',
           },
           {
             href: '#',
-            title: 'Экспертиза',
+            title: 'Экспертное мнение',
           },
           {
             href: '#',
@@ -277,7 +277,7 @@ block content
                   p.link-text.main-page__expert-text.main-page__expert-text--desktop
                     |Мы постянно публикуем свежие статьи#[br]о проблемах, возможном лечении#[br]и рекомендациях экспертов
                 .b__link
-                  a.b.b--border-link(href='#')
+                  a.b.b--border-link.b--border-link--desktop(href='#')
                     |Все статьи
               .b.b--carousel-slider-desktop.b--carousel-slider-desktop-margin-top-in-main-page
                 .b__bottom
@@ -359,24 +359,26 @@ block content
               .b.b--carousel-slider-mobile.swiper-container(data-slider-id='2')
                 .swiper-wrapper
                   - for (i = 0; i < 3; i++)
-                    .b__slide.swiper-slide
+                    a.b__slide.swiper-slide(href="#")
                       img.b__img(src="assets/images/carousel-1.jpeg", alt="")
                       h3.b__title
                         |Миома матки: симптомы, лечение, профилактика
                       .b__label
                         |Клинические рекомендации
-                    .b__slide.swiper-slide
+                    a.b__slide.swiper-slide(href="#")
                       img.b__img(src="assets/images/carousel-2.jpeg", alt="")
                       h3.b__title
                         |Кровотечение при миоме
                       .b__label
                         |Исследования
-                    .b__slide.swiper-slide
+                    a.b__slide.swiper-slide(href="#")
                       img.b__img(src="assets/images/carousel-3.jpeg", alt="")
                       h3.b__title
                         |Непроходимость маточных труб
                       .b__label
                         |Исследования
+              a.b.b--border-link.b--border-link--mobile(href='#')
+                |Все статьи
             .main-page__reviews
               .main-page__reviews-bg
               h3.main-page__title
