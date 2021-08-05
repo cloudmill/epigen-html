@@ -429,6 +429,12 @@
       border-bottom: 1px solid $color-black;
       $fs: 15px;
       @include fsl($fs, $fs);
+      transition: $transition;
+
+      &:hover {
+        color: $color-blue;
+        border-color: $color-blue;
+      }
     }
 
     #{$comp}__control {
