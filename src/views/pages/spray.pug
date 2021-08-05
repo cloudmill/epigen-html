@@ -405,7 +405,10 @@ block content
                               |Для получения результатов теста укажите E&#8209;mail
                             form.form(action='/')
                               .test__form-item
-                                input.form__input(type="text" name="email" placeholder="E-mail")
+                                label.form__item
+                                  input.form__input(type="text" name="email")
+                                  span.form__placeholder
+                                    |E-mail
                               .test__form-item
                                 button.button.button--wide(type='submit')
                                   |Отправить результаты теста на почту
