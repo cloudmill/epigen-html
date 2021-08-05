@@ -34,8 +34,19 @@
 
   &--reviews-slider {
     &--default {
+      @media (max-width: $breakpoint - 1px) {
+        display: flex;
+      }
       #{$comp}__item {
         width: 176px;
+        @media (max-width: $breakpoint - 1px) {
+          width: 166px;
+        }
+
+        &:not(:first-child) {
+          margin-top: 0;
+          margin-left: 10px;
+        }
       }
     }
   }

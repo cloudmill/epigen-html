@@ -12,12 +12,26 @@
     padding: 11px 20px;
     min-height: 40px;
     display: inline-flex;
+
     align-items: center;
 
     border: 1px solid $color-blue;
     border-radius: 40px;
     $fs: 15px;
     @include fsl($fs, $fs);
+
+    &--desktop {
+      @media (max-width: $breakpoint - 1px) {
+        display: none;
+      }
+    }
+
+    &--mobile {
+      display: none;
+      @media (max-width: $breakpoint - 1px) {
+        display: inline-flex;
+      }
+    }
   }
 
   // верхний отступ carousel-slider'a на гравной, десктоп
@@ -27,8 +41,14 @@
 
   // "карусель" слайдер, на главной, десктоп
   &--carousel-slider-desktop {
-    position: relative;
-    z-index: 0;
+
+    display: block;
+
+    @media (max-width: $breakpoint - 1px) {
+      display: none;
+    }
+
+    overflow: hidden;
 
     #{$comp}__btn {
       position: absolute;
@@ -44,12 +64,16 @@
       }
     }
 
-    #{$comp}__slide {
-      display: none;
+    #{$comp}__bottom {
+      display: flex;
+    }
 
-      &--active {
-        display: block;
-      }
+    #{$comp}__slide {
+      position: relative;
+
+      flex-shrink: 0;
+      width: 100%;
+
     }
 
     #{$comp}__row {
@@ -117,12 +141,59 @@
     }
   }
 
+  // "карусель" слайдер, на главной, мобила
+  &--carousel-slider-mobile {
+    margin: 30px 0;
+
+    display: none;
+    @media (max-width: $breakpoint - 1px) {
+      display: block;
+    }
+
+    width: calc(100% + 15px);
+
+    #{$comp}__slide {
+      position: relative;
+
+      flex-shrink: 0;
+      width: 270px;
+    }
+
+    #{$comp}__img {
+      display: block;
+
+      border-radius: 10px;
+    }
+
+    #{$comp}__title {
+      margin-top: 15px;
+
+      font-weight: 400;
+      @include fsl(15px, 140%);
+    }
+
+    #{$comp}__label {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      padding: 6px 10px;
+      background-color: white;
+      border: 1px solid #D7ECF8;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      line-height: 140%;
+    }
+  }
+
   // слайдер отзывов, главная
   &--reviews-slider-main-page {
     overflow: hidden;
 
     #{$comp}__top {
       margin-bottom: 80px;
+      @media (max-width: $breakpoint - 1px) {
+        margin-bottom: 30px;
+      }
     }
     #{$comp}__bottom {
       display: flex;
@@ -130,6 +201,9 @@
 
     #{$comp}__top-row {
       display: flex;
+      @media (max-width: $breakpoint - 1px) {
+        display: block;
+      }
       justify-content: space-between;
     }
     #{$comp}__top-col {
@@ -137,6 +211,10 @@
 
       &:not(:first-child) {
         margin-left: calc(#{$col-width-d});
+        @media (max-width: $breakpoint - 1px) {
+          margin-left: 0;
+          margin-top: 30px;
+        }
       }
     }
 

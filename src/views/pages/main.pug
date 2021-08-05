@@ -12,11 +12,11 @@ mixin nav-page-d
         var items = [
           {
             href: '#',
-            title: 'Эпиген',
+            title: 'Продукция Эпиген Интим',
           },
           {
             href: '#',
-            title: 'Экспертиза',
+            title: 'Экспертное мнение',
           },
           {
             href: '#',
@@ -115,25 +115,26 @@ block content
                             .panel__product-text
                               |Гель
                     .panel__wrapper
-                      .panel__wrapper-col
-                        .panel__inner
-                          a.panel__where-buy(href='#')
-                            |Где купить
-                          .panel__choice
-                            .panel__choice-item(data-count=8 data-modal-button='3')
-                              |Симптомы
-                            .panel__choice-item(data-count=12 data-modal-button='2')
-                              |Заболевания
-                      .panel__wrapper-col
-                        .panel__inner
-                          .panel__test(data-button='3')
-                            +calendar-test-svg.panel__test-icon
-                            .panel__test-text
-                              |Пройти тест
-                          .panel__consultation
-                            +consultation-svg.panel__consultation-svg
-                            .panel__consultation-text
-                              |Консультация эксперта
+                      .panel__wrapper-row
+                        .panel__wrapper-col
+                          .panel__inner
+                            a.panel__where-buy(href='#')
+                              |Где купить
+                            .panel__choice
+                              .panel__choice-item(data-count=8 data-modal-button='3')
+                                |Симптомы
+                              .panel__choice-item(data-count=12 data-modal-button='2')
+                                |Заболевания
+                        .panel__wrapper-col
+                          .panel__inner
+                            .panel__test(data-button='3')
+                              +calendar-test-svg.panel__test-icon
+                              .panel__test-text
+                                |Пройти тест
+                            .panel__consultation
+                              +consultation-svg.panel__consultation-svg
+                              .panel__consultation-text
+                                |Консультация эксперта
                       .panel__modals
                         .panel-modal(data-modal-id='2')
                           .panel-modal__container
@@ -241,6 +242,14 @@ block content
                   .plus-btn__border
                   .plus-btn__circle
                   .plus-btn__plus
+              h1.main-page__intro-title.main-page__intro-title--m
+                |Эпиген Интим — линия средств для женского интимного здоровья на основе активированной глицирризиновой кислоты из экстракта корня солодки
+              h1.main-page__intro-title.main-page__intro-title--s
+                span.main-page__intro-span
+                  |Эпиген Интим —
+                br
+                |линия средств для женского интимного здоровья
+
               ul.main-page__features
                 li.main-page__features-item
                   .main-page__features-text
@@ -276,15 +285,16 @@ block content
                   p.link-text.main-page__expert-text.main-page__expert-text--desktop
                     |Мы постянно публикуем свежие статьи#[br]о проблемах, возможном лечении#[br]и рекомендациях экспертов
                 .b__link
-                  a.b.b--border-link(href='#')
+                  a.b.b--border-link.b--border-link--desktop(href='#')
                     |Все статьи
               .b.b--carousel-slider-desktop.b--carousel-slider-desktop-margin-top-in-main-page
-                .b.b--btn-left-right-slider.b--left.b__btn.b__btn--left
-                  +simple-arrow-svg.b__svg
-                .b.b--btn-left-right-slider.b--right.b__btn.b__btn--right
-                  +simple-arrow-svg.b__svg
-                each slide in [1, 2, 3]
-                  .b__slide(class=(slide === 1 ? 'b__slide--active' : ''))
+                .b__bottom
+                  .b__slide
+                    .b__buttons
+                      .b.b--btn-left-right-slider.b--left.b__btn.b__btn--left(data-command-slider-arrow='prev')
+                        +simple-arrow-svg.b__svg
+                      .b.b--btn-left-right-slider.b--right.b__btn.b__btn--right(data-command-slider-arrow='next')
+                        +simple-arrow-svg.b__svg
                     .b__row
                       a.b__col(href='#')
                         img.b__img(src='assets/images/carousel-1.jpeg')
@@ -304,6 +314,79 @@ block content
                           |Непроходимость маточных труб
                         span.b__label
                           |Исследования
+                  .b__slide
+                    .b__buttons
+                      .b.b--btn-left-right-slider.b--left.b__btn.b__btn--left(data-command-slider-arrow='prev')
+                        +simple-arrow-svg.b__svg
+                      .b.b--btn-left-right-slider.b--right.b__btn.b__btn--right(data-command-slider-arrow='next')
+                        +simple-arrow-svg.b__svg
+                    .b__row
+                      a.b__col(href='#')
+                        img.b__img(src='assets/images/carousel-3.jpeg')
+                        h3.b__title
+                          |Миома матки: симптомы, лечение, профилактика
+                        span.b__label
+                          |Клинические рекомендации
+                      a.b__col(href='#')
+                        img.b__img(src='assets/images/carousel-1.jpeg')
+                        h3.b__title
+                          |Кровотечение при миоме
+                        span.b__label
+                          |Обучение
+                      a.b__col(href='#')
+                        img.b__img(src='assets/images/carousel-2.jpeg')
+                        h3.b__title
+                          |Непроходимость маточных труб
+                        span.b__label
+                          |Исследования
+                  .b__slide
+                    .b__buttons
+                      .b.b--btn-left-right-slider.b--left.b__btn.b__btn--left(data-command-slider-arrow='prev')
+                        +simple-arrow-svg.b__svg
+                      .b.b--btn-left-right-slider.b--right.b__btn.b__btn--right(data-command-slider-arrow='next')
+                        +simple-arrow-svg.b__svg
+                    .b__row
+                      a.b__col(href='#')
+                        img.b__img(src='assets/images/carousel-2.jpeg')
+                        h3.b__title
+                          |Миома матки: симптомы, лечение, профилактика
+                        span.b__label
+                          |Клинические рекомендации
+                      a.b__col(href='#')
+                        img.b__img(src='assets/images/carousel-3.jpeg')
+                        h3.b__title
+                          |Кровотечение при миоме
+                        span.b__label
+                          |Обучение
+                      a.b__col(href='#')
+                        img.b__img(src='assets/images/carousel-1.jpeg')
+                        h3.b__title
+                          |Непроходимость маточных труб
+                        span.b__label
+                          |Исследования
+              .b.b--carousel-slider-mobile.swiper-container(data-slider-id='2')
+                .swiper-wrapper
+                  - for (i = 0; i < 3; i++)
+                    a.b__slide.swiper-slide(href="#")
+                      img.b__img(src="assets/images/carousel-1.jpeg", alt="")
+                      h3.b__title
+                        |Миома матки: симптомы, лечение, профилактика
+                      .b__label
+                        |Клинические рекомендации
+                    a.b__slide.swiper-slide(href="#")
+                      img.b__img(src="assets/images/carousel-2.jpeg", alt="")
+                      h3.b__title
+                        |Кровотечение при миоме
+                      .b__label
+                        |Исследования
+                    a.b__slide.swiper-slide(href="#")
+                      img.b__img(src="assets/images/carousel-3.jpeg", alt="")
+                      h3.b__title
+                        |Непроходимость маточных труб
+                      .b__label
+                        |Исследования
+              a.b.b--border-link.b--border-link--mobile(href='#')
+                |Все статьи
             .main-page__reviews
               .main-page__reviews-bg
               h3.main-page__title
@@ -334,19 +417,22 @@ block content
                               |Гель
                 .b__bottom
                   each slide in [1, 2, 3, 4]
-                    .b__slide(class=(slide === 1 ? 'b__slide--active' : undefined))
-                      .b__slide-row
+                    .b__slide
+                      .b__slide-row.b__slide-row--desktop
                         .b__slide-col
-                          img.b__img(src='assets/images/reviews-slider-1.jpeg')
+                          .b__slide-img
+                            img.b__img(src='assets/images/reviews-slider-1.jpeg')
                         .b__slide-col
                           .b__content
                             .b__content-row
                               .b__content-col
                                 .b__content-top
                                   h5.b__slide-title
-                                    |Манукян Наринэ Георгиевна
+                                    span.b__desc-span
+                                      |Манукян Наринэ Георгиевна
                                   p.b__desc
-                                    |Врач акушер-гинеколог, гинеколог-эндокринолог, лучший врач корпорации
+                                    span.b__desc-span
+                                      |Врач акушер-гинеколог, гинеколог-эндокринолог, лучший врач корпорации
                                   .b__content-wrapper
                                     p.b__review
                                       |Спрей Эпиген Интим представляет собой эффективное и безопасное средство для лечения, профилактики генитальных вирусных инфекций, а гель предназначен для интимной гигиены на каждый день...
@@ -357,20 +443,50 @@ block content
                                     |Все отзывы
                               .b__content-col
                                 .b__content-top
-                                  .b__control
+                                  .b__control.b__control--animated
                                     .b__control-item
-                                      .b.b--btn-left-right-slider
+                                      .b.b--btn-left-right-slider(data-command-slider-arrow='prev')
                                         +simple-arrow-svg.b__svg
                                     .b__control-item
-                                      .b.b--btn-left-right-slider.b--right
+                                      .b.b--btn-left-right-slider.b--right(data-command-slider-arrow='next')
                                         +simple-arrow-svg.b__svg
                                 .b__content-bottom
                                   .b__preview
                                     .b__preview-counter
-                                      span.b__preview-count
-                                        |1
-                                      |/4
-                                    img.b__preview-img(src='assets/images/reviews-slider-2.jpeg')
+                                      .b__preview-wrapper
+                                        span.b__preview-count
+                                          |1
+                                        |/4
+                                    .b__preview-image
+                                      img.b__preview-img(src='assets/images/reviews-slider-2.jpeg')
+                      .b__slide-mobile
+                        .b__slide-row
+                          .b__slide-col
+                            .b__slide-top
+                              .b__slide-img
+                                img.b__img(src='assets/images/reviews-slider-1.jpeg')
+                              .b__content
+                                h5.b__slide-title
+                                  span.b__desc-span
+                                    |Сапрыкина Людмила Витальевна
+                                .b__desc
+                                  span.b__desc-span
+                                    |Ассистент кафедры акушерства и гинекологии ЛФ ФГБОУ ВО им. Н.И. Пирогова МЗ РФ, врач акушер-гинеколог высшей категории, к.м.н. (Москва).
+                            .b__slide-bottom
+                              p.b__review
+                                |Осуществляет консультативный прием пациентов, обращающихся по вопросам лечения воспалительных процессов женской половой сферы, занимается проблемами невынашивания беременности и бесплодия, проводит оперативное лечение пациентам.
+                          .b__slide-col
+                            .b__content-top
+                              .b__control.b__control--animated
+                                .b__control-item
+                                  .b.b--btn-left-right-slider(data-command-slider-arrow='prev')
+                                    +simple-arrow-svg.b__svg
+                                .b__control-item
+                                  .b.b--btn-left-right-slider.b--right(data-command-slider-arrow='next')
+                                    +simple-arrow-svg.b__svg
+                            .b__content-bottom
+                              a.button.button--reviews-slider(href='#' data-mdl-open='')
+                                |Задать вопрос врачу
             +footer.page__footer
   .modal(data-modal='1')
     .modal-product

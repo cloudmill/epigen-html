@@ -4,6 +4,7 @@ import Swiper from 'swiper/bundle';
 import Slider from 'scripts/slider.js';
 import Sticky from 'sticky-js';
 import AOS from 'aos';
+import 'parsleyjs';
 
 // vars
 const BREAKPOINT = 1280
@@ -611,7 +612,15 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 // review slider
 {
   $(() => {
-    const slider = new Slider(".page-consultation__expert-slider");
+    // const slider = new Slider(".page-consultation__expert-slider");
+    const slider = new Slider(".b--reviews-slider-main-page");
+  })
+}
+
+// main page carousel slider
+{
+  $(() => {
+    const slider = new Slider('.b--carousel-slider-desktop')
   })
 }
 
@@ -1026,4 +1035,12 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       console.log('block')
     })
   })
+}
+
+// parsley
+{
+  $(() => {
+    $("form").parsley();
+
+  });
 }

@@ -30,6 +30,8 @@
       margin-left: 0;
 
       display: block;
+
+      border-bottom: 1px solid $color-blue-light;
     }
     #{$comp}__choice-item {
 
@@ -53,6 +55,11 @@
   &--modal-active {
     [data-modal-active] {
       transform: translate(0);
+    }
+
+    #{$comp}__col {
+      position: relative;
+      z-index: -1;
     }
 
     #{$comp}__choice-item[data-modal-active] {
@@ -171,10 +178,12 @@
       flex-shrink: 1;
     }
 
+    background-color: $color-white;
+  }
+  &__wrapper-row {
     display: flex;
     justify-content: space-between;
-
-    background-color: $color-white;
+    height: 100%;
   }
   &__wrapper-col {
     height: 100%;

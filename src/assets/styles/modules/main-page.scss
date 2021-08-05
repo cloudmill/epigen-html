@@ -1,8 +1,46 @@
-.main-page {  
+.main-page {
   $comp: &;
+
+  &__intro-title {
+    margin-top: 20px;
+
+    display: none;
+
+    font-weight: 400;
+    @include fsl(24px, 140%);
+
+    &--m {
+      @media (max-width: $breakpoint - 1px) {
+        display: block;
+      }
+      @media (max-width: $breakpoint-m - 1px) {
+        display: none;
+      }
+    }
+
+    &--s {
+      @media (max-width: $breakpoint-m - 1px) {
+        display: block;
+        @include fsl(22px, 130%);
+      }
+    }
+  }
+  &__intro-span {
+    color: $color-blue;
+  }
 
   &__features {
     margin-top: 140px;
+    @media (max-width: $breakpoint-xl - 1px) {
+      margin-top: 120px;
+    }
+    @media (max-width: $breakpoint - 1px) {
+      margin-top: 155px;
+    }
+    @media (max-width: $breakpoint-m - 1px) {
+      margin-top: 100px;
+    }
+
     display: flex;
     flex-wrap: wrap;
     counter-reset: index;
@@ -11,52 +49,121 @@
     position: relative;
 
     padding: 30px 0 0 68px;
+    @media (max-width: $breakpoint-l - 1px) {
+      padding: 15px 0 0 48px;
+    }
     display: flex;
     flex-wrap: wrap;
     counter-increment: index;
+
+
 
     border-top: 1px solid $color-blue;
 
     &::before {
       position: absolute;
       top: 30px;
+      @media (max-width: $breakpoint-l - 1px) {
+        top: 15px;
+      }
       left: 0;
 
       content: counter(index);
 
       @include fsl(25px, 120%);
+      @media (max-width: $breakpoint-l - 1px) {
+        @include fsl(15px);
+      }
       color: $color-blue;
     }
 
     &:nth-child(1) {
       width: calc(#{$col-width-d} * 6);
+      @media (max-width: $breakpoint - 1px) {
+        width: calc((#{$col-width-m} * 2) + (#{$col-width-m} / 2) - 30px);
+      }
+      @media (max-width: $breakpoint-m - 1px) {
+        width: calc(#{$col-width-m} * 5);
+      }
     }
     &:nth-child(2) {
       margin-left: calc(#{$col-width-d});
       width: calc(#{$col-width-d} * 11);
+      @media (max-width: $breakpoint - 1px) {
+        margin-left: 27px;
+        width: calc(#{$col-width-m} * 3 + (#{$col-width-m} / 2));
+      }
+      @media (max-width: $breakpoint-m - 1px) {
+        margin-left: auto;
+        width: calc(#{$col-width-m} * 5);
+      }
 
       #{$comp}__features-text {
         max-width: 592px;
+        @media (max-width: $breakpoint - 1px) {
+          max-width: 297px;
+        }
+        @media (max-width: $breakpoint-m - 1px) {
+          max-width: 209px;
+        }
       }
     }
     &:nth-child(3) {
       width: calc(#{$col-width-d} * 11);
+      @media (max-width: $breakpoint - 1px) {
+        width: calc(#{$col-width-m} * 3 + (#{$col-width-m} / 2));
+      }
+      @media (max-width: $breakpoint-m - 1px) {
+        width: calc(#{$col-width-m} * 5);
+      }
 
       #{$comp}__features-text {
         max-width: 510px;
+        @media (max-width: $breakpoint - 1px) {
+          max-width: 239px;
+        }
+        @media (max-width: $breakpoint-m - 1px) {
+          max-width: 230px;
+        }
       }
     }
     &:nth-child(4) {
       margin-left: calc(#{$col-width-d});
       width: calc(#{$col-width-d} * 6);
+      @media (max-width: $breakpoint - 1px) {
+        margin-left: 27px;
+        width: calc((#{$col-width-m} * 2) + (#{$col-width-m} / 2) - 30px);
+      }
+      @media (max-width: $breakpoint-m - 1px) {
+        margin-left: auto;
+        width: calc(#{$col-width-m} * 5);
+      }
     }
 
     &:nth-child(-n + 2) {
       margin-bottom: 60px;
+      @media (max-width: $breakpoint-l - 1px) {
+        margin-bottom: 48px;
+      }
+      @media (max-width: $breakpoint-m - 1px) {
+        margin-bottom: 0;
+      }
+    }
+
+    &:not(:first-child) {
+      @media (max-width: $breakpoint-m - 1px) {
+        margin-top: 30px;
+      }
     }
   }
   &__features-text {
     @include fsl(25px, 120%);
+    @media (max-width: $breakpoint-xl - 1px) {
+      @include fsl(22px);
+    }
+    @media (max-width: $breakpoint-l - 1px) {
+      @include fsl(15px);
+    }
   }
 
   &__title {
@@ -73,9 +180,13 @@
   &__expert {
     position: relative;
 
+    margin-bottom: 300px;
     margin-top: 60px;
-    margin-bottom: 420px;
+    @media (min-width: $breakpoint-m) {
+      margin-bottom: 180px;
+    }
     @media (min-width: $breakpoint) {
+      margin-bottom: 420px;
       margin-top: 120px;
     }
     @media (min-width: $breakpoint-xl) {
@@ -97,9 +208,20 @@
   &__expert-img {
     position: absolute;
     top: calc(100% + 30px);
+    @media (max-width: $breakpoint - 1px) {
+      top: 96px;
+    }
+    @media (max-width: $breakpoint-m - 1px) {
+      top: calc(100% + 40px);
+      right: auto;
+      left: 0;
+    }
     right: 0;
 
     max-width: 676px;
+    @media (max-width: $breakpoint - 1px) {
+      max-width: 345px;
+    }
     max-height: none;
   }
   &__expert-wave {
@@ -109,21 +231,61 @@
     @media (min-width: $breakpoint-l) {
       right: 130px;
     }
+    @media (max-width: $breakpoint - 1px) {
+      top: calc(100% + 30px);
+      right: 65px;
+    }
+    @media (max-width: $breakpoint-m - 1px) {
+      top: calc(100% + 147px);
+      right: auto;
+      left: 20px;
+    }
 
     display: flex;
   }
-  &__expert-svg {}
+  &__expert-svg {
+    @media (max-width: $breakpoint - 1px) {
+      max-width: 361px;
+      max-height: 91px;
+    }
+  }
   &__expert-moon {
     position: absolute;
     top: 39%;
     left: 8%;
     transform: translate(-50%, -50%);
+    @media (max-width: $breakpoint - 1px) {
+      transform: none;
+      top: auto;
+      left: auto;
+      bottom: 0;
+      right: 80px;
+
+      max-width: 26px;
+      max-height: 28px;
+    }
+    @media (max-width: $breakpoint - 1px) {
+      right: 105px;
+      bottom: -5px;
+    }
   }
   &__expert-star {
     position: absolute;
     top: 3%;
     left: 25%;
     transform: translate(-50%, -50%);
+    @media (max-width: $breakpoint - 1px) {
+      transform: none;
+      top: 42px;
+      left: 80px;
+
+      max-width: 35px;
+      max-height: 36px;
+    }
+    @media (max-width: $breakpoint-m - 1px) {
+      top: 45px;
+      left: 44px;
+    }
   }
 
   &__actual {}
@@ -132,6 +294,9 @@
     position: relative;
 
     margin-top: 140px;
+    @media (max-width: $breakpoint - 1px) {
+      margin-top: 60px;
+    }
     padding: 30px 0 76px 0;
   }
   &__reviews-bg {

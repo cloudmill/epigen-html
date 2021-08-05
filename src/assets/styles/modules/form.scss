@@ -49,6 +49,7 @@
   }
 
   &__item {
+    position: relative;
 
     &:not(:first-child) {
       margin-top: 10px;
@@ -67,12 +68,27 @@
     @include f-main();
     border-radius: 6px;
     border: 1px solid $color-blue-light;
+    transition: $transition;
 
     &::placeholder {
       @include fsl(15px, 140%);
       color: $color-black;
     }
+
+    &:focus {
+      border-color: $color-blue;
+    }
   }
+
+  // &__placeholder {
+  //   position: absolute;
+  //   top: 50%;
+  //   left: 30px;
+  //   transform: translateY(-50%);
+
+  //   @include fsl(15px, 140%);
+  //   transition: $transition;
+  // }
 
   &__textarea {
     padding: 19px 30px;
@@ -107,6 +123,20 @@
     }
   }
 
+  .parsley-error {
+    border-color: #E64AE9;
+  }
+
+  .parsley-errors-list {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+
+    li {
+      @include fsl(11px, 120%);
+      color: #E64AE9;
+    }
+  }
 }
 
 [data-form-hidden] {
