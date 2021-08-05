@@ -1,4 +1,5 @@
 .button-close {
+  $comp: &;
   $size: 45px;
 
   width: $size;
@@ -11,4 +12,21 @@
   background-color: $color-white;
   border-radius: 50%;
   cursor: pointer;
+
+  &:hover {
+    #{$comp}__svg {
+      path {
+        stroke: $color-white;
+      }
+    }
+  }
+
+  &__svg {
+    position: relative;
+    z-index: 1;
+
+    path {
+      transition: $transition;
+    }
+  }
 }

@@ -157,11 +157,15 @@ block content
                         |Задать свой вопрос
                     .faq-page__form-col
                       form.form(action="/" data-type="feedback-form")
-                        .form__item(data-aos='fade-up')
-                          input.form__input(type="text" name="name" placeholder="Имя" required="required")
-                        .form__item(data-aos='fade-up')
-                          input.form__input(type="email" name="email" placeholder="E-mail" required="required")
-                        .form__item(data-aos='fade-up')
+                        label.form__item(data-aos='fade-up')
+                          input.form__input(type="text" name="name" required="required")
+                          span.form__placeholder
+                            |Имя
+                        label.form__item(data-aos='fade-up')
+                          input.form__input(type="email" name="email" required="required")
+                          span.form__placeholder
+                            |E-mail
+                        label.form__item(data-aos='fade-up')
                           textarea.form__textarea(name="message" placeholder="Сообщение", cols="30", rows="10")
                         .form__container
                           .form__inner
@@ -198,10 +202,14 @@ block content
                 h3.mdl__form-title
                   |Задать вопрос
                 form.form(action="/")
-                  .form__item
-                    input.form__input(type="text" name="name" placeholder="Имя")
-                  .form__item
-                    input.form__input(type="email" name="email" placeholder="E-mail")
+                  label.form__item
+                    input.form__input(type="text" name="name")
+                    span.form__placeholder
+                      |Имя
+                  label.form__item
+                    input.form__input(type="email" name="email")
+                    span.form__placeholder
+                      |E-mail
                   .form__item
                     textarea.form__textarea(name="message" placeholder="Сообщение", cols="30", rows="10")
                   .form__inner
