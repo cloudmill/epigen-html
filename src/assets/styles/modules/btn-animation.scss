@@ -74,6 +74,13 @@
     }
   }
 
+  &--purple {
+    &::before,
+    &::after {
+      background: $color-purple;
+    }
+  }
+
   &__text {
     display: block;
     position: relative;
