@@ -511,9 +511,24 @@
     border-radius: 50%;
     cursor: pointer;
 
+    &:hover {
+      #{$comp}__svg {
+        path {
+          stroke: $color-white;
+        }
+      }
+    }
+
     #{$comp}__svg {
+      position: relative;
+      z-index: 1;
+
       @media (max-width: $breakpoint - 1px) {
         height: 10px;
+      }
+
+      path {
+        transition: $transition;
       }
     }
 

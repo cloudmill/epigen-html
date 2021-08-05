@@ -440,16 +440,17 @@ block content
                                 .b__content-bottom
                                   a.b__link(href="#")
                                     |Читать отзыв
-                                  a.button.button--reviews-slider(href='#')
-                                    |Все отзывы
+                                  a.button.button--reviews-slider.btn-animation(href='#')
+                                    span.btn-animation__text
+                                      |Все отзывы
                               .b__content-col
                                 .b__content-top
                                   .b__control.b__control--animated
                                     .b__control-item
-                                      .b.b--btn-left-right-slider(data-command-slider-arrow='prev')
+                                      .b.b--btn-left-right-slider.btn-animation.btn-animation--icon(data-command-slider-arrow='prev')
                                         +simple-arrow-svg.b__svg
                                     .b__control-item
-                                      .b.b--btn-left-right-slider.b--right(data-command-slider-arrow='next')
+                                      .b.b--btn-left-right-slider.b--right.btn-animation.btn-animation--icon(data-command-slider-arrow='next')
                                         +simple-arrow-svg.b__svg
                                 .b__content-bottom
                                   .b__preview
@@ -501,7 +502,7 @@ block content
             p.modal-product__text
               |Оригинальный лекарственный препарат для лечения и профилактики различных заболеваний интимной зоны
       .modal-product__button
-        .button-close(data-button='1')
+        .button-close.btn-animation.btn-animation--icon(data-button='1')
           +cross-svg.button-close__svg
   .modal(data-modal='2')
     .modal-product
@@ -515,7 +516,7 @@ block content
             p.modal-product__text
               |Единственный гель для интимной гигиены с уникальным сочетанием двух активных компонентов — активированной глицирризиновой и молочной кислоты
       .modal-product__button
-        .button-close(data-button='2')
+        .button-close.btn-animation.btn-animation--icon(data-button='2')
           +cross-svg.button-close__svg
   .modal(data-modal='3')
     .modal-test
@@ -569,6 +570,6 @@ block content
                       |Результат отправлен на почту#[br]
                       span.test__form-email
       .modal-test__button
-        .button-close(data-button='3')
+        .button-close.btn-animation.btn-animation--icon(data-button='3')
           +cross-svg.button-close__svg
 
