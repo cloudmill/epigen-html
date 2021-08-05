@@ -79,6 +79,13 @@
     &::after {
       background: $color-purple;
     }
+
+    &:hover {
+      #{$comp}__text {
+        color: $color-white;
+      }
+    }
+
   }
 
   &__text {
