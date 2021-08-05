@@ -37,17 +37,18 @@
   }
 
   &__container {
+    margin-left: -15px;
+
     display: flex;
+    flex-wrap: wrap;
   }
 
   &__item {
+    margin-left: 15px;
     margin-bottom: 15px;
 
+    flex-shrink: 0;
     display: flex;
-
-    &:not(:first-child) {
-      margin-left: 15px;
-    }
   }
 
   &__name {

@@ -70,8 +70,9 @@ block content
                         .header__burger
                   +nav-page-d
                 .aside__bottom
-                  a.button.button--spray.margin-bottom.margin-bottom--m(href="#")
-                    |Где купить
+                  a.button.button--spray.margin-bottom.margin-bottom--m.btn-animation(href="#")
+                    span.btn-animation__text
+                      |Где купить
                   +copyright-link(href='#')
                     |Компания «Инвар», 2021
         .row__col.row__col--main
@@ -359,7 +360,7 @@ block content
                       .test__options.test__options--active
                         each item in ['Обильные выделения без неприятного запаха', 'Выделения с неприятным запахом', 'Болезненные пузырьки в интимной зоне, превращающиеся в язвы', 'Безболезненные папилломы, узелки, наросты или бородавки в интимной зоне', 'Что-то другое, не указанное выше']
                           label.test__label(for="#")
-                            input.test__radio(type="radio")
+                            input.test__radio(type="radio" name='question-1')
                             .test__icon
                               +check-svg
                             .test__text
@@ -367,7 +368,7 @@ block content
                       .test__options
                         each item in ['Обильные выделения без неприятного запаха', 'Выделения с неприятным запахом', 'Болезненные пузырьки в интимной зоне, превращающиеся в язвы', 'Безболезненные папилломы, узелки, наросты или бородавки в интимной зоне', 'Что-то другое, не указанное выше', 'Что-то другое, не указанное выше', 'Что-то другое, не указанное выше']
                           label.test__label(for="#")
-                            input.test__radio(type="radio")
+                            input.test__radio(type="radio" name='question-2')
                             .test__icon
                               +check-svg
                             .test__text
@@ -375,7 +376,7 @@ block content
                       .test__options
                         each item in ['Выделения с неприятным запахом', 'Болезненные пузырьки в интимной зоне, превращающиеся в язвы', 'Безболезненные папилломы, узелки, наросты или бородавки в интимной зоне', 'Что-то другое, не указанное выше']
                           label.test__label(for="#")
-                            input.test__radio(type="radio")
+                            input.test__radio(type="radio" name='question-3')
                             .test__icon
                               +check-svg
                             .test__text
@@ -383,7 +384,7 @@ block content
                       .test__options
                         each item in ['Выделения с неприятным запахом', 'Болезненные пузырьки в интимной зоне, превращающиеся в язвы',]
                           label.test__label(for="#")
-                            input.test__radio(type="radio")
+                            input.test__radio(type="radio" name='question-4')
                             .test__icon
                               +check-svg
                             .test__text
@@ -391,7 +392,7 @@ block content
                       .test__options
                         each item in ['Обильные выделения без неприятного запаха', 'Выделения с неприятным запахом', '1233321', 'Безболезненные папилломы, узелки, наросты или бородавки в интимной зоне', 'qweasd']
                           label.test__label(for="#")
-                            input.test__radio(type="radio")
+                            input.test__radio(type="radio" name='question-5')
                             .test__icon
                               +check-svg
                             .test__text
@@ -418,10 +419,14 @@ block content
                               |Для получения результатов теста укажите E&#8209;mail
                             form.form(action='/')
                               .test__form-item
-                                input.form__input(type="text" name="email" placeholder="E-mail")
+                                label.form__item
+                                  input.form__input(type="text" name="email")
+                                  span.form__placeholder
+                                    |E-mail
                               .test__form-item
-                                button.button.button--wide(type='submit')
-                                  |Отправить результаты теста на почту
+                                button.button.button--wide.btn-animation(type='submit')
+                                  span.btn-animation__text
+                                    |Отправить результаты теста на почту
                           .test__form-response
                             |Результат отправлен на почту#[br]
                             span.test__form-email
