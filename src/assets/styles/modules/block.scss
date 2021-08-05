@@ -2,16 +2,23 @@
   // ? keyframes + media: how work together?
   // ? animationend event, js: ie 11?
 
+  $comp: &;
   $width-d: calc(#{$row-main-width});
-  $height-d: 550px;
+  $min-height-d: 550px;
   $animation-open: 'jf923f023';
+  $animation-in-out-value: 1.5;
+  $animation-in: 'fj23f92032093f';
+  $animation-out: 'fj3jg490032093f';
+  $content-pad-left-d: 30px;
 
   position: relative;
   z-index: 0;
 
-  height: $height-d;
+  width: $width-d;
+  min-height: $min-height-d;
   overflow: hidden;
 
+  // frame
   &__frame {
     position: absolute;
     z-index: 0;
@@ -47,12 +54,148 @@
       z-index: 1;
     }
   }
-
   &__slide {
+    position: relative;
+
     width: $width-d;
-    height: $height-d;
+    min-height: $min-height-d;
+    flex-shrink: 0;
+  }
+
+  // layout
+  &__layout {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+  }
+  &__background {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+
+    &--15 {
+      background-image: url('assets/images/spray-page-1.jpg');
+    }
+    &--60 {
+      background-image: url('assets/images/spray-page-2.jpg');
+    }
+
+    &--in {
+      @keyframes #{$animation-in} {
+        from {
+          transform: scale(1);
+        }
+        to {
+          transform: scale(#{$animation-in-out-value});
+        }
+      }
+
+      animation: #{$animation-in} $transition forwards;
+    }
+    &--out {
+      @keyframes #{$animation-out} {
+        from {
+          transform: scale(#{$animation-in-out-value});
+        }
+        to {
+          transform: scale(1);
+        }
+      }
+
+      animation: #{$animation-out} $transition forwards;
+    }
+  }
+
+  // content
+  &__content {
+    padding: 30px 30px 12px $content-pad-left-d;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__top {
+
+  }
+  &__bottom {
+    margin-top: 60px;
+  }
+
+  // format
+  &__format {
+    @include fsl(13px, 120%);
+    text-transform: uppercase;
+  }
+  &__format-row {
+    display: flex;
+  }
+  &__format-label {
+    &--in-row {
+      margin-left: 5px;
+      padding-top: 4px;
+    }
+  }
+  &__format-value {
+    @include fsl(80px, 110%);
+  }
+
+  // list
+  &__list {
+    margin-top: 60px;
+    padding-left: calc(#{$col-width-d} * 3 - #{$content-pad-left-d});
+    width: calc(#{$col-width-d} * 9 - #{$content-pad-left-d});
+  }
+  &__list-item {
+    position: relative;
+
+    padding-left: 27px;
+    display: block;
+
+    @include fsl(18px, 140%);
+
+    &::before {
+      position: absolute;
+      top: 6px;
+      left: 0;
+
+      content: '';
+      $size: 7px;
+      width: $size;
+      height: $size;
+
+      background-color: $color-blue;
+      border-radius: 50%;
+    }
+
+    &:not(:first-child) {
+      margin-top: 15px;
+    }
+  }
+
+  // control
+  &__control {
+    display: flex;
+  }
+  &__control-item {
+    width: 173px;
     flex-shrink: 0;
 
-    background-color: green;
+    &:not(:first-child) {
+      margin-left: 10px;
+    }
   }
 }

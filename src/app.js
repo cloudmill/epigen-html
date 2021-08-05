@@ -1032,7 +1032,110 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     blocks.each(function () {
       const block = $(this)
 
-      console.log('block')
+      // control
+      const DURATION = 500
+
+      const btn = block.find('.spray-page__tabs-item')
+      
+      if (btn.length > 1) {
+        let cur_index = 0
+
+        let clickable = true
+
+        const frame = block.find('.block__frame')
+        const background = block.find('.block__background')
+
+        btn.on('click', function () {
+          if (clickable) {
+            if (!$(this).hasClass('spray-page__tabs-item--active')) {
+              clickable = false
+              setTimeout(() => {
+                frame.removeClass('block__frame--open')
+
+                setTimeout(() => {
+                  clickable = true
+                })
+              }, DURATION)
+
+              const new_index = 1 - cur_index
+              cur_index = new_index
+
+              frame.toggleClass('block__frame--front')
+              frame.eq(new_index).addClass('block__frame--open')
+              
+              const left_frame = frame.eq(0)
+              const right_frame = frame.eq(1)
+              if (new_index === 0) {
+                left_frame.
+              } else {
+
+              }
+            }
+          }
+        })
+      }
+
+      // height
+      const FPS = 15
+      const MIN_HEIGHT = getComputedStyle(block[0]).minHeight.slice(0, -2)
+
+      const slide = block.find('.block__slide')
+
+      updateHeight()
+      $(window).on('load', updateHeight)
+      $(window).one('resize', handleResize)
+
+      function getMaxHeight(callback) {
+        const blockClone = block.clone()
+
+        blockClone[0].style.cssText = `
+          position: fixed;
+          top: 0;
+          left: 0;
+          transform: translateY(-100%);
+
+          pointer-events: none;
+
+          opacity: 0;
+        `
+        
+        $(document.body).append(blockClone)
+
+        setTimeout(() => {
+          let maxHeight = 0
+
+          const slideClone = blockClone.find('.block__slide')
+
+          slideClone.css('height', '')
+
+          setTimeout(() => {
+            slideClone.each(function () {
+              if (this.offsetHeight > maxHeight) {
+                maxHeight = this.offsetHeight
+              }
+            })
+
+            blockClone.remove()
+
+            maxHeight = Math.max(maxHeight, MIN_HEIGHT)
+
+            callback(maxHeight)
+          })
+        })
+      }
+      function updateHeight() {
+        getMaxHeight(maxHeight => {
+          block.css('height', `${maxHeight}px`)
+          slide.css('height', `${maxHeight}px`)
+        })
+      }
+      function handleResize() {
+        setTimeout(() => {
+          updateHeight()
+
+          $(window).one('resize', handleResize)
+        }, 1000 / FPS)
+      }
     })
   })
 }
@@ -1041,6 +1144,5 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 {
   $(() => {
     $("form").parsley();
-
   });
 }
