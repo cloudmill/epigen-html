@@ -23,14 +23,15 @@
       }
 
       &--m {
-      @media (max-width: $breakpoint - 1px) {
-        margin-top: 15px;
-
-        &:not(:first-child) {
+        display: block;
+        @media (max-width: $breakpoint - 1px) {
           margin-top: 15px;
+
+          &:not(:first-child) {
+            margin-top: 15px;
+          }
         }
       }
-    }
     }
   }
 
@@ -57,9 +58,6 @@
     }
 
     &:focus-within {
-      // #{$comp}__input {
-      //   border-color: $color-blue;
-      // }
       #{$comp}__placeholder {
         border-color: $color-blue;
         color: $color-blue;
@@ -101,6 +99,7 @@
     flex-shrink: 0;
     order: -1;
 
+    background: $color-white;
     border: 1px solid $color-blue-light;
     border-right: none;
     border-radius: 6px 0 0 6px;
@@ -120,10 +119,15 @@
     @include f-main();
     @include fsl(15px, 140%);
     resize: none;
+    transition: $transition;
 
     &::placeholder {
       @include fsl(15px, 140%);
       color: $color-black;
+    }
+
+    &:focus {
+      border-color: $color-blue;
     }
   }
 

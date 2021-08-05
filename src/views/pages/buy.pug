@@ -117,10 +117,14 @@ block content
                     .form-container__col
                       form.form.form--follow(action="/")
                         .form__row
-                          .form__item
-                            input.form__input(type="text" name="name" placeholder="Имя")
-                          .form__item
-                            input.form__input(type="email" name="email" placeholder="E-mail")
+                          label.form__item
+                            input.form__input(type="text" name="name")
+                            span.form__placeholder
+                              |Имя
+                          label.form__item
+                            input.form__input(type="email" name="email")
+                            span.form__placeholder
+                              |E-mail
                         .form__row
                           .form__item.form__item--m
                             .checkbox

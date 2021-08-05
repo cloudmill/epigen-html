@@ -199,10 +199,14 @@ block content
               h3.mdl__form-title
                 |Задать вопрос врачу
               form.form(action="/")
-                .form__item
-                  input.form__input(type="text" name="name" placeholder="Имя")
-                .form__item
-                  input.form__input(type="email" name="email" placeholder="E-mail")
+                label.form__item
+                  input.form__input(type="text" name="name")
+                  span.form__placeholder
+                    |Имя
+                label.form__item
+                  input.form__input(type="email" name="email")
+                  span.form__placeholder
+                    |E-mail
                 .form__item
                   textarea.form__textarea(name="message" placeholder="Сообщение", cols="30", rows="10")
                 .form__inner
