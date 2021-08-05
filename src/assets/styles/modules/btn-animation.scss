@@ -67,6 +67,13 @@
     }
   }
 
+  &--icon {
+
+    &::before {
+      top: auto;
+    }
+  }
+
   &__text {
     display: block;
     position: relative;
@@ -74,4 +81,3 @@
     transition: $transition;
   }
 }
-
