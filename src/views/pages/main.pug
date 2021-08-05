@@ -236,11 +236,11 @@ block content
                 img.frame__img(src='assets/images/frame.jpeg')
                 .frame__btn.frame__btn--spray.plus-btn(data-button='1')
                   .plus-btn__border
-                  .plus-btn__circle
+                  .plus-btn__circle.btn-animation.btn-animation--icon
                   .plus-btn__plus
                 .frame__btn.frame__btn--gel.plus-btn.plus-btn--purple(data-button='2')
                   .plus-btn__border
-                  .plus-btn__circle
+                  .plus-btn__circle.btn-animation.btn-animation--icon.btn-animation--purple
                   .plus-btn__plus
               h1.main-page__intro-title.main-page__intro-title--m
                 |Эпиген Интим — линия средств для женского интимного здоровья на основе активированной глицирризиновой кислоты из экстракта корня солодки
@@ -292,9 +292,9 @@ block content
                 .b__bottom
                   .b__slide
                     .b__buttons
-                      .b.b--btn-left-right-slider.b--left.b__btn.b__btn--left(data-command-slider-arrow='prev')
+                      .b.b--btn-left-right-slider.b--left.b__btn.b__btn--left.btn-animation.btn-animation--icon(data-command-slider-arrow='prev')
                         +simple-arrow-svg.b__svg
-                      .b.b--btn-left-right-slider.b--right.b__btn.b__btn--right(data-command-slider-arrow='next')
+                      .b.b--btn-left-right-slider.b--right.b__btn.b__btn--right.btn-animation.btn-animation--icon(data-command-slider-arrow='next')
                         +simple-arrow-svg.b__svg
                     .b__row
                       a.b__col(href='#')
@@ -317,9 +317,9 @@ block content
                           |Исследования
                   .b__slide
                     .b__buttons
-                      .b.b--btn-left-right-slider.b--left.b__btn.b__btn--left(data-command-slider-arrow='prev')
+                      .b.b--btn-left-right-slider.b--left.b__btn.b__btn--left.btn-animation.btn-animation--icon(data-command-slider-arrow='prev')
                         +simple-arrow-svg.b__svg
-                      .b.b--btn-left-right-slider.b--right.b__btn.b__btn--right(data-command-slider-arrow='next')
+                      .b.b--btn-left-right-slider.b--right.b__btn.b__btn--right.btn-animation.btn-animation--icon(data-command-slider-arrow='next')
                         +simple-arrow-svg.b__svg
                     .b__row
                       a.b__col(href='#')
@@ -342,9 +342,9 @@ block content
                           |Исследования
                   .b__slide
                     .b__buttons
-                      .b.b--btn-left-right-slider.b--left.b__btn.b__btn--left(data-command-slider-arrow='prev')
+                      .b.b--btn-left-right-slider.b--left.b__btn.b__btn--left.btn-animation.btn-animation--icon(data-command-slider-arrow='prev')
                         +simple-arrow-svg.b__svg
-                      .b.b--btn-left-right-slider.b--right.b__btn.b__btn--right(data-command-slider-arrow='next')
+                      .b.b--btn-left-right-slider.b--right.b__btn.b__btn--right.btn-animation.btn-animation--icon(data-command-slider-arrow='next')
                         +simple-arrow-svg.b__svg
                     .b__row
                       a.b__col(href='#')
@@ -386,8 +386,9 @@ block content
                         |Непроходимость маточных труб
                       .b__label
                         |Исследования
-              a.b.b--border-link.b--border-link--mobile(href='#')
-                |Все статьи
+              a.b.b--border-link.b--border-link--mobile.btn-animation(href='#')
+                span.btn-animation__text
+                  |Все статьи
             .main-page__reviews
               .main-page__reviews-bg
               h3.main-page__title
@@ -481,10 +482,10 @@ block content
                             .b__content-top
                               .b__control.b__control--animated
                                 .b__control-item
-                                  .b.b--btn-left-right-slider(data-command-slider-arrow='prev')
+                                  .b.b--btn-left-right-slider.btn-animation.btn-animation--icon(data-command-slider-arrow='prev')
                                     +simple-arrow-svg.b__svg
                                 .b__control-item
-                                  .b.b--btn-left-right-slider.b--right(data-command-slider-arrow='next')
+                                  .b.b--btn-left-right-slider.b--right.btn-animation.btn-animation--icon(data-command-slider-arrow='next')
                                     +simple-arrow-svg.b__svg
                             .b__content-bottom
                               a.button.button--reviews-slider(href='#' data-mdl-open='')
@@ -562,10 +563,14 @@ block content
                         |Для получения результатов теста укажите E&#8209;mail
                       form.form(action='/')
                         .test__form-item
-                          input.form__input(type="text" name="email" placeholder="E-mail")
+                          label.form__item
+                            input.form__input(type="text" name="email")
+                            span.form__placeholder
+                              |E-mail
                         .test__form-item
-                          button.button.button--wide(type='submit')
-                            |Отправить результаты теста на почту
+                          button.button.button--wide.btn-animation(type='submit')
+                            span.btn-animation__text
+                              |Отправить результаты теста на почту
                     .test__form-response
                       |Результат отправлен на почту#[br]
                       span.test__form-email
