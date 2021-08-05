@@ -268,14 +268,13 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
         const clickTarget = $(event.target)
 
-        // const mdlClose = $('.mdl__close')[0]
         const mdlClose = clickTarget.closest('.mdl__close')
-        // const mdlContent = $('.mdl__content')[0]
         const mdlContent = clickTarget.closest('.mdl__content')
+        const mdlFile = clickTarget.closest('.file__item')
 
         if (
           mdlClose.length === 1
-          || mdlContent.length === 0
+          || mdlContent.length === 0 && mdlFile.length === 0
         ) {
           $(window).off('click', handleClick)
 
