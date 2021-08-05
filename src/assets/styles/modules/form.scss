@@ -121,7 +121,7 @@
     resize: none;
     transition: $transition;
 
-    &::placeholder {
+    @include placeholder {
       @include fsl(15px, 140%);
       color: $color-black;
     }
