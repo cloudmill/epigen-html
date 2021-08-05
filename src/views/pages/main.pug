@@ -533,7 +533,7 @@ block content
                   .test__options(class = ((i === 0) ? 'test__options--active' : ''))
                     each item in ['Обильные выделения без неприятного запаха', 'Выделения с неприятным запахом', 'Болезненные пузырьки в интимной зоне, превращающиеся в язвы', 'Безболезненные папилломы, узелки, наросты или бородавки в интимной зоне', 'Что-то другое, не указанное выше']
                       label.test__label(for="#")
-                        input.test__radio(type="radio")
+                        input.test__radio(type="radio" name='question-' + (i + 1))
                         .test__icon
                           +check-svg
                         .test__text
