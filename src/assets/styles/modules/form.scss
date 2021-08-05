@@ -49,25 +49,37 @@
   }
 
   &__item {
-    position: relative;
+    display: flex;
+    align-items: center;
 
     &:not(:first-child) {
       margin-top: 10px;
     }
+
+    &:focus-within {
+      // #{$comp}__input {
+      //   border-color: $color-blue;
+      // }
+      #{$comp}__placeholder {
+        border-color: $color-blue;
+        color: $color-blue;
+      }
+    }
   }
 
   &__input {
-    padding: 19px 30px;
+    padding: 19px 30px 19px 0;
     @media (max-width: $breakpoint - 1px) {
-      padding: 11px 30px;
+      padding: 11px 30px 11px 0;
     }
 
     width: 100%;
 
     @include fsl(15px, 140%);
     @include f-main();
-    border-radius: 6px;
     border: 1px solid $color-blue-light;
+    border-left: none;
+    border-radius: 0 6px 6px 0;
     transition: $transition;
 
     &::placeholder {
@@ -80,15 +92,22 @@
     }
   }
 
-  // &__placeholder {
-  //   position: absolute;
-  //   top: 50%;
-  //   left: 30px;
-  //   transform: translateY(-50%);
+  &__placeholder {
+    padding: 19px 15px 19px 30px;
+    @media (max-width: $breakpoint - 1px) {
+      padding: 11px 15px 11px 30px;
+    }
 
-  //   @include fsl(15px, 140%);
-  //   transition: $transition;
-  // }
+    flex-shrink: 0;
+    order: -1;
+
+    border: 1px solid $color-blue-light;
+    border-right: none;
+    border-radius: 6px 0 0 6px;
+    @include fsl(15px, 140%);
+    transition: $transition;
+    white-space: nowrap;
+  }
 
   &__textarea {
     padding: 19px 30px;
@@ -124,7 +143,12 @@
   }
 
   .parsley-error {
-    border-color: #E64AE9;
+    border-color: $color-pink;
+
+    &~.form__placeholder {
+      border-color: $color-pink;
+      color: $color-pink;
+    }
   }
 
   .parsley-errors-list {
@@ -134,7 +158,7 @@
 
     li {
       @include fsl(11px, 120%);
-      color: #E64AE9;
+      color: $color-pink;
     }
   }
 }
@@ -143,5 +167,3 @@
   opacity: 0;
   pointer-events: none;
 }
-
-
