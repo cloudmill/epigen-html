@@ -909,74 +909,49 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
   $(() => {
     console.log('wave')
 
-    const canvas = $('.canvas')
-    const ctx = canvas[0].getContext('2d')
-    canvas[0].width = window.innerWidth
-    canvas[0].height = window.innerHeight
-
-    function render() {
-      ctx.clearRect(0, 0, window.innerWidth, window.innerHeight)
-    
-      var points = []
-
-      // const quality = 6;
-      // for (let i = 0; i < quality; i++) {
-      //   points.push({
-      //     x: Math.cos(i / quality * (Math.PI * 2)) * 100 + 100,
-      //     y: Math.sin(i / quality * (Math.PI * 2)) * 100 + 100,
-      //   })
-      // }
-
-      points = [
-        {
-          x: 0, y: 0,
-        },
-        {
-          x: 50, y: 25,
-        },
-        {
-          x: 100, y: 50,
-        },
-        {
-          x: 50, y: 100,
-        },
-        {
-          x: 0, y: 50,
-        },
-        {
-          x: 50, y: 25,
-        },
-        {
-          x: 100, y: 0,
-        },
+    $('.wave').each(function () {
+      const canvas = $('.wave')
+      const ctx = canvas[0].getContext('2d')
+      
+      const points = [
+        [0, 0],
+        [10, 10],
+        [20, 10],
+        [30, 0],
+        [40, 0],
+        [60, 20],
+        [60, 30],
+        [50, 40],
+        [40, 40],
+        [0, 0]
       ]
 
-      ctx.beginPath();
+      // 1
+      ctx.beginPath()
 
-      ctx.moveTo(points[0].x, points[0].y);
+      ctx.moveTo(...points[0])
 
-      for (var i = 1; i < points.length - 2; i++)
-      {
-          var xc = (points[i].x + points[i + 1].x) / 2;
-          var yc = (points[i].y + points[i + 1].y) / 2;
-          ctx.quadraticCurveTo(points[i].x, points[i].y, xc, yc);
+      for (let i = 1; i < points.length; i++) {
+        ctx.lineTo(...points[i])
       }
 
-      ctx.quadraticCurveTo(points[i].x, points[i].y, points[i+1].x,points[i+1].y);
-
-      ctx.closePath();
-
-      let gradient = ctx.createLinearGradient(0, 0, 100, 0);
-      gradient.addColorStop(0, 'green');
-      gradient.addColorStop(.7, 'white');
-      gradient.addColorStop(1, 'pink');
-
-      ctx.strokeStyle = gradient;
-      ctx.lineWidth = 5;
+      ctx.strokeStyle = 'red'
       ctx.stroke()
-    }
 
-    render()
+      ctx.closePath()
+
+      // 2
+      ctx.beginPath()
+
+      ctx.moveTo(0, 0)
+
+      ctx.quadraticCurveTo(0, 100, 100, 100)
+
+      ctx.strokeStyle = 'green'
+      ctx.stroke()
+
+      ctx.closePath()
+    })
   })
 }
 
