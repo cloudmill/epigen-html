@@ -64,13 +64,14 @@ block content
             .aside__inner
               .aside__container
                 .aside__top
-                  header.aside__header.aside__header--margin-bottom--default
-                    a.aside__logo(href='#')
-                      +logo-svg.aside__logo-svg
-                    .aside__menu
-                      .aside__menu-text
+                  header.header.header--margin-bottom--default
+                    a.header__logo(href='#')
+                      +logo-svg.header__logo-svg
+                    .header__menu
+                      .header__text
                         |Меню
-                      .aside__menu-button
+                      .header__button
+                        .header__burger
                   +nav-page-d.nav-page-d--purple
                 .aside__bottom
                   a.button.button--t.button--purple.margin-bottom.margin-bottom--m(href='#')
@@ -86,31 +87,132 @@ block content
                     .panel__col
                       .panel__inner
                         .panel__product
+                          //- .panel__product-item--active
                           a.panel__product-item(href='#')
                             .panel__product-mark
                             .panel__product-text
                               |Спрей
-                          a.panel__product-item.panel__product-item--purple.panel__product-item--active(href='#')
+                          a.panel__product-item.panel__product-item--purple(href='#')
                             .panel__product-mark
                             .panel__product-text
                               |Гель
-                    .panel__col
-                      .panel__inner
-                        a.panel__where-buy(href='#')
-                          |Где купить
-                    .panel__col
-                      .panel__inner
-                        .panel__choice
-                          .panel__choice-item(data-count=8)
-                            |Симптомы
-                          .panel__choice-item(data-count=12)
-                            |Заболевания
-                    .panel__col
-                      .panel__inner
-                        .panel__consultation
-                          +consultation-svg.panel__consultation-svg
-                          .panel__consultation-text
-                            |Консультация эксперта
+                    .panel__wrapper
+                      .panel__wrapper-row
+                        .panel__wrapper-col
+                          .panel__inner
+                            a.panel__where-buy(href='#')
+                              |Где купить
+                            .panel__choice
+                              .panel__choice-item(data-count=8 data-modal-button='3')
+                                |Симптомы
+                              .panel__choice-item(data-count=12 data-modal-button='2')
+                                |Заболевания
+                        .panel__wrapper-col
+                          .panel__inner
+                            .panel__test(data-button='3')
+                              +calendar-test-svg.panel__test-icon
+                              .panel__test-text
+                                |Пройти тест
+                            .panel__consultation
+                              +consultation-svg.panel__consultation-svg
+                              .panel__consultation-text
+                                |Консультация эксперта
+                      .panel__modals
+                        .panel-modal(data-modal-id='2')
+                          .panel-modal__container
+                            .panel-modal__row
+                              .panel-modal__col
+                                ul.panel-modal__list
+                                  each item in ['Генитальный герпес (I и II типа)', 'ВПЧ', 'Применение при беременности', 'Молочница', 'Бактериальный вагиноз',]
+                                    li.panel-modal__item
+                                      a.panel-modal__link(href="#")
+                                        |#{item}
+                              .panel-modal__col
+                                ul.panel-modal__list
+                                  each item in ['ВПЧ', 'Молочница',]
+                                    li.panel-modal__item
+                                      a.panel-modal__link(href="#")
+                                        |#{item}
+                        .panel-modal(data-modal-id='3')
+                          .panel-modal__container
+                            .panel-modal__row
+                              .panel-modal__col
+                                ul.panel-modal__list
+                                  each item in ['Зуд', 'Жжение', 'Выделения, пузырьки', 'Пузырьки, язвочки', 'Болезненность, выделения',]
+                                    li.panel-modal__item
+                                      a.panel-modal__link(href="#")
+                                        |#{item}
+                              .panel-modal__col
+                                ul.panel-modal__list
+                                  each item in ['Болезненность при половом контакте', 'Боль внизу живота', 'Боль при мочеиспускании']
+                                    li.panel-modal__item
+                                      a.panel-modal__link(href="#")
+                                        |#{item}
+                  .panel__mobile
+                    header.header
+                      a.header__logo(href="#")
+                        +logo-svg.header__svg
+                      .header__menu(data-modal-button='1')
+                        .header__button
+                          .header__burger
+                  .panel__modals
+                    .modal-mobile.modal-mobile--height--100vh-60p(data-modal-id='1')
+                      .modal-mobile__inner
+                        .modal-mobile__container
+                          .modal-mobile__products
+                            .modal-mobile__products-item
+                              +product-link.product-link--modal--mobile(src='assets/images/spray.jpeg')
+                                |Спрей
+                            .modal-mobile__products-item
+                              +product-link.product-link--modal--mobile.product-link--purple(src='assets/images/gel.jpeg')
+                                |Гель
+                        .panel.panel--modal
+                          .panel__choice
+                            .modal-mobile__choice
+                              .modal-mobile__choice-button
+                                .panel__choice-item(data-count='8')
+                                  |Симптомы
+                                +spoiler-arrow-svg.modal-mobile__choice-svg
+                              .modal-mobile__choice-dropdown
+                            .modal-mobile__choice
+                              .modal-mobile__choice-button
+                                .panel__choice-item(data-count='12')
+                                  |Заболевания
+                                +spoiler-arrow-svg.modal-mobile__choice-svg
+                              .modal-mobile__choice-dropdown
+                          .modal-mobile__links
+                            .modal-mobile__container
+                              ul.modal-mobile__links-list
+                                li.modal-mobile__links-item
+                                  a.panel__test
+                                    +calendar-test-svg.panel__test-icon
+                                    .panel__test-text
+                                      |Пройти тест
+                                li.modal-mobile__links-item
+                                  .panel__consultation
+                                    +consultation-svg.panel__consultation-svg
+                                    .panel__consultation-text
+                                      |Консультация эксперта
+                                each item in ['Где купить', 'Вопрос эксперту', 'Отзывы Спрей Эпиген ', 'Отзывы Гель Эпиген ', 'Видео с экспертами', 'Статьи экспертов', 'Вопрос-ответ', 'Специалистам',]
+                                  li.modal-mobile__links-item
+                                    a.modal-mobile__links-link(href="#")
+                                      |#{item}
+                        .modal-mobile__bottom
+                          .modal-mobile__container
+                            ul.modal-mobile__bottom-links
+                              li.modal-mobile__bottom-item
+                                a.modal-mobile__bottom-doc(href="#")
+                                  |Политика конфиденциальности
+                              li.modal-mobile__bottom-item
+                                a.modal-mobile__bottom-doc(href="#")
+                                  |Положение о пользовании сайтом
+                              li.modal-mobile__bottom-item
+                                .modal-mobile__bottom-text
+                                  span
+                                    |Сделано в&nbsp;
+                                  a.modal-mobile__bottom-link(href="#")
+                                    |CloudMill
+
             main.page__main
               section.spray-page__section
                 .frame.frame--gel
@@ -270,7 +372,7 @@ block content
                 .page-gel__reviews-top
                   .page-gel__reviews-left
                     h2.page-gel__reviews-title
-                      |Отзывы 
+                      |Отзывы
                     .page-gel__reviews-btns
                       .page-gel__reviews-btns-item
                         .b.b--btn-left-right-slider.js.js--gel-reviews-btn--prev
