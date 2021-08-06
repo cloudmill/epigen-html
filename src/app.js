@@ -912,7 +912,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     $('.wave').each(function () {
       const canvas = $('.wave')
       const ctx = canvas[0].getContext('2d')
-      
+
       const points = [
         [0, 0],
         [10, 10],
@@ -1010,7 +1010,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       const DURATION = 500
 
       const btn = block.find('.spray-page__tabs-item')
-      
+
       if (btn.length > 1) {
         let cur_index = 0
 
@@ -1066,7 +1066,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
           opacity: 0;
         `
-        
+
         $(document.body).append(blockClone)
 
         setTimeout(() => {
@@ -1112,5 +1112,64 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 {
   $(() => {
     $("form").parsley();
+  });
+}
+
+// parallax
+{
+  $(() => {
+    const parallaxItem = $('[data-parallax]');
+
+    if (parallaxItem.length !== 0) {
+
+      parallaxItem.each(function() {
+        const parallaxElem = $(this);
+        const parallaxElemOffset = parallaxElem.offset().top;
+        const parallaxId = parallaxElem.data('parallax');
+        const parallaxContainer = $(`[data-parallax-container='${parallaxId}']`)
+
+        console.log($(window).height());
+
+        $(window).on('scroll', function() {
+          const scrollPos = this.pageYOffset;
+
+          if (scrollPos < parallaxContainer.offset().top &&
+              (scrollPos + $(window).height() / 2) > parallaxElemOffset) {
+                const parallax = ((scrollPos + $(window).height() / 2) - parallaxElemOffset) * 0.1;
+
+                requestAnimationFrame(() => {
+                  parallaxElem.css('transform', `translateY(${parallax}px)`);
+                })
+              }
+        });
+      });
+    };
+  });
+}
+
+// test
+{
+  $(() => {
+    const container = $('.disease-page__spray-row')
+    const sticky = $('.my-sticky')
+
+    if (sticky.height() < container.height()) {
+      $(window).on('scroll', function () {
+        const containerOffset = container.offset().top
+        const scrollPos = this.pageYOffset;
+
+        if ((scrollPos + 100) > containerOffset) {
+          sticky.addClass('my-sticky--fixed')
+        } else {
+          sticky.removeClass('my-sticky--fixed')
+        }
+
+        if ((sticky.height() + scrollPos + 100) > (containerOffset + container.height())) {
+          sticky.addClass('my-sticky--bottom')
+        } else {
+          sticky.removeClass('my-sticky--bottom')
+        }
+      })
+    }
   });
 }

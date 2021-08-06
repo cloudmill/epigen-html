@@ -400,6 +400,8 @@
     flex-shrink: 0;
 
     &:nth-child(1) {
+      position: relative;
+
       @media (max-width: $breakpoint - 1px) {
         margin-bottom: 30px;
       }
@@ -438,6 +440,7 @@
   &__spray-image {
     img {
       display: block;
+      max-width: calc(#{$col-width-d} * 6);
 
       border-radius: 10px;
     }
@@ -478,3 +481,18 @@
     display: none;
   }
 }
+
+.my-sticky {
+
+  &--fixed {
+    position: fixed;
+    top: 100px;
+  }
+
+  &--bottom {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+  }
+}
+

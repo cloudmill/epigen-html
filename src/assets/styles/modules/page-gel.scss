@@ -79,7 +79,7 @@
       margin-top: 60px;
       padding-right: calc(#{$col-width-d});
       width: calc(#{$col-width-d} * 6);
-  
+
       &:nth-child(-n + 2) {
         margin-top: 0;
       }
@@ -138,7 +138,7 @@
     counter-increment: index;
 
     position: relative;
-    
+
     display: flex;
 
     &::before {
@@ -329,6 +329,10 @@
     font-weight: 400;
     @include fsl(70px, 110%);
     color: $color-purple;
+
+    &--small {
+      @include fsl(40px, 130%);
+    }
   }
   &__features-text {
     margin-top: 30px;
@@ -378,12 +382,51 @@
   }
   &__features-img {
     &-1 {
-      position: absolute;
-      top: 0;
-      left: calc(#{$col-width-d} * 12.5);
       transform: translateX(-50%);
 
       max-width: 473px;
+    }
+
+    &-2 {
+      transform: translateX(-50%);
+
+      max-width: 586px;
+    }
+
+    &-3 {
+
+      transform: translateX(-50%);
+
+      max-width: 540px;
+    }
+
+    &-4 {
+      transform: translateX(-50%);
+
+      max-width: 203px;
+      border-radius: 150px;
+    }
+
+    &-5 {
+      transform: translateX(-50%);
+
+      max-width: 97px;
+      border-radius: 150px;
+    }
+
+    &-6 {
+      transform: translateX(-50%);
+
+      max-width: 97px;
+      border-radius: 150px;
+    }
+  }
+
+  &__layout-img {
+    &-1 {
+      position: absolute;
+      top: 0;
+      left: calc(#{$col-width-d} * 12.5);
     }
 
     &-2 {
@@ -391,9 +434,6 @@
       z-index: -1;
       top: -66px;
       left: calc(#{$col-width-d} * 4.5);
-      transform: translateX(-50%);
-
-      max-width: 586px;
     }
 
     &-3 {
@@ -401,19 +441,27 @@
       z-index: -1;
       top: -109px;
       left: calc(#{$col-width-d} * 13);
-      transform: translateX(-50%);
-
-      max-width: 540px;
     }
 
     &-4 {
       position: absolute;
       z-index: -1;
-      top: -125px;
-      left: calc(#{$col-width-d} * 3);
-      transform: translateX(-50%);
+      top: -57px;
+      left: calc((#{$col-width-d} * 3) + (#{$col-width-d} / 2));
+    }
 
-      max-width: 405px;
+    &-5 {
+      position: absolute;
+      z-index: -1;
+      top: -125px;
+      left: calc(#{$col-width-d} / 2);
+    }
+
+    &-6 {
+      position: absolute;
+      z-index: -1;
+      top: 125px;
+      left: calc(#{$col-width-d} * 5);
     }
   }
 }

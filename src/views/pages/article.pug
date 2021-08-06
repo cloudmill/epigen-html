@@ -393,11 +393,13 @@ block content
                     |Пройдите тест и узнайте больше о решении данной проблемы
                   .article-page__section-buttons
                     .article-page__section-item
-                      a.button.button--l(href="#")
-                        |Пройти тест
+                      a.button.button--l.btn-animation(href="#")
+                        span.btn-animation__text
+                          |Пройти тест
                     .article-page__section-item
-                      a.button.button--l.button--purple(href="#")
-                        |Задать вопрос эксперту
+                      a.button.button--l.button--purple.btn-animation.btn-animation--purple(href="#")
+                        span.btn-animation__text
+                          |Задать вопрос эксперту
               section.specialists-page__inner.margin-top.specialists-page__content(id='symptoms' data-section='')
                 h3
                   |Симптомы
@@ -446,15 +448,18 @@ block content
                     .disease-page__spray-col
                       h3.disease-page__spray-title.disease-page__spray-title--mobile
                         |Спрей Эпиген Интим
-                      .disease-page__spray-image
-                        img(src="assets/images/epigen-spray.jpg", alt="")
-                      .disease-page__spray-buttons
-                        .disease-page__spray-item
-                          a.button.button--wide(href="#")
-                            |Подробнее
-                        .disease-page__spray-item
-                          a.button.button--wide.button--purple(href="#")
-                            |Купить
+                      .my-sticky
+                        .disease-page__spray-image
+                          img(src="assets/images/epigen-spray.jpg", alt="")
+                        .disease-page__spray-buttons
+                          .disease-page__spray-item
+                            a.button.button--wide.btn-animation(href="#")
+                              span.btn-animation__text
+                                |Подробнее
+                          .disease-page__spray-item
+                            a.button.button--wide.button--purple.btn-animation.btn-animation--purple(href="#")
+                              span.btn-animation__text
+                                |Купить
 
                     .disease-page__spray-col.specialists-page__content
                           h3.disease-page__spray-title
