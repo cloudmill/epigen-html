@@ -1076,3 +1076,29 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
   });
 }
 
+// test
+{
+  $(() => {
+    const container = $('.disease-page__spray-row')
+    const sticky = $('.my-sticky')
+
+    if (sticky.height() < container.height()) {
+      $(window).on('scroll', function () {
+        const containerOffset = container.offset().top
+        const scrollPos = this.pageYOffset;
+
+        if ((scrollPos + 100) > containerOffset) {
+          sticky.addClass('my-sticky--fixed')
+        } else {
+          sticky.removeClass('my-sticky--fixed')
+        }
+
+        if ((sticky.height() + scrollPos + 100) > (containerOffset + container.height())) {
+          sticky.addClass('my-sticky--bottom')
+        } else {
+          sticky.removeClass('my-sticky--bottom')
+        }
+      })
+    }
+  });
+}
