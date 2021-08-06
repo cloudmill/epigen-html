@@ -12,24 +12,28 @@ mixin nav-page-d
         var items = [
           {
             href: '#',
+            scroll: '#products',
             title: 'Продукция Эпиген Интим',
           },
           {
             href: '#',
+            scroll: '#expert',
             title: 'Экспертное мнение',
           },
           {
             href: '#',
+            scroll: '#actual',
             title: 'Актуальное',
           },
           {
             href: '#',
+            scroll: '#reviews',
             title: 'Отзывы',
           },
         ]
       each item, index in items
         li.nav-page-d__item(class = ((index === 0) ? 'nav-page-d__item--active' : ''))
-          a.nav-page-d__link(href=item.href)
+          a.nav-page-d__link(href=item.href data-scroll=item.scroll)
             |!{item.title}
 
 mixin copyright-link
@@ -250,7 +254,7 @@ block content
                 br
                 |линия средств для женского интимного здоровья
 
-              ul.main-page__features
+              ul.main-page__features(id='products' data-section='')
                 li.main-page__features-item
                   .main-page__features-text
                     |Произведено в Испании
@@ -263,235 +267,235 @@ block content
                 li.main-page__features-item
                   .main-page__features-text
                     |Более 20 лет в России
-            .main-page__expert
-              h3.main-page__title
-                |Делимся экспертизой
-              p.link-text.main-page__expert-text.main-page__expert-text--mobile
-                |Вы всегда можете задать вопрос#[br]нашим экспертам в #[a.link-text__link(href='#') специальном]#[br]#[a.link-text__link(href='#') разделе] или найти ответы в наших#[br]#[a.link-text__link(href='#') статьях] и #[a.link-text__link(href='#') видео-публикациях]
-              p.link-text.main-page__expert-text.main-page__expert-text--desktop
-                |Вы всегда можете задать вопрос нашим#[br]экспертам в #[a.link-text__link(href='#') специальном разделе]#[br]или найти ответы в наших #[a.link-text__link(href='#') статьях]#[br]и #[a.link-text__link(href='#') видео-публикациях]
-              img.main-page__expert-img(src='assets/images/main-expert.jpeg')
-              .main-page__expert-wave
-                +wave-expert-svg.main-page__expert-svg
-                .main-page__layout-moon(data-parallax='2')
-                  +moon-svg.main-page__expert-moon
-                .main-page__layout-star(data-parallax='2')
-                  +star-svg.main-page__expert-star
-            .main-page__actual(data-parallax-container='2')
-              h3.main-page__title
-                |актуальное
-              .b.b--text-with-link-row-in-main-page
-                .b__text
-                  p.link-text.main-page__expert-text.main-page__expert-text--mobile
-                    |Мы постянно публикуем свежие статьи о проблемах, возможном лечении и рекомендациях экспертов
-                  p.link-text.main-page__expert-text.main-page__expert-text--desktop
-                    |Мы постянно публикуем свежие статьи#[br]о проблемах, возможном лечении#[br]и рекомендациях экспертов
-                .b__link
-                  a.b.b--border-link.b--border-link--desktop.btn-animation(href='#')
-                    span.btn-animation__text
-                      |Все статьи
-              .b.b--carousel-slider-desktop.b--carousel-slider-desktop-margin-top-in-main-page
-                .b__bottom
-                  .b__slide
-                    .b__buttons
-                      .b.b--btn-left-right-slider.b--left.b__btn.b__btn--left.btn-animation.btn-animation--icon(data-command-slider-arrow='prev')
-                        +simple-arrow-svg.b__svg
-                      .b.b--btn-left-right-slider.b--right.b__btn.b__btn--right.btn-animation.btn-animation--icon(data-command-slider-arrow='next')
-                        +simple-arrow-svg.b__svg
-                    .b__row
-                      a.b__col(href='#')
-                        img.b__img(src='assets/images/carousel-1.jpeg')
-                        h3.b__title
-                          |Миома матки: симптомы, лечение, профилактика
-                        span.b__label
-                          |Клинические рекомендации
-                      a.b__col(href='#')
-                        img.b__img(src='assets/images/carousel-2.jpeg')
-                        h3.b__title
-                          |Кровотечение при миоме
-                        span.b__label
-                          |Обучение
-                      a.b__col(href='#')
-                        img.b__img(src='assets/images/carousel-3.jpeg')
-                        h3.b__title
-                          |Непроходимость маточных труб
-                        span.b__label
-                          |Исследования
-                  .b__slide
-                    .b__buttons
-                      .b.b--btn-left-right-slider.b--left.b__btn.b__btn--left.btn-animation.btn-animation--icon(data-command-slider-arrow='prev')
-                        +simple-arrow-svg.b__svg
-                      .b.b--btn-left-right-slider.b--right.b__btn.b__btn--right.btn-animation.btn-animation--icon(data-command-slider-arrow='next')
-                        +simple-arrow-svg.b__svg
-                    .b__row
-                      a.b__col(href='#')
-                        img.b__img(src='assets/images/carousel-3.jpeg')
-                        h3.b__title
-                          |Миома матки: симптомы, лечение, профилактика
-                        span.b__label
-                          |Исследования
-                      a.b__col(href='#')
-                        img.b__img(src='assets/images/carousel-1.jpeg')
-                        h3.b__title
-                          |Кровотечение при миоме
-                        span.b__label
-                          |Клинические рекомендации
-                      a.b__col(href='#')
-                        img.b__img(src='assets/images/carousel-2.jpeg')
-                        h3.b__title
-                          |Непроходимость маточных труб
-                        span.b__label
-                          |Обучение
-                  .b__slide
-                    .b__buttons
-                      .b.b--btn-left-right-slider.b--left.b__btn.b__btn--left.btn-animation.btn-animation--icon(data-command-slider-arrow='prev')
-                        +simple-arrow-svg.b__svg
-                      .b.b--btn-left-right-slider.b--right.b__btn.b__btn--right.btn-animation.btn-animation--icon(data-command-slider-arrow='next')
-                        +simple-arrow-svg.b__svg
-                    .b__row
-                      a.b__col(href='#')
-                        img.b__img(src='assets/images/carousel-2.jpeg')
-                        h3.b__title
-                          |Миома матки: симптомы, лечение, профилактика
-                        span.b__label
-                          |Обучение
-                      a.b__col(href='#')
-                        img.b__img(src='assets/images/carousel-3.jpeg')
-                        h3.b__title
-                          |Кровотечение при миоме
-                        span.b__label
-                          |Исследования
-                      a.b__col(href='#')
-                        img.b__img(src='assets/images/carousel-1.jpeg')
-                        h3.b__title
-                          |Непроходимость маточных труб
-                        span.b__label
-                          |Клинические рекомендации
-              .b.b--carousel-slider-mobile.swiper-container(data-slider-id='2')
-                .swiper-wrapper
-                  - for (i = 0; i < 3; i++)
-                    a.b__slide.swiper-slide(href="#")
-                      img.b__img(src="assets/images/carousel-1.jpeg", alt="")
-                      h3.b__title
-                        |Миома матки: симптомы, лечение, профилактика
-                      .b__label
-                        |Клинические рекомендации
-                    a.b__slide.swiper-slide(href="#")
-                      img.b__img(src="assets/images/carousel-2.jpeg", alt="")
-                      h3.b__title
-                        |Кровотечение при миоме
-                      .b__label
-                        |Исследования
-                    a.b__slide.swiper-slide(href="#")
-                      img.b__img(src="assets/images/carousel-3.jpeg", alt="")
-                      h3.b__title
-                        |Непроходимость маточных труб
-                      .b__label
-                        |Исследования
-              a.b.b--border-link.b--border-link--mobile.btn-animation(href='#')
-                span.btn-animation__text
-                  |Все статьи
-            .main-page__reviews
-              .main-page__reviews-bg
-              h3.main-page__title
-                |отзывы
-              .b.b--reviews-slider-main-page
-                .b__top
-                  .b__top-row
-                    .b__top-col
-                      h4.b__title
-                        |Использовали Эпиген Интим
-                        br
-                        |и остались довольны
-                    .b__top-col
-                      ul.product-choice.product-choice--reviews-slider--default
-                        li.product-choice__item
-                          a.product-btn.product-btn--white(href='#')
-                            +spray-svg.product-btn__svg
-                            p.product-btn__text
-                              |Эпиген Интим
-                              br
-                              |Спрей
-                        li.product-choice__item
-                          a.product-btn.product-btn--white.product-btn--active(href='#')
-                            +gel-svg.product-btn__svg
-                            p.product-btn__text
-                              |Эпиген Интим
-                              br
-                              |Гель
-                .b__bottom
-                  each slide in [1, 2, 3, 4]
+              .main-page__expert(id='expert' data-section='')
+                h3.main-page__title
+                  |Делимся экспертизой
+                p.link-text.main-page__expert-text.main-page__expert-text--mobile
+                  |Вы всегда можете задать вопрос#[br]нашим экспертам в #[a.link-text__link(href='#') специальном]#[br]#[a.link-text__link(href='#') разделе] или найти ответы в наших#[br]#[a.link-text__link(href='#') статьях] и #[a.link-text__link(href='#') видео-публикациях]
+                p.link-text.main-page__expert-text.main-page__expert-text--desktop
+                  |Вы всегда можете задать вопрос нашим#[br]экспертам в #[a.link-text__link(href='#') специальном разделе]#[br]или найти ответы в наших #[a.link-text__link(href='#') статьях]#[br]и #[a.link-text__link(href='#') видео-публикациях]
+                img.main-page__expert-img(src='assets/images/main-expert.jpeg')
+                .main-page__expert-wave
+                  +wave-expert-svg.main-page__expert-svg
+                  .main-page__layout-moon(data-parallax='2')
+                    +moon-svg.main-page__expert-moon
+                  .main-page__layout-star(data-parallax='2')
+                    +star-svg.main-page__expert-star
+              .main-page__actual(data-parallax-container='2' id='actual' data-section='')
+                h3.main-page__title
+                  |актуальное
+                .b.b--text-with-link-row-in-main-page
+                  .b__text
+                    p.link-text.main-page__expert-text.main-page__expert-text--mobile
+                      |Мы постянно публикуем свежие статьи о проблемах, возможном лечении и рекомендациях экспертов
+                    p.link-text.main-page__expert-text.main-page__expert-text--desktop
+                      |Мы постянно публикуем свежие статьи#[br]о проблемах, возможном лечении#[br]и рекомендациях экспертов
+                  .b__link
+                    a.b.b--border-link.b--border-link--desktop.btn-animation(href='#')
+                      span.btn-animation__text
+                        |Все статьи
+                .b.b--carousel-slider-desktop.b--carousel-slider-desktop-margin-top-in-main-page
+                  .b__bottom
                     .b__slide
-                      .b__slide-row.b__slide-row--desktop
-                        .b__slide-col
-                          .b__slide-img
-                            img.b__img(src='assets/images/reviews-slider-1.jpeg')
-                        .b__slide-col
-                          .b__content
-                            .b__content-row
-                              .b__content-col
-                                .b__content-top
+                      .b__buttons
+                        .b.b--btn-left-right-slider.b--left.b__btn.b__btn--left.btn-animation.btn-animation--icon(data-command-slider-arrow='prev')
+                          +simple-arrow-svg.b__svg
+                        .b.b--btn-left-right-slider.b--right.b__btn.b__btn--right.btn-animation.btn-animation--icon(data-command-slider-arrow='next')
+                          +simple-arrow-svg.b__svg
+                      .b__row
+                        a.b__col(href='#')
+                          img.b__img(src='assets/images/carousel-1.jpeg')
+                          h3.b__title
+                            |Миома матки: симптомы, лечение, профилактика
+                          span.b__label
+                            |Клинические рекомендации
+                        a.b__col(href='#')
+                          img.b__img(src='assets/images/carousel-2.jpeg')
+                          h3.b__title
+                            |Кровотечение при миоме
+                          span.b__label
+                            |Обучение
+                        a.b__col(href='#')
+                          img.b__img(src='assets/images/carousel-3.jpeg')
+                          h3.b__title
+                            |Непроходимость маточных труб
+                          span.b__label
+                            |Исследования
+                    .b__slide
+                      .b__buttons
+                        .b.b--btn-left-right-slider.b--left.b__btn.b__btn--left.btn-animation.btn-animation--icon(data-command-slider-arrow='prev')
+                          +simple-arrow-svg.b__svg
+                        .b.b--btn-left-right-slider.b--right.b__btn.b__btn--right.btn-animation.btn-animation--icon(data-command-slider-arrow='next')
+                          +simple-arrow-svg.b__svg
+                      .b__row
+                        a.b__col(href='#')
+                          img.b__img(src='assets/images/carousel-3.jpeg')
+                          h3.b__title
+                            |Миома матки: симптомы, лечение, профилактика
+                          span.b__label
+                            |Исследования
+                        a.b__col(href='#')
+                          img.b__img(src='assets/images/carousel-1.jpeg')
+                          h3.b__title
+                            |Кровотечение при миоме
+                          span.b__label
+                            |Клинические рекомендации
+                        a.b__col(href='#')
+                          img.b__img(src='assets/images/carousel-2.jpeg')
+                          h3.b__title
+                            |Непроходимость маточных труб
+                          span.b__label
+                            |Обучение
+                    .b__slide
+                      .b__buttons
+                        .b.b--btn-left-right-slider.b--left.b__btn.b__btn--left.btn-animation.btn-animation--icon(data-command-slider-arrow='prev')
+                          +simple-arrow-svg.b__svg
+                        .b.b--btn-left-right-slider.b--right.b__btn.b__btn--right.btn-animation.btn-animation--icon(data-command-slider-arrow='next')
+                          +simple-arrow-svg.b__svg
+                      .b__row
+                        a.b__col(href='#')
+                          img.b__img(src='assets/images/carousel-2.jpeg')
+                          h3.b__title
+                            |Миома матки: симптомы, лечение, профилактика
+                          span.b__label
+                            |Обучение
+                        a.b__col(href='#')
+                          img.b__img(src='assets/images/carousel-3.jpeg')
+                          h3.b__title
+                            |Кровотечение при миоме
+                          span.b__label
+                            |Исследования
+                        a.b__col(href='#')
+                          img.b__img(src='assets/images/carousel-1.jpeg')
+                          h3.b__title
+                            |Непроходимость маточных труб
+                          span.b__label
+                            |Клинические рекомендации
+                .b.b--carousel-slider-mobile.swiper-container(data-slider-id='2')
+                  .swiper-wrapper
+                    - for (i = 0; i < 3; i++)
+                      a.b__slide.swiper-slide(href="#")
+                        img.b__img(src="assets/images/carousel-1.jpeg", alt="")
+                        h3.b__title
+                          |Миома матки: симптомы, лечение, профилактика
+                        .b__label
+                          |Клинические рекомендации
+                      a.b__slide.swiper-slide(href="#")
+                        img.b__img(src="assets/images/carousel-2.jpeg", alt="")
+                        h3.b__title
+                          |Кровотечение при миоме
+                        .b__label
+                          |Исследования
+                      a.b__slide.swiper-slide(href="#")
+                        img.b__img(src="assets/images/carousel-3.jpeg", alt="")
+                        h3.b__title
+                          |Непроходимость маточных труб
+                        .b__label
+                          |Исследования
+                a.b.b--border-link.b--border-link--mobile.btn-animation(href='#')
+                  span.btn-animation__text
+                    |Все статьи
+              .main-page__reviews(id='reviews' data-section='')
+                .main-page__reviews-bg
+                h3.main-page__title
+                  |отзывы
+                .b.b--reviews-slider-main-page
+                  .b__top
+                    .b__top-row
+                      .b__top-col
+                        h4.b__title
+                          |Использовали Эпиген Интим
+                          br
+                          |и остались довольны
+                      .b__top-col
+                        ul.product-choice.product-choice--reviews-slider--default
+                          li.product-choice__item
+                            a.product-btn.product-btn--white(href='#')
+                              +spray-svg.product-btn__svg
+                              p.product-btn__text
+                                |Эпиген Интим
+                                br
+                                |Спрей
+                          li.product-choice__item
+                            a.product-btn.product-btn--white.product-btn--active(href='#')
+                              +gel-svg.product-btn__svg
+                              p.product-btn__text
+                                |Эпиген Интим
+                                br
+                                |Гель
+                  .b__bottom
+                    each slide in [1, 2, 3, 4]
+                      .b__slide
+                        .b__slide-row.b__slide-row--desktop
+                          .b__slide-col
+                            .b__slide-img
+                              img.b__img(src='assets/images/reviews-slider-1.jpeg')
+                          .b__slide-col
+                            .b__content
+                              .b__content-row
+                                .b__content-col
+                                  .b__content-top
+                                    h5.b__slide-title
+                                      span.b__desc-span
+                                        |Манукян Наринэ Георгиевна
+                                    p.b__desc
+                                      span.b__desc-span
+                                        |Врач акушер-гинеколог, гинеколог-эндокринолог, лучший врач корпорации
+                                    .b__content-wrapper
+                                      p.b__review
+                                        |Спрей Эпиген Интим представляет собой эффективное и безопасное средство для лечения, профилактики генитальных вирусных инфекций, а гель предназначен для интимной гигиены на каждый день...
+                                  .b__content-bottom
+                                    a.b__link(href="#")
+                                      |Читать отзыв
+                                    a.button.button--reviews-slider.btn-animation(href='#')
+                                      span.btn-animation__text
+                                        |Все отзывы
+                                .b__content-col
+                                  .b__content-top
+                                    .b__control.b__control--animated
+                                      .b__control-item
+                                        .b.b--btn-left-right-slider.btn-animation.btn-animation--icon(data-command-slider-arrow='prev')
+                                          +simple-arrow-svg.b__svg
+                                      .b__control-item
+                                        .b.b--btn-left-right-slider.b--right.btn-animation.btn-animation--icon(data-command-slider-arrow='next')
+                                          +simple-arrow-svg.b__svg
+                                  .b__content-bottom
+                                    .b__preview
+                                      .b__preview-counter
+                                        .b__preview-wrapper
+                                          span.b__preview-count
+                                            |1
+                                          |/4
+                                      .b__preview-image
+                                        img.b__preview-img(src='assets/images/reviews-slider-2.jpeg')
+                        .b__slide-mobile
+                          .b__slide-row
+                            .b__slide-col
+                              .b__slide-top
+                                .b__slide-img
+                                  img.b__img(src='assets/images/reviews-slider-1.jpeg')
+                                .b__content
                                   h5.b__slide-title
                                     span.b__desc-span
-                                      |Манукян Наринэ Георгиевна
-                                  p.b__desc
+                                      |Сапрыкина Людмила Витальевна
+                                  .b__desc
                                     span.b__desc-span
-                                      |Врач акушер-гинеколог, гинеколог-эндокринолог, лучший врач корпорации
-                                  .b__content-wrapper
-                                    p.b__review
-                                      |Спрей Эпиген Интим представляет собой эффективное и безопасное средство для лечения, профилактики генитальных вирусных инфекций, а гель предназначен для интимной гигиены на каждый день...
-                                .b__content-bottom
-                                  a.b__link(href="#")
-                                    |Читать отзыв
-                                  a.button.button--reviews-slider.btn-animation(href='#')
-                                    span.btn-animation__text
-                                      |Все отзывы
-                              .b__content-col
-                                .b__content-top
-                                  .b__control.b__control--animated
-                                    .b__control-item
-                                      .b.b--btn-left-right-slider.btn-animation.btn-animation--icon(data-command-slider-arrow='prev')
-                                        +simple-arrow-svg.b__svg
-                                    .b__control-item
-                                      .b.b--btn-left-right-slider.b--right.btn-animation.btn-animation--icon(data-command-slider-arrow='next')
-                                        +simple-arrow-svg.b__svg
-                                .b__content-bottom
-                                  .b__preview
-                                    .b__preview-counter
-                                      .b__preview-wrapper
-                                        span.b__preview-count
-                                          |1
-                                        |/4
-                                    .b__preview-image
-                                      img.b__preview-img(src='assets/images/reviews-slider-2.jpeg')
-                      .b__slide-mobile
-                        .b__slide-row
-                          .b__slide-col
-                            .b__slide-top
-                              .b__slide-img
-                                img.b__img(src='assets/images/reviews-slider-1.jpeg')
-                              .b__content
-                                h5.b__slide-title
-                                  span.b__desc-span
-                                    |Сапрыкина Людмила Витальевна
-                                .b__desc
-                                  span.b__desc-span
-                                    |Ассистент кафедры акушерства и гинекологии ЛФ ФГБОУ ВО им. Н.И. Пирогова МЗ РФ, врач акушер-гинеколог высшей категории, к.м.н. (Москва).
-                            .b__slide-bottom
-                              p.b__review
-                                |Осуществляет консультативный прием пациентов, обращающихся по вопросам лечения воспалительных процессов женской половой сферы, занимается проблемами невынашивания беременности и бесплодия, проводит оперативное лечение пациентам.
-                          .b__slide-col
-                            .b__content-top
-                              .b__control.b__control--animated
-                                .b__control-item
-                                  .b.b--btn-left-right-slider.btn-animation.btn-animation--icon(data-command-slider-arrow='prev')
-                                    +simple-arrow-svg.b__svg
-                                .b__control-item
-                                  .b.b--btn-left-right-slider.b--right.btn-animation.btn-animation--icon(data-command-slider-arrow='next')
-                                    +simple-arrow-svg.b__svg
-                            .b__content-bottom
-                              a.button.button--reviews-slider(href='#' data-mdl-open='')
-                                |Задать вопрос врачу
+                                      |Ассистент кафедры акушерства и гинекологии ЛФ ФГБОУ ВО им. Н.И. Пирогова МЗ РФ, врач акушер-гинеколог высшей категории, к.м.н. (Москва).
+                              .b__slide-bottom
+                                p.b__review
+                                  |Осуществляет консультативный прием пациентов, обращающихся по вопросам лечения воспалительных процессов женской половой сферы, занимается проблемами невынашивания беременности и бесплодия, проводит оперативное лечение пациентам.
+                            .b__slide-col
+                              .b__content-top
+                                .b__control.b__control--animated
+                                  .b__control-item
+                                    .b.b--btn-left-right-slider.btn-animation.btn-animation--icon(data-command-slider-arrow='prev')
+                                      +simple-arrow-svg.b__svg
+                                  .b__control-item
+                                    .b.b--btn-left-right-slider.b--right.btn-animation.btn-animation--icon(data-command-slider-arrow='next')
+                                      +simple-arrow-svg.b__svg
+                              .b__content-bottom
+                                a.button.button--reviews-slider(href='#' data-mdl-open='')
+                                  |Задать вопрос врачу
             +footer.page__footer
   .modal(data-modal='1')
     .modal-product
