@@ -250,9 +250,6 @@
     }
   }
   &__expert-moon {
-    position: absolute;
-    top: 39%;
-    left: 8%;
     transform: translate(-50%, -50%);
     @media (max-width: $breakpoint - 1px) {
       transform: none;
@@ -270,9 +267,6 @@
     }
   }
   &__expert-star {
-    position: absolute;
-    top: 3%;
-    left: 25%;
     transform: translate(-50%, -50%);
     @media (max-width: $breakpoint - 1px) {
       transform: none;
@@ -286,6 +280,17 @@
       top: 45px;
       left: 44px;
     }
+  }
+
+  &__layout-moon {
+    position: absolute;
+    top: 39%;
+    left: 8%;
+  }
+  &__layout-star {
+    position: absolute;
+    top: 3%;
+    left: 25%;
   }
 
   &__actual {}

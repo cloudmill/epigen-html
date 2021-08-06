@@ -1063,8 +1063,8 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           const scrollPos = this.pageYOffset;
 
           if (scrollPos < parallaxContainer.offset().top &&
-              (scrollPos + $(window).height()) > parallaxElemOffset) {
-                const parallax = ($(this).scrollTop() - parallaxElemOffset) * 0.1;
+              (scrollPos + $(window).height() / 2) > parallaxElemOffset) {
+                const parallax = ((scrollPos + $(window).height() / 2) - parallaxElemOffset) * 0.1;
 
                 requestAnimationFrame(() => {
                   parallaxElem.css('transform', `translateY(${parallax}px)`);
