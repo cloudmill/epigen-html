@@ -1050,6 +1050,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
               clickable = false
               setTimeout(() => {
                 frame.removeClass('block__frame--open')
+                frame.removeClass('block__frame--out')
 
                 setTimeout(() => {
                   clickable = true
@@ -1061,14 +1062,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
               frame.toggleClass('block__frame--front')
               frame.eq(new_index).addClass('block__frame--open')
-              
-              const left_frame = frame.eq(0)
-              const right_frame = frame.eq(1)
-              if (new_index === 0) {
-                left_frame.
-              } else {
-
-              }
+              frame.eq(new_index).addClass('block__frame--out')
             }
           }
         })

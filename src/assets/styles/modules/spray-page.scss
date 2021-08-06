@@ -287,6 +287,15 @@
         }
       }
     }
+
+    &--in-block {
+      #{$comp}__tabs-container {
+        @media (max-width: $breakpoint - 1px) {
+          padding-top: 9px;
+          padding-bottom: 9px;
+        }
+      }
+    }
   }
   &__tabs-container {
     padding: 16px 32px; //?
