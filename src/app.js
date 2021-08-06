@@ -916,7 +916,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
     function render() {
       ctx.clearRect(0, 0, window.innerWidth, window.innerHeight)
-    
+
       var points = []
 
       // const quality = 6;
@@ -1043,3 +1043,36 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
   });
 }
+
+// parallax
+{
+  $(() => {
+    const parallaxItem = $('[data-parallax]');
+
+    if (parallaxItem.length !== 0) {
+
+      parallaxItem.each(function() {
+        const parallaxElem = $(this);
+        const parallaxElemOffset = parallaxElem.offset().top;
+        const parallaxId = parallaxElem.data('parallax');
+        const parallaxContainer = $(`[data-parallax-container='${parallaxId}']`)
+
+        console.log($(window).height());
+
+        $(window).on('scroll', function() {
+          const scrollPos = this.pageYOffset;
+
+          if (scrollPos < parallaxContainer.offset().top &&
+              (scrollPos + $(window).height()) > parallaxElemOffset) {
+                const parallax = ($(this).scrollTop() - parallaxElemOffset) * 0.1;
+
+                requestAnimationFrame(() => {
+                  parallaxElem.css('transform', `translateY(${parallax}px)`);
+                })
+              }
+        });
+      });
+    };
+  });
+}
+
