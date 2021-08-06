@@ -12,36 +12,43 @@ mixin nav-page-d
         var items = [
           {
             href: '#',
+            scroll: '#spray',
             title: 'Спрей',
           },
           {
             href: '#',
+            scroll: '#form',
             title: 'Форма выпуска',
           },
           {
             href: '#',
+            scroll: '#purpose',
             title: 'Назначение',
           },
           {
             href: '#',
+            scroll: '#structure',
             title: 'Состав',
           },
           {
             href: '#',
+            scroll: '#instruction',
             title: 'Инструкция',
           },
           {
             href: '#',
+            scroll: '#views',
             title: 'Диагностический тест',
           },
           {
             href: '#',
+            scroll: '#views',
             title: 'Отзывы',
           },
         ]
       each item, index in items
         li.nav-page-d__item(class = ((index === 0) ? 'nav-page-d__item--active' : ''))
-          a.nav-page-d__link(href=item.href)
+          a.nav-page-d__link(href=item.href data-scroll=item.scroll)
             |!{item.title}
 
 mixin copyright-link
@@ -152,7 +159,7 @@ block content
                     .spray-page__intro-col
                       a.button.button--spray.margin-bottom.margin-bottom--m(href="#")
                         |Где купить
-              section.spray-page__section.margin-top.margin-top--l
+              section.spray-page__section.margin-top.margin-top--l(id='spray' data-section='')
                 .spray-page__section-row
                   .spray-page__section-col
                     h3.spray-page__section-title
@@ -160,7 +167,7 @@ block content
                   .spray-page__section-col
                     p.spray-page__section-text
                       |Разрешен к применению на любом сроке беременности и в период прегравидарной подготовки, не противопоказан детям.
-              section.spray-page__section.margin-top.margin-top--l
+              section.spray-page__section.margin-top.margin-top--l(id='form' data-section='')
                 .product-slider
                   .product-slider__slide.product-slider__slide--front
                     .product-slider__content
@@ -287,7 +294,7 @@ block content
                         +spray-5-svg
                       h3.spray-page__list-title
                         |Иммуностимулирующий
-              section.spray-page__section.margin-top.margin-top--l
+              section.spray-page__section.margin-top.margin-top--l(id='purpose' data-section='')
                 h3.spray-page__section-title
                   |Применяется при лечении
                 .spray-page__use.margin-top.margin-top--md
@@ -431,7 +438,7 @@ block content
                             |Результат отправлен на почту#[br]
                             span.test__form-email
 
-              section.spray-page__section.margin-top.margin-top--l
+              section.spray-page__section.margin-top.margin-top--l(id='structure' data-section='')
                 .spray-page__structure
                   .spray-page__structure-row
                     .spray-page__structure-col
@@ -458,7 +465,7 @@ block content
                           li.spray-page__structure-item
                             .spray-page__structure-text
                               |!{item}
-              section.spray-page__section.margin-top.margin-top--l
+              section.spray-page__section.margin-top.margin-top--l(id='instruction' data-section='')
                 .spray-page__video
                   .spray-page__video-row
                     .spray-page__video-col
