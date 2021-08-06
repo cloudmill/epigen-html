@@ -329,6 +329,10 @@
     font-weight: 400;
     @include fsl(70px, 110%);
     color: $color-purple;
+
+    &--small {
+      @include fsl(40px, 130%);
+    }
   }
   &__features-text {
     margin-top: 30px;
@@ -399,7 +403,22 @@
     &-4 {
       transform: translateX(-50%);
 
-      max-width: 405px;
+      max-width: 203px;
+      border-radius: 150px;
+    }
+
+    &-5 {
+      transform: translateX(-50%);
+
+      max-width: 97px;
+      border-radius: 150px;
+    }
+
+    &-6 {
+      transform: translateX(-50%);
+
+      max-width: 97px;
+      border-radius: 150px;
     }
   }
 
@@ -427,8 +446,22 @@
     &-4 {
       position: absolute;
       z-index: -1;
+      top: -57px;
+      left: calc((#{$col-width-d} * 3) + (#{$col-width-d} / 2));
+    }
+
+    &-5 {
+      position: absolute;
+      z-index: -1;
       top: -125px;
-      left: calc(#{$col-width-d} * 3);
+      left: calc(#{$col-width-d} / 2);
+    }
+
+    &-6 {
+      position: absolute;
+      z-index: -1;
+      top: 125px;
+      left: calc(#{$col-width-d} * 5);
     }
   }
 }
