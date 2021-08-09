@@ -502,9 +502,9 @@ block content
                             .spray-page__slider-item
                               a.border-link(href="#")
                                 |Отзывы врачей
-                          .spray-page__slider-wrapper
-                            a.spray-page__slider-link(href="#")
-                              |Задать вопрос врачу
+                        .spray-page__slider-col
+                          a.spray-page__slider-link(href="#")
+                            |Задать вопрос врачу
                     .b__bottom
                       each slide in [1, 2, 3, 4]
                         .b__slide
@@ -577,5 +577,5 @@ block content
                                         +simple-arrow-svg.b__svg
                                 .b__content-bottom
                                   a.button.button--reviews-slider(href='#' data-mdl-open='')
-                                    |Задать вопрос врачу
+                                    |Все отзывы
             +footer.page__footer
