@@ -279,7 +279,7 @@
 
       &:hover {
         background-color: $color-purple;
-        
+
         #{$comp}__tabs-icon {
           .spray-svg__background {
             fill: $color-purple;
@@ -394,9 +394,6 @@
     }
 
     @include fsl(20px, 140%);
-    @media (max-width: $breakpoint - 1px) {
-      @include fsl(18px)
-    }
   }
   &__list-img {
     display: flex;
