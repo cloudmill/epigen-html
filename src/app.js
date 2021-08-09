@@ -916,18 +916,119 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       canvas.width = window.innerWidth
       canvas.height = window.innerHeight
 
-      const points = [
-        [0, 0],
-        [100, 100],
-        [200, 100],
-        [300, 0],
-        [400, 0],
-        [600, 200],
-        [600, 300],
-        [500, 400],
-        [400, 400],
-        [0, 0]
+      let points = [
+        // [0, 0],
+        // [100, 100],
+        // [200, 100],
+        // [300, 0],
+        // [400, 0],
+        // [600, 200],
+        // [600, 300],
+        // [500, 400],
+        // [400, 400],
+        // [0, 0],
+
+        // [50, 0],
+        // [100, 50],
+        // [50, 100],
+        // [0, 50],
+        // [0, 50],
+        // [50, 0],
+
+        // [0, 0],
+        // [50, 50],
+        // [100, 25],
+        // [150, 75],
+        // [125, 100],
+        // [100, 75],
+        // [125, 50],
+        // [175, 25],
+        // [200, 50],
+        // [250, 0],
+        [0, 307],
+        [26, 318],
+        [57, 329],
+        [76, 335],
+        [103, 342],
+        [126, 347],
+        [154, 352],
+        [172, 355],
+        [201, 359],
+        [220, 361],
+        [240, 362],
+        [265, 363],
+        [291, 364],
+        [319, 363],
+        [344, 362],
+        [365, 361],
+        [384, 359],
+        [404, 357],
+        [423, 354],
+        [444, 351],
+        [465, 347],
+        [491, 342],
+        [570, 321],
+        [626, 301],
+        [685, 272],
+        [742, 233],
+        [790, 186],
+        [825, 135],
+        [842, 93],
+        [847, 68],
+        [847, 50],
+        [843, 34],
+        [834, 21],
+        [821, 11],
+        [807, 5],
+        [789, 1],
+        [771, 0],
+        [753, 1],
+        [727, 6],
+        [698, 15],
+        [662, 30],
+        [611, 59],
+        [575, 85],
+        [550, 107],
+        [518, 142],
+        [496, 178],
+        [487, 205],
+        [484, 229],
+        [485, 250],
+        [489, 270],
+        [499, 297],
+        [518, 327],
+        [539, 351],
+        [571, 377],
+        [611, 401],
+        [653, 419],
+        [695, 431],
+        [738, 439],
+        [773, 442],
+        [817, 442],
+        [866, 438],
+        [902, 433],
+        [942, 426],
+        [993, 415],
+        [1139, 373],
+        [1232, 343],
+        [1310, 320],
+        [1377, 304],
+        [1486, 289],
+        [1564, 288],
+        [1625, 291],
+        [1715, 303],
+        [1778, 318],
+        [1833, 337],
+        [1897, 369],
+        [1943, 402],
+        [1977, 435],
+        [2006, 475],
+        [2023, 507],
+        [2036, 545],
+        [2040, 567],
       ]
+
+      points = points.map(item => [item[0] / 2, item[1] / 2])
 
       // 1
       ctx.beginPath()
@@ -958,11 +1059,71 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
       ctx.quadraticCurveTo(points[i][0], points[i][1], points[i + 1][0], points[i + 1][1])
 
-      ctx.strokeStyle = 'green'
+      const gradient = ctx.createLinearGradient(0, 0, 1000, 1000)
+      gradient.addColorStop(0, 'green')
+      gradient.addColorStop(1, 'red')
+
+      ctx.strokeStyle = gradient
       ctx.lineWidth = 5
       ctx.stroke()
 
       ctx.closePath()
+
+      function getRect(points) {
+        let tl = points[0]
+        let br = points[0]
+
+        for (let i = 1; i < points.length; i++) {
+          if (points[i][0] < tl[0] && points[i][1] < tl[1]) {
+            tl = points[i]
+          }
+          if (points[i][0] > br[0] && points[i][1] > br[1]) {
+            br = points[i]
+          }
+        }
+
+        return [...tl, ...br]
+      }
+
+      // 3
+      requestAnimationFrame(render)
+
+      let progress = 0
+      const progress_delta = 0.05
+
+      function render() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+        const delta = 20 * Math.sin(progress)
+
+        const points_cur = points.map(item => [item[0] + delta * (item[0] / getRect(points)[2]), item[1] + delta * (item[0] / getRect(points)[2])])
+
+        ctx.beginPath()
+
+        ctx.moveTo(...points_cur[0])
+
+        for (var i = 1; i < points_cur.length - 2; i++) {
+          const xc = (points_cur[i][0] + points_cur[i + 1][0]) / 2;
+          const yc = (points_cur[i][1] + points_cur[i + 1][1]) / 2;
+          ctx.quadraticCurveTo(points_cur[i][0], points_cur[i][1], xc, yc);
+        }
+
+        ctx.quadraticCurveTo(points_cur[i][0], points_cur[i][1], points_cur[i + 1][0], points_cur[i + 1][1])
+
+        const gradient = ctx.createLinearGradient(0, 0, getRect(points)[2], getRect(points)[3])
+        gradient.addColorStop(0, '#31aff2')
+        gradient.addColorStop(1, '#5553f0')
+
+        ctx.strokeStyle = gradient
+        ctx.lineWidth = 1
+        ctx.stroke()
+
+        ctx.closePath()
+
+        progress += progress_delta
+
+        requestAnimationFrame(render)
+      }
     })
   })
 }
