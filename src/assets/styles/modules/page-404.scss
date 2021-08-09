@@ -1,5 +1,10 @@
 .page-404 {
 
+  &__aside {
+    position: relative;
+    z-index: 3;
+  }
+
   &__text {
     margin-top: calc(107px - 30px);
     @media (max-width: $breakpoint - 1px) {
