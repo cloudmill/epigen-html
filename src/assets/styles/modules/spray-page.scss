@@ -118,86 +118,6 @@
     }
   }
 
-  &__slider {
-    padding-top: 140px;
-
-    overflow: hidden;
-  }
-  &__slider-container {
-    position: relative;
-  }
-  &__slider-slide {
-    position: relative;
-
-    transform: translateX(-100%);
-    visibility: hidden;
-    transition: transform $transition; // ?
-
-    &--active {
-      transform: translateX(0);
-      visibility: visible;
-    }
-
-    &--absolute {
-      position: absolute;
-      top: 0;
-    }
-  }
-  &__slider-img {
-    display: block; // svg blur ??
-    border-radius: 10px;
-  }
-  &__slider-content {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-    bottom: 0;
-    right: 0;
-  }
-  &__slider-row {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-  }
-  &__slider-list {
-    margin-left: calc((#{$col-width-d} * 3) - 30px);
-
-    width: calc(#{$col-width-d} * 6);
-  }
-  &__slider-bottom {
-    margin-top: 15px;
-
-    display: flex;
-  }
-  &__slider-num {
-    position: relative;
-    // @include fsl(140px, 110%);
-    font-size: calc((110 / 1680) * 100vw);
-    line-height: 110%;
-  }
-  &__slider-label {
-    position: absolute;
-    top: 0;
-    left: 100%;
-
-    @include fsl(13px, 120%);
-    text-transform: uppercase;
-
-    &--top {
-      bottom: 100%;
-      top: auto;
-      left: 0;
-    }
-  }
-  &__slider-icon {
-    position: absolute;
-    z-index: 2;
-    left: calc(#{$col-width-d} * 15);
-    top: 0;
-    transform: translateY(-50%);
-  }
-
   &__tabs {
     margin-bottom: 60px;
 
@@ -752,5 +672,43 @@
   }
   &__video-button {
     display: flex;
+  }
+
+  &__slider {}
+  &__slider-row {
+    display: flex;
+    align-items: flex-end;
+  }
+  &__slider-col {
+    flex-shrink: 0;
+
+    &:nth-child(1) {
+      width: calc(#{$col-width-d} * 6);
+    }
+    &:nth-child(2) {
+      width: calc(#{$col-width-d} * 12);
+
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  &__slider-title {
+    font-weight: 400;
+    @include fsl(40px, 130%);
+  }
+  &__slider-categories {
+    display: flex;
+  }
+  &__slider-item {
+    &:not(:first-child) {
+      margin-left: 30px;
+    }
+  }
+  &__slider-link {
+    padding: 6px 10px;
+
+    @include fsl(15px, 140%);
+    border: 1px solid $color-blue;
+    border-radius: 40px;
   }
 }

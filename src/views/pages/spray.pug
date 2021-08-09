@@ -27,6 +27,11 @@ mixin nav-page-d
           },
           {
             href: '#',
+            scroll: '#test',
+            title: 'Диагностический тест',
+          },
+          {
+            href: '#',
             scroll: '#structure',
             title: 'Состав',
           },
@@ -37,12 +42,7 @@ mixin nav-page-d
           },
           {
             href: '#',
-            scroll: '#views',
-            title: 'Диагностический тест',
-          },
-          {
-            href: '#',
-            scroll: '#views',
+            scroll: '#reviews',
             title: 'Отзывы',
           },
         ]
@@ -485,5 +485,97 @@ block content
                           .video__button
                             .video__button-icon
                               +start-svg.video__button-svg
-              section.spray-page__section.margin-top.margin-top--l
+              section.main-page(id='reviews' data-section='')
+                .main-page__reviews
+                  .main-page__reviews-bg
+                  .b.b--reviews-slider-main-page
+                    .b__top
+                      .spray-page__slider-row
+                        .spray-page__slider-col
+                          h3.spray-page__slider-title
+                            |Отзывы
+                        .spray-page__slider-col
+                          .spray-page__slider-categories
+                            .spray-page__slider-item
+                              a.border-link.border-link--active(href="#")
+                                |Все отзывы
+                            .spray-page__slider-item
+                              a.border-link(href="#")
+                                |Отзывы врачей
+                          .spray-page__slider-wrapper
+                            a.spray-page__slider-link(href="#")
+                              |Задать вопрос врачу
+                    .b__bottom
+                      each slide in [1, 2, 3, 4]
+                        .b__slide
+                          .b__slide-row.b__slide-row--desktop
+                            .b__slide-col
+                              .b__slide-img
+                                img.b__img(src='assets/images/reviews-slider-1.jpeg')
+                            .b__slide-col
+                              .b__content
+                                .b__content-row
+                                  .b__content-col
+                                    .b__content-top
+                                      h5.b__slide-title
+                                        span.b__desc-span
+                                          |Манукян Наринэ Георгиевна
+                                      p.b__desc
+                                        span.b__desc-span
+                                          |Врач акушер-гинеколог, гинеколог-эндокринолог, лучший врач корпорации
+                                      .b__content-wrapper
+                                        p.b__review
+                                          |Спрей Эпиген Интим представляет собой эффективное и безопасное средство для лечения, профилактики генитальных вирусных инфекций, а гель предназначен для интимной гигиены на каждый день...
+                                    .b__content-bottom
+                                      a.b__link(href="#")
+                                        |Читать отзыв
+                                      a.button.button--reviews-slider.btn-animation(href='#')
+                                        span.btn-animation__text
+                                          |Все отзывы
+                                  .b__content-col
+                                    .b__content-top
+                                      .b__control.b__control--animated
+                                        .b__control-item
+                                          .b.b--btn-left-right-slider.btn-animation.btn-animation--icon(data-command-slider-arrow='prev')
+                                            +simple-arrow-svg.b__svg
+                                        .b__control-item
+                                          .b.b--btn-left-right-slider.b--right.btn-animation.btn-animation--icon(data-command-slider-arrow='next')
+                                            +simple-arrow-svg.b__svg
+                                    .b__content-bottom
+                                      .b__preview
+                                        .b__preview-counter
+                                          .b__preview-wrapper
+                                            span.b__preview-count
+                                              |1
+                                            |/4
+                                        .b__preview-image
+                                          img.b__preview-img(src='assets/images/reviews-slider-2.jpeg')
+                          .b__slide-mobile
+                            .b__slide-row
+                              .b__slide-col
+                                .b__slide-top
+                                  .b__slide-img
+                                    img.b__img(src='assets/images/reviews-slider-1.jpeg')
+                                  .b__content
+                                    h5.b__slide-title
+                                      span.b__desc-span
+                                        |Сапрыкина Людмила Витальевна
+                                    .b__desc
+                                      span.b__desc-span
+                                        |Ассистент кафедры акушерства и гинекологии ЛФ ФГБОУ ВО им. Н.И. Пирогова МЗ РФ, врач акушер-гинеколог высшей категории, к.м.н. (Москва).
+                                .b__slide-bottom
+                                  p.b__review
+                                    |Осуществляет консультативный прием пациентов, обращающихся по вопросам лечения воспалительных процессов женской половой сферы, занимается проблемами невынашивания беременности и бесплодия, проводит оперативное лечение пациентам.
+                              .b__slide-col
+                                .b__content-top
+                                  .b__control.b__control--animated
+                                    .b__control-item
+                                      .b.b--btn-left-right-slider.btn-animation.btn-animation--icon(data-command-slider-arrow='prev')
+                                        +simple-arrow-svg.b__svg
+                                    .b__control-item
+                                      .b.b--btn-left-right-slider.b--right.btn-animation.btn-animation--icon(data-command-slider-arrow='next')
+                                        +simple-arrow-svg.b__svg
+                                .b__content-bottom
+                                  a.button.button--reviews-slider(href='#' data-mdl-open='')
+                                    |Задать вопрос врачу
             +footer.page__footer
