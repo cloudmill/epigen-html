@@ -16,15 +16,49 @@ block content
           .aside
             .aside__inner
               .aside__container
-                .aside__top
+                .aside__top.modal(data-modal='4')
                   header.header.header--margin-bottom--default
                     a.header__logo(href='#')
                       +logo-svg.header__logo-svg
-                    .header__menu
+                    .header__menu(data-button='4')
                       .header__text
                         |Меню
                       .header__button
                         .header__burger
+                  .modal-aside
+                    .modal-aside__container
+                      .modal-aside__row
+                        .modal-aside__col
+                          nav.modal-aside__nav
+                            ul.modal-aside__nav-list
+                              .modal-aside__nav-col
+                                each item in ['Где купить', 'Вопрос эксперту', 'Отзывы Спрей Эпиген ', 'Отзывы Гель Эпиген ',]
+                                  li.modal-aside__nav-item
+                                    a.modal-aside__nav-link(href="#")
+                                      |#{item}
+                              .modal-aside__nav-col
+                                each item in ['Видео с экспертами', 'Статьи экспертов', 'Вопрос-ответ', 'Специалистам',]
+                                  li.modal-aside__nav-item
+                                    a.modal-aside__nav-link(href="#")
+                                      |#{item}
+                          .modal-aside__corp
+                            span
+                              |Сделано в&nbsp;
+                            a.modal-aside__corp-link(href="#")
+                              |CloudMill
+                        .modal-aside__col
+                          .modal-aside__col-item
+                            +product-link.product-link--modal--aside(src='assets/images/spray.jpeg')
+                              |Спрей
+                            .modal-aside__doc
+                              a.modal-aside__doc-link(href="#")
+                                |Политика конфиденциальности
+                          .modal-aside__col-item
+                            +product-link.product-link--modal--aside.product-link--purple(src='assets/images/gel.jpeg')
+                              |Гель
+                            .modal-aside__doc
+                              a.modal-aside__doc-link(href="#")
+                                |Положение о пользовании сайтом
                   ul.page-reviews__filter
                     li.page-reviews__filter-item
                       +border-link(href='#' active)
@@ -56,32 +90,122 @@ block content
                             .panel__product-mark
                             .panel__product-text
                               |Гель
-                    .panel__col
-                      .panel__inner
-                        a.panel__where-buy(href='#')
-                          |Где купить
-                        .panel__choice
-                          .panel__choice-item(data-count=8)
-                            |Симптомы
-                          .panel__choice-item(data-count=12)
-                            |Заболевания
-                    .panel__col
-                      .panel__inner
-                        .panel__test
-                          +calendar-test-svg.panel__test-icon
-                          .panel__test-text
-                            |Пройти тест
-                        .panel__consultation
-                          +consultation-svg.panel__consultation-svg
-                          .panel__consultation-text
-                            |Консультация эксперта
+                    .panel__wrapper
+                      .panel__wrapper-row
+                        .panel__wrapper-col
+                          .panel__inner
+                            a.panel__where-buy(href='#')
+                              |Где купить
+                            .panel__choice
+                              .panel__choice-item(data-count=8 data-modal-button='3')
+                                |Симптомы
+                              .panel__choice-item(data-count=12 data-modal-button='2')
+                                |Заболевания
+                        .panel__wrapper-col
+                          .panel__inner
+                            .panel__test(data-button='3')
+                              +calendar-test-svg.panel__test-icon
+                              .panel__test-text
+                                |Пройти тест
+                            .panel__consultation
+                              +consultation-svg.panel__consultation-svg
+                              .panel__consultation-text
+                                |Консультация эксперта
+                      .panel__modals
+                        .panel-modal(data-modal-id='2')
+                          .panel-modal__container
+                            .panel-modal__row
+                              .panel-modal__col
+                                ul.panel-modal__list
+                                  each item in ['Генитальный герпес (I и II типа)', 'ВПЧ', 'Применение при беременности', 'Молочница', 'Бактериальный вагиноз',]
+                                    li.panel-modal__item
+                                      a.panel-modal__link(href="#")
+                                        |#{item}
+                              .panel-modal__col
+                                ul.panel-modal__list
+                                  each item in ['ВПЧ', 'Молочница',]
+                                    li.panel-modal__item
+                                      a.panel-modal__link(href="#")
+                                        |#{item}
+                        .panel-modal(data-modal-id='3')
+                          .panel-modal__container
+                            .panel-modal__row
+                              .panel-modal__col
+                                ul.panel-modal__list
+                                  each item in ['Зуд', 'Жжение', 'Выделения, пузырьки', 'Пузырьки, язвочки', 'Болезненность, выделения',]
+                                    li.panel-modal__item
+                                      a.panel-modal__link(href="#")
+                                        |#{item}
+                              .panel-modal__col
+                                ul.panel-modal__list
+                                  each item in ['Болезненность при половом контакте', 'Боль внизу живота', 'Боль при мочеиспускании']
+                                    li.panel-modal__item
+                                      a.panel-modal__link(href="#")
+                                        |#{item}
                   .panel__mobile
                     header.header
                       a.header__logo(href="#")
                         +logo-svg.header__svg
-                      .header__menu
+                      .header__menu(data-modal-button='1')
                         .header__button
                           .header__burger
+                  .panel__modals
+                    .modal-mobile.modal-mobile--height--100vh-60p(data-modal-id='1')
+                      .modal-mobile__inner
+                        .modal-mobile__container
+                          .modal-mobile__products
+                            .modal-mobile__products-item
+                              +product-link.product-link--modal--mobile(src='assets/images/spray.jpeg')
+                                |Спрей
+                            .modal-mobile__products-item
+                              +product-link.product-link--modal--mobile.product-link--purple(src='assets/images/gel.jpeg')
+                                |Гель
+                        .panel.panel--modal
+                          .panel__choice
+                            .modal-mobile__choice
+                              .modal-mobile__choice-button
+                                .panel__choice-item(data-count='8')
+                                  |Симптомы
+                                +spoiler-arrow-svg.modal-mobile__choice-svg
+                              .modal-mobile__choice-dropdown
+                            .modal-mobile__choice
+                              .modal-mobile__choice-button
+                                .panel__choice-item(data-count='12')
+                                  |Заболевания
+                                +spoiler-arrow-svg.modal-mobile__choice-svg
+                              .modal-mobile__choice-dropdown
+                          .modal-mobile__links
+                            .modal-mobile__container
+                              ul.modal-mobile__links-list
+                                li.modal-mobile__links-item
+                                  a.panel__test(href="#")
+                                    +calendar-test-svg.panel__test-icon
+                                    .panel__test-text
+                                      |Пройти тест
+                                li.modal-mobile__links-item
+                                  a.panel__consultation(href="#")
+                                    +consultation-svg.panel__consultation-svg
+                                    .panel__consultation-text
+                                      |Консультация эксперта
+                                each item in ['Где купить', 'Вопрос эксперту', 'Отзывы Спрей Эпиген ', 'Отзывы Гель Эпиген ', 'Видео с экспертами', 'Статьи экспертов', 'Вопрос-ответ', 'Специалистам',]
+                                  li.modal-mobile__links-item
+                                    a.modal-mobile__links-link(href="#")
+                                      |#{item}
+                        .modal-mobile__bottom
+                          .modal-mobile__container
+                            ul.modal-mobile__bottom-links
+                              li.modal-mobile__bottom-item
+                                a.modal-mobile__bottom-doc(href="#")
+                                  |Политика конфиденциальности
+                              li.modal-mobile__bottom-item
+                                a.modal-mobile__bottom-doc(href="#")
+                                  |Положение о пользовании сайтом
+                              li.modal-mobile__bottom-item
+                                .modal-mobile__bottom-text
+                                  span
+                                    |Сделано в&nbsp;
+                                  a.modal-mobile__bottom-link(href="#")
+                                    |CloudMill
             main.page__main
               h1.title
                 |Отзывы
@@ -138,4 +262,64 @@ block content
     .mdl__container
       .mdl__content.mdl__interactive
         .mdl__close.mdl__interactive.button-close(data-button-close='1')
+          +cross-svg.button-close__svg
+  .modal(data-modal='3')
+    .modal-test
+      .modal-test__container
+        .test
+          form.test__container(action="/")
+            .test__row
+              .test__col
+                ul.test__questions
+                  each item, index in ['Какие проявления в интимной зоне вас беспокоят?', '2', '3', '4', '5']
+                    li.test__question(class = ((index === 0) ? 'test__question--active' : ''))
+                      |!{item}
+                ul.test__dots
+                  - for (i = 0; i < 5; i++)
+                    li.test__dot(class = ((i === 0) ? 'test__dot--active' : ''))
+              .test__col
+                - for (i = 0; i < 5; i++)
+                  .test__options(class = ((i === 0) ? 'test__options--active' : ''))
+                    each item in ['Обильные выделения без неприятного запаха', 'Выделения с неприятным запахом', 'Болезненные пузырьки в интимной зоне, превращающиеся в язвы', 'Безболезненные папилломы, узелки, наросты или бородавки в интимной зоне', 'Что-то другое, не указанное выше']
+                      label.test__label(for="#")
+                        input.test__radio(type="radio" name='question-' + (i + 1))
+                        .test__icon
+                          +check-svg
+                        .test__text
+                          |#{item}
+            .test__index
+              |1
+          .test__result
+            .test__result-container
+              .test__result-row
+                .test__result-col
+                  .test__result-caption
+                    |возможный диагноз
+                  h3.test__result-title
+                    |Бактериальный вагиноз
+                  p.test__result-text
+                    |Неприятный запах выделений из половых путей часто сопровождает бактериальный вагиноз. Для уточнения диагноза и исключения инфекций, передаваемых половым путем, необходимо обратиться к врачу и сдать дополнительные анализы, без них разобраться в проблеме будет сложно.
+                  .test__result-label
+                    .link-text.link-text--s
+                      |Для повышения эффективности лечения попробуйте спрей #[a.link-text__link(href='#') Эпиген Интим] . Он обладает противовоспалительным и местным иммуностимулирующим эффектом.
+                .test__result-col
+                  .test__form
+                    .test__form-wrapper
+                      h4.test__form-title
+                        |Для получения результатов теста укажите E&#8209;mail
+                      form.form(action='/')
+                        .test__form-item
+                          label.form__item
+                            input.form__input(type="text" name="email")
+                            span.form__placeholder
+                              |E-mail
+                        .test__form-item
+                          button.button.button--wide.btn-animation(type='submit')
+                            span.btn-animation__text
+                              |Отправить результаты теста на почту
+                    .test__form-response
+                      |Результат отправлен на почту#[br]
+                      span.test__form-email
+      .modal-test__button
+        .button-close.btn-animation.btn-animation--icon(data-button='3')
           +cross-svg.button-close__svg

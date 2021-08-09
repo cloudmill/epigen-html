@@ -6,8 +6,9 @@
   width: calc(#{$row-aside-width});
 
   &--position {
-    &--static {
-      position: static;
+    &--top {
+      top: 0;
+      bottom: auto;
     }
   }
 

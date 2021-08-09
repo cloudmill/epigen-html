@@ -335,21 +335,36 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
   $(() => {
     const list = $('[data-list]');
 
-    if (list.length !== 0 && BREAKPOINT_MEDIA.matches) {
+    if (list.length !== 0) {
       const listOffset = list.offset().top - 10;
       const panelHeight = $('.panel__panel').height();
 
-      $(window).on('scroll', function () {
+      $(window).on('scroll load', function () {
         const scrollPos = this.pageYOffset;
 
-        if (scrollPos > listOffset) {
-          list.addClass('disease-page__container--hidden')
-          $('.panel__list').addClass('panel__list--scroll');
-        }
+        if (BREAKPOINT_MEDIA.matches) {
+          if (scrollPos > listOffset) {
+            list.addClass('disease-page__container--hidden')
+            $('.panel__list').addClass('panel__list--scroll');
+          }
 
-        if ((scrollPos + panelHeight) < listOffset) {
-          list.removeClass('disease-page__container--hidden')
-          $('.panel__list').removeClass('panel__list--scroll')
+          if ((scrollPos + panelHeight) < listOffset) {
+            list.removeClass('disease-page__container--hidden')
+            $('.panel__list').removeClass('panel__list--scroll')
+          }
+        } else {
+          const navHeight = $('.nav-page-d--mobile').height()
+
+          if ((scrollPos + navHeight + 10) > listOffset) {
+            list.addClass('disease-page__container--hidden')
+            $('.panel__list').addClass('panel__list--scroll');
+          }
+
+          if ((scrollPos + panelHeight + navHeight + 10) < listOffset) {
+            list.removeClass('disease-page__container--hidden')
+            $('.panel__list').removeClass('panel__list--scroll')
+          }
+
         }
       });
     }
@@ -861,6 +876,8 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           }
         };
 
+        const delay = 500;
+
         const btn = $('[data-modal-button]');
         btn.on('click', function () {
           const id = $(this).data('modal-button');
@@ -870,9 +887,16 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           if (modalActive.length !== 0) {
             panel.addClass('panel--modal-active')
             $('.body').css('overflow', 'hidden')
+            $('.row__col--main').css('position', 'relative')
+            $('.row__col--main').css('z-index', '3')
           } else {
             panel.removeClass('panel--modal-active')
             $('.body').css('overflow', '')
+
+            setTimeout (() => {
+              $('.row__col--main').css('position', '')
+              $('.row__col--main').css('z-index', '')
+            }, delay)
           }
         });
 
@@ -890,6 +914,12 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           if (!isClickArea) {
             state.change(null);
             $('.body').css('overflow', '')
+
+            setTimeout (() => {
+              $('.row__col--main').css('position', '')
+              $('.row__col--main').css('z-index', '')
+            }, delay)
+
             panel.removeClass('panel--modal-active')
           }
         });
@@ -1155,6 +1185,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
         const step = $(this).closest('.test__options')
         const stepNext = step.next()
         const dot = $('.test__dot')
+        const question = $('.test__question')
         const index = $('.test__index')
 
         step.removeClass('test__options--active')
@@ -1162,6 +1193,8 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
         dot.eq(stepNext.index()).addClass('test__dot--active')
         index.text(stepNext.index() + 1)
+        question.removeClass('test__question--active')
+        question.eq(stepNext.index()).addClass('test__question--active')
 
         if ($('.test__options--active').length === 0) {
           $('.test__container').addClass('test__container--hidden')
@@ -1176,8 +1209,8 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     const form = result.find('.form')
     const formInput = form.find('.form__input')
 
-    $(document).on('submit', form, function (event) {
-      event.preventDefault();
+    $(document).on('submit', form, function(event) {
+      event.preventDefault()
 
       $('.test__form-wrapper').addClass('test__form-wrapper--hidden')
       resultResponse.addClass('test__form-response--active')
@@ -1316,9 +1349,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
         const parallaxId = parallaxElem.data('parallax');
         const parallaxContainer = $(`[data-parallax-container='${parallaxId}']`)
 
-        console.log($(window).height());
-
-        $(window).on('scroll', function () {
+        $(window).on('scroll', function() {
           const scrollPos = this.pageYOffset;
 
           if (scrollPos < parallaxContainer.offset().top &&
@@ -1335,29 +1366,32 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
   });
 }
 
-// test
+// test sticky
 {
   $(() => {
-    const container = $('.disease-page__spray-row')
     const sticky = $('.my-sticky')
 
-    if (sticky.height() < container.height()) {
-      $(window).on('scroll', function () {
-        const containerOffset = container.offset().top
-        const scrollPos = this.pageYOffset;
+    if (sticky.length !== 0 && BREAKPOINT_MEDIA.matches) {
+      const container = $('.disease-page__spray-row')
 
-        if ((scrollPos + 100) > containerOffset) {
-          sticky.addClass('my-sticky--fixed')
-        } else {
-          sticky.removeClass('my-sticky--fixed')
-        }
+      if (sticky.height() < container.height()) {
+        $(window).on('scroll resize load', function () {
+          const containerOffset = container.offset().top
+          const scrollPos = this.pageYOffset;
 
-        if ((sticky.height() + scrollPos + 100) > (containerOffset + container.height())) {
-          sticky.addClass('my-sticky--bottom')
-        } else {
-          sticky.removeClass('my-sticky--bottom')
-        }
-      })
+          if ((scrollPos + 100) > containerOffset) {
+            sticky.addClass('my-sticky--fixed')
+          } else {
+            sticky.removeClass('my-sticky--fixed')
+          }
+
+          if ((sticky.height() + scrollPos + 100) > (containerOffset + container.height())) {
+            sticky.addClass('my-sticky--bottom')
+          } else {
+            sticky.removeClass('my-sticky--bottom')
+          }
+        })
+      }
     }
   });
 }

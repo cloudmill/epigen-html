@@ -63,7 +63,7 @@ mixin nav-page-d
             |!{item.title}
 
 mixin nav-page-m
-  nav.nav-page-d.nav-page-d--mobile.nav-page-d--mobile--blue
+  nav.nav-page-d.nav-page-d--mobile
     ul.nav-page-d__list
       -
         var items = [
@@ -293,12 +293,12 @@ block content
                             .modal-mobile__container
                               ul.modal-mobile__links-list
                                 li.modal-mobile__links-item
-                                  a.panel__test
+                                  a.panel__test(href="#")
                                     +calendar-test-svg.panel__test-icon
                                     .panel__test-text
                                       |Пройти тест
                                 li.modal-mobile__links-item
-                                  .panel__consultation
+                                  a.panel__consultation(href="#")
                                     +consultation-svg.panel__consultation-svg
                                     .panel__consultation-text
                                       |Консультация эксперта
@@ -564,8 +564,10 @@ block content
           form.test__container(action="/")
             .test__row
               .test__col
-                .test__question
-                  |Какие проявления в интимной зоне вас беспокоят?
+                ul.test__questions
+                  each item, index in ['Какие проявления в интимной зоне вас беспокоят?', '2', '3', '4', '5']
+                    li.test__question(class = ((index === 0) ? 'test__question--active' : ''))
+                      |!{item}
                 ul.test__dots
                   - for (i = 0; i < 5; i++)
                     li.test__dot(class = ((i === 0) ? 'test__dot--active' : ''))
