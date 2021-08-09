@@ -1089,14 +1089,29 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       requestAnimationFrame(render)
 
       let progress = 0
-      const progress_delta = 0.05
+      const PROGRESS_DELTA = 5
+      const PROGRESS_DELTA_X = 1
+      let progress_delta = PROGRESS_DELTA
+
+      $(window).on('mousemove', event => {
+        const delta_x = Math.abs(event.originalEvent.movementX)
+        const delta_y = Math.abs(event.originalEvent.movementY)
+
+        const delta = (delta_x + delta_y) / 2
+
+        progress_delta = PROGRESS_DELTA + PROGRESS_DELTA * PROGRESS_DELTA_X * delta
+
+        setTimeout(() => {
+          progress_delta = PROGRESS_DELTA
+        }, 100)
+      })
 
       function render() {
         ctx.clearRect(0, 0, canvas.width, canvas.height)
 
-        const delta = 20 * Math.sin(progress)
+        const DIST = 800
 
-        const points_cur = points.map(item => [item[0] + delta * (item[0] / getRect(points)[2]), item[1] + delta * (item[0] / getRect(points)[2])])
+        const points_cur = points.map(item => [item[0], item[1] + 10 * Math.sin(((item[0] + progress % DIST) / DIST) * Math.PI * 2)])
 
         ctx.beginPath()
 
