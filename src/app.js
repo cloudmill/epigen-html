@@ -1022,6 +1022,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
         const step = $(this).closest('.test__options')
         const stepNext = step.next()
         const dot = $('.test__dot')
+        const question = $('.test__question')
         const index = $('.test__index')
 
         step.removeClass('test__options--active')
@@ -1029,6 +1030,8 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
         dot.eq(stepNext.index()).addClass('test__dot--active')
         index.text(stepNext.index() + 1)
+        question.removeClass('test__question--active')
+        question.eq(stepNext.index()).addClass('test__question--active')
 
         if ($('.test__options--active').length === 0) {
           $('.test__container').addClass('test__container--hidden')
@@ -1044,7 +1047,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     const formInput = form.find('.form__input')
 
     $(document).on('submit', form, function(event) {
-      event.preventDefault();
+      event.preventDefault()
 
       $('.test__form-wrapper').addClass('test__form-wrapper--hidden')
       resultResponse.addClass('test__form-response--active')

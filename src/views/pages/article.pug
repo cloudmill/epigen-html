@@ -564,8 +564,10 @@ block content
           form.test__container(action="/")
             .test__row
               .test__col
-                .test__question
-                  |Какие проявления в интимной зоне вас беспокоят?
+                ul.test__questions
+                  each item, index in ['Какие проявления в интимной зоне вас беспокоят?', '2', '3', '4', '5']
+                    li.test__question(class = ((index === 0) ? 'test__question--active' : ''))
+                      |!{item}
                 ul.test__dots
                   - for (i = 0; i < 5; i++)
                     li.test__dot(class = ((i === 0) ? 'test__dot--active' : ''))

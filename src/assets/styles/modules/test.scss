@@ -184,10 +184,19 @@
       overflow: hidden
     }
   }
+  &__questions {
+    // display: none;
+  }
   &__question {
+    display: none;
+
     @include fsl(25px, 120%);
     @media (max-width: $breakpoint - 1px) {
       @include fsl(15px);
+    }
+
+    &--active {
+      display: block;
     }
   }
   &__dots {
