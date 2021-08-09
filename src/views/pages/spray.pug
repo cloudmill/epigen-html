@@ -51,6 +51,52 @@ mixin nav-page-d
           a.nav-page-d__link(href=item.href data-scroll=item.scroll)
             |!{item.title}
 
+mixin nav-page-m
+  nav.nav-page-d.nav-page-d--mobile
+    ul.nav-page-d__list
+      -
+        var items = [
+          {
+            href: '#',
+            scroll: '#spray',
+            title: 'Спрей',
+          },
+          {
+            href: '#',
+            scroll: '#form',
+            title: 'Форма выпуска',
+          },
+          {
+            href: '#',
+            scroll: '#purpose',
+            title: 'Назначение',
+          },
+          {
+            href: '#',
+            scroll: '#test',
+            title: 'Диагностический тест',
+          },
+          {
+            href: '#',
+            scroll: '#structure',
+            title: 'Состав',
+          },
+          {
+            href: '#',
+            scroll: '#instruction',
+            title: 'Инструкция',
+          },
+          {
+            href: '#',
+            scroll: '#reviews',
+            title: 'Отзывы',
+          },
+        ]
+      each item, index in items
+        li.nav-page-d__item(class = ((index === 0) ? 'nav-page-d__item--active' : ''))
+          a.category-item.category-item--light-blue.category-item--background--white(href=item.href data-scroll=item.scroll)
+            |!{item.title}
+
 mixin copyright-link
   a.copyright-link(href=attributes.href)
     .copyright-link__mark
@@ -66,15 +112,49 @@ block content
           .aside
             .aside__inner
               .aside__container
-                .aside__top
+                .aside__top.modal(data-modal='4')
                   header.header.header--margin-bottom--default
                     a.header__logo(href='#')
                       +logo-svg.header__logo-svg
-                    .header__menu
+                    .header__menu(data-button='4')
                       .header__text
                         |Меню
                       .header__button
                         .header__burger
+                  .modal-aside
+                    .modal-aside__container
+                      .modal-aside__row
+                        .modal-aside__col
+                          nav.modal-aside__nav
+                            ul.modal-aside__nav-list
+                              .modal-aside__nav-col
+                                each item in ['Где купить', 'Вопрос эксперту', 'Отзывы Спрей Эпиген ', 'Отзывы Гель Эпиген ',]
+                                  li.modal-aside__nav-item
+                                    a.modal-aside__nav-link(href="#")
+                                      |#{item}
+                              .modal-aside__nav-col
+                                each item in ['Видео с экспертами', 'Статьи экспертов', 'Вопрос-ответ', 'Специалистам',]
+                                  li.modal-aside__nav-item
+                                    a.modal-aside__nav-link(href="#")
+                                      |#{item}
+                          .modal-aside__corp
+                            span
+                              |Сделано в&nbsp;
+                            a.modal-aside__corp-link(href="#")
+                              |CloudMill
+                        .modal-aside__col
+                          .modal-aside__col-item
+                            +product-link.product-link--modal--aside(src='assets/images/spray.jpeg')
+                              |Спрей
+                            .modal-aside__doc
+                              a.modal-aside__doc-link(href="#")
+                                |Политика конфиденциальности
+                          .modal-aside__col-item
+                            +product-link.product-link--modal--aside.product-link--purple(src='assets/images/gel.jpeg')
+                              |Гель
+                            .modal-aside__doc
+                              a.modal-aside__doc-link(href="#")
+                                |Положение о пользовании сайтом
                   +nav-page-d
                 .aside__bottom
                   a.button.button--spray.margin-bottom.margin-bottom--m.btn-animation(href="#")
@@ -85,14 +165,14 @@ block content
         .row__col.row__col--main
           .page
             header.page__header
-              .panel
+              .panel.panel--nav
                 .panel__panel
                   .panel__row
                     .panel__col
                       .panel__inner
                         .panel__product
                           //- .panel__product-item--active
-                          a.panel__product-item.panel__product-item--active(href='#')
+                          a.panel__product-item(href='#')
                             .panel__product-mark
                             .panel__product-text
                               |Спрей
@@ -100,32 +180,124 @@ block content
                             .panel__product-mark
                             .panel__product-text
                               |Гель
-                    .panel__col
-                      .panel__inner
-                        a.panel__where-buy(href='#')
-                          |Где купить
-                        .panel__choice
-                          .panel__choice-item(data-count=8)
-                            |Симптомы
-                          .panel__choice-item(data-count=12)
-                            |Заболевания
-                    .panel__col
-                      .panel__inner
-                        .panel__test
-                          +calendar-test-svg.panel__test-icon
-                          .panel__test-text
-                            |Пройти тест
-                        .panel__consultation
-                          +consultation-svg.panel__consultation-svg
-                          .panel__consultation-text
-                            |Консультация эксперта
+                    .panel__wrapper
+                      .panel__wrapper-row
+                        .panel__wrapper-col
+                          .panel__inner
+                            a.panel__where-buy(href='#')
+                              |Где купить
+                            .panel__choice
+                              .panel__choice-item(data-count=8 data-modal-button='3')
+                                |Симптомы
+                              .panel__choice-item(data-count=12 data-modal-button='2')
+                                |Заболевания
+                        .panel__wrapper-col
+                          .panel__inner
+                            .panel__test(data-button='3')
+                              +calendar-test-svg.panel__test-icon
+                              .panel__test-text
+                                |Пройти тест
+                            .panel__consultation
+                              +consultation-svg.panel__consultation-svg
+                              .panel__consultation-text
+                                |Консультация эксперта
+                      .panel__modals
+                        .panel-modal(data-modal-id='2')
+                          .panel-modal__container
+                            .panel-modal__row
+                              .panel-modal__col
+                                ul.panel-modal__list
+                                  each item in ['Генитальный герпес (I и II типа)', 'ВПЧ', 'Применение при беременности', 'Молочница', 'Бактериальный вагиноз',]
+                                    li.panel-modal__item
+                                      a.panel-modal__link(href="#")
+                                        |#{item}
+                              .panel-modal__col
+                                ul.panel-modal__list
+                                  each item in ['ВПЧ', 'Молочница',]
+                                    li.panel-modal__item
+                                      a.panel-modal__link(href="#")
+                                        |#{item}
+                        .panel-modal(data-modal-id='3')
+                          .panel-modal__container
+                            .panel-modal__row
+                              .panel-modal__col
+                                ul.panel-modal__list
+                                  each item in ['Зуд', 'Жжение', 'Выделения, пузырьки', 'Пузырьки, язвочки', 'Болезненность, выделения',]
+                                    li.panel-modal__item
+                                      a.panel-modal__link(href="#")
+                                        |#{item}
+                              .panel-modal__col
+                                ul.panel-modal__list
+                                  each item in ['Болезненность при половом контакте', 'Боль внизу живота', 'Боль при мочеиспускании']
+                                    li.panel-modal__item
+                                      a.panel-modal__link(href="#")
+                                        |#{item}
                   .panel__mobile
                     header.header
                       a.header__logo(href="#")
                         +logo-svg.header__svg
-                      .header__menu
+                      .header__menu(data-modal-button='1')
                         .header__button
                           .header__burger
+                    +nav-page-m
+                  .panel__modals
+                    .modal-mobile.modal-mobile--height--100vh-60p(data-modal-id='1')
+                      .modal-mobile__inner
+                        .modal-mobile__container
+                          .modal-mobile__products
+                            .modal-mobile__products-item
+                              +product-link.product-link--modal--mobile(src='assets/images/spray.jpeg')
+                                |Спрей
+                            .modal-mobile__products-item
+                              +product-link.product-link--modal--mobile.product-link--purple(src='assets/images/gel.jpeg')
+                                |Гель
+                        .panel.panel--modal
+                          .panel__choice
+                            .modal-mobile__choice
+                              .modal-mobile__choice-button
+                                .panel__choice-item(data-count='8')
+                                  |Симптомы
+                                +spoiler-arrow-svg.modal-mobile__choice-svg
+                              .modal-mobile__choice-dropdown
+                            .modal-mobile__choice
+                              .modal-mobile__choice-button
+                                .panel__choice-item(data-count='12')
+                                  |Заболевания
+                                +spoiler-arrow-svg.modal-mobile__choice-svg
+                              .modal-mobile__choice-dropdown
+                          .modal-mobile__links
+                            .modal-mobile__container
+                              ul.modal-mobile__links-list
+                                li.modal-mobile__links-item
+                                  a.panel__test(href="#")
+                                    +calendar-test-svg.panel__test-icon
+                                    .panel__test-text
+                                      |Пройти тест
+                                li.modal-mobile__links-item
+                                  a.panel__consultation(href="#")
+                                    +consultation-svg.panel__consultation-svg
+                                    .panel__consultation-text
+                                      |Консультация эксперта
+                                each item in ['Где купить', 'Вопрос эксперту', 'Отзывы Спрей Эпиген ', 'Отзывы Гель Эпиген ', 'Видео с экспертами', 'Статьи экспертов', 'Вопрос-ответ', 'Специалистам',]
+                                  li.modal-mobile__links-item
+                                    a.modal-mobile__links-link(href="#")
+                                      |#{item}
+                        .modal-mobile__bottom
+                          .modal-mobile__container
+                            ul.modal-mobile__bottom-links
+                              li.modal-mobile__bottom-item
+                                a.modal-mobile__bottom-doc(href="#")
+                                  |Политика конфиденциальности
+                              li.modal-mobile__bottom-item
+                                a.modal-mobile__bottom-doc(href="#")
+                                  |Положение о пользовании сайтом
+                              li.modal-mobile__bottom-item
+                                .modal-mobile__bottom-text
+                                  span
+                                    |Сделано в&nbsp;
+                                  a.modal-mobile__bottom-link(href="#")
+                                    |CloudMill
+
             main.page__main
               section.spray-page__section
                 .frame.frame--spray
