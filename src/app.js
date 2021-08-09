@@ -876,6 +876,8 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           }
         };
 
+        const delay = 500;
+
         const btn = $('[data-modal-button]');
         btn.on('click', function () {
           const id = $(this).data('modal-button');
@@ -885,9 +887,16 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           if (modalActive.length !== 0) {
             panel.addClass('panel--modal-active')
             $('.body').css('overflow', 'hidden')
+            $('.row__col--main').css('position', 'relative')
+            $('.row__col--main').css('z-index', '3')
           } else {
             panel.removeClass('panel--modal-active')
             $('.body').css('overflow', '')
+
+            setTimeout (() => {
+              $('.row__col--main').css('position', '')
+              $('.row__col--main').css('z-index', '')
+            }, delay)
           }
         });
 
@@ -905,6 +914,12 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           if (!isClickArea) {
             state.change(null);
             $('.body').css('overflow', '')
+
+            setTimeout (() => {
+              $('.row__col--main').css('position', '')
+              $('.row__col--main').css('z-index', '')
+            }, delay)
+
             panel.removeClass('panel--modal-active')
           }
         });
