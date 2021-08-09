@@ -441,6 +441,9 @@
     img {
       display: block;
       max-width: calc(#{$col-width-d} * 6);
+      @media (max-width: $breakpoint - 1px) {
+        max-width: 100%;
+      }
 
       border-radius: 10px;
     }
