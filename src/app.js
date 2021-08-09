@@ -12,37 +12,37 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
 
 
-// nav-page-d
-; (() => {
-  $(() => {
-    const components = $('.nav-page-d')
+  // nav-page-d
+  ; (() => {
+    $(() => {
+      const components = $('.nav-page-d')
 
-    components.each(function () {
-      const component = $(this)
+      components.each(function () {
+        const component = $(this)
 
-      const state = {
-        activeItem: component.find('.nav-page-d__item--active'),
+        const state = {
+          activeItem: component.find('.nav-page-d__item--active'),
 
-        setActiveItem: item => {
-          state.activeItem.removeClass('nav-page-d__item--active')
-          state.activeItem = item
-          state.activeItem.addClass('nav-page-d__item--active')
-        },
-      }
+          setActiveItem: item => {
+            state.activeItem.removeClass('nav-page-d__item--active')
+            state.activeItem = item
+            state.activeItem.addClass('nav-page-d__item--active')
+          },
+        }
 
-      const links = component.find('.nav-page-d__link')
+        const links = component.find('.nav-page-d__link')
 
-      links.on('click', function (event) {
-        event.preventDefault()
+        links.on('click', function (event) {
+          event.preventDefault()
 
-        const link = $(this)
-        const item = link.closest('.nav-page-d__item')
+          const link = $(this)
+          const item = link.closest('.nav-page-d__item')
 
-        state.setActiveItem(item)
+          state.setActiveItem(item)
+        })
       })
     })
-  })
-})()
+  })()
 
 // burger btn
 {
@@ -719,11 +719,11 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     window.addEventListener('scroll', aosRefresh);
 
     function aosRefresh() {
-      const timeout = setTimeout( () => {
+      const timeout = setTimeout(() => {
         clearTimeout(timeout)
         AOS.refresh();
         window.addEventListener('scroll', aosRefresh);
-      },1000);
+      }, 1000);
 
       window.removeEventListener('scroll', aosRefresh);
     }
@@ -907,22 +907,25 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 // wave
 {
   $(() => {
-    console.log('wave')
-
     $('.wave').each(function () {
-      const canvas = $('.wave')
-      const ctx = canvas[0].getContext('2d')
+      console.log('wave')
+
+      const canvas = this
+      const ctx = canvas.getContext('2d')
+
+      canvas.width = window.innerWidth
+      canvas.height = window.innerHeight
 
       const points = [
         [0, 0],
-        [10, 10],
-        [20, 10],
-        [30, 0],
-        [40, 0],
-        [60, 20],
-        [60, 30],
-        [50, 40],
-        [40, 40],
+        [100, 100],
+        [200, 100],
+        [300, 0],
+        [400, 0],
+        [600, 200],
+        [600, 300],
+        [500, 400],
+        [400, 400],
         [0, 0]
       ]
 
@@ -943,11 +946,20 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       // 2
       ctx.beginPath()
 
-      ctx.moveTo(0, 0)
+      ctx.moveTo(...points[0])
 
-      ctx.quadraticCurveTo(0, 100, 100, 100)
+      for (var i = 1; i < points.length - 2; i++) {
+        const xc = (points[i][0] + points[i + 1][0]) / 2;
+        const yc = (points[i][1] + points[i + 1][1]) / 2;
+        ctx.quadraticCurveTo(points[i][0], points[i][1], xc, yc);
+
+        console.log(points[i][0], points[i][1], xc, yc);
+      }
+
+      ctx.quadraticCurveTo(points[i][0], points[i][1], points[i + 1][0], points[i + 1][1])
 
       ctx.strokeStyle = 'green'
+      ctx.lineWidth = 5
       ctx.stroke()
 
       ctx.closePath()
@@ -961,9 +973,9 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     // options change
     const stepInput = $('.test__label')
 
-    stepInput.each(function() {
+    stepInput.each(function () {
 
-      $(this).on('click', function() {
+      $(this).on('click', function () {
         const step = $(this).closest('.test__options')
         const stepNext = step.next()
         const dot = $('.test__dot')
@@ -988,7 +1000,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     const form = result.find('.form')
     const formInput = form.find('.form__input')
 
-    $(document).on('submit', form, function(event) {
+    $(document).on('submit', form, function (event) {
       event.preventDefault();
 
       $('.test__form-wrapper').addClass('test__form-wrapper--hidden')
@@ -1122,7 +1134,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
     if (parallaxItem.length !== 0) {
 
-      parallaxItem.each(function() {
+      parallaxItem.each(function () {
         const parallaxElem = $(this);
         const parallaxElemOffset = parallaxElem.offset().top;
         const parallaxId = parallaxElem.data('parallax');
@@ -1130,17 +1142,17 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
         console.log($(window).height());
 
-        $(window).on('scroll', function() {
+        $(window).on('scroll', function () {
           const scrollPos = this.pageYOffset;
 
           if (scrollPos < parallaxContainer.offset().top &&
-              (scrollPos + $(window).height() / 2) > parallaxElemOffset) {
-                const parallax = ((scrollPos + $(window).height() / 2) - parallaxElemOffset) * 0.1;
+            (scrollPos + $(window).height() / 2) > parallaxElemOffset) {
+            const parallax = ((scrollPos + $(window).height() / 2) - parallaxElemOffset) * 0.1;
 
-                requestAnimationFrame(() => {
-                  parallaxElem.css('transform', `translateY(${parallax}px)`);
-                })
-              }
+            requestAnimationFrame(() => {
+              parallaxElem.css('transform', `translateY(${parallax}px)`);
+            })
+          }
         });
       });
     };
