@@ -339,7 +339,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       const listOffset = list.offset().top - 10;
       const panelHeight = $('.panel__panel').height();
 
-      $(window).on('scroll', function () {
+      $(window).on('scroll load', function () {
         const scrollPos = this.pageYOffset;
 
         if (BREAKPOINT_MEDIA.matches) {
@@ -1116,7 +1116,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       const container = $('.disease-page__spray-row')
 
       if (sticky.height() < container.height()) {
-        $(window).on('scroll resize', function () {
+        $(window).on('scroll resize load', function () {
           const containerOffset = container.offset().top
           const scrollPos = this.pageYOffset;
 
