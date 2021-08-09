@@ -1087,8 +1087,6 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
         const parallaxId = parallaxElem.data('parallax');
         const parallaxContainer = $(`[data-parallax-container='${parallaxId}']`)
 
-        console.log($(window).height());
-
         $(window).on('scroll', function() {
           const scrollPos = this.pageYOffset;
 
