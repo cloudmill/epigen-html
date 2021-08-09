@@ -335,21 +335,36 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
   $(() => {
     const list = $('[data-list]');
 
-    if (list.length !== 0 && BREAKPOINT_MEDIA.matches) {
+    if (list.length !== 0) {
       const listOffset = list.offset().top - 10;
       const panelHeight = $('.panel__panel').height();
 
       $(window).on('scroll', function () {
         const scrollPos = this.pageYOffset;
 
-        if (scrollPos > listOffset) {
-          list.addClass('disease-page__container--hidden')
-          $('.panel__list').addClass('panel__list--scroll');
-        }
+        if (BREAKPOINT_MEDIA.matches) {
+          if (scrollPos > listOffset) {
+            list.addClass('disease-page__container--hidden')
+            $('.panel__list').addClass('panel__list--scroll');
+          }
 
-        if ((scrollPos + panelHeight) < listOffset) {
-          list.removeClass('disease-page__container--hidden')
-          $('.panel__list').removeClass('panel__list--scroll')
+          if ((scrollPos + panelHeight) < listOffset) {
+            list.removeClass('disease-page__container--hidden')
+            $('.panel__list').removeClass('panel__list--scroll')
+          }
+        } else {
+          const navHeight = $('.nav-page-d--mobile').height()
+
+          if ((scrollPos + navHeight + 10) > listOffset) {
+            list.addClass('disease-page__container--hidden')
+            $('.panel__list').addClass('panel__list--scroll');
+          }
+
+          if ((scrollPos + panelHeight + navHeight + 10) < listOffset) {
+            list.removeClass('disease-page__container--hidden')
+            $('.panel__list').removeClass('panel__list--scroll')
+          }
+
         }
       });
     }
@@ -1076,29 +1091,32 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
   });
 }
 
-// test
+// test sticky
 {
   $(() => {
-    const container = $('.disease-page__spray-row')
     const sticky = $('.my-sticky')
 
-    if (sticky.height() < container.height()) {
-      $(window).on('scroll', function () {
-        const containerOffset = container.offset().top
-        const scrollPos = this.pageYOffset;
+    if (sticky.length !== 0 && BREAKPOINT_MEDIA.matches) {
+      const container = $('.disease-page__spray-row')
 
-        if ((scrollPos + 100) > containerOffset) {
-          sticky.addClass('my-sticky--fixed')
-        } else {
-          sticky.removeClass('my-sticky--fixed')
-        }
+      if (sticky.height() < container.height()) {
+        $(window).on('scroll resize', function () {
+          const containerOffset = container.offset().top
+          const scrollPos = this.pageYOffset;
 
-        if ((sticky.height() + scrollPos + 100) > (containerOffset + container.height())) {
-          sticky.addClass('my-sticky--bottom')
-        } else {
-          sticky.removeClass('my-sticky--bottom')
-        }
-      })
+          if ((scrollPos + 100) > containerOffset) {
+            sticky.addClass('my-sticky--fixed')
+          } else {
+            sticky.removeClass('my-sticky--fixed')
+          }
+
+          if ((sticky.height() + scrollPos + 100) > (containerOffset + container.height())) {
+            sticky.addClass('my-sticky--bottom')
+          } else {
+            sticky.removeClass('my-sticky--bottom')
+          }
+        })
+      }
     }
   });
 }

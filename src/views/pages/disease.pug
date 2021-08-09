@@ -51,6 +51,52 @@ mixin nav-page-d
           a.nav-page-d__link(href=item.href data-scroll=item.scroll)
             |!{item.title}
 
+mixin nav-page-m
+  nav.nav-page-d.nav-page-d--mobile
+    ul.nav-page-d__list
+      -
+        var items = [
+          {
+            href: '#',
+            scroll: '#views',
+            title: 'Виды генитального герпеса',
+          },
+          {
+            href: '#',
+            scroll: '#reasons',
+            title: 'Причины возникновения',
+          },
+          {
+            href: '#',
+            scroll: '#symptoms',
+            title: 'Симптомы',
+          },
+          {
+            href: '#',
+            scroll: '#herpes',
+            title: 'Генитальный герпес во время беременности',
+          },
+          {
+            href: '#',
+            scroll: '#diagnostics',
+            title: 'Диагностика',
+          },
+          {
+            href: '#',
+            scroll: '#treatment',
+            title: 'Лечение генитального герпеса',
+          },
+          {
+            href: '#',
+            scroll: '#effects',
+            title: 'Последствия',
+          },
+        ]
+      each item, index in items
+        li.nav-page-d__item(class = ((index === 0) ? 'nav-page-d__item--active' : ''))
+          a.category-item.category-item--light-blue.category-item--background--white(href=item.href data-scroll=item.scroll)
+            |!{item.title}
+
 mixin copyright-link
   a.copyright-link(href=attributes.href)
     .copyright-link__mark
@@ -82,7 +128,7 @@ block content
         .row__col.row__col--main
           .page
             header.page__header
-              .panel
+              .panel.panel--nav
                 .panel__panel
                   .panel__row
                     .panel__col
@@ -123,6 +169,7 @@ block content
                       .header__menu
                         .header__button
                           .header__burger
+                    +nav-page-m
                   .panel__list
                     .disease-page__container
                       ul.disease-page__list
