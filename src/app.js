@@ -1034,8 +1034,6 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
             const step = $(this).closest('.test__options')
             const stepNext = step.next()
 
-            console.log(stepNext.index());
-
             step.removeClass('test__options--active')
             stepNext.addClass('test__options--active')
 
