@@ -1129,17 +1129,17 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
       if (sticky.height() < container.height()) {
         $(window).on('scroll resize load', function () {
-          const panel = $('.panel--hidden')
+          const panel = $('.panel')
           const containerOffset = container.offset().top
           const scrollPos = this.pageYOffset;
 
-          if ((scrollPos + 100) > containerOffset) {
+          if ((scrollPos + panel.height()) > containerOffset) {
             sticky.addClass('my-sticky--fixed')
           } else {
             sticky.removeClass('my-sticky--fixed')
           }
 
-          if ((sticky.height() + scrollPos + 100) > (containerOffset + container.height())) {
+          if ((sticky.height() + scrollPos + panel.height()) > (containerOffset + container.height())) {
             sticky.addClass('my-sticky--bottom')
           } else {
             sticky.removeClass('my-sticky--bottom')
