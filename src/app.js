@@ -947,34 +947,6 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       canvas.height = window.innerHeight
 
       let points = [
-        // [0, 0],
-        // [100, 100],
-        // [200, 100],
-        // [300, 0],
-        // [400, 0],
-        // [600, 200],
-        // [600, 300],
-        // [500, 400],
-        // [400, 400],
-        // [0, 0],
-
-        // [50, 0],
-        // [100, 50],
-        // [50, 100],
-        // [0, 50],
-        // [0, 50],
-        // [50, 0],
-
-        // [0, 0],
-        // [50, 50],
-        // [100, 25],
-        // [150, 75],
-        // [125, 100],
-        // [100, 75],
-        // [125, 50],
-        // [175, 25],
-        // [200, 50],
-        // [250, 0],
         [0, 307],
         [26, 318],
         [57, 329],
@@ -1057,6 +1029,8 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
         [2036, 545],
         [2040, 567],
       ]
+
+      
 
       points = points.map(item => [item[0] / 2, item[1] / 2])
 
@@ -1394,4 +1368,230 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       }
     }
   });
+}
+
+// wwave
+{
+  const OFFSET = 100
+  const FPS = 5 // test
+  const ANIMATION_SPEED = 5
+  const ANIMATION_PHASE = 800
+  const ANIMATION_Y_OFFSET = 100
+
+  $(() => {
+    $('.wwave').each(function () {
+      const wwave = $(this)
+  
+      const canvas = wwave.find('.wwave__canvas')
+      const ctx = canvas[0].getContext('2d')
+
+      const points = [
+        [0, 307],
+        [26, 318],
+        [57, 329],
+        [76, 335],
+        [103, 342],
+        [126, 347],
+        [154, 352],
+        [172, 355],
+        [201, 359],
+        [220, 361],
+        [240, 362],
+        [265, 363],
+        [291, 364],
+        [319, 363],
+        [344, 362],
+        [365, 361],
+        [384, 359],
+        [404, 357],
+        [423, 354],
+        [444, 351],
+        [465, 347],
+        [491, 342],
+        [570, 321],
+        [626, 301],
+        [685, 272],
+        [742, 233],
+        [790, 186],
+        [825, 135],
+        [842, 93],
+        [847, 68],
+        [847, 50],
+        [843, 34],
+        [834, 21],
+        [821, 11],
+        [807, 5],
+        [789, 1],
+        [771, 0],
+        [753, 1],
+        [727, 6],
+        [698, 15],
+        [662, 30],
+        [611, 59],
+        [575, 85],
+        [550, 107],
+        [518, 142],
+        [496, 178],
+        [487, 205],
+        [484, 229],
+        [485, 250],
+        [489, 270],
+        [499, 297],
+        [518, 327],
+        [539, 351],
+        [571, 377],
+        [611, 401],
+        [653, 419],
+        [695, 431],
+        [738, 439],
+        [773, 442],
+        [817, 442],
+        [866, 438],
+        [902, 433],
+        [942, 426],
+        [993, 415],
+        [1139, 373],
+        [1232, 343],
+        [1310, 320],
+        [1377, 304],
+        [1486, 289],
+        [1564, 288],
+        [1625, 291],
+        [1715, 303],
+        [1778, 318],
+        [1833, 337],
+        [1897, 369],
+        [1943, 402],
+        [1977, 435],
+        [2006, 475],
+        [2023, 507],
+        [2036, 545],
+        [2040, 567],
+      ]
+
+      const points_norm = []
+      
+      let min_x = points[0][0]
+      let max_x = min_x
+
+      let min_y = points[0][1]
+      let max_y = min_y
+
+      points.forEach(point => {
+        const cur_x = point[0]
+        const cur_y = point[1]
+
+        if (cur_x < min_x) {
+          min_x = cur_x
+        } else if (cur_x > max_x) {
+          max_x = cur_x
+        }
+
+        if (cur_y < min_y) {
+          min_y = cur_y
+        } else if (cur_y > max_y) {
+          max_y = cur_y
+        }
+      })
+
+      const rect_width = max_x - min_x + 1
+      const rect_height = max_y - min_y + 1
+
+      const aspect = rect_height / rect_width
+
+      points.forEach(point => {
+        const point_norm = []
+
+        point_norm[0] = (point[0] - min_x) / rect_width
+        point_norm[1] = (point[1] - min_y) / rect_height
+
+        points_norm.push(point_norm)
+      })
+
+      function updateCanvasHeight() {
+        const canvasComputedStyle = getComputedStyle(canvas[0])
+        const canvasWidth = canvasComputedStyle.width.slice(0, -2)
+        
+        canvas[0].width = canvasWidth
+        
+        const wwaveComputedStyle = getComputedStyle(wwave[0])
+        const wwaveWidth = wwaveComputedStyle.width.slice(0, -2)
+
+        canvas[0].height = wwaveWidth * aspect + OFFSET * 2
+      }
+
+      updateCanvasHeight()
+    
+      function handleResize() {
+        console.log(123)
+
+        setTimeout(() => {
+          updateCanvasHeight()
+
+          // requestAnimationFrame(() => {
+          //   paint(points_norm)
+          // })
+
+          $(window).one('resize', handleResize)
+        }, 1000 / FPS)
+      }
+
+      $(window).one('resize', handleResize)
+
+      // requestAnimationFrame(() => {
+      //   paint(points_norm)
+      // })
+
+      function paint(points) {
+        ctx.clearRect(0, 0, canvas[0].width, canvas[0].height)
+
+        ctx.beginPath()
+
+        const width = canvas[0].width - OFFSET * 2
+        const height = canvas[0].height - OFFSET * 2
+
+        function getX(norm_x) {
+          return OFFSET + norm_x * width
+        }
+        function getY(norm_y) {
+          return OFFSET + norm_y * height
+        }
+
+        ctx.moveTo(getX(points[0][0]), getY(points[0][1]))
+
+        for (var i = 1; i < points.length - 2; i++) {
+          const xc = (points[i][0] + points[i + 1][0]) / 2
+          const yc = (points[i][1] + points[i + 1][1]) / 2
+          ctx.quadraticCurveTo(getX(points[i][0]), getY(points[i][1]), getX(xc), getY(yc))
+        }
+
+        ctx.quadraticCurveTo(getX(points[i][0]), getY(points[i][1]), getX(points[i + 1][0]), getY(points[i + 1][1]))
+
+        const gradient = ctx.createLinearGradient(OFFSET, 0, canvas[0].width - OFFSET, 0)
+        gradient.addColorStop(0, '#31aff2')
+        gradient.addColorStop(1, '#5553f0')
+
+        ctx.strokeStyle = gradient
+        ctx.lineWidth = 1
+        ctx.stroke()
+
+        ctx.closePath()
+      }
+
+      // animation
+
+      let animation_progress = 0
+      let animation_speed = ANIMATION_SPEED
+
+      function animation() {
+        paint()
+
+        animation_progress += animation_speed
+
+        requestAnimationFrame(animation)
+      }
+
+      animation()
+    })
+  })
 }
