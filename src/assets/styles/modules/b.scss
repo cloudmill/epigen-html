@@ -239,7 +239,6 @@
         #{$comp}__review,
         #{$comp}__content-wrapper,
         #{$comp}__preview-img,
-        #{$comp}__control--animated,
         #{$comp}__preview-wrapper {
           animation: fadeInUp $transition;
           transform: translateY(0%);
@@ -441,13 +440,6 @@
       display: flex;
       justify-content: flex-end;
       align-items: center;
-
-      &--animated {
-        animation: fadeOutUp $transition;
-        transform: translateY(50%);
-        opacity: 0;
-        transition: transform, opacity 0s;
-      }
     }
     #{$comp}__control-item {
       &:not(:first-child) {
