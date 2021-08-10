@@ -1129,6 +1129,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
       if (sticky.height() < container.height()) {
         $(window).on('scroll resize load', function () {
+          const panel = $('.panel--hidden')
           const containerOffset = container.offset().top
           const scrollPos = this.pageYOffset;
 
