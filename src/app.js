@@ -1013,46 +1013,60 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 // test
 {
   $(() => {
-    // options change
-    const stepInput = $('.test__label')
+    const test = $('.test');
 
-    stepInput.each(function() {
+    if (test.length !== 0) {
 
-      $(this).on('click', function() {
-        const step = $(this).closest('.test__options')
-        const stepNext = step.next()
-        const dot = $('.test__dot')
-        const question = $('.test__question')
-        const index = $('.test__index')
+      test.each(function() {
+        const testStep = $(this).find('.test__label')
+        const dot = $(this).find('.test__dot')
+        const question = $(this).find('.test__question')
+        const index = $(this).find('.test__index')
 
-        step.removeClass('test__options--active')
-        stepNext.addClass('test__options--active')
+        const testContainer = $(this).find('.test__container')
+        const testResult = $(this).find('.test__result')
+        const result = $(this).find('.test__form')
 
-        dot.eq(stepNext.index()).addClass('test__dot--active')
-        index.text(stepNext.index() + 1)
-        question.removeClass('test__question--active')
-        question.eq(stepNext.index()).addClass('test__question--active')
+        // options change
+        testStep.each(function() {
 
-        if ($('.test__options--active').length === 0) {
-          $('.test__container').addClass('test__container--hidden')
-          $('.test__result').addClass('test__result--active')
-        }
-      });
-    })
+          $(this).on('click', function() {
+            const step = $(this).closest('.test__options')
+            const stepNext = step.next()
 
-    // result response
-    const result = $('.test__form')
-    const resultResponse = result.find('.test__form-response')
-    const form = result.find('.form')
-    const formInput = form.find('.form__input')
+            console.log(stepNext.index());
 
-    $(document).on('submit', form, function(event) {
-      event.preventDefault()
+            step.removeClass('test__options--active')
+            stepNext.addClass('test__options--active')
 
-      $('.test__form-wrapper').addClass('test__form-wrapper--hidden')
-      resultResponse.addClass('test__form-response--active')
-      $('.test__form-email').text(formInput.val())
-    })
+            dot.eq(stepNext.index()).addClass('test__dot--active')
+            index.text(stepNext.index() + 1)
+            question.removeClass('test__question--active')
+            question.eq(stepNext.index()).addClass('test__question--active')
+
+            if (stepNext.index() === -1) {
+              testContainer.addClass('test__container--hidden')
+              testResult.addClass('test__result--active')
+            }
+          });
+
+          // result response
+          const resultResponse = result.find('.test__form-response')
+          const form = result.find('.form')
+          const formInput = form.find('.form__input')
+          const resultWrapper = result.find('.test__form-wrapper')
+          const resultEmail = result.find('.test__form-email')
+
+          $(document).on('submit', form, function(event) {
+            event.preventDefault()
+
+            resultWrapper.addClass('test__form-wrapper--hidden')
+            resultResponse.addClass('test__form-response--active')
+            resultEmail.text(formInput.val())
+          })
+        })
+      })
+    }
   });
 }
 
