@@ -631,12 +631,12 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
   })
 }
 
-// main page carousel slider
-{
-  $(() => {
-    const slider = new Slider('.b--carousel-slider-desktop')
-  })
-}
+// // main page carousel slider
+// {
+//   $(() => {
+//     const slider = new Slider('.b--carousel-slider-desktop')
+//   })
+// }
 
 // gel reviews slider
 {
@@ -1147,5 +1147,70 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
         })
       }
     }
+  });
+}
+
+// test
+{
+  $(() => {
+    const slider = $('.b--carousel-slider-desktop')
+    const sliderControl = slider.find('.b--btn-left-right-slider')
+    const sliderCol = slider.find('.b__col')
+
+    sliderCol.each(function() {
+      const slidesContainer = $(this).find('.t__container')
+
+      slidesContainer.each(function() {
+        const container = $(this)
+        const slides = container.find('.t__frame')
+
+
+        sliderControl.on('click', function() {
+          const dataTarget = $(this).data('command-slider-arrow')
+          const slidesActive = container.find('.t__frame--active')
+
+          switch(dataTarget) {
+            case 'prev':
+              if (slidesActive.prev().length !== 0) {
+                slidesActive.prev().addClass('t__frame--active')
+                slidesActive.prev().addClass('t__frame--front')
+                setTimeout (() => {
+                  slidesActive.prev().removeClass('t__frame--front')
+                  slidesActive.removeClass('t__frame--active')
+                }, 500)
+
+                break
+              }
+
+              slides.eq(slides.length - 1).addClass('t__frame--active')
+              slides.eq(slides.length - 1).addClass('t__frame--front')
+              setTimeout (() => {
+                slides.eq(slides.length - 1).removeClass('t__frame--front')
+                slidesActive.removeClass('t__frame--active')
+              }, 500)
+              break
+            case 'next':
+              if (slidesActive.next().length !== 0) {
+                slidesActive.next().addClass('t__frame--active')
+                slidesActive.next().addClass('t__frame--front')
+                setTimeout (() => {
+                  slidesActive.next().removeClass('t__frame--front')
+                  slidesActive.removeClass('t__frame--active')
+                }, 500)
+
+                break
+              }
+
+              slides.eq(0).addClass('t__frame--active')
+              slides.eq(0).addClass('t__frame--front')
+              setTimeout (() => {
+                slides.eq(0).removeClass('t__frame--front')
+                slidesActive.removeClass('t__frame--active')
+              }, 500)
+              break
+          }
+        })
+      })
+    })
   });
 }

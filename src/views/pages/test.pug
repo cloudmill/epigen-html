@@ -1,7 +1,7 @@
 extends ../layouts/master.pug
 
 block cookies
-//- block grid-test
+block grid-test
 
 include ../components/block.pug
 
@@ -11,5 +11,69 @@ block content
       .row__col.row__col--aside
         |test
       .row__col.row__col--main
-        |test
-        +block
+        .b.b--carousel-slider-desktop.b--carousel-slider-desktop-margin-top-in-main-page
+          .b__bottom
+            .b__slide
+              .b__buttons
+                .b.b--btn-left-right-slider.b--left.b__btn.b__btn--left.btn-animation.btn-animation--icon(data-command-slider-arrow='prev')
+                  +simple-arrow-svg.b__svg
+                .b.b--btn-left-right-slider.b--right.b__btn.b__btn--right.btn-animation.btn-animation--icon(data-command-slider-arrow='next')
+                  +simple-arrow-svg.b__svg
+              .b__row
+                a.b__col(href='#')
+                  .t__container
+                    .t__frame.t__frame--active
+                      .t__slide
+                        img.b__img(src='assets/images/carousel-1.jpeg')
+                        span.b__label
+                          |Клинические рекомендации
+                    .t__frame
+                      .t__slide
+                        img.b__img(src='assets/images/carousel-2.jpeg')
+                        span.b__label
+                          |Кровотечение при миоме
+                    .t__frame
+                      .t__slide
+                        img.b__img(src='assets/images/carousel-3.jpeg')
+                        span.b__label
+                          |Непроходимость маточных труб
+                  h3.b__title
+                    |Миома матки: симптомы, лечение, профилактика
+                a.b__col(href='#')
+                  .t__container.t__container--big
+                    .t__frame
+                      .t__slide
+                        img.b__img(src='assets/images/carousel-1.jpeg')
+                        span.b__label
+                          |Клинические рекомендации
+                    .t__frame.t__frame--active
+                      .t__slide
+                        img.b__img(src='assets/images/carousel-2.jpeg')
+                        span.b__label
+                          |Кровотечение при миоме
+                    .t__frame
+                      .t__slide
+                        img.b__img(src='assets/images/carousel-3.jpeg')
+                        span.b__label
+                          |Непроходимость маточных труб
+                  h3.b__title
+                    |Кровотечение при миоме
+                a.b__col(href='#')
+                  .t__container
+                    .t__frame
+                      .t__slide
+                        img.b__img(src='assets/images/carousel-1.jpeg')
+                        span.b__label
+                          |Клинические рекомендации
+                    .t__frame
+                      .t__slide
+                        img.b__img(src='assets/images/carousel-2.jpeg')
+                        span.b__label
+                          |Кровотечение при миоме
+                    .t__frame.t__frame--active
+                      .t__slide
+                        img.b__img(src='assets/images/carousel-3.jpeg')
+                        span.b__label
+                          |Непроходимость маточных труб
+                  h3.b__title
+                    |Непроходимость маточных труб
