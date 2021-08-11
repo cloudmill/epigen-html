@@ -487,6 +487,7 @@ block content
                   .page-gel__reviews-left
                     h2.page-gel__reviews-title
                       |Отзывы
+                  .page-gel__reviews-right
                     .page-gel__reviews-btns
                       .page-gel__reviews-btns-item
                         .b.b--btn-left-right-slider.js.js--gel-reviews-btn--prev
@@ -494,14 +495,9 @@ block content
                       .page-gel__reviews-btns-item
                         .b.b--btn-left-right-slider.b--right.js.js--gel-reviews-btn--next
                           +simple-arrow-svg.b__svg
-                  .page-gel__reviews-right
-                    .page-gel__reviews-links
-                      .page-gel__reviews-links-item
-                        a.category-item.category-item--background--none(href='#')
-                          |Все отзывы
-                      .page-gel__reviews-links-item
-                        a.category-item.category-item--background--none(href='#')
-                          |Задать вопрос врачу
+                    .page-gel__reviews-links-item.page-gel__reviews-links-item--mobile
+                      a.category-item.category-item--background--none(href='#')
+                        |Все отзывы
                 .swiper-container.swiper-container--visible.swiper-container--slide-width-auto.swiper-container--slide-height-max.js.js--gel-reviews-slider
                   .swiper-wrapper
                     - for (let i = 0; i < 10; i++)
@@ -515,4 +511,11 @@ block content
                           .page-gel__reviews-card-bottom
                             a.page-gel__reviews-card-link(href='#')
                               |irecommend.ru
+                .page-gel__reviews-links
+                  .page-gel__reviews-links-item.page-gel__reviews-links-item--desktop
+                    a.category-item.category-item--background--none(href='#')
+                      |Все отзывы
+                  .page-gel__reviews-links-item
+                    a.category-item.category-item--background--none(href='#')
+                      |Задать вопрос врачу
             +footer.page__footer

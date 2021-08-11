@@ -222,8 +222,16 @@
 
     margin-top: 140px;
     margin-left: calc(#{$col-width-d} / 2 * -1);
-    padding: 30px $col-pad-d 80px calc(#{$col-width-d} / 2);
+    padding: 30px $col-pad-d 60px calc(#{$col-width-d} / 2);
+    @media (max-width: $breakpoint - 1px) {
+      margin-top: 60px;
+      padding: 30px 15px;
+      margin-left: -15px;
+    }
     width: calc(100% + (#{$col-width-d} / 2) + #{$col-pad-d});
+    @media (max-width: $breakpoint - 1px) {
+      width: calc(100% + (15px * 2));
+    }
     overflow: hidden;
   }
   // card
@@ -258,10 +266,20 @@
   &__reviews-card-title {
     font-weight: 400;
     @include fsl(20px, 140%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(18px);
+    }
   }
   &__reviews-card-text {
     margin-top: 16px;
+    @media (max-width: $breakpoint - 1px) {
+      margin-top: 10px;
+    }
+
     @include fsl(15px, 140%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(13px);
+    }
   }
   // layout
   &__reviews-layout {
@@ -280,6 +298,9 @@
   // top, grid
   &__reviews-top {
     margin-bottom: 60px;
+    @media (max-width: $breakpoint - 1px) {
+      margin-bottom: 30px;
+    }
     display: flex;
     justify-content: space-between;
   }
@@ -288,47 +309,73 @@
     display: flex;
   }
   &__reviews-right {
-    width: calc(#{$col-width-d} * 6);
     flex-shrink: 0;
   }
   // title
   &__reviews-title {
-    width: calc(#{$col-width-d} * 8);
     flex-shrink: 0;
 
     font-weight: 400;
     @include fsl(40px, 130%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(20px, 140%);
+    }
   }
   // btns
   &__reviews-btns {
     margin-left: 20px;
-    padding-top: 10px;
     flex-shrink: 0;
     display: flex;
-  }&__reviews-btns-item {
+    @media (max-width: $breakpoint - 1px) {
+      display: none;
+    }
+  }
+  &__reviews-btns-item {
     &:not(:first-child) {
       margin-left: 15px;
     }
   }
   // links
   &__reviews-links {
-    margin-top: -10px;
-    margin-left: -10px;
-    padding-top: 10px;
+    padding-top: 30px;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
+    @media (max-width: $breakpoint - 1px) {
+      justify-content: flex-start;
+    }
   }
   &__reviews-links-item {
-    margin-top: 10px;
-    margin-left: 10px;
     display: flex;
+
+    &:not(:first-child) {
+      margin-left: 5px;
+      @media (max-width: $breakpoint - 1px) {
+        margin-left: 0;
+      }
+    }
+
+    &--mobile {
+      display: none;
+      @media (max-width: $breakpoint - 1px) {
+        display: flex;
+      }
+    }
+
+    &--desktop {
+      @media (max-width: $breakpoint - 1px) {
+        display: none;
+      }
+    }
   }
 
   &__features {
     position: relative;
 
     margin-top: 140px;
+    @media (max-width: $breakpoint - 1px) {
+      margin-top: 50px;
+    }
   }
   &__features-list {
 
