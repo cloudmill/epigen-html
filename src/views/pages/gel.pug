@@ -12,40 +12,99 @@ mixin nav-page-d
         var items = [
           {
             href: '#',
+            scroll: '#gel',
             title: 'Гель',
           },
           {
             href: '#',
+            scroll: '#form',
             title: 'Форма выпуска',
           },
           {
             href: '#',
+            scroll: '#features',
             title: 'Преимущества',
           },
+          //- {
+          //-   href: '#',
+          //-   scroll: '#purpose',
+          //-   title: 'Назначение',
+          //- },
           {
             href: '#',
-            title: 'Назначение',
-          },
-          {
-            href: '#',
+            scroll: '#structure',
             title: 'Состав',
           },
           {
             href: '#',
+            scroll: '#instruction',
             title: 'Инструкция',
           },
+          //- {
+          //-   href: '#',
+          //-   scroll: '#spray',
+          //-   title: 'Вопрос эксперту',
+          //- },
           {
             href: '#',
-            title: 'Вопрос эксперту',
-          },
-          {
-            href: '#',
+            scroll: '#reviews',
             title: 'Отзывы',
           },
         ]
       each item, index in items
         li.nav-page-d__item(class = ((index === 0) ? 'nav-page-d__item--active' : ''))
-          a.nav-page-d__link(href=item.href)
+          a.nav-page-d__link(href=item.href data-scroll=item.scroll)
+            |!{item.title}
+
+mixin nav-page-m
+  nav.nav-page-d.nav-page-d--mobile.nav-page-d--mobile--purple
+    ul.nav-page-d__list
+      -
+        var items = [
+          {
+            href: '#',
+            scroll: '#gel',
+            title: 'Гель',
+          },
+          {
+            href: '#',
+            scroll: '#form',
+            title: 'Форма выпуска',
+          },
+          {
+            href: '#',
+            scroll: '#features',
+            title: 'Преимущества',
+          },
+          //- {
+          //-   href: '#',
+          //-   scroll: '#purpose',
+          //-   title: 'Назначение',
+          //- },
+          {
+            href: '#',
+            scroll: '#structure',
+            title: 'Состав',
+          },
+          {
+            href: '#',
+            scroll: '#instruction',
+            title: 'Инструкция',
+          },
+          //- {
+          //-   href: '#',
+          //-   scroll: '#spray',
+          //-   title: 'Вопрос эксперту',
+          //- },
+          {
+            href: '#',
+            scroll: '#reviews',
+            title: 'Отзывы',
+          },
+        ]
+      each item, index in items
+        li.nav-page-d__item(class = ((index === 0) ? 'nav-page-d__item--active' : ''))
+          a.category-item.category-item--light-blue.category-item--background--white(href=item.href data-scroll=item.scroll)
             |!{item.title}
 
 mixin copyright-link
@@ -189,6 +248,7 @@ block content
                       .header__menu(data-modal-button='1')
                         .header__button
                           .header__burger
+                    +nav-page-m
                   .panel__modals
                     .modal-mobile.modal-mobile--height--100vh-60p(data-modal-id='1')
                       .modal-mobile__inner
@@ -271,7 +331,7 @@ block content
                 .page-gel__mobile-button
                   a.button.button--t.button--purple(href='#')
                       |Где купить
-              section.spray-page__section.margin-top.margin-top--l
+              section.spray-page__section.margin-top.margin-top--l(id='gel' data-section='')
                 .spray-page__section-row
                   .spray-page__section-col
                     h3.spray-page__section-title
@@ -279,7 +339,7 @@ block content
                   .spray-page__section-col
                     p.spray-page__section-text
                       |Можно использовать на любом месяце беременности. Не имеет ограничений по возрасту и полу.
-              section.spray-page__section.margin-top.margin-top--95
+              section.spray-page__section.margin-top.margin-top--95(id='form' data-section='')
                 .product-slider
                   .product-slider__slide.product-slider__slide--front
                     .product-slider__content
@@ -316,7 +376,7 @@ block content
                             .product-slider__counter-amount
                               .product-slider__counter-text.product-slider__counter-text--uppercase
                                 |доз
-              section.page-gel__features
+              section.page-gel__features(id='features' data-section='')
                 .page-gel__features-layout
                   .page-gel__layout-img-1(data-parallax='1')
                     img.page-gel__features-img-1(src='assets/images/gel-features-image-1.jpeg')
@@ -356,7 +416,7 @@ block content
                       |Рекомендуется врачами гинекологами с заботой о женском интимном здоровье
                     p.page-gel__features-text.max-width.max-width--col--7
                       |Самый назначаемый гинекологами и&nbsp;дерматовенерологами гель для&nbsp;интимной гигиены*
-              section.page-gel__compound(data-parallax-container='4')
+              section.page-gel__compound(data-parallax-container='4' id='structure' data-section='')
                 .page-gel__compound-row
                   .page-gel__compound-col
                     h2.page-gel__compound-title
@@ -383,7 +443,7 @@ block content
                           |Фитосфингозины
                         p.page-gel__compound-item-text
                           |Обладают противовоспалительным эффектом и неспецифическими противомикробными свойствами
-              section.page-gel__method.spray-page__section.margin-top.margin-top--l
+              section.page-gel__method.spray-page__section.margin-top.margin-top--l(id='instruction' data-section='')
                 .spray-page__video
                   .spray-page__video-row
                     .spray-page__video-col
@@ -421,7 +481,7 @@ block content
                               |Использовать для интимной зоны, затем тщательно смыть
                           .page-gel__method-item-bottom
                             .rail.rail--small
-              section.page-gel__reviews
+              section.page-gel__reviews(id='reviews' data-section='')
                 .page-gel__reviews-layout
                 .page-gel__reviews-top
                   .page-gel__reviews-left
