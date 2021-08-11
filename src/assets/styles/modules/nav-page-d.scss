@@ -32,6 +32,8 @@
       transform: translateY(10px);
 
       overflow-x: auto;
+
+      @include scrollbar-hidden;
     }
 
     #{$comp}__list {
