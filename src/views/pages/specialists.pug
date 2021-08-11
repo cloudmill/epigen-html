@@ -214,19 +214,20 @@ block content
                 |Специалистам
               .rail.rail--desctop
               section.specialists-page__specialists
-                ul.nav-list.nav-list--wrap
-                  li.nav-list__item
-                    +border-link(href='#' active count=29)
-                      |Все
-                  li.nav-list__item
-                    +border-link(href='#' count=5)
-                      |Клинические рекомендации
-                  li.nav-list__item
-                    +border-link(href='#' count=5)
-                      |Опыт применения
-                  li.nav-list__item
-                    +border-link(href='#' count=29)
-                      |Исследования
+                .nav-list.nav-list--wrap
+                  ul.nav-list__list
+                    li.nav-list__item
+                      +border-link(href='#' active count=29)
+                        |Все
+                    li.nav-list__item
+                      +border-link(href='#' count=5)
+                        |Клинические рекомендации
+                    li.nav-list__item
+                      +border-link(href='#' count=5)
+                        |Опыт применения
+                    li.nav-list__item
+                      +border-link(href='#' count=29)
+                        |Исследования
                 ul.cards-grid
                   - for (i = 0; i < 9; i++)
                     li.cards-grid__item

@@ -14,40 +14,99 @@ mixin nav-page-d
         var items = [
           {
             href: '#',
+            scroll: '#gel',
             title: 'Гель',
           },
           {
             href: '#',
+            scroll: '#form',
             title: 'Форма выпуска',
           },
           {
             href: '#',
+            scroll: '#features',
             title: 'Преимущества',
           },
+          //- {
+          //-   href: '#',
+          //-   scroll: '#purpose',
+          //-   title: 'Назначение',
+          //- },
           {
             href: '#',
-            title: 'Назначение',
-          },
-          {
-            href: '#',
+            scroll: '#structure',
             title: 'Состав',
           },
           {
             href: '#',
+            scroll: '#instruction',
             title: 'Инструкция',
           },
+          //- {
+          //-   href: '#',
+          //-   scroll: '#spray',
+          //-   title: 'Вопрос эксперту',
+          //- },
           {
             href: '#',
-            title: 'Вопрос эксперту',
-          },
-          {
-            href: '#',
+            scroll: '#reviews',
             title: 'Отзывы',
           },
         ]
       each item, index in items
         li.nav-page-d__item(class = ((index === 0) ? 'nav-page-d__item--active' : ''))
-          a.nav-page-d__link(href=item.href)
+          a.nav-page-d__link(href=item.href data-scroll=item.scroll)
+            |!{item.title}
+
+mixin nav-page-m
+  nav.nav-page-d.nav-page-d--mobile.nav-page-d--mobile--purple
+    ul.nav-page-d__list
+      -
+        var items = [
+          {
+            href: '#',
+            scroll: '#gel',
+            title: 'Гель',
+          },
+          {
+            href: '#',
+            scroll: '#form',
+            title: 'Форма выпуска',
+          },
+          {
+            href: '#',
+            scroll: '#features',
+            title: 'Преимущества',
+          },
+          //- {
+          //-   href: '#',
+          //-   scroll: '#purpose',
+          //-   title: 'Назначение',
+          //- },
+          {
+            href: '#',
+            scroll: '#structure',
+            title: 'Состав',
+          },
+          {
+            href: '#',
+            scroll: '#instruction',
+            title: 'Инструкция',
+          },
+          //- {
+          //-   href: '#',
+          //-   scroll: '#spray',
+          //-   title: 'Вопрос эксперту',
+          //- },
+          {
+            href: '#',
+            scroll: '#reviews',
+            title: 'Отзывы',
+          },
+        ]
+      each item, index in items
+        li.nav-page-d__item(class = ((index === 0) ? 'nav-page-d__item--active' : ''))
+          a.category-item.category-item--light-blue.category-item--background--white(href=item.href data-scroll=item.scroll)
             |!{item.title}
 
 mixin copyright-link
@@ -65,15 +124,49 @@ block content
           .aside
             .aside__inner
               .aside__container
-                .aside__top
+                .aside__top.modal(data-modal='4')
                   header.header.header--margin-bottom--default
                     a.header__logo(href='#')
                       +logo-svg.header__logo-svg
-                    .header__menu
+                    .header__menu(data-button='4')
                       .header__text
                         |Меню
                       .header__button
                         .header__burger
+                  .modal-aside
+                    .modal-aside__container
+                      .modal-aside__row
+                        .modal-aside__col
+                          nav.modal-aside__nav
+                            ul.modal-aside__nav-list
+                              .modal-aside__nav-col
+                                each item in ['Где купить', 'Вопрос эксперту', 'Отзывы Спрей Эпиген ', 'Отзывы Гель Эпиген ',]
+                                  li.modal-aside__nav-item
+                                    a.modal-aside__nav-link(href="#")
+                                      |#{item}
+                              .modal-aside__nav-col
+                                each item in ['Видео с экспертами', 'Статьи экспертов', 'Вопрос-ответ', 'Специалистам',]
+                                  li.modal-aside__nav-item
+                                    a.modal-aside__nav-link(href="#")
+                                      |#{item}
+                          .modal-aside__corp
+                            span
+                              |Сделано в&nbsp;
+                            a.modal-aside__corp-link(href="#")
+                              |CloudMill
+                        .modal-aside__col
+                          .modal-aside__col-item
+                            +product-link.product-link--modal--aside(src='assets/images/spray.jpeg')
+                              |Спрей
+                            .modal-aside__doc
+                              a.modal-aside__doc-link(href="#")
+                                |Политика конфиденциальности
+                          .modal-aside__col-item
+                            +product-link.product-link--modal--aside.product-link--purple(src='assets/images/gel.jpeg')
+                              |Гель
+                            .modal-aside__doc
+                              a.modal-aside__doc-link(href="#")
+                                |Положение о пользовании сайтом
                   +nav-page-d.nav-page-d--purple
                 .aside__bottom
                   a.button.button--t.button--purple.margin-bottom.margin-bottom--m(href='#')
@@ -83,7 +176,7 @@ block content
         .row__col.row__col--main
           .page
             header.page__header
-              .panel
+              .panel.panel--nav
                 .panel__panel
                   .panel__row
                     .panel__col
@@ -157,6 +250,7 @@ block content
                       .header__menu(data-modal-button='1')
                         .header__button
                           .header__burger
+                    +nav-page-m
                   .panel__modals
                     .modal-mobile.modal-mobile--height--100vh-60p(data-modal-id='1')
                       .modal-mobile__inner
@@ -228,7 +322,18 @@ block content
                       |Гель
                       br
                       |Эпиген Интим
-              section.spray-page__section.margin-top.margin-top--l
+              section.page-gel__mobile
+                h1.page-gel__frame-title
+                  |Гель Эпиген Интим
+                .page-gel__mobile-wrapper
+                  ul.page-gel__frame-list
+                    li.page-gel__frame-item
+                      .category-item.category-item--purple.cursor.cursor--default
+                        |Сделано в Испании
+                .page-gel__mobile-button
+                  a.button.button--t.button--purple(href='#')
+                      |Где купить
+              section.spray-page__section.margin-top.margin-top--l(id='gel' data-section='')
                 .spray-page__section-row
                   .spray-page__section-col
                     h3.spray-page__section-title
@@ -238,11 +343,12 @@ block content
                       |Можно использовать на любом месяце беременности. Не имеет ограничений по возрасту и полу.
               section.spray-page__section.margin-top.margin-top--95
                 +block
-              section.page-gel__features
+              section.page-gel__features(id='features' data-section='')
                 .page-gel__features-layout
                   .page-gel__layout-img-1(data-parallax='1')
                     img.page-gel__features-img-1(src='assets/images/gel-features-image-1.jpeg')
                   +gel-features-wave-svg.page-gel__features-wave
+                  +gel-wave-mobile-svg.page-gel__features-wave-mobile
                   +moon-svg.page-gel__features-moon
                   +star-svg.page-gel__features-star.page-gel__features-star--blue
                   +star-svg.page-gel__features-star.page-gel__features-star--purple
@@ -277,7 +383,7 @@ block content
                       |Рекомендуется врачами гинекологами с заботой о женском интимном здоровье
                     p.page-gel__features-text.max-width.max-width--col--7
                       |Самый назначаемый гинекологами и&nbsp;дерматовенерологами гель для&nbsp;интимной гигиены*
-              section.page-gel__compound(data-parallax-container='4')
+              section.page-gel__compound(data-parallax-container='4' id='structure' data-section='')
                 .page-gel__compound-row
                   .page-gel__compound-col
                     h2.page-gel__compound-title
@@ -304,7 +410,7 @@ block content
                           |Фитосфингозины
                         p.page-gel__compound-item-text
                           |Обладают противовоспалительным эффектом и неспецифическими противомикробными свойствами
-              section.page-gel__method.spray-page__section.margin-top.margin-top--l
+              section.page-gel__method.spray-page__section.margin-top.margin-top--l(id='instruction' data-section='')
                 .spray-page__video
                   .spray-page__video-row
                     .spray-page__video-col
@@ -342,12 +448,13 @@ block content
                               |Использовать для интимной зоны, затем тщательно смыть
                           .page-gel__method-item-bottom
                             .rail.rail--small
-              section.page-gel__reviews
+              section.page-gel__reviews(id='reviews' data-section='')
                 .page-gel__reviews-layout
                 .page-gel__reviews-top
                   .page-gel__reviews-left
                     h2.page-gel__reviews-title
                       |Отзывы
+                  .page-gel__reviews-right
                     .page-gel__reviews-btns
                       .page-gel__reviews-btns-item
                         .b.b--btn-left-right-slider.js.js--gel-reviews-btn--prev
@@ -355,14 +462,9 @@ block content
                       .page-gel__reviews-btns-item
                         .b.b--btn-left-right-slider.b--right.js.js--gel-reviews-btn--next
                           +simple-arrow-svg.b__svg
-                  .page-gel__reviews-right
-                    .page-gel__reviews-links
-                      .page-gel__reviews-links-item
-                        a.category-item.category-item--background--none(href='#')
-                          |Все отзывы
-                      .page-gel__reviews-links-item
-                        a.category-item.category-item--background--none(href='#')
-                          |Задать вопрос врачу
+                    .page-gel__reviews-links-item.page-gel__reviews-links-item--mobile
+                      a.category-item.category-item--background--none(href='#')
+                        |Все отзывы
                 .swiper-container.swiper-container--visible.swiper-container--slide-width-auto.swiper-container--slide-height-max.js.js--gel-reviews-slider
                   .swiper-wrapper
                     - for (let i = 0; i < 10; i++)
@@ -376,4 +478,11 @@ block content
                           .page-gel__reviews-card-bottom
                             a.page-gel__reviews-card-link(href='#')
                               |irecommend.ru
+                .page-gel__reviews-links
+                  .page-gel__reviews-links-item.page-gel__reviews-links-item--desktop
+                    a.category-item.category-item--background--none(href='#')
+                      |Все отзывы
+                  .page-gel__reviews-links-item
+                    a.category-item.category-item--background--none(href='#')
+                      |Задать вопрос врачу
             +footer.page__footer

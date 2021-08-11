@@ -12,9 +12,23 @@
 
   &--gel {
     background-image: url('assets/images/gel-promo.jpeg');
+    background-position: 80% center;
+
+    @media (max-width: $breakpoint - 1px) {
+      margin-top: 20px;
+
+      height: calc(100vh - #{$panel-height} - 20px - 15px - 159px - 42px);
+    }
   }
   &--spray {
     background-image: url('assets/images/spray-frame.jpg');
+    background-position: 90% center;
+
+    @media (max-width: $breakpoint - 1px) {
+      margin-top: 20px;
+
+      height: calc(100vh - #{$panel-height} - 20px - 15px - 203px - 42px);
+    }
   }
 
   &__img {

@@ -65,21 +65,17 @@
     }
 
     #{$comp}__bottom {
-      display: flex;
-    }
-
-    #{$comp}__slide {
       position: relative;
 
-      flex-shrink: 0;
-      width: 100%;
-
+      display: flex;
     }
 
     #{$comp}__row {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
+
+      width: 100%;
     }
     #{$comp}__col {
       position: relative;
@@ -114,6 +110,81 @@
       }
     }
 
+    #{$comp}__container {
+      min-height: 217px;
+      @media (max-width: $breakpoint-xl - 1px) {
+        min-height: 174px;
+      }
+      #{$comp}__img {
+        height: 217px;
+        @media (max-width: $breakpoint-xl - 1px) {
+          height: 174px;
+        }
+      }
+
+      &--big {
+        min-height: 325px;
+        @media (max-width: $breakpoint-xl - 1px) {
+          min-height: 262px;
+        }
+        #{$comp}__img {
+          height: 325px;
+          @media (max-width: $breakpoint-xl - 1px) {
+            height: 262px;
+          }
+        }
+      }
+
+      overflow: hidden;
+    }
+
+    #{$comp}__frame {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+
+      overflow: hidden;
+      transition: $transition;
+      pointer-events: none;
+
+      &--left {
+        transform: translateX(-100%);
+
+        #{$comp}__slide {
+          transform: translateX(100%);
+        }
+      }
+
+      &--right {
+        transform: translateX(100%);
+
+        #{$comp}__slide {
+          transform: translateX(-100%);
+        }
+      }
+
+      &--active {
+        transform: translateX(0);
+        pointer-events: all;
+        z-index: 2;
+
+        #{$comp}__slide {
+          transform: translateX(0);
+        }
+      }
+
+      &--front {
+        z-index: 10;
+      }
+    }
+
+    #{$comp}__slide {
+      transition: $transition;
+    }
+
     #{$comp}__label {
       position: absolute;
       top: 10px;
@@ -127,11 +198,33 @@
       @include fsl(12px, 140%);
     }
 
-    #{$comp}__title {
+    #{$comp}__wrapper {
       margin-top: 15px;
+    }
 
+    #{$comp}__title {
+      position: absolute;
+
+      overflow: hidden;
       font-weight: 400;
       @include fsl(18px, 140%);
+
+      &--active {
+        position: static;
+
+        #{$comp}__span {
+          animation: textIn $transition;
+          transform: translateY(0);
+          transition: transform, opacity 0s;
+        }
+      }
+    }
+
+    #{$comp}__span {
+      display: block;
+      animation: textOut $transition;
+      transform: translateY(100%);
+      transition: transform 0s;
     }
 
     #{$comp}__img {
