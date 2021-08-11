@@ -631,13 +631,6 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
   })
 }
 
-// main page carousel slider
-{
-  $(() => {
-    const slider = new Slider('.b--carousel-slider-desktop')
-  })
-}
-
 // gel reviews slider
 {
   $(() => {
@@ -1150,46 +1143,58 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 // test
 {
   $(() => {
-    // options change
-    const stepInput = $('.test__label')
+    const test = $('.test');
 
-    stepInput.each(function () {
+    if (test.length !== 0) {
 
-      $(this).on('click', function () {
-        const step = $(this).closest('.test__options')
-        const stepNext = step.next()
-        const dot = $('.test__dot')
-        const question = $('.test__question')
-        const index = $('.test__index')
+      test.each(function() {
+        const testStep = $(this).find('.test__label')
+        const dot = $(this).find('.test__dot')
+        const question = $(this).find('.test__question')
+        const index = $(this).find('.test__index')
 
-        step.removeClass('test__options--active')
-        stepNext.addClass('test__options--active')
+        const testContainer = $(this).find('.test__container')
+        const testResult = $(this).find('.test__result')
+        const result = $(this).find('.test__form')
 
-        dot.eq(stepNext.index()).addClass('test__dot--active')
-        index.text(stepNext.index() + 1)
-        question.removeClass('test__question--active')
-        question.eq(stepNext.index()).addClass('test__question--active')
+        // options change
+        testStep.each(function() {
 
-        if ($('.test__options--active').length === 0) {
-          $('.test__container').addClass('test__container--hidden')
-          $('.test__result').addClass('test__result--active')
-        }
-      });
-    })
+          $(this).on('click', function() {
+            const step = $(this).closest('.test__options')
+            const stepNext = step.next()
 
-    // result response
-    const result = $('.test__form')
-    const resultResponse = result.find('.test__form-response')
-    const form = result.find('.form')
-    const formInput = form.find('.form__input')
+            step.removeClass('test__options--active')
+            stepNext.addClass('test__options--active')
 
-    $(document).on('submit', form, function(event) {
-      event.preventDefault()
+            dot.eq(stepNext.index()).addClass('test__dot--active')
+            index.text(stepNext.index() + 1)
+            question.removeClass('test__question--active')
+            question.eq(stepNext.index()).addClass('test__question--active')
 
-      $('.test__form-wrapper').addClass('test__form-wrapper--hidden')
-      resultResponse.addClass('test__form-response--active')
-      $('.test__form-email').text(formInput.val())
-    })
+            if (stepNext.index() === -1) {
+              testContainer.addClass('test__container--hidden')
+              testResult.addClass('test__result--active')
+            }
+          });
+
+          // result response
+          const resultResponse = result.find('.test__form-response')
+          const form = result.find('.form')
+          const formInput = form.find('.form__input')
+          const resultWrapper = result.find('.test__form-wrapper')
+          const resultEmail = result.find('.test__form-email')
+
+          $(document).on('submit', form, function(event) {
+            event.preventDefault()
+
+            resultWrapper.addClass('test__form-wrapper--hidden')
+            resultResponse.addClass('test__form-response--active')
+            resultEmail.text(formInput.val())
+          })
+        })
+      })
+    }
   });
 }
 
@@ -1350,16 +1355,17 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
       if (sticky.height() < container.height()) {
         $(window).on('scroll resize load', function () {
+          const panel = $('.panel')
           const containerOffset = container.offset().top
           const scrollPos = this.pageYOffset;
 
-          if ((scrollPos + 100) > containerOffset) {
+          if ((scrollPos + panel.height()) > containerOffset) {
             sticky.addClass('my-sticky--fixed')
           } else {
             sticky.removeClass('my-sticky--fixed')
           }
 
-          if ((sticky.height() + scrollPos + 100) > (containerOffset + container.height())) {
+          if ((sticky.height() + scrollPos + panel.height()) > (containerOffset + container.height())) {
             sticky.addClass('my-sticky--bottom')
           } else {
             sticky.removeClass('my-sticky--bottom')
@@ -1594,4 +1600,69 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       animation()
     })
   })
+}
+
+// test
+{
+  $(() => {
+    const slider = $('.b--carousel-slider-desktop')
+    const sliderControl = slider.find('.b--btn-left-right-slider')
+    const sliderCol = slider.find('.b__col')
+
+    sliderCol.each(function() {
+      const slidesContainer = $(this).find('.t__container')
+
+      slidesContainer.each(function() {
+        const container = $(this)
+        const slides = container.find('.t__frame')
+
+
+        sliderControl.on('click', function() {
+          const dataTarget = $(this).data('command-slider-arrow')
+          const slidesActive = container.find('.t__frame--active')
+
+          switch(dataTarget) {
+            case 'prev':
+              if (slidesActive.prev().length !== 0) {
+                slidesActive.prev().addClass('t__frame--active')
+                slidesActive.prev().addClass('t__frame--front')
+                setTimeout (() => {
+                  slidesActive.prev().removeClass('t__frame--front')
+                  slidesActive.removeClass('t__frame--active')
+                }, 500)
+
+                break
+              }
+
+              slides.eq(slides.length - 1).addClass('t__frame--active')
+              slides.eq(slides.length - 1).addClass('t__frame--front')
+              setTimeout (() => {
+                slides.eq(slides.length - 1).removeClass('t__frame--front')
+                slidesActive.removeClass('t__frame--active')
+              }, 500)
+              break
+            case 'next':
+              if (slidesActive.next().length !== 0) {
+                slidesActive.next().addClass('t__frame--active')
+                slidesActive.next().addClass('t__frame--front')
+                setTimeout (() => {
+                  slidesActive.next().removeClass('t__frame--front')
+                  slidesActive.removeClass('t__frame--active')
+                }, 500)
+
+                break
+              }
+
+              slides.eq(0).addClass('t__frame--active')
+              slides.eq(0).addClass('t__frame--front')
+              setTimeout (() => {
+                slides.eq(0).removeClass('t__frame--front')
+                slidesActive.removeClass('t__frame--active')
+              }, 500)
+              break
+          }
+        })
+      })
+    })
+  });
 }

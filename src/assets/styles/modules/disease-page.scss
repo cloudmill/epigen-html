@@ -487,6 +487,8 @@
 
 .my-sticky {
 
+  transition: $transition;
+
   &--fixed {
     position: fixed;
     top: 100px;
