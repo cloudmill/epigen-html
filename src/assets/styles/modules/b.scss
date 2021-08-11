@@ -112,14 +112,26 @@
 
     #{$comp}__container {
       min-height: 217px;
+      @media (max-width: $breakpoint-xl - 1px) {
+        min-height: 174px;
+      }
       #{$comp}__img {
         height: 217px;
+        @media (max-width: $breakpoint-xl - 1px) {
+          height: 174px;
+        }
       }
 
       &--big {
         min-height: 325px;
+        @media (max-width: $breakpoint-xl - 1px) {
+          min-height: 262px;
+        }
         #{$comp}__img {
           height: 325px;
+          @media (max-width: $breakpoint-xl - 1px) {
+            height: 262px;
+          }
         }
       }
 
