@@ -23,7 +23,7 @@
 							<div class="aside">
 								<div class="aside__inner">
 									<div class="aside__container">
-										<div class="aside__top">
+										<div class="aside__top modal" data-modal="4">
 											<header class="header header--margin-bottom--default"><a class="header__logo" href="#"><svg class="header__logo-svg" xmlns="http://www.w3.org/2000/svg" width="101" height="44" viewBox="0 0 101 44" fill="none">
 														<path d="M35.911 43H101" stroke="#757575" stroke-width="0.408" stroke-miterlimit="4.04"></path>
 														<path fill-rule="evenodd" clip-rule="evenodd" d="M40.2562 27.6192L38.3283 37.5655H38.357L46.7737 27.5903H48.2124L45.6946 40.5062H43.9825L45.9248 30.5454H45.8673L37.4938 40.5494H36.0406L38.5585 27.6192" fill="#757575"></path>
@@ -40,23 +40,60 @@
 														<path d="M50.946 28.0371H101" stroke="#757575" stroke-width="0.408" stroke-miterlimit="4.04"></path>
 														<path d="M0 28.0371H35.6377" stroke="#757575" stroke-width="0.408" stroke-miterlimit="4.04"></path>
 													</svg></a>
-												<div class="header__menu">
+												<div class="header__menu" data-button="4">
 													<div class="header__text">Меню</div>
 													<div class="header__button">
 														<div class="header__burger"></div>
 													</div>
 												</div>
 											</header>
+											<div class="modal-aside">
+												<div class="modal-aside__container">
+													<div class="modal-aside__row">
+														<div class="modal-aside__col">
+															<nav class="modal-aside__nav">
+																<ul class="modal-aside__nav-list">
+																	<div class="modal-aside__nav-col">
+																		<li class="modal-aside__nav-item"><a class="modal-aside__nav-link" href="#">Где купить</a></li>
+																		<li class="modal-aside__nav-item"><a class="modal-aside__nav-link" href="#">Вопрос эксперту</a></li>
+																		<li class="modal-aside__nav-item"><a class="modal-aside__nav-link" href="#">Отзывы Спрей Эпиген</a></li>
+																		<li class="modal-aside__nav-item"><a class="modal-aside__nav-link" href="#">Отзывы Гель Эпиген</a></li>
+																	</div>
+																	<div class="modal-aside__nav-col">
+																		<li class="modal-aside__nav-item"><a class="modal-aside__nav-link" href="#">Видео с экспертами</a></li>
+																		<li class="modal-aside__nav-item"><a class="modal-aside__nav-link" href="#">Статьи экспертов</a></li>
+																		<li class="modal-aside__nav-item"><a class="modal-aside__nav-link" href="#">Вопрос-ответ</a></li>
+																		<li class="modal-aside__nav-item"><a class="modal-aside__nav-link" href="#">Специалистам</a></li>
+																	</div>
+																</ul>
+															</nav>
+															<div class="modal-aside__corp"><span>Сделано в&nbsp;</span><a class="modal-aside__corp-link" href="#">CloudMill</a></div>
+														</div>
+														<div class="modal-aside__col">
+															<div class="modal-aside__col-item"><a class="product-link product-link--modal--aside" href="#">
+																	<div class="product-link__image"><img class="product-link__img" src="assets/images/spray.jpeg" /></div>
+																	<div class="product-link__text">Спрей</div>
+																</a>
+																<div class="modal-aside__doc"><a class="modal-aside__doc-link" href="#">Политика конфиденциальности</a></div>
+															</div>
+															<div class="modal-aside__col-item"><a class="product-link product-link--modal--aside product-link--purple" href="#">
+																	<div class="product-link__image"><img class="product-link__img" src="assets/images/gel.jpeg" /></div>
+																	<div class="product-link__text">Гель</div>
+																</a>
+																<div class="modal-aside__doc"><a class="modal-aside__doc-link" href="#">Положение о пользовании сайтом</a></div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
 											<nav class="nav-page-d nav-page-d--purple">
 												<ul class="nav-page-d__list">
-													<li class="nav-page-d__item nav-page-d__item--active"><a class="nav-page-d__link" href="#">Гель</a></li>
-													<li class="nav-page-d__item"><a class="nav-page-d__link" href="#">Форма выпуска</a></li>
-													<li class="nav-page-d__item"><a class="nav-page-d__link" href="#">Преимущества</a></li>
-													<li class="nav-page-d__item"><a class="nav-page-d__link" href="#">Назначение</a></li>
-													<li class="nav-page-d__item"><a class="nav-page-d__link" href="#">Состав</a></li>
-													<li class="nav-page-d__item"><a class="nav-page-d__link" href="#">Инструкция</a></li>
-													<li class="nav-page-d__item"><a class="nav-page-d__link" href="#">Вопрос эксперту</a></li>
-													<li class="nav-page-d__item"><a class="nav-page-d__link" href="#">Отзывы</a></li>
+													<li class="nav-page-d__item nav-page-d__item--active"><a class="nav-page-d__link" href="#" data-scroll="#gel">Гель</a></li>
+													<li class="nav-page-d__item"><a class="nav-page-d__link" href="#" data-scroll="#form">Форма выпуска</a></li>
+													<li class="nav-page-d__item"><a class="nav-page-d__link" href="#" data-scroll="#features">Преимущества</a></li>
+													<li class="nav-page-d__item"><a class="nav-page-d__link" href="#" data-scroll="#structure">Состав</a></li>
+													<li class="nav-page-d__item"><a class="nav-page-d__link" href="#" data-scroll="#instruction">Инструкция</a></li>
+													<li class="nav-page-d__item"><a class="nav-page-d__link" href="#" data-scroll="#reviews">Отзывы</a></li>
 												</ul>
 											</nav>
 										</div>
@@ -73,7 +110,7 @@
 						<div class="row__col row__col--main">
 							<div class="page">
 								<header class="page__header">
-									<div class="panel">
+									<div class="panel panel--nav">
 										<div class="panel__panel">
 											<div class="panel__row">
 												<div class="panel__col">
@@ -187,6 +224,16 @@
 														</div>
 													</div>
 												</header>
+												<nav class="nav-page-d nav-page-d--mobile nav-page-d--mobile--purple">
+													<ul class="nav-page-d__list">
+														<li class="nav-page-d__item nav-page-d__item--active"><a class="category-item category-item--light-blue category-item--background--white" href="#" data-scroll="#gel">Гель</a></li>
+														<li class="nav-page-d__item"><a class="category-item category-item--light-blue category-item--background--white" href="#" data-scroll="#form">Форма выпуска</a></li>
+														<li class="nav-page-d__item"><a class="category-item category-item--light-blue category-item--background--white" href="#" data-scroll="#features">Преимущества</a></li>
+														<li class="nav-page-d__item"><a class="category-item category-item--light-blue category-item--background--white" href="#" data-scroll="#structure">Состав</a></li>
+														<li class="nav-page-d__item"><a class="category-item category-item--light-blue category-item--background--white" href="#" data-scroll="#instruction">Инструкция</a></li>
+														<li class="nav-page-d__item"><a class="category-item category-item--light-blue category-item--background--white" href="#" data-scroll="#reviews">Отзывы</a></li>
+													</ul>
+												</nav>
 											</div>
 											<div class="panel__modals">
 												<div class="modal-mobile modal-mobile--height--100vh-60p" data-modal-id="1">
@@ -282,7 +329,18 @@
 											</div>
 										</div>
 									</section>
-									<section class="spray-page__section margin-top margin-top--l">
+									<section class="page-gel__mobile">
+										<h1 class="page-gel__frame-title">Гель Эпиген Интим</h1>
+										<div class="page-gel__mobile-wrapper">
+											<ul class="page-gel__frame-list">
+												<li class="page-gel__frame-item">
+													<div class="category-item category-item--purple cursor cursor--default">Сделано в Испании</div>
+												</li>
+											</ul>
+										</div>
+										<div class="page-gel__mobile-button"><a class="button button--t button--purple" href="#">Где купить</a></div>
+									</section>
+									<section class="spray-page__section margin-top margin-top--l" id="gel" data-section="">
 										<div class="spray-page__section-row">
 											<div class="spray-page__section-col">
 												<h3 class="spray-page__section-title">Единственный гель для интимной гигиены с уникальным сочетанием двух активных компонентов — активированной глицирризиновой и&nbsp;молочной кислоты</h3>
@@ -437,12 +495,20 @@
 											</div>
 										</div>
 									</section>
-									<section class="page-gel__features">
+									<section class="page-gel__features" id="features" data-section="">
 										<div class="page-gel__features-layout">
 											<div class="page-gel__layout-img-1" data-parallax="1"><img class="page-gel__features-img-1" src="assets/images/gel-features-image-1.jpeg"></div><svg class="page-gel__features-wave" xmlns="http://www.w3.org/2000/svg" width="1192" height="1718" viewBox="0 0 1192 1718" fill="none">
 												<path d="M1496.5 492.209C1496.5 492.209 1480.62 255.615 1067 255.615C857.475 255.615 703.265 366.334 477.701 385.492C271.559 403.001 115.281 260.141 203.623 137.341C265.141 51.8283 414.048 -39.6411 465 20.2094C495.009 55.4587 440.577 172.784 244.635 286.171C73.0008 385.492 -99.6348 491.5 72.5001 624.5C244.635 757.5 1208.79 607.344 947 1086C664.789 1602 239.5 1477 145.5 1517C51.5 1557 139.416 1654.34 215.5 1717C215.5 1717 266.408 1628.17 227.5 1580.5C173.042 1513.78 7.5 1618.5 7.5 1618.5" stroke="url(#paint0_linear)"></path>
 												<defs>
 													<linearGradient id="paint0_linear" x1="436" y1="0.999876" x2="-29.5466" y2="1127.71" gradientUnits="userSpaceOnUse">
+														<stop offset="0.294736" stop-color="#31AFF2"></stop>
+														<stop offset="1" stop-color="#5553F0"></stop>
+													</linearGradient>
+												</defs>
+											</svg><svg class="page-gel__features-wave-mobile" width="987" height="1618" viewBox="0 0 987 1618" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M986 288.398C986 288.398 976.716 149.971 734.943 149.971C612.468 149.971 522.327 214.75 390.478 225.959C269.981 236.203 178.631 152.618 230.27 80.7704C266.229 30.7387 353.271 -22.7784 383.054 12.2391C400.595 32.8628 368.777 101.508 254.243 167.848C153.917 225.959 53.0059 287.983 153.624 365.798C254.243 443.614 833.023 490.447 680 770.5C526.977 1050.55 13.9501 1023.24 1.5 1295C-7.8822 1499.79 375.5 1617 375.5 1617C375.5 1617 433.145 1564.16 415.5 1532C394.453 1493.63 306.5 1558 306.5 1558" stroke="url(#paint0_linear)"></path>
+												<defs>
+													<linearGradient id="paint0_linear" x1="366.102" y1="0.999881" x2="93.5378" y2="660.036" gradientUnits="userSpaceOnUse">
 														<stop offset="0.294736" stop-color="#31AFF2"></stop>
 														<stop offset="1" stop-color="#5553F0"></stop>
 													</linearGradient>
@@ -479,7 +545,7 @@
 											</li>
 										</ul>
 									</section>
-									<section class="page-gel__compound" data-parallax-container="4">
+									<section class="page-gel__compound" data-parallax-container="4" id="structure" data-section="">
 										<div class="page-gel__compound-row">
 											<div class="page-gel__compound-col">
 												<h2 class="page-gel__compound-title">Состав</h2>
@@ -506,7 +572,7 @@
 											</div>
 										</div>
 									</section>
-									<section class="page-gel__method spray-page__section margin-top margin-top--l">
+									<section class="page-gel__method spray-page__section margin-top margin-top--l" id="instruction" data-section="">
 										<div class="spray-page__video">
 											<div class="spray-page__video-row">
 												<div class="spray-page__video-col">
@@ -554,11 +620,13 @@
 											</div>
 										</div>
 									</section>
-									<section class="page-gel__reviews">
+									<section class="page-gel__reviews" id="reviews" data-section="">
 										<div class="page-gel__reviews-layout"></div>
 										<div class="page-gel__reviews-top">
 											<div class="page-gel__reviews-left">
 												<h2 class="page-gel__reviews-title">Отзывы</h2>
+											</div>
+											<div class="page-gel__reviews-right">
 												<div class="page-gel__reviews-btns">
 													<div class="page-gel__reviews-btns-item">
 														<div class="b b--btn-left-right-slider js js--gel-reviews-btn--prev"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
@@ -571,12 +639,7 @@
 															</svg></div>
 													</div>
 												</div>
-											</div>
-											<div class="page-gel__reviews-right">
-												<div class="page-gel__reviews-links">
-													<div class="page-gel__reviews-links-item"><a class="category-item category-item--background--none" href="#">Все отзывы</a></div>
-													<div class="page-gel__reviews-links-item"><a class="category-item category-item--background--none" href="#">Задать вопрос врачу</a></div>
-												</div>
+												<div class="page-gel__reviews-links-item page-gel__reviews-links-item--mobile"><a class="category-item category-item--background--none" href="#">Все отзывы</a></div>
 											</div>
 										</div>
 										<div class="swiper-container swiper-container--visible swiper-container--slide-width-auto swiper-container--slide-height-max js js--gel-reviews-slider">
@@ -672,6 +735,10 @@
 													</div>
 												</div>
 											</div>
+										</div>
+										<div class="page-gel__reviews-links">
+											<div class="page-gel__reviews-links-item page-gel__reviews-links-item--desktop"><a class="category-item category-item--background--none" href="#">Все отзывы</a></div>
+											<div class="page-gel__reviews-links-item"><a class="category-item category-item--background--none" href="#">Задать вопрос врачу</a></div>
 										</div>
 									</section>
 								</main>
