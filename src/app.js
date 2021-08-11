@@ -1153,64 +1153,96 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 // test
 {
   $(() => {
+    const DELAY = 500
+
     const slider = $('.b--carousel-slider-desktop')
-    const sliderControl = slider.find('.b--btn-left-right-slider')
-    const sliderCol = slider.find('.b__col')
 
-    sliderCol.each(function() {
-      const slidesContainer = $(this).find('.t__container')
+    if (slider.length !== 0) {
+      const sliderControl = slider.find('.b--btn-left-right-slider')
+      const sliderCol = slider.find('.b__col')
 
-      slidesContainer.each(function() {
-        const container = $(this)
-        const slides = container.find('.t__frame')
+      sliderCol.each(function() {
+        const slidesContainer = $(this).find('.t__container')
+
+        slidesContainer.each(function() {
+          const container = $(this)
+          const slides = container.find('.t__frame')
 
 
-        sliderControl.on('click', function() {
-          const dataTarget = $(this).data('command-slider-arrow')
-          const slidesActive = container.find('.t__frame--active')
+          sliderControl.on('click', function() {
+            const dataTarget = $(this).data('command-slider-arrow')
+            const slidesActive = container.find('.t__frame--active')
 
-          switch(dataTarget) {
-            case 'prev':
-              if (slidesActive.prev().length !== 0) {
-                slidesActive.prev().addClass('t__frame--active')
-                slidesActive.prev().addClass('t__frame--front')
+            switch(dataTarget) {
+              case 'prev':
+                if (slidesActive.prev().length !== 0) {
+                  slides.removeClass('t__frame--right t__frame--left')
+
+                  slidesActive.prev().addClass('t__frame--active t__frame--front')
+                  slidesActive.addClass('t__frame--left')
+
+                  if (slidesActive.next().length !== 0) {
+                    slidesActive.next().addClass('t__frame--right')
+                  } else {
+                    slides.eq(0).addClass('t__frame--right')
+                  }
+                  setTimeout (() => {
+                    slidesActive.prev().removeClass('t__frame--front')
+                    slidesActive.removeClass('t__frame--active')
+                  }, DELAY)
+
+                  break
+                }
+
+                slides.removeClass('t__frame--right t__frame--left')
+
+                slides.eq(slides.length - 1).addClass('t__frame--active t__frame--front')
+                slidesActive.next().addClass('t__frame--right')
+                slidesActive.addClass('t__frame--left')
                 setTimeout (() => {
-                  slidesActive.prev().removeClass('t__frame--front')
+                  slides.eq(slides.length - 1).removeClass('t__frame--front')
                   slidesActive.removeClass('t__frame--active')
-                }, 500)
-
+                }, DELAY)
                 break
-              }
+              case 'next':
+                if (slidesActive.next().length !== 0) {
+                  slides.removeClass('t__frame--right t__frame--left')
 
-              slides.eq(slides.length - 1).addClass('t__frame--active')
-              slides.eq(slides.length - 1).addClass('t__frame--front')
-              setTimeout (() => {
-                slides.eq(slides.length - 1).removeClass('t__frame--front')
-                slidesActive.removeClass('t__frame--active')
-              }, 500)
-              break
-            case 'next':
-              if (slidesActive.next().length !== 0) {
-                slidesActive.next().addClass('t__frame--active')
-                slidesActive.next().addClass('t__frame--front')
+                  slidesActive.next().addClass('t__frame--active t__frame--front')
+                  slidesActive.addClass('t__frame--right')
+                  if (slidesActive.prev().length !== 0) {
+                    slidesActive.prev().addClass('t__frame--left')
+                  } else {
+                    slides.eq(slides.length - 1).addClass('t__frame--left')
+                  }
+                  setTimeout (() => {
+                    slidesActive.next().removeClass('t__frame--front')
+                    slidesActive.removeClass('t__frame--active')
+                  }, DELAY)
+
+                  break
+                }
+
+                slides.removeClass('t__frame--right t__frame--left')
+
+                slidesActive.addClass('t__frame--right')
+                slidesActive.prev().addClass('t__frame--left')
+                slides.eq(0).addClass('t__frame--active t__frame--front')
                 setTimeout (() => {
-                  slidesActive.next().removeClass('t__frame--front')
+                  slides.eq(0).removeClass('t__frame--front')
                   slidesActive.removeClass('t__frame--active')
-                }, 500)
-
+                }, DELAY)
                 break
-              }
+            }
 
-              slides.eq(0).addClass('t__frame--active')
-              slides.eq(0).addClass('t__frame--front')
-              setTimeout (() => {
-                slides.eq(0).removeClass('t__frame--front')
-                slidesActive.removeClass('t__frame--active')
-              }, 500)
-              break
-          }
+            slider.css('pointer-events', 'none')
+
+            setTimeout(() => {
+              slider.css('pointer-events', '')
+            }, DELAY)
+          })
         })
       })
-    })
+    }
   });
 }
