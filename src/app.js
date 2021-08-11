@@ -1179,12 +1179,12 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
                   slides.removeClass('t__frame--right t__frame--left')
 
                   slidesActive.prev().addClass('t__frame--active t__frame--front')
-                  slidesActive.addClass('t__frame--left')
+                  slidesActive.addClass('t__frame--right')
 
                   if (slidesActive.next().length !== 0) {
-                    slidesActive.next().addClass('t__frame--right')
+                    slidesActive.next().addClass('t__frame--left')
                   } else {
-                    slides.eq(0).addClass('t__frame--right')
+                    slides.eq(0).addClass('t__frame--left')
                   }
                   setTimeout (() => {
                     slidesActive.prev().removeClass('t__frame--front')
@@ -1197,8 +1197,8 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
                 slides.removeClass('t__frame--right t__frame--left')
 
                 slides.eq(slides.length - 1).addClass('t__frame--active t__frame--front')
-                slidesActive.next().addClass('t__frame--right')
-                slidesActive.addClass('t__frame--left')
+                slidesActive.next().addClass('t__frame--left')
+                slidesActive.addClass('t__frame--right')
                 setTimeout (() => {
                   slides.eq(slides.length - 1).removeClass('t__frame--front')
                   slidesActive.removeClass('t__frame--active')
@@ -1209,11 +1209,11 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
                   slides.removeClass('t__frame--right t__frame--left')
 
                   slidesActive.next().addClass('t__frame--active t__frame--front')
-                  slidesActive.addClass('t__frame--right')
+                  slidesActive.addClass('t__frame--left')
                   if (slidesActive.prev().length !== 0) {
-                    slidesActive.prev().addClass('t__frame--left')
+                    slidesActive.prev().addClass('t__frame--right')
                   } else {
-                    slides.eq(slides.length - 1).addClass('t__frame--left')
+                    slides.eq(slides.length - 1).addClass('t__frame--right')
                   }
                   setTimeout (() => {
                     slidesActive.next().removeClass('t__frame--front')
@@ -1225,8 +1225,8 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
                 slides.removeClass('t__frame--right t__frame--left')
 
-                slidesActive.addClass('t__frame--right')
-                slidesActive.prev().addClass('t__frame--left')
+                slidesActive.addClass('t__frame--left')
+                slidesActive.prev().addClass('t__frame--right')
                 slides.eq(0).addClass('t__frame--active t__frame--front')
                 setTimeout (() => {
                   slides.eq(0).removeClass('t__frame--front')
