@@ -52,6 +52,9 @@
 
   &__compound {
     margin-top: 140px;
+    @media (max-width: $breakpoint - 1px) {
+      margin-top: 309px;
+    }
 
     border-top: 1px solid $color-purple;
   }
@@ -335,25 +338,40 @@
       position: relative;
 
       margin-top: 608px;
+      @media (max-width: $breakpoint - 1px) {
+        margin-top: 434px;
+      }
     }
     &:nth-child(3) {
       position: relative;
 
       margin-top: 165px;
+      @media (max-width: $breakpoint - 1px) {
+        margin-top: 265px;
+      }
     }
     &:nth-child(4) {
       position: relative;
 
       margin-top: 228px;
+      @media (max-width: $breakpoint - 1px) {
+        margin-top: 322px;
+      }
     }
 
     &--side {
       padding-left: calc(#{$col-width-d} * 7);
+      @media (max-width: $breakpoint - 1px) {
+        padding-left: 0;
+      }
     }
   }
   &__features-title {
     font-weight: 400;
     @include fsl(70px, 110%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(30px, 130%);
+    }
     color: $color-purple;
 
     &--small {
@@ -363,8 +381,15 @@
   &__features-text {
     margin-top: 30px;
     padding-left: calc(#{$col-width-d});
+    @media (max-width: $breakpoint - 1px) {
+      margin-top: 15px;
+      padding-left: 0;
+    }
 
     @include fsl(20px, 140%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(15px);
+    }
   }
   &__features-layout {
     position: absolute;
@@ -381,12 +406,30 @@
     top: 254px;
     left: calc(#{$col-width-d} * 9.5);
     transform: translateX(-50%);
+
+    @media (max-width: $breakpoint - 1px) {
+      display: none;
+    }
+  }
+  &__features-wave-mobile {
+    position: absolute;
+    left: -197px;
+    top: 367px;
+
+    display: none;
+    @media (max-width: $breakpoint - 1px) {
+      display: block;
+    }
   }
   &__features-moon {
     position: absolute;
     top: 1124px;
     left: calc(#{$col-width-d} * 9.5 + 384px);
     transform: translateX(-50%);
+
+    @media (max-width: $breakpoint - 1px) {
+      display: none;
+    }
   }
   &__features-star {
     position: absolute;
@@ -411,25 +454,36 @@
       transform: translateX(-50%);
 
       max-width: 473px;
+      @media (max-width: $breakpoint - 1px) {
+        max-width: 230px;
+      }
     }
 
     &-2 {
       transform: translateX(-50%);
 
       max-width: 586px;
+      @media (max-width: $breakpoint - 1px) {
+        max-width: 344px;
+      }
     }
 
     &-3 {
-
       transform: translateX(-50%);
 
       max-width: 540px;
+      @media (max-width: $breakpoint - 1px) {
+        max-width: 232px;
+      }
     }
 
     &-4 {
       transform: translateX(-50%);
 
       max-width: 203px;
+      @media (max-width: $breakpoint - 1px) {
+        max-width: 115px;
+      }
       border-radius: 150px;
     }
 
@@ -437,6 +491,9 @@
       transform: translateX(-50%);
 
       max-width: 97px;
+      @media (max-width: $breakpoint - 1px) {
+        max-width: 55px;
+      }
       border-radius: 150px;
     }
 
@@ -444,6 +501,9 @@
       transform: translateX(-50%);
 
       max-width: 97px;
+      @media (max-width: $breakpoint - 1px) {
+        max-width: 55px;
+      }
       border-radius: 150px;
     }
   }
@@ -453,6 +513,10 @@
       position: absolute;
       top: 0;
       left: calc(#{$col-width-d} * 12.5);
+      @media (max-width: $breakpoint - 1px) {
+        top: 225px;
+        left: calc(#{$col-width-m} * 3);
+      }
     }
 
     &-2 {
@@ -460,6 +524,10 @@
       z-index: -1;
       top: -66px;
       left: calc(#{$col-width-d} * 4.5);
+      @media (max-width: $breakpoint - 1px) {
+        top: 100%;
+        left: calc(#{$col-width-m} * 3);
+      }
     }
 
     &-3 {
@@ -467,6 +535,10 @@
       z-index: -1;
       top: -109px;
       left: calc(#{$col-width-d} * 13);
+      @media (max-width: $breakpoint - 1px) {
+        top: calc(100% + 30px);
+        left: calc(#{$col-width-m} * 3);
+      }
     }
 
     &-4 {
@@ -474,6 +546,11 @@
       z-index: -1;
       top: -57px;
       left: calc((#{$col-width-d} * 3) + (#{$col-width-d} / 2));
+
+      @media (max-width: $breakpoint - 1px) {
+        left: 50%;
+        top: calc(100% + 69px);
+      }
     }
 
     &-5 {
@@ -481,6 +558,10 @@
       z-index: -1;
       top: -125px;
       left: calc(#{$col-width-d} / 2);
+      @media (max-width: $breakpoint - 1px) {
+        top: calc(100% + 30px);
+        left: calc(#{$col-width-m} * 1.5);
+      }
     }
 
     &-6 {
@@ -488,6 +569,11 @@
       z-index: -1;
       top: 125px;
       left: calc(#{$col-width-d} * 5);
+      @media (max-width: $breakpoint - 1px) {
+        top: calc(100% + 172px);
+        left: auto;
+        right: calc(#{$col-width-m} * 1);
+      }
     }
   }
 }
