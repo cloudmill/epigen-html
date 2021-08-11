@@ -631,13 +631,6 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
   })
 }
 
-// // main page carousel slider
-// {
-//   $(() => {
-//     const slider = new Slider('.b--carousel-slider-desktop')
-//   })
-// }
-
 // gel reviews slider
 {
   $(() => {
@@ -1150,7 +1143,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
   });
 }
 
-// test
+// main page slider
 {
   $(() => {
     const DELAY = 500
