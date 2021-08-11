@@ -1163,103 +1163,100 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
       sliderCol.each(function() {
         const col = $(this)
-        const slidesContainer = col.find('.t__container')
-        const slidesTitle = col.find('.t__title') 
+        const slidesContainer = col.find('.b__container')
+        const slidesTitle = col.find('.b__title')
 
         slidesContainer.each(function() {
           const container = $(this)
-          const slides = container.find('.t__frame')
+          const slides = container.find('.b__frame')
 
           sliderControl.on('click', function() {
-            const dataTarget = $(this).data('command-slider-arrow')
-            const slidesActive = container.find('.t__frame--active')
-            const activeTitle = col.find('.t__title--active')
+            const dataTarget = $(this).data('slider-arrow')
+            const slidesActive = container.find('.b__frame--active')
+            const activeTitle = col.find('.b__title--active')
 
-            // [1]
             switch(dataTarget) {
               case 'prev':
                 if (slidesActive.prev().length !== 0) {
-                  slides.removeClass('t__frame--right t__frame--left')
-                  slidesTitle.removeClass('t__title--active')
+                  slides.removeClass('b__frame--right b__frame--left')
+                  slidesTitle.removeClass('b__title--active')
 
-                  slidesActive.prev().addClass('t__frame--active t__frame--front')
-                  slidesActive.addClass('t__frame--right')
+                  slidesActive.prev().addClass('b__frame--active b__frame--front')
+                  slidesActive.addClass('b__frame--right')
 
                   setTimeout(() => {
-                    activeTitle.prev().addClass('t__title--active')
+                    activeTitle.prev().addClass('b__title--active')
                   }, DELAY);
 
                   if (slidesActive.next().length !== 0) {
-                    slidesActive.next().addClass('t__frame--left')
+                    slidesActive.next().addClass('b__frame--left')
                   } else {
-                    slides.eq(0).addClass('t__frame--left')
+                    slides.eq(0).addClass('b__frame--left')
                   }
                   setTimeout (() => {
-                    slidesActive.prev().removeClass('t__frame--front')
-                    slidesActive.removeClass('t__frame--active')
+                    slidesActive.prev().removeClass('b__frame--front')
+                    slidesActive.removeClass('b__frame--active')
                   }, DELAY)
 
                   break
                 }
 
-                slides.removeClass('t__frame--right t__frame--left')
-                slidesTitle.removeClass('t__title--active')
+                slides.removeClass('b__frame--right b__frame--left')
+                slidesTitle.removeClass('b__title--active')
 
-                slides.eq(slides.length - 1).addClass('t__frame--active t__frame--front')
-                slidesActive.next().addClass('t__frame--left')
-                slidesActive.addClass('t__frame--right')
+                slides.eq(slides.length - 1).addClass('b__frame--active b__frame--front')
+                slidesActive.next().addClass('b__frame--left')
+                slidesActive.addClass('b__frame--right')
 
                 setTimeout(() => {
-                  slidesTitle.eq(slides.length - 1).addClass('t__title--active')
+                  slidesTitle.eq(slides.length - 1).addClass('b__title--active')
                 }, DELAY);
 
                 setTimeout (() => {
-                  slides.eq(slides.length - 1).removeClass('t__frame--front')
-                  slidesActive.removeClass('t__frame--active')
+                  slides.eq(slides.length - 1).removeClass('b__frame--front')
+                  slidesActive.removeClass('b__frame--active')
                 }, DELAY)
                 break
 
               case 'next':
                 if (slidesActive.next().length !== 0) {
-                  slides.removeClass('t__frame--right t__frame--left')
-                  slidesTitle.removeClass('t__title--active')
+                  slides.removeClass('b__frame--right b__frame--left')
+                  slidesTitle.removeClass('b__title--active')
 
-                  slidesActive.next().addClass('t__frame--active t__frame--front')
-                  slidesActive.addClass('t__frame--left')
+                  slidesActive.next().addClass('b__frame--active b__frame--front')
+                  slidesActive.addClass('b__frame--left')
 
                   setTimeout(() => {
-                    activeTitle.next().addClass('t__title--active')
+                    activeTitle.next().addClass('b__title--active')
                   }, DELAY);
-                  // activeTitle.next().addClass('t__title--active')
 
                   if (slidesActive.prev().length !== 0) {
-                    slidesActive.prev().addClass('t__frame--right')
+                    slidesActive.prev().addClass('b__frame--right')
                   } else {
-                    slides.eq(slides.length - 1).addClass('t__frame--right')
+                    slides.eq(slides.length - 1).addClass('b__frame--right')
                   }
                   setTimeout (() => {
-                    slidesActive.next().removeClass('t__frame--front')
-                    slidesActive.removeClass('t__frame--active')
+                    slidesActive.next().removeClass('b__frame--front')
+                    slidesActive.removeClass('b__frame--active')
                   }, DELAY)
 
                   break
                 }
 
-                slides.removeClass('t__frame--right t__frame--left')
-                slidesTitle.removeClass('t__title--active')
+                slides.removeClass('b__frame--right b__frame--left')
+                slidesTitle.removeClass('b__title--active')
 
-                slidesActive.addClass('t__frame--left')
-                slidesActive.prev().addClass('t__frame--right')
-                slides.eq(0).addClass('t__frame--active t__frame--front')
+                slidesActive.addClass('b__frame--left')
+                slidesActive.prev().addClass('b__frame--right')
+                slides.eq(0).addClass('b__frame--active b__frame--front')
 
                 setTimeout(() => {
-                  slidesTitle.eq(0).addClass('t__title--active')
+                  slidesTitle.eq(0).addClass('b__title--active')
                 }, DELAY)
-                // slidesTitle.eq(0).addClass('t__title--active')
 
                 setTimeout (() => {
-                  slides.eq(0).removeClass('t__frame--front')
-                  slidesActive.removeClass('t__frame--active')
+                  slides.eq(0).removeClass('b__frame--front')
+                  slidesActive.removeClass('b__frame--active')
                 }, DELAY)
                 break
             }
