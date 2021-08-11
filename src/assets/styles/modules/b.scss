@@ -170,10 +170,6 @@
     }
 
     #{$comp}__slide {
-      // position: relative;
-
-      // flex-shrink: 0;
-      // width: 100%;
       transition: $transition;
     }
 
@@ -195,7 +191,6 @@
     }
 
     #{$comp}__title {
-      // margin-top: 15px;
       position: absolute;
 
       overflow: hidden;
