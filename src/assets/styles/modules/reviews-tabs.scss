@@ -1,0 +1,39 @@
+.reviews-tabs {
+
+  &__buttons {
+    position: absolute;
+    z-index: 1;
+    left: calc(#{$col-width-d} * 6);
+    top: 46px;
+    @media (max-width: $breakpoint - 1px) {
+      left: 15px;
+      top: 88px;
+    }
+  }
+
+  &__tabs {
+    position: relative;
+  }
+
+  &__item {
+    opacity: 0;
+    pointer-events: none;
+    transition: $transition;
+
+    width: calc(#{$col-width-d} * 18);
+    @media (max-width: $breakpoint - 1px) {
+      width: calc(#{$col-width-m} * 6);
+    }
+
+    &:not(:last-child) {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &--active {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+}

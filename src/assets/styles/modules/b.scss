@@ -288,6 +288,12 @@
       @media (max-width: $breakpoint - 1px) {
         margin-bottom: 30px;
       }
+
+      &--tabs {
+        @media (max-width: $breakpoint - 1px) {
+          margin-bottom: 84px;
+        }
+      }
     }
     #{$comp}__bottom {
       display: flex;
@@ -578,6 +584,36 @@
       margin-right: 14px;
 
       @include fsl(25px);
+    }
+  }
+
+  // модификатор слайдера отзывов с главной
+  &--reviews-slider-spray-page {
+    #{$comp}__content-col {
+      &:nth-child(1) {
+        @media (min-width: $breakpoint) {
+          width: calc(#{$col-width-d} * 7);
+        }
+      }
+      &:nth-child(2) {
+        @media (min-width: $breakpoint - 1px) {
+          width: calc(#{$col-width-d} * 5);
+        }
+      }
+    }
+
+    #{$comp}__preview {
+      align-items: flex-start;
+    }
+
+    #{$comp}__review {
+      margin-bottom: 15px;
+    }
+
+    #{$comp}__link {
+      @media (max-width: $breakpoint - 1px) {
+        margin-right: 0;
+      }
     }
   }
 

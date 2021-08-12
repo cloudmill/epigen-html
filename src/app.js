@@ -1753,3 +1753,29 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
   //   $('.loader').addClass('loader--hidden')
   // })
 }
+
+// tabs
+{
+  $(() => {
+    const reviewsTabs = $('.reviews-tabs')
+
+    if (reviewsTabs.length !== 0) {
+      const buttons = reviewsTabs.find('.spray-page__slider-item')
+      const link = reviewsTabs.find('.border-link')
+      const tabs = reviewsTabs.find('.reviews-tabs__item')
+
+      buttons.on('click', function() {
+        const buttonLink = $(this).find('.border-link')
+        if (!$(this).hasClass('spray-page__slider-item--active')) {
+          buttons.removeClass('spray-page__slider-item--active')
+          link.removeClass('border-link--active')
+          tabs.removeClass('reviews-tabs__item--active')
+
+          $(this).addClass('spray-page__slider-item--active')
+          buttonLink.addClass('border-link--active')
+          tabs.eq($(this).index()).addClass('reviews-tabs__item--active')
+        }
+      })
+    }
+  })
+}

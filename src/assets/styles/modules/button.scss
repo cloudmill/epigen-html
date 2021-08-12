@@ -61,6 +61,10 @@
 
     $fs: 15px;
     @include fsl($fs, $fs);
+
+    &--small {
+      padding: 9px 20px;
+    }
   }
 
   &--spray {

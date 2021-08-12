@@ -107,7 +107,7 @@ mixin copyright-link
       block
 
 block content
-  .spray-page
+  .spray-page.page-gel
     .container
       .row
         .row__col.row__col--aside.row__col--rail
@@ -573,55 +573,138 @@ block content
                           .video__button(id='play')
                             .video__button-icon
                               +start-svg.video__button-svg
-              section.main-page(id='reviews' data-section='')
-                .main-page__reviews
-                  .main-page__reviews-bg
-                  .b.b--reviews-slider-main-page
-                    .b__top
-                      .spray-page__slider-row
-                        .spray-page__slider-col
-                          h3.spray-page__slider-title
+              section.page-gel__reviews(id='reviews' data-section='')
+                .page-gel__reviews-layout
+                .reviews-tabs
+                  .reviews-tabs__buttons
+                    .spray-page__slider-categories
+                      .spray-page__slider-item.spray-page__slider-item--active
+                        .border-link.border-link--active
+                          |Все отзывы
+                      .spray-page__slider-item
+                        .border-link
+                          |Отзывы врачей
+                  .reviews-tabs__tabs
+                    .reviews-tabs__item.reviews-tabs__item--active
+                      .page-gel__reviews-top.page-gel__reviews-top--tabs
+                        .page-gel__reviews-left
+                          h2.page-gel__reviews-title
                             |Отзывы
-                        .spray-page__slider-col
-                          .spray-page__slider-categories
-                            .spray-page__slider-item
-                              a.border-link.border-link--active(href="#")
+                        .page-gel__reviews-right
+                          .page-gel__reviews-btns
+                            .page-gel__reviews-btns-item
+                              .b.b--btn-left-right-slider.js.js--gel-reviews-btn--prev.btn-animation.btn-animation--icon
+                                +simple-arrow-svg.b__svg
+                            .page-gel__reviews-btns-item
+                              .b.b--btn-left-right-slider.b--right.js.js--gel-reviews-btn--next.btn-animation.btn-animation--icon
+                                +simple-arrow-svg.b__svg
+                          .page-gel__reviews-links-item.page-gel__reviews-links-item--mobile
+                            a.button.button--reviews-slider.button--reviews-slider--small.btn-animation(href='#')
+                              span.btn-animation__text
                                 |Все отзывы
-                            .spray-page__slider-item
-                              a.border-link(href="#")
-                                |Отзывы врачей
-                        .spray-page__slider-col
-                          a.spray-page__slider-link.btn-animation(href="#")
+                      .swiper-container.swiper-container--visible.swiper-container--slide-width-auto.swiper-container--slide-height-max.js.js--gel-reviews-slider
+                        .swiper-wrapper
+                          - for (let i = 0; i < 10; i++)
+                            .swiper-slide
+                              .page-gel__reviews-card
+                                .page-gel__reviews-card-top
+                                  h3.page-gel__reviews-card-title
+                                    |Nadine Zakharova
+                                  p.page-gel__reviews-card-text
+                                    |Купила я данное средство, прочитав изначально множество положительных отзывов на различных сайтах. Почему мой выбор пал на него? Несколько лет я пыталась найти своё средство для интимной гигиены, так как везде писали, что нельзя использовать обычный гель для душа или мыло...
+                                .page-gel__reviews-card-bottom
+                                  a.page-gel__reviews-card-link(href='#')
+                                    |irecommend.ru
+                      .page-gel__reviews-links
+                        .page-gel__reviews-links-item.page-gel__reviews-links-item--desktop
+                          a.button.button--reviews-slider.button--reviews-slider--small.btn-animation(href='#')
+                            span.btn-animation__text
+                              |Все отзывы
+                        .page-gel__reviews-links-item
+                          a.button.button--reviews-slider.button--reviews-slider--small.btn-animation(href='#')
                             span.btn-animation__text
                               |Задать вопрос врачу
-                    .b__bottom
-                      each slide in [1, 2, 3, 4]
-                        .b__slide
-                          .b__slide-row.b__slide-row--desktop
-                            .b__slide-col
-                              .b__slide-img
-                                img.b__img(src='assets/images/reviews-slider-1.jpeg')
-                            .b__slide-col
-                              .b__content
-                                .b__content-row
-                                  .b__content-col
-                                    .b__content-top
-                                      h5.b__slide-title
-                                        span.b__desc-span
-                                          |Манукян Наринэ Георгиевна
-                                      p.b__desc
-                                        span.b__desc-span
-                                          |Врач акушер-гинеколог, гинеколог-эндокринолог, лучший врач корпорации
-                                      .b__content-wrapper
-                                        p.b__review
-                                          |Спрей Эпиген Интим представляет собой эффективное и безопасное средство для лечения, профилактики генитальных вирусных инфекций, а гель предназначен для интимной гигиены на каждый день...
-                                    .b__content-bottom
+                    .reviews-tabs__item
+                      .b.b--reviews-slider-main-page.b--reviews-slider-spray-page
+                        .b__top.b__top--tabs
+                          .spray-page__slider-row
+                            .spray-page__slider-col
+                              h3.spray-page__slider-title
+                                |Отзывы
+                            .spray-page__slider-col
+                              .spray-page__slider-desktop
+                                .b__control
+                                  .b__control-item
+                                    .b.b--btn-left-right-slider.btn-animation.btn-animation--icon(data-command-slider-arrow='prev')
+                                      +simple-arrow-svg.b__svg
+                                  .b__control-item
+                                    .b.b--btn-left-right-slider.b--right.btn-animation.btn-animation--icon(data-command-slider-arrow='next')
+                                      +simple-arrow-svg.b__svg
+                              .spray-page__slider-mobile
+                                a.button.button--reviews-slider.button--reviews-slider--small.btn-animation(href='#' data-mdl-open='')
+                                  span.btn-animation__text
+                                    |Все отзывы
+                        .b__bottom
+                          each slide in [1, 2, 3, 4]
+                            .b__slide
+                              .b__slide-row.b__slide-row--desktop
+                                .b__slide-col
+                                  .b__slide-img
+                                    img.b__img(src='assets/images/reviews-slider-1.jpeg')
+                                .b__slide-col
+                                  .b__content
+                                    .b__content-row
+                                      .b__content-col
+                                        .b__content-top
+                                          h5.b__slide-title
+                                            span.b__desc-span
+                                              |Манукян Наринэ Георгиевна
+                                          p.b__desc
+                                            span.b__desc-span
+                                              |Врач акушер-гинеколог, гинеколог-эндокринолог, лучший врач корпорации
+                                          .b__content-wrapper
+                                            p.b__review
+                                              |Спрей Эпиген Интим представляет собой эффективное и безопасное средство для лечения, профилактики генитальных вирусных инфекций, а гель предназначен для интимной гигиены на каждый день...
+                                        .b__content-bottom
+                                          a.b__link(href="#")
+                                            |Читать отзыв
+                                      .b__content-col
+                                        .b__content-top
+                                          .b__preview
+                                            .b__preview-counter
+                                              .b__preview-wrapper
+                                                span.b__preview-count
+                                                  |1
+                                                |/4
+                                            .b__preview-image
+                                              img.b__preview-img(src='assets/images/reviews-slider-2.jpeg')
+                                        .b__content-bottom
+                                          .spray-page__slider-links
+                                            a.button.button--reviews-slider.button--reviews-slider--small.btn-animation(href='#')
+                                              span.btn-animation__text
+                                                |Все отзывы
+                                            a.spray-page__slider-link.btn-animation(href="#")
+                                              span.btn-animation__text
+                                                |Задать вопрос врачу
+                              .b__slide-mobile
+                                .b__slide-row
+                                  .b__slide-col
+                                    .b__slide-top
+                                      .b__slide-img
+                                        img.b__img(src='assets/images/reviews-slider-1.jpeg')
+                                      .b__content
+                                        h5.b__slide-title
+                                          span.b__desc-span
+                                            |Сапрыкина Людмила Витальевна
+                                        .b__desc
+                                          span.b__desc-span
+                                            |Ассистент кафедры акушерства и гинекологии ЛФ ФГБОУ ВО им. Н.И. Пирогова МЗ РФ, врач акушер-гинеколог высшей категории, к.м.н. (Москва).
+                                    .b__slide-bottom
+                                      p.b__review
+                                        |Спрей Эпиген Интим представляет собой эффективное и безопасное средство для лечения, профилактики генитальных вирусных инфекций, а гель предназначен для интимной гигиены на каждый день...
                                       a.b__link(href="#")
                                         |Читать отзыв
-                                      a.button.button--reviews-slider.btn-animation(href='#')
-                                        span.btn-animation__text
-                                          |Все отзывы
-                                  .b__content-col
+                                  .b__slide-col
                                     .b__content-top
                                       .b__control
                                         .b__control-item
@@ -631,45 +714,10 @@ block content
                                           .b.b--btn-left-right-slider.b--right.btn-animation.btn-animation--icon(data-command-slider-arrow='next')
                                             +simple-arrow-svg.b__svg
                                     .b__content-bottom
-                                      .b__preview
-                                        .b__preview-counter
-                                          .b__preview-wrapper
-                                            span.b__preview-count
-                                              |1
-                                            |/4
-                                        .b__preview-image
-                                          img.b__preview-img(src='assets/images/reviews-slider-2.jpeg')
-                          .b__slide-mobile
-                            .b__slide-row
-                              .b__slide-col
-                                .b__slide-top
-                                  .b__slide-img
-                                    img.b__img(src='assets/images/reviews-slider-1.jpeg')
-                                  .b__content
-                                    h5.b__slide-title
-                                      span.b__desc-span
-                                        |Сапрыкина Людмила Витальевна
-                                    .b__desc
-                                      span.b__desc-span
-                                        |Ассистент кафедры акушерства и гинекологии ЛФ ФГБОУ ВО им. Н.И. Пирогова МЗ РФ, врач акушер-гинеколог высшей категории, к.м.н. (Москва).
-                                .b__slide-bottom
-                                  p.b__review
-                                    |Осуществляет консультативный прием пациентов, обращающихся по вопросам лечения воспалительных процессов женской половой сферы, занимается проблемами невынашивания беременности и бесплодия, проводит оперативное лечение пациентам.
-                              .b__slide-col
-                                .b__content-top
-                                  .b__control
-                                    .b__control-item
-                                      .b.b--btn-left-right-slider.btn-animation.btn-animation--icon(data-command-slider-arrow='prev')
-                                        +simple-arrow-svg.b__svg
-                                    .b__control-item
-                                      .b.b--btn-left-right-slider.b--right.btn-animation.btn-animation--icon(data-command-slider-arrow='next')
-                                        +simple-arrow-svg.b__svg
-                                .b__content-bottom
-                                  a.b__link(href="#")
-                                    |Читать отзыв
-                                  a.button.button--reviews-slider.btn-animation(href='#' data-mdl-open='')
-                                    span.btn-animation__text
-                                      |Все отзывы
+
+                                      a.button.button--reviews-slider.button--reviews-slider--small.btn-animation(href='#' data-mdl-open='')
+                                        span.btn-animation__text
+                                          |Задать вопрос врачу
             +footer.page__footer
   .modal(data-modal='3')
     .modal-test
