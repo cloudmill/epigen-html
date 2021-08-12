@@ -28,6 +28,8 @@
 
   &__button {
     position: absolute;
+
+    cursor: pointer;
   }
   &__button-icon {
     $size-d: 105px;
