@@ -1,7 +1,11 @@
 .video {
   $comp: &;
 
-  // cursor: pointer;
+  cursor: pointer;
+
+  &--default {
+    cursor: default;
+  }
 
   &:hover {
     #{$comp}__button-icon {

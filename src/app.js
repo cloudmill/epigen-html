@@ -1023,7 +1023,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
         [2040, 567],
       ]
 
-      
+
 
       points = points.map(item => [item[0] / 2, item[1] / 2])
 
@@ -1387,7 +1387,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
   $(() => {
     $('.wwave').each(function () {
       const wwave = $(this)
-  
+
       const canvas = wwave.find('.wwave__canvas')
       const ctx = canvas[0].getContext('2d')
 
@@ -1476,7 +1476,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       ]
 
       const points_norm = []
-      
+
       let min_x = points[0][0]
       let max_x = min_x
 
@@ -1517,9 +1517,9 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       function updateCanvasHeight() {
         const canvasComputedStyle = getComputedStyle(canvas[0])
         const canvasWidth = canvasComputedStyle.width.slice(0, -2)
-        
+
         canvas[0].width = canvasWidth
-        
+
         const wwaveComputedStyle = getComputedStyle(wwave[0])
         const wwaveWidth = wwaveComputedStyle.width.slice(0, -2)
 
@@ -1527,7 +1527,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       }
 
       updateCanvasHeight()
-    
+
       function handleResize() {
         console.log(123)
 
@@ -1729,13 +1729,18 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 // video
 {
   $(() => {
-    const video = $('#video')
+    const videoContainer = $('.video')
 
-    if (video.length !== 0) {
-      $('#play').on('click', function() {
-        $(this).fadeOut('500')
-        video.get(0).play()
-        video.attr('controls', '')
+    if (videoContainer.length !== 0) {
+      videoContainer.each(function() {
+        const video = $(this).find('#video')
+        const play = $(this).find('#play')
+
+        play.on('click', function() {
+          $(this).fadeOut('500')
+          video.get(0).play()
+          video.attr('controls', '')
+        })
       })
     }
   })
