@@ -1,7 +1,7 @@
 .video {
   $comp: &;
 
-  cursor: pointer;
+  // cursor: pointer;
 
   &:hover {
     #{$comp}__button-icon {
@@ -55,4 +55,8 @@
     }
   }
 
+}
+
+#video {
+  width: 100%;
 }

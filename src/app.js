@@ -1265,3 +1265,18 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     }
   });
 }
+
+// video
+{
+  $(() => {
+    const video = $('#video')
+
+    if (video.length !== 0) {
+      $('#play').on('click', function() {
+        $(this).fadeOut('500')
+        video.get(0).play()
+        video.attr('controls', '')
+      })
+    }
+  })
+}

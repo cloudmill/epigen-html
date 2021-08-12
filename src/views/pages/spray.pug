@@ -655,8 +655,9 @@ block content
                       .video
                         .video__container
                           .video__frame
-                            img.video__img(src="assets/images/video.jpg", alt="")
-                          .video__button
+                            video(id='video' poster='assets/images/video.jpg')
+                              source(src='https://epigen.ru/spray/about/uploads/gel1.mp4')
+                          .video__button(id='play')
                             .video__button-icon
                               +start-svg.video__button-svg
               section.main-page(id='reviews' data-section='')
