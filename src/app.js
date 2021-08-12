@@ -1754,7 +1754,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
   // })
 }
 
-// tabs
+// reviews tabs
 {
   $(() => {
     const reviewsTabs = $('.reviews-tabs')
