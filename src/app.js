@@ -1602,7 +1602,6 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
   })
 }
 
-// test
 // main page slider
 {
   $(() => {
@@ -1744,4 +1743,13 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       })
     }
   })
+}
+
+// loader
+{
+  // $(window).on('load', function() {
+  //   $('body').css('overflow', 'hidden')
+
+  //   $('.loader').addClass('loader--hidden')
+  // })
 }
