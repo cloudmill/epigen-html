@@ -12,37 +12,37 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
 
 
-// nav-page-d
-; (() => {
-  $(() => {
-    const components = $('.nav-page-d')
+  // nav-page-d
+  ; (() => {
+    $(() => {
+      const components = $('.nav-page-d')
 
-    components.each(function () {
-      const component = $(this)
+      components.each(function () {
+        const component = $(this)
 
-      const state = {
-        activeItem: component.find('.nav-page-d__item--active'),
+        const state = {
+          activeItem: component.find('.nav-page-d__item--active'),
 
-        setActiveItem: item => {
-          state.activeItem.removeClass('nav-page-d__item--active')
-          state.activeItem = item
-          state.activeItem.addClass('nav-page-d__item--active')
-        },
-      }
+          setActiveItem: item => {
+            state.activeItem.removeClass('nav-page-d__item--active')
+            state.activeItem = item
+            state.activeItem.addClass('nav-page-d__item--active')
+          },
+        }
 
-      const links = component.find('.nav-page-d__link')
+        const links = component.find('.nav-page-d__link')
 
-      links.on('click', function (event) {
-        event.preventDefault()
+        links.on('click', function (event) {
+          event.preventDefault()
 
-        const link = $(this)
-        const item = link.closest('.nav-page-d__item')
+          const link = $(this)
+          const item = link.closest('.nav-page-d__item')
 
-        state.setActiveItem(item)
+          state.setActiveItem(item)
+        })
       })
     })
-  })
-})()
+  })()
 
 // burger btn
 {
@@ -727,11 +727,11 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     window.addEventListener('scroll', aosRefresh);
 
     function aosRefresh() {
-      const timeout = setTimeout( () => {
+      const timeout = setTimeout(() => {
         clearTimeout(timeout)
         AOS.refresh();
         window.addEventListener('scroll', aosRefresh);
-      },1000);
+      }, 1000);
 
       window.removeEventListener('scroll', aosRefresh);
     }
@@ -930,76 +930,213 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 // wave
 {
   $(() => {
-    console.log('wave')
+    $('.wave').each(function () {
+      console.log('wave')
 
-    const canvas = $('.canvas')
-    const ctx = canvas[0].getContext('2d')
-    canvas[0].width = window.innerWidth
-    canvas[0].height = window.innerHeight
+      const canvas = this
+      const ctx = canvas.getContext('2d')
 
-    function render() {
-      ctx.clearRect(0, 0, window.innerWidth, window.innerHeight)
+      canvas.width = window.innerWidth
+      canvas.height = window.innerHeight
 
-      var points = []
-
-      // const quality = 6;
-      // for (let i = 0; i < quality; i++) {
-      //   points.push({
-      //     x: Math.cos(i / quality * (Math.PI * 2)) * 100 + 100,
-      //     y: Math.sin(i / quality * (Math.PI * 2)) * 100 + 100,
-      //   })
-      // }
-
-      points = [
-        {
-          x: 0, y: 0,
-        },
-        {
-          x: 50, y: 25,
-        },
-        {
-          x: 100, y: 50,
-        },
-        {
-          x: 50, y: 100,
-        },
-        {
-          x: 0, y: 50,
-        },
-        {
-          x: 50, y: 25,
-        },
-        {
-          x: 100, y: 0,
-        },
+      let points = [
+        [0, 307],
+        [26, 318],
+        [57, 329],
+        [76, 335],
+        [103, 342],
+        [126, 347],
+        [154, 352],
+        [172, 355],
+        [201, 359],
+        [220, 361],
+        [240, 362],
+        [265, 363],
+        [291, 364],
+        [319, 363],
+        [344, 362],
+        [365, 361],
+        [384, 359],
+        [404, 357],
+        [423, 354],
+        [444, 351],
+        [465, 347],
+        [491, 342],
+        [570, 321],
+        [626, 301],
+        [685, 272],
+        [742, 233],
+        [790, 186],
+        [825, 135],
+        [842, 93],
+        [847, 68],
+        [847, 50],
+        [843, 34],
+        [834, 21],
+        [821, 11],
+        [807, 5],
+        [789, 1],
+        [771, 0],
+        [753, 1],
+        [727, 6],
+        [698, 15],
+        [662, 30],
+        [611, 59],
+        [575, 85],
+        [550, 107],
+        [518, 142],
+        [496, 178],
+        [487, 205],
+        [484, 229],
+        [485, 250],
+        [489, 270],
+        [499, 297],
+        [518, 327],
+        [539, 351],
+        [571, 377],
+        [611, 401],
+        [653, 419],
+        [695, 431],
+        [738, 439],
+        [773, 442],
+        [817, 442],
+        [866, 438],
+        [902, 433],
+        [942, 426],
+        [993, 415],
+        [1139, 373],
+        [1232, 343],
+        [1310, 320],
+        [1377, 304],
+        [1486, 289],
+        [1564, 288],
+        [1625, 291],
+        [1715, 303],
+        [1778, 318],
+        [1833, 337],
+        [1897, 369],
+        [1943, 402],
+        [1977, 435],
+        [2006, 475],
+        [2023, 507],
+        [2036, 545],
+        [2040, 567],
       ]
 
-      ctx.beginPath();
+      
 
-      ctx.moveTo(points[0].x, points[0].y);
+      points = points.map(item => [item[0] / 2, item[1] / 2])
 
-      for (var i = 1; i < points.length - 2; i++)
-      {
-          var xc = (points[i].x + points[i + 1].x) / 2;
-          var yc = (points[i].y + points[i + 1].y) / 2;
-          ctx.quadraticCurveTo(points[i].x, points[i].y, xc, yc);
+      // 1
+      ctx.beginPath()
+
+      ctx.moveTo(...points[0])
+
+      for (let i = 1; i < points.length; i++) {
+        ctx.lineTo(...points[i])
       }
 
-      ctx.quadraticCurveTo(points[i].x, points[i].y, points[i+1].x,points[i+1].y);
-
-      ctx.closePath();
-
-      let gradient = ctx.createLinearGradient(0, 0, 100, 0);
-      gradient.addColorStop(0, 'green');
-      gradient.addColorStop(.7, 'white');
-      gradient.addColorStop(1, 'pink');
-
-      ctx.strokeStyle = gradient;
-      ctx.lineWidth = 5;
+      ctx.strokeStyle = 'red'
       ctx.stroke()
-    }
 
-    render()
+      ctx.closePath()
+
+      // 2
+      ctx.beginPath()
+
+      ctx.moveTo(...points[0])
+
+      for (var i = 1; i < points.length - 2; i++) {
+        const xc = (points[i][0] + points[i + 1][0]) / 2;
+        const yc = (points[i][1] + points[i + 1][1]) / 2;
+        ctx.quadraticCurveTo(points[i][0], points[i][1], xc, yc);
+
+        console.log(points[i][0], points[i][1], xc, yc);
+      }
+
+      ctx.quadraticCurveTo(points[i][0], points[i][1], points[i + 1][0], points[i + 1][1])
+
+      const gradient = ctx.createLinearGradient(0, 0, 1000, 1000)
+      gradient.addColorStop(0, 'green')
+      gradient.addColorStop(1, 'red')
+
+      ctx.strokeStyle = gradient
+      ctx.lineWidth = 5
+      ctx.stroke()
+
+      ctx.closePath()
+
+      function getRect(points) {
+        let tl = points[0]
+        let br = points[0]
+
+        for (let i = 1; i < points.length; i++) {
+          if (points[i][0] < tl[0] && points[i][1] < tl[1]) {
+            tl = points[i]
+          }
+          if (points[i][0] > br[0] && points[i][1] > br[1]) {
+            br = points[i]
+          }
+        }
+
+        return [...tl, ...br]
+      }
+
+      // 3
+      requestAnimationFrame(render)
+
+      let progress = 0
+      const PROGRESS_DELTA = 5
+      const PROGRESS_DELTA_X = 1
+      let progress_delta = PROGRESS_DELTA
+
+      $(window).on('mousemove', event => {
+        const delta_x = Math.abs(event.originalEvent.movementX)
+        const delta_y = Math.abs(event.originalEvent.movementY)
+
+        const delta = (delta_x + delta_y) / 2
+
+        progress_delta = PROGRESS_DELTA + PROGRESS_DELTA * PROGRESS_DELTA_X * delta
+
+        setTimeout(() => {
+          progress_delta = PROGRESS_DELTA
+        }, 100)
+      })
+
+      function render() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+        const DIST = 800
+
+        const points_cur = points.map(item => [item[0], item[1] + 10 * Math.sin(((item[0] + progress % DIST) / DIST) * Math.PI * 2)])
+
+        ctx.beginPath()
+
+        ctx.moveTo(...points_cur[0])
+
+        for (var i = 1; i < points_cur.length - 2; i++) {
+          const xc = (points_cur[i][0] + points_cur[i + 1][0]) / 2;
+          const yc = (points_cur[i][1] + points_cur[i + 1][1]) / 2;
+          ctx.quadraticCurveTo(points_cur[i][0], points_cur[i][1], xc, yc);
+        }
+
+        ctx.quadraticCurveTo(points_cur[i][0], points_cur[i][1], points_cur[i + 1][0], points_cur[i + 1][1])
+
+        const gradient = ctx.createLinearGradient(0, 0, getRect(points)[2], getRect(points)[3])
+        gradient.addColorStop(0, '#31aff2')
+        gradient.addColorStop(1, '#5553f0')
+
+        ctx.strokeStyle = gradient
+        ctx.lineWidth = 1
+        ctx.stroke()
+
+        ctx.closePath()
+
+        progress += progress_delta
+
+        requestAnimationFrame(render)
+      }
+    })
   })
 }
 
@@ -1069,7 +1206,104 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     blocks.each(function () {
       const block = $(this)
 
-      console.log('block')
+      // control
+      const DURATION = 500
+
+      const btn = block.find('.spray-page__tabs-item')
+
+      if (btn.length > 1) {
+        let cur_index = 0
+
+        let clickable = true
+
+        const frame = block.find('.block__frame')
+        const background = block.find('.block__background')
+
+        btn.on('click', function () {
+          if (clickable) {
+            if (!$(this).hasClass('spray-page__tabs-item--active')) {
+              clickable = false
+              setTimeout(() => {
+                frame.removeClass('block__frame--open')
+                frame.removeClass('block__frame--out')
+
+                setTimeout(() => {
+                  clickable = true
+                })
+              }, DURATION)
+
+              const new_index = 1 - cur_index
+              cur_index = new_index
+
+              frame.toggleClass('block__frame--front')
+              frame.eq(new_index).addClass('block__frame--open')
+              frame.eq(new_index).addClass('block__frame--out')
+            }
+          }
+        })
+      }
+
+      // height
+      const FPS = 15
+      const MIN_HEIGHT = getComputedStyle(block[0]).minHeight.slice(0, -2)
+
+      const slide = block.find('.block__slide')
+
+      updateHeight()
+      $(window).on('load', updateHeight)
+      $(window).one('resize', handleResize)
+
+      function getMaxHeight(callback) {
+        const blockClone = block.clone()
+
+        blockClone[0].style.cssText = `
+          position: fixed;
+          top: 0;
+          left: 0;
+          transform: translateY(-100%);
+
+          pointer-events: none;
+
+          opacity: 0;
+        `
+
+        $(document.body).append(blockClone)
+
+        setTimeout(() => {
+          let maxHeight = 0
+
+          const slideClone = blockClone.find('.block__slide')
+
+          slideClone.css('height', '')
+
+          setTimeout(() => {
+            slideClone.each(function () {
+              if (this.offsetHeight > maxHeight) {
+                maxHeight = this.offsetHeight
+              }
+            })
+
+            blockClone.remove()
+
+            maxHeight = Math.max(maxHeight, MIN_HEIGHT)
+
+            callback(maxHeight)
+          })
+        })
+      }
+      function updateHeight() {
+        getMaxHeight(maxHeight => {
+          block.css('height', `${maxHeight}px`)
+          slide.css('height', `${maxHeight}px`)
+        })
+      }
+      function handleResize() {
+        setTimeout(() => {
+          updateHeight()
+
+          $(window).one('resize', handleResize)
+        }, 1000 / FPS)
+      }
     })
   })
 }
@@ -1078,7 +1312,6 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 {
   $(() => {
     $("form").parsley();
-
   });
 }
 
@@ -1089,7 +1322,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
     if (parallaxItem.length !== 0) {
 
-      parallaxItem.each(function() {
+      parallaxItem.each(function () {
         const parallaxElem = $(this);
         const parallaxElemOffset = parallaxElem.offset().top;
         const parallaxId = parallaxElem.data('parallax');
@@ -1099,13 +1332,13 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           const scrollPos = this.pageYOffset;
 
           if (scrollPos < parallaxContainer.offset().top &&
-              (scrollPos + $(window).height() / 2) > parallaxElemOffset) {
-                const parallax = ((scrollPos + $(window).height() / 2) - parallaxElemOffset) * 0.1;
+            (scrollPos + $(window).height() / 2) > parallaxElemOffset) {
+            const parallax = ((scrollPos + $(window).height() / 2) - parallaxElemOffset) * 0.1;
 
-                requestAnimationFrame(() => {
-                  parallaxElem.css('transform', `translateY(${parallax}px)`);
-                })
-              }
+            requestAnimationFrame(() => {
+              parallaxElem.css('transform', `translateY(${parallax}px)`);
+            })
+          }
         });
       });
     };
@@ -1143,6 +1376,233 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
   });
 }
 
+// wwave
+{
+  const OFFSET = 100
+  const FPS = 5 // test
+  const ANIMATION_SPEED = 5
+  const ANIMATION_PHASE = 800
+  const ANIMATION_Y_OFFSET = 100
+
+  $(() => {
+    $('.wwave').each(function () {
+      const wwave = $(this)
+  
+      const canvas = wwave.find('.wwave__canvas')
+      const ctx = canvas[0].getContext('2d')
+
+      const points = [
+        [0, 307],
+        [26, 318],
+        [57, 329],
+        [76, 335],
+        [103, 342],
+        [126, 347],
+        [154, 352],
+        [172, 355],
+        [201, 359],
+        [220, 361],
+        [240, 362],
+        [265, 363],
+        [291, 364],
+        [319, 363],
+        [344, 362],
+        [365, 361],
+        [384, 359],
+        [404, 357],
+        [423, 354],
+        [444, 351],
+        [465, 347],
+        [491, 342],
+        [570, 321],
+        [626, 301],
+        [685, 272],
+        [742, 233],
+        [790, 186],
+        [825, 135],
+        [842, 93],
+        [847, 68],
+        [847, 50],
+        [843, 34],
+        [834, 21],
+        [821, 11],
+        [807, 5],
+        [789, 1],
+        [771, 0],
+        [753, 1],
+        [727, 6],
+        [698, 15],
+        [662, 30],
+        [611, 59],
+        [575, 85],
+        [550, 107],
+        [518, 142],
+        [496, 178],
+        [487, 205],
+        [484, 229],
+        [485, 250],
+        [489, 270],
+        [499, 297],
+        [518, 327],
+        [539, 351],
+        [571, 377],
+        [611, 401],
+        [653, 419],
+        [695, 431],
+        [738, 439],
+        [773, 442],
+        [817, 442],
+        [866, 438],
+        [902, 433],
+        [942, 426],
+        [993, 415],
+        [1139, 373],
+        [1232, 343],
+        [1310, 320],
+        [1377, 304],
+        [1486, 289],
+        [1564, 288],
+        [1625, 291],
+        [1715, 303],
+        [1778, 318],
+        [1833, 337],
+        [1897, 369],
+        [1943, 402],
+        [1977, 435],
+        [2006, 475],
+        [2023, 507],
+        [2036, 545],
+        [2040, 567],
+      ]
+
+      const points_norm = []
+      
+      let min_x = points[0][0]
+      let max_x = min_x
+
+      let min_y = points[0][1]
+      let max_y = min_y
+
+      points.forEach(point => {
+        const cur_x = point[0]
+        const cur_y = point[1]
+
+        if (cur_x < min_x) {
+          min_x = cur_x
+        } else if (cur_x > max_x) {
+          max_x = cur_x
+        }
+
+        if (cur_y < min_y) {
+          min_y = cur_y
+        } else if (cur_y > max_y) {
+          max_y = cur_y
+        }
+      })
+
+      const rect_width = max_x - min_x + 1
+      const rect_height = max_y - min_y + 1
+
+      const aspect = rect_height / rect_width
+
+      points.forEach(point => {
+        const point_norm = []
+
+        point_norm[0] = (point[0] - min_x) / rect_width
+        point_norm[1] = (point[1] - min_y) / rect_height
+
+        points_norm.push(point_norm)
+      })
+
+      function updateCanvasHeight() {
+        const canvasComputedStyle = getComputedStyle(canvas[0])
+        const canvasWidth = canvasComputedStyle.width.slice(0, -2)
+        
+        canvas[0].width = canvasWidth
+        
+        const wwaveComputedStyle = getComputedStyle(wwave[0])
+        const wwaveWidth = wwaveComputedStyle.width.slice(0, -2)
+
+        canvas[0].height = wwaveWidth * aspect + OFFSET * 2
+      }
+
+      updateCanvasHeight()
+    
+      function handleResize() {
+        console.log(123)
+
+        setTimeout(() => {
+          updateCanvasHeight()
+
+          // requestAnimationFrame(() => {
+          //   paint(points_norm)
+          // })
+
+          $(window).one('resize', handleResize)
+        }, 1000 / FPS)
+      }
+
+      $(window).one('resize', handleResize)
+
+      // requestAnimationFrame(() => {
+      //   paint(points_norm)
+      // })
+
+      function paint(points) {
+        ctx.clearRect(0, 0, canvas[0].width, canvas[0].height)
+
+        ctx.beginPath()
+
+        const width = canvas[0].width - OFFSET * 2
+        const height = canvas[0].height - OFFSET * 2
+
+        function getX(norm_x) {
+          return OFFSET + norm_x * width
+        }
+        function getY(norm_y) {
+          return OFFSET + norm_y * height
+        }
+
+        ctx.moveTo(getX(points[0][0]), getY(points[0][1]))
+
+        for (var i = 1; i < points.length - 2; i++) {
+          const xc = (points[i][0] + points[i + 1][0]) / 2
+          const yc = (points[i][1] + points[i + 1][1]) / 2
+          ctx.quadraticCurveTo(getX(points[i][0]), getY(points[i][1]), getX(xc), getY(yc))
+        }
+
+        ctx.quadraticCurveTo(getX(points[i][0]), getY(points[i][1]), getX(points[i + 1][0]), getY(points[i + 1][1]))
+
+        const gradient = ctx.createLinearGradient(OFFSET, 0, canvas[0].width - OFFSET, 0)
+        gradient.addColorStop(0, '#31aff2')
+        gradient.addColorStop(1, '#5553f0')
+
+        ctx.strokeStyle = gradient
+        ctx.lineWidth = 1
+        ctx.stroke()
+
+        ctx.closePath()
+      }
+
+      // animation
+
+      let animation_progress = 0
+      let animation_speed = ANIMATION_SPEED
+
+      function animation() {
+        paint()
+
+        animation_progress += animation_speed
+
+        requestAnimationFrame(animation)
+      }
+
+      animation()
+    })
+  })
+}
+
+// test
 // main page slider
 {
   $(() => {

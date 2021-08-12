@@ -23,8 +23,8 @@
 							<div class="aside">
 								<div class="aside__inner">
 									<div class="aside__container">
-										<div class="aside__top">
-											<header class="aside__header aside__header--margin-bottom--default"><a class="aside__logo" href="#"><svg class="aside__logo-svg" xmlns="http://www.w3.org/2000/svg" width="101" height="44" viewBox="0 0 101 44" fill="none">
+										<div class="aside__top modal" data-modal="4">
+											<header class="header header--margin-bottom--default"><a class="header__logo" href="#"><svg class="header__logo-svg" xmlns="http://www.w3.org/2000/svg" width="101" height="44" viewBox="0 0 101 44" fill="none">
 														<path d="M35.911 43H101" stroke="#757575" stroke-width="0.408" stroke-miterlimit="4.04"></path>
 														<path fill-rule="evenodd" clip-rule="evenodd" d="M40.2562 27.6192L38.3283 37.5655H38.357L46.7737 27.5903H48.2124L45.6946 40.5062H43.9825L45.9248 30.5454H45.8673L37.4938 40.5494H36.0406L38.5585 27.6192" fill="#757575"></path>
 														<path fill-rule="evenodd" clip-rule="evenodd" d="M51.9675 34.7978L56.2838 34.7833L57.0175 30.9922L58.7296 30.9778L56.8736 40.4629H55.1615L56.0248 36.0663L51.7085 36.0807L50.8453 40.4917H49.1332L50.9892 31.021L52.7013 31.0066" fill="#757575"></path>
@@ -40,21 +40,60 @@
 														<path d="M50.946 28.0371H101" stroke="#757575" stroke-width="0.408" stroke-miterlimit="4.04"></path>
 														<path d="M0 28.0371H35.6377" stroke="#757575" stroke-width="0.408" stroke-miterlimit="4.04"></path>
 													</svg></a>
-												<div class="aside__menu">
-													<div class="aside__menu-text">Меню</div>
-													<div class="aside__menu-button"></div>
+												<div class="header__menu" data-button="4">
+													<div class="header__text">Меню</div>
+													<div class="header__button">
+														<div class="header__burger"></div>
+													</div>
 												</div>
 											</header>
+											<div class="modal-aside">
+												<div class="modal-aside__container">
+													<div class="modal-aside__row">
+														<div class="modal-aside__col">
+															<nav class="modal-aside__nav">
+																<ul class="modal-aside__nav-list">
+																	<div class="modal-aside__nav-col">
+																		<li class="modal-aside__nav-item"><a class="modal-aside__nav-link" href="#">Где купить</a></li>
+																		<li class="modal-aside__nav-item"><a class="modal-aside__nav-link" href="#">Вопрос эксперту</a></li>
+																		<li class="modal-aside__nav-item"><a class="modal-aside__nav-link" href="#">Отзывы Спрей Эпиген</a></li>
+																		<li class="modal-aside__nav-item"><a class="modal-aside__nav-link" href="#">Отзывы Гель Эпиген</a></li>
+																	</div>
+																	<div class="modal-aside__nav-col">
+																		<li class="modal-aside__nav-item"><a class="modal-aside__nav-link" href="#">Видео с экспертами</a></li>
+																		<li class="modal-aside__nav-item"><a class="modal-aside__nav-link" href="#">Статьи экспертов</a></li>
+																		<li class="modal-aside__nav-item"><a class="modal-aside__nav-link" href="#">Вопрос-ответ</a></li>
+																		<li class="modal-aside__nav-item"><a class="modal-aside__nav-link" href="#">Специалистам</a></li>
+																	</div>
+																</ul>
+															</nav>
+															<div class="modal-aside__corp"><span>Сделано в&nbsp;</span><a class="modal-aside__corp-link" href="#">CloudMill</a></div>
+														</div>
+														<div class="modal-aside__col">
+															<div class="modal-aside__col-item"><a class="product-link product-link--modal--aside" href="#">
+																	<div class="product-link__image"><img class="product-link__img" src="assets/images/spray.jpeg" /></div>
+																	<div class="product-link__text">Спрей</div>
+																</a>
+																<div class="modal-aside__doc"><a class="modal-aside__doc-link" href="#">Политика конфиденциальности</a></div>
+															</div>
+															<div class="modal-aside__col-item"><a class="product-link product-link--modal--aside product-link--purple" href="#">
+																	<div class="product-link__image"><img class="product-link__img" src="assets/images/gel.jpeg" /></div>
+																	<div class="product-link__text">Гель</div>
+																</a>
+																<div class="modal-aside__doc"><a class="modal-aside__doc-link" href="#">Положение о пользовании сайтом</a></div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
 											<nav class="nav-page-d nav-page-d--purple">
 												<ul class="nav-page-d__list">
-													<li class="nav-page-d__item nav-page-d__item--active"><a class="nav-page-d__link" href="#">Гель</a></li>
-													<li class="nav-page-d__item"><a class="nav-page-d__link" href="#">Форма выпуска</a></li>
-													<li class="nav-page-d__item"><a class="nav-page-d__link" href="#">Преимущества</a></li>
-													<li class="nav-page-d__item"><a class="nav-page-d__link" href="#">Назначение</a></li>
-													<li class="nav-page-d__item"><a class="nav-page-d__link" href="#">Состав</a></li>
-													<li class="nav-page-d__item"><a class="nav-page-d__link" href="#">Инструкция</a></li>
-													<li class="nav-page-d__item"><a class="nav-page-d__link" href="#">Вопрос эксперту</a></li>
-													<li class="nav-page-d__item"><a class="nav-page-d__link" href="#">Отзывы</a></li>
+													<li class="nav-page-d__item nav-page-d__item--active"><a class="nav-page-d__link" href="#" data-scroll="#gel">Гель</a></li>
+													<li class="nav-page-d__item"><a class="nav-page-d__link" href="#" data-scroll="#form">Форма выпуска</a></li>
+													<li class="nav-page-d__item"><a class="nav-page-d__link" href="#" data-scroll="#features">Преимущества</a></li>
+													<li class="nav-page-d__item"><a class="nav-page-d__link" href="#" data-scroll="#structure">Состав</a></li>
+													<li class="nav-page-d__item"><a class="nav-page-d__link" href="#" data-scroll="#instruction">Инструкция</a></li>
+													<li class="nav-page-d__item"><a class="nav-page-d__link" href="#" data-scroll="#reviews">Отзывы</a></li>
 												</ul>
 											</nav>
 										</div>
@@ -71,7 +110,7 @@
 						<div class="row__col row__col--main">
 							<div class="page">
 								<header class="page__header">
-									<div class="panel">
+									<div class="panel panel--nav">
 										<div class="panel__panel">
 											<div class="panel__row">
 												<div class="panel__col">
@@ -79,32 +118,197 @@
 														<div class="panel__product"><a class="panel__product-item" href="#">
 																<div class="panel__product-mark"></div>
 																<div class="panel__product-text">Спрей</div>
-															</a><a class="panel__product-item panel__product-item--purple panel__product-item--active" href="#">
+															</a><a class="panel__product-item panel__product-item--purple" href="#">
 																<div class="panel__product-mark"></div>
 																<div class="panel__product-text">Гель</div>
 															</a></div>
 													</div>
 												</div>
-												<div class="panel__col">
-													<div class="panel__inner"><a class="panel__where-buy" href="#">Где купить</a></div>
-												</div>
-												<div class="panel__col">
-													<div class="panel__inner">
-														<div class="panel__choice">
-															<div class="panel__choice-item" data-count="8">Симптомы</div>
-															<div class="panel__choice-item" data-count="12">Заболевания</div>
+												<div class="panel__wrapper">
+													<div class="panel__wrapper-row">
+														<div class="panel__wrapper-col">
+															<div class="panel__inner"><a class="panel__where-buy" href="#">Где купить</a>
+																<div class="panel__choice">
+																	<div class="panel__choice-item" data-count="8" data-modal-button="3">Симптомы</div>
+																	<div class="panel__choice-item" data-count="12" data-modal-button="2">Заболевания</div>
+																</div>
+															</div>
+														</div>
+														<div class="panel__wrapper-col">
+															<div class="panel__inner">
+																<div class="panel__test" data-button="3"><svg class="panel__test-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+																		<path d="M8 3V6M7 21H17C19.2091 21 21 19.2091 21 17V8C21 5.79086 19.2091 4 17 4H7C4.79086 4 3 5.79086 3 8V17C3 19.2091 4.79086 21 7 21Z" stroke="#31AFF2" stroke-linecap="round"></path>
+																		<path d="M16 3V6" stroke="#31AFF2" stroke-linecap="round"></path>
+																		<path d="M15 11L11.25 15L9 13.1818" stroke="#31AFF2" stroke-linecap="round" stroke-linejoin="round"></path>
+																	</svg>
+																	<div class="panel__test-text">Пройти тест</div>
+																</div>
+																<div class="panel__consultation"><svg class="panel__consultation-svg" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+																		<path d="M11 21H19C20.1 21 21 20.1 21 19V11C21 5.5 16.5 1 11 1C5.5 1 1 5.5 1 11C1 16.6 5.4 21 11 21Z" stroke="#31AFF2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+																		<path d="M16 12C15.4477 12 15 11.5523 15 11C15 10.4477 15.4477 10 16 10C16.5523 10 17 10.4477 17 11C17 11.5523 16.5523 12 16 12Z" fill="#31AFF2"></path>
+																		<path d="M6 12C5.44771 12 5 11.5523 5 11C5 10.4477 5.44771 10 6 10C6.55228 10 7 10.4477 7 11C7 11.5523 6.55228 12 6 12Z" fill="#31AFF2"></path>
+																		<path d="M11 12C10.4477 12 10 11.5523 10 11C10 10.4477 10.4477 10 11 10C11.5523 10 12 10.4477 12 11C12 11.5523 11.5523 12 11 12Z" fill="#31AFF2"></path>
+																	</svg>
+																	<div class="panel__consultation-text">Консультация эксперта</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="panel__modals">
+														<div class="panel-modal" data-modal-id="2">
+															<div class="panel-modal__container">
+																<div class="panel-modal__row">
+																	<div class="panel-modal__col">
+																		<ul class="panel-modal__list">
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">Генитальный герпес (I и II типа)</a></li>
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">ВПЧ</a></li>
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">Применение при беременности</a></li>
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">Молочница</a></li>
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">Бактериальный вагиноз</a></li>
+																		</ul>
+																	</div>
+																	<div class="panel-modal__col">
+																		<ul class="panel-modal__list">
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">ВПЧ</a></li>
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">Молочница</a></li>
+																		</ul>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="panel-modal" data-modal-id="3">
+															<div class="panel-modal__container">
+																<div class="panel-modal__row">
+																	<div class="panel-modal__col">
+																		<ul class="panel-modal__list">
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">Зуд</a></li>
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">Жжение</a></li>
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">Выделения, пузырьки</a></li>
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">Пузырьки, язвочки</a></li>
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">Болезненность, выделения</a></li>
+																		</ul>
+																	</div>
+																	<div class="panel-modal__col">
+																		<ul class="panel-modal__list">
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">Болезненность при половом контакте</a></li>
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">Боль внизу живота</a></li>
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">Боль при мочеиспускании</a></li>
+																		</ul>
+																	</div>
+																</div>
+															</div>
 														</div>
 													</div>
 												</div>
-												<div class="panel__col">
-													<div class="panel__inner">
-														<div class="panel__consultation"><svg class="panel__consultation-svg" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
-																<path d="M11 21H19C20.1 21 21 20.1 21 19V11C21 5.5 16.5 1 11 1C5.5 1 1 5.5 1 11C1 16.6 5.4 21 11 21Z" stroke="#31AFF2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
-																<path d="M16 12C15.4477 12 15 11.5523 15 11C15 10.4477 15.4477 10 16 10C16.5523 10 17 10.4477 17 11C17 11.5523 16.5523 12 16 12Z" fill="#31AFF2"></path>
-																<path d="M6 12C5.44771 12 5 11.5523 5 11C5 10.4477 5.44771 10 6 10C6.55228 10 7 10.4477 7 11C7 11.5523 6.55228 12 6 12Z" fill="#31AFF2"></path>
-																<path d="M11 12C10.4477 12 10 11.5523 10 11C10 10.4477 10.4477 10 11 10C11.5523 10 12 10.4477 12 11C12 11.5523 11.5523 12 11 12Z" fill="#31AFF2"></path>
-															</svg>
-															<div class="panel__consultation-text">Консультация эксперта</div>
+											</div>
+											<div class="panel__mobile">
+												<header class="header"><a class="header__logo" href="#"><svg class="header__svg" xmlns="http://www.w3.org/2000/svg" width="101" height="44" viewBox="0 0 101 44" fill="none">
+															<path d="M35.911 43H101" stroke="#757575" stroke-width="0.408" stroke-miterlimit="4.04"></path>
+															<path fill-rule="evenodd" clip-rule="evenodd" d="M40.2562 27.6192L38.3283 37.5655H38.357L46.7737 27.5903H48.2124L45.6946 40.5062H43.9825L45.9248 30.5454H45.8673L37.4938 40.5494H36.0406L38.5585 27.6192" fill="#757575"></path>
+															<path fill-rule="evenodd" clip-rule="evenodd" d="M51.9675 34.7978L56.2838 34.7833L57.0175 30.9922L58.7296 30.9778L56.8736 40.4629H55.1615L56.0248 36.0663L51.7085 36.0807L50.8453 40.4917H49.1332L50.9892 31.021L52.7013 31.0066" fill="#757575"></path>
+															<path fill-rule="evenodd" clip-rule="evenodd" d="M62.9883 34.841H63.089C63.5494 33.8897 65.5636 30.7328 67.8512 30.7184C68.8296 30.7184 69.2756 31.4679 69.29 32.3617C69.29 32.8229 68.9447 34.2789 68.772 34.8122H68.8871C69.3475 33.8608 71.3905 30.7184 73.6638 30.7039C74.6421 30.6895 75.0881 31.4391 75.0881 32.3473C75.0881 32.6067 74.9874 33.241 74.8867 33.7023L73.6062 40.3908H71.8941L73.189 33.7167C73.2178 33.5005 73.2753 33.3275 73.2753 33.0392C73.2753 32.7509 73.1458 32.3761 72.7717 32.3905C71.7071 32.3905 68.9015 35.9222 68.4843 36.9745L67.7937 40.4197L66.0816 40.4341L67.3621 33.7455C67.4052 33.5293 67.4628 33.3563 67.4628 33.068C67.4628 32.7797 67.3333 32.4049 66.9592 32.4049C65.8802 32.4193 63.2616 35.7636 62.6574 37.0033L61.9812 40.4485L60.269 40.4629L62.1106 30.9922L63.8227 30.9778" fill="#757575"></path>
+															<path fill-rule="evenodd" clip-rule="evenodd" d="M83.7925 36.4699H83.6918C82.7278 38.0843 81.0013 40.5781 78.9295 40.5781C77.8073 40.5781 77.3613 39.8141 77.3469 38.7763C77.3469 38.3294 77.4764 37.4933 77.5627 37.0609L78.7713 30.8912H80.4834L79.2317 37.4212C79.1885 37.6375 79.1741 37.8537 79.1741 38.0843C79.1741 38.488 79.2317 38.9204 79.6633 38.906C80.9726 38.906 83.3177 35.2878 84.1378 34.2211L84.7852 30.8768H86.4974L84.6414 40.3475H82.9437" fill="#757575"></path>
+															<path fill-rule="evenodd" clip-rule="evenodd" d="M92.425 30.8336L93.4177 37.6375H93.4753L97.4318 30.8192L99.8345 30.8048L97.9785 40.2899H96.2664L97.7915 32.477L97.7052 32.4914L93.7342 39.6556L92.0221 39.67L90.9862 32.4914H90.8567L89.3173 40.3187L88.08 40.3331L89.9215 30.8481" fill="#757575"></path>
+															<path fill-rule="evenodd" clip-rule="evenodd" d="M15.2795 10.8401C16.2578 10.8401 16.56 10.6094 16.56 8.00033C16.56 4.49748 15.15 1.18203 11.1935 1.18203C7.8268 1.18203 6.6758 3.20013 5.97082 4.72812C5.68307 5.33355 5.51042 5.91015 5.10757 5.91015C4.73349 5.91015 4.70472 5.63627 4.70472 5.40563C4.70472 5.16057 4.74788 4.88669 4.84859 4.3245L5.10757 2.63795C5.17951 2.19108 5.28022 1.35501 6.25856 0.922561C7.40956 0.37479 10.1288 0 11.5531 0C17.5527 0 19.9698 4.49748 19.9698 9.51391C19.9698 17.7449 13.5386 24.8371 6.35928 24.8371C5.00686 24.8371 2.28763 24.4334 0.963981 23.2802C0.532357 22.9055 0.330933 22.5451 0.330933 22.2424C0.330933 21.9396 0.388482 20.9883 0.46042 20.6279L0.733781 18.8692C0.805719 18.5233 0.906431 17.817 1.40999 17.817C1.88478 17.817 1.92794 18.2782 1.95672 18.4656C2.15814 20.181 2.69048 23.655 6.37366 23.655C11.064 23.655 15.2076 18.4224 15.8406 13.5213C15.9701 12.4402 15.9701 12.1086 15.409 12.1086H11.6107C9.25116 12.1086 8.64688 13.1609 7.9419 14.7033C7.7117 15.2078 7.3664 16.3178 6.83406 16.3178C6.66141 16.3178 6.50315 16.1448 6.50315 15.943C6.50315 14.4583 7.7117 12.7717 8.24403 9.0238C8.31597 8.4472 8.41668 7.76969 8.89147 7.76969C9.39503 7.76969 9.32309 8.27422 9.39503 8.87965C9.55329 10.768 10.2727 10.8401 11.51 10.8401" fill="#31AFF2"></path>
+															<path fill-rule="evenodd" clip-rule="evenodd" d="M24.7176 14.2853C25.178 12.5555 25.5377 11.2726 25.5377 10.1914C25.5377 9.73016 25.3363 9.52835 25.0773 9.52835C24.4155 9.52835 23.0055 11.6618 22.5163 12.4834C22.4156 12.642 22.2574 12.9303 22.0559 12.9303C21.9265 12.9303 21.7682 12.8294 21.7682 12.5411C21.7682 12.2672 21.8977 11.9789 22.0991 11.6474C23.1925 9.71575 25.5089 7.02014 27.2498 7.02014C28.4871 7.02014 28.5303 8.27425 28.5303 8.69228C28.5303 10.2635 27.998 12.6997 27.5519 14.2709L26.9621 16.3034H27.0628C28.444 13.2186 32.1415 7.02014 35.6377 7.02014C37.0189 7.02014 37.7383 8.04361 37.7383 9.51394C37.7383 10.7969 37.2059 12.2095 36.7887 13.4781L34.6881 19.9504C34.5586 20.3396 34.2277 21.4928 34.2277 21.9541C34.2277 22.3145 34.3572 22.5163 34.6162 22.5163C35.3068 22.5163 37.1052 19.9216 37.4649 19.3594C37.5656 19.2008 37.6951 18.9702 37.9541 18.9702C38.0836 18.9702 38.2562 19.0711 38.2562 19.3306C38.2562 19.4603 38.1843 19.7342 37.8965 20.2531C36.7887 22.1559 34.2997 24.8803 32.6307 24.8803C31.8394 24.8803 31.1632 24.3182 31.1632 23.0496C31.1632 22.2568 31.3934 21.2766 32.084 19.0134L34.2133 12.1807C34.4435 11.3879 34.645 10.7392 34.645 10.2491C34.645 9.35537 34.1414 9.29771 33.9544 9.29771C32.7027 9.29771 31.4653 10.6383 30.3863 12.0798C27.3074 16.1881 26.329 19.763 25.5377 22.2856L25.178 23.4677C24.9478 24.1596 24.7176 24.2172 24.3867 24.2172H22.5163C22.3581 24.2172 22.1135 24.2461 22.2574 23.6983" fill="#31AFF2"></path>
+															<path fill-rule="evenodd" clip-rule="evenodd" d="M53.1184 17.4422C52.8451 18.4368 52.1976 20.9594 52.1976 21.7811C52.1976 22.1126 52.2264 22.4442 52.5573 22.4442C52.9889 22.4442 53.809 21.7811 54.7874 20.2531L55.3773 19.3305C55.478 19.1576 55.6506 18.7972 55.8664 18.7972C56.0247 18.7972 56.1973 18.8981 56.1973 19.1287C56.1973 19.3305 56.0822 19.5179 55.7657 20.1089C54.6867 22.0406 52.4278 24.9092 50.1978 24.9092C49.8669 24.9092 49.1187 24.8659 49.1187 23.4244C49.1187 22.3144 49.4784 20.5702 50.428 17.2836L50.9171 15.5826H50.8452C47.9533 21.5937 44.0687 24.9092 41.8387 24.9092C40.9179 24.9092 40.1265 24.347 40.1265 22.646C40.1265 21.4207 40.4862 20.1522 41.1481 18.1485L43.0184 12.3681C43.5076 10.8545 43.6802 10.2923 43.6802 9.80222C43.6802 9.36977 43.4788 9.34094 43.3781 9.34094C42.5005 9.34094 41.0617 11.6041 40.6301 12.3681C40.5294 12.5267 40.4287 12.7285 40.2129 12.7285C40.069 12.7285 39.882 12.6276 39.882 12.296C39.882 12.0942 39.9539 11.7771 40.5294 10.8833C42.0976 8.46162 43.9392 7.04895 45.2485 7.04895C46.3707 7.04895 46.6585 7.97151 46.6585 8.99498C46.6585 9.54275 46.457 10.3356 45.9103 12.1663L43.6515 19.6909C43.4788 20.2675 43.2199 21.0315 43.2199 21.6946C43.2199 22.0261 43.2918 22.5163 43.8817 22.5163C44.3133 22.5163 44.9895 22.228 46.5002 20.6711C49.1906 17.9467 51.7085 12.8582 52.4278 9.61482L52.6868 8.43279C52.7587 8.07242 52.9458 7.71204 53.5069 7.71204H55.3053C55.8233 7.71204 55.6075 8.20215 55.5643 8.36072" fill="#31AFF2"></path>
+															<path fill-rule="evenodd" clip-rule="evenodd" d="M62.2834 15.6691C63.7221 14.6889 65.5205 13.3772 65.5205 10.941C65.5205 9.36978 64.5997 8.70669 63.7509 8.70669C62.2546 8.70669 60.5712 10.3788 59.9526 11.2437C59.7943 11.46 59.5929 11.7627 59.3771 11.7627C59.2476 11.7627 59.0462 11.6618 59.0462 11.3302C59.0462 11.0275 59.2764 10.768 59.5066 10.4797C60.6288 9.09589 62.269 7.03455 65.1752 7.03455C67.6643 7.03455 68.5851 8.60578 68.5851 10.177C68.5851 12.3681 67.0168 13.7952 65.0457 15.2079C63.0171 16.6494 60.4561 18.5233 60.4561 21.118C60.4561 22.5307 61.2043 23.1505 62.2977 23.1505C64.0098 23.1505 65.3767 21.8099 66.8154 20.2387C67.1031 19.936 67.2326 19.8062 67.3333 19.8062C67.4628 19.8062 67.6211 19.936 67.6211 20.1666C67.6211 20.4261 67.4628 20.6279 67.3621 20.7865C64.6429 24.5055 62.643 24.8803 61.046 24.8803C58.0966 24.8803 57.406 22.9487 57.406 21.637C57.406 19.345 59.0749 17.9035 60.3554 17.0097" fill="#31AFF2"></path>
+															<path fill-rule="evenodd" clip-rule="evenodd" d="M80.2965 9.88871C80.2965 9.26886 80.167 8.01476 78.9297 8.01476C77.0881 8.01476 74.412 10.6671 73.3905 16.4475C76.5989 16.1881 80.2965 14.3862 80.2965 9.88871ZM80.6706 19.5323C80.7713 19.4026 80.8576 19.172 81.059 19.172C81.1885 19.172 81.3612 19.2729 81.3612 19.5035C81.3612 19.8062 80.9583 20.4549 80.7425 20.8153C78.6707 24.1019 76.3255 24.8947 74.7141 24.8947C71.8654 24.8947 70.1533 22.4298 70.1533 18.826C70.1533 12.887 74.8436 7.04895 79.4188 7.04895C81.6777 7.04895 83.1596 8.62019 83.1596 10.9122C83.1596 13.8384 80.6706 16.8223 73.3042 17.4133C73.2322 17.8458 73.2035 18.2927 73.2035 18.7251C73.2035 22.1991 75.0307 22.8622 76.081 22.8622C77.6492 22.8622 79.3613 21.4207 80.3684 19.9792L80.6706 19.5323Z" fill="#31AFF2"></path>
+															<path fill-rule="evenodd" clip-rule="evenodd" d="M87.188 13.9537C87.4182 13.0744 87.9793 10.9698 87.9793 10.1482C87.9793 9.4995 87.8067 9.3986 87.6484 9.3986C86.9003 9.3986 85.5191 11.5608 85.1306 12.296C85.0299 12.4546 84.8716 12.7861 84.5839 12.7861C84.3824 12.7861 84.2817 12.5843 84.2817 12.3969C84.2817 12.1374 84.44 11.878 84.6126 11.5753C85.4327 10.1914 87.6916 7.04895 89.5475 7.04895C90.7849 7.04895 90.9575 8.25981 90.9575 9.1103C90.9575 10.5518 90.5403 12.0654 90.2381 13.3051L89.9216 14.6457C89.8785 14.8042 89.8209 14.9772 90.0799 14.9772H95.1155C95.3457 14.9772 95.4176 14.7754 95.4464 14.6745L97.1585 8.2454C97.2304 7.98593 97.3168 7.69763 97.6765 7.69763H99.7195C100.18 7.69763 100.108 8.08683 100.05 8.31747L96.9715 19.8639C96.583 21.3054 96.5398 21.6946 96.5398 21.8388C96.5398 22.2424 96.6981 22.4009 96.8995 22.4009C97.2592 22.4009 97.8779 21.9973 99.6475 19.1864C99.7626 19.0278 99.8921 18.7539 100.151 18.7539C100.353 18.7539 100.453 18.8837 100.453 19.1143C100.453 19.345 100.324 19.6044 100.065 20.0945C98.7843 22.4586 96.7269 24.8947 94.8853 24.8947C93.9069 24.8947 93.4753 24.001 93.4753 23.0208C93.4753 22.2424 93.7055 21.4063 93.9933 20.2675L95.0004 16.462C95.1011 16.1304 94.8997 16.0583 94.7702 16.0583H89.8209C89.5619 16.0583 89.49 16.1592 89.4324 16.3899L87.5621 23.41C87.375 24.174 87.001 24.2316 86.8139 24.2316H84.9436C84.4256 24.2316 84.6558 23.6406 84.6846 23.4821" fill="#31AFF2"></path>
+															<path d="M50.946 28.0371H101" stroke="#757575" stroke-width="0.408" stroke-miterlimit="4.04"></path>
+															<path d="M0 28.0371H35.6377" stroke="#757575" stroke-width="0.408" stroke-miterlimit="4.04"></path>
+														</svg></a>
+													<div class="header__menu" data-modal-button="1">
+														<div class="header__button">
+															<div class="header__burger"></div>
+														</div>
+													</div>
+												</header>
+												<nav class="nav-page-d nav-page-d--mobile nav-page-d--mobile--purple">
+													<ul class="nav-page-d__list">
+														<li class="nav-page-d__item nav-page-d__item--active"><a class="category-item category-item--light-blue category-item--background--white" href="#" data-scroll="#gel">Гель</a></li>
+														<li class="nav-page-d__item"><a class="category-item category-item--light-blue category-item--background--white" href="#" data-scroll="#form">Форма выпуска</a></li>
+														<li class="nav-page-d__item"><a class="category-item category-item--light-blue category-item--background--white" href="#" data-scroll="#features">Преимущества</a></li>
+														<li class="nav-page-d__item"><a class="category-item category-item--light-blue category-item--background--white" href="#" data-scroll="#structure">Состав</a></li>
+														<li class="nav-page-d__item"><a class="category-item category-item--light-blue category-item--background--white" href="#" data-scroll="#instruction">Инструкция</a></li>
+														<li class="nav-page-d__item"><a class="category-item category-item--light-blue category-item--background--white" href="#" data-scroll="#reviews">Отзывы</a></li>
+													</ul>
+												</nav>
+											</div>
+											<div class="panel__modals">
+												<div class="modal-mobile modal-mobile--height--100vh-60p" data-modal-id="1">
+													<div class="modal-mobile__inner">
+														<div class="modal-mobile__container">
+															<div class="modal-mobile__products">
+																<div class="modal-mobile__products-item"><a class="product-link product-link--modal--mobile" href="#">
+																		<div class="product-link__image"><img class="product-link__img" src="assets/images/spray.jpeg" /></div>
+																		<div class="product-link__text">Спрей</div>
+																	</a></div>
+																<div class="modal-mobile__products-item"><a class="product-link product-link--modal--mobile product-link--purple" href="#">
+																		<div class="product-link__image"><img class="product-link__img" src="assets/images/gel.jpeg" /></div>
+																		<div class="product-link__text">Гель</div>
+																	</a></div>
+															</div>
+														</div>
+														<div class="panel panel--modal">
+															<div class="panel__choice">
+																<div class="modal-mobile__choice">
+																	<div class="modal-mobile__choice-button">
+																		<div class="panel__choice-item" data-count="8">Симптомы</div><svg class="modal-mobile__choice-svg" width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+																			<path d="M1 1L8 8L15 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																		</svg>
+																	</div>
+																	<div class="modal-mobile__choice-dropdown"></div>
+																</div>
+																<div class="modal-mobile__choice">
+																	<div class="modal-mobile__choice-button">
+																		<div class="panel__choice-item" data-count="12">Заболевания</div><svg class="modal-mobile__choice-svg" width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+																			<path d="M1 1L8 8L15 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																		</svg>
+																	</div>
+																	<div class="modal-mobile__choice-dropdown"></div>
+																</div>
+															</div>
+															<div class="modal-mobile__links">
+																<div class="modal-mobile__container">
+																	<ul class="modal-mobile__links-list">
+																		<li class="modal-mobile__links-item"><a class="panel__test" href="#"><svg class="panel__test-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+																					<path d="M8 3V6M7 21H17C19.2091 21 21 19.2091 21 17V8C21 5.79086 19.2091 4 17 4H7C4.79086 4 3 5.79086 3 8V17C3 19.2091 4.79086 21 7 21Z" stroke="#31AFF2" stroke-linecap="round"></path>
+																					<path d="M16 3V6" stroke="#31AFF2" stroke-linecap="round"></path>
+																					<path d="M15 11L11.25 15L9 13.1818" stroke="#31AFF2" stroke-linecap="round" stroke-linejoin="round"></path>
+																				</svg>
+																				<div class="panel__test-text">Пройти тест</div>
+																			</a></li>
+																		<li class="modal-mobile__links-item"><a class="panel__consultation" href="#"><svg class="panel__consultation-svg" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+																					<path d="M11 21H19C20.1 21 21 20.1 21 19V11C21 5.5 16.5 1 11 1C5.5 1 1 5.5 1 11C1 16.6 5.4 21 11 21Z" stroke="#31AFF2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+																					<path d="M16 12C15.4477 12 15 11.5523 15 11C15 10.4477 15.4477 10 16 10C16.5523 10 17 10.4477 17 11C17 11.5523 16.5523 12 16 12Z" fill="#31AFF2"></path>
+																					<path d="M6 12C5.44771 12 5 11.5523 5 11C5 10.4477 5.44771 10 6 10C6.55228 10 7 10.4477 7 11C7 11.5523 6.55228 12 6 12Z" fill="#31AFF2"></path>
+																					<path d="M11 12C10.4477 12 10 11.5523 10 11C10 10.4477 10.4477 10 11 10C11.5523 10 12 10.4477 12 11C12 11.5523 11.5523 12 11 12Z" fill="#31AFF2"></path>
+																				</svg>
+																				<div class="panel__consultation-text">Консультация эксперта</div>
+																			</a></li>
+																		<li class="modal-mobile__links-item"><a class="modal-mobile__links-link" href="#">Где купить</a></li>
+																		<li class="modal-mobile__links-item"><a class="modal-mobile__links-link" href="#">Вопрос эксперту</a></li>
+																		<li class="modal-mobile__links-item"><a class="modal-mobile__links-link" href="#">Отзывы Спрей Эпиген</a></li>
+																		<li class="modal-mobile__links-item"><a class="modal-mobile__links-link" href="#">Отзывы Гель Эпиген</a></li>
+																		<li class="modal-mobile__links-item"><a class="modal-mobile__links-link" href="#">Видео с экспертами</a></li>
+																		<li class="modal-mobile__links-item"><a class="modal-mobile__links-link" href="#">Статьи экспертов</a></li>
+																		<li class="modal-mobile__links-item"><a class="modal-mobile__links-link" href="#">Вопрос-ответ</a></li>
+																		<li class="modal-mobile__links-item"><a class="modal-mobile__links-link" href="#">Специалистам</a></li>
+																	</ul>
+																</div>
+															</div>
+														</div>
+														<div class="modal-mobile__bottom">
+															<div class="modal-mobile__container">
+																<ul class="modal-mobile__bottom-links">
+																	<li class="modal-mobile__bottom-item"><a class="modal-mobile__bottom-doc" href="#">Политика конфиденциальности</a></li>
+																	<li class="modal-mobile__bottom-item"><a class="modal-mobile__bottom-doc" href="#">Положение о пользовании сайтом</a></li>
+																	<li class="modal-mobile__bottom-item">
+																		<div class="modal-mobile__bottom-text"><span>Сделано в&nbsp;</span><a class="modal-mobile__bottom-link" href="#">CloudMill</a></div>
+																	</li>
+																</ul>
+															</div>
 														</div>
 													</div>
 												</div>
@@ -125,7 +329,18 @@
 											</div>
 										</div>
 									</section>
-									<section class="spray-page__section margin-top margin-top--l">
+									<section class="page-gel__mobile">
+										<h1 class="page-gel__frame-title">Гель Эпиген Интим</h1>
+										<div class="page-gel__mobile-wrapper">
+											<ul class="page-gel__frame-list">
+												<li class="page-gel__frame-item">
+													<div class="category-item category-item--purple cursor cursor--default">Сделано в Испании</div>
+												</li>
+											</ul>
+										</div>
+										<div class="page-gel__mobile-button"><a class="button button--t button--purple" href="#">Где купить</a></div>
+									</section>
+									<section class="spray-page__section margin-top margin-top--l" id="gel" data-section="">
 										<div class="spray-page__section-row">
 											<div class="spray-page__section-col">
 												<h3 class="spray-page__section-title">Единственный гель для интимной гигиены с уникальным сочетанием двух активных компонентов — активированной глицирризиновой и&nbsp;молочной кислоты</h3>
@@ -136,52 +351,142 @@
 										</div>
 									</section>
 									<section class="spray-page__section margin-top margin-top--95">
-										<div class="product-slider">
-											<div class="product-slider__slide product-slider__slide--front">
-												<div class="product-slider__content">
-													<div class="product-slider__layout product-slider__layout--250"></div>
-													<div class="product-slider__top">
-														<ul class="product-slider__btns">
-															<li class="product-slider__btns-item product-slider__btns-item--width--200">
-																<div class="spray-page__tabs-item spray-page__tabs-item--purple spray-page__tabs-item--active" data-tab="1">
-																	<div class="spray-page__tabs-container">
-																		<div class="spray-page__tabs-row">
-																			<div class="spray-page__tabs-col"><svg class="spray-svg spray-page__tabs-icon" xmlns="http://www.w3.org/2000/svg" width="19" height="65" viewBox="0 0 19 65" fill="none">
-																					<rect class="spray-svg__background spray-svg__line spray-svg__line--stroke" x="5.01389" y="0.5" width="8.02778" height="8.02778" rx="1.5" fill="#31AFF2" stroke="white"></rect>
-																					<rect class="spray-svg__background spray-svg__line spray-svg__line--stroke" x="4.11111" y="7.72223" width="9.83333" height="8.02778" rx="1.5" fill="#31AFF2" stroke="white"></rect>
-																					<rect class="spray-svg__background spray-svg__line spray-svg__line--stroke" x="3.20833" y="13.1389" width="11.6389" height="11.6389" rx="1.5" fill="#31AFF2" stroke="white"></rect>
-																					<line class="spray-svg__line spray-svg__line--stroke" x1="5.5" y1="13" x2="5.5" y2="23" stroke="white"></line>
-																					<path class="spray-svg__line spray-svg__line--stroke" d="M9 13L9 23" stroke="white"></path>
-																					<line class="spray-svg__line spray-svg__line--stroke" x1="12.5" y1="13" x2="12.5" y2="23" stroke="white"></line>
-																					<path class="spray-svg__background spray-svg__line spray-svg__line--stroke" d="M0.5 26.4102C0.5 25.8833 0.776449 25.395 1.22826 25.1239L4.29611 23.2832C4.52924 23.1433 4.79599 23.0695 5.06786 23.0695H12.9877C13.2596 23.0695 13.5263 23.1433 13.7594 23.2832L16.8273 25.1239C17.2791 25.395 17.5556 25.8833 17.5556 26.4102V63C17.5556 63.8284 16.884 64.5 16.0556 64.5H2C1.17157 64.5 0.5 63.8284 0.5 63V26.4102Z" fill="#31AFF2" stroke="white"></path>
-																					<circle class="spray-svg__background spray-svg__line spray-svg__line--fill" cx="9.02778" cy="3.61109" r="0.902778" fill="white"></circle>
-																				</svg></div>
-																			<div class="spray-page__tabs-col">
-																				<div class="spray-page__tabs-num">250</div>
+										<div class="block">
+											<div class="block__frame block__frame--left block__frame--front">
+												<div class="block__slide">
+													<div class="block__layout">
+														<div class="block__background block__background--15"></div>
+													</div>
+													<div class="block__content">
+														<div class="block__top">
+															<div class="block__control">
+																<div class="block__control-item">
+																	<div class="spray-page__tabs-item spray-page__tabs-item--in-block spray-page__tabs-item--active">
+																		<div class="spray-page__tabs-container">
+																			<div class="spray-page__tabs-row">
+																				<div class="spray-page__tabs-col"><svg class="spray-svg spray-page__tabs-icon" xmlns="http://www.w3.org/2000/svg" width="19" height="65" viewBox="0 0 19 65" fill="none">
+																						<rect class="spray-svg__background spray-svg__line spray-svg__line--stroke" x="5.01389" y="0.5" width="8.02778" height="8.02778" rx="1.5" fill="#31AFF2" stroke="white"></rect>
+																						<rect class="spray-svg__background spray-svg__line spray-svg__line--stroke" x="4.11111" y="7.72223" width="9.83333" height="8.02778" rx="1.5" fill="#31AFF2" stroke="white"></rect>
+																						<rect class="spray-svg__background spray-svg__line spray-svg__line--stroke" x="3.20833" y="13.1389" width="11.6389" height="11.6389" rx="1.5" fill="#31AFF2" stroke="white"></rect>
+																						<line class="spray-svg__line spray-svg__line--stroke" x1="5.5" y1="13" x2="5.5" y2="23" stroke="white"></line>
+																						<path class="spray-svg__line spray-svg__line--stroke" d="M9 13L9 23" stroke="white"></path>
+																						<line class="spray-svg__line spray-svg__line--stroke" x1="12.5" y1="13" x2="12.5" y2="23" stroke="white"></line>
+																						<path class="spray-svg__background spray-svg__line spray-svg__line--stroke" d="M0.5 26.4102C0.5 25.8833 0.776449 25.395 1.22826 25.1239L4.29611 23.2832C4.52924 23.1433 4.79599 23.0695 5.06786 23.0695H12.9877C13.2596 23.0695 13.5263 23.1433 13.7594 23.2832L16.8273 25.1239C17.2791 25.395 17.5556 25.8833 17.5556 26.4102V63C17.5556 63.8284 16.884 64.5 16.0556 64.5H2C1.17157 64.5 0.5 63.8284 0.5 63V26.4102Z" fill="#31AFF2" stroke="white"></path>
+																						<circle class="spray-svg__background spray-svg__line spray-svg__line--fill" cx="9.02778" cy="3.61109" r="0.902778" fill="white"></circle>
+																					</svg></div>
+																				<div class="spray-page__tabs-col">
+																					<div class="spray-page__tabs-num">15</div>
+																				</div>
 																			</div>
 																		</div>
 																	</div>
 																</div>
-															</li>
-														</ul>
-														<ul class="product-slider__list product-slider__list--purple">
-															<li class="product-slider__list-item">Один флакон расчитан на 3 месяца использования</li>
-															<li class="product-slider__list-item">Для ежедневной интимной гигиены</li>
-															<li class="product-slider__list-item">Во время беременности</li>
-															<li class="product-slider__list-item">В период лечения гинекологических и урологических заболеваний</li>
-														</ul>
-													</div>
-													<div class="product-slider__bottom">
-														<div class="product-slider__counter">
-															<div class="product-slider__counter-top">
-																<div class="product-slider__counter-text product-slider__counter-text--uppercase">до</div>
-															</div>
-															<div class="product-slider__counter-bottom">
-																<div class="product-slider__counter-count">
-																	<div class="product-slider__counter-text product-slider__counter-text--large">220</div>
+																<div class="block__control-item">
+																	<div class="spray-page__tabs-item spray-page__tabs-item--in-block">
+																		<div class="spray-page__tabs-container">
+																			<div class="spray-page__tabs-row">
+																				<div class="spray-page__tabs-col"><svg class="spray-svg spray-page__tabs-icon" xmlns="http://www.w3.org/2000/svg" width="19" height="65" viewBox="0 0 19 65" fill="none">
+																						<rect class="spray-svg__background spray-svg__line spray-svg__line--stroke" x="5.01389" y="0.5" width="8.02778" height="8.02778" rx="1.5" fill="#31AFF2" stroke="white"></rect>
+																						<rect class="spray-svg__background spray-svg__line spray-svg__line--stroke" x="4.11111" y="7.72223" width="9.83333" height="8.02778" rx="1.5" fill="#31AFF2" stroke="white"></rect>
+																						<rect class="spray-svg__background spray-svg__line spray-svg__line--stroke" x="3.20833" y="13.1389" width="11.6389" height="11.6389" rx="1.5" fill="#31AFF2" stroke="white"></rect>
+																						<line class="spray-svg__line spray-svg__line--stroke" x1="5.5" y1="13" x2="5.5" y2="23" stroke="white"></line>
+																						<path class="spray-svg__line spray-svg__line--stroke" d="M9 13L9 23" stroke="white"></path>
+																						<line class="spray-svg__line spray-svg__line--stroke" x1="12.5" y1="13" x2="12.5" y2="23" stroke="white"></line>
+																						<path class="spray-svg__background spray-svg__line spray-svg__line--stroke" d="M0.5 26.4102C0.5 25.8833 0.776449 25.395 1.22826 25.1239L4.29611 23.2832C4.52924 23.1433 4.79599 23.0695 5.06786 23.0695H12.9877C13.2596 23.0695 13.5263 23.1433 13.7594 23.2832L16.8273 25.1239C17.2791 25.395 17.5556 25.8833 17.5556 26.4102V63C17.5556 63.8284 16.884 64.5 16.0556 64.5H2C1.17157 64.5 0.5 63.8284 0.5 63V26.4102Z" fill="#31AFF2" stroke="white"></path>
+																						<circle class="spray-svg__background spray-svg__line spray-svg__line--fill" cx="9.02778" cy="3.61109" r="0.902778" fill="white"></circle>
+																					</svg></div>
+																				<div class="spray-page__tabs-col">
+																					<div class="spray-page__tabs-num">60</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
 																</div>
-																<div class="product-slider__counter-amount">
-																	<div class="product-slider__counter-text product-slider__counter-text--uppercase">доз</div>
+															</div>
+															<ul class="block__list">
+																<li class="block__list-item">Для 1 полноценного курса лечения</li>
+																<li class="block__list-item">Для 2-3 курсов короткой  профилактики</li>
+																<li class="block__list-item">Для дорожной аптечки</li>
+																<li class="block__list-item">Удобно брать с собой</li>
+															</ul>
+														</div>
+														<div class="block__bottom">
+															<div class="block__format">
+																<div class="block__format-label">до</div>
+																<div class="block__format-row">
+																	<div class="block__format-value">115</div>
+																	<div class="block__format-label block__format-label--in-row">Доз</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="block__frame block__frame--right">
+												<div class="block__slide">
+													<div class="block__layout">
+														<div class="block__background block__background--60"></div>
+													</div>
+													<div class="block__content">
+														<div class="block__top">
+															<div class="block__control">
+																<div class="block__control-item">
+																	<div class="spray-page__tabs-item spray-page__tabs-item--in-block">
+																		<div class="spray-page__tabs-container">
+																			<div class="spray-page__tabs-row">
+																				<div class="spray-page__tabs-col"><svg class="spray-svg spray-page__tabs-icon" xmlns="http://www.w3.org/2000/svg" width="19" height="65" viewBox="0 0 19 65" fill="none">
+																						<rect class="spray-svg__background spray-svg__line spray-svg__line--stroke" x="5.01389" y="0.5" width="8.02778" height="8.02778" rx="1.5" fill="#31AFF2" stroke="white"></rect>
+																						<rect class="spray-svg__background spray-svg__line spray-svg__line--stroke" x="4.11111" y="7.72223" width="9.83333" height="8.02778" rx="1.5" fill="#31AFF2" stroke="white"></rect>
+																						<rect class="spray-svg__background spray-svg__line spray-svg__line--stroke" x="3.20833" y="13.1389" width="11.6389" height="11.6389" rx="1.5" fill="#31AFF2" stroke="white"></rect>
+																						<line class="spray-svg__line spray-svg__line--stroke" x1="5.5" y1="13" x2="5.5" y2="23" stroke="white"></line>
+																						<path class="spray-svg__line spray-svg__line--stroke" d="M9 13L9 23" stroke="white"></path>
+																						<line class="spray-svg__line spray-svg__line--stroke" x1="12.5" y1="13" x2="12.5" y2="23" stroke="white"></line>
+																						<path class="spray-svg__background spray-svg__line spray-svg__line--stroke" d="M0.5 26.4102C0.5 25.8833 0.776449 25.395 1.22826 25.1239L4.29611 23.2832C4.52924 23.1433 4.79599 23.0695 5.06786 23.0695H12.9877C13.2596 23.0695 13.5263 23.1433 13.7594 23.2832L16.8273 25.1239C17.2791 25.395 17.5556 25.8833 17.5556 26.4102V63C17.5556 63.8284 16.884 64.5 16.0556 64.5H2C1.17157 64.5 0.5 63.8284 0.5 63V26.4102Z" fill="#31AFF2" stroke="white"></path>
+																						<circle class="spray-svg__background spray-svg__line spray-svg__line--fill" cx="9.02778" cy="3.61109" r="0.902778" fill="white"></circle>
+																					</svg></div>
+																				<div class="spray-page__tabs-col">
+																					<div class="spray-page__tabs-num">15</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<div class="block__control-item">
+																	<div class="spray-page__tabs-item spray-page__tabs-item--in-block spray-page__tabs-item--active">
+																		<div class="spray-page__tabs-container">
+																			<div class="spray-page__tabs-row">
+																				<div class="spray-page__tabs-col"><svg class="spray-svg spray-page__tabs-icon" xmlns="http://www.w3.org/2000/svg" width="19" height="65" viewBox="0 0 19 65" fill="none">
+																						<rect class="spray-svg__background spray-svg__line spray-svg__line--stroke" x="5.01389" y="0.5" width="8.02778" height="8.02778" rx="1.5" fill="#31AFF2" stroke="white"></rect>
+																						<rect class="spray-svg__background spray-svg__line spray-svg__line--stroke" x="4.11111" y="7.72223" width="9.83333" height="8.02778" rx="1.5" fill="#31AFF2" stroke="white"></rect>
+																						<rect class="spray-svg__background spray-svg__line spray-svg__line--stroke" x="3.20833" y="13.1389" width="11.6389" height="11.6389" rx="1.5" fill="#31AFF2" stroke="white"></rect>
+																						<line class="spray-svg__line spray-svg__line--stroke" x1="5.5" y1="13" x2="5.5" y2="23" stroke="white"></line>
+																						<path class="spray-svg__line spray-svg__line--stroke" d="M9 13L9 23" stroke="white"></path>
+																						<line class="spray-svg__line spray-svg__line--stroke" x1="12.5" y1="13" x2="12.5" y2="23" stroke="white"></line>
+																						<path class="spray-svg__background spray-svg__line spray-svg__line--stroke" d="M0.5 26.4102C0.5 25.8833 0.776449 25.395 1.22826 25.1239L4.29611 23.2832C4.52924 23.1433 4.79599 23.0695 5.06786 23.0695H12.9877C13.2596 23.0695 13.5263 23.1433 13.7594 23.2832L16.8273 25.1239C17.2791 25.395 17.5556 25.8833 17.5556 26.4102V63C17.5556 63.8284 16.884 64.5 16.0556 64.5H2C1.17157 64.5 0.5 63.8284 0.5 63V26.4102Z" fill="#31AFF2" stroke="white"></path>
+																						<circle class="spray-svg__background spray-svg__line spray-svg__line--fill" cx="9.02778" cy="3.61109" r="0.902778" fill="white"></circle>
+																					</svg></div>
+																				<div class="spray-page__tabs-col">
+																					<div class="spray-page__tabs-num">60</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<ul class="block__list">
+																<li class="block__list-item">Во время беремнности</li>
+																<li class="block__list-item">Для применения вместе с партнером 1 год использования по требованию</li>
+																<li class="block__list-item">Для длительного лечения или профилактики</li>
+																<li class="block__list-item">Для применения обоими партнерами</li>
+																<li class="block__list-item">На период беременности</li>
+															</ul>
+														</div>
+														<div class="block__bottom">
+															<div class="block__format">
+																<div class="block__format-label">до</div>
+																<div class="block__format-row">
+																	<div class="block__format-value">460</div>
+																	<div class="block__format-label block__format-label--in-row">Доз</div>
 																</div>
 															</div>
 														</div>
@@ -190,11 +495,20 @@
 											</div>
 										</div>
 									</section>
-									<section class="page-gel__features">
-										<div class="page-gel__features-layout"><img class="page-gel__features-img-1" src="assets/images/gel-features-image-1.jpeg"><svg class="page-gel__features-wave" xmlns="http://www.w3.org/2000/svg" width="1192" height="1718" viewBox="0 0 1192 1718" fill="none">
+									<section class="page-gel__features" id="features" data-section="">
+										<div class="page-gel__features-layout">
+											<div class="page-gel__layout-img-1" data-parallax="1"><img class="page-gel__features-img-1" src="assets/images/gel-features-image-1.jpeg"></div><svg class="page-gel__features-wave" xmlns="http://www.w3.org/2000/svg" width="1192" height="1718" viewBox="0 0 1192 1718" fill="none">
 												<path d="M1496.5 492.209C1496.5 492.209 1480.62 255.615 1067 255.615C857.475 255.615 703.265 366.334 477.701 385.492C271.559 403.001 115.281 260.141 203.623 137.341C265.141 51.8283 414.048 -39.6411 465 20.2094C495.009 55.4587 440.577 172.784 244.635 286.171C73.0008 385.492 -99.6348 491.5 72.5001 624.5C244.635 757.5 1208.79 607.344 947 1086C664.789 1602 239.5 1477 145.5 1517C51.5 1557 139.416 1654.34 215.5 1717C215.5 1717 266.408 1628.17 227.5 1580.5C173.042 1513.78 7.5 1618.5 7.5 1618.5" stroke="url(#paint0_linear)"></path>
 												<defs>
 													<linearGradient id="paint0_linear" x1="436" y1="0.999876" x2="-29.5466" y2="1127.71" gradientUnits="userSpaceOnUse">
+														<stop offset="0.294736" stop-color="#31AFF2"></stop>
+														<stop offset="1" stop-color="#5553F0"></stop>
+													</linearGradient>
+												</defs>
+											</svg><svg class="page-gel__features-wave-mobile" width="987" height="1618" viewBox="0 0 987 1618" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M986 288.398C986 288.398 976.716 149.971 734.943 149.971C612.468 149.971 522.327 214.75 390.478 225.959C269.981 236.203 178.631 152.618 230.27 80.7704C266.229 30.7387 353.271 -22.7784 383.054 12.2391C400.595 32.8628 368.777 101.508 254.243 167.848C153.917 225.959 53.0059 287.983 153.624 365.798C254.243 443.614 833.023 490.447 680 770.5C526.977 1050.55 13.9501 1023.24 1.5 1295C-7.8822 1499.79 375.5 1617 375.5 1617C375.5 1617 433.145 1564.16 415.5 1532C394.453 1493.63 306.5 1558 306.5 1558" stroke="url(#paint0_linear)"></path>
+												<defs>
+													<linearGradient id="paint0_linear" x1="366.102" y1="0.999881" x2="93.5378" y2="660.036" gradientUnits="userSpaceOnUse">
 														<stop offset="0.294736" stop-color="#31AFF2"></stop>
 														<stop offset="1" stop-color="#5553F0"></stop>
 													</linearGradient>
@@ -205,27 +519,33 @@
 												<path d="M26.8217 10.843C26.8217 10.843 23.1678 17.2667 23.0632 17.5393L6.59172 18.5158L20.1323 23.2201L11.206 36.8455L23.5661 26.798L31.8278 42.2308L27.893 22.4372L38.168 21.9497L27.9985 19.1068L28.7534 12.0385L29.1692 6.7761L26.8217 10.843Z" fill="#31AFF2"></path>
 											</svg><svg class="page-gel__features-star page-gel__features-star--purple" xmlns="http://www.w3.org/2000/svg" width="46" height="47" viewBox="0 0 46 47" fill="none">
 												<path d="M26.8217 10.843C26.8217 10.843 23.1678 17.2667 23.0632 17.5393L6.59172 18.5158L20.1323 23.2201L11.206 36.8455L23.5661 26.798L31.8278 42.2308L27.893 22.4372L38.168 21.9497L27.9985 19.1068L28.7534 12.0385L29.1692 6.7761L26.8217 10.843Z" fill="#31AFF2"></path>
-											</svg></div>
+											</svg>
+										</div>
 										<ul class="page-gel__features-list">
 											<li class="page-gel__features-item">
 												<h3 class="page-gel__features-title max-width max-width--col--13">Натуральный приятный аромат и цвет</h3>
 												<p class="page-gel__features-text max-width max-width--col--7">Бережно очищает интимную зону и&nbsp;обеспечивает ощущение чистоты и&nbsp;свежести в течение дня</p>
 											</li>
-											<li class="page-gel__features-item page-gel__features-item--side"><img class="page-gel__features-img-2" src="assets/images/gel-features-image-2.png">
+											<li class="page-gel__features-item page-gel__features-item--side" data-parallax-container="1">
+												<div class="page-gel__layout-img-2" data-parallax="2"><img class="page-gel__features-img-2" src="assets/images/gel-features-image-2.png"></div>
 												<h3 class="page-gel__features-title max-width max-width--col--10">Содержит молочную кислоту</h3>
 												<p class="page-gel__features-text max-width max-width--col--7">Поддерживает физиологический pH и&nbsp;естественную микрофлору слизистых оболочек половых органов</p>
 											</li>
-											<li class="page-gel__features-item"><img class="page-gel__features-img-3" src="assets/images/gel-features-image-3.png">
+											<li class="page-gel__features-item" data-parallax-container="2">
+												<div class="page-gel__layout-img-3" data-parallax="3"><img class="page-gel__features-img-3" src="assets/images/gel-features-image-3.png"></div>
 												<h3 class="page-gel__features-title max-width max-width--col--11">Активированная глицирризиновая кислота в составе</h3>
 												<p class="page-gel__features-text max-width max-width--col--8">Обладает выраженными противовоспалительным и регенерирующим эффектами, способствует уменьшению дискомфорта</p>
 											</li>
-											<li class="page-gel__features-item page-gel__features-item--side"><img class="page-gel__features-img-4" src="assets/images/gel-features-image-4.png">
+											<li class="page-gel__features-item page-gel__features-item--side" data-parallax-container="3">
+												<div class="page-gel__layout-img-4"><img class="page-gel__features-img-4" src="assets/images/gel-features-image-4.jpg"></div>
+												<div class="page-gel__layout-img-5" data-parallax="4"><img class="page-gel__features-img-5" src="assets/images/gel-features-image-5.jpg" alt=""></div>
+												<div class="page-gel__layout-img-6" data-parallax="4"><img class="page-gel__features-img-6" src="assets/images/gel-features-image-6.jpg" alt=""></div>
 												<h3 class="page-gel__features-title page-gel__features-title--small max-width max-width--col--10">Рекомендуется врачами гинекологами с заботой о женском интимном здоровье</h3>
 												<p class="page-gel__features-text max-width max-width--col--7">Самый назначаемый гинекологами и&nbsp;дерматовенерологами гель для&nbsp;интимной гигиены*</p>
 											</li>
 										</ul>
 									</section>
-									<section class="page-gel__compound">
+									<section class="page-gel__compound" data-parallax-container="4" id="structure" data-section="">
 										<div class="page-gel__compound-row">
 											<div class="page-gel__compound-col">
 												<h2 class="page-gel__compound-title">Состав</h2>
@@ -252,7 +572,7 @@
 											</div>
 										</div>
 									</section>
-									<section class="page-gel__method spray-page__section margin-top margin-top--l">
+									<section class="page-gel__method spray-page__section margin-top margin-top--l" id="instruction" data-section="">
 										<div class="spray-page__video">
 											<div class="spray-page__video-row">
 												<div class="spray-page__video-col">
@@ -300,11 +620,13 @@
 											</div>
 										</div>
 									</section>
-									<section class="page-gel__reviews">
+									<section class="page-gel__reviews" id="reviews" data-section="">
 										<div class="page-gel__reviews-layout"></div>
 										<div class="page-gel__reviews-top">
 											<div class="page-gel__reviews-left">
 												<h2 class="page-gel__reviews-title">Отзывы</h2>
+											</div>
+											<div class="page-gel__reviews-right">
 												<div class="page-gel__reviews-btns">
 													<div class="page-gel__reviews-btns-item">
 														<div class="b b--btn-left-right-slider js js--gel-reviews-btn--prev"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
@@ -317,12 +639,7 @@
 															</svg></div>
 													</div>
 												</div>
-											</div>
-											<div class="page-gel__reviews-right">
-												<div class="page-gel__reviews-links">
-													<div class="page-gel__reviews-links-item"><a class="category-item category-item--background--none" href="#">Все отзывы</a></div>
-													<div class="page-gel__reviews-links-item"><a class="category-item category-item--background--none" href="#">Задать вопрос врачу</a></div>
-												</div>
+												<div class="page-gel__reviews-links-item page-gel__reviews-links-item--mobile"><a class="category-item category-item--background--none" href="#">Все отзывы</a></div>
 											</div>
 										</div>
 										<div class="swiper-container swiper-container--visible swiper-container--slide-width-auto swiper-container--slide-height-max js js--gel-reviews-slider">
@@ -418,6 +735,10 @@
 													</div>
 												</div>
 											</div>
+										</div>
+										<div class="page-gel__reviews-links">
+											<div class="page-gel__reviews-links-item page-gel__reviews-links-item--desktop"><a class="category-item category-item--background--none" href="#">Все отзывы</a></div>
+											<div class="page-gel__reviews-links-item"><a class="category-item category-item--background--none" href="#">Задать вопрос врачу</a></div>
 										</div>
 									</section>
 								</main>

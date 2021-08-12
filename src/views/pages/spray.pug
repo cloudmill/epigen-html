@@ -5,6 +5,8 @@ include ../components/footer.pug
 //- block cookies
 block grid-test
 
+include ../components/block.pug
+
 mixin nav-page-d
   nav.nav-page-d
     ul.nav-page-d__list
@@ -340,98 +342,8 @@ block content
                   .spray-page__section-col
                     p.spray-page__section-text
                       |Разрешен к применению на любом сроке беременности и в период прегравидарной подготовки, не противопоказан детям.
-              section.spray-page__section.margin-top.margin-top--l(id='form' data-section='')
-                .product-slider
-                  .product-slider__slide.product-slider__slide--front
-                    .product-slider__content
-                      .product-slider__layout.product-slider__layout--15
-                      .product-slider__top
-                        ul.product-slider__btns
-                          li.product-slider__btns-item
-                            .spray-page__tabs-item.spray-page__tabs-item--active
-                              .spray-page__tabs-container
-                                .spray-page__tabs-row
-                                  .spray-page__tabs-col
-                                    +spray-svg.spray-page__tabs-icon
-                                  .spray-page__tabs-col
-                                    .spray-page__tabs-num
-                                      |15
-                          li.product-slider__btns-item
-                            .spray-page__tabs-item
-                              .spray-page__tabs-container
-                                .spray-page__tabs-row
-                                  .spray-page__tabs-col
-                                    +spray-svg.spray-page__tabs-icon
-                                  .spray-page__tabs-col
-                                    .spray-page__tabs-num
-                                      |60
-                        ul.product-slider__list
-                          li.product-slider__list-item
-                            |Для 1 полноценного курса лечения
-                          li.product-slider__list-item
-                            |Для 2-3 курсов короткой  профилактики
-                          li.product-slider__list-item
-                            |Для дорожной аптечки
-                          li.product-slider__list-item
-                            |Удобно брать с собой
-                      .product-slider__bottom
-                        .product-slider__counter
-                          .product-slider__counter-top
-                            .product-slider__counter-text.product-slider__counter-text--uppercase
-                              |до
-                          .product-slider__counter-bottom
-                            .product-slider__counter-count
-                              .product-slider__counter-text.product-slider__counter-text--large
-                                |115
-                            .product-slider__counter-amount
-                              .product-slider__counter-text.product-slider__counter-text--uppercase
-                                |доз
-                  .product-slider__slide
-                    .product-slider__content
-                      .product-slider__layout.product-slider__layout--60
-                      .product-slider__top
-                        ul.product-slider__btns
-                          li.product-slider__btns-item
-                            .spray-page__tabs-item
-                              .spray-page__tabs-container
-                                .spray-page__tabs-row
-                                  .spray-page__tabs-col
-                                    +spray-svg.spray-page__tabs-icon
-                                  .spray-page__tabs-col
-                                    .spray-page__tabs-num
-                                      |15
-                          li.product-slider__btns-item
-                            .spray-page__tabs-item.spray-page__tabs-item--active
-                              .spray-page__tabs-container
-                                .spray-page__tabs-row
-                                  .spray-page__tabs-col
-                                    +spray-svg.spray-page__tabs-icon
-                                  .spray-page__tabs-col
-                                    .spray-page__tabs-num
-                                      |60
-                        ul.product-slider__list
-                          li.product-slider__list-item
-                            |Во время беремнности
-                          li.product-slider__list-item
-                            |Для применения вместе с партнером 1 год использования по требованию
-                          li.product-slider__list-item
-                            |Для длительного лечения или профилактики
-                          li.product-slider__list-item
-                            |Для применения обоими партнерами
-                          li.product-slider__list-item
-                            |На период беременности
-                      .product-slider__bottom
-                        .product-slider__counter
-                          .product-slider__counter-top
-                            .product-slider__counter-text.product-slider__counter-text--uppercase
-                              |до
-                          .product-slider__counter-bottom
-                            .product-slider__counter-count
-                              .product-slider__counter-text.product-slider__counter-text--large
-                                |460
-                            .product-slider__counter-amount
-                              .product-slider__counter-text.product-slider__counter-text--uppercase
-                                |доз
+              section.spray-page__section.margin-top.margin-top--l
+                +block
               section.spray-page__section.margin-top.margin-top--l
                 ul.spray-page__list
                   li.spray-page__list-item.spray-page__list-item--default

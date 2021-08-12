@@ -1,0 +1,23 @@
+.wwave {
+    $comp: &;
+    $offset: 100px;
+
+    position: relative;
+    z-index: 0;
+    top: 500px;
+
+    pointer-events: none;
+
+    &__canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(-#{$offset}, -#{$offset});
+
+        width: calc(100% + (#{$offset} * 2));
+    }
+}
+
+.qweqweqwe {
+    min-height: 300vh;
+}

@@ -5,6 +5,8 @@ include ../components/footer.pug
 block cookies
 block grid-test
 
+include ../components/block
+
 mixin nav-page-d
   nav.nav-page-d(class=attributes.class)
     ul.nav-page-d__list
@@ -339,43 +341,8 @@ block content
                   .spray-page__section-col
                     p.spray-page__section-text
                       |Можно использовать на любом месяце беременности. Не имеет ограничений по возрасту и полу.
-              section.spray-page__section.margin-top.margin-top--95(id='form' data-section='')
-                .product-slider
-                  .product-slider__slide.product-slider__slide--front
-                    .product-slider__content
-                      .product-slider__layout.product-slider__layout--250
-                      .product-slider__top
-                        ul.product-slider__btns
-                          li.product-slider__btns-item.product-slider__btns-item--width--200
-                            .spray-page__tabs-item.spray-page__tabs-item--purple.spray-page__tabs-item--active(data-tab='1')
-                              .spray-page__tabs-container
-                                .spray-page__tabs-row
-                                  .spray-page__tabs-col
-                                    +spray-svg.spray-page__tabs-icon
-                                  .spray-page__tabs-col
-                                    .spray-page__tabs-num
-                                      |250
-                        ul.product-slider__list.product-slider__list--purple
-                          li.product-slider__list-item
-                            |Один флакон расчитан на 3 месяца использования
-                          li.product-slider__list-item
-                            |Для ежедневной интимной гигиены
-                          li.product-slider__list-item
-                            |Во время беременности
-                          li.product-slider__list-item
-                            |В период лечения гинекологических и урологических заболеваний
-                      .product-slider__bottom
-                        .product-slider__counter
-                          .product-slider__counter-top
-                            .product-slider__counter-text.product-slider__counter-text--uppercase
-                              |до
-                          .product-slider__counter-bottom
-                            .product-slider__counter-count
-                              .product-slider__counter-text.product-slider__counter-text--large
-                                |220
-                            .product-slider__counter-amount
-                              .product-slider__counter-text.product-slider__counter-text--uppercase
-                                |доз
+              section.spray-page__section.margin-top.margin-top--95
+                +block
               section.page-gel__features(id='features' data-section='')
                 .page-gel__features-layout
                   .page-gel__layout-img-1(data-parallax='1')

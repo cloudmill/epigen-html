@@ -23,7 +23,7 @@
 							<div class="aside">
 								<div class="aside__inner">
 									<div class="aside__container">
-										<div class="aside__top">
+										<div class="aside__top modal" data-modal="4">
 											<header class="header header--margin-bottom--default"><a class="header__logo" href="#"><svg class="header__logo-svg" xmlns="http://www.w3.org/2000/svg" width="101" height="44" viewBox="0 0 101 44" fill="none">
 														<path d="M35.911 43H101" stroke="#757575" stroke-width="0.408" stroke-miterlimit="4.04"></path>
 														<path fill-rule="evenodd" clip-rule="evenodd" d="M40.2562 27.6192L38.3283 37.5655H38.357L46.7737 27.5903H48.2124L45.6946 40.5062H43.9825L45.9248 30.5454H45.8673L37.4938 40.5494H36.0406L38.5585 27.6192" fill="#757575"></path>
@@ -40,22 +40,61 @@
 														<path d="M50.946 28.0371H101" stroke="#757575" stroke-width="0.408" stroke-miterlimit="4.04"></path>
 														<path d="M0 28.0371H35.6377" stroke="#757575" stroke-width="0.408" stroke-miterlimit="4.04"></path>
 													</svg></a>
-												<div class="header__menu">
+												<div class="header__menu" data-button="4">
 													<div class="header__text">Меню</div>
 													<div class="header__button">
 														<div class="header__burger"></div>
 													</div>
 												</div>
 											</header>
+											<div class="modal-aside">
+												<div class="modal-aside__container">
+													<div class="modal-aside__row">
+														<div class="modal-aside__col">
+															<nav class="modal-aside__nav">
+																<ul class="modal-aside__nav-list">
+																	<div class="modal-aside__nav-col">
+																		<li class="modal-aside__nav-item"><a class="modal-aside__nav-link" href="#">Где купить</a></li>
+																		<li class="modal-aside__nav-item"><a class="modal-aside__nav-link" href="#">Вопрос эксперту</a></li>
+																		<li class="modal-aside__nav-item"><a class="modal-aside__nav-link" href="#">Отзывы Спрей Эпиген</a></li>
+																		<li class="modal-aside__nav-item"><a class="modal-aside__nav-link" href="#">Отзывы Гель Эпиген</a></li>
+																	</div>
+																	<div class="modal-aside__nav-col">
+																		<li class="modal-aside__nav-item"><a class="modal-aside__nav-link" href="#">Видео с экспертами</a></li>
+																		<li class="modal-aside__nav-item"><a class="modal-aside__nav-link" href="#">Статьи экспертов</a></li>
+																		<li class="modal-aside__nav-item"><a class="modal-aside__nav-link" href="#">Вопрос-ответ</a></li>
+																		<li class="modal-aside__nav-item"><a class="modal-aside__nav-link" href="#">Специалистам</a></li>
+																	</div>
+																</ul>
+															</nav>
+															<div class="modal-aside__corp"><span>Сделано в&nbsp;</span><a class="modal-aside__corp-link" href="#">CloudMill</a></div>
+														</div>
+														<div class="modal-aside__col">
+															<div class="modal-aside__col-item"><a class="product-link product-link--modal--aside" href="#">
+																	<div class="product-link__image"><img class="product-link__img" src="assets/images/spray.jpeg" /></div>
+																	<div class="product-link__text">Спрей</div>
+																</a>
+																<div class="modal-aside__doc"><a class="modal-aside__doc-link" href="#">Политика конфиденциальности</a></div>
+															</div>
+															<div class="modal-aside__col-item"><a class="product-link product-link--modal--aside product-link--purple" href="#">
+																	<div class="product-link__image"><img class="product-link__img" src="assets/images/gel.jpeg" /></div>
+																	<div class="product-link__text">Гель</div>
+																</a>
+																<div class="modal-aside__doc"><a class="modal-aside__doc-link" href="#">Положение о пользовании сайтом</a></div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
 											<nav class="nav-page-d">
 												<ul class="nav-page-d__list">
-													<li class="nav-page-d__item nav-page-d__item--active"><a class="nav-page-d__link" href="#">Спрей</a></li>
-													<li class="nav-page-d__item"><a class="nav-page-d__link" href="#">Форма выпуска</a></li>
-													<li class="nav-page-d__item"><a class="nav-page-d__link" href="#">Назначение</a></li>
-													<li class="nav-page-d__item"><a class="nav-page-d__link" href="#">Состав</a></li>
-													<li class="nav-page-d__item"><a class="nav-page-d__link" href="#">Инструкция</a></li>
-													<li class="nav-page-d__item"><a class="nav-page-d__link" href="#">Диагностический тест</a></li>
-													<li class="nav-page-d__item"><a class="nav-page-d__link" href="#">Отзывы</a></li>
+													<li class="nav-page-d__item nav-page-d__item--active"><a class="nav-page-d__link" href="#" data-scroll="#spray">Спрей</a></li>
+													<li class="nav-page-d__item"><a class="nav-page-d__link" href="#" data-scroll="#form">Форма выпуска</a></li>
+													<li class="nav-page-d__item"><a class="nav-page-d__link" href="#" data-scroll="#purpose">Назначение</a></li>
+													<li class="nav-page-d__item"><a class="nav-page-d__link" href="#" data-scroll="#test">Диагностический тест</a></li>
+													<li class="nav-page-d__item"><a class="nav-page-d__link" href="#" data-scroll="#structure">Состав</a></li>
+													<li class="nav-page-d__item"><a class="nav-page-d__link" href="#" data-scroll="#instruction">Инструкция</a></li>
+													<li class="nav-page-d__item"><a class="nav-page-d__link" href="#" data-scroll="#reviews">Отзывы</a></li>
 												</ul>
 											</nav>
 										</div>
@@ -72,12 +111,12 @@
 						<div class="row__col row__col--main">
 							<div class="page">
 								<header class="page__header">
-									<div class="panel">
+									<div class="panel panel--nav">
 										<div class="panel__panel">
 											<div class="panel__row">
 												<div class="panel__col">
 													<div class="panel__inner">
-														<div class="panel__product"><a class="panel__product-item panel__product-item--active" href="#">
+														<div class="panel__product"><a class="panel__product-item" href="#">
 																<div class="panel__product-mark"></div>
 																<div class="panel__product-text">Спрей</div>
 															</a><a class="panel__product-item panel__product-item--purple" href="#">
@@ -86,30 +125,79 @@
 															</a></div>
 													</div>
 												</div>
-												<div class="panel__col">
-													<div class="panel__inner"><a class="panel__where-buy" href="#">Где купить</a>
-														<div class="panel__choice">
-															<div class="panel__choice-item" data-count="8">Симптомы</div>
-															<div class="panel__choice-item" data-count="12">Заболевания</div>
+												<div class="panel__wrapper">
+													<div class="panel__wrapper-row">
+														<div class="panel__wrapper-col">
+															<div class="panel__inner"><a class="panel__where-buy" href="#">Где купить</a>
+																<div class="panel__choice">
+																	<div class="panel__choice-item" data-count="8" data-modal-button="3">Симптомы</div>
+																	<div class="panel__choice-item" data-count="12" data-modal-button="2">Заболевания</div>
+																</div>
+															</div>
+														</div>
+														<div class="panel__wrapper-col">
+															<div class="panel__inner">
+																<div class="panel__test" data-button="3"><svg class="panel__test-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+																		<path d="M8 3V6M7 21H17C19.2091 21 21 19.2091 21 17V8C21 5.79086 19.2091 4 17 4H7C4.79086 4 3 5.79086 3 8V17C3 19.2091 4.79086 21 7 21Z" stroke="#31AFF2" stroke-linecap="round"></path>
+																		<path d="M16 3V6" stroke="#31AFF2" stroke-linecap="round"></path>
+																		<path d="M15 11L11.25 15L9 13.1818" stroke="#31AFF2" stroke-linecap="round" stroke-linejoin="round"></path>
+																	</svg>
+																	<div class="panel__test-text">Пройти тест</div>
+																</div>
+																<div class="panel__consultation"><svg class="panel__consultation-svg" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+																		<path d="M11 21H19C20.1 21 21 20.1 21 19V11C21 5.5 16.5 1 11 1C5.5 1 1 5.5 1 11C1 16.6 5.4 21 11 21Z" stroke="#31AFF2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+																		<path d="M16 12C15.4477 12 15 11.5523 15 11C15 10.4477 15.4477 10 16 10C16.5523 10 17 10.4477 17 11C17 11.5523 16.5523 12 16 12Z" fill="#31AFF2"></path>
+																		<path d="M6 12C5.44771 12 5 11.5523 5 11C5 10.4477 5.44771 10 6 10C6.55228 10 7 10.4477 7 11C7 11.5523 6.55228 12 6 12Z" fill="#31AFF2"></path>
+																		<path d="M11 12C10.4477 12 10 11.5523 10 11C10 10.4477 10.4477 10 11 10C11.5523 10 12 10.4477 12 11C12 11.5523 11.5523 12 11 12Z" fill="#31AFF2"></path>
+																	</svg>
+																	<div class="panel__consultation-text">Консультация эксперта</div>
+																</div>
+															</div>
 														</div>
 													</div>
-												</div>
-												<div class="panel__col">
-													<div class="panel__inner">
-														<div class="panel__test"><svg class="panel__test-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-																<path d="M8 3V6M7 21H17C19.2091 21 21 19.2091 21 17V8C21 5.79086 19.2091 4 17 4H7C4.79086 4 3 5.79086 3 8V17C3 19.2091 4.79086 21 7 21Z" stroke="#31AFF2" stroke-linecap="round"></path>
-																<path d="M16 3V6" stroke="#31AFF2" stroke-linecap="round"></path>
-																<path d="M15 11L11.25 15L9 13.1818" stroke="#31AFF2" stroke-linecap="round" stroke-linejoin="round"></path>
-															</svg>
-															<div class="panel__test-text">Пройти тест</div>
+													<div class="panel__modals">
+														<div class="panel-modal" data-modal-id="2">
+															<div class="panel-modal__container">
+																<div class="panel-modal__row">
+																	<div class="panel-modal__col">
+																		<ul class="panel-modal__list">
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">Генитальный герпес (I и II типа)</a></li>
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">ВПЧ</a></li>
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">Применение при беременности</a></li>
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">Молочница</a></li>
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">Бактериальный вагиноз</a></li>
+																		</ul>
+																	</div>
+																	<div class="panel-modal__col">
+																		<ul class="panel-modal__list">
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">ВПЧ</a></li>
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">Молочница</a></li>
+																		</ul>
+																	</div>
+																</div>
+															</div>
 														</div>
-														<div class="panel__consultation"><svg class="panel__consultation-svg" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
-																<path d="M11 21H19C20.1 21 21 20.1 21 19V11C21 5.5 16.5 1 11 1C5.5 1 1 5.5 1 11C1 16.6 5.4 21 11 21Z" stroke="#31AFF2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
-																<path d="M16 12C15.4477 12 15 11.5523 15 11C15 10.4477 15.4477 10 16 10C16.5523 10 17 10.4477 17 11C17 11.5523 16.5523 12 16 12Z" fill="#31AFF2"></path>
-																<path d="M6 12C5.44771 12 5 11.5523 5 11C5 10.4477 5.44771 10 6 10C6.55228 10 7 10.4477 7 11C7 11.5523 6.55228 12 6 12Z" fill="#31AFF2"></path>
-																<path d="M11 12C10.4477 12 10 11.5523 10 11C10 10.4477 10.4477 10 11 10C11.5523 10 12 10.4477 12 11C12 11.5523 11.5523 12 11 12Z" fill="#31AFF2"></path>
-															</svg>
-															<div class="panel__consultation-text">Консультация эксперта</div>
+														<div class="panel-modal" data-modal-id="3">
+															<div class="panel-modal__container">
+																<div class="panel-modal__row">
+																	<div class="panel-modal__col">
+																		<ul class="panel-modal__list">
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">Зуд</a></li>
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">Жжение</a></li>
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">Выделения, пузырьки</a></li>
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">Пузырьки, язвочки</a></li>
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">Болезненность, выделения</a></li>
+																		</ul>
+																	</div>
+																	<div class="panel-modal__col">
+																		<ul class="panel-modal__list">
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">Болезненность при половом контакте</a></li>
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">Боль внизу живота</a></li>
+																			<li class="panel-modal__item"><a class="panel-modal__link" href="#">Боль при мочеиспускании</a></li>
+																		</ul>
+																	</div>
+																</div>
+															</div>
 														</div>
 													</div>
 												</div>
@@ -131,12 +219,101 @@
 															<path d="M50.946 28.0371H101" stroke="#757575" stroke-width="0.408" stroke-miterlimit="4.04"></path>
 															<path d="M0 28.0371H35.6377" stroke="#757575" stroke-width="0.408" stroke-miterlimit="4.04"></path>
 														</svg></a>
-													<div class="header__menu">
+													<div class="header__menu" data-modal-button="1">
 														<div class="header__button">
 															<div class="header__burger"></div>
 														</div>
 													</div>
 												</header>
+												<nav class="nav-page-d nav-page-d--mobile">
+													<ul class="nav-page-d__list">
+														<li class="nav-page-d__item nav-page-d__item--active"><a class="category-item category-item--light-blue category-item--background--white" href="#" data-scroll="#spray">Спрей</a></li>
+														<li class="nav-page-d__item"><a class="category-item category-item--light-blue category-item--background--white" href="#" data-scroll="#form">Форма выпуска</a></li>
+														<li class="nav-page-d__item"><a class="category-item category-item--light-blue category-item--background--white" href="#" data-scroll="#purpose">Назначение</a></li>
+														<li class="nav-page-d__item"><a class="category-item category-item--light-blue category-item--background--white" href="#" data-scroll="#test">Диагностический тест</a></li>
+														<li class="nav-page-d__item"><a class="category-item category-item--light-blue category-item--background--white" href="#" data-scroll="#structure">Состав</a></li>
+														<li class="nav-page-d__item"><a class="category-item category-item--light-blue category-item--background--white" href="#" data-scroll="#instruction">Инструкция</a></li>
+														<li class="nav-page-d__item"><a class="category-item category-item--light-blue category-item--background--white" href="#" data-scroll="#reviews">Отзывы</a></li>
+													</ul>
+												</nav>
+											</div>
+											<div class="panel__modals">
+												<div class="modal-mobile modal-mobile--height--100vh-60p" data-modal-id="1">
+													<div class="modal-mobile__inner">
+														<div class="modal-mobile__container">
+															<div class="modal-mobile__products">
+																<div class="modal-mobile__products-item"><a class="product-link product-link--modal--mobile" href="#">
+																		<div class="product-link__image"><img class="product-link__img" src="assets/images/spray.jpeg" /></div>
+																		<div class="product-link__text">Спрей</div>
+																	</a></div>
+																<div class="modal-mobile__products-item"><a class="product-link product-link--modal--mobile product-link--purple" href="#">
+																		<div class="product-link__image"><img class="product-link__img" src="assets/images/gel.jpeg" /></div>
+																		<div class="product-link__text">Гель</div>
+																	</a></div>
+															</div>
+														</div>
+														<div class="panel panel--modal">
+															<div class="panel__choice">
+																<div class="modal-mobile__choice">
+																	<div class="modal-mobile__choice-button">
+																		<div class="panel__choice-item" data-count="8">Симптомы</div><svg class="modal-mobile__choice-svg" width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+																			<path d="M1 1L8 8L15 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																		</svg>
+																	</div>
+																	<div class="modal-mobile__choice-dropdown"></div>
+																</div>
+																<div class="modal-mobile__choice">
+																	<div class="modal-mobile__choice-button">
+																		<div class="panel__choice-item" data-count="12">Заболевания</div><svg class="modal-mobile__choice-svg" width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+																			<path d="M1 1L8 8L15 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																		</svg>
+																	</div>
+																	<div class="modal-mobile__choice-dropdown"></div>
+																</div>
+															</div>
+															<div class="modal-mobile__links">
+																<div class="modal-mobile__container">
+																	<ul class="modal-mobile__links-list">
+																		<li class="modal-mobile__links-item"><a class="panel__test" href="#"><svg class="panel__test-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+																					<path d="M8 3V6M7 21H17C19.2091 21 21 19.2091 21 17V8C21 5.79086 19.2091 4 17 4H7C4.79086 4 3 5.79086 3 8V17C3 19.2091 4.79086 21 7 21Z" stroke="#31AFF2" stroke-linecap="round"></path>
+																					<path d="M16 3V6" stroke="#31AFF2" stroke-linecap="round"></path>
+																					<path d="M15 11L11.25 15L9 13.1818" stroke="#31AFF2" stroke-linecap="round" stroke-linejoin="round"></path>
+																				</svg>
+																				<div class="panel__test-text">Пройти тест</div>
+																			</a></li>
+																		<li class="modal-mobile__links-item"><a class="panel__consultation" href="#"><svg class="panel__consultation-svg" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+																					<path d="M11 21H19C20.1 21 21 20.1 21 19V11C21 5.5 16.5 1 11 1C5.5 1 1 5.5 1 11C1 16.6 5.4 21 11 21Z" stroke="#31AFF2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+																					<path d="M16 12C15.4477 12 15 11.5523 15 11C15 10.4477 15.4477 10 16 10C16.5523 10 17 10.4477 17 11C17 11.5523 16.5523 12 16 12Z" fill="#31AFF2"></path>
+																					<path d="M6 12C5.44771 12 5 11.5523 5 11C5 10.4477 5.44771 10 6 10C6.55228 10 7 10.4477 7 11C7 11.5523 6.55228 12 6 12Z" fill="#31AFF2"></path>
+																					<path d="M11 12C10.4477 12 10 11.5523 10 11C10 10.4477 10.4477 10 11 10C11.5523 10 12 10.4477 12 11C12 11.5523 11.5523 12 11 12Z" fill="#31AFF2"></path>
+																				</svg>
+																				<div class="panel__consultation-text">Консультация эксперта</div>
+																			</a></li>
+																		<li class="modal-mobile__links-item"><a class="modal-mobile__links-link" href="#">Где купить</a></li>
+																		<li class="modal-mobile__links-item"><a class="modal-mobile__links-link" href="#">Вопрос эксперту</a></li>
+																		<li class="modal-mobile__links-item"><a class="modal-mobile__links-link" href="#">Отзывы Спрей Эпиген</a></li>
+																		<li class="modal-mobile__links-item"><a class="modal-mobile__links-link" href="#">Отзывы Гель Эпиген</a></li>
+																		<li class="modal-mobile__links-item"><a class="modal-mobile__links-link" href="#">Видео с экспертами</a></li>
+																		<li class="modal-mobile__links-item"><a class="modal-mobile__links-link" href="#">Статьи экспертов</a></li>
+																		<li class="modal-mobile__links-item"><a class="modal-mobile__links-link" href="#">Вопрос-ответ</a></li>
+																		<li class="modal-mobile__links-item"><a class="modal-mobile__links-link" href="#">Специалистам</a></li>
+																	</ul>
+																</div>
+															</div>
+														</div>
+														<div class="modal-mobile__bottom">
+															<div class="modal-mobile__container">
+																<ul class="modal-mobile__bottom-links">
+																	<li class="modal-mobile__bottom-item"><a class="modal-mobile__bottom-doc" href="#">Политика конфиденциальности</a></li>
+																	<li class="modal-mobile__bottom-item"><a class="modal-mobile__bottom-doc" href="#">Положение о пользовании сайтом</a></li>
+																	<li class="modal-mobile__bottom-item">
+																		<div class="modal-mobile__bottom-text"><span>Сделано в&nbsp;</span><a class="modal-mobile__bottom-link" href="#">CloudMill</a></div>
+																	</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -177,11 +354,11 @@
 														</li>
 													</ul>
 												</div>
-												<div class="spray-page__intro-col"><a class="button button--spray margin-bottom margin-bottom--m" href="#">Где купить</a></div>
+												<div class="spray-page__intro-col"><a class="button button--spray" href="#">Где купить</a></div>
 											</div>
 										</div>
 									</section>
-									<section class="spray-page__section margin-top margin-top--l">
+									<section class="spray-page__section margin-top margin-top--l" id="spray" data-section="">
 										<div class="spray-page__section-row">
 											<div class="spray-page__section-col">
 												<h3 class="spray-page__section-title">Эпиген Интим Спрей предназначен для профилактики и лечения гинекологических заболеваний</h3>
@@ -192,146 +369,142 @@
 										</div>
 									</section>
 									<section class="spray-page__section margin-top margin-top--l">
-										<div class="product-slider">
-											<div class="product-slider__slide product-slider__slide--front">
-												<div class="product-slider__content">
-													<div class="product-slider__layout product-slider__layout--15"></div>
-													<div class="product-slider__top">
-														<ul class="product-slider__btns">
-															<li class="product-slider__btns-item">
-																<div class="spray-page__tabs-item spray-page__tabs-item--active">
-																	<div class="spray-page__tabs-container">
-																		<div class="spray-page__tabs-row">
-																			<div class="spray-page__tabs-col"><svg class="spray-svg spray-page__tabs-icon" xmlns="http://www.w3.org/2000/svg" width="19" height="65" viewBox="0 0 19 65" fill="none">
-																					<rect class="spray-svg__background spray-svg__line spray-svg__line--stroke" x="5.01389" y="0.5" width="8.02778" height="8.02778" rx="1.5" fill="#31AFF2" stroke="white"></rect>
-																					<rect class="spray-svg__background spray-svg__line spray-svg__line--stroke" x="4.11111" y="7.72223" width="9.83333" height="8.02778" rx="1.5" fill="#31AFF2" stroke="white"></rect>
-																					<rect class="spray-svg__background spray-svg__line spray-svg__line--stroke" x="3.20833" y="13.1389" width="11.6389" height="11.6389" rx="1.5" fill="#31AFF2" stroke="white"></rect>
-																					<line class="spray-svg__line spray-svg__line--stroke" x1="5.5" y1="13" x2="5.5" y2="23" stroke="white"></line>
-																					<path class="spray-svg__line spray-svg__line--stroke" d="M9 13L9 23" stroke="white"></path>
-																					<line class="spray-svg__line spray-svg__line--stroke" x1="12.5" y1="13" x2="12.5" y2="23" stroke="white"></line>
-																					<path class="spray-svg__background spray-svg__line spray-svg__line--stroke" d="M0.5 26.4102C0.5 25.8833 0.776449 25.395 1.22826 25.1239L4.29611 23.2832C4.52924 23.1433 4.79599 23.0695 5.06786 23.0695H12.9877C13.2596 23.0695 13.5263 23.1433 13.7594 23.2832L16.8273 25.1239C17.2791 25.395 17.5556 25.8833 17.5556 26.4102V63C17.5556 63.8284 16.884 64.5 16.0556 64.5H2C1.17157 64.5 0.5 63.8284 0.5 63V26.4102Z" fill="#31AFF2" stroke="white"></path>
-																					<circle class="spray-svg__background spray-svg__line spray-svg__line--fill" cx="9.02778" cy="3.61109" r="0.902778" fill="white"></circle>
-																				</svg></div>
-																			<div class="spray-page__tabs-col">
-																				<div class="spray-page__tabs-num">15</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</li>
-															<li class="product-slider__btns-item">
-																<div class="spray-page__tabs-item">
-																	<div class="spray-page__tabs-container">
-																		<div class="spray-page__tabs-row">
-																			<div class="spray-page__tabs-col"><svg class="spray-svg spray-page__tabs-icon" xmlns="http://www.w3.org/2000/svg" width="19" height="65" viewBox="0 0 19 65" fill="none">
-																					<rect class="spray-svg__background spray-svg__line spray-svg__line--stroke" x="5.01389" y="0.5" width="8.02778" height="8.02778" rx="1.5" fill="#31AFF2" stroke="white"></rect>
-																					<rect class="spray-svg__background spray-svg__line spray-svg__line--stroke" x="4.11111" y="7.72223" width="9.83333" height="8.02778" rx="1.5" fill="#31AFF2" stroke="white"></rect>
-																					<rect class="spray-svg__background spray-svg__line spray-svg__line--stroke" x="3.20833" y="13.1389" width="11.6389" height="11.6389" rx="1.5" fill="#31AFF2" stroke="white"></rect>
-																					<line class="spray-svg__line spray-svg__line--stroke" x1="5.5" y1="13" x2="5.5" y2="23" stroke="white"></line>
-																					<path class="spray-svg__line spray-svg__line--stroke" d="M9 13L9 23" stroke="white"></path>
-																					<line class="spray-svg__line spray-svg__line--stroke" x1="12.5" y1="13" x2="12.5" y2="23" stroke="white"></line>
-																					<path class="spray-svg__background spray-svg__line spray-svg__line--stroke" d="M0.5 26.4102C0.5 25.8833 0.776449 25.395 1.22826 25.1239L4.29611 23.2832C4.52924 23.1433 4.79599 23.0695 5.06786 23.0695H12.9877C13.2596 23.0695 13.5263 23.1433 13.7594 23.2832L16.8273 25.1239C17.2791 25.395 17.5556 25.8833 17.5556 26.4102V63C17.5556 63.8284 16.884 64.5 16.0556 64.5H2C1.17157 64.5 0.5 63.8284 0.5 63V26.4102Z" fill="#31AFF2" stroke="white"></path>
-																					<circle class="spray-svg__background spray-svg__line spray-svg__line--fill" cx="9.02778" cy="3.61109" r="0.902778" fill="white"></circle>
-																				</svg></div>
-																			<div class="spray-page__tabs-col">
-																				<div class="spray-page__tabs-num">60</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</li>
-														</ul>
-														<ul class="product-slider__list">
-															<li class="product-slider__list-item">Для 1 полноценного курса лечения</li>
-															<li class="product-slider__list-item">Для 2-3 курсов короткой  профилактики</li>
-															<li class="product-slider__list-item">Для дорожной аптечки</li>
-															<li class="product-slider__list-item">Удобно брать с собой</li>
-														</ul>
+										<div class="block">
+											<div class="block__frame block__frame--left block__frame--front">
+												<div class="block__slide">
+													<div class="block__layout">
+														<div class="block__background block__background--15"></div>
 													</div>
-													<div class="product-slider__bottom">
-														<div class="product-slider__counter">
-															<div class="product-slider__counter-top">
-																<div class="product-slider__counter-text product-slider__counter-text--uppercase">до</div>
-															</div>
-															<div class="product-slider__counter-bottom">
-																<div class="product-slider__counter-count">
-																	<div class="product-slider__counter-text product-slider__counter-text--large">115</div>
+													<div class="block__content">
+														<div class="block__top">
+															<div class="block__control">
+																<div class="block__control-item">
+																	<div class="spray-page__tabs-item spray-page__tabs-item--in-block spray-page__tabs-item--active">
+																		<div class="spray-page__tabs-container">
+																			<div class="spray-page__tabs-row">
+																				<div class="spray-page__tabs-col"><svg class="spray-svg spray-page__tabs-icon" xmlns="http://www.w3.org/2000/svg" width="19" height="65" viewBox="0 0 19 65" fill="none">
+																						<rect class="spray-svg__background spray-svg__line spray-svg__line--stroke" x="5.01389" y="0.5" width="8.02778" height="8.02778" rx="1.5" fill="#31AFF2" stroke="white"></rect>
+																						<rect class="spray-svg__background spray-svg__line spray-svg__line--stroke" x="4.11111" y="7.72223" width="9.83333" height="8.02778" rx="1.5" fill="#31AFF2" stroke="white"></rect>
+																						<rect class="spray-svg__background spray-svg__line spray-svg__line--stroke" x="3.20833" y="13.1389" width="11.6389" height="11.6389" rx="1.5" fill="#31AFF2" stroke="white"></rect>
+																						<line class="spray-svg__line spray-svg__line--stroke" x1="5.5" y1="13" x2="5.5" y2="23" stroke="white"></line>
+																						<path class="spray-svg__line spray-svg__line--stroke" d="M9 13L9 23" stroke="white"></path>
+																						<line class="spray-svg__line spray-svg__line--stroke" x1="12.5" y1="13" x2="12.5" y2="23" stroke="white"></line>
+																						<path class="spray-svg__background spray-svg__line spray-svg__line--stroke" d="M0.5 26.4102C0.5 25.8833 0.776449 25.395 1.22826 25.1239L4.29611 23.2832C4.52924 23.1433 4.79599 23.0695 5.06786 23.0695H12.9877C13.2596 23.0695 13.5263 23.1433 13.7594 23.2832L16.8273 25.1239C17.2791 25.395 17.5556 25.8833 17.5556 26.4102V63C17.5556 63.8284 16.884 64.5 16.0556 64.5H2C1.17157 64.5 0.5 63.8284 0.5 63V26.4102Z" fill="#31AFF2" stroke="white"></path>
+																						<circle class="spray-svg__background spray-svg__line spray-svg__line--fill" cx="9.02778" cy="3.61109" r="0.902778" fill="white"></circle>
+																					</svg></div>
+																				<div class="spray-page__tabs-col">
+																					<div class="spray-page__tabs-num">15</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
 																</div>
-																<div class="product-slider__counter-amount">
-																	<div class="product-slider__counter-text product-slider__counter-text--uppercase">доз</div>
+																<div class="block__control-item">
+																	<div class="spray-page__tabs-item spray-page__tabs-item--in-block">
+																		<div class="spray-page__tabs-container">
+																			<div class="spray-page__tabs-row">
+																				<div class="spray-page__tabs-col"><svg class="spray-svg spray-page__tabs-icon" xmlns="http://www.w3.org/2000/svg" width="19" height="65" viewBox="0 0 19 65" fill="none">
+																						<rect class="spray-svg__background spray-svg__line spray-svg__line--stroke" x="5.01389" y="0.5" width="8.02778" height="8.02778" rx="1.5" fill="#31AFF2" stroke="white"></rect>
+																						<rect class="spray-svg__background spray-svg__line spray-svg__line--stroke" x="4.11111" y="7.72223" width="9.83333" height="8.02778" rx="1.5" fill="#31AFF2" stroke="white"></rect>
+																						<rect class="spray-svg__background spray-svg__line spray-svg__line--stroke" x="3.20833" y="13.1389" width="11.6389" height="11.6389" rx="1.5" fill="#31AFF2" stroke="white"></rect>
+																						<line class="spray-svg__line spray-svg__line--stroke" x1="5.5" y1="13" x2="5.5" y2="23" stroke="white"></line>
+																						<path class="spray-svg__line spray-svg__line--stroke" d="M9 13L9 23" stroke="white"></path>
+																						<line class="spray-svg__line spray-svg__line--stroke" x1="12.5" y1="13" x2="12.5" y2="23" stroke="white"></line>
+																						<path class="spray-svg__background spray-svg__line spray-svg__line--stroke" d="M0.5 26.4102C0.5 25.8833 0.776449 25.395 1.22826 25.1239L4.29611 23.2832C4.52924 23.1433 4.79599 23.0695 5.06786 23.0695H12.9877C13.2596 23.0695 13.5263 23.1433 13.7594 23.2832L16.8273 25.1239C17.2791 25.395 17.5556 25.8833 17.5556 26.4102V63C17.5556 63.8284 16.884 64.5 16.0556 64.5H2C1.17157 64.5 0.5 63.8284 0.5 63V26.4102Z" fill="#31AFF2" stroke="white"></path>
+																						<circle class="spray-svg__background spray-svg__line spray-svg__line--fill" cx="9.02778" cy="3.61109" r="0.902778" fill="white"></circle>
+																					</svg></div>
+																				<div class="spray-page__tabs-col">
+																					<div class="spray-page__tabs-num">60</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<ul class="block__list">
+																<li class="block__list-item">Для 1 полноценного курса лечения</li>
+																<li class="block__list-item">Для 2-3 курсов короткой  профилактики</li>
+																<li class="block__list-item">Для дорожной аптечки</li>
+																<li class="block__list-item">Удобно брать с собой</li>
+															</ul>
+														</div>
+														<div class="block__bottom">
+															<div class="block__format">
+																<div class="block__format-label">до</div>
+																<div class="block__format-row">
+																	<div class="block__format-value">115</div>
+																	<div class="block__format-label block__format-label--in-row">Доз</div>
 																</div>
 															</div>
 														</div>
 													</div>
 												</div>
 											</div>
-											<div class="product-slider__slide">
-												<div class="product-slider__content">
-													<div class="product-slider__layout product-slider__layout--60"></div>
-													<div class="product-slider__top">
-														<ul class="product-slider__btns">
-															<li class="product-slider__btns-item">
-																<div class="spray-page__tabs-item">
-																	<div class="spray-page__tabs-container">
-																		<div class="spray-page__tabs-row">
-																			<div class="spray-page__tabs-col"><svg class="spray-svg spray-page__tabs-icon" xmlns="http://www.w3.org/2000/svg" width="19" height="65" viewBox="0 0 19 65" fill="none">
-																					<rect class="spray-svg__background spray-svg__line spray-svg__line--stroke" x="5.01389" y="0.5" width="8.02778" height="8.02778" rx="1.5" fill="#31AFF2" stroke="white"></rect>
-																					<rect class="spray-svg__background spray-svg__line spray-svg__line--stroke" x="4.11111" y="7.72223" width="9.83333" height="8.02778" rx="1.5" fill="#31AFF2" stroke="white"></rect>
-																					<rect class="spray-svg__background spray-svg__line spray-svg__line--stroke" x="3.20833" y="13.1389" width="11.6389" height="11.6389" rx="1.5" fill="#31AFF2" stroke="white"></rect>
-																					<line class="spray-svg__line spray-svg__line--stroke" x1="5.5" y1="13" x2="5.5" y2="23" stroke="white"></line>
-																					<path class="spray-svg__line spray-svg__line--stroke" d="M9 13L9 23" stroke="white"></path>
-																					<line class="spray-svg__line spray-svg__line--stroke" x1="12.5" y1="13" x2="12.5" y2="23" stroke="white"></line>
-																					<path class="spray-svg__background spray-svg__line spray-svg__line--stroke" d="M0.5 26.4102C0.5 25.8833 0.776449 25.395 1.22826 25.1239L4.29611 23.2832C4.52924 23.1433 4.79599 23.0695 5.06786 23.0695H12.9877C13.2596 23.0695 13.5263 23.1433 13.7594 23.2832L16.8273 25.1239C17.2791 25.395 17.5556 25.8833 17.5556 26.4102V63C17.5556 63.8284 16.884 64.5 16.0556 64.5H2C1.17157 64.5 0.5 63.8284 0.5 63V26.4102Z" fill="#31AFF2" stroke="white"></path>
-																					<circle class="spray-svg__background spray-svg__line spray-svg__line--fill" cx="9.02778" cy="3.61109" r="0.902778" fill="white"></circle>
-																				</svg></div>
-																			<div class="spray-page__tabs-col">
-																				<div class="spray-page__tabs-num">15</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</li>
-															<li class="product-slider__btns-item">
-																<div class="spray-page__tabs-item spray-page__tabs-item--active">
-																	<div class="spray-page__tabs-container">
-																		<div class="spray-page__tabs-row">
-																			<div class="spray-page__tabs-col"><svg class="spray-svg spray-page__tabs-icon" xmlns="http://www.w3.org/2000/svg" width="19" height="65" viewBox="0 0 19 65" fill="none">
-																					<rect class="spray-svg__background spray-svg__line spray-svg__line--stroke" x="5.01389" y="0.5" width="8.02778" height="8.02778" rx="1.5" fill="#31AFF2" stroke="white"></rect>
-																					<rect class="spray-svg__background spray-svg__line spray-svg__line--stroke" x="4.11111" y="7.72223" width="9.83333" height="8.02778" rx="1.5" fill="#31AFF2" stroke="white"></rect>
-																					<rect class="spray-svg__background spray-svg__line spray-svg__line--stroke" x="3.20833" y="13.1389" width="11.6389" height="11.6389" rx="1.5" fill="#31AFF2" stroke="white"></rect>
-																					<line class="spray-svg__line spray-svg__line--stroke" x1="5.5" y1="13" x2="5.5" y2="23" stroke="white"></line>
-																					<path class="spray-svg__line spray-svg__line--stroke" d="M9 13L9 23" stroke="white"></path>
-																					<line class="spray-svg__line spray-svg__line--stroke" x1="12.5" y1="13" x2="12.5" y2="23" stroke="white"></line>
-																					<path class="spray-svg__background spray-svg__line spray-svg__line--stroke" d="M0.5 26.4102C0.5 25.8833 0.776449 25.395 1.22826 25.1239L4.29611 23.2832C4.52924 23.1433 4.79599 23.0695 5.06786 23.0695H12.9877C13.2596 23.0695 13.5263 23.1433 13.7594 23.2832L16.8273 25.1239C17.2791 25.395 17.5556 25.8833 17.5556 26.4102V63C17.5556 63.8284 16.884 64.5 16.0556 64.5H2C1.17157 64.5 0.5 63.8284 0.5 63V26.4102Z" fill="#31AFF2" stroke="white"></path>
-																					<circle class="spray-svg__background spray-svg__line spray-svg__line--fill" cx="9.02778" cy="3.61109" r="0.902778" fill="white"></circle>
-																				</svg></div>
-																			<div class="spray-page__tabs-col">
-																				<div class="spray-page__tabs-num">60</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</li>
-														</ul>
-														<ul class="product-slider__list">
-															<li class="product-slider__list-item">Во время беремнности</li>
-															<li class="product-slider__list-item">Для применения вместе с партнером 1 год использования по требованию</li>
-															<li class="product-slider__list-item">Для длительного лечения или профилактики</li>
-															<li class="product-slider__list-item">Для применения обоими партнерами</li>
-															<li class="product-slider__list-item">На период беременности</li>
-														</ul>
+											<div class="block__frame block__frame--right">
+												<div class="block__slide">
+													<div class="block__layout">
+														<div class="block__background block__background--60"></div>
 													</div>
-													<div class="product-slider__bottom">
-														<div class="product-slider__counter">
-															<div class="product-slider__counter-top">
-																<div class="product-slider__counter-text product-slider__counter-text--uppercase">до</div>
-															</div>
-															<div class="product-slider__counter-bottom">
-																<div class="product-slider__counter-count">
-																	<div class="product-slider__counter-text product-slider__counter-text--large">460</div>
+													<div class="block__content">
+														<div class="block__top">
+															<div class="block__control">
+																<div class="block__control-item">
+																	<div class="spray-page__tabs-item spray-page__tabs-item--in-block">
+																		<div class="spray-page__tabs-container">
+																			<div class="spray-page__tabs-row">
+																				<div class="spray-page__tabs-col"><svg class="spray-svg spray-page__tabs-icon" xmlns="http://www.w3.org/2000/svg" width="19" height="65" viewBox="0 0 19 65" fill="none">
+																						<rect class="spray-svg__background spray-svg__line spray-svg__line--stroke" x="5.01389" y="0.5" width="8.02778" height="8.02778" rx="1.5" fill="#31AFF2" stroke="white"></rect>
+																						<rect class="spray-svg__background spray-svg__line spray-svg__line--stroke" x="4.11111" y="7.72223" width="9.83333" height="8.02778" rx="1.5" fill="#31AFF2" stroke="white"></rect>
+																						<rect class="spray-svg__background spray-svg__line spray-svg__line--stroke" x="3.20833" y="13.1389" width="11.6389" height="11.6389" rx="1.5" fill="#31AFF2" stroke="white"></rect>
+																						<line class="spray-svg__line spray-svg__line--stroke" x1="5.5" y1="13" x2="5.5" y2="23" stroke="white"></line>
+																						<path class="spray-svg__line spray-svg__line--stroke" d="M9 13L9 23" stroke="white"></path>
+																						<line class="spray-svg__line spray-svg__line--stroke" x1="12.5" y1="13" x2="12.5" y2="23" stroke="white"></line>
+																						<path class="spray-svg__background spray-svg__line spray-svg__line--stroke" d="M0.5 26.4102C0.5 25.8833 0.776449 25.395 1.22826 25.1239L4.29611 23.2832C4.52924 23.1433 4.79599 23.0695 5.06786 23.0695H12.9877C13.2596 23.0695 13.5263 23.1433 13.7594 23.2832L16.8273 25.1239C17.2791 25.395 17.5556 25.8833 17.5556 26.4102V63C17.5556 63.8284 16.884 64.5 16.0556 64.5H2C1.17157 64.5 0.5 63.8284 0.5 63V26.4102Z" fill="#31AFF2" stroke="white"></path>
+																						<circle class="spray-svg__background spray-svg__line spray-svg__line--fill" cx="9.02778" cy="3.61109" r="0.902778" fill="white"></circle>
+																					</svg></div>
+																				<div class="spray-page__tabs-col">
+																					<div class="spray-page__tabs-num">15</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
 																</div>
-																<div class="product-slider__counter-amount">
-																	<div class="product-slider__counter-text product-slider__counter-text--uppercase">доз</div>
+																<div class="block__control-item">
+																	<div class="spray-page__tabs-item spray-page__tabs-item--in-block spray-page__tabs-item--active">
+																		<div class="spray-page__tabs-container">
+																			<div class="spray-page__tabs-row">
+																				<div class="spray-page__tabs-col"><svg class="spray-svg spray-page__tabs-icon" xmlns="http://www.w3.org/2000/svg" width="19" height="65" viewBox="0 0 19 65" fill="none">
+																						<rect class="spray-svg__background spray-svg__line spray-svg__line--stroke" x="5.01389" y="0.5" width="8.02778" height="8.02778" rx="1.5" fill="#31AFF2" stroke="white"></rect>
+																						<rect class="spray-svg__background spray-svg__line spray-svg__line--stroke" x="4.11111" y="7.72223" width="9.83333" height="8.02778" rx="1.5" fill="#31AFF2" stroke="white"></rect>
+																						<rect class="spray-svg__background spray-svg__line spray-svg__line--stroke" x="3.20833" y="13.1389" width="11.6389" height="11.6389" rx="1.5" fill="#31AFF2" stroke="white"></rect>
+																						<line class="spray-svg__line spray-svg__line--stroke" x1="5.5" y1="13" x2="5.5" y2="23" stroke="white"></line>
+																						<path class="spray-svg__line spray-svg__line--stroke" d="M9 13L9 23" stroke="white"></path>
+																						<line class="spray-svg__line spray-svg__line--stroke" x1="12.5" y1="13" x2="12.5" y2="23" stroke="white"></line>
+																						<path class="spray-svg__background spray-svg__line spray-svg__line--stroke" d="M0.5 26.4102C0.5 25.8833 0.776449 25.395 1.22826 25.1239L4.29611 23.2832C4.52924 23.1433 4.79599 23.0695 5.06786 23.0695H12.9877C13.2596 23.0695 13.5263 23.1433 13.7594 23.2832L16.8273 25.1239C17.2791 25.395 17.5556 25.8833 17.5556 26.4102V63C17.5556 63.8284 16.884 64.5 16.0556 64.5H2C1.17157 64.5 0.5 63.8284 0.5 63V26.4102Z" fill="#31AFF2" stroke="white"></path>
+																						<circle class="spray-svg__background spray-svg__line spray-svg__line--fill" cx="9.02778" cy="3.61109" r="0.902778" fill="white"></circle>
+																					</svg></div>
+																				<div class="spray-page__tabs-col">
+																					<div class="spray-page__tabs-num">60</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<ul class="block__list">
+																<li class="block__list-item">Во время беремнности</li>
+																<li class="block__list-item">Для применения вместе с партнером 1 год использования по требованию</li>
+																<li class="block__list-item">Для длительного лечения или профилактики</li>
+																<li class="block__list-item">Для применения обоими партнерами</li>
+																<li class="block__list-item">На период беременности</li>
+															</ul>
+														</div>
+														<div class="block__bottom">
+															<div class="block__format">
+																<div class="block__format-label">до</div>
+																<div class="block__format-row">
+																	<div class="block__format-value">460</div>
+																	<div class="block__format-label block__format-label--in-row">Доз</div>
 																</div>
 															</div>
 														</div>
@@ -523,7 +696,7 @@
 											</li>
 										</ul>
 									</section>
-									<section class="spray-page__section margin-top margin-top--l">
+									<section class="spray-page__section margin-top margin-top--l" id="purpose" data-section="">
 										<h3 class="spray-page__section-title">Применяется при лечении</h3>
 										<div class="spray-page__use margin-top margin-top--md">
 											<ul class="spray-page__use-list">
@@ -689,7 +862,7 @@
 									</section>
 									<section class="spray-page__section margin-top margin-top--l">
 										<div class="spray-page__content">
-											<div class="spray-page__content-layout"><svg class="spray-page__content-img" xmlns="http://www.w3.org/2000/svg" width="46" height="47" viewBox="0 0 46 47" fill="none">
+											<div class="spray-page__content-layout" data-parallax="1"><svg class="spray-page__content-img" xmlns="http://www.w3.org/2000/svg" width="46" height="47" viewBox="0 0 46 47" fill="none">
 													<path d="M26.8217 10.843C26.8217 10.843 23.1678 17.2667 23.0632 17.5393L6.59172 18.5158L20.1323 23.2201L11.206 36.8455L23.5661 26.798L31.8278 42.2308L27.893 22.4372L38.168 21.9497L27.9985 19.1068L28.7534 12.0385L29.1692 6.7761L26.8217 10.843Z" fill="#31AFF2"></path>
 												</svg><svg class="spray-page__content-icon" width="41" height="45" viewBox="0 0 41 45" fill="none" xmlns="http://www.w3.org/2000/svg">
 													<path d="M26.1615 1.68279C23.9451 0.761264 21.8474 0.280466 20.1851 0C26.5177 7.25204 28.8132 16.7077 25.3303 25.3221C21.5703 34.6576 11.9923 40.5874 0.989466 41.6291C0.831151 41.6692 0.712415 41.6692 0.593679 41.6692H0.554101C0.197893 41.7093 0 41.6692 0 41.6692C0 41.6692 8.58856 46.1566 19.1165 44.7142C29.0903 43.352 38.1934 37.5023 40.4098 27.6459C43.4969 14.0634 33.8397 4.72785 26.1615 1.68279Z" fill="#6953F0"></path>
@@ -714,11 +887,17 @@
 											</div>
 										</div>
 									</section>
-									<section class="test margin-top margin-top--md" id="test">
+									<section class="test margin-top margin-top--md" id="test" data-parallax-container="1" data-section="">
 										<form class="test__container" action="/">
 											<div class="test__row">
 												<div class="test__col">
-													<div class="test__question">Какие проявления в интимной зоне вас беспокоят?</div>
+													<ul class="test__questions">
+														<li class="test__question test__question--active">Какие проявления в интимной зоне вас беспокоят?</li>
+														<li class="test__question">2</li>
+														<li class="test__question">3</li>
+														<li class="test__question">4</li>
+														<li class="test__question">5</li>
+													</ul>
 													<ul class="test__dots">
 														<li class="test__dot test__dot--active"></li>
 														<li class="test__dot"></li>
@@ -879,7 +1058,7 @@
 											</div>
 										</div>
 									</section>
-									<section class="spray-page__section margin-top margin-top--l">
+									<section class="spray-page__section margin-top margin-top--l" id="structure" data-section="">
 										<div class="spray-page__structure">
 											<div class="spray-page__structure-row">
 												<div class="spray-page__structure-col">
@@ -925,7 +1104,7 @@
 											</div>
 										</div>
 									</section>
-									<section class="spray-page__section margin-top margin-top--l">
+									<section class="spray-page__section margin-top margin-top--l" id="instruction" data-section="">
 										<div class="spray-page__video">
 											<div class="spray-page__video-row">
 												<div class="spray-page__video-col">
@@ -954,7 +1133,349 @@
 											</div>
 										</div>
 									</section>
-									<section class="spray-page__section margin-top margin-top--l"></section>
+									<section class="main-page" id="reviews" data-section="">
+										<div class="main-page__reviews">
+											<div class="main-page__reviews-bg"></div>
+											<div class="b b--reviews-slider-main-page">
+												<div class="b__top">
+													<div class="spray-page__slider-row">
+														<div class="spray-page__slider-col">
+															<h3 class="spray-page__slider-title">Отзывы</h3>
+														</div>
+														<div class="spray-page__slider-col">
+															<div class="spray-page__slider-categories">
+																<div class="spray-page__slider-item"><a class="border-link border-link--active" href="#">Все отзывы</a></div>
+																<div class="spray-page__slider-item"><a class="border-link" href="#">Отзывы врачей</a></div>
+															</div>
+														</div>
+														<div class="spray-page__slider-col"><a class="spray-page__slider-link" href="#">Задать вопрос врачу</a></div>
+													</div>
+												</div>
+												<div class="b__bottom">
+													<div class="b__slide">
+														<div class="b__slide-row b__slide-row--desktop">
+															<div class="b__slide-col">
+																<div class="b__slide-img"><img class="b__img" src="assets/images/reviews-slider-1.jpeg"></div>
+															</div>
+															<div class="b__slide-col">
+																<div class="b__content">
+																	<div class="b__content-row">
+																		<div class="b__content-col">
+																			<div class="b__content-top">
+																				<h5 class="b__slide-title"><span class="b__desc-span">Манукян Наринэ Георгиевна</span></h5>
+																				<p class="b__desc"><span class="b__desc-span">Врач акушер-гинеколог, гинеколог-эндокринолог, лучший врач корпорации</span></p>
+																				<div class="b__content-wrapper">
+																					<p class="b__review">Спрей Эпиген Интим представляет собой эффективное и безопасное средство для лечения, профилактики генитальных вирусных инфекций, а гель предназначен для интимной гигиены на каждый день...</p>
+																				</div>
+																			</div>
+																			<div class="b__content-bottom"><a class="b__link" href="#">Читать отзыв</a><a class="button button--reviews-slider btn-animation" href="#"><span class="btn-animation__text">Все отзывы</span></a></div>
+																		</div>
+																		<div class="b__content-col">
+																			<div class="b__content-top">
+																				<div class="b__control">
+																					<div class="b__control-item">
+																						<div class="b b--btn-left-right-slider btn-animation btn-animation--icon" data-command-slider-arrow="prev"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
+																								<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																							</svg></div>
+																					</div>
+																					<div class="b__control-item">
+																						<div class="b b--btn-left-right-slider b--right btn-animation btn-animation--icon" data-command-slider-arrow="next"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
+																								<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																							</svg></div>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="b__content-bottom">
+																				<div class="b__preview">
+																					<div class="b__preview-counter">
+																						<div class="b__preview-wrapper"><span class="b__preview-count">1</span>/4</div>
+																					</div>
+																					<div class="b__preview-image"><img class="b__preview-img" src="assets/images/reviews-slider-2.jpeg"></div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="b__slide-mobile">
+															<div class="b__slide-row">
+																<div class="b__slide-col">
+																	<div class="b__slide-top">
+																		<div class="b__slide-img"><img class="b__img" src="assets/images/reviews-slider-1.jpeg"></div>
+																		<div class="b__content">
+																			<h5 class="b__slide-title"><span class="b__desc-span">Сапрыкина Людмила Витальевна</span></h5>
+																			<div class="b__desc"><span class="b__desc-span">Ассистент кафедры акушерства и гинекологии ЛФ ФГБОУ ВО им. Н.И. Пирогова МЗ РФ, врач акушер-гинеколог высшей категории, к.м.н. (Москва).</span></div>
+																		</div>
+																	</div>
+																	<div class="b__slide-bottom">
+																		<p class="b__review">Осуществляет консультативный прием пациентов, обращающихся по вопросам лечения воспалительных процессов женской половой сферы, занимается проблемами невынашивания беременности и бесплодия, проводит оперативное лечение пациентам.</p>
+																	</div>
+																</div>
+																<div class="b__slide-col">
+																	<div class="b__content-top">
+																		<div class="b__control">
+																			<div class="b__control-item">
+																				<div class="b b--btn-left-right-slider btn-animation btn-animation--icon" data-command-slider-arrow="prev"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
+																						<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																					</svg></div>
+																			</div>
+																			<div class="b__control-item">
+																				<div class="b b--btn-left-right-slider b--right btn-animation btn-animation--icon" data-command-slider-arrow="next"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
+																						<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																					</svg></div>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="b__content-bottom"><a class="b__link" href="#">Читать отзыв</a><a class="button button--reviews-slider" href="#" data-mdl-open="">Все отзывы</a></div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="b__slide">
+														<div class="b__slide-row b__slide-row--desktop">
+															<div class="b__slide-col">
+																<div class="b__slide-img"><img class="b__img" src="assets/images/reviews-slider-1.jpeg"></div>
+															</div>
+															<div class="b__slide-col">
+																<div class="b__content">
+																	<div class="b__content-row">
+																		<div class="b__content-col">
+																			<div class="b__content-top">
+																				<h5 class="b__slide-title"><span class="b__desc-span">Манукян Наринэ Георгиевна</span></h5>
+																				<p class="b__desc"><span class="b__desc-span">Врач акушер-гинеколог, гинеколог-эндокринолог, лучший врач корпорации</span></p>
+																				<div class="b__content-wrapper">
+																					<p class="b__review">Спрей Эпиген Интим представляет собой эффективное и безопасное средство для лечения, профилактики генитальных вирусных инфекций, а гель предназначен для интимной гигиены на каждый день...</p>
+																				</div>
+																			</div>
+																			<div class="b__content-bottom"><a class="b__link" href="#">Читать отзыв</a><a class="button button--reviews-slider btn-animation" href="#"><span class="btn-animation__text">Все отзывы</span></a></div>
+																		</div>
+																		<div class="b__content-col">
+																			<div class="b__content-top">
+																				<div class="b__control">
+																					<div class="b__control-item">
+																						<div class="b b--btn-left-right-slider btn-animation btn-animation--icon" data-command-slider-arrow="prev"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
+																								<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																							</svg></div>
+																					</div>
+																					<div class="b__control-item">
+																						<div class="b b--btn-left-right-slider b--right btn-animation btn-animation--icon" data-command-slider-arrow="next"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
+																								<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																							</svg></div>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="b__content-bottom">
+																				<div class="b__preview">
+																					<div class="b__preview-counter">
+																						<div class="b__preview-wrapper"><span class="b__preview-count">1</span>/4</div>
+																					</div>
+																					<div class="b__preview-image"><img class="b__preview-img" src="assets/images/reviews-slider-2.jpeg"></div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="b__slide-mobile">
+															<div class="b__slide-row">
+																<div class="b__slide-col">
+																	<div class="b__slide-top">
+																		<div class="b__slide-img"><img class="b__img" src="assets/images/reviews-slider-1.jpeg"></div>
+																		<div class="b__content">
+																			<h5 class="b__slide-title"><span class="b__desc-span">Сапрыкина Людмила Витальевна</span></h5>
+																			<div class="b__desc"><span class="b__desc-span">Ассистент кафедры акушерства и гинекологии ЛФ ФГБОУ ВО им. Н.И. Пирогова МЗ РФ, врач акушер-гинеколог высшей категории, к.м.н. (Москва).</span></div>
+																		</div>
+																	</div>
+																	<div class="b__slide-bottom">
+																		<p class="b__review">Осуществляет консультативный прием пациентов, обращающихся по вопросам лечения воспалительных процессов женской половой сферы, занимается проблемами невынашивания беременности и бесплодия, проводит оперативное лечение пациентам.</p>
+																	</div>
+																</div>
+																<div class="b__slide-col">
+																	<div class="b__content-top">
+																		<div class="b__control">
+																			<div class="b__control-item">
+																				<div class="b b--btn-left-right-slider btn-animation btn-animation--icon" data-command-slider-arrow="prev"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
+																						<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																					</svg></div>
+																			</div>
+																			<div class="b__control-item">
+																				<div class="b b--btn-left-right-slider b--right btn-animation btn-animation--icon" data-command-slider-arrow="next"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
+																						<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																					</svg></div>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="b__content-bottom"><a class="b__link" href="#">Читать отзыв</a><a class="button button--reviews-slider" href="#" data-mdl-open="">Все отзывы</a></div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="b__slide">
+														<div class="b__slide-row b__slide-row--desktop">
+															<div class="b__slide-col">
+																<div class="b__slide-img"><img class="b__img" src="assets/images/reviews-slider-1.jpeg"></div>
+															</div>
+															<div class="b__slide-col">
+																<div class="b__content">
+																	<div class="b__content-row">
+																		<div class="b__content-col">
+																			<div class="b__content-top">
+																				<h5 class="b__slide-title"><span class="b__desc-span">Манукян Наринэ Георгиевна</span></h5>
+																				<p class="b__desc"><span class="b__desc-span">Врач акушер-гинеколог, гинеколог-эндокринолог, лучший врач корпорации</span></p>
+																				<div class="b__content-wrapper">
+																					<p class="b__review">Спрей Эпиген Интим представляет собой эффективное и безопасное средство для лечения, профилактики генитальных вирусных инфекций, а гель предназначен для интимной гигиены на каждый день...</p>
+																				</div>
+																			</div>
+																			<div class="b__content-bottom"><a class="b__link" href="#">Читать отзыв</a><a class="button button--reviews-slider btn-animation" href="#"><span class="btn-animation__text">Все отзывы</span></a></div>
+																		</div>
+																		<div class="b__content-col">
+																			<div class="b__content-top">
+																				<div class="b__control">
+																					<div class="b__control-item">
+																						<div class="b b--btn-left-right-slider btn-animation btn-animation--icon" data-command-slider-arrow="prev"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
+																								<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																							</svg></div>
+																					</div>
+																					<div class="b__control-item">
+																						<div class="b b--btn-left-right-slider b--right btn-animation btn-animation--icon" data-command-slider-arrow="next"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
+																								<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																							</svg></div>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="b__content-bottom">
+																				<div class="b__preview">
+																					<div class="b__preview-counter">
+																						<div class="b__preview-wrapper"><span class="b__preview-count">1</span>/4</div>
+																					</div>
+																					<div class="b__preview-image"><img class="b__preview-img" src="assets/images/reviews-slider-2.jpeg"></div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="b__slide-mobile">
+															<div class="b__slide-row">
+																<div class="b__slide-col">
+																	<div class="b__slide-top">
+																		<div class="b__slide-img"><img class="b__img" src="assets/images/reviews-slider-1.jpeg"></div>
+																		<div class="b__content">
+																			<h5 class="b__slide-title"><span class="b__desc-span">Сапрыкина Людмила Витальевна</span></h5>
+																			<div class="b__desc"><span class="b__desc-span">Ассистент кафедры акушерства и гинекологии ЛФ ФГБОУ ВО им. Н.И. Пирогова МЗ РФ, врач акушер-гинеколог высшей категории, к.м.н. (Москва).</span></div>
+																		</div>
+																	</div>
+																	<div class="b__slide-bottom">
+																		<p class="b__review">Осуществляет консультативный прием пациентов, обращающихся по вопросам лечения воспалительных процессов женской половой сферы, занимается проблемами невынашивания беременности и бесплодия, проводит оперативное лечение пациентам.</p>
+																	</div>
+																</div>
+																<div class="b__slide-col">
+																	<div class="b__content-top">
+																		<div class="b__control">
+																			<div class="b__control-item">
+																				<div class="b b--btn-left-right-slider btn-animation btn-animation--icon" data-command-slider-arrow="prev"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
+																						<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																					</svg></div>
+																			</div>
+																			<div class="b__control-item">
+																				<div class="b b--btn-left-right-slider b--right btn-animation btn-animation--icon" data-command-slider-arrow="next"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
+																						<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																					</svg></div>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="b__content-bottom"><a class="b__link" href="#">Читать отзыв</a><a class="button button--reviews-slider" href="#" data-mdl-open="">Все отзывы</a></div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="b__slide">
+														<div class="b__slide-row b__slide-row--desktop">
+															<div class="b__slide-col">
+																<div class="b__slide-img"><img class="b__img" src="assets/images/reviews-slider-1.jpeg"></div>
+															</div>
+															<div class="b__slide-col">
+																<div class="b__content">
+																	<div class="b__content-row">
+																		<div class="b__content-col">
+																			<div class="b__content-top">
+																				<h5 class="b__slide-title"><span class="b__desc-span">Манукян Наринэ Георгиевна</span></h5>
+																				<p class="b__desc"><span class="b__desc-span">Врач акушер-гинеколог, гинеколог-эндокринолог, лучший врач корпорации</span></p>
+																				<div class="b__content-wrapper">
+																					<p class="b__review">Спрей Эпиген Интим представляет собой эффективное и безопасное средство для лечения, профилактики генитальных вирусных инфекций, а гель предназначен для интимной гигиены на каждый день...</p>
+																				</div>
+																			</div>
+																			<div class="b__content-bottom"><a class="b__link" href="#">Читать отзыв</a><a class="button button--reviews-slider btn-animation" href="#"><span class="btn-animation__text">Все отзывы</span></a></div>
+																		</div>
+																		<div class="b__content-col">
+																			<div class="b__content-top">
+																				<div class="b__control">
+																					<div class="b__control-item">
+																						<div class="b b--btn-left-right-slider btn-animation btn-animation--icon" data-command-slider-arrow="prev"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
+																								<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																							</svg></div>
+																					</div>
+																					<div class="b__control-item">
+																						<div class="b b--btn-left-right-slider b--right btn-animation btn-animation--icon" data-command-slider-arrow="next"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
+																								<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																							</svg></div>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="b__content-bottom">
+																				<div class="b__preview">
+																					<div class="b__preview-counter">
+																						<div class="b__preview-wrapper"><span class="b__preview-count">1</span>/4</div>
+																					</div>
+																					<div class="b__preview-image"><img class="b__preview-img" src="assets/images/reviews-slider-2.jpeg"></div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="b__slide-mobile">
+															<div class="b__slide-row">
+																<div class="b__slide-col">
+																	<div class="b__slide-top">
+																		<div class="b__slide-img"><img class="b__img" src="assets/images/reviews-slider-1.jpeg"></div>
+																		<div class="b__content">
+																			<h5 class="b__slide-title"><span class="b__desc-span">Сапрыкина Людмила Витальевна</span></h5>
+																			<div class="b__desc"><span class="b__desc-span">Ассистент кафедры акушерства и гинекологии ЛФ ФГБОУ ВО им. Н.И. Пирогова МЗ РФ, врач акушер-гинеколог высшей категории, к.м.н. (Москва).</span></div>
+																		</div>
+																	</div>
+																	<div class="b__slide-bottom">
+																		<p class="b__review">Осуществляет консультативный прием пациентов, обращающихся по вопросам лечения воспалительных процессов женской половой сферы, занимается проблемами невынашивания беременности и бесплодия, проводит оперативное лечение пациентам.</p>
+																	</div>
+																</div>
+																<div class="b__slide-col">
+																	<div class="b__content-top">
+																		<div class="b__control">
+																			<div class="b__control-item">
+																				<div class="b b--btn-left-right-slider btn-animation btn-animation--icon" data-command-slider-arrow="prev"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
+																						<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																					</svg></div>
+																			</div>
+																			<div class="b__control-item">
+																				<div class="b b--btn-left-right-slider b--right btn-animation btn-animation--icon" data-command-slider-arrow="next"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
+																						<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																					</svg></div>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="b__content-bottom"><a class="b__link" href="#">Читать отзыв</a><a class="button button--reviews-slider" href="#" data-mdl-open="">Все отзывы</a></div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</section>
 								</main>
 								<footer class="footer page__footer" data-aos="fade-up">
 									<div class="footer__top">
@@ -1022,6 +1543,199 @@
 								</footer>
 							</div>
 						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal" data-modal="3">
+				<div class="modal-test">
+					<div class="modal-test__container">
+						<div class="test">
+							<form class="test__container" action="/">
+								<div class="test__row">
+									<div class="test__col">
+										<ul class="test__questions">
+											<li class="test__question test__question--active">Какие проявления в интимной зоне вас беспокоят?</li>
+											<li class="test__question">2</li>
+											<li class="test__question">3</li>
+											<li class="test__question">4</li>
+											<li class="test__question">5</li>
+										</ul>
+										<ul class="test__dots">
+											<li class="test__dot test__dot--active"></li>
+											<li class="test__dot"></li>
+											<li class="test__dot"></li>
+											<li class="test__dot"></li>
+											<li class="test__dot"></li>
+										</ul>
+									</div>
+									<div class="test__col">
+										<div class="test__options test__options--active"><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-1">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Обильные выделения без неприятного запаха</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-1">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Выделения с неприятным запахом</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-1">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Болезненные пузырьки в интимной зоне, превращающиеся в язвы</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-1">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Безболезненные папилломы, узелки, наросты или бородавки в интимной зоне</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-1">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Что-то другое, не указанное выше</div>
+											</label></div>
+										<div class="test__options"><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-2">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Обильные выделения без неприятного запаха</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-2">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Выделения с неприятным запахом</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-2">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Болезненные пузырьки в интимной зоне, превращающиеся в язвы</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-2">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Безболезненные папилломы, узелки, наросты или бородавки в интимной зоне</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-2">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Что-то другое, не указанное выше</div>
+											</label></div>
+										<div class="test__options"><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-3">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Обильные выделения без неприятного запаха</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-3">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Выделения с неприятным запахом</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-3">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Болезненные пузырьки в интимной зоне, превращающиеся в язвы</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-3">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Безболезненные папилломы, узелки, наросты или бородавки в интимной зоне</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-3">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Что-то другое, не указанное выше</div>
+											</label></div>
+										<div class="test__options"><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-4">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Обильные выделения без неприятного запаха</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-4">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Выделения с неприятным запахом</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-4">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Болезненные пузырьки в интимной зоне, превращающиеся в язвы</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-4">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Безболезненные папилломы, узелки, наросты или бородавки в интимной зоне</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-4">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Что-то другое, не указанное выше</div>
+											</label></div>
+										<div class="test__options"><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-5">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Обильные выделения без неприятного запаха</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-5">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Выделения с неприятным запахом</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-5">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Болезненные пузырьки в интимной зоне, превращающиеся в язвы</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-5">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Безболезненные папилломы, узелки, наросты или бородавки в интимной зоне</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-5">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Что-то другое, не указанное выше</div>
+											</label></div>
+									</div>
+								</div>
+								<div class="test__index">1</div>
+							</form>
+							<div class="test__result">
+								<div class="test__result-container">
+									<div class="test__result-row">
+										<div class="test__result-col">
+											<div class="test__result-caption">возможный диагноз</div>
+											<h3 class="test__result-title">Бактериальный вагиноз</h3>
+											<p class="test__result-text">Неприятный запах выделений из половых путей часто сопровождает бактериальный вагиноз. Для уточнения диагноза и исключения инфекций, передаваемых половым путем, необходимо обратиться к врачу и сдать дополнительные анализы, без них разобраться в проблеме будет сложно.</p>
+											<div class="test__result-label">
+												<div class="link-text link-text--s">Для повышения эффективности лечения попробуйте спрей <a class="link-text__link" href="#">Эпиген Интим</a> . Он обладает противовоспалительным и местным иммуностимулирующим эффектом.</div>
+											</div>
+										</div>
+										<div class="test__result-col">
+											<div class="test__form">
+												<div class="test__form-wrapper">
+													<h4 class="test__form-title">Для получения результатов теста укажите E&#8209;mail</h4>
+													<form class="form" action="/">
+														<div class="test__form-item"><label class="form__item"><input class="form__input" name="email"><span class="form__placeholder">E-mail</span></label></div>
+														<div class="test__form-item"><button class="button button--wide btn-animation" type="submit"><span class="btn-animation__text">Отправить результаты теста на почту</span></button></div>
+													</form>
+												</div>
+												<div class="test__form-response">Результат отправлен на почту<br><span class="test__form-email"></span></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-test__button">
+						<div class="button-close btn-animation btn-animation--icon" data-button="3"><svg class="button-close__svg" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M13.9926 1.00598L1.0061 13.9924" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+								<path d="M13.9973 14L1 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+							</svg></div>
 					</div>
 				</div>
 			</div>
