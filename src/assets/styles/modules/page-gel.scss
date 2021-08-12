@@ -423,6 +423,9 @@
 
     &--small {
       @include fsl(40px, 130%);
+      @media (max-width: $breakpoint - 1px) {
+        @include fsl(30px);
+      }
     }
   }
   &__features-text {
