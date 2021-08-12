@@ -118,7 +118,7 @@
 														<div class="panel__product"><a class="panel__product-item" href="#">
 																<div class="panel__product-mark"></div>
 																<div class="panel__product-text">Спрей</div>
-															</a><a class="panel__product-item panel__product-item--purple" href="#">
+															</a><a class="panel__product-item panel__product-item--purple panel__product-item--active" href="#">
 																<div class="panel__product-mark"></div>
 																<div class="panel__product-text">Гель</div>
 															</a></div>
@@ -350,7 +350,7 @@
 											</div>
 										</div>
 									</section>
-									<section class="spray-page__section margin-top margin-top--95">
+									<section class="spray-page__section margin-top margin-top--95" id="form" data-section="">
 										<div class="block">
 											<div class="block__frame block__frame--left block__frame--front">
 												<div class="block__slide">
@@ -506,9 +506,9 @@
 													</linearGradient>
 												</defs>
 											</svg><svg class="page-gel__features-wave-mobile" width="987" height="1618" viewBox="0 0 987 1618" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M986 288.398C986 288.398 976.716 149.971 734.943 149.971C612.468 149.971 522.327 214.75 390.478 225.959C269.981 236.203 178.631 152.618 230.27 80.7704C266.229 30.7387 353.271 -22.7784 383.054 12.2391C400.595 32.8628 368.777 101.508 254.243 167.848C153.917 225.959 53.0059 287.983 153.624 365.798C254.243 443.614 833.023 490.447 680 770.5C526.977 1050.55 13.9501 1023.24 1.5 1295C-7.8822 1499.79 375.5 1617 375.5 1617C375.5 1617 433.145 1564.16 415.5 1532C394.453 1493.63 306.5 1558 306.5 1558" stroke="url(#paint0_linear)"></path>
+												<path d="M986 288.398C986 288.398 976.716 149.971 734.943 149.971C612.468 149.971 522.327 214.75 390.478 225.959C269.981 236.203 178.631 152.618 230.27 80.7704C266.229 30.7387 353.271 -22.7784 383.054 12.2391C400.595 32.8628 368.777 101.508 254.243 167.848C153.917 225.959 53.0059 287.983 153.624 365.798C254.243 443.614 833.023 490.447 680 770.5C526.977 1050.55 13.9501 1023.24 1.5 1295C-7.8822 1499.79 375.5 1617 375.5 1617C375.5 1617 433.145 1564.16 415.5 1532C394.453 1493.63 306.5 1558 306.5 1558" stroke="url(#paint1_linear)"></path>
 												<defs>
-													<linearGradient id="paint0_linear" x1="366.102" y1="0.999881" x2="93.5378" y2="660.036" gradientUnits="userSpaceOnUse">
+													<linearGradient id="paint1_linear" x1="366.102" y1="0.999881" x2="93.5378" y2="660.036" gradientUnits="userSpaceOnUse">
 														<stop offset="0.294736" stop-color="#31AFF2"></stop>
 														<stop offset="1" stop-color="#5553F0"></stop>
 													</linearGradient>
@@ -622,123 +622,445 @@
 									</section>
 									<section class="page-gel__reviews" id="reviews" data-section="">
 										<div class="page-gel__reviews-layout"></div>
-										<div class="page-gel__reviews-top">
-											<div class="page-gel__reviews-left">
-												<h2 class="page-gel__reviews-title">Отзывы</h2>
-											</div>
-											<div class="page-gel__reviews-right">
-												<div class="page-gel__reviews-btns">
-													<div class="page-gel__reviews-btns-item">
-														<div class="b b--btn-left-right-slider js js--gel-reviews-btn--prev"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
-																<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
-															</svg></div>
+										<div class="reviews-tabs">
+											<div class="reviews-tabs__buttons">
+												<div class="spray-page__slider-categories">
+													<div class="spray-page__slider-item spray-page__slider-item--active">
+														<div class="border-link border-link--active">Все отзывы</div>
 													</div>
-													<div class="page-gel__reviews-btns-item">
-														<div class="b b--btn-left-right-slider b--right js js--gel-reviews-btn--next"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
-																<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
-															</svg></div>
-													</div>
-												</div>
-												<div class="page-gel__reviews-links-item page-gel__reviews-links-item--mobile"><a class="category-item category-item--background--none" href="#">Все отзывы</a></div>
-											</div>
-										</div>
-										<div class="swiper-container swiper-container--visible swiper-container--slide-width-auto swiper-container--slide-height-max js js--gel-reviews-slider">
-											<div class="swiper-wrapper">
-												<div class="swiper-slide">
-													<div class="page-gel__reviews-card">
-														<div class="page-gel__reviews-card-top">
-															<h3 class="page-gel__reviews-card-title">Nadine Zakharova</h3>
-															<p class="page-gel__reviews-card-text">Купила я данное средство, прочитав изначально множество положительных отзывов на различных сайтах. Почему мой выбор пал на него? Несколько лет я пыталась найти своё средство для интимной гигиены, так как везде писали, что нельзя использовать обычный гель для душа или мыло...</p>
-														</div>
-														<div class="page-gel__reviews-card-bottom"><a class="page-gel__reviews-card-link" href="#">irecommend.ru</a></div>
-													</div>
-												</div>
-												<div class="swiper-slide">
-													<div class="page-gel__reviews-card">
-														<div class="page-gel__reviews-card-top">
-															<h3 class="page-gel__reviews-card-title">Nadine Zakharova</h3>
-															<p class="page-gel__reviews-card-text">Купила я данное средство, прочитав изначально множество положительных отзывов на различных сайтах. Почему мой выбор пал на него? Несколько лет я пыталась найти своё средство для интимной гигиены, так как везде писали, что нельзя использовать обычный гель для душа или мыло...</p>
-														</div>
-														<div class="page-gel__reviews-card-bottom"><a class="page-gel__reviews-card-link" href="#">irecommend.ru</a></div>
-													</div>
-												</div>
-												<div class="swiper-slide">
-													<div class="page-gel__reviews-card">
-														<div class="page-gel__reviews-card-top">
-															<h3 class="page-gel__reviews-card-title">Nadine Zakharova</h3>
-															<p class="page-gel__reviews-card-text">Купила я данное средство, прочитав изначально множество положительных отзывов на различных сайтах. Почему мой выбор пал на него? Несколько лет я пыталась найти своё средство для интимной гигиены, так как везде писали, что нельзя использовать обычный гель для душа или мыло...</p>
-														</div>
-														<div class="page-gel__reviews-card-bottom"><a class="page-gel__reviews-card-link" href="#">irecommend.ru</a></div>
-													</div>
-												</div>
-												<div class="swiper-slide">
-													<div class="page-gel__reviews-card">
-														<div class="page-gel__reviews-card-top">
-															<h3 class="page-gel__reviews-card-title">Nadine Zakharova</h3>
-															<p class="page-gel__reviews-card-text">Купила я данное средство, прочитав изначально множество положительных отзывов на различных сайтах. Почему мой выбор пал на него? Несколько лет я пыталась найти своё средство для интимной гигиены, так как везде писали, что нельзя использовать обычный гель для душа или мыло...</p>
-														</div>
-														<div class="page-gel__reviews-card-bottom"><a class="page-gel__reviews-card-link" href="#">irecommend.ru</a></div>
-													</div>
-												</div>
-												<div class="swiper-slide">
-													<div class="page-gel__reviews-card">
-														<div class="page-gel__reviews-card-top">
-															<h3 class="page-gel__reviews-card-title">Nadine Zakharova</h3>
-															<p class="page-gel__reviews-card-text">Купила я данное средство, прочитав изначально множество положительных отзывов на различных сайтах. Почему мой выбор пал на него? Несколько лет я пыталась найти своё средство для интимной гигиены, так как везде писали, что нельзя использовать обычный гель для душа или мыло...</p>
-														</div>
-														<div class="page-gel__reviews-card-bottom"><a class="page-gel__reviews-card-link" href="#">irecommend.ru</a></div>
-													</div>
-												</div>
-												<div class="swiper-slide">
-													<div class="page-gel__reviews-card">
-														<div class="page-gel__reviews-card-top">
-															<h3 class="page-gel__reviews-card-title">Nadine Zakharova</h3>
-															<p class="page-gel__reviews-card-text">Купила я данное средство, прочитав изначально множество положительных отзывов на различных сайтах. Почему мой выбор пал на него? Несколько лет я пыталась найти своё средство для интимной гигиены, так как везде писали, что нельзя использовать обычный гель для душа или мыло...</p>
-														</div>
-														<div class="page-gel__reviews-card-bottom"><a class="page-gel__reviews-card-link" href="#">irecommend.ru</a></div>
-													</div>
-												</div>
-												<div class="swiper-slide">
-													<div class="page-gel__reviews-card">
-														<div class="page-gel__reviews-card-top">
-															<h3 class="page-gel__reviews-card-title">Nadine Zakharova</h3>
-															<p class="page-gel__reviews-card-text">Купила я данное средство, прочитав изначально множество положительных отзывов на различных сайтах. Почему мой выбор пал на него? Несколько лет я пыталась найти своё средство для интимной гигиены, так как везде писали, что нельзя использовать обычный гель для душа или мыло...</p>
-														</div>
-														<div class="page-gel__reviews-card-bottom"><a class="page-gel__reviews-card-link" href="#">irecommend.ru</a></div>
-													</div>
-												</div>
-												<div class="swiper-slide">
-													<div class="page-gel__reviews-card">
-														<div class="page-gel__reviews-card-top">
-															<h3 class="page-gel__reviews-card-title">Nadine Zakharova</h3>
-															<p class="page-gel__reviews-card-text">Купила я данное средство, прочитав изначально множество положительных отзывов на различных сайтах. Почему мой выбор пал на него? Несколько лет я пыталась найти своё средство для интимной гигиены, так как везде писали, что нельзя использовать обычный гель для душа или мыло...</p>
-														</div>
-														<div class="page-gel__reviews-card-bottom"><a class="page-gel__reviews-card-link" href="#">irecommend.ru</a></div>
-													</div>
-												</div>
-												<div class="swiper-slide">
-													<div class="page-gel__reviews-card">
-														<div class="page-gel__reviews-card-top">
-															<h3 class="page-gel__reviews-card-title">Nadine Zakharova</h3>
-															<p class="page-gel__reviews-card-text">Купила я данное средство, прочитав изначально множество положительных отзывов на различных сайтах. Почему мой выбор пал на него? Несколько лет я пыталась найти своё средство для интимной гигиены, так как везде писали, что нельзя использовать обычный гель для душа или мыло...</p>
-														</div>
-														<div class="page-gel__reviews-card-bottom"><a class="page-gel__reviews-card-link" href="#">irecommend.ru</a></div>
-													</div>
-												</div>
-												<div class="swiper-slide">
-													<div class="page-gel__reviews-card">
-														<div class="page-gel__reviews-card-top">
-															<h3 class="page-gel__reviews-card-title">Nadine Zakharova</h3>
-															<p class="page-gel__reviews-card-text">Купила я данное средство, прочитав изначально множество положительных отзывов на различных сайтах. Почему мой выбор пал на него? Несколько лет я пыталась найти своё средство для интимной гигиены, так как везде писали, что нельзя использовать обычный гель для душа или мыло...</p>
-														</div>
-														<div class="page-gel__reviews-card-bottom"><a class="page-gel__reviews-card-link" href="#">irecommend.ru</a></div>
+													<div class="spray-page__slider-item">
+														<div class="border-link">Отзывы врачей</div>
 													</div>
 												</div>
 											</div>
-										</div>
-										<div class="page-gel__reviews-links">
-											<div class="page-gel__reviews-links-item page-gel__reviews-links-item--desktop"><a class="category-item category-item--background--none" href="#">Все отзывы</a></div>
-											<div class="page-gel__reviews-links-item"><a class="category-item category-item--background--none" href="#">Задать вопрос врачу</a></div>
+											<div class="reviews-tabs__tabs">
+												<div class="reviews-tabs__item reviews-tabs__item--active">
+													<div class="page-gel__reviews-top page-gel__reviews-top--tabs">
+														<div class="page-gel__reviews-left">
+															<h2 class="page-gel__reviews-title">Отзывы</h2>
+														</div>
+														<div class="page-gel__reviews-right">
+															<div class="page-gel__reviews-btns">
+																<div class="page-gel__reviews-btns-item">
+																	<div class="b b--btn-left-right-slider js js--gel-reviews-btn--prev btn-animation btn-animation--icon"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
+																			<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																		</svg></div>
+																</div>
+																<div class="page-gel__reviews-btns-item">
+																	<div class="b b--btn-left-right-slider b--right js js--gel-reviews-btn--next btn-animation btn-animation--icon"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
+																			<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																		</svg></div>
+																</div>
+															</div>
+															<div class="page-gel__reviews-links-item page-gel__reviews-links-item--mobile"><a class="button button--reviews-slider button--reviews-slider--small btn-animation" href="#"><span class="btn-animation__text">Все отзывы</span></a></div>
+														</div>
+													</div>
+													<div class="swiper-container swiper-container--visible swiper-container--slide-width-auto swiper-container--slide-height-max js js--gel-reviews-slider">
+														<div class="swiper-wrapper">
+															<div class="swiper-slide">
+																<div class="page-gel__reviews-card">
+																	<div class="page-gel__reviews-card-top">
+																		<h3 class="page-gel__reviews-card-title">Nadine Zakharova</h3>
+																		<p class="page-gel__reviews-card-text">Купила я данное средство, прочитав изначально множество положительных отзывов на различных сайтах. Почему мой выбор пал на него? Несколько лет я пыталась найти своё средство для интимной гигиены, так как везде писали, что нельзя использовать обычный гель для душа или мыло...</p>
+																	</div>
+																	<div class="page-gel__reviews-card-bottom"><a class="page-gel__reviews-card-link" href="#">irecommend.ru</a></div>
+																</div>
+															</div>
+															<div class="swiper-slide">
+																<div class="page-gel__reviews-card">
+																	<div class="page-gel__reviews-card-top">
+																		<h3 class="page-gel__reviews-card-title">Nadine Zakharova</h3>
+																		<p class="page-gel__reviews-card-text">Купила я данное средство, прочитав изначально множество положительных отзывов на различных сайтах. Почему мой выбор пал на него? Несколько лет я пыталась найти своё средство для интимной гигиены, так как везде писали, что нельзя использовать обычный гель для душа или мыло...</p>
+																	</div>
+																	<div class="page-gel__reviews-card-bottom"><a class="page-gel__reviews-card-link" href="#">irecommend.ru</a></div>
+																</div>
+															</div>
+															<div class="swiper-slide">
+																<div class="page-gel__reviews-card">
+																	<div class="page-gel__reviews-card-top">
+																		<h3 class="page-gel__reviews-card-title">Nadine Zakharova</h3>
+																		<p class="page-gel__reviews-card-text">Купила я данное средство, прочитав изначально множество положительных отзывов на различных сайтах. Почему мой выбор пал на него? Несколько лет я пыталась найти своё средство для интимной гигиены, так как везде писали, что нельзя использовать обычный гель для душа или мыло...</p>
+																	</div>
+																	<div class="page-gel__reviews-card-bottom"><a class="page-gel__reviews-card-link" href="#">irecommend.ru</a></div>
+																</div>
+															</div>
+															<div class="swiper-slide">
+																<div class="page-gel__reviews-card">
+																	<div class="page-gel__reviews-card-top">
+																		<h3 class="page-gel__reviews-card-title">Nadine Zakharova</h3>
+																		<p class="page-gel__reviews-card-text">Купила я данное средство, прочитав изначально множество положительных отзывов на различных сайтах. Почему мой выбор пал на него? Несколько лет я пыталась найти своё средство для интимной гигиены, так как везде писали, что нельзя использовать обычный гель для душа или мыло...</p>
+																	</div>
+																	<div class="page-gel__reviews-card-bottom"><a class="page-gel__reviews-card-link" href="#">irecommend.ru</a></div>
+																</div>
+															</div>
+															<div class="swiper-slide">
+																<div class="page-gel__reviews-card">
+																	<div class="page-gel__reviews-card-top">
+																		<h3 class="page-gel__reviews-card-title">Nadine Zakharova</h3>
+																		<p class="page-gel__reviews-card-text">Купила я данное средство, прочитав изначально множество положительных отзывов на различных сайтах. Почему мой выбор пал на него? Несколько лет я пыталась найти своё средство для интимной гигиены, так как везде писали, что нельзя использовать обычный гель для душа или мыло...</p>
+																	</div>
+																	<div class="page-gel__reviews-card-bottom"><a class="page-gel__reviews-card-link" href="#">irecommend.ru</a></div>
+																</div>
+															</div>
+															<div class="swiper-slide">
+																<div class="page-gel__reviews-card">
+																	<div class="page-gel__reviews-card-top">
+																		<h3 class="page-gel__reviews-card-title">Nadine Zakharova</h3>
+																		<p class="page-gel__reviews-card-text">Купила я данное средство, прочитав изначально множество положительных отзывов на различных сайтах. Почему мой выбор пал на него? Несколько лет я пыталась найти своё средство для интимной гигиены, так как везде писали, что нельзя использовать обычный гель для душа или мыло...</p>
+																	</div>
+																	<div class="page-gel__reviews-card-bottom"><a class="page-gel__reviews-card-link" href="#">irecommend.ru</a></div>
+																</div>
+															</div>
+															<div class="swiper-slide">
+																<div class="page-gel__reviews-card">
+																	<div class="page-gel__reviews-card-top">
+																		<h3 class="page-gel__reviews-card-title">Nadine Zakharova</h3>
+																		<p class="page-gel__reviews-card-text">Купила я данное средство, прочитав изначально множество положительных отзывов на различных сайтах. Почему мой выбор пал на него? Несколько лет я пыталась найти своё средство для интимной гигиены, так как везде писали, что нельзя использовать обычный гель для душа или мыло...</p>
+																	</div>
+																	<div class="page-gel__reviews-card-bottom"><a class="page-gel__reviews-card-link" href="#">irecommend.ru</a></div>
+																</div>
+															</div>
+															<div class="swiper-slide">
+																<div class="page-gel__reviews-card">
+																	<div class="page-gel__reviews-card-top">
+																		<h3 class="page-gel__reviews-card-title">Nadine Zakharova</h3>
+																		<p class="page-gel__reviews-card-text">Купила я данное средство, прочитав изначально множество положительных отзывов на различных сайтах. Почему мой выбор пал на него? Несколько лет я пыталась найти своё средство для интимной гигиены, так как везде писали, что нельзя использовать обычный гель для душа или мыло...</p>
+																	</div>
+																	<div class="page-gel__reviews-card-bottom"><a class="page-gel__reviews-card-link" href="#">irecommend.ru</a></div>
+																</div>
+															</div>
+															<div class="swiper-slide">
+																<div class="page-gel__reviews-card">
+																	<div class="page-gel__reviews-card-top">
+																		<h3 class="page-gel__reviews-card-title">Nadine Zakharova</h3>
+																		<p class="page-gel__reviews-card-text">Купила я данное средство, прочитав изначально множество положительных отзывов на различных сайтах. Почему мой выбор пал на него? Несколько лет я пыталась найти своё средство для интимной гигиены, так как везде писали, что нельзя использовать обычный гель для душа или мыло...</p>
+																	</div>
+																	<div class="page-gel__reviews-card-bottom"><a class="page-gel__reviews-card-link" href="#">irecommend.ru</a></div>
+																</div>
+															</div>
+															<div class="swiper-slide">
+																<div class="page-gel__reviews-card">
+																	<div class="page-gel__reviews-card-top">
+																		<h3 class="page-gel__reviews-card-title">Nadine Zakharova</h3>
+																		<p class="page-gel__reviews-card-text">Купила я данное средство, прочитав изначально множество положительных отзывов на различных сайтах. Почему мой выбор пал на него? Несколько лет я пыталась найти своё средство для интимной гигиены, так как везде писали, что нельзя использовать обычный гель для душа или мыло...</p>
+																	</div>
+																	<div class="page-gel__reviews-card-bottom"><a class="page-gel__reviews-card-link" href="#">irecommend.ru</a></div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="page-gel__reviews-links">
+														<div class="page-gel__reviews-links-item page-gel__reviews-links-item--desktop"><a class="button button--reviews-slider button--reviews-slider--small btn-animation" href="#"><span class="btn-animation__text">Все отзывы</span></a></div>
+														<div class="page-gel__reviews-links-item"><a class="button button--reviews-slider button--reviews-slider--small btn-animation" href="#"><span class="btn-animation__text">Задать вопрос врачу</span></a></div>
+													</div>
+												</div>
+												<div class="reviews-tabs__item">
+													<div class="b b--reviews-slider-main-page b--reviews-slider-spray-page">
+														<div class="b__top b__top--tabs">
+															<div class="spray-page__slider-row">
+																<div class="spray-page__slider-col">
+																	<h3 class="spray-page__slider-title">Отзывы</h3>
+																</div>
+																<div class="spray-page__slider-col">
+																	<div class="spray-page__slider-desktop">
+																		<div class="b__control">
+																			<div class="b__control-item">
+																				<div class="b b--btn-left-right-slider btn-animation btn-animation--icon" data-command-slider-arrow="prev"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
+																						<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																					</svg></div>
+																			</div>
+																			<div class="b__control-item">
+																				<div class="b b--btn-left-right-slider b--right btn-animation btn-animation--icon" data-command-slider-arrow="next"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
+																						<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																					</svg></div>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="spray-page__slider-mobile"><a class="button button--reviews-slider button--reviews-slider--small btn-animation" href="#" data-mdl-open=""><span class="btn-animation__text">Все отзывы</span></a></div>
+																</div>
+															</div>
+														</div>
+														<div class="b__bottom">
+															<div class="b__slide">
+																<div class="b__slide-row b__slide-row--desktop">
+																	<div class="b__slide-col">
+																		<div class="b__slide-img"><img class="b__img" src="assets/images/reviews-slider-1.jpeg"></div>
+																	</div>
+																	<div class="b__slide-col">
+																		<div class="b__content">
+																			<div class="b__content-row">
+																				<div class="b__content-col">
+																					<div class="b__content-top">
+																						<h5 class="b__slide-title"><span class="b__desc-span">Манукян Наринэ Георгиевна</span></h5>
+																						<p class="b__desc"><span class="b__desc-span">Врач акушер-гинеколог, гинеколог-эндокринолог, лучший врач корпорации</span></p>
+																						<div class="b__content-wrapper">
+																							<p class="b__review">Спрей Эпиген Интим представляет собой эффективное и безопасное средство для лечения, профилактики генитальных вирусных инфекций, а гель предназначен для интимной гигиены на каждый день...</p>
+																						</div>
+																					</div>
+																					<div class="b__content-bottom"><a class="b__link" href="#">Читать отзыв</a></div>
+																				</div>
+																				<div class="b__content-col">
+																					<div class="b__content-top">
+																						<div class="b__preview">
+																							<div class="b__preview-counter">
+																								<div class="b__preview-wrapper"><span class="b__preview-count">1</span>/4</div>
+																							</div>
+																							<div class="b__preview-image"><img class="b__preview-img" src="assets/images/reviews-slider-2.jpeg"></div>
+																						</div>
+																					</div>
+																					<div class="b__content-bottom">
+																						<div class="spray-page__slider-links"><a class="button button--reviews-slider button--reviews-slider--small btn-animation" href="#"><span class="btn-animation__text">Все отзывы</span></a><a class="spray-page__slider-link btn-animation" href="#"><span class="btn-animation__text">Задать вопрос врачу</span></a></div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<div class="b__slide-mobile">
+																	<div class="b__slide-row">
+																		<div class="b__slide-col">
+																			<div class="b__slide-top">
+																				<div class="b__slide-img"><img class="b__img" src="assets/images/reviews-slider-1.jpeg"></div>
+																				<div class="b__content">
+																					<h5 class="b__slide-title"><span class="b__desc-span">Сапрыкина Людмила Витальевна</span></h5>
+																					<div class="b__desc"><span class="b__desc-span">Ассистент кафедры акушерства и гинекологии ЛФ ФГБОУ ВО им. Н.И. Пирогова МЗ РФ, врач акушер-гинеколог высшей категории, к.м.н. (Москва).</span></div>
+																				</div>
+																			</div>
+																			<div class="b__slide-bottom">
+																				<p class="b__review">Спрей Эпиген Интим представляет собой эффективное и безопасное средство для лечения, профилактики генитальных вирусных инфекций, а гель предназначен для интимной гигиены на каждый день...</p><a class="b__link" href="#">Читать отзыв</a>
+																			</div>
+																		</div>
+																		<div class="b__slide-col">
+																			<div class="b__content-top">
+																				<div class="b__control">
+																					<div class="b__control-item">
+																						<div class="b b--btn-left-right-slider btn-animation btn-animation--icon" data-command-slider-arrow="prev"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
+																								<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																							</svg></div>
+																					</div>
+																					<div class="b__control-item">
+																						<div class="b b--btn-left-right-slider b--right btn-animation btn-animation--icon" data-command-slider-arrow="next"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
+																								<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																							</svg></div>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="b__content-bottom"><a class="button button--reviews-slider button--reviews-slider--small btn-animation" href="#" data-mdl-open=""><span class="btn-animation__text">Задать вопрос врачу</span></a></div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="b__slide">
+																<div class="b__slide-row b__slide-row--desktop">
+																	<div class="b__slide-col">
+																		<div class="b__slide-img"><img class="b__img" src="assets/images/reviews-slider-1.jpeg"></div>
+																	</div>
+																	<div class="b__slide-col">
+																		<div class="b__content">
+																			<div class="b__content-row">
+																				<div class="b__content-col">
+																					<div class="b__content-top">
+																						<h5 class="b__slide-title"><span class="b__desc-span">Манукян Наринэ Георгиевна</span></h5>
+																						<p class="b__desc"><span class="b__desc-span">Врач акушер-гинеколог, гинеколог-эндокринолог, лучший врач корпорации</span></p>
+																						<div class="b__content-wrapper">
+																							<p class="b__review">Спрей Эпиген Интим представляет собой эффективное и безопасное средство для лечения, профилактики генитальных вирусных инфекций, а гель предназначен для интимной гигиены на каждый день...</p>
+																						</div>
+																					</div>
+																					<div class="b__content-bottom"><a class="b__link" href="#">Читать отзыв</a></div>
+																				</div>
+																				<div class="b__content-col">
+																					<div class="b__content-top">
+																						<div class="b__preview">
+																							<div class="b__preview-counter">
+																								<div class="b__preview-wrapper"><span class="b__preview-count">1</span>/4</div>
+																							</div>
+																							<div class="b__preview-image"><img class="b__preview-img" src="assets/images/reviews-slider-2.jpeg"></div>
+																						</div>
+																					</div>
+																					<div class="b__content-bottom">
+																						<div class="spray-page__slider-links"><a class="button button--reviews-slider button--reviews-slider--small btn-animation" href="#"><span class="btn-animation__text">Все отзывы</span></a><a class="spray-page__slider-link btn-animation" href="#"><span class="btn-animation__text">Задать вопрос врачу</span></a></div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<div class="b__slide-mobile">
+																	<div class="b__slide-row">
+																		<div class="b__slide-col">
+																			<div class="b__slide-top">
+																				<div class="b__slide-img"><img class="b__img" src="assets/images/reviews-slider-1.jpeg"></div>
+																				<div class="b__content">
+																					<h5 class="b__slide-title"><span class="b__desc-span">Сапрыкина Людмила Витальевна</span></h5>
+																					<div class="b__desc"><span class="b__desc-span">Ассистент кафедры акушерства и гинекологии ЛФ ФГБОУ ВО им. Н.И. Пирогова МЗ РФ, врач акушер-гинеколог высшей категории, к.м.н. (Москва).</span></div>
+																				</div>
+																			</div>
+																			<div class="b__slide-bottom">
+																				<p class="b__review">Спрей Эпиген Интим представляет собой эффективное и безопасное средство для лечения, профилактики генитальных вирусных инфекций, а гель предназначен для интимной гигиены на каждый день...</p><a class="b__link" href="#">Читать отзыв</a>
+																			</div>
+																		</div>
+																		<div class="b__slide-col">
+																			<div class="b__content-top">
+																				<div class="b__control">
+																					<div class="b__control-item">
+																						<div class="b b--btn-left-right-slider btn-animation btn-animation--icon" data-command-slider-arrow="prev"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
+																								<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																							</svg></div>
+																					</div>
+																					<div class="b__control-item">
+																						<div class="b b--btn-left-right-slider b--right btn-animation btn-animation--icon" data-command-slider-arrow="next"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
+																								<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																							</svg></div>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="b__content-bottom"><a class="button button--reviews-slider button--reviews-slider--small btn-animation" href="#" data-mdl-open=""><span class="btn-animation__text">Задать вопрос врачу</span></a></div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="b__slide">
+																<div class="b__slide-row b__slide-row--desktop">
+																	<div class="b__slide-col">
+																		<div class="b__slide-img"><img class="b__img" src="assets/images/reviews-slider-1.jpeg"></div>
+																	</div>
+																	<div class="b__slide-col">
+																		<div class="b__content">
+																			<div class="b__content-row">
+																				<div class="b__content-col">
+																					<div class="b__content-top">
+																						<h5 class="b__slide-title"><span class="b__desc-span">Манукян Наринэ Георгиевна</span></h5>
+																						<p class="b__desc"><span class="b__desc-span">Врач акушер-гинеколог, гинеколог-эндокринолог, лучший врач корпорации</span></p>
+																						<div class="b__content-wrapper">
+																							<p class="b__review">Спрей Эпиген Интим представляет собой эффективное и безопасное средство для лечения, профилактики генитальных вирусных инфекций, а гель предназначен для интимной гигиены на каждый день...</p>
+																						</div>
+																					</div>
+																					<div class="b__content-bottom"><a class="b__link" href="#">Читать отзыв</a></div>
+																				</div>
+																				<div class="b__content-col">
+																					<div class="b__content-top">
+																						<div class="b__preview">
+																							<div class="b__preview-counter">
+																								<div class="b__preview-wrapper"><span class="b__preview-count">1</span>/4</div>
+																							</div>
+																							<div class="b__preview-image"><img class="b__preview-img" src="assets/images/reviews-slider-2.jpeg"></div>
+																						</div>
+																					</div>
+																					<div class="b__content-bottom">
+																						<div class="spray-page__slider-links"><a class="button button--reviews-slider button--reviews-slider--small btn-animation" href="#"><span class="btn-animation__text">Все отзывы</span></a><a class="spray-page__slider-link btn-animation" href="#"><span class="btn-animation__text">Задать вопрос врачу</span></a></div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<div class="b__slide-mobile">
+																	<div class="b__slide-row">
+																		<div class="b__slide-col">
+																			<div class="b__slide-top">
+																				<div class="b__slide-img"><img class="b__img" src="assets/images/reviews-slider-1.jpeg"></div>
+																				<div class="b__content">
+																					<h5 class="b__slide-title"><span class="b__desc-span">Сапрыкина Людмила Витальевна</span></h5>
+																					<div class="b__desc"><span class="b__desc-span">Ассистент кафедры акушерства и гинекологии ЛФ ФГБОУ ВО им. Н.И. Пирогова МЗ РФ, врач акушер-гинеколог высшей категории, к.м.н. (Москва).</span></div>
+																				</div>
+																			</div>
+																			<div class="b__slide-bottom">
+																				<p class="b__review">Спрей Эпиген Интим представляет собой эффективное и безопасное средство для лечения, профилактики генитальных вирусных инфекций, а гель предназначен для интимной гигиены на каждый день...</p><a class="b__link" href="#">Читать отзыв</a>
+																			</div>
+																		</div>
+																		<div class="b__slide-col">
+																			<div class="b__content-top">
+																				<div class="b__control">
+																					<div class="b__control-item">
+																						<div class="b b--btn-left-right-slider btn-animation btn-animation--icon" data-command-slider-arrow="prev"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
+																								<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																							</svg></div>
+																					</div>
+																					<div class="b__control-item">
+																						<div class="b b--btn-left-right-slider b--right btn-animation btn-animation--icon" data-command-slider-arrow="next"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
+																								<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																							</svg></div>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="b__content-bottom"><a class="button button--reviews-slider button--reviews-slider--small btn-animation" href="#" data-mdl-open=""><span class="btn-animation__text">Задать вопрос врачу</span></a></div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="b__slide">
+																<div class="b__slide-row b__slide-row--desktop">
+																	<div class="b__slide-col">
+																		<div class="b__slide-img"><img class="b__img" src="assets/images/reviews-slider-1.jpeg"></div>
+																	</div>
+																	<div class="b__slide-col">
+																		<div class="b__content">
+																			<div class="b__content-row">
+																				<div class="b__content-col">
+																					<div class="b__content-top">
+																						<h5 class="b__slide-title"><span class="b__desc-span">Манукян Наринэ Георгиевна</span></h5>
+																						<p class="b__desc"><span class="b__desc-span">Врач акушер-гинеколог, гинеколог-эндокринолог, лучший врач корпорации</span></p>
+																						<div class="b__content-wrapper">
+																							<p class="b__review">Спрей Эпиген Интим представляет собой эффективное и безопасное средство для лечения, профилактики генитальных вирусных инфекций, а гель предназначен для интимной гигиены на каждый день...</p>
+																						</div>
+																					</div>
+																					<div class="b__content-bottom"><a class="b__link" href="#">Читать отзыв</a></div>
+																				</div>
+																				<div class="b__content-col">
+																					<div class="b__content-top">
+																						<div class="b__preview">
+																							<div class="b__preview-counter">
+																								<div class="b__preview-wrapper"><span class="b__preview-count">1</span>/4</div>
+																							</div>
+																							<div class="b__preview-image"><img class="b__preview-img" src="assets/images/reviews-slider-2.jpeg"></div>
+																						</div>
+																					</div>
+																					<div class="b__content-bottom">
+																						<div class="spray-page__slider-links"><a class="button button--reviews-slider button--reviews-slider--small btn-animation" href="#"><span class="btn-animation__text">Все отзывы</span></a><a class="spray-page__slider-link btn-animation" href="#"><span class="btn-animation__text">Задать вопрос врачу</span></a></div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<div class="b__slide-mobile">
+																	<div class="b__slide-row">
+																		<div class="b__slide-col">
+																			<div class="b__slide-top">
+																				<div class="b__slide-img"><img class="b__img" src="assets/images/reviews-slider-1.jpeg"></div>
+																				<div class="b__content">
+																					<h5 class="b__slide-title"><span class="b__desc-span">Сапрыкина Людмила Витальевна</span></h5>
+																					<div class="b__desc"><span class="b__desc-span">Ассистент кафедры акушерства и гинекологии ЛФ ФГБОУ ВО им. Н.И. Пирогова МЗ РФ, врач акушер-гинеколог высшей категории, к.м.н. (Москва).</span></div>
+																				</div>
+																			</div>
+																			<div class="b__slide-bottom">
+																				<p class="b__review">Спрей Эпиген Интим представляет собой эффективное и безопасное средство для лечения, профилактики генитальных вирусных инфекций, а гель предназначен для интимной гигиены на каждый день...</p><a class="b__link" href="#">Читать отзыв</a>
+																			</div>
+																		</div>
+																		<div class="b__slide-col">
+																			<div class="b__content-top">
+																				<div class="b__control">
+																					<div class="b__control-item">
+																						<div class="b b--btn-left-right-slider btn-animation btn-animation--icon" data-command-slider-arrow="prev"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
+																								<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																							</svg></div>
+																					</div>
+																					<div class="b__control-item">
+																						<div class="b b--btn-left-right-slider b--right btn-animation btn-animation--icon" data-command-slider-arrow="next"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
+																								<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																							</svg></div>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="b__content-bottom"><a class="button button--reviews-slider button--reviews-slider--small btn-animation" href="#" data-mdl-open=""><span class="btn-animation__text">Задать вопрос врачу</span></a></div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
 										</div>
 									</section>
 								</main>
@@ -748,7 +1070,7 @@
 											<div class="footer__row-col">
 												<ul class="footer__product">
 													<li class="footer__product-item"><a class="product-link product-link--height--100p" href="#">
-															<div class="product-link__image"><img class="product-link__img" src="assets/images/spray.jpeg" /></div>
+															<div class="product-link__image"><img class="product-link__img" src="assets/images/spray-product.jpg" /></div>
 															<div class="product-link__text">Спрей</div>
 														</a></li>
 													<li class="footer__product-item"><a class="product-link product-link--purple product-link--height--100p" href="#">
