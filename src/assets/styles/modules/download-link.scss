@@ -1,4 +1,6 @@
 .download-link {
+  $comp: &;
+
   padding: 12px 0;
 
   display: flex;
@@ -8,6 +10,14 @@
   border: 1px solid $color-blue;
   border-radius: 40px;
   transition: $transition;
+
+  &:hover {
+    #{$comp}__svg {
+      path {
+        stroke: $color-white;
+      }
+    }
+  }
 
   &--margin-bot {
     &--default {
@@ -22,6 +32,15 @@
   &__icon {
     display: flex;
     align-items: center;
+  }
+
+  &__svg {
+    position: relative;
+    z-index: 1;
+
+    path {
+      transition: $transition;
+    }
   }
 
   &__text {

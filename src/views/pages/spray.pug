@@ -329,8 +329,9 @@ block content
                           .category-item.category-item--blue
                             |Соответсвует стандартам GMP
                     .spray-page__intro-col
-                      a.button.button--spray(href="#")
-                        |Где купить
+                      a.button.button--spray.btn-animation(href="#")
+                        span.btn-animation__text
+                          |Где купить
               section.spray-page__section.margin-top.margin-top--l(id='spray' data-section='')
                 .spray-page__section-row
                   .spray-page__section-col
@@ -646,10 +647,10 @@ block content
                       h3.spray-page__section-title.margin-botto.margin-bottom--m
                         |Способ применения
                       .spray-page__video-button
-                        a.download-link.download-link--default(href="#")
+                        a.download-link.download-link--default.btn-animation(href="#")
                           .download-link__icon
-                            +download-svg
-                          .download-link__text
+                            +download-svg.download-link__svg
+                          span.download-link__text.btn-animation__text
                             |Скачать инструкцию
                     .spray-page__video-col
                       .video
@@ -678,8 +679,9 @@ block content
                               a.border-link(href="#")
                                 |Отзывы врачей
                         .spray-page__slider-col
-                          a.spray-page__slider-link(href="#")
-                            |Задать вопрос врачу
+                          a.spray-page__slider-link.btn-animation(href="#")
+                            span.btn-animation__text
+                              |Задать вопрос врачу
                     .b__bottom
                       each slide in [1, 2, 3, 4]
                         .b__slide
@@ -753,8 +755,9 @@ block content
                                 .b__content-bottom
                                   a.b__link(href="#")
                                     |Читать отзыв
-                                  a.button.button--reviews-slider(href='#' data-mdl-open='')
-                                    |Все отзывы
+                                  a.button.button--reviews-slider.btn-animation(href='#' data-mdl-open='')
+                                    span.btn-animation__text
+                                      |Все отзывы
             +footer.page__footer
   .modal(data-modal='3')
     .modal-test
