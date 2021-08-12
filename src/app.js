@@ -1748,9 +1748,13 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 // loader
 {
   // $(window).on('load', function() {
-  //   $('body').css('overflow', 'hidden')
+    // $('body').css('overflow', 'hidden')
 
+  //   console.log(process.env.NODE_ENV);
   //   $('.loader').addClass('loader--hidden')
+  //   if($('.main-page').length) {
+      // $('body').css('overflow', 'hidden')
+  //   }
   // })
 }
 
