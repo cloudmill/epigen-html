@@ -54,8 +54,8 @@ mixin nav-page-d
             |!{item.title}
 
 mixin nav-page-m
-  nav.nav-page-d.nav-page-d--mobile(data-aos='fade-up')
-    ul.nav-page-d__list
+  nav.nav-page-d.nav-page-d--mobile
+    ul.nav-page-d__list(data-aos='fade-up')
       -
         var items = [
           {
@@ -698,7 +698,7 @@ block content
                                         .b__control-item
                                           .b.b--btn-left-right-slider.b--right.btn-animation.btn-animation--icon(data-command-slider-arrow='next')
                                             +simple-arrow-svg.b__svg
-                                    
+
                   .reviews-tabs__links
                     .spray-page__slider-links
                       a.button.button--reviews-slider.button--reviews-slider--small.btn-animation.spray-page__slider-desktop(href='#')
