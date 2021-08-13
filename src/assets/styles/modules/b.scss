@@ -753,14 +753,31 @@
       border: 1px solid $color-blue;
       border-radius: 50%;
       cursor: pointer;
+
+      &:hover {
+        #{$comp}__svg {
+          path,
+          circle {
+            stroke: $color-white;
+          }
+        }
+      }
     }
 
     #{$comp}__svg {
       $size-m: 11px;
 
+      position: relative;
+      z-index: 1;
+
       @media (max-width: $breakpoint - 1px) {
         max-width: $size-m;
         max-height: $size-m;
+      }
+
+      circle,
+      path {
+        transition: $transition;
       }
     }
   }

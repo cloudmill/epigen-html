@@ -242,10 +242,10 @@ block content
                                     .b__content-top
                                       .b__control
                                         .b__control-item
-                                          .b.b--btn-left-right-slider(data-command-slider-arrow='prev')
+                                          .b.b--btn-left-right-slider.btn-animation.btn-animation--icon(data-command-slider-arrow='prev')
                                             +simple-arrow-svg.b__svg
                                         .b__control-item
-                                          .b.b--btn-left-right-slider.b--right(data-command-slider-arrow='next')
+                                          .b.b--btn-left-right-slider.b--right.btn-animation.btn-animation--icon(data-command-slider-arrow='next')
                                             +simple-arrow-svg.b__svg
                                     .b__content-bottom
                                       .b__preview
@@ -276,21 +276,22 @@ block content
                                 .b__content-top
                                   .b__control
                                     .b__control-item
-                                      .b.b--btn-left-right-slider(data-command-slider-arrow='prev')
+                                      .b.b--btn-left-right-slider.btn-animation.btn-animation--icon(data-command-slider-arrow='prev')
                                         +simple-arrow-svg.b__svg
                                     .b__control-item
-                                      .b.b--btn-left-right-slider.b--right(data-command-slider-arrow='next')
+                                      .b.b--btn-left-right-slider.b--right.btn-animation.btn-animation--icon(data-command-slider-arrow='next')
                                         +simple-arrow-svg.b__svg
                                 .b__content-bottom
-                                  a.button.button--reviews-slider(href='#' data-mdl-open='')
-                                    |Задать вопрос врачу
+                                  a.button.button--reviews-slider.btn-animation(href='#' data-mdl-open='')
+                                    span.btn-animation__text
+                                      |Задать вопрос врачу
               section.page-consultation__faq(data-parallax-container='1')
                 h2.title.title--small.title--margin-bottom--none(data-aos='fade-up')
                   |Найти в заданных вопросах
                 form.page-consultation__search.b.b--search-consultation(action='#' method='get')
                   .b__row(data-aos='fade-up')
                     input(type='text' name='search_request' placeholder='Что вас интересует?').b__input
-                    button.b__btn(type="submit")
+                    button.b__btn.btn-animation.btn-animation--icon(type="submit")
                       +search-svg.b__svg
                 ul.faq-page__section-list
                   li.faq-page__section-item(data-aos='fade-up')
@@ -309,8 +310,8 @@ block content
                     +accordion(name='Анастасия' date='02.05.2021' caption='Можно ли при молочнице пить кефир?' doctor=true)
                   li.faq-page__section-item(data-aos='fade-up')
                     +accordion(name='Ирина' date='02.05.2021' caption='36 лет, после тержинана для лечения хронической молочницы начались белые выделения, иногда слизистые немного. до этого ничего не беспокоило. в чем дело?' doctor=true)
-              .button-show-wrapper
-                .button-show(data-aos='fade-up')
+              .button-show-wrapper(data-aos='fade-up')
+                .button-show
                   .button-show__icon
                     +btn-plus-svg.button-show__svg
                   .button-show__text

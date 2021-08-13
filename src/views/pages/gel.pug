@@ -169,8 +169,9 @@ block content
                                 |Положение о пользовании сайтом
                   +nav-page-d.nav-page-d--purple
                 .aside__bottom(data-aos='fade-up')
-                  a.button.button--t.button--purple.margin-bottom.margin-bottom--m(href='#')
-                    |Где купить
+                  a.button.button--t.button--purple.margin-bottom.margin-bottom--m.btn-animation.btn-animation--purple(href='#')
+                    span.btn-animation__text
+                      |Где купить
                   +copyright-link(href='#')
                     |Компания «Инвар», 2021
         .row__col.row__col--main
@@ -417,10 +418,10 @@ block content
                       h3.spray-page__section-title.margin-botto.margin-bottom--m(data-aos='fade-up')
                         |Способ применения
                       .spray-page__video-button(data-aos='fade-up')
-                        a.download-link.download-link--default(href="#")
+                        a.download-link.download-link--default.btn-animation(href="#")
                           .download-link__icon
-                            +download-svg
-                          .download-link__text
+                            +download-svg.download-link__svg
+                          span.btn-animation__text.download-link__text
                             |Скачать инструкцию
                     .spray-page__video-col(data-aos='fade-up')
                       ul.page-gel__method-list
@@ -455,7 +456,7 @@ block content
                     .spray-page__slider-categories
                       .spray-page__slider-item.spray-page__slider-item--active
                         .border-link.border-link--active
-                          |Все отзывы
+                          |Отзывы покупателей
                       .spray-page__slider-item
                         .border-link
                           |Отзывы врачей
