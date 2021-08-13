@@ -17,7 +17,7 @@ block content
             .aside__inner
               .aside__container
                 .aside__top.modal(data-modal='4')
-                  header.header.header--margin-bottom--default
+                  header.header.header--margin-bottom--default(data-aos='fade-up')
                     a.header__logo(href='#')
                       +logo-svg.header__logo-svg
                     .header__menu(data-button='4')
@@ -60,16 +60,16 @@ block content
                               a.modal-aside__doc-link(href="#")
                                 |Положение о пользовании сайтом
                   ul.page-reviews__filter
-                    li.page-reviews__filter-item
+                    li.page-reviews__filter-item(data-aos='fade-up')
                       +border-link(href='#' active)
                         |Все
-                    li.page-reviews__filter-item
+                    li.page-reviews__filter-item(data-aos='fade-up')
                       +border-link(href='#')
                         |Отзывы врачей
-                    li.page-reviews__filter-item
+                    li.page-reviews__filter-item(data-aos='fade-up')
                       +border-link(href='#')
                         |Отзывы покупателей
-                .aside__bottom
+                .aside__bottom(data-aos='fade-up')
                   +copyright-link(href='#')
                     |Компания «Инвар», 2021
         .row__col.row__col--main
@@ -78,7 +78,7 @@ block content
               .panel
                 .panel__panel
                   .panel__row
-                    .panel__col
+                    .panel__col(data-aos='fade-up')
                       .panel__inner
                         .panel__product
                           //- .panel__product-item--active
@@ -90,7 +90,7 @@ block content
                             .panel__product-mark
                             .panel__product-text
                               |Гель
-                    .panel__wrapper
+                    .panel__wrapper(data-aos='fade-up')
                       .panel__wrapper-row
                         .panel__wrapper-col
                           .panel__inner
@@ -143,7 +143,7 @@ block content
                                       a.panel-modal__link(href="#")
                                         |#{item}
                   .panel__mobile
-                    header.header
+                    header.header(data-aos='fade-up')
                       a.header__logo(href="#")
                         +logo-svg.header__svg
                       .header__menu(data-modal-button='1')
@@ -207,7 +207,7 @@ block content
                                   a.modal-mobile__bottom-link(href="#")
                                     |CloudMill
             main.page__main
-              h1.title
+              h1.title(data-aos='fade-up')
                 |Отзывы
               .rail.rail--margin-bottom--default
               .faq-page
@@ -216,18 +216,18 @@ block content
                     +border-link(href='#' active)
                       |Все
                   each link in ['Состав', 'Противопоказания', 'Использование', 'Приобрести',]
-                    li.faq-page__item
+                    li.faq-page__item(data-aos='fade-up')
                       +border-link(href='#')
                         |!{link}
               ul.product-choice.product-choice--margin-bottom--default
-                li.product-choice__item
+                li.product-choice__item(data-aos='fade-up')
                   a.product-btn.product-btn--active(href='#')
                     +spray-svg.product-btn__svg
                     p.product-btn__text
                       |Эпиген Интим
                       br
                       |Спрей
-                li.product-choice__item
+                li.product-choice__item(data-aos='fade-up')
                   a.product-btn(href='#')
                     +gel-svg.product-btn__svg
                     p.product-btn__text
@@ -235,24 +235,24 @@ block content
                       br
                       |Гель
               ul.page-reviews__list
-                li.page-reviews__list-item
+                li.page-reviews__list-item(data-aos='fade-up')
                   +review-card(source='irecommend.ru')
-                li.page-reviews__list-item
+                li.page-reviews__list-item(data-aos='fade-up')
                   +review-card(image=2 caption='Врач акушер - гинеколог, врач УЗИ.' plus=true)
-                li.page-reviews__list-item
+                li.page-reviews__list-item(data-aos='fade-up')
                   +review-card(image=1 caption='Врач акушер-гинеколог, гинеколог-эндокринолог, врач высшей категории, заместитель главного врача по медицинской части..' plus=true)
-                li.page-reviews__list-item
+                li.page-reviews__list-item(data-aos='fade-up')
                   +review-card(source='wildberries.ru')
-                li.page-reviews__list-item
+                li.page-reviews__list-item(data-aos='fade-up')
                   +review-card(image=3 caption='Врач акушер-гинеколог, гинеколог-эндокринолог, лучший врач корпорации' plus=true)
-                li.page-reviews__list-item
+                li.page-reviews__list-item(data-aos='fade-up')
                   +review-card(image=2 caption='Врач акушер - гинеколог, врач УЗИ.' plus=true)
-                li.page-reviews__list-item
+                li.page-reviews__list-item(data-aos='fade-up')
                   +review-card(source='irecommend.ru')
-                li.page-reviews__list-item
+                li.page-reviews__list-item(data-aos='fade-up')
                   +review-card(image=4 caption='Акушер гинеколог, стаж 40 лет.' plus=true)
               .button-show-wrapper
-                .button-show
+                .button-show(data-aos='fade-up')
                   .button-show__icon
                     +btn-plus-svg.button-show__svg
                   .button-show__text

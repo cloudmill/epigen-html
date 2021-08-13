@@ -20,7 +20,7 @@ block content
             .aside__inner
               .aside__container
                 .aside__top.modal(data-modal='4')
-                  header.header
+                  header.header(data-aos='fade-up')
                     a.header__logo(href='#')
                       +logo-svg.header__logo-svg
                     .header__menu(data-button='4')
@@ -70,7 +70,7 @@ block content
               .panel
                 .panel__panel
                   .panel__row
-                    .panel__col
+                    .panel__col(data-aos='fade-up')
                       .panel__inner
                         .panel__product
                           //- .panel__product-item--active
@@ -82,7 +82,7 @@ block content
                             .panel__product-mark
                             .panel__product-text
                               |Гель
-                    .panel__wrapper
+                    .panel__wrapper(data-aos='fade-up')
                       .panel__wrapper-row
                         .panel__wrapper-col
                           .panel__inner
@@ -135,7 +135,7 @@ block content
                                       a.panel-modal__link(href="#")
                                         |#{item}
                   .panel__mobile
-                    header.header
+                    header.header(data-aos='fade-up')
                       a.header__logo(href="#")
                         +logo-svg.header__svg
                       .header__menu(data-modal-button='1')
@@ -198,9 +198,9 @@ block content
                                     |Сделано в&nbsp;
                                   a.modal-mobile__bottom-link(href="#")
                                     |CloudMill
-      p.link-text.page-404__text
+      p.link-text.page-404__text(data-aos='fade-up')
         |Страница не найдена, но вы можете#[br]перейти на страницы нашей#[br]продукции: #[a.link-text__link(href='#') Спрей Эпиген Интим]#[br]#[a.link-text__link(href='#') Гель Эпиген Интим] или на #[a.link-text__link(href='#') Главную]
-      .page-404__404
+      .page-404__404(data-aos='fade-up')
         +404-svg.page-404__404-img
         +star-svg.page-404__404-star
         +moon-svg.page-404__404-moon

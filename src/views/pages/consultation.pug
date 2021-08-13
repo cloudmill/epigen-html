@@ -16,7 +16,7 @@ block content
             .aside__inner
               .aside__container
                 .aside__top.modal(data-modal='4')
-                  header.header
+                  header.header(data-aos='fade-up')
                     a.header__logo(href='#')
                       +logo-svg.header__logo-svg
                     .header__menu(data-button='4')
@@ -58,7 +58,7 @@ block content
                             .modal-aside__doc
                               a.modal-aside__doc-link(href="#")
                                 |Положение о пользовании сайтом
-                .aside__bottom
+                .aside__bottom(data-aos='fade-up')
                   +copyright-link(href='#')
                     |Компания «Инвар», 2021
         .row__col.row__col--main
@@ -67,7 +67,7 @@ block content
               .panel
                 .panel__panel
                   .panel__row
-                    .panel__col
+                    .panel__col(data-aos='fade-up')
                       .panel__inner
                         .panel__product
                           //- .panel__product-item--active
@@ -79,7 +79,7 @@ block content
                             .panel__product-mark
                             .panel__product-text
                               |Гель
-                    .panel__wrapper
+                    .panel__wrapper(data-aos='fade-up')
                       .panel__wrapper-row
                         .panel__wrapper-col
                           .panel__inner
@@ -132,7 +132,7 @@ block content
                                       a.panel-modal__link(href="#")
                                         |#{item}
                   .panel__mobile
-                    header.header
+                    header.header(data-aos='fade-up')
                       a.header__logo(href="#")
                         +logo-svg.header__svg
                       .header__menu(data-modal-button='1')
@@ -196,18 +196,18 @@ block content
                                   a.modal-mobile__bottom-link(href="#")
                                     |CloudMill
             main.page__main
-              h1.title
+              h1.title(data-aos='fade-up')
                 |Консультация эксперта
               .rail.rail--margin-bottom--large
               section.row.row--in-main--desc
                 .row__col
-                  p.page-consultation__text.page-consultation__text--desc--default.max-width.max-width--col--9
+                  p.page-consultation__text.page-consultation__text--desc--default.max-width.max-width--col--9(data-aos='fade-up')
                     |Вы можете задать вопросы по применению линии средств Эпиген Интим, а также уточнить интересующие вас моменты по проблемам интимного здоровья и вагинальных инфекций.
                 .row__col
-                  p.page-consultation__text.page-consultation__text--desc--mini
+                  p.page-consultation__text.page-consultation__text--desc--mini(data-aos='fade-up')
                     |Внимание! Консультация на сайте не исключает очного визита к врачу. Только при личном осмотре, после проведения диагностических процедур и изучения результатов анализов возможно определить причину появления симптомов и назначить правильное лечение. Информация в данном разделе является исключительно ознакомительной и не может быть использована в качестве замены непосредственной консультации с врачом.
               section.page-consultation__expert
-                h2.page-consultation__expert-title
+                h2.page-consultation__expert-title(data-aos='fade-up')
                   |На вопросы отвечают наши эксперты
                 .page-consultation__expert-slider
                   .page-consultation__expert-layout(data-parallax='1')
@@ -285,32 +285,32 @@ block content
                                   a.button.button--reviews-slider(href='#' data-mdl-open='')
                                     |Задать вопрос врачу
               section.page-consultation__faq(data-parallax-container='1')
-                h2.title.title--small.title--margin-bottom--none
+                h2.title.title--small.title--margin-bottom--none(data-aos='fade-up')
                   |Найти в заданных вопросах
                 form.page-consultation__search.b.b--search-consultation(action='#' method='get')
-                  .b__row
+                  .b__row(data-aos='fade-up')
                     input(type='text' name='search_request' placeholder='Что вас интересует?').b__input
                     button.b__btn(type="submit")
                       +search-svg.b__svg
                 ul.faq-page__section-list
-                  li.faq-page__section-item
+                  li.faq-page__section-item(data-aos='fade-up')
                     +accordion(name='Анна' date='02.05.2021' caption='Здравствуйте, 4 месяц не могу избавится от молочницы. назначают с периодичностью гексикон и пимафуцин лечение не помогает результата нет. стало только хуже выделения увеличиваются неделю назад появился зуд и жжение. Помогите.' doctor=true)
-                  li.faq-page__section-item
+                  li.faq-page__section-item(data-aos='fade-up')
                     +accordion(name='Ольга' date='02.05.2021' caption='Подскажите могут ли эти выделения говорить о молочнице ?Или выделения на нее не похожи? Вначале были белые густые выделения с комочками,после стали желтыми .есть кислотный запах,жжения и зуда нет.' doctor=true)
-                  li.faq-page__section-item
+                  li.faq-page__section-item(data-aos='fade-up')
                     +accordion(name='Ирина' date='02.05.2021' caption='Соответствуют ли язвы по кругу крайней плоти диагнозу молочница, который мне поставил врач-венеролог, не дождавшись результатов анализов(посевы).' doctor=true)
-                  li.faq-page__section-item
+                  li.faq-page__section-item(data-aos='fade-up')
                     +accordion(name='Ирина' date='02.05.2021' caption='Добрый день! Скажите, пожалуйста, какой день цикла считать первым? Перед месячными молочница в последнее время постоянно, сначала,заметила, что творожистые выделения стали цвета оттаявшей мясной водицы.' doctor=true)
-                  li.faq-page__section-item
+                  li.faq-page__section-item(data-aos='fade-up')
                     +accordion(name='Виктория' date='02.05.2021' caption='Как вылечить молочницу навсегда? Можно ли самой выбирать ОК?' doctor=true)
-                  li.faq-page__section-item
+                  li.faq-page__section-item(data-aos='fade-up')
                     +accordion(name='Таисия' date='02.05.2021' caption='Как лечится парню когда у меня молочница а к врачу он идти не хочет?' doctor=true)
-                  li.faq-page__section-item
+                  li.faq-page__section-item(data-aos='fade-up')
                     +accordion(name='Анастасия' date='02.05.2021' caption='Можно ли при молочнице пить кефир?' doctor=true)
-                  li.faq-page__section-item
+                  li.faq-page__section-item(data-aos='fade-up')
                     +accordion(name='Ирина' date='02.05.2021' caption='36 лет, после тержинана для лечения хронической молочницы начались белые выделения, иногда слизистые немного. до этого ничего не беспокоило. в чем дело?' doctor=true)
               .button-show-wrapper
-                .button-show
+                .button-show(data-aos='fade-up')
                   .button-show__icon
                     +btn-plus-svg.button-show__svg
                   .button-show__text

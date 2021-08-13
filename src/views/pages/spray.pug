@@ -8,7 +8,7 @@ block grid-test
 include ../components/block.pug
 
 mixin nav-page-d
-  nav.nav-page-d
+  nav.nav-page-d(data-aos='fade-up')
     ul.nav-page-d__list
       -
         var items = [
@@ -54,7 +54,7 @@ mixin nav-page-d
             |!{item.title}
 
 mixin nav-page-m
-  nav.nav-page-d.nav-page-d--mobile
+  nav.nav-page-d.nav-page-d--mobile(data-aos='fade-up')
     ul.nav-page-d__list
       -
         var items = [
@@ -115,7 +115,7 @@ block content
             .aside__inner
               .aside__container
                 .aside__top.modal(data-modal='4')
-                  header.header.header--margin-bottom--default
+                  header.header.header--margin-bottom--default(data-aos='fade-up')
                     a.header__logo(href='#')
                       +logo-svg.header__logo-svg
                     .header__menu(data-button='4')
@@ -158,7 +158,7 @@ block content
                               a.modal-aside__doc-link(href="#")
                                 |Положение о пользовании сайтом
                   +nav-page-d
-                .aside__bottom
+                .aside__bottom(data-aos='fade-up')
                   a.button.button--spray.margin-bottom.margin-bottom--m.btn-animation(href="#")
                     span.btn-animation__text
                       |Где купить
@@ -170,7 +170,7 @@ block content
               .panel.panel--nav
                 .panel__panel
                   .panel__row
-                    .panel__col
+                    .panel__col(data-aos='fade-up')
                       .panel__inner
                         .panel__product
                           //- .panel__product-item--active
@@ -182,7 +182,7 @@ block content
                             .panel__product-mark
                             .panel__product-text
                               |Гель
-                    .panel__wrapper
+                    .panel__wrapper(data-aos='fade-up')
                       .panel__wrapper-row
                         .panel__wrapper-col
                           .panel__inner
@@ -235,7 +235,7 @@ block content
                                       a.panel-modal__link(href="#")
                                         |#{item}
                   .panel__mobile
-                    header.header
+                    header.header(data-aos='fade-up')
                       a.header__logo(href="#")
                         +logo-svg.header__svg
                       .header__menu(data-modal-button='1')
@@ -302,7 +302,7 @@ block content
 
             main.page__main
               section.spray-page__section
-                .frame.frame--spray
+                .frame.frame--spray(data-aos='fade-up')
                   img.frame__img(src='assets/images/spray-frame.jpg')
                   .spray-page__intro
                     .spray-page__intro-row
@@ -320,71 +320,71 @@ block content
                 .spray-page__intro.spray-page__intro--mobile
                   .spray-page__intro-row
                     .spray-page__intro-col
-                      h1.spray-page__intro-title
+                      h1.spray-page__intro-title(data-aos='fade-up')
                         |Спрей Эпиген Интим
                     .spray-page__intro-col
                       ul.spray-page__intro-list
-                        li.spray-page__intro-item
+                        li.spray-page__intro-item(data-aos='fade-up')
                           .category-item.category-item--blue
                             |Сделано в Испании
-                        li.spray-page__intro-item
+                        li.spray-page__intro-item(data-aos='fade-up')
                           .category-item.category-item--blue
                             |Соответсвует стандартам GMP
-                    .spray-page__intro-col
+                    .spray-page__intro-col(data-aos='fade-up')
                       a.button.button--spray.btn-animation(href="#")
                         span.btn-animation__text
                           |Где купить
               section.spray-page__section.margin-top.margin-top--l(id='spray' data-section='')
                 .spray-page__section-row
                   .spray-page__section-col
-                    h3.spray-page__section-title
+                    h3.spray-page__section-title(data-aos='fade-up')
                       |Эпиген Интим Спрей предназначен для профилактики и лечения гинекологических заболеваний
                   .spray-page__section-col
-                    p.spray-page__section-text
+                    p.spray-page__section-text(data-aos='fade-up')
                       |Разрешен к применению на любом сроке беременности и в период прегравидарной подготовки, не противопоказан детям.
               section.spray-page__section.margin-top.margin-top--l(id='form' data-section='')
                 +block
               section.spray-page__section.margin-top.margin-top--l
                 ul.spray-page__list
-                  li.spray-page__list-item.spray-page__list-item--default
+                  li.spray-page__list-item.spray-page__list-item--default(data-aos='fade-up')
                     p.spray-page__list-text
                       |5 эффектов спрея Эпиген Интим для помощи при различных заболеваниях интимной зоны
-                  li.spray-page__list-item
+                  li.spray-page__list-item(data-aos='fade-up')
                     .spray-page__list-container
                       .spray-page__list-img
                         +spray-1-svg
                       h3.spray-page__list-title
                         |Противовирусный
-                  li.spray-page__list-item
+                  li.spray-page__list-item(data-aos='fade-up')
                     .spray-page__list-container
                       .spray-page__list-img
                         +spray-2-svg
                       h3.spray-page__list-title
                         |Противовоспалительный
-                  li.spray-page__list-item
+                  li.spray-page__list-item(data-aos='fade-up')
                     .spray-page__list-container
                       .spray-page__list-img
                         +spray-3-svg
                       h3.spray-page__list-title
                         |Противозудный
-                  li.spray-page__list-item
+                  li.spray-page__list-item(data-aos='fade-up')
                     .spray-page__list-container
                       .spray-page__list-img
                         +spray-4-svg
                       h3.spray-page__list-title
                         |Регенерирующий
-                  li.spray-page__list-item
+                  li.spray-page__list-item(data-aos='fade-up')
                     .spray-page__list-container
                       .spray-page__list-img
                         +spray-5-svg
                       h3.spray-page__list-title
                         |Иммуностимулирующий
               section.spray-page__section.margin-top.margin-top--l(id='purpose' data-section='')
-                h3.spray-page__section-title
+                h3.spray-page__section-title(data-aos='fade-up')
                   |Применяется при лечении
                 .spray-page__use.margin-top.margin-top--md
                   ul.spray-page__use-list
-                    li.spray-page__use-item
+                    li.spray-page__use-item(data-aos='fade-up')
                       .spray-page__use-card
                         .spray-page__use-container
                           .spray-page__use-img
@@ -397,21 +397,21 @@ block content
                             +spray-use-2-svg
                           .spray-page__use-text
                             |ВПЧ
-                    li.spray-page__use-item
+                    li.spray-page__use-item(data-aos='fade-up')
                       .spray-page__use-card.spray-page__use-card--big
                         .spray-page__use-container
                           .spray-page__use-img
                             +spray-use-3-svg
                           .spray-page__use-text
                             |Бактериальный вагиноз, неспецифический вагинит
-                    li.spray-page__use-item
+                    li.spray-page__use-item(data-aos='fade-up')
                       .spray-page__use-card.spray-page__use-card--big
                         .spray-page__use-container
                           .spray-page__use-img
                             +spray-use-4-svg
                           .spray-page__use-text
                             |Дискомфорт, связанный с половым актом
-                    li.spray-page__use-item
+                    li.spray-page__use-item(data-aos='fade-up')
                       .spray-page__use-card
                         .spray-page__use-container
                           .spray-page__use-img
@@ -431,17 +431,17 @@ block content
                     +moon-svg.spray-page__content-icon
                     +triangle-bg-svg.spray-page__content-bg
                   .spray-page__content-content
-                    h3.spray-page__content-title
+                    h3.spray-page__content-title(data-aos='fade-up')
                       |Ощущаете дискомфорт в интимной зоне?
                     .spray-page__content-row
-                      .spray-page__content-col
+                      .spray-page__content-col(data-aos='fade-up')
                         a.spray-page__content-button.btn-animation.btn-animation--icon(href="#" data-scroll='#test')
                           +spoiler-arrow-svg.spray-page__content-svg
-                      .spray-page__content-col
+                      .spray-page__content-col(data-aos='fade-up')
                         .spray-page__content-text
                           |Пройдите тест и узнайте больше о решении данной проблемы
               section.test.margin-top.margin-top--md(id='test' data-parallax-container='1' data-section='')
-                form.test__container(action="/")
+                form.test__container(action="/" data-aos='fade-up')
                   .test__row
                     .test__col
                       ul.test__questions
@@ -530,42 +530,42 @@ block content
                 .spray-page__structure
                   .spray-page__structure-row
                     .spray-page__structure-col
-                      h3.spray-page__section-title
+                      h3.spray-page__section-title(data-aos='fade-up')
                         |Состав
-                      .spray-page__structure-label
+                      .spray-page__structure-label(data-aos='fade-up')
                         |на 100 мл. препарата
                     .spray-page__structure-col
-                      h4.spray-page__structure-title
+                      h4.spray-page__structure-title(data-aos='fade-up')
                         |Действущее вещество
-                      .spray-page__structure-content
+                      .spray-page__structure-content(data-aos='fade-up')
                         .spray-page__structure-text.max-width.max-width--col--5
                           |Глицирризиновая кислота активированная (эквивалентно аммонию глицирризинату)
                         .spray-page__structure-num
                           |0,1 г
                     .spray-page__structure-col
-                      .spray-page__structure-head
+                      .spray-page__structure-head(data-aos='fade-up')
                         h4.spray-page__structure-title
                           |Вспомогательные вещества
                         .spray-page__structure-num
                           |q.s.
                       ul.spray-page__structure-list
                         each item in ['Яблочная кислота', 'Фумаровая кислота', 'Аскорбиновая кислота', 'Фолиевая кислота', 'Пропиленгликоль', 'Твин-80 (полисорбат-80)', 'Вода очищенная',]
-                          li.spray-page__structure-item
+                          li.spray-page__structure-item(data-aos='fade-up')
                             .spray-page__structure-text
                               |!{item}
               section.spray-page__section.margin-top.margin-top--l(id='instruction' data-section='')
                 .spray-page__video
                   .spray-page__video-row
                     .spray-page__video-col
-                      h3.spray-page__section-title.margin-botto.margin-bottom--m
+                      h3.spray-page__section-title.margin-botto.margin-bottom--m(data-aos='fade-up')
                         |Способ применения
-                      .spray-page__video-button
+                      .spray-page__video-button(data-aos='fade-up')
                         a.download-link.download-link--default.btn-animation(href="#")
                           .download-link__icon
                             +download-svg.download-link__svg
                           span.download-link__text.btn-animation__text
                             |Скачать инструкцию
-                    .spray-page__video-col
+                    .spray-page__video-col(data-aos='fade-up')
                       .video.video--default
                         .video__container
                           .video__frame
@@ -577,7 +577,7 @@ block content
               section.page-gel__reviews(id='reviews' data-section='')
                 .page-gel__reviews-layout
                 .reviews-tabs
-                  .reviews-tabs__buttons
+                  .reviews-tabs__buttons(data-aos='fade-up')
                     .spray-page__slider-categories
                       .spray-page__slider-item.spray-page__slider-item--active
                         .border-link.border-link--active
@@ -585,7 +585,7 @@ block content
                       .spray-page__slider-item
                         .border-link
                           |Отзывы врачей
-                  .reviews-tabs__tabs
+                  .reviews-tabs__tabs(data-aos='fade-up')
                     .reviews-tabs__item.reviews-tabs__item--active
                       .page-gel__reviews-top.page-gel__reviews-top--tabs
                         .page-gel__reviews-left
