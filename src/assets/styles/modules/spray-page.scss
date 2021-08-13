@@ -1,7 +1,6 @@
 .spray-page {
   $comp: &;
 
-
   &__intro {
     @media (max-width: $breakpoint - 1px) {
       margin-top: 15px;
@@ -528,27 +527,21 @@
     cursor: pointer;
     transition: $transition;
 
-    &::before {
-      $size: 10px;
-
-      margin-top: -5px;
-
-      content: "";
-      width: $size;
-      height: $size;
-
-      border: 1px solid $color-black;
-      border-color: transparent transparent $color-black $color-black;
-      transform: rotate(-45deg);
-      transition: $transition;
-    }
-
     &:hover {
-      background-color: $color-blue;
 
-      &::before {
-        border-color: transparent transparent $color-white $color-white;
+      #{$comp}__content-svg {
+        path {
+          stroke: $color-white;
+        }
       }
+    }
+  }
+  &__content-svg {
+    position: relative;
+    z-index: 1;
+
+    path {
+      transition: $transition;
     }
   }
   &__content-text {
