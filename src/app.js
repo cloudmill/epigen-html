@@ -410,17 +410,20 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 {
   $(() => {
 
-    $('.accordion').each(function () {
-      const accordion = $(this);
-      const accordionButton = accordion.find('.accordion__head');
+    if ($('.accordion').length !== 0) {
+      window.addEventListener('click', (e) => {
+        const accordion = $('.accordion')
+        const target = $(e.target).closest(accordion)
 
-      accordionButton.on('click', function () {
-        accordion.toggleClass('accordion--active');
-      });
-    });
-  });
+        if (target.length) {
+          const accordionButton = target.find('.accordion__head');
+
+          target.toggleClass('accordion--active');
+        }
+      })
+    }
+  })
 }
-
 
 // nav links
 {
