@@ -623,6 +623,16 @@
       }
     }
 
+    #{$comp}__slide-col {
+
+      &:nth-child(2) {
+        @media (max-width: $breakpoint - 1px) {
+          justify-content: flex-end;
+        }
+      }
+
+    }
+
     #{$comp}__link {
       @media (max-width: $breakpoint - 1px) {
         margin-right: 0;

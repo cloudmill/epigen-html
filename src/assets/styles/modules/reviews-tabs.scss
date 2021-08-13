@@ -1,13 +1,15 @@
 .reviews-tabs {
 
+  position: relative;
+
   &__buttons {
     position: absolute;
     z-index: 1;
     left: calc(#{$col-width-d} * 6);
-    top: 46px;
+    top: 16px;
     @media (max-width: $breakpoint - 1px) {
-      left: 15px;
-      top: 88px;
+      left: 0;
+      top: 58px;
     }
   }
 
@@ -34,6 +36,16 @@
     &--active {
       opacity: 1;
       pointer-events: all;
+    }
+  }
+
+  &__links {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    @media (max-width: $breakpoint - 1px) {
+      right: auto;
+      left: 0;
     }
   }
 }

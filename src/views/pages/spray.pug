@@ -581,7 +581,7 @@ block content
                     .spray-page__slider-categories
                       .spray-page__slider-item.spray-page__slider-item--active
                         .border-link.border-link--active
-                          |Все отзывы
+                          |Отзывы покупателей
                       .spray-page__slider-item
                         .border-link
                           |Отзывы врачей
@@ -616,15 +616,6 @@ block content
                                 .page-gel__reviews-card-bottom
                                   a.page-gel__reviews-card-link(href='#')
                                     |irecommend.ru
-                      .page-gel__reviews-links
-                        .page-gel__reviews-links-item.page-gel__reviews-links-item--desktop
-                          a.button.button--reviews-slider.button--reviews-slider--small.btn-animation(href='#')
-                            span.btn-animation__text
-                              |Все отзывы
-                        .page-gel__reviews-links-item
-                          a.button.button--reviews-slider.button--reviews-slider--small.btn-animation(href='#')
-                            span.btn-animation__text
-                              |Задать вопрос врачу
                     .reviews-tabs__item
                       .b.b--reviews-slider-main-page.b--reviews-slider-spray-page
                         .b__top.b__top--tabs
@@ -680,14 +671,6 @@ block content
                                       .b__bottom-col
                                         a.b__link(href="#")
                                           |Читать отзыв
-                                      .b__bottom-col
-                                        .spray-page__slider-links
-                                            a.button.button--reviews-slider.button--reviews-slider--small.btn-animation(href='#')
-                                              span.btn-animation__text
-                                                |Все отзывы
-                                            a.spray-page__slider-link.btn-animation(href="#")
-                                              span.btn-animation__text
-                                                |Задать вопрос врачу
                               .b__slide-mobile
                                 .b__slide-row
                                   .b__slide-col
@@ -715,11 +698,15 @@ block content
                                         .b__control-item
                                           .b.b--btn-left-right-slider.b--right.btn-animation.btn-animation--icon(data-command-slider-arrow='next')
                                             +simple-arrow-svg.b__svg
-                                    .b__content-bottom
-
-                                      a.button.button--reviews-slider.button--reviews-slider--small.btn-animation(href='#' data-mdl-open='')
-                                        span.btn-animation__text
-                                          |Задать вопрос врачу
+                                    
+                  .reviews-tabs__links
+                    .spray-page__slider-links
+                      a.button.button--reviews-slider.button--reviews-slider--small.btn-animation.spray-page__slider-desktop(href='#')
+                        span.btn-animation__text
+                          |Все отзывы
+                      a.spray-page__slider-link.btn-animation(href="#")
+                        span.btn-animation__text
+                          |Задать вопрос врачу
             +footer.page__footer
   .modal(data-modal='3')
     .modal-test
