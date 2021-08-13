@@ -1,6 +1,7 @@
 extends ../layouts/master.pug
 
 include ../components/footer.pug
+include ../components/loader.pug
 
 //- block cookies
 block grid-test
@@ -42,6 +43,9 @@ mixin copyright-link
       +copyright-svg.copyright-link__mark-svg
     .copyright-link__text
       block
+
+block loader
+  +loader
 
 block content
   .main-page

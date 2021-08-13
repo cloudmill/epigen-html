@@ -718,23 +718,19 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 // AOS
 {
   $(() => {
-    AOS.init({
-      once: true, // whether animation should happen only once - while scrolling down
-      offset: 0,
-      duration: 1000,
-    });
 
-    window.addEventListener('scroll', aosRefresh);
 
-    function aosRefresh() {
-      const timeout = setTimeout(() => {
-        clearTimeout(timeout)
-        AOS.refresh();
-        window.addEventListener('scroll', aosRefresh);
-      }, 1000);
+    // window.addEventListener('scroll', aosRefresh);
 
-      window.removeEventListener('scroll', aosRefresh);
-    }
+    // function aosRefresh() {
+    //   const timeout = setTimeout(() => {
+    //     clearTimeout(timeout)
+    //     AOS.refresh();
+    //     window.addEventListener('scroll', aosRefresh);
+    //   }, 1000);
+
+    //   window.removeEventListener('scroll', aosRefresh);
+    // }
   });
 }
 
@@ -1747,15 +1743,33 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
 // loader
 {
-  // $(window).on('load', function() {
-    // $('body').css('overflow', 'hidden')
+  $(window).on('load', function() {
+    $('body').css('overflow', 'hidden')
 
-  //   console.log(process.env.NODE_ENV);
-  //   $('.loader').addClass('loader--hidden')
-  //   if($('.main-page').length) {
-      // $('body').css('overflow', 'hidden')
-  //   }
-  // })
+    if($('.main-page').length) {
+      $('.loader').addClass('loader--hidden')
+      setTimeout(() => {
+        $('body').css('overflow', '')
+
+        AOS.init({
+          once: true,
+          offset: 0,
+          duration: 1000,
+        });
+
+        if (process.env.NODE_ENV === 'development') { //production
+          window.scrollTo(0, 0);
+        }
+      }, 3000);
+    } else {
+      $('body').css('overflow', '')
+      AOS.init({
+        once: true,
+        offset: 0,
+        duration: 1000,
+      });
+    }
+  })
 }
 
 // reviews tabs
