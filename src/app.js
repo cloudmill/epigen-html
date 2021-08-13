@@ -92,7 +92,8 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
 // cookies
 {
-  const DELAY = 1000
+  let DELAY = 1000
+  const LOADER_DELAY = 3000
 
   $(() => {
     const component = $('.cookies')
@@ -101,6 +102,10 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       let isActive = false
 
       const btn = component.find('.cookies__btn')
+
+      if ($('.main-page').length) {
+        DELAY += LOADER_DELAY
+      }
 
       setTimeout(() => {
         component.addClass('cookies--active')
@@ -405,17 +410,20 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 {
   $(() => {
 
-    $('.accordion').each(function () {
-      const accordion = $(this);
-      const accordionButton = accordion.find('.accordion__head');
+    if ($('.accordion').length !== 0) {
+      window.addEventListener('click', (e) => {
+        const accordion = $('.accordion')
+        const target = $(e.target).closest(accordion)
 
-      accordionButton.on('click', function () {
-        accordion.toggleClass('accordion--active');
-      });
-    });
-  });
+        if (target.length) {
+          const accordionButton = target.find('.accordion__head');
+
+          target.toggleClass('accordion--active');
+        }
+      })
+    }
+  })
 }
-
 
 // nav links
 {
@@ -718,23 +726,19 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 // AOS
 {
   $(() => {
-    AOS.init({
-      once: true, // whether animation should happen only once - while scrolling down
-      offset: 0,
-      duration: 1000,
-    });
 
-    window.addEventListener('scroll', aosRefresh);
 
-    function aosRefresh() {
-      const timeout = setTimeout(() => {
-        clearTimeout(timeout)
-        AOS.refresh();
-        window.addEventListener('scroll', aosRefresh);
-      }, 1000);
+    // window.addEventListener('scroll', aosRefresh);
 
-      window.removeEventListener('scroll', aosRefresh);
-    }
+    // function aosRefresh() {
+    //   const timeout = setTimeout(() => {
+    //     clearTimeout(timeout)
+    //     AOS.refresh();
+    //     window.addEventListener('scroll', aosRefresh);
+    //   }, 1000);
+
+    //   window.removeEventListener('scroll', aosRefresh);
+    // }
   });
 }
 
@@ -1747,15 +1751,41 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
 // loader
 {
-  // $(window).on('load', function() {
+  $(window).on('load', function() {
+
+    // delete later
+    AOS.init({
+      once: true,
+      offset: 0,
+      duration: 1000,
+    });
+
     // $('body').css('overflow', 'hidden')
 
-  //   console.log(process.env.NODE_ENV);
-  //   $('.loader').addClass('loader--hidden')
-  //   if($('.main-page').length) {
-      // $('body').css('overflow', 'hidden')
-  //   }
-  // })
+    // if($('.main-page').length) {
+    //   $('.loader').addClass('loader--hidden')
+    //   setTimeout(() => {
+    //     $('body').css('overflow', '')
+
+    //     AOS.init({
+    //       once: true,
+    //       offset: 0,
+    //       duration: 1000,
+    //     });
+
+    //     if (process.env.NODE_ENV === 'production') { // development
+    //       window.scrollTo(0, 0);
+    //     }
+    //   }, 3000);
+    // } else {
+    //   $('body').css('overflow', '')
+    //   AOS.init({
+    //     once: true,
+    //     offset: 0,
+    //     duration: 1000,
+    //   });
+    // }
+  })
 }
 
 // reviews tabs

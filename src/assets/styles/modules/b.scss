@@ -48,8 +48,6 @@
       display: none;
     }
 
-    overflow: hidden;
-
     #{$comp}__btn {
       position: absolute;
       top: 60px;
@@ -597,6 +595,11 @@
 
   // модификатор слайдера отзывов с главной
   &--reviews-slider-spray-page {
+
+    #{$comp}__content-row {
+      height: auto;
+    }
+
     #{$comp}__content-col {
       &:nth-child(1) {
         @media (min-width: $breakpoint) {
@@ -615,12 +618,47 @@
     }
 
     #{$comp}__review {
-      margin-bottom: 15px;
+      @media (max-width: $breakpoint - 1px) {
+        margin-bottom: 15px;
+      }
+    }
+
+    #{$comp}__slide-col {
+
+      &:nth-child(1) {
+        @media (max-width: $breakpoint - 1px) {
+          margin-bottom: 70px;
+        }
+        @media (max-width: $breakpoint-m - 1px) {
+          margin-bottom: 30px;
+        }
+      }
+
+      &:nth-child(2) {
+        @media (max-width: $breakpoint - 1px) {
+          justify-content: flex-end;
+        }
+      }
+
     }
 
     #{$comp}__link {
       @media (max-width: $breakpoint - 1px) {
         margin-right: 0;
+      }
+    }
+
+    #{$comp}__bottom-row {
+      margin-top: 70px;
+
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #{$comp}__bottom-col {
+
+      &:nth-child(1) {
+        padding-left: calc(#{$col-width-d});
       }
     }
   }
@@ -734,14 +772,31 @@
       border: 1px solid $color-blue;
       border-radius: 50%;
       cursor: pointer;
+
+      &:hover {
+        #{$comp}__svg {
+          path,
+          circle {
+            stroke: $color-white;
+          }
+        }
+      }
     }
 
     #{$comp}__svg {
       $size-m: 11px;
 
+      position: relative;
+      z-index: 1;
+
       @media (max-width: $breakpoint - 1px) {
         max-width: $size-m;
         max-height: $size-m;
+      }
+
+      circle,
+      path {
+        transition: $transition;
       }
     }
   }

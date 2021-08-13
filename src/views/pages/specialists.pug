@@ -14,6 +14,31 @@ mixin copyright-link
     .copyright-link__text
       block
 
+
+block loader
+  .alert
+    .alert__container
+      .alert__content
+        .alert__top
+          p.alert__text
+            |Данный раздел сайта содержит специализированную профессиональную информацию. В соответствии с Федеральным законом РФ № 38-ФЗ «О рекламе» от 13 марта 2006 года информация данного раздела предназначена исключительно для медицинских и фармацевтических работников.
+        .alert__bottom
+          .alert__work
+            |Вы являетесь медицинским или фармацевтическим работником?
+          .alert__buttons
+            .alert__wrapper
+              .button.button--small.btn-animation
+                span.btn-animation__text
+                  |Нет
+            .alert__wrapper
+              .button.button--small.btn-animation
+                span.btn-animation__text
+                  |Да
+      .alert__button
+        .button-close.btn-animation.btn-animation--icon
+          +cross-svg.button-close__svg
+
+
 block content
   .specialists-page
     .container
@@ -23,7 +48,7 @@ block content
             .aside__inner
               .aside__container
                 .aside__top.modal(data-modal='4')
-                  header.header.header--margin-bottom--large
+                  header.header.header--margin-bottom--large(data-aos='fade-up')
                     a.header__logo(href='#')
                       +logo-svg.header__logo-svg
                     .header__menu(data-button='4')
@@ -65,14 +90,14 @@ block content
                             .modal-aside__doc
                               a.modal-aside__doc-link(href="#")
                                 |Положение о пользовании сайтом
-                  h3.title.title--small.title--margin-bot--s
+                  h3.title.title--small.title--margin-bot--s(data-aos='fade-up')
                     |Наши эксперты
                   ul.reason-list
                     each item in ['Н.М. Назаров', 'д.м.н., В.Н. Прилепская', 'Е.Г. Сычев',]
-                      li.reason-list__item
+                      li.reason-list__item(data-aos='fade-up')
                         a.reason-list__text.reason-list__text--small(href="#")
                           |#{item}
-                .aside__bottom
+                .aside__bottom(data-aos='fade-up')
                   +copyright-link(href='#')
                     |Компания «Инвар», 2021
         .row__col.row__col--main
@@ -81,7 +106,7 @@ block content
               .panel
                 .panel__panel
                   .panel__row
-                    .panel__col
+                    .panel__col(data-aos='fade-up')
                       .panel__inner
                         .panel__product
                           //- .panel__product-item--active
@@ -93,7 +118,7 @@ block content
                             .panel__product-mark
                             .panel__product-text
                               |Гель
-                    .panel__wrapper
+                    .panel__wrapper(data-aos='fade-up')
                       .panel__wrapper-row
                         .panel__wrapper-col
                           .panel__inner
@@ -146,7 +171,7 @@ block content
                                       a.panel-modal__link(href="#")
                                         |#{item}
                   .panel__mobile
-                    header.header
+                    header.header(data-aos='fade-up')
                       a.header__logo(href="#")
                         +logo-svg.header__svg
                       .header__menu(data-modal-button='1')
@@ -210,27 +235,27 @@ block content
                                   a.modal-mobile__bottom-link(href="#")
                                     |CloudMill
             main.page__main
-              h1.title
+              h1.title(data-aos='fade-up')
                 |Специалистам
               .rail.rail--desctop
               section.specialists-page__specialists
                 .nav-list.nav-list--wrap
                   ul.nav-list__list
-                    li.nav-list__item
+                    li.nav-list__item(data-aos='fade-up')
                       +border-link(href='#' active count=29)
                         |Все
-                    li.nav-list__item
+                    li.nav-list__item(data-aos='fade-up')
                       +border-link(href='#' count=5)
                         |Клинические рекомендации
-                    li.nav-list__item
+                    li.nav-list__item(data-aos='fade-up')
                       +border-link(href='#' count=5)
                         |Опыт применения
-                    li.nav-list__item
+                    li.nav-list__item(data-aos='fade-up')
                       +border-link(href='#' count=29)
                         |Исследования
                 ul.cards-grid
                   - for (i = 0; i < 9; i++)
-                    li.cards-grid__item
+                    li.cards-grid__item(data-aos='fade-up')
                       a.card(href="#")
                         .card__container
                           img.card__img(src="assets/images/card-1.jpg", alt="")
@@ -239,32 +264,14 @@ block content
                         h3.card__title
                           |Молочница: все, что нужно знать о заболевании
                 .button-show-wrapper
-                  .button-show
+                  .button-show(data-aos='fade-up')
                     .button-show__icon
                       +btn-plus-svg.button-show__svg
                     .button-show__text
                       |показать еще
 
             +footer.page__footer
-  .alert
-    .alert__container
-      .alert__content
-        .alert__top
-          p.alert__text
-            |Данный раздел сайта содержит специализированную профессиональную информацию. В соответствии с Федеральным законом РФ № 38-ФЗ «О рекламе» от 13 марта 2006 года информация данного раздела предназначена исключительно для медицинских и фармацевтических работников.
-        .alert__bottom
-          .alert__work
-            |Вы являетесь медицинским или фармацевтическим работником?
-          .alert__buttons
-            .alert__wrapper
-              .button.button--small
-                |Нет
-            .alert__wrapper
-              .button.button--small
-                |Да
-      .alert__button
-        .button-close
-          +cross-svg.button-close__svg
+
   .modal(data-modal='3')
     .modal-test
       .modal-test__container

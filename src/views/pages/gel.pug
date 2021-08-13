@@ -9,7 +9,7 @@ include ../components/block
 
 mixin nav-page-d
   nav.nav-page-d(class=attributes.class)
-    ul.nav-page-d__list
+    ul.nav-page-d__list(data-aos='fade-up')
       -
         var items = [
           {
@@ -60,7 +60,7 @@ mixin nav-page-d
 
 mixin nav-page-m
   nav.nav-page-d.nav-page-d--mobile.nav-page-d--mobile--purple
-    ul.nav-page-d__list
+    ul.nav-page-d__list(data-aos='fade-up')
       -
         var items = [
           {
@@ -125,7 +125,7 @@ block content
             .aside__inner
               .aside__container
                 .aside__top.modal(data-modal='4')
-                  header.header.header--margin-bottom--default
+                  header.header.header--margin-bottom--default(data-aos='fade-up')
                     a.header__logo(href='#')
                       +logo-svg.header__logo-svg
                     .header__menu(data-button='4')
@@ -168,9 +168,10 @@ block content
                               a.modal-aside__doc-link(href="#")
                                 |Положение о пользовании сайтом
                   +nav-page-d.nav-page-d--purple
-                .aside__bottom
-                  a.button.button--t.button--purple.margin-bottom.margin-bottom--m(href='#')
-                    |Где купить
+                .aside__bottom(data-aos='fade-up')
+                  a.button.button--t.button--purple.margin-bottom.margin-bottom--m.btn-animation.btn-animation--purple(href='#')
+                    span.btn-animation__text
+                      |Где купить
                   +copyright-link(href='#')
                     |Компания «Инвар», 2021
         .row__col.row__col--main
@@ -179,7 +180,7 @@ block content
               .panel.panel--nav
                 .panel__panel
                   .panel__row
-                    .panel__col
+                    .panel__col(data-aos='fade-up')
                       .panel__inner
                         .panel__product
                           //- .panel__product-item--active
@@ -191,7 +192,7 @@ block content
                             .panel__product-mark
                             .panel__product-text
                               |Гель
-                    .panel__wrapper
+                    .panel__wrapper(data-aos='fade-up')
                       .panel__wrapper-row
                         .panel__wrapper-col
                           .panel__inner
@@ -244,7 +245,7 @@ block content
                                       a.panel-modal__link(href="#")
                                         |#{item}
                   .panel__mobile
-                    header.header
+                    header.header(data-aos='fade-up')
                       a.header__logo(href="#")
                         +logo-svg.header__svg
                       .header__menu(data-modal-button='1')
@@ -311,7 +312,7 @@ block content
 
             main.page__main
               section.spray-page__section
-                .frame.frame--gel
+                .frame.frame--gel(data-aos='fade-up')
                   img.frame__img(src='assets/images/gel-promo.jpeg')
                   .page-gel__frame
                     ul.page-gel__frame-list
@@ -323,23 +324,23 @@ block content
                       br
                       |Эпиген Интим
               section.page-gel__mobile
-                h1.page-gel__frame-title
+                h1.page-gel__frame-title(data-aos='fade-up')
                   |Гель Эпиген Интим
-                .page-gel__mobile-wrapper
+                .page-gel__mobile-wrapper(data-aos='fade-up')
                   ul.page-gel__frame-list
                     li.page-gel__frame-item
                       .category-item.category-item--purple.cursor.cursor--default
                         |Сделано в Испании
-                .page-gel__mobile-button
+                .page-gel__mobile-button(data-aos='fade-up')
                   a.button.button--t.button--purple(href='#')
                       |Где купить
               section.spray-page__section.margin-top.margin-top--l(id='gel' data-section='')
                 .spray-page__section-row
                   .spray-page__section-col
-                    h3.spray-page__section-title
+                    h3.spray-page__section-title(data-aos='fade-up')
                       |Единственный гель для интимной гигиены с уникальным сочетанием двух активных компонентов — активированной глицирризиновой и&nbsp;молочной кислоты
                   .spray-page__section-col
-                    p.spray-page__section-text
+                    p.spray-page__section-text(data-aos='fade-up')
                       |Можно использовать на любом месяце беременности. Не имеет ограничений по возрасту и полу.
               section.spray-page__section.margin-top.margin-top--95(id='form' data-section='')
                 +block
@@ -353,26 +354,26 @@ block content
                   +star-svg.page-gel__features-star.page-gel__features-star--blue
                   +star-svg.page-gel__features-star.page-gel__features-star--purple
                 ul.page-gel__features-list
-                  li.page-gel__features-item
+                  li.page-gel__features-item(data-aos='fade-up')
                     h3.page-gel__features-title.max-width.max-width--col--13
                       |Натуральный приятный аромат и цвет
                     p.page-gel__features-text.max-width.max-width--col--7
                       |Бережно очищает интимную зону и&nbsp;обеспечивает ощущение чистоты и&nbsp;свежести в течение дня
-                  li.page-gel__features-item.page-gel__features-item--side(data-parallax-container='1')
+                  li.page-gel__features-item.page-gel__features-item--side(data-parallax-container='1' data-aos='fade-up')
                     .page-gel__layout-img-2(data-parallax='2')
                       img.page-gel__features-img-2(src='assets/images/gel-features-image-2.png')
                     h3.page-gel__features-title.max-width.max-width--col--10
                       |Содержит молочную кислоту
                     p.page-gel__features-text.max-width.max-width--col--7
                       |Поддерживает физиологический pH и&nbsp;естественную микрофлору слизистых оболочек половых органов
-                  li.page-gel__features-item(data-parallax-container='2')
+                  li.page-gel__features-item(data-parallax-container='2' data-aos='fade-up')
                     .page-gel__layout-img-3(data-parallax='3')
                       img.page-gel__features-img-3(src='assets/images/gel-features-image-3.png')
                     h3.page-gel__features-title.max-width.max-width--col--11
                       |Активированная глицирризиновая кислота в составе
                     p.page-gel__features-text.max-width.max-width--col--8
                       |Обладает выраженными противовоспалительным и регенерирующим эффектами, способствует уменьшению дискомфорта
-                  li.page-gel__features-item.page-gel__features-item--side(data-parallax-container='3')
+                  li.page-gel__features-item.page-gel__features-item--side(data-parallax-container='3' data-aos='fade-up')
                     .page-gel__layout-img-4
                       img.page-gel__features-img-4(src='assets/images/gel-features-image-4.jpg')
                     .page-gel__layout-img-5(data-parallax='4')
@@ -386,26 +387,26 @@ block content
               section.page-gel__compound(data-parallax-container='4' id='structure' data-section='')
                 .page-gel__compound-row
                   .page-gel__compound-col
-                    h2.page-gel__compound-title
+                    h2.page-gel__compound-title(data-aos='fade-up')
                       |Состав
                   .page-gel__compound-col
                     ul.page-gel__compound-list
-                      li.page-gel__compound-item
+                      li.page-gel__compound-item(data-aos='fade-up')
                         h3.page-gel__compound-item-title
                           |Активированная глицирризиновая кислота
                         p.page-gel__compound-item-text
                           |Способствует устранению воспаления (красноты, зуда, ощущения дискомфорта), стимулирует восстановление кожных покровов и слизистой
-                      li.page-gel__compound-item
+                      li.page-gel__compound-item(data-aos='fade-up')
                         h3.page-gel__compound-item-title
                           |Молочная кислота
                         p.page-gel__compound-item-text
                           |Нормализует обычный для слизистой деликатных участков тела кислотно-щелочной баланс и микрофлору, которые защищают половые органы от инфекций и молочницы
-                      li.page-gel__compound-item
+                      li.page-gel__compound-item(data-aos='fade-up')
                         h3.page-gel__compound-item-title
                           |Глицерин
                         p.page-gel__compound-item-text
                           |Способствует увлажнению и смягчению кожных покровов и слизистой
-                      li.page-gel__compound-item
+                      li.page-gel__compound-item(data-aos='fade-up')
                         h3.page-gel__compound-item-title
                           |Фитосфингозины
                         p.page-gel__compound-item-text
@@ -414,15 +415,15 @@ block content
                 .spray-page__video
                   .spray-page__video-row
                     .spray-page__video-col
-                      h3.spray-page__section-title.margin-botto.margin-bottom--m
+                      h3.spray-page__section-title.margin-botto.margin-bottom--m(data-aos='fade-up')
                         |Способ применения
-                      .spray-page__video-button
-                        a.download-link.download-link--default(href="#")
+                      .spray-page__video-button(data-aos='fade-up')
+                        a.download-link.download-link--default.btn-animation(href="#")
                           .download-link__icon
-                            +download-svg
-                          .download-link__text
+                            +download-svg.download-link__svg
+                          span.btn-animation__text.download-link__text
                             |Скачать инструкцию
-                    .spray-page__video-col
+                    .spray-page__video-col(data-aos='fade-up')
                       ul.page-gel__method-list
                         li.page-gel__method-item
                           .page-gel__method-item-top
@@ -451,15 +452,15 @@ block content
               section.page-gel__reviews(id='reviews' data-section='')
                 .page-gel__reviews-layout
                 .reviews-tabs
-                  .reviews-tabs__buttons
+                  .reviews-tabs__buttons(data-aos='fade-up')
                     .spray-page__slider-categories
                       .spray-page__slider-item.spray-page__slider-item--active
                         .border-link.border-link--active
-                          |Все отзывы
+                          |Отзывы покупателей
                       .spray-page__slider-item
                         .border-link
                           |Отзывы врачей
-                  .reviews-tabs__tabs
+                  .reviews-tabs__tabs(data-aos='fade-up')
                     .reviews-tabs__item.reviews-tabs__item--active
                       .page-gel__reviews-top.page-gel__reviews-top--tabs
                         .page-gel__reviews-left
@@ -490,15 +491,6 @@ block content
                                 .page-gel__reviews-card-bottom
                                   a.page-gel__reviews-card-link(href='#')
                                     |irecommend.ru
-                      .page-gel__reviews-links
-                        .page-gel__reviews-links-item.page-gel__reviews-links-item--desktop
-                          a.button.button--reviews-slider.button--reviews-slider--small.btn-animation(href='#')
-                            span.btn-animation__text
-                              |Все отзывы
-                        .page-gel__reviews-links-item
-                          a.button.button--reviews-slider.button--reviews-slider--small.btn-animation(href='#')
-                            span.btn-animation__text
-                              |Задать вопрос врачу
                     .reviews-tabs__item
                       .b.b--reviews-slider-main-page.b--reviews-slider-spray-page
                         .b__top.b__top--tabs
@@ -540,9 +532,6 @@ block content
                                           .b__content-wrapper
                                             p.b__review
                                               |Спрей Эпиген Интим представляет собой эффективное и безопасное средство для лечения, профилактики генитальных вирусных инфекций, а гель предназначен для интимной гигиены на каждый день...
-                                        .b__content-bottom
-                                          a.b__link(href="#")
-                                            |Читать отзыв
                                       .b__content-col
                                         .b__content-top
                                           .b__preview
@@ -553,14 +542,10 @@ block content
                                                 |/4
                                             .b__preview-image
                                               img.b__preview-img(src='assets/images/reviews-slider-2.jpeg')
-                                        .b__content-bottom
-                                          .spray-page__slider-links
-                                            a.button.button--reviews-slider.button--reviews-slider--small.btn-animation(href='#')
-                                              span.btn-animation__text
-                                                |Все отзывы
-                                            a.spray-page__slider-link.btn-animation(href="#")
-                                              span.btn-animation__text
-                                                |Задать вопрос врачу
+                                    .b__bottom-row
+                                      .b__bottom-col
+                                        a.b__link(href="#")
+                                          |Читать отзыв
                               .b__slide-mobile
                                 .b__slide-row
                                   .b__slide-col
@@ -588,10 +573,12 @@ block content
                                         .b__control-item
                                           .b.b--btn-left-right-slider.b--right.btn-animation.btn-animation--icon(data-command-slider-arrow='next')
                                             +simple-arrow-svg.b__svg
-                                    .b__content-bottom
-
-                                      a.button.button--reviews-slider.button--reviews-slider--small.btn-animation(href='#' data-mdl-open='')
-                                        span.btn-animation__text
-                                          |Задать вопрос врачу
-
+                  .reviews-tabs__links
+                    .spray-page__slider-links
+                      a.button.button--reviews-slider.button--reviews-slider--small.btn-animation.spray-page__slider-desktop(href='#')
+                        span.btn-animation__text
+                          |Все отзывы
+                      a.spray-page__slider-link.btn-animation(href="#")
+                        span.btn-animation__text
+                          |Задать вопрос врачу
             +footer.page__footer

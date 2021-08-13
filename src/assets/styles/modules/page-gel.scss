@@ -497,11 +497,20 @@
     &--blue {
       top: 533px;
       left: calc(#{$col-width-d} * 9.5 - 379px);
+      @media (max-width: $breakpoint - 1px) {
+        left: 18px;
+        top: 519px;
+        transform: translateX(0);
+      }
     }
     &--purple {
       top: 1808px;
       left: calc(#{$col-width-d} * 9.5 - 492px);
       transform: translateX(-50%) rotate(-45deg);
+      @media (max-width: $breakpoint - 1px) {
+        top: calc(100% + 10px);
+        left: calc(#{$col-width-m} * 3.7);
+      }
 
       path {
         fill: $color-purple;

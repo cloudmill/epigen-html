@@ -123,10 +123,10 @@ block content
                       |вернуться к статьям
                   +nav-page-d
                 .aside__bottom
-                  a.download-link.download-link--margin-bot--default(href="#")
+                  a.download-link.download-link--margin-bot--default.btn-animation(href="#")
                     .download-link__icon
-                      +download-svg
-                    .download-link__text
+                      +download-svg.download-link__svg
+                    .btn-animation__text.download-link__text
                       |Скачать статью в PDF
                   +copyright-link(href='#')
                     |Компания «Инвар», 2021
@@ -414,8 +414,9 @@ block content
                         h3.specialists-page__bottom-title
                           |Спрей#[br]Эпиген Интим
                         .specialists-page__bottom-btn
-                          a.button(href="#")
-                            |Подробнее
+                          a.button.btn-animation(href="#")
+                            span.btn-animation__text
+                              |Подробнее
                   .specialists-page__bottom-column
 
             +footer.page__footer

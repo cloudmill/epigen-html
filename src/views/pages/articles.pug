@@ -25,7 +25,7 @@ block content
             .aside__inner
               .aside__container
                 .aside__top.modal(data-modal='4')
-                  header.header.header--margin-bottom--default
+                  header.header.header--margin-bottom--default(data-aos='fade-up')
                     a.header__logo(href='#')
                       +logo-svg.header__logo-svg
                     .header__menu(data-button='4')
@@ -85,7 +85,7 @@ block content
               .panel
                 .panel__panel
                   .panel__row
-                    .panel__col
+                    .panel__col(data-aos='fade-up')
                       .panel__inner
                         .panel__product
                           //- .panel__product-item--active
@@ -97,7 +97,7 @@ block content
                             .panel__product-mark
                             .panel__product-text
                               |Гель
-                    .panel__wrapper
+                    .panel__wrapper(data-aos='fade-up')
                       .panel__wrapper-row
                         .panel__wrapper-col
                           .panel__inner
@@ -150,7 +150,7 @@ block content
                                       a.panel-modal__link(href="#")
                                         |#{item}
                   .panel__mobile
-                    header.header
+                    header.header(data-aos='fade-up')
                       a.header__logo(href="#")
                         +logo-svg.header__svg
                       .header__menu(data-modal-button='1')
@@ -217,15 +217,15 @@ block content
               h1.title(data-aos='fade-up')
                 |Статьи экспертов
               .rail.rail--margin-bottom--default.rail--desctop
-              .articles-page__mobile(data-aos='fade-up')
-                h4.articles-page__aside-title
+              .articles-page__mobile
+                h4.articles-page__aside-title(data-aos='fade-up')
                   |Генитальный герпес
-                p.articles-page__aside-text
+                p.articles-page__aside-text(data-aos='fade-up')
                   |Герпес является распространенным заболеванием, передающимся половым путем (ЗППП), которым может заболеть любой человек, ведущий половую жизнь.
-                p.articles-page__aside-text
+                p.articles-page__aside-text(data-aos='fade-up')
                   |У большинства людей с вирусом симптомы отсутствуют. Даже без признаков заболевания герпес по-прежнему может распространяться на сексуальных партнеров.
               section.articles-page__section
-                .articles-page__section-row
+                .articles-page__section-row(data-aos='fade-up')
                   .articles-page__section-col
                     .articles-page__section-label
                       |эксперт
@@ -241,7 +241,7 @@ block content
                           .doctor-card__pos
                             |Врач акушер-гинеколог ФГБУ «НМИЦ эндокринологии» Минздрава России, к.м.н, доцент Кафедры акушерства, гинекологии и репродуктивной медицины РУДН
               section.articles-page__section.margin-top.margin-top--md
-                .nav-list.nav-list--wrap
+                .nav-list.nav-list--wrap(data-aos='fade-up')
                   ul.nav-list__list
                     li.nav-list__item
                       +border-link(href='#' active count=29)
@@ -266,7 +266,7 @@ block content
                         |ВПЧ
                 ul.cards-grid
                   - for (i = 0; i < 9; i++)
-                    li.cards-grid__item
+                    li.cards-grid__item(data-aos='fade-up')
                       a.card(href="#")
                         .card__container
                           img.card__img(src="assets/images/card-1.jpg", alt="")
@@ -281,13 +281,13 @@ block content
                         h3.card__title
                           |Молочница: все, что нужно знать о заболевании
                 .button-show-wrapper
-                  .button-show
+                  .button-show(data-aos='fade-up')
                     .button-show__icon
                       +btn-plus-svg.button-show__svg
                     .button-show__text
                       |показать еще
               section.articles-page__section
-                .form-container
+                .form-container(data-aos='fade-up')
                   .form-container__row(data-form='1')
                     .form-container__col
                       h3.form-container__title
@@ -314,8 +314,9 @@ block content
                                   |Согласен на обработку персональных данных в соответствии с #[a.checkbox__link(href="#") политикой конфиденциальности]
                           .form__item.form__item--m
                             .form__button
-                              button.button.button--wide(type='submit' data-form-button='1')
-                                |Отправить
+                              button.button.button--wide.btn-animation(type='submit' data-form-button='1')
+                                span.btn-animation__text
+                                  |Отправить
                   .form-container__response(data-response='1')
                     .form-container__response-icon
                       +form-check-svg.form-container__response-check

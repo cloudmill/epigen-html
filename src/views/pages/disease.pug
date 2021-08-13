@@ -455,11 +455,13 @@ block content
                             img(src="assets/images/epigen-spray.jpg", alt="")
                           .disease-page__spray-buttons
                             .disease-page__spray-item
-                              a.button.button--wide(href="#")
-                                |Подробнее
+                              a.button.button--wide.btn-animation(href="#")
+                                span.btn-animation__text
+                                  |Подробнее
                             .disease-page__spray-item
-                              a.button.button--wide.button--purple(href="#")
-                                |Купить
+                              a.button.button--wide.button--purple.btn-animation.btn-animation--purple(href="#")
+                                span.btn-animation__text
+                                  |Купить
 
                       .disease-page__spray-col.specialists-page__content
                         h3
@@ -510,8 +512,9 @@ block content
                           h3.specialists-page__bottom-title
                             |Спрей#[br]Эпиген Интим
                           .specialists-page__bottom-btn
-                            a.button(href="#")
-                              |Подробнее
+                            a.button.btn-animation(href="#")
+                              span.btn-animation__text
+                                |Подробнее
                     .specialists-page__bottom-column
               section.slider-section.margin-top
                 .slider-section__row
@@ -521,10 +524,10 @@ block content
                   .slider-section__col.b.b--reviews-slider-main-page
                     .b__control
                       .b__control-item
-                        .b.b--btn-left-right-slider(data-slider-button="2")
+                        .b.b--btn-left-right-slider.btn-animation.btn-animation--icon(data-slider-button="2")
                           +simple-arrow-svg.b__svg
                       .b__control-item
-                        .b.b--btn-left-right-slider.b--right(data-slider-button="1")
+                        .b.b--btn-left-right-slider.b--right.btn-animation.btn-animation--icon(data-slider-button="1")
                           +simple-arrow-svg.b__svg
                 .slider.swiper-container(data-slider-id="1" data-slider-next="1" data-slider-prev="2")
                   .swiper-wrapper
