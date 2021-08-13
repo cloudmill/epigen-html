@@ -37,6 +37,37 @@ mixin nav-page-d
           a.nav-page-d__link(href=item.href data-scroll=item.scroll)
             |!{item.title}
 
+mixin nav-page-m
+  nav.nav-page-d.nav-page-d--mobile
+    ul.nav-page-d__list(data-aos='fade-up')
+      -
+        var items = [
+          {
+            href: '#',
+            scroll: '#products',
+            title: 'Продукция Эпиген Интим',
+          },
+          {
+            href: '#',
+            scroll: '#expert',
+            title: 'Экспертное мнение',
+          },
+          {
+            href: '#',
+            scroll: '#actual',
+            title: 'Актуальное',
+          },
+          {
+            href: '#',
+            scroll: '#reviews',
+            title: 'Отзывы',
+          },
+        ]
+      each item, index in items
+        li.nav-page-d__item(class = ((index === 0) ? 'nav-page-d__item--active' : ''))
+          a.category-item.category-item--light-blue.category-item--background--white(href=item.href data-scroll=item.scroll)
+            |!{item.title}
+
 mixin copyright-link
   a.copyright-link(href=attributes.href)
     .copyright-link__mark
@@ -107,7 +138,7 @@ block content
         .row__col.row__col--main
           .page
             header.page__header
-              .panel
+              .panel.panel--nav
                 .panel__panel
                   .panel__row
                     .panel__col(data-aos='fade-up')
@@ -181,6 +212,7 @@ block content
                       .header__menu(data-modal-button='1')
                         .header__button
                           .header__burger
+                    +nav-page-m
                   .panel__modals
                     .modal-mobile.modal-mobile--height--100vh-60p(data-modal-id='1')
                       .modal-mobile__inner
