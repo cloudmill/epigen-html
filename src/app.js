@@ -1762,7 +1762,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           duration: 1000,
         });
 
-        if (process.env.NODE_ENV === 'development') { //production
+        if (process.env.NODE_ENV === 'production') { // development
           window.scrollTo(0, 0);
         }
       }, 3000);
