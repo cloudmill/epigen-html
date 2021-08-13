@@ -625,6 +625,15 @@
 
     #{$comp}__slide-col {
 
+      &:nth-child(1) {
+        @media (max-width: $breakpoint - 1px) {
+          margin-bottom: 70px;
+        }
+        @media (max-width: $breakpoint-m - 1px) {
+          margin-bottom: 30px;
+        }
+      }
+
       &:nth-child(2) {
         @media (max-width: $breakpoint - 1px) {
           justify-content: flex-end;
