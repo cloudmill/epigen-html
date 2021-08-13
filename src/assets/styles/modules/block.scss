@@ -28,7 +28,7 @@
   &__frame {
     position: absolute;
     z-index: 0;
-    
+
     display: flex;
     overflow: hidden;
 
@@ -128,7 +128,7 @@
     right: 0;
 
     background-repeat: no-repeat;
-    background-position: center bottom;
+    background-position: 90% bottom;
     background-size: cover;
 
     &--15 {

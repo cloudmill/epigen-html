@@ -16,7 +16,7 @@
 
     @media (max-width: $breakpoint - 1px) {
       margin-top: 20px;
-
+      // 100 vh - высота шапки - отступ от шапки - отступ вниз - высота конетента внизу - отступ от низа экаран
       height: calc(100vh - #{$panel-height} - 20px - 15px - 159px - 42px);
     }
   }
@@ -26,7 +26,7 @@
 
     @media (max-width: $breakpoint - 1px) {
       margin-top: 20px;
-
+      // 100 vh - высота шапки - отступ от шапки - отступ вниз - высота конетента внизу - отступ от низа экаран
       height: calc(100vh - #{$panel-height} - 20px - 15px - 203px - 42px);
     }
   }
