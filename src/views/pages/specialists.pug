@@ -14,6 +14,31 @@ mixin copyright-link
     .copyright-link__text
       block
 
+
+block loader
+  .alert
+    .alert__container
+      .alert__content
+        .alert__top
+          p.alert__text
+            |Данный раздел сайта содержит специализированную профессиональную информацию. В соответствии с Федеральным законом РФ № 38-ФЗ «О рекламе» от 13 марта 2006 года информация данного раздела предназначена исключительно для медицинских и фармацевтических работников.
+        .alert__bottom
+          .alert__work
+            |Вы являетесь медицинским или фармацевтическим работником?
+          .alert__buttons
+            .alert__wrapper
+              .button.button--small.btn-animation
+                span.btn-animation__text
+                  |Нет
+            .alert__wrapper
+              .button.button--small.btn-animation
+                span.btn-animation__text
+                  |Да
+      .alert__button
+        .button-close.btn-animation.btn-animation--icon
+          +cross-svg.button-close__svg
+
+
 block content
   .specialists-page
     .container
@@ -246,25 +271,7 @@ block content
                       |показать еще
 
             +footer.page__footer
-  .alert
-    .alert__container
-      .alert__content
-        .alert__top
-          p.alert__text
-            |Данный раздел сайта содержит специализированную профессиональную информацию. В соответствии с Федеральным законом РФ № 38-ФЗ «О рекламе» от 13 марта 2006 года информация данного раздела предназначена исключительно для медицинских и фармацевтических работников.
-        .alert__bottom
-          .alert__work
-            |Вы являетесь медицинским или фармацевтическим работником?
-          .alert__buttons
-            .alert__wrapper
-              .button.button--small
-                |Нет
-            .alert__wrapper
-              .button.button--small
-                |Да
-      .alert__button
-        .button-close
-          +cross-svg.button-close__svg
+
   .modal(data-modal='3')
     .modal-test
       .modal-test__container
