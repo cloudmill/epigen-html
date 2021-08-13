@@ -1752,31 +1752,39 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 // loader
 {
   $(window).on('load', function() {
-    $('body').css('overflow', 'hidden')
 
-    if($('.main-page').length) {
-      $('.loader').addClass('loader--hidden')
-      setTimeout(() => {
-        $('body').css('overflow', '')
+    // delete later
+    AOS.init({
+      once: true,
+      offset: 0,
+      duration: 1000,
+    });
 
-        AOS.init({
-          once: true,
-          offset: 0,
-          duration: 1000,
-        });
+    // $('body').css('overflow', 'hidden')
 
-        if (process.env.NODE_ENV === 'production') { // development
-          window.scrollTo(0, 0);
-        }
-      }, 3000);
-    } else {
-      $('body').css('overflow', '')
-      AOS.init({
-        once: true,
-        offset: 0,
-        duration: 1000,
-      });
-    }
+    // if($('.main-page').length) {
+    //   $('.loader').addClass('loader--hidden')
+    //   setTimeout(() => {
+    //     $('body').css('overflow', '')
+
+    //     AOS.init({
+    //       once: true,
+    //       offset: 0,
+    //       duration: 1000,
+    //     });
+
+    //     if (process.env.NODE_ENV === 'production') { // development
+    //       window.scrollTo(0, 0);
+    //     }
+    //   }, 3000);
+    // } else {
+    //   $('body').css('overflow', '')
+    //   AOS.init({
+    //     once: true,
+    //     offset: 0,
+    //     duration: 1000,
+    //   });
+    // }
   })
 }
 
