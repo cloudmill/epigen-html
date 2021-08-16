@@ -259,6 +259,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       state.isActive = true;
 
       $('.mdl').addClass('mdl--active')
+      $('.body').addClass('body--hidden')
 
       setTimeout(() => {
         waitClose()
@@ -292,6 +293,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       state.isActive = false
 
       $('.mdl').removeClass('mdl--active')
+      $('.body').removeClass('body--hidden')
 
       setTimeout(() => {
         waitOpen()
@@ -498,40 +500,6 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
         $(`[data-form='${responseButtonId}']`).removeAttr('data-form-hidden');
         $(`[data-response='${responseButtonId}']`).removeAttr('data-response-active');
-      });
-    }
-  });
-}
-
-// spray page tabs
-{
-  $(() => {
-    const tabs = $('[data-tab]');
-
-    if (tabs.length !== 0) {
-      tabs.each(function () {
-        const tab = $(this);
-        const tabId = tab.data('tab');
-        const slides = $('[data-slide]');
-        const slide = $(`[data-slide='${tabId}']`);
-
-        tab.on('click', function () {
-
-          if (!slide.hasClass('spray-page__slider-slide--active')) {
-            removeActive();
-            slide.addClass('spray-page__slider-slide--active');
-            slide.css('z-index', '1');
-            setTimeout(() => {
-              slide.css('z-index', '0');
-            }, 700)
-          }
-
-          function removeActive() {
-            setTimeout(() => {
-              slides.not(slide).removeClass('spray-page__slider-slide--active');
-            }, 500)
-          }
-        });
       });
     }
   });
@@ -1202,6 +1170,28 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
   });
 }
 
+// spray slider hash change
+{
+  $(() => {
+    const buttons = $('[data-hash]')
+
+    if (buttons.length !== 0) {
+      if (window.location.hash === '#product2') {
+        let product = $('[data-hash="#product2"]')
+        let item = product.closest('.block__control-item')
+
+        $('.block__frame').eq(item.index()).addClass('block__frame--front')
+      } else {
+        let product = $('[data-hash="#product1"]')
+        let item = product.closest('.block__control-item')
+
+        window.history.replaceState(null, '', '#product1')
+        $('.block__frame').eq(item.index()).addClass('block__frame--front')
+      }
+    }
+  })
+}
+
 // block
 {
   $(() => {
@@ -1216,7 +1206,8 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       const btn = block.find('.spray-page__tabs-item')
 
       if (btn.length > 1) {
-        let cur_index = 0
+        // let cur_index = 0
+        let cur_index = window.location.hash === '#product1' ? 0 : 1
 
         let clickable = true
 
@@ -1242,6 +1233,11 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
               frame.toggleClass('block__frame--front')
               frame.eq(new_index).addClass('block__frame--open')
               frame.eq(new_index).addClass('block__frame--out')
+
+              // hash
+              const hash = $(this).data('hash')
+
+              window.history.replaceState(null, '', hash)
             }
           }
         })
@@ -1813,3 +1809,4 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     }
   })
 }
+

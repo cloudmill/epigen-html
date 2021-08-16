@@ -107,6 +107,16 @@
     $size: 57px;
     width: $size;
     height: $size;
+    @media (max-width: $breakpoint - 1px) {
+      $size-t: 42px;
+      width: $size-t;
+      height: $size-t;
+    }
+    @media (max-width: $breakpoint-m - 1px) {
+      $size-m: 33px;
+      width: $size-m;
+      height: $size-m;
+    }
     pointer-events: none;
 
     border: 1px dashed $color-white;
@@ -125,6 +135,16 @@
     $size: 46px;
     width: $size;
     height: $size;
+    @media (max-width: $breakpoint - 1px) {
+      $size-t: 34px;
+      width: $size-t;
+      height: $size-t;
+    }
+    @media (max-width: $breakpoint-m - 1px) {
+      $size-m: 26px;
+      width: $size-m;
+      height: $size-m;
+    }
     pointer-events: none;
 
     background-color: $color-white;
@@ -145,6 +165,16 @@
     $size: 16px;
     width: $size;
     height: $size;
+    @media (max-width: $breakpoint - 1px) {
+      $size-t: 13px;
+      width: $size-t;
+      height: $size-t;
+    }
+    @media (max-width: $breakpoint-m - 1px) {
+      $size-m: 11px;
+      width: $size-m;
+      height: $size-m;
+    }
     pointer-events: none;
 
     will-change: auto;
