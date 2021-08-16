@@ -259,6 +259,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       state.isActive = true;
 
       $('.mdl').addClass('mdl--active')
+      $('.body').addClass('body--hidden')
 
       setTimeout(() => {
         waitClose()
@@ -292,6 +293,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       state.isActive = false
 
       $('.mdl').removeClass('mdl--active')
+      $('.body').removeClass('body--hidden')
 
       setTimeout(() => {
         waitOpen()
