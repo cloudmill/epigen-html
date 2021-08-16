@@ -352,7 +352,7 @@
 									</section>
 									<section class="spray-page__section margin-top margin-top--95" id="form" data-section="">
 										<div class="block" data-aos="fade-up">
-											<div class="block__frame block__frame--left block__frame--front">
+											<div class="block__frame block__frame--left">
 												<div class="block__slide">
 													<div class="block__layout">
 														<div class="block__background block__background--15"></div>
@@ -361,7 +361,7 @@
 														<div class="block__top">
 															<div class="block__control">
 																<div class="block__control-item">
-																	<div class="spray-page__tabs-item spray-page__tabs-item--in-block spray-page__tabs-item--active">
+																	<div class="spray-page__tabs-item spray-page__tabs-item--in-block spray-page__tabs-item--active" data-hash="#product1">
 																		<div class="spray-page__tabs-container">
 																			<div class="spray-page__tabs-row">
 																				<div class="spray-page__tabs-col"><svg class="spray-svg spray-page__tabs-icon" xmlns="http://www.w3.org/2000/svg" width="19" height="65" viewBox="0 0 19 65" fill="none">
@@ -382,7 +382,7 @@
 																	</div>
 																</div>
 																<div class="block__control-item">
-																	<div class="spray-page__tabs-item spray-page__tabs-item--in-block">
+																	<div class="spray-page__tabs-item spray-page__tabs-item--in-block" data-hash="#product2">
 																		<div class="spray-page__tabs-container">
 																			<div class="spray-page__tabs-row">
 																				<div class="spray-page__tabs-col"><svg class="spray-svg spray-page__tabs-icon" xmlns="http://www.w3.org/2000/svg" width="19" height="65" viewBox="0 0 19 65" fill="none">
@@ -431,7 +431,7 @@
 														<div class="block__top">
 															<div class="block__control">
 																<div class="block__control-item">
-																	<div class="spray-page__tabs-item spray-page__tabs-item--in-block">
+																	<div class="spray-page__tabs-item spray-page__tabs-item--in-block" data-hash="#product1">
 																		<div class="spray-page__tabs-container">
 																			<div class="spray-page__tabs-row">
 																				<div class="spray-page__tabs-col"><svg class="spray-svg spray-page__tabs-icon" xmlns="http://www.w3.org/2000/svg" width="19" height="65" viewBox="0 0 19 65" fill="none">
@@ -452,7 +452,7 @@
 																	</div>
 																</div>
 																<div class="block__control-item">
-																	<div class="spray-page__tabs-item spray-page__tabs-item--in-block spray-page__tabs-item--active">
+																	<div class="spray-page__tabs-item spray-page__tabs-item--in-block spray-page__tabs-item--active" data-hash="#product2">
 																		<div class="spray-page__tabs-container">
 																			<div class="spray-page__tabs-row">
 																				<div class="spray-page__tabs-col"><svg class="spray-svg spray-page__tabs-icon" xmlns="http://www.w3.org/2000/svg" width="19" height="65" viewBox="0 0 19 65" fill="none">
@@ -1049,7 +1049,9 @@
 												</div>
 											</div>
 											<div class="reviews-tabs__links">
-												<div class="spray-page__slider-links"><a class="button button--reviews-slider button--reviews-slider--small btn-animation spray-page__slider-desktop" href="#"><span class="btn-animation__text">Все отзывы</span></a><a class="spray-page__slider-link btn-animation" href="#"><span class="btn-animation__text">Задать вопрос врачу</span></a></div>
+												<div class="spray-page__slider-links"><a class="button button--reviews-slider button--reviews-slider--small btn-animation spray-page__slider-desktop" href="#"><span class="btn-animation__text">Все отзывы</span></a>
+													<div class="spray-page__slider-link btn-animation" data-mdl-open><span class="btn-animation__text">Задать вопрос врачу</span></div>
+												</div>
 											</div>
 										</div>
 									</section>
@@ -1120,6 +1122,240 @@
 								</footer>
 							</div>
 						</div>
+					</div>
+				</div>
+			</div>
+			<div class="mdl">
+				<div class="mdl__container">
+					<div class="mdl__content mdl__content--md mdl__interactive">
+						<div class="mdl__inner">
+							<div class="mdl__form">
+								<div class="mdl__form-container">
+									<h3 class="mdl__form-title">Задать вопрос врачу</h3>
+									<form class="form" action="/"><label class="form__item"><input class="form__input" name="name"><span class="form__placeholder">Имя</span></label><label class="form__item"><input class="form__input" type="email" name="email"><span class="form__placeholder">E-mail</span></label>
+										<div class="form__item"><textarea class="form__textarea" name="message" placeholder="Сообщение" cols="30" rows="10"></textarea></div>
+										<div class="form__inner">
+											<div class="file"><input class="file__input" id="file" type="file" multiple="multiple">
+												<div class="file__container"></div><label class="file__label" for="file">
+													<div class="file__icon"><svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path d="M16.3557 1.73731C14.1672 -0.451134 10.6061 -0.451134 8.41749 1.73731L1.14544 9.00947C-0.382138 10.5371 -0.382138 13.0228 1.14544 14.5504C2.67291 16.0778 5.1585 16.0778 6.68625 14.5504L13.9583 7.27795C14.8249 6.41124 14.8249 5.00119 13.9584 4.1348C13.5386 3.71496 12.9805 3.4837 12.3868 3.4837C11.7932 3.4837 11.235 3.71489 10.8151 4.13473L4.74116 10.2087C4.53518 10.4146 4.53518 10.7486 4.74116 10.9545C4.9471 11.1605 5.28105 11.1605 5.487 10.9545L11.5609 4.8806C11.7816 4.66 12.0749 4.53853 12.3868 4.53853C12.6987 4.53853 12.9919 4.65996 13.2124 4.8806C13.6677 5.33581 13.6677 6.07673 13.2124 6.53211L5.94048 13.8045C4.82406 14.9207 3.00763 14.9207 1.89135 13.8045C0.775032 12.6882 0.775067 10.8717 1.89135 9.75534L9.1634 2.48319C10.9407 0.706002 13.8327 0.705967 15.6099 2.48315C16.4709 3.34413 16.9451 4.48882 16.9451 5.70639C16.9451 6.92399 16.471 8.06872 15.6099 8.92966L9.53616 15.0036C9.33018 15.2096 9.33018 15.5435 9.53616 15.7495C9.63914 15.8525 9.7741 15.9039 9.90907 15.9039C10.044 15.9039 10.179 15.8524 10.282 15.7495L16.3557 9.67543C17.4159 8.61529 17.9998 7.20567 17.9998 5.70632C17.9998 4.20704 17.416 2.79745 16.3557 1.73731Z" fill="#31AFF2"></path>
+														</svg></div>
+													<div class="file__text">Прикрепить файл</div>
+												</label>
+											</div>
+											<div class="checkbox"><label class="checkbox__label" for="checkbox-1"><input class="checkbox__input" type="checkbox" id="checkbox-1">
+													<div class="checkbox__box"><svg class="checkbox__icon" width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+														</svg></div>
+													<div class="checkbox__text">Согласен на обработку персональных данных в соответствии с <a class="checkbox__link" href="#">политикой конфиденциальности</a></div>
+												</label></div>
+										</div>
+										<div class="form__button"><button class="button button--wide btn-animation" type="submit"><span class="btn-animation__text">Отправить</span></button></div>
+									</form>
+									<div class="mdl__response">
+										<h3 class="mdl__form-title">Мы получили ваше сообщение и ответим на него в ближайшее время.</h3>
+										<div class="button button--wide btn-animation"><span class="btn-animation__text">Отправить еще</span></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="mdl__close mdl__interactive button-close btn-animation btn-animation--icon" data-button-close="1"><svg class="button-close__svg" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M13.9926 1.00598L1.0061 13.9924" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+								<path d="M13.9973 14L1 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+							</svg></div>
+					</div>
+				</div>
+			</div>
+			<div class="modal" data-modal="3">
+				<div class="modal-test">
+					<div class="modal-test__container">
+						<div class="test">
+							<form class="test__container" action="/">
+								<div class="test__row">
+									<div class="test__col">
+										<ul class="test__questions">
+											<li class="test__question test__question--active">Какие проявления в интимной зоне вас беспокоят?</li>
+											<li class="test__question">2</li>
+											<li class="test__question">3</li>
+											<li class="test__question">4</li>
+											<li class="test__question">5</li>
+										</ul>
+										<ul class="test__dots">
+											<li class="test__dot test__dot--active"></li>
+											<li class="test__dot"></li>
+											<li class="test__dot"></li>
+											<li class="test__dot"></li>
+											<li class="test__dot"></li>
+										</ul>
+									</div>
+									<div class="test__col">
+										<div class="test__options test__options--active"><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-1">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Обильные выделения без неприятного запаха</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-1">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Выделения с неприятным запахом</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-1">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Болезненные пузырьки в интимной зоне, превращающиеся в язвы</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-1">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Безболезненные папилломы, узелки, наросты или бородавки в интимной зоне</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-1">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Что-то другое, не указанное выше</div>
+											</label></div>
+										<div class="test__options"><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-2">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Обильные выделения без неприятного запаха</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-2">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Выделения с неприятным запахом</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-2">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Болезненные пузырьки в интимной зоне, превращающиеся в язвы</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-2">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Безболезненные папилломы, узелки, наросты или бородавки в интимной зоне</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-2">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Что-то другое, не указанное выше</div>
+											</label></div>
+										<div class="test__options"><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-3">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Обильные выделения без неприятного запаха</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-3">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Выделения с неприятным запахом</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-3">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Болезненные пузырьки в интимной зоне, превращающиеся в язвы</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-3">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Безболезненные папилломы, узелки, наросты или бородавки в интимной зоне</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-3">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Что-то другое, не указанное выше</div>
+											</label></div>
+										<div class="test__options"><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-4">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Обильные выделения без неприятного запаха</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-4">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Выделения с неприятным запахом</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-4">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Болезненные пузырьки в интимной зоне, превращающиеся в язвы</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-4">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Безболезненные папилломы, узелки, наросты или бородавки в интимной зоне</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-4">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Что-то другое, не указанное выше</div>
+											</label></div>
+										<div class="test__options"><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-5">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Обильные выделения без неприятного запаха</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-5">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Выделения с неприятным запахом</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-5">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Болезненные пузырьки в интимной зоне, превращающиеся в язвы</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-5">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Безболезненные папилломы, узелки, наросты или бородавки в интимной зоне</div>
+											</label><label class="test__label" for="#"><input class="test__radio" type="radio" name="question-5">
+												<div class="test__icon"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg></div>
+												<div class="test__text">Что-то другое, не указанное выше</div>
+											</label></div>
+									</div>
+								</div>
+								<div class="test__index">1</div>
+							</form>
+							<div class="test__result">
+								<div class="test__result-container">
+									<div class="test__result-row">
+										<div class="test__result-col">
+											<div class="test__result-caption">возможный диагноз</div>
+											<h3 class="test__result-title">Бактериальный вагиноз</h3>
+											<p class="test__result-text">Неприятный запах выделений из половых путей часто сопровождает бактериальный вагиноз. Для уточнения диагноза и исключения инфекций, передаваемых половым путем, необходимо обратиться к врачу и сдать дополнительные анализы, без них разобраться в проблеме будет сложно.</p>
+											<div class="test__result-label">
+												<div class="link-text link-text--s">Для повышения эффективности лечения попробуйте спрей <a class="link-text__link" href="#">Эпиген Интим</a> . Он обладает противовоспалительным и местным иммуностимулирующим эффектом.</div>
+											</div>
+										</div>
+										<div class="test__result-col">
+											<div class="test__form">
+												<div class="test__form-wrapper">
+													<h4 class="test__form-title">Для получения результатов теста укажите E&#8209;mail</h4>
+													<form class="form" action="/">
+														<div class="test__form-item"><label class="form__item"><input class="form__input" name="email"><span class="form__placeholder">E-mail</span></label></div>
+														<div class="test__form-item"><button class="button button--wide btn-animation" type="submit"><span class="btn-animation__text">Отправить результаты теста на почту</span></button></div>
+													</form>
+												</div>
+												<div class="test__form-response">Результат отправлен на почту<br><span class="test__form-email"></span></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-test__button">
+						<div class="button-close btn-animation btn-animation--icon" data-button="3"><svg class="button-close__svg" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M13.9926 1.00598L1.0061 13.9924" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+								<path d="M13.9973 14L1 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+							</svg></div>
 					</div>
 				</div>
 			</div>
