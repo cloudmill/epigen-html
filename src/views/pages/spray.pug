@@ -704,7 +704,7 @@ block content
                       a.button.button--reviews-slider.button--reviews-slider--small.btn-animation.spray-page__slider-desktop(href='#')
                         span.btn-animation__text
                           |Все отзывы
-                      a.spray-page__slider-link.btn-animation(href="#")
+                      .spray-page__slider-link.btn-animation(data-mdl-open)
                         span.btn-animation__text
                           |Задать вопрос врачу
             +footer.page__footer
@@ -767,4 +767,51 @@ block content
                       span.test__form-email
       .modal-test__button
         .button-close.btn-animation.btn-animation--icon(data-button='3')
+          +cross-svg.button-close__svg
+  .mdl
+    .mdl__container
+      .mdl__content.mdl__content--md.mdl__interactive
+        .mdl__inner
+          .mdl__form
+            .mdl__form-container
+              h3.mdl__form-title
+                |Задать вопрос врачу
+              form.form(action="/")
+                label.form__item
+                  input.form__input(type="text" name="name")
+                  span.form__placeholder
+                    |Имя
+                label.form__item
+                  input.form__input(type="email" name="email")
+                  span.form__placeholder
+                    |E-mail
+                .form__item
+                  textarea.form__textarea(name="message" placeholder="Сообщение", cols="30", rows="10")
+                .form__inner
+                  .file
+                    input.file__input(id="file" type="file" multiple)
+                    .file__container
+                    label.file__label(for="file")
+                      .file__icon
+                        +file-svg
+                      .file__text
+                        |Прикрепить файл
+                  .checkbox
+                    label.checkbox__label(for="checkbox-1")
+                      input.checkbox__input(type="checkbox" id="checkbox-1")
+                      .checkbox__box
+                        +check-svg.checkbox__icon
+                      .checkbox__text
+                        |Согласен на обработку персональных данных в соответствии с #[a.checkbox__link(href="#") политикой конфиденциальности]
+                .form__button
+                  button.button.button--wide.btn-animation(type='submit')
+                    span.btn-animation__text
+                      |Отправить
+              .mdl__response
+                h3.mdl__form-title
+                  |Мы получили ваше сообщение и ответим на него в ближайшее время.
+                .button.button--wide.btn-animation
+                  span.btn-animation__text
+                    |Отправить еще
+        .mdl__close.mdl__interactive.button-close.btn-animation.btn-animation--icon(data-button-close='1')
           +cross-svg.button-close__svg
