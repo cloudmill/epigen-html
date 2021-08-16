@@ -1170,6 +1170,28 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
   });
 }
 
+// spray slider hash change
+{
+  $(() => {
+    const buttons = $('[data-hash]')
+
+    if (buttons.length !== 0) {
+      if (window.location.hash === '#product2') {
+        let product = $('[data-hash="#product2"]')
+        let item = product.closest('.block__control-item')
+
+        $('.block__frame').eq(item.index()).addClass('block__frame--front')
+      } else {
+        let product = $('[data-hash="#product1"]')
+        let item = product.closest('.block__control-item')
+
+        window.history.replaceState(null, '', '#product1')
+        $('.block__frame').eq(item.index()).addClass('block__frame--front')
+      }
+    }
+  })
+}
+
 // block
 {
   $(() => {
@@ -1184,7 +1206,8 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       const btn = block.find('.spray-page__tabs-item')
 
       if (btn.length > 1) {
-        let cur_index = 0
+        // let cur_index = 0
+        let cur_index = window.location.hash === '#product1' ? 0 : 1
 
         let clickable = true
 
@@ -1210,6 +1233,11 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
               frame.toggleClass('block__frame--front')
               frame.eq(new_index).addClass('block__frame--open')
               frame.eq(new_index).addClass('block__frame--out')
+
+              // hash
+              const hash = $(this).data('hash')
+
+              window.history.replaceState(null, '', hash)
             }
           }
         })
@@ -1782,21 +1810,3 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
   })
 }
 
-{
-  // const btn = $('.test-btn')
-
-  // btn.on('click', () => {
-  //   window.history.replaceState('page2', 'Title', '#2');
-  // })
-  $(() => {
-    // if (window.location.pathname === '/test') {
-    //   window.history.replaceState(null, '', '#2')
-    // }
-
-    if (window.location.hash === '') {
-      console.log(1);
-    } else {
-      console.log(2);
-    }
-  })
-}
