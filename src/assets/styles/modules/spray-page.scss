@@ -116,6 +116,9 @@
       @include fsl(15px);
     }
   }
+  &__section-container {
+    position: relative;
+  }
 
   &__tabs {
     margin-bottom: 60px;
@@ -763,5 +766,23 @@
     @media (max-width: $breakpoint - 1px) {
       display: block;
     }
+  }
+
+  &__product-layout {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    pointer-events: none;
+  }
+  &__product-star { 
+    position: absolute;
+    top: 0;
+    left: calc(#{$col-width-d} * 15);
+
+    transform: translateY(-50%);
   }
 }

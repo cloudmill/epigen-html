@@ -309,10 +309,10 @@ block content
                       .spray-page__intro-col
                         ul.spray-page__intro-list
                           li.spray-page__intro-item
-                            .category-item.category-item--blue
+                            .category-item.category-item--blue.cursor.cursor--default
                               |Сделано в Испании
                           li.spray-page__intro-item
-                            .category-item.category-item--blue
+                            .category-item.category-item--blue.cursor.cursor--default
                               |Соответсвует стандартам GMP
                       .spray-page__intro-col
                         h1.spray-page__intro-title
@@ -342,7 +342,9 @@ block content
                   .spray-page__section-col
                     p.spray-page__section-text(data-aos='fade-up')
                       |Разрешен к применению на любом сроке беременности и в период прегравидарной подготовки, не противопоказан детям.
-              section.spray-page__section.margin-top.margin-top--l(id='form' data-section='')
+              section.spray-page__section-container.margin-top.margin-top--l(id='form' data-section='')
+                .spray-page__product-layout(data-aos='fade-up')
+                  +star-svg.spray-page__product-star
                 +block
               section.spray-page__section.margin-top.margin-top--l
                 ul.spray-page__list
