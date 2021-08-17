@@ -4,7 +4,7 @@
 
     position: relative;
     z-index: 0;
-    left: calc((#{$col-width-d} * 6 + 60px) * (-1));
+    left: calc((#{$col-width-d} * 6 + 150px) * (-1));
     top: 150px;
 
     width: 100vw;
