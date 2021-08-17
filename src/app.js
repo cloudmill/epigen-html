@@ -1,11 +1,14 @@
 import 'Styles/_app.scss'
-import 'scripts/backend.js';
 
 import Swiper from 'swiper/bundle';
 import Slider from 'scripts/slider.js';
 import Sticky from 'sticky-js';
 import AOS from 'aos';
 import 'parsleyjs';
+
+$(() => {
+  require("assets/scripts/backend");
+});
 
 // vars
 const BREAKPOINT = 1280
