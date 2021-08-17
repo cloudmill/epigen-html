@@ -162,7 +162,7 @@ block content
                               a.modal-aside__doc-link(href="#")
                                 |Политика конфиденциальности
                           .modal-aside__col-item
-                            +product-link.product-link--modal--aside.product-link--purple(src='assets/images/gel.jpeg')
+                            +product-link.product-link--modal--aside.product-link--purple(src='assets/images/gel.jpg')
                               |Гель
                             .modal-aside__doc
                               a.modal-aside__doc-link(href="#")
@@ -261,7 +261,7 @@ block content
                               +product-link.product-link--modal--mobile(src='assets/images/spray.jpeg')
                                 |Спрей
                             .modal-mobile__products-item
-                              +product-link.product-link--modal--mobile.product-link--purple(src='assets/images/gel.jpeg')
+                              +product-link.product-link--modal--mobile.product-link--purple(src='assets/images/gel.jpg')
                                 |Гель
                         .panel.panel--modal
                           .panel__choice
@@ -342,7 +342,9 @@ block content
                   .spray-page__section-col
                     p.spray-page__section-text(data-aos='fade-up')
                       |Можно использовать на любом месяце беременности. Не имеет ограничений по возрасту и полу.
-              section.spray-page__section.margin-top.margin-top--95(id='form' data-section='')
+              section.spray-page__section-container.margin-top.margin-top--95(id='form' data-section='')
+                .spray-page__product-layout 
+                  +star-svg.spray-page__product-star
                 +block
               section.page-gel__features(id='features' data-section='')
                 .page-gel__features-layout

@@ -152,7 +152,7 @@ block content
                               a.modal-aside__doc-link(href="#")
                                 |Политика конфиденциальности
                           .modal-aside__col-item
-                            +product-link.product-link--modal--aside.product-link--purple(src='assets/images/gel.jpeg')
+                            +product-link.product-link--modal--aside.product-link--purple(src='assets/images/gel.jpg')
                               |Гель
                             .modal-aside__doc
                               a.modal-aside__doc-link(href="#")
@@ -251,7 +251,7 @@ block content
                               +product-link.product-link--modal--mobile(src='assets/images/spray.jpeg')
                                 |Спрей
                             .modal-mobile__products-item
-                              +product-link.product-link--modal--mobile.product-link--purple(src='assets/images/gel.jpeg')
+                              +product-link.product-link--modal--mobile.product-link--purple(src='assets/images/gel.jpg')
                                 |Гель
                         .panel.panel--modal
                           .panel__choice
@@ -309,10 +309,10 @@ block content
                       .spray-page__intro-col
                         ul.spray-page__intro-list
                           li.spray-page__intro-item
-                            .category-item.category-item--blue
+                            .category-item.category-item--blue.cursor.cursor--default
                               |Сделано в Испании
                           li.spray-page__intro-item
-                            .category-item.category-item--blue
+                            .category-item.category-item--blue.cursor.cursor--default
                               |Соответсвует стандартам GMP
                       .spray-page__intro-col
                         h1.spray-page__intro-title
@@ -342,7 +342,9 @@ block content
                   .spray-page__section-col
                     p.spray-page__section-text(data-aos='fade-up')
                       |Разрешен к применению на любом сроке беременности и в период прегравидарной подготовки, не противопоказан детям.
-              section.spray-page__section.margin-top.margin-top--l(id='form' data-section='')
+              section.spray-page__section-container.margin-top.margin-top--l(id='form' data-section='')
+                .spray-page__product-layout(data-aos='fade-up')
+                  +star-svg.spray-page__product-star
                 +block
               section.spray-page__section.margin-top.margin-top--l
                 ul.spray-page__list
@@ -445,7 +447,7 @@ block content
                   .test__row(data-aos='fade-up')
                     .test__col
                       ul.test__questions
-                        each item, index in ['Какие проявления в интимной зоне вас беспокоят?', '2', '3', '4', '5']
+                        each item, index in ['Какие проявления в интимной зоне вас беспокоят?', 'Как часто вас беспокоят данные проявления?', 'Когда вы были последний раз на приеме у врача гинеколога?', 'Каким образом Вы решали проблему?', 'Удалось ли справиться с проблемой?']
                           li.test__question(class = ((index === 0) ? 'test__question--active' : ''))
                             |!{item}
                       ul.test__dots
@@ -461,7 +463,7 @@ block content
                             .test__text
                               |#{item}
                       .test__options
-                        each item in ['Обильные выделения без неприятного запаха', 'Выделения с неприятным запахом', 'Болезненные пузырьки в интимной зоне, превращающиеся в язвы', 'Безболезненные папилломы, узелки, наросты или бородавки в интимной зоне', 'Что-то другое, не указанное выше', 'Что-то другое, не указанное выше', 'Что-то другое, не указанное выше']
+                        each item in ['Беспокоят впервые', 'Уже случалось ранее', 'Беспокоят периодически 1-2 раза в год', 'Беспокоят периодически 3-4 раза в год', 'После лечения вскоре снова обостряется']
                           label.test__label(for="#")
                             input.test__radio(type="radio" name='question-2')
                             .test__icon
@@ -469,7 +471,7 @@ block content
                             .test__text
                               |#{item}
                       .test__options
-                        each item in ['Выделения с неприятным запахом', 'Болезненные пузырьки в интимной зоне, превращающиеся в язвы', 'Безболезненные папилломы, узелки, наросты или бородавки в интимной зоне', 'Что-то другое, не указанное выше']
+                        each item in ['Не считаю нужным обращаться к врачу', 'Более 3 лет назад', 'Более 1 года назад', 'В этом году', 'Обращалась к гинекологу когда возникла данная проблема']
                           label.test__label(for="#")
                             input.test__radio(type="radio" name='question-3')
                             .test__icon
@@ -477,7 +479,7 @@ block content
                             .test__text
                               |#{item}
                       .test__options
-                        each item in ['Выделения с неприятным запахом', 'Болезненные пузырьки в интимной зоне, превращающиеся в язвы',]
+                        each item in ['Пока ничего не делала, только наблюдала', 'Использовала средства народной медицины', 'Лечилась тем, что посоветовал фармацевт в аптеке', 'Лечилась лекарствами, которые советовали в интернете', 'Лечилась тем, что назначил врач гинеколог']
                           label.test__label(for="#")
                             input.test__radio(type="radio" name='question-4')
                             .test__icon
@@ -485,7 +487,7 @@ block content
                             .test__text
                               |#{item}
                       .test__options
-                        each item in ['Обильные выделения без неприятного запаха', 'Выделения с неприятным запахом', '1233321', 'Безболезненные папилломы, узелки, наросты или бородавки в интимной зоне', 'qweasd']
+                        each item in ['Да, удалось', 'Нет, не удалось', 'Лечение помогло, но не в полной мере', 'Пока не лечилась', 'Лечиться не планирую, интересуюсь ради любопытства']
                           label.test__label(for="#")
                             input.test__radio(type="radio" name='question-5')
                             .test__icon

@@ -290,7 +290,10 @@
 
   &__img {
     max-width: none;
-    max-height: 430px;
+    max-height: 500px;
+    @media (max-width: $breakpoint-xl - 1px) {
+      max-height: 430px;
+    }
     @media (max-width: $breakpoint - 1px) {
       max-height: 281px;
     }

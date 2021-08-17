@@ -86,6 +86,9 @@
     right: 0;
 
     width: calc(#{$col-width-d} * 14);
+    @media (max-width: $breakpoint - 1px) {
+      width: 100%;
+    }
 
     opacity: 0;
     pointer-events: none;
@@ -102,6 +105,9 @@
 
     &:nth-child(1) {
       width: calc(#{$col-width-d} * 11);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
     }
 
     &:nth-child(2) {
@@ -112,9 +118,15 @@
   &__response-title {
     font-weight: 400;
     @include fsl(35px, 130%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(20px);
+    }
   }
   &__response-button {
     flex-shrink: 0;
     width: calc(#{$col-width-d} * 5);
+    @media (max-width: $breakpoint - 1px) {
+      width: 100%;
+    }
   }
 }

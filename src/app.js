@@ -6,6 +6,10 @@ import Sticky from 'sticky-js';
 import AOS from 'aos';
 import 'parsleyjs';
 
+$(() => {
+  require("assets/scripts/backend");
+});
+
 // vars
 const BREAKPOINT = 1280
 const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
@@ -1544,9 +1548,9 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
       $(window).one('resize', handleResize)
 
-      // requestAnimationFrame(() => {
-      //   paint(points_norm)
-      // })
+      requestAnimationFrame(() => {
+        paint(points_norm)
+      })
 
       function paint(points) {
         ctx.clearRect(0, 0, canvas[0].width, canvas[0].height)
@@ -1586,18 +1590,60 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
       // animation
 
-      let animation_progress = 0
-      let animation_speed = ANIMATION_SPEED
+      requestAnimationFrame(render)
 
-      function animation() {
-        paint()
+      let progress = 0
+      const PROGRESS_DELTA = 5
+      let progress_delta = PROGRESS_DELTA
 
-        animation_progress += animation_speed
+      function render() {
+        const DIST = 800
 
-        requestAnimationFrame(animation)
+        const points_cur = points.map(item => [item[0], item[1] + 10 * Math.sin(((item[0] + progress % DIST) / DIST) * Math.PI * 2)])
+
+        const points_norm = []
+
+        let min_x = points_cur[0][0]
+        let max_x = min_x
+
+        let min_y = points_cur[0][1]
+        let max_y = min_y
+
+        points_cur.forEach(point => {
+          const cur_x = point[0]
+          const cur_y = point[1]
+
+          if (cur_x < min_x) {
+            min_x = cur_x
+          } else if (cur_x > max_x) {
+            max_x = cur_x
+          }
+
+          if (cur_y < min_y) {
+            min_y = cur_y
+          } else if (cur_y > max_y) {
+            max_y = cur_y
+          }
+        })
+
+        const rect_width = max_x - min_x + 1
+        const rect_height = max_y - min_y + 1
+
+        points_cur.forEach(point => {
+          const point_norm = []
+
+          point_norm[0] = (point[0] - min_x) / rect_width
+          point_norm[1] = (point[1] - min_y) / rect_height
+
+          points_norm.push(point_norm)
+        })
+        // debugger;
+        paint(points_norm)
+
+        progress += progress_delta
+
+        requestAnimationFrame(render)
       }
-
-      animation()
     })
   })
 }
