@@ -224,14 +224,15 @@ block content
               .faq-page__button(data-aos='fade-up')
                 .button.button--t.margin-bottom.margin-bottom--m.button-modal
                   |Задать вопрос о продукции Эпиген Интим
-              ul.faq-page__list.faq-page__list--mobile(data-aos='fade-up')
-                li.faq-page__item
-                  +border-link(href='#' active)
-                    |Все
-                each link in ['Состав', 'Противопоказания', 'Использование', 'Приобрести',]
+              .faq-page__container
+                ul.faq-page__list.faq-page__list--mobile(data-aos='fade-up')
                   li.faq-page__item
-                    +border-link(href='#')
-                      |!{link}
+                    +border-link(href='#' active)
+                      |Все
+                  each link in ['Состав', 'Противопоказания', 'Использование', 'Приобрести',]
+                    li.faq-page__item
+                      +border-link(href='#')
+                        |!{link}
               section.faq-page__section
                 ul.product-choice.product-choice--margin-bottom--default.product-choice--faq
                   li.product-choice__item(data-aos='fade-up')

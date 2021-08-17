@@ -211,14 +211,15 @@ block content
                 |Отзывы
               .rail.rail--margin-bottom--default
               .faq-page
-                ul.faq-page__list.faq-page__list--mobile
-                  li.faq-page__item
-                    +border-link(href='#' active)
-                      |Все
-                  each link in ['Состав', 'Противопоказания', 'Использование', 'Приобрести',]
-                    li.faq-page__item(data-aos='fade-up')
-                      +border-link(href='#')
-                        |!{link}
+                .faq-page__container
+                  ul.faq-page__list.faq-page__list--mobile(data-aos='fade-up')
+                    li.faq-page__item
+                      +border-link(href='#' active)
+                        |Все
+                    each link in ['Отзывы врачей', 'Отзывы покупателей',]
+                      li.faq-page__item
+                        +border-link(href='#')
+                          |!{link}
               ul.product-choice.product-choice--margin-bottom--default
                 li.product-choice__item(data-aos='fade-up')
                   a.product-btn.product-btn--active(href='#')

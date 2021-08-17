@@ -9,6 +9,9 @@
   @media (max-width: $breakpoint-l - 1px) {
     width: 166px;
   }
+  @media (max-width: $breakpoint-s - 1px) {
+    width: 100%;
+  }
   display: block;
 
   border-radius: 10px;
