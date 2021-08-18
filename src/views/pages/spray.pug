@@ -594,13 +594,6 @@ block content
                           h2.page-gel__reviews-title
                             |Отзывы
                         .page-gel__reviews-right
-                          .page-gel__reviews-btns
-                            .page-gel__reviews-btns-item
-                              .b.b--btn-left-right-slider.js.js--gel-reviews-btn--prev.btn-animation.btn-animation--icon
-                                +simple-arrow-svg.b__svg
-                            .page-gel__reviews-btns-item
-                              .b.b--btn-left-right-slider.b--right.js.js--gel-reviews-btn--next.btn-animation.btn-animation--icon
-                                +simple-arrow-svg.b__svg
                           .page-gel__reviews-links-item.page-gel__reviews-links-item--mobile
                             a.button.button--reviews-slider.button--reviews-slider--small.btn-animation(href='#')
                               span.btn-animation__text
@@ -618,6 +611,14 @@ block content
                                 .page-gel__reviews-card-bottom
                                   a.page-gel__reviews-card-link(href='#')
                                     |irecommend.ru
+                      .page-gel__reviews-bottom(data-aos='fade-up')
+                        .page-gel__reviews-btns
+                          .page-gel__reviews-btns-item
+                            .b.b--btn-left-right-slider.btn-animation.btn-animation--icon(data-command-slider-arrow='prev')
+                              +simple-arrow-svg.b__svg
+                          .page-gel__reviews-btns-item
+                            .b.b--btn-left-right-slider.b--right.btn-animation.btn-animation--icon(data-command-slider-arrow='next')
+                              +simple-arrow-svg.b__svg
                     .reviews-tabs__item
                       .b.b--reviews-slider-main-page.b--reviews-slider-spray-page
                         .b__top.b__top--tabs
@@ -625,19 +626,6 @@ block content
                             .spray-page__slider-col
                               h3.spray-page__slider-title
                                 |Отзывы
-                            .spray-page__slider-col
-                              .spray-page__slider-desktop
-                                .b__control
-                                  .b__control-item
-                                    .b.b--btn-left-right-slider.btn-animation.btn-animation--icon(data-command-slider-arrow='prev')
-                                      +simple-arrow-svg.b__svg
-                                  .b__control-item
-                                    .b.b--btn-left-right-slider.b--right.btn-animation.btn-animation--icon(data-command-slider-arrow='next')
-                                      +simple-arrow-svg.b__svg
-                              .spray-page__slider-mobile
-                                a.button.button--reviews-slider.button--reviews-slider--small.btn-animation(href='#' data-mdl-open='')
-                                  span.btn-animation__text
-                                    |Все отзывы
                         .b__bottom
                           each slide in [1, 2, 3, 4]
                             .b__slide
@@ -671,8 +659,16 @@ block content
                                               img.b__preview-img(src='assets/images/reviews-slider-2.jpeg')
                                     .b__bottom-row
                                       .b__bottom-col
-                                        a.b__link(href="#")
+                                        .b__link(data-button='5')
                                           |Читать отзыв
+                                      .b__bottom-col 
+                                        .b__control
+                                          .b__control-item
+                                            .b.b--btn-left-right-slider.btn-animation.btn-animation--icon(data-command-slider-arrow='prev')
+                                              +simple-arrow-svg.b__svg
+                                          .b__control-item
+                                            .b.b--btn-left-right-slider.b--right.btn-animation.btn-animation--icon(data-command-slider-arrow='next')
+                                              +simple-arrow-svg.b__svg
                               .b__slide-mobile
                                 .b__slide-row
                                   .b__slide-col
