@@ -10,12 +10,12 @@
   }
 
   &--small {
-    #{$comp}__link {
-      height: 35px;
-      @media (max-width: $breakpoint - 1px) {
-        height: 25px;
-      }
-    }
+    // #{$comp}__link {
+    //   height: 35px;
+    //   @media (max-width: $breakpoint - 1px) {
+    //     height: 25px;
+    //   }
+    // }
     @include fsl(25px, 140%);
     @media (max-width: $breakpoint - 1px) {
       @include fsl(18px);
@@ -25,16 +25,17 @@
   &--s {
     @include fsl(13px, 140%);
 
-    #{$comp}__link {
-      padding: 2px 2px 3px 4px;
-      height: 21px;
+    // #{$comp}__link {
+      // padding: 2px 2px 3px 4px;
+      // height: 21px;
 
-      border-radius: 4px;
-    }
+      // border-radius: 4px;
+    // }
   }
 
   &__link {
     position: relative;
+    z-index: 1;
 
     line-height: 100%;
     color: $color-blue;

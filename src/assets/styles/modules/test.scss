@@ -236,8 +236,9 @@
     transition: $transition;
 
     &--hidden {
-      opacity: 0;
-      pointer-events: none;
+      // opacity: 0;
+      // pointer-events: none;
+      display: none;
     }
   }
   &__row {
@@ -301,8 +302,8 @@
 
     @media (max-width: $breakpoint - 1px) {
       position: absolute;
-      top: 15px;
-      right: 15px;
+      top: calc(15px - 62px);
+      right: 0;
     }
   }
   &__dot {
@@ -440,18 +441,20 @@
   }
 
   &__result {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    // right: 0;
 
-    opacity: 0;
-    pointer-events: none;
+    // opacity: 0;
+    // pointer-events: none;
+    display: none;
     transition: $transition;
 
     &--active {
-      opacity: 1;
-      pointer-events: all;
+      // opacity: 1;
+      // pointer-events: all;
+      display: block;
     }
   }
   &__result-container {
@@ -459,12 +462,22 @@
   }
   &__result-row {
     display: flex;
+    @media (max-width: $breakpoint - 1px) {
+      display: block;
+    }
     justify-content: space-between;
   }
   &__result-col {
     flex-shrink: 0;
 
     width: calc(#{$col-width-d} * 7);
+    @media (max-width: $breakpoint - 1px) {
+      width: 100%;
+
+      &:nth-child(2) {
+        margin-top: 30px;
+      }
+    }
   }
   &__result-caption {
     margin-bottom: 10px;
@@ -490,6 +503,9 @@
     background-color: $color-white;
     border-radius: 10px;
   }
+  &__result-button {
+    margin-top: 15px;
+  }
 
   &__form {
     position: relative;
@@ -506,9 +522,13 @@
     margin-bottom: 30px;
 
     width: calc(#{$col-width-d} * 6);
+    @media (max-width: $breakpoint - 1px) {
+      width: 100%;
 
-    font-weight: 400;
+      @include fsl(16px);
+    }
     @include fsl(20px, 140%);
+    font-weight: 400;
   }
   &__form-item {
 
@@ -525,6 +545,9 @@
     pointer-events: none;
     transition: $transition;
     @include fsl(20px, 140%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(16px);
+    }
 
     &--active {
       opacity: 1;
@@ -712,70 +735,6 @@
       @include fsl(80px, 110%);
     }
   }
-}
-
-.btn-test-btn {
-  width: 30px;
-  height: 30px;
-
-  position: relative;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  cursor: pointer;
-
-  &:hover {
-    .btn-test {
-      height: 1px;
-
-      &::after {
-        transform: translate(-50%, -50%) rotate(-135deg);
-        transition-delay: .5s;
-      }
-
-      &::before {
-        transform: translate(-50%, -50%) rotate(-45deg);
-        transition-delay: .5s;
-      }
-    }
-  }
-
-}
-
-.btn-test {
-  position: relative;
-  width: 30px;
-  height: 20px;
-
-  transition: .35s;
-
-  &::after,
-  &::before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    transform-origin: 50% 50%;
-    transform: translate(-50%, 0);
-
-    width: 100%;
-    height: 1px;
-
-    transition: transform .35s;
-    background-color: $color-black;
-  }
-
-  &::after {
-    bottom: 0;
-  }
-  &::before {
-    top: 0;
-  }
-}
-
-.btn-wrapper {
-  margin: 30px;
 }
 
 .canvas {
