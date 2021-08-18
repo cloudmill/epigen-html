@@ -359,6 +359,10 @@
     bottom: 0;
     right: 0;
 
+    @media (max-width: $breakpoint-xs - 1px) {
+      display: none;
+    }
+
     width: 30px;
 
     border: 1px solid $color-blue-light;
