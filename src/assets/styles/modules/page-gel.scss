@@ -378,6 +378,12 @@
     }
   }
 
+  &__reviews-bottom {
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
   &__features {
     position: relative;
 

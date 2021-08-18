@@ -285,6 +285,64 @@
     }
   }
 
+  // 
+  &--reviews-slider-container {
+    #{$comp}__top {
+      margin-bottom: 80px;
+      @media (max-width: $breakpoint - 1px) {
+        margin-bottom: 30px;
+      }
+
+      // &--tabs {
+      //   @media (max-width: $breakpoint - 1px) {
+      //     margin-bottom: 84px;
+      //   }
+      // }
+    }
+    #{$comp}__top-row {
+      display: flex;
+      @media (max-width: $breakpoint - 1px) {
+        display: block;
+      }
+      justify-content: space-between;
+    }
+    #{$comp}__top-col {
+      flex-shrink: 0;
+
+      &:not(:first-child) {
+        margin-left: calc(#{$col-width-d});
+        @media (max-width: $breakpoint - 1px) {
+          margin-left: 0;
+          margin-top: 30px;
+        }
+      }
+    }
+
+    #{$comp}__title {
+      font-weight: 400;
+      @media (min-width: $breakpoint) {
+        @include fsl(34px, 130%);
+      }
+      @media (min-width: $breakpoint-xl) {
+        @include fsl(40px);
+      }
+    }
+
+    #{$comp}__control {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    #{$comp}__control-item {
+      &:not(:first-child) {
+        margin-left: 15px;
+        @media (max-width: $breakpoint - 1px) {
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+
   // слайдер отзывов, главная
   &--reviews-slider-main-page {
     overflow: hidden;
@@ -649,7 +707,7 @@
     }
 
     #{$comp}__bottom-row {
-      margin-top: 70px;
+      margin-top: 85px;
       padding-bottom: 2px;
 
       display: flex;

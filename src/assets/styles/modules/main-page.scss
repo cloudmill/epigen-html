@@ -295,15 +295,7 @@
 
   &__actual {}
 
-  &__reviews {
-    position: relative;
-
-    margin-top: 140px;
-    @media (max-width: $breakpoint - 1px) {
-      margin-top: 60px;
-    }
-    padding: 30px 0 76px 0;
-  }
+  &__reviews {}
   &__reviews-bg {
     position: absolute;
     z-index: -1;
@@ -319,6 +311,9 @@
     background-repeat: no-repeat;
     background-position: left -190px top -200px;
   }
+  &__reviews-container {
+    position: relative;
+  }
   &__reviews-tabs {
     position: relative;
   }
@@ -333,6 +328,7 @@
     }
 
     &:not(:first-child) {
+      padding-bottom: 0;
       position: absolute;
       top: 0;
       left: 0;
@@ -342,5 +338,10 @@
       opacity: 1;
       pointer-events: all;
     }
+  }
+  &__reviews-link {
+    position: absolute;
+    bottom: 0;
+    left: calc(#{$col-width-d} * 12);
   }
 }
