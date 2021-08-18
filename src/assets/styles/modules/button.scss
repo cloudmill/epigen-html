@@ -70,6 +70,12 @@
     }
   }
 
+  &--spray-article {
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(13px, 140%);
+    }
+  }
+
   &--spray {
     padding: 12px 0;
 
