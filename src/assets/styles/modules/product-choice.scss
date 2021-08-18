@@ -4,7 +4,7 @@
   $gap: 15px;
 
   display: flex;
-  @media (max-width: $breakpoint - 1px) {
+  @media (max-width: $breakpoint-m - 1px) {
     display: block;
   }
   align-items: stretch;
@@ -57,6 +57,9 @@
   &__item {
     width: calc(((#{$col-width-d} * #{$row-main-cols}) - #{$gap}) / 2);
     @media (max-width: $breakpoint - 1px) {
+      width: calc((#{$col-width-m} * 6) / 2 - (5px / 2));
+    }
+    @media (max-width: $breakpoint-m - 1px) {
       width: 100%;
     }
     flex-shrink: 0;
@@ -64,6 +67,9 @@
     &:not(:first-child) {
       margin-left: $gap;
       @media (max-width: $breakpoint - 1px) {
+        margin-left: 5px;
+      }
+      @media (max-width: $breakpoint-m - 1px) {
         margin-left: 0;
         margin-top: 5px;
       }
