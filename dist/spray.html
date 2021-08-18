@@ -1056,13 +1056,16 @@
 														<div class="test__result-label">
 															<div class="link-text link-text--s">Для повышения эффективности лечения попробуйте спрей <a class="link-text__link" href="#">Эпиген Интим</a> . Он обладает противовоспалительным и местным иммуностимулирующим эффектом.</div>
 														</div>
+														<div class="test__result-button">
+															<div class="button button--wide btn-animation"><span class="btn-animation__text">Пройти тест заново</span></div>
+														</div>
 													</div>
 													<div class="test__result-col">
 														<div class="test__form">
 															<div class="test__form-wrapper">
 																<h4 class="test__form-title">Для получения результатов теста укажите E&#8209;mail</h4>
-																<form class="form" action="/">
-																	<div class="test__form-item"><label class="form__item"><input class="form__input" name="email"><span class="form__placeholder">E-mail</span></label></div>
+																<form class="form" action="/" data-type="feedback-form">
+																	<div class="test__form-item"><label class="form__item"><input class="form__input" type="email" name="email" required="required"><span class="form__placeholder">E-mail</span></label></div>
 																	<div class="test__form-item"><button class="button button--wide btn-animation" type="submit"><span class="btn-animation__text">Отправить результаты теста на почту</span></button></div>
 																</form>
 															</div>
@@ -1168,18 +1171,6 @@
 															<h2 class="page-gel__reviews-title">Отзывы</h2>
 														</div>
 														<div class="page-gel__reviews-right">
-															<div class="page-gel__reviews-btns">
-																<div class="page-gel__reviews-btns-item">
-																	<div class="b b--btn-left-right-slider js js--gel-reviews-btn--prev btn-animation btn-animation--icon"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
-																			<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
-																		</svg></div>
-																</div>
-																<div class="page-gel__reviews-btns-item">
-																	<div class="b b--btn-left-right-slider b--right js js--gel-reviews-btn--next btn-animation btn-animation--icon"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
-																			<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
-																		</svg></div>
-																</div>
-															</div>
 															<div class="page-gel__reviews-links-item page-gel__reviews-links-item--mobile"><a class="button button--reviews-slider button--reviews-slider--small btn-animation" href="#"><span class="btn-animation__text">Все отзывы</span></a></div>
 														</div>
 													</div>
@@ -1277,6 +1268,20 @@
 															</div>
 														</div>
 													</div>
+													<div class="page-gel__reviews-bottom" data-aos="fade-up">
+														<div class="page-gel__reviews-btns">
+															<div class="page-gel__reviews-btns-item">
+																<div class="b b--btn-left-right-slider btn-animation btn-animation--icon" data-command-slider-arrow="prev"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
+																		<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																	</svg></div>
+															</div>
+															<div class="page-gel__reviews-btns-item">
+																<div class="b b--btn-left-right-slider b--right btn-animation btn-animation--icon" data-command-slider-arrow="next"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
+																		<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																	</svg></div>
+															</div>
+														</div>
+													</div>
 												</div>
 												<div class="reviews-tabs__item">
 													<div class="b b--reviews-slider-main-page b--reviews-slider-spray-page">
@@ -1284,23 +1289,6 @@
 															<div class="spray-page__slider-row">
 																<div class="spray-page__slider-col">
 																	<h3 class="spray-page__slider-title">Отзывы</h3>
-																</div>
-																<div class="spray-page__slider-col">
-																	<div class="spray-page__slider-desktop">
-																		<div class="b__control">
-																			<div class="b__control-item">
-																				<div class="b b--btn-left-right-slider btn-animation btn-animation--icon" data-command-slider-arrow="prev"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
-																						<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
-																					</svg></div>
-																			</div>
-																			<div class="b__control-item">
-																				<div class="b b--btn-left-right-slider b--right btn-animation btn-animation--icon" data-command-slider-arrow="next"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
-																						<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
-																					</svg></div>
-																			</div>
-																		</div>
-																	</div>
-																	<div class="spray-page__slider-mobile"><a class="button button--reviews-slider button--reviews-slider--small btn-animation" href="#" data-mdl-open=""><span class="btn-animation__text">Все отзывы</span></a></div>
 																</div>
 															</div>
 														</div>
@@ -1334,7 +1322,23 @@
 																				</div>
 																			</div>
 																			<div class="b__bottom-row">
-																				<div class="b__bottom-col"><a class="b__link" href="#">Читать отзыв</a></div>
+																				<div class="b__bottom-col">
+																					<div class="b__link" data-button="5">Читать отзыв</div>
+																				</div>
+																				<div class="b__bottom-col">
+																					<div class="b__control">
+																						<div class="b__control-item">
+																							<div class="b b--btn-left-right-slider btn-animation btn-animation--icon" data-command-slider-arrow="prev"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
+																									<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																								</svg></div>
+																						</div>
+																						<div class="b__control-item">
+																							<div class="b b--btn-left-right-slider b--right btn-animation btn-animation--icon" data-command-slider-arrow="next"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
+																									<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																								</svg></div>
+																						</div>
+																					</div>
+																				</div>
 																			</div>
 																		</div>
 																	</div>
@@ -1401,7 +1405,23 @@
 																				</div>
 																			</div>
 																			<div class="b__bottom-row">
-																				<div class="b__bottom-col"><a class="b__link" href="#">Читать отзыв</a></div>
+																				<div class="b__bottom-col">
+																					<div class="b__link" data-button="5">Читать отзыв</div>
+																				</div>
+																				<div class="b__bottom-col">
+																					<div class="b__control">
+																						<div class="b__control-item">
+																							<div class="b b--btn-left-right-slider btn-animation btn-animation--icon" data-command-slider-arrow="prev"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
+																									<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																								</svg></div>
+																						</div>
+																						<div class="b__control-item">
+																							<div class="b b--btn-left-right-slider b--right btn-animation btn-animation--icon" data-command-slider-arrow="next"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
+																									<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																								</svg></div>
+																						</div>
+																					</div>
+																				</div>
 																			</div>
 																		</div>
 																	</div>
@@ -1468,7 +1488,23 @@
 																				</div>
 																			</div>
 																			<div class="b__bottom-row">
-																				<div class="b__bottom-col"><a class="b__link" href="#">Читать отзыв</a></div>
+																				<div class="b__bottom-col">
+																					<div class="b__link" data-button="5">Читать отзыв</div>
+																				</div>
+																				<div class="b__bottom-col">
+																					<div class="b__control">
+																						<div class="b__control-item">
+																							<div class="b b--btn-left-right-slider btn-animation btn-animation--icon" data-command-slider-arrow="prev"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
+																									<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																								</svg></div>
+																						</div>
+																						<div class="b__control-item">
+																							<div class="b b--btn-left-right-slider b--right btn-animation btn-animation--icon" data-command-slider-arrow="next"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
+																									<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																								</svg></div>
+																						</div>
+																					</div>
+																				</div>
 																			</div>
 																		</div>
 																	</div>
@@ -1535,7 +1571,23 @@
 																				</div>
 																			</div>
 																			<div class="b__bottom-row">
-																				<div class="b__bottom-col"><a class="b__link" href="#">Читать отзыв</a></div>
+																				<div class="b__bottom-col">
+																					<div class="b__link" data-button="5">Читать отзыв</div>
+																				</div>
+																				<div class="b__bottom-col">
+																					<div class="b__control">
+																						<div class="b__control-item">
+																							<div class="b b--btn-left-right-slider btn-animation btn-animation--icon" data-command-slider-arrow="prev"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
+																									<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																								</svg></div>
+																						</div>
+																						<div class="b__control-item">
+																							<div class="b b--btn-left-right-slider b--right btn-animation btn-animation--icon" data-command-slider-arrow="next"><svg class="b__svg" xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewbox="0 0 9 16" fill="none">
+																									<path d="M8 15L1 8L8 1" stroke="#282828" stroke-linecap="round" stroke-linejoin="round"></path>
+																								</svg></div>
+																						</div>
+																					</div>
+																				</div>
 																			</div>
 																		</div>
 																	</div>
