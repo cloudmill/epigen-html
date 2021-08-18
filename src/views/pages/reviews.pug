@@ -211,14 +211,15 @@ block content
                 |Отзывы
               .rail.rail--margin-bottom--default
               .faq-page
-                ul.faq-page__list.faq-page__list--mobile
-                  li.faq-page__item
-                    +border-link(href='#' active)
-                      |Все
-                  each link in ['Состав', 'Противопоказания', 'Использование', 'Приобрести',]
-                    li.faq-page__item(data-aos='fade-up')
-                      +border-link(href='#')
-                        |!{link}
+                .faq-page__container
+                  ul.faq-page__list.faq-page__list--mobile(data-aos='fade-up')
+                    li.faq-page__item
+                      +border-link(href='#' active)
+                        |Все
+                    each link in ['Отзывы врачей', 'Отзывы покупателей',]
+                      li.faq-page__item
+                        +border-link(href='#')
+                          |!{link}
               ul.product-choice.product-choice--margin-bottom--default
                 li.product-choice__item(data-aos='fade-up')
                   a.product-btn.product-btn--active(href='#')
@@ -293,9 +294,8 @@ block content
                   |Отдельная проблема - лечение ВПЧ и ВПЧ-ассоциированные заболеваний шейки матки и влагалища. Эпиген применяю в составе комплексной противовирусной терапии, при удалении кондилом, для лучшей регенерации тканей в период восстановления, в том числе во время беременности.
                 p
                   |Удобно, что есть Эпиген Интим гель, средство для интимной гигиены для повседневного использования, который дополняет назначенное лечение.
-        .mdl__close.mdl__interactive.button-close(data-button-close='1')
+        .mdl__close.mdl__interactive.button-close.btn-animation.btn-animation--icon(data-button-close='1')
           +cross-svg.button-close__svg
-
   .modal(data-modal='3')
     .modal-test
       .modal-test__container

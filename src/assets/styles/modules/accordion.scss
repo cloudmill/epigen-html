@@ -100,6 +100,9 @@
       padding-bottom: 30px;
 
       max-height: 1000px;
+      @media (max-width: $breakpoint-s - 1px) {
+          max-height: 1200px;
+      }
       animation: accordionIn 0.45s normal ease-in-out both 1;
     }
 

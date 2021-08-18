@@ -50,6 +50,8 @@
   }
 
   &__item {
+    position: relative;
+
     display: flex;
     align-items: center;
 
@@ -159,6 +161,10 @@
     position: absolute;
     bottom: 10px;
     right: 10px;
+    @media (max-width: $breakpoint-s - 1px) {
+      bottom: 5px;
+      right: 5px;
+    }
 
     li {
       @include fsl(11px, 120%);

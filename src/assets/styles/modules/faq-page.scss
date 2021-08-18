@@ -7,6 +7,18 @@
     }
   }
 
+  &__container {
+    display: none;
+    @media (max-width: $breakpoint - 1px) {
+      margin-left: -15px;
+
+      display: flex;
+      width: calc(100% + (15px * 2));
+
+      overflow-x: auto;
+      @include scrollbar-hidden;
+    }
+  }
   &__list {
 
     &--mobile {
@@ -15,10 +27,9 @@
       }
       display: none;
       @media (max-width: $breakpoint - 1px) {
+        padding: 0 15px;
         display: flex;
-        width: calc(100% + 15px);
-
-        overflow-x: auto;
+        flex-shrink: 0;
       }
     }
   }

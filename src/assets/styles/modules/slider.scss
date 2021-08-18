@@ -31,15 +31,26 @@
   margin-top: 50px;
   @media (max-width: $breakpoint - 1px) {
     margin-top: 30px;
+    margin-left: -15px;
 
-    width: calc(100% + 15px);
+    width: calc(100% + (15px * 2));
   }
 
   display: flex;
+
+  &__wrapper {
+    padding: 0 15px;
+
+    flex-shrink: 0;
+  }
+
   &__item {
     width: calc((((100vw - (30px * 2)) / 24) * 18) / 3 - 20px);
     @media (max-width: $breakpoint - 1px) {
       width: 330px;
+    }
+    @media (max-width: $breakpoint-xs - 1px) {
+      width: 280px;
     }
   }
 }

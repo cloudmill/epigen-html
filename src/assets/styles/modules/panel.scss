@@ -419,7 +419,9 @@
 
     transform: translateY(10px);
     @media (max-width: $breakpoint - 1px) {
-      transform: translateY(20px);
+      // transform: translateY(20px);
+      transform: translateY(0);
+      background-color: $color-aqua;
     }
     // transition: $transition;
     opacity: 0;
@@ -432,6 +434,7 @@
       display: flex;
       width: calc(100% + 30px);
       overflow-x: auto;
+      @include scrollbar-hidden;
     }
 
     &--scroll {

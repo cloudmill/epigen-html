@@ -57,6 +57,9 @@
 
   &--reviews-slider {
     padding: 12px 20px;
+    @media (max-width: $breakpoint-s - 1px) {
+      padding: 12px 15px;
+    }
     display: inline-flex;
 
     $fs: 15px;
@@ -64,6 +67,12 @@
 
     &--small {
       padding: 9px 20px;
+    }
+  }
+
+  &--spray-article {
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(13px, 140%);
     }
   }
 
