@@ -6,6 +6,10 @@
     z-index: 0;
     left: calc((#{$col-width-d} * 6 + 150px) * (-1));
     top: 150px;
+    @media (max-width: $breakpoint - 1px) {
+        top: calc(722px + 64px);
+        left: -15px;
+    }
 
     width: 100vw;
 
