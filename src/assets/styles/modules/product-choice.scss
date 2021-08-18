@@ -42,6 +42,9 @@
         @media (max-width: $breakpoint - 1px) {
           width: 166px;
         }
+        @media (max-width: $breakpoint-xs - 1px) {
+          width: calc((#{$col-width-m} * 6) / 2 - 5px);
+        }
 
         &:not(:first-child) {
           margin-top: 0;

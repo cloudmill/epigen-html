@@ -3,7 +3,7 @@ extends ../layouts/master.pug
 include ../components/footer.pug
 
 //- block cookies
-block grid-test
+//- block grid-test
 
 mixin nav-page-d
   nav.nav-page-d
@@ -239,6 +239,8 @@ block content
                     +nav-page-m
                   .panel__list
                     .disease-page__container(data-aos='fade-up')
+                      .disease-page__container-label 
+                        |Возможные симптомы
                       ul.disease-page__list
                         each item in ['Зуд', 'Жжение', 'Выделения, пузырьки ', 'Пузырьки, язвочки', 'Болезненность, выделения', 'Болезненность при половом контакте', 'Боль внизу живота', 'Боль при мочеиспускании', ]
                           li.disease-page__list-item
@@ -306,10 +308,10 @@ block content
                 |Генитальный герпес I и II типа
               .rail.rail--margin-bottom--default.rail--desctop(data-aos='fade-up')
               section.disease-page__section
-                .disease-page__section-label(data-aos='fade-up')
-                  |Возможные симптомы
                 .disease-page__section-list
                   .disease-page__container(data-list='')
+                    .disease-page__container-label(data-aos='fade-up')
+                      |Возможные симптомы
                     ul.disease-page__list
                       each item in ['Зуд', 'Жжение', 'Выделения, пузырьки ', 'Пузырьки, язвочки', 'Болезненность, выделения', 'Болезненность при половом контакте', 'Боль внизу живота', 'Боль при мочеиспускании', ]
                         li.disease-page__list-item(data-aos='fade-up')

@@ -57,7 +57,7 @@
       display: flex;
 
       overflow-x: auto;
-
+      background-color: $color-aqua;
       @include scrollbar-hidden;
     }
   }
@@ -65,16 +65,32 @@
   &__container {
     padding: 15px;
 
-    background-color: #E0F3FD;
-    border-radius: 10px;
-
+    display: flex;
     @media (max-width: $breakpoint - 1px) {
       flex-shrink: 0;
+    }
+    
+    @media (min-width: $breakpoint) {
+      background-color: #E0F3FD;
+      border-radius: 10px;
     }
 
     &--hidden {
       opacity: 0;
     }
+  }
+
+  &__container-label {
+    width: calc((#{$col-width-d} * 2) - 15px);
+    @media (max-width: $breakpoint - 1px) {
+      width: 110px;
+
+    }
+    flex-shrink: 0;
+
+    color: $color-blue;
+    @include fsl(13px, 120%);
+    text-transform: uppercase;
   }
 
   &__list {
