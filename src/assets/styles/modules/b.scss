@@ -732,7 +732,7 @@
     #{$comp}__input {
       width: calc(100% - (#{$btn-size} + #{$input-btn-gap}));
       @media (max-width: $breakpoint - 1px) {
-        width: calc(111);
+        width: calc(100% - (34px + 5px));
       }
       display: block;
 

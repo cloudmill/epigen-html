@@ -57,6 +57,9 @@
 
   &--reviews-slider {
     padding: 12px 20px;
+    @media (max-width: $breakpoint-s - 1px) {
+      padding: 12px 15px;
+    }
     display: inline-flex;
 
     $fs: 15px;
