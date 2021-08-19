@@ -600,6 +600,9 @@
         border-color: $color-blue;
       }
     }
+    #{$comp}__link-link {
+      display: flex;
+    }
 
     #{$comp}__control {
       display: flex;

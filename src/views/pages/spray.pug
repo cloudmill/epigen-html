@@ -384,7 +384,7 @@ block content
               section.spray-page__section.margin-top.margin-top--l(id='purpose' data-section='')
                 h3.spray-page__section-title(data-aos='fade-up')
                   |Применяется при лечении
-                .spray-page__use.margin-top.margin-top--md
+                .spray-page__use
                   ul.spray-page__use-list
                     li.spray-page__use-item(data-aos='fade-up')
                       .spray-page__use-card
@@ -618,10 +618,10 @@ block content
                       .page-gel__reviews-bottom(data-aos='fade-up')
                         .page-gel__reviews-btns
                           .page-gel__reviews-btns-item
-                            .b.b--btn-left-right-slider.btn-animation.btn-animation--icon(data-command-slider-arrow='prev')
+                            .b.b--btn-left-right-slider.btn-animation.btn-animation--icon.js.js--gel-reviews-btn--prev
                               +simple-arrow-svg.b__svg
                           .page-gel__reviews-btns-item
-                            .b.b--btn-left-right-slider.b--right.btn-animation.btn-animation--icon(data-command-slider-arrow='next')
+                            .b.b--btn-left-right-slider.b--right.btn-animation.btn-animation--icon.js.js--gel-reviews-btn--next
                               +simple-arrow-svg.b__svg
                     .reviews-tabs__item
                       .b.b--reviews-slider-main-page.b--reviews-slider-spray-page
@@ -689,7 +689,7 @@ block content
                                     .b__slide-bottom
                                       p.b__review
                                         |Спрей Эпиген Интим представляет собой эффективное и безопасное средство для лечения, профилактики генитальных вирусных инфекций, а гель предназначен для интимной гигиены на каждый день...
-                                      a.b__link(href="#")
+                                      .b__link(data-button='5')
                                         |Читать отзыв
                                   .b__slide-col
                                     .b__content-top
@@ -817,3 +817,41 @@ block content
                     |Отправить еще
         .mdl__close.mdl__interactive.button-close.btn-animation.btn-animation--icon(data-button-close='1')
           +cross-svg.button-close__svg
+  .modal(data-modal='5')
+    .mdl
+      .mdl__container
+        .mdl__content.mdl__interactive
+          .mdl__article
+            .mdl__article-container
+              .mdl__article-doctor
+                .mdl__article-row
+                  .mdl__article-col
+                    .mdl__article-img
+                      img(src="assets/images/review-3.jpeg", alt="")
+                  .mdl__article-col
+                    .mdl__article-name
+                      |Ерёмина Марина Евгеньевна
+                    .mdl__article-prof
+                      |Врач акушер-гинеколог, гинеколог-эндокринолог, врач высшей категории, заместитель главного врача по медицинской части..
+              .mdl__article-content
+                h3
+                  |Мой опыт применения Эпиген Интим спрея
+                .mdl__article-wrapper
+                  p
+                    |Вирусные заболевания - частая причина обращения женщин в наше лечебное учреждение.
+                  p
+                    |Лечение герпетической инфекции - одна из самых актуальных и сложных задач.
+                  p
+                    |Генитальный герпес часто протекает атипично, есть трудности в диагностике этого заболевания. Выбор лекарственных средств для лечения генитального герпеса у беременных очень ограничен.
+                  p
+                    |Эпиген Интим спрей - уникальный препарат, имеет доказанную эффективность, и безопасность, нет множества ограничений в применении, хорошо переносится, даёт быстрый результат
+                  p
+                    |По сути, является препаратом скорой помощи, в случае вирусных инфекций может назначаться сразу после обращения пациентки к врачу ещё до получения результатов лабораторных исследований.
+                  p
+                    |Также его применение целесообразно в профилактических целях, на долгосрочную перспективу. Это важно для профилактики рецидивирования генитальных вирусных инфекций, в том числе во время беременности и перед родами.
+                  p
+                    |Отдельная проблема - лечение ВПЧ и ВПЧ-ассоциированные заболеваний шейки матки и влагалища. Эпиген применяю в составе комплексной противовирусной терапии, при удалении кондилом, для лучшей регенерации тканей в период восстановления, в том числе во время беременности.
+                  p
+                    |Удобно, что есть Эпиген Интим гель, средство для интимной гигиены для повседневного использования, который дополняет назначенное лечение.
+          .mdl__close.mdl__interactive.button-close.btn-animation.btn-animation--icon(data-button='5')
+            +cross-svg.button-close__svg

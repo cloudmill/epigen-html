@@ -230,6 +230,9 @@
 
   &__container {
     padding: 62px calc(#{$col-width-d});
+    @media (max-width: $breakpoint - 1px) {
+      padding: 57px 15px 15px;
+    }
 
     position: relative;
 
@@ -254,6 +257,9 @@
     &:nth-child(1) {
       @media (max-width: $breakpoint - 1px) {
         padding-left: calc(#{$col-width-m});
+      }
+      @media (max-width: $breakpoint-xs - 1px) {
+        padding-left: calc(#{$col-width-m} / 2);
       }
 
       width: calc(#{$col-width-d} * 6);
@@ -302,7 +308,7 @@
 
     @media (max-width: $breakpoint - 1px) {
       position: absolute;
-      top: calc(15px - 62px);
+      top: calc(15px - 57px);
       right: 0;
     }
   }

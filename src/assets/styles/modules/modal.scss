@@ -238,6 +238,7 @@
     margin-top: 30px;
   }
   &__bottom-item {
+    display: flex;
 
     &:not(:first-child) {
       margin-top: 10px;
@@ -361,9 +362,9 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
-  @media (max-width: $breakpoint - 1px) {
-    display: none;
-  }
+  // @media (max-width: $breakpoint - 1px) {
+  //   display: none;
+  // }
 
   pointer-events: none;
   opacity: 0;
@@ -371,12 +372,21 @@
 
   &__container {
     width: calc(#{$col-width-d} * 18);
+    @media (max-width: $breakpoint - 1px) {
+      width: calc(#{$col-width-m} * 6);
+    }
   }
 
   &__button {
     position: absolute;
     left: calc(100% + 10px);
     top: 0;
+    @media (max-width: $breakpoint - 1px) {
+      left: auto;
+      top: auto;
+      right: 0;
+      bottom: calc(100% + 10px);
+    }
   }
 }
 

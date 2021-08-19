@@ -244,12 +244,12 @@ block content
                             .modal-mobile__container
                               ul.modal-mobile__links-list
                                 li.modal-mobile__links-item
-                                  a.panel__test(href="#")
+                                  .panel__test(data-button='3')
                                     +calendar-test-svg.panel__test-icon
                                     .panel__test-text
                                       |Пройти тест
                                 li.modal-mobile__links-item
-                                  a.panel__consultation(href="#")
+                                  .panel__consultation(data-button='6')
                                     +consultation-svg.panel__consultation-svg
                                     .panel__consultation-text
                                       |Консультация эксперта
@@ -537,8 +537,9 @@ block content
                                         .b__slide-bottom
                                           p.b__review
                                             |Спрей Эпиген Интим представляет собой эффективное и безопасное средство для лечения, профилактики генитальных вирусных инфекций, а гель предназначен для интимной гигиены на каждый день...
-                                          a.b__link(href="#")
-                                            |Читать отзыв
+                                          .b__link-link(data-aos='fade-up')
+                                            .b__link(data-button='5')
+                                              |Читать отзыв
                                       .b__slide-col
                                         .b__content-top
                                           .b__control
@@ -562,13 +563,13 @@ block content
                                     .page-gel__reviews-card-bottom
                                       a.page-gel__reviews-card-link(href='#')
                                         |irecommend.ru
-                          .page-gel__reviews-bottom 
-                            .b__control
-                              .b__control-item
-                                .b.b--btn-left-right-slider.btn-animation.btn-animation--icon(data-command-slider-arrow='prev')
+                          .page-gel__reviews-bottom(data-aos='fade-up')
+                            .page-gel__reviews-btns
+                              .page-gel__reviews-btns-item
+                                .b.b--btn-left-right-slider.btn-animation.btn-animation--icon.js.js--gel-reviews-btn--prev
                                   +simple-arrow-svg.b__svg
-                              .b__control-item
-                                .b.b--btn-left-right-slider.b--right.btn-animation.btn-animation--icon(data-command-slider-arrow='next')
+                              .page-gel__reviews-btns-item
+                                .b.b--btn-left-right-slider.b--right.btn-animation.btn-animation--icon.js.js--gel-reviews-btn--next
                                   +simple-arrow-svg.b__svg
                       .main-page__reviews-link 
                         a.button.button--reviews-slider.button--reviews-slider--small.btn-animation.spray-page__slider-desktop(href='#')
@@ -731,4 +732,52 @@ block content
                   p
                     |Удобно, что есть Эпиген Интим гель, средство для интимной гигиены для повседневного использования, который дополняет назначенное лечение.
           .mdl__close.mdl__interactive.button-close.btn-animation.btn-animation--icon(data-button='5')
+            +cross-svg.button-close__svg
+  .modal(data-modal='6')
+    .mdl
+      .mdl__container
+        .mdl__content.mdl__content--md.mdl__interactive
+          .mdl__inner
+            .mdl__form
+              .mdl__form-container
+                h3.mdl__form-title
+                  |Задать вопрос врачу
+                form.form(action="/")
+                  label.form__item
+                    input.form__input(type="text" name="name")
+                    span.form__placeholder
+                      |Имя
+                  label.form__item
+                    input.form__input(type="email" name="email")
+                    span.form__placeholder
+                      |E-mail
+                  .form__item
+                    textarea.form__textarea(name="message" placeholder="Сообщение", cols="30", rows="10")
+                  .form__inner
+                    .file
+                      input.file__input(id="file" type="file" multiple)
+                      .file__container
+                      label.file__label(for="file")
+                        .file__icon
+                          +file-svg
+                        .file__text
+                          |Прикрепить файл
+                    .checkbox
+                      label.checkbox__label(for="checkbox-1")
+                        input.checkbox__input(type="checkbox" id="checkbox-1")
+                        .checkbox__box
+                          +check-svg.checkbox__icon
+                        .checkbox__text
+                          |Согласен на обработку персональных данных в соответствии с #[a.checkbox__link(href="#") политикой конфиденциальности]
+                  .form__button
+                    button.button.button--wide.btn-animation(type='submit')
+                      span.btn-animation__text
+                        |Отправить
+                .mdl__response
+                  h3.mdl__form-title
+                    |Мы получили ваше сообщение и ответим на него в ближайшее время.
+                  .button.button--wide.btn-animation
+                    span.btn-animation__text
+                      |Отправить еще
+          .mdl__close.mdl__interactive.button-close.btn-animation.btn-animation--icon(data-button='6')
             +cross-svg.button-close__svg
