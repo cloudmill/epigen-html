@@ -19,6 +19,13 @@
   }
 
   &__item {
+    @media (min-width: $breakpoint) {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      height: 100%;
+    }
+
     opacity: 0;
     pointer-events: none;
     transition: $transition;

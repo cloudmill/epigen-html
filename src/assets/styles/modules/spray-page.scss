@@ -695,6 +695,12 @@
         padding-left: 0;
       }
     }
+
+    &:not(:first-child) {
+      @media (max-width: $breakpoint - 1px) {
+        margin-top: 30px;
+      }
+    }
   }
   &__structure-label {
     margin-top: 5px;
