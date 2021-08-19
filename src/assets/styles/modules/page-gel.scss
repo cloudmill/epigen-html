@@ -313,6 +313,12 @@
       }
     }
   }
+  &__reviews-row {
+    margin-bottom: 60px;
+    
+    display: flex;
+    justify-content: space-between;
+  }
   &__reviews-left {
     flex-shrink: 0;
     display: flex;
@@ -380,6 +386,10 @@
 
   &__reviews-bottom {
     margin-top: 30px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  &__reviews-bot {
     display: flex;
     justify-content: flex-end;
   }
