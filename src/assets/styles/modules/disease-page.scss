@@ -82,9 +82,8 @@
 
   &__container-label {
     width: calc((#{$col-width-d} * 2) - 15px);
-    @media (max-width: $breakpoint - 1px) {
+    @media (max-width: $breakpoint-ll - 1px) {
       width: 110px;
-
     }
     flex-shrink: 0;
 
@@ -99,7 +98,6 @@
     @media (max-width: $breakpoint - 1px) {
       margin: 0;
     }
-
     display: flex;
     flex-wrap: wrap;
     @media (max-width: $breakpoint - 1px) {
