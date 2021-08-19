@@ -95,45 +95,37 @@ mixin block
                 .block__format-label.block__format-label--in-row
                   |Доз
 mixin block__slide
-  .block__slide
-    .block__layout
-      .block__background.block__background--15.block__background--in
-    .block__content
-      .block__top
-        .block__control
-          .block__control-item
-            .spray-page__tabs-item.spray-page__tabs-item--in-block.spray-page__tabs-item--active
-              .spray-page__tabs-container
-                .spray-page__tabs-row
-                  .spray-page__tabs-col
-                    +spray-svg.spray-page__tabs-icon
-                  .spray-page__tabs-col
-                    .spray-page__tabs-num
-                      |15
-          .block__control-item
-            .spray-page__tabs-item.spray-page__tabs-item--in-block
-              .spray-page__tabs-container
-                .spray-page__tabs-row
-                  .spray-page__tabs-col
-                    +spray-svg.spray-page__tabs-icon
-                  .spray-page__tabs-col
-                    .spray-page__tabs-num
-                      |60
-        ul.block__list
-          li.block__list-item
-            |Для 1 полноценного курса лечения
-          li.block__list-item
-            |Для 2-3 курсов короткой  профилактики
-          li.block__list-item
-            |Для дорожной аптечки
-          li.block__list-item
-            |Удобно брать с собой
-      .block__bottom
-        .block__format
-          .block__format-label
-            |до
-          .block__format-row
-            .block__format-value
-              |115
-            .block__format-label.block__format-label--in-row
-              |Доз
+  .block.block--gel
+    .block__slide
+      .block__layout
+        .block__background.block__background--gel
+      .block__content
+        .block__top
+          .block__control
+            .block__control-item
+              .spray-page__tabs-item.spray-page__tabs-item--purple.spray-page__tabs-item--active
+                .spray-page__tabs-container
+                  .spray-page__tabs-row
+                    .spray-page__tabs-col
+                      +gel-svg.spray-page__tabs-icon
+                    .spray-page__tabs-col
+                      .spray-page__tabs-num
+                        |250
+          ul.block__list
+            li.block__list-item
+              |Один флакон расчитан на 3 месяца использования
+            li.block__list-item
+              |Для ежедневной интимной гигиены
+            li.block__list-item
+              |Во время беременностии
+            li.block__list-item
+              |В период лечения гинекологических и урологических заболеваний
+        .block__bottom
+          .block__format
+            .block__format-label
+              |до
+            .block__format-row
+              .block__format-value
+                |220
+              .block__format-label.block__format-label--in-row
+                |Доз

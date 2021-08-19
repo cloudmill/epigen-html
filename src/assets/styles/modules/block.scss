@@ -24,6 +24,23 @@
   min-height: $min-height-d;
   overflow: hidden;
 
+  &--gel {
+    #{$comp}__control-item {
+      width: auto;
+    }
+
+    .spray-page__tabs-container {
+      padding: 13px 22px;
+    }
+
+    #{$comp}__list-item {
+
+      &::before {
+        background-color: $color-purple;
+      }
+    }
+  }
+
   // frame
   &__frame {
     position: absolute;
@@ -136,6 +153,9 @@
     }
     &--60 {
       background-image: url('assets/images/spray-page-2.jpg');
+    }
+    &--gel {
+      background-image: url('assets/images/product-block-gel.jpg');
     }
   }
 
