@@ -25,14 +25,14 @@
     display: none;
     @media (max-width: $breakpoint - 1px) {
       margin-left: -15px;
+      padding: 10px 0;
 
       display: flex;
 
       width: calc(100% + (15px * 2));
-      transform: translateY(10px);
 
       overflow-x: auto;
-
+      background-color: $color-white;
       @include scrollbar-hidden;
     }
 

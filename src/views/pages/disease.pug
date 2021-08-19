@@ -239,6 +239,8 @@ block content
                     +nav-page-m
                   .panel__list
                     .disease-page__container(data-aos='fade-up')
+                      .disease-page__container-label 
+                        |Возможные симптомы
                       ul.disease-page__list
                         each item in ['Зуд', 'Жжение', 'Выделения, пузырьки ', 'Пузырьки, язвочки', 'Болезненность, выделения', 'Болезненность при половом контакте', 'Боль внизу живота', 'Боль при мочеиспускании', ]
                           li.disease-page__list-item
@@ -306,10 +308,10 @@ block content
                 |Генитальный герпес I и II типа
               .rail.rail--margin-bottom--default.rail--desctop(data-aos='fade-up')
               section.disease-page__section
-                .disease-page__section-label(data-aos='fade-up')
-                  |Возможные симптомы
                 .disease-page__section-list
                   .disease-page__container(data-list='')
+                    .disease-page__container-label(data-aos='fade-up')
+                      |Возможные симптомы
                     ul.disease-page__list
                       each item in ['Зуд', 'Жжение', 'Выделения, пузырьки ', 'Пузырьки, язвочки', 'Болезненность, выделения', 'Болезненность при половом контакте', 'Боль внизу живота', 'Боль при мочеиспускании', ]
                         li.disease-page__list-item(data-aos='fade-up')
@@ -512,7 +514,7 @@ block content
                           h3.specialists-page__bottom-title(data-aos='fade-up')
                             |Спрей#[br]Эпиген Интим
                           .specialists-page__bottom-btn(data-aos='fade-up')
-                            a.button.btn-animation(href="#")
+                            a.button.button--spray-article.btn-animation(href="#")
                               span.btn-animation__text
                                 |Подробнее
                     .specialists-page__bottom-column(data-aos='fade-up')
@@ -530,7 +532,7 @@ block content
                         .b.b--btn-left-right-slider.b--right.btn-animation.btn-animation--icon(data-slider-button="1")
                           +simple-arrow-svg.b__svg
                 .slider.swiper-container(data-slider-id="1" data-slider-next="1" data-slider-prev="2" data-aos='fade-up')
-                  .swiper-wrapper
+                  .swiper-wrapper.slider__wrapper
                     - for (i = 0; i < 9; i++)
                       .slider__item.swiper-slide
                         a.card(href="#")

@@ -10,6 +10,10 @@
     @media (max-width: $breakpoint - 1px) {
       margin-top: 30px;
     }
+
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(18px)
+    }
   }
 
   &__404 {
@@ -18,6 +22,9 @@
       width: 100%;
       max-width: 345px;
     }
+    @media (max-width: $breakpoint-xs - 1px) {
+      width: calc(100% - 30px);
+    }
     display: flex;
 
     position: fixed;
@@ -25,7 +32,7 @@
     right: calc(#{$col-width-d} * 3 + 30px);
     @media (max-width: $breakpoint - 1px) {
       right: auto;
-      bottom: 177px;
+      bottom: 22%;
     }
   }
   &__404-img {

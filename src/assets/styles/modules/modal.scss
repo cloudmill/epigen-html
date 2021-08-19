@@ -68,6 +68,10 @@
         }
       }
     }
+
+    .mdl__container {
+      transform: none;
+    }
   }
 }
 
@@ -479,4 +483,8 @@
       color: $color-blue;
     }
   }
+}
+
+.modal-reviews {
+
 }

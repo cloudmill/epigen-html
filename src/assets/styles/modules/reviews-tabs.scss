@@ -5,9 +5,10 @@
   &__buttons {
     position: absolute;
     z-index: 1;
-    left: calc(#{$col-width-d} * 6);
+    right: 0;
     top: 16px;
     @media (max-width: $breakpoint - 1px) {
+      right: auto;
       left: 0;
       top: 58px;
     }
@@ -41,10 +42,12 @@
 
   &__links {
     position: absolute;
-    right: 0;
     bottom: 0;
+    left: calc(#{$col-width-d} * 10);
+    @media (max-width: $breakpoint-l - 1px) {
+      left: calc(#{$col-width-d} * 9);
+    }
     @media (max-width: $breakpoint - 1px) {
-      right: auto;
       left: 0;
     }
   }
