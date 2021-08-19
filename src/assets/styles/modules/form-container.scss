@@ -43,6 +43,12 @@
   &__title {
     font-weight: 400;
     @include fsl(35px, 130%);
+    @media (max-width: $breakpoint-xl - 1px) {
+      @include fsl(30px);
+    }
+    @media (max-width: $breakpoint-ll - 1px) {
+      @include fsl(25px);
+    }
     @media (max-width: $breakpoint - 1px) {
       @include fsl(20px);
     }

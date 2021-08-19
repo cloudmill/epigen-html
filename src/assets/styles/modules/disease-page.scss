@@ -8,6 +8,27 @@
       display: block;
     }
     justify-content: space-between;
+
+    &--alt {
+      #{$comp}__section-col {
+        &:nth-child(1) {
+          display: block;
+        }
+      }
+      #{$comp}__section-bot {
+        @media (min-width: $breakpoint) {
+          margin-top: 60px;
+        }
+      }
+
+      #{$comp}__section-content {
+        margin-bottom: 238px;
+      }
+      .specialists-page__content-wave {
+        bottom: auto;
+        top: calc(100% + 30px);
+      }
+    }
   }
   &__section-col {
     flex-shrink: 0;
@@ -82,9 +103,8 @@
 
   &__container-label {
     width: calc((#{$col-width-d} * 2) - 15px);
-    @media (max-width: $breakpoint - 1px) {
+    @media (max-width: $breakpoint-ll - 1px) {
       width: 110px;
-
     }
     flex-shrink: 0;
 
@@ -99,7 +119,6 @@
     @media (max-width: $breakpoint - 1px) {
       margin: 0;
     }
-
     display: flex;
     flex-wrap: wrap;
     @media (max-width: $breakpoint - 1px) {

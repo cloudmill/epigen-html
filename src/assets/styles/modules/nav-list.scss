@@ -4,16 +4,10 @@
   display: flex;
 
   &--wrap {
-    margin-top: -30px;
-    margin-left: -30px;
     @media (max-width: $breakpoint - 1px) {
-      margin: 0;
       margin-left: -15px;
       padding: 7px 15px 0;
-
-      flex-wrap: nowrap;
     }
-    flex-wrap: wrap;
 
     @media (max-width: $breakpoint - 1px) {
       width: calc(100% + (15px * 2));
@@ -23,12 +17,20 @@
   }
 
   &__list {
+    margin-top: -15px;
+    margin-left: -15px;
+    @media (max-width: $breakpoint - 1px) {
+      margin: 0;
+
+      flex-wrap: nowrap;
+    }
     display: flex;
+    flex-wrap: wrap;
   }
 
   &__item {
-    margin-top: 30px;
-    margin-left: 30px;
+    margin-top: 15px;
+    margin-left: 15px;
     @media (max-width: $breakpoint - 1px) {
       margin: 0;
 
@@ -39,7 +41,9 @@
     position: relative;
 
     &:not(:first-child) {
-      margin-left: 15px;
+      @media (max-width: $breakpoint - 1px) {
+        margin-left: 15px;
+      }
     }
 
     &--active {

@@ -1,0 +1,31 @@
+.wave-bg {
+  position: absolute;
+  top: 254px;
+  left: calc(#{$col-width-d} * 9.5);
+  @media (max-width: $breakpoint-xl - 1px) {
+    top: 274px;
+    left: calc(#{$col-width-d} * 10.5);
+  }
+  @media (max-width: $breakpoint-ll - 1px) {
+    top: 514px;
+    left: calc(#{$col-width-d} * 11.5);
+  }
+  @media (max-width: $breakpoint-l - 1px) {
+    left: calc(#{$col-width-d} * 12.5);
+  }
+  transform: translateX(-50%);
+
+  @media (max-width: $breakpoint - 1px) {
+    display: none;
+  }
+
+  &__doctors {
+    position: absolute;
+    z-index: 0;
+    bottom: 40px;
+    left: -40px;
+    @media (max-width: $breakpoint-xl - 1px) {
+        left: -20px;
+    }
+  }
+}
