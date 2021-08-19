@@ -275,8 +275,22 @@
         }
       }
 
+      &::before {
+        display: none;
+      }
+
+      &::after {
+        display: none;
+      }
+
       &:hover {
         background-color: $color-purple;
+
+        #{$comp}__tabs-col {
+          &:nth-child(2) {
+            animation: none;
+          }
+        }
 
         #{$comp}__tabs-icon {
           .spray-svg__background {
