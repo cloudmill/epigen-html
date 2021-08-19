@@ -369,10 +369,6 @@
     @media (max-width: $breakpoint - 1px) {
       flex-wrap: wrap;
     }
-
-    &:not(:first-child) {
-      margin-top: 10px;
-    }
   }
   &__use-card {
     width: calc((100% / 2) - 10px);
@@ -592,10 +588,6 @@
         padding-left: 0;
       }
     }
-
-    &:not(:first-child) {
-      margin-top: 30px;
-    }
   }
   &__structure-label {
     margin-top: 5px;
@@ -604,11 +596,6 @@
     text-transform: uppercase;
   }
   &__structure-title {
-    margin-bottom: 40px;
-    @media (max-width: $breakpoint - 1px) {
-      margin-bottom: 20px;
-    }
-
     font-weight: 400;
     @include fsl(20px, 120%);
     @media (max-width: $breakpoint - 1px) {
@@ -616,6 +603,10 @@
     }
   }
   &__structure-content {
+    margin-top: 40px;
+    @media (max-width: $breakpoint - 1px) {
+      margin-top: 20px;
+    }
     padding-bottom: 15px;
 
     display: flex;
@@ -632,7 +623,12 @@
     white-space: nowrap;
   }
   &__structure-head {
+    margin-bottom: 40px;
+    @media (max-width: $breakpoint - 1px) {
+      margin-bottom: 20px;
+    }
     display: flex;
+    align-items: flex-end;
     justify-content: space-between;
   }
   &__structure-list {}
