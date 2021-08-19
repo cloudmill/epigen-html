@@ -350,7 +350,15 @@ block content
                 .page-gel__features-layout
                   .page-gel__layout-img-1(data-parallax='1')
                     img.page-gel__features-img-1(src='assets/images/gel-features-image-1.jpeg')
-                  +gel-features-wave-svg.page-gel__features-wave
+                  .wave-bg 
+                    +gel-features-wave-svg.page-gel__features-wave
+                    .wave-bg__doctors 
+                      .page-gel__layout-img-4
+                        img.page-gel__features-img-4(src='assets/images/gel-features-image-4.jpg')
+                      .page-gel__layout-img-5(data-parallax='4')
+                        img.page-gel__features-img-5(src="assets/images/gel-features-image-5.jpg", alt="")
+                      .page-gel__layout-img-6(data-parallax='4')
+                        img.page-gel__features-img-6(src="assets/images/gel-features-image-6.jpg", alt="")
                   +gel-wave-mobile-svg.page-gel__features-wave-mobile
                   +moon-svg.page-gel__features-moon
                   +star-svg.page-gel__features-star.page-gel__features-star--blue
@@ -376,12 +384,6 @@ block content
                     p.page-gel__features-text.max-width.max-width--col--8
                       |Обладает выраженными противовоспалительным и регенерирующим эффектами, способствует уменьшению дискомфорта
                   li.page-gel__features-item.page-gel__features-item--side(data-parallax-container='3' data-aos='fade-up')
-                    .page-gel__layout-img-4
-                      img.page-gel__features-img-4(src='assets/images/gel-features-image-4.jpg')
-                    .page-gel__layout-img-5(data-parallax='4')
-                      img.page-gel__features-img-5(src="assets/images/gel-features-image-5.jpg", alt="")
-                    .page-gel__layout-img-6(data-parallax='4')
-                      img.page-gel__features-img-6(src="assets/images/gel-features-image-6.jpg", alt="")
                     h3.page-gel__features-title.page-gel__features-title--small.max-width.max-width--col--10
                       |Рекомендуется врачами гинекологами с заботой о женском интимном здоровье
                     p.page-gel__features-text.max-width.max-width--col--7
