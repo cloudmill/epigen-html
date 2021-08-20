@@ -453,6 +453,9 @@
     display: flex;
     align-items: stretch;
     flex-wrap: wrap;
+    @media (max-width: $breakpoint - 1px) {
+      justify-content: space-between;
+    }
   }
   &__use-item {
     margin-left: 20px;
@@ -463,12 +466,9 @@
 
     width: calc(((#{$col-width-d} * 18) / 2) - 10px);
     min-height: 190px;
-    // @media (max-width: $breakpoint - 1px) {
-    //   width: calc((100% / 2) - 7px);
-    //   min-height: 165px;
-    // }
     @media (max-width: $breakpoint - 1px) {
       width: 100%;
+      min-height: 165px;
     }
 
     flex-shrink: 0;
@@ -476,10 +476,28 @@
     @media (max-width: $breakpoint - 1px) {
       flex-wrap: wrap;
     }
+
+    &:not(:first-child) {
+      @media (max-width: $breakpoint - 1px) {
+        margin-top: 10px;
+      }
+    }
+
+    &--big {
+      @media (max-width: $breakpoint - 1px) {
+        width: calc(50% - 7px);
+      }
+      @media (max-width: $breakpoint-m - 1px) {
+        width: 100%;
+      }
+    }
   }
   &__use-card {
     width: calc((100% / 2) - 10px);
     @media (max-width: $breakpoint - 1px) {
+      width: calc((100% / 2) - 7px);
+    }
+    @media (max-width: $breakpoint-m - 1px) {
       width: 100%;
     }
     flex-shrink: 0;
@@ -490,6 +508,9 @@
     &:not(:first-child) {
       margin-left: 20px;
       @media (max-width: $breakpoint - 1px) {
+        margin-left: 14px;
+      }
+      @media (max-width: $breakpoint-m - 1px) {
         margin-left: 0;
         margin-top: 10px;
       }
@@ -546,7 +567,10 @@
     bottom: 100%;
     @media (max-width: $breakpoint - 1px) {
       left: 0;
-      bottom: calc(100% - 14px);
+      bottom: 100%;
+
+      width: 33px;
+      height: 35px;
     }
   }
   &__content-icon {
@@ -607,7 +631,8 @@
     &:nth-child(1) {
       width: calc(#{$col-width-d} * 4);
       @media (max-width: $breakpoint - 1px) {
-        width: 100%;
+        margin: 0 auto;
+        width: 270px;
       }
     }
 
@@ -653,10 +678,13 @@
   &__content-text {
     width: 313px;
     @media (max-width: $breakpoint - 1px) {
-      width: 100%;
+      width: 345px;
 
       text-align: center;
       @include fsl(15px);
+    }
+    @media (max-width: $breakpoint-m - 1px) {
+      width: 100%;
     }
     @include fsl(18px, 140%);
   }
@@ -672,6 +700,9 @@
   &__structure-row {
     display: flex;
     @media (max-width: $breakpoint - 1px) {
+      flex-wrap: wrap;
+    }
+    @media (max-width: $breakpoint-m - 1px) {
       display: block;
     }
   }
@@ -685,7 +716,7 @@
     &:nth-child(2) {
       padding-right: 20px;
       @media (max-width: $breakpoint - 1px) {
-        padding-right: 0;
+        padding-right: 24px;
       }
     }
 
@@ -693,12 +724,15 @@
       padding-left: 20px;
       @media (max-width: $breakpoint - 1px) {
         padding-left: 0;
+        padding-right: 24px;
       }
     }
 
     &:not(:first-child) {
       @media (max-width: $breakpoint - 1px) {
         margin-top: 30px;
+
+        width: calc(100% / 2);
       }
     }
   }
@@ -706,6 +740,9 @@
     margin-top: 5px;
 
     @include fsl(13px, 120%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(12px);
+    }
     text-transform: uppercase;
   }
   &__structure-title {
@@ -758,7 +795,7 @@
   &__video {}
   &__video-row {
     display: flex;
-    @media (max-width: $breakpoint - 1px) {
+    @media (max-width: $breakpoint-m - 1px) {
       display: block;
     }
     justify-content: space-between;
@@ -768,18 +805,34 @@
 
     &:nth-child(1) {
       @media (max-width: $breakpoint - 1px) {
+        padding-right: 12px;
+      }
+      @media (max-width: $breakpoint-m - 1px) {
+        padding-right: 0;
         margin-bottom: 30px;
       }
 
       width: calc(#{$col-width-d} * 4);
       @media (max-width: $breakpoint - 1px) {
+        width: calc(#{$col-width-m} * 2);
+      }
+      @media (max-width: $breakpoint-m - 1px) {
         width: 100%;
       }
     }
 
     &:nth-child(2) {
+      @media (max-width: $breakpoint - 1px) {
+        padding-left: 18px;
+      }
+      @media (max-width: $breakpoint-m - 1px) {
+        padding-left: 0;
+      }
       width: calc(#{$col-width-d} * 12);
       @media (max-width: $breakpoint - 1px) {
+        width: calc(#{$col-width-m} * 4);
+      }
+      @media (max-width: $breakpoint-m - 1px) {
         width: 100%;
       }
     }
