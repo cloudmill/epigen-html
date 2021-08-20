@@ -102,6 +102,9 @@
   }
 
   &__container-label {
+    @media (min-width: $breakpoint) {
+      padding-top: 3px;
+    }
     width: calc((#{$col-width-d} * 2) - 15px);
     @media (max-width: $breakpoint-ll - 1px) {
       width: 110px;
