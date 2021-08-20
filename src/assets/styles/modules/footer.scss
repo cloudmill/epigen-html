@@ -163,7 +163,6 @@
     border: 1px solid $color-blue-light;
     border-radius: 10px;
     @include f-alt();
-    // @include fsl(24px, 120%);
     @include fsl(28px, 120%);
     @media (max-width: $breakpoint-xxl - 1px) {
       @include fsl(24px);
@@ -177,16 +176,6 @@
     @media (max-width: $breakpoint - 1px) {
       @include fsl(24px)
     }
-    // @media (min-width: $breakpoint-l) {
-    //   @include fsl(20px);
-    // }
-    // @media (min-width: $breakpoint-xl) {
-    //   @include fsl(24px);
-    // }
-    // @media (min-width: $breakpoint-xxl) {
-    //   @include fsl(28px);
-    // }
-
     color: $color-blue-light;
     text-transform: uppercase;
   }
