@@ -274,7 +274,9 @@
     overflow: hidden;
 
     &--main-page {
-      padding: 60px 15px;
+      @media (max-width: $breakpoint - 1px) {
+        padding: 60px 15px;
+      }
     }
   }
   // card
