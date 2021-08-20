@@ -392,6 +392,9 @@
     margin-top: 30px;
     display: flex;
     justify-content: flex-end;
+    @media (max-width: $breakpoint - 1px) {
+      display: none;
+    }
   }
   &__reviews-bot {
     display: flex;

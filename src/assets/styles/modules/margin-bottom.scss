@@ -6,4 +6,10 @@
       margin-bottom: 15px;
     }
   }
+
+  &--65 {
+    @media (max-width: $breakpoint - 1px) {
+      margin-bottom: 65px;
+    }
+  }
 }

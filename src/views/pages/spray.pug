@@ -583,6 +583,15 @@ block content
               section.page-gel__reviews(id='reviews' data-section='')
                 .page-gel__reviews-layout
                 .reviews-tabs
+                  .page-gel__reviews-top.page-gel__reviews-top--tabs
+                    .page-gel__reviews-left
+                      h2.page-gel__reviews-title
+                        |Отзывы
+                    .page-gel__reviews-right
+                      .page-gel__reviews-links-item.page-gel__reviews-links-item--mobile
+                        a.button.button--reviews-slider.button--reviews-slider--small.btn-animation(href='#')
+                          span.btn-animation__text
+                            |Все отзывы
                   .reviews-tabs__buttons(data-aos='fade-up')
                     .spray-page__slider-categories
                       .spray-page__slider-item
@@ -593,16 +602,7 @@ block content
                           |Отзывы врачей
                   .reviews-tabs__tabs(data-aos='fade-up')
                     .reviews-tabs__item
-                      .page-gel__reviews-top.page-gel__reviews-top--tabs
-                        .page-gel__reviews-left
-                          h2.page-gel__reviews-title
-                            |Отзывы
-                        .page-gel__reviews-right
-                          .page-gel__reviews-links-item.page-gel__reviews-links-item--mobile
-                            a.button.button--reviews-slider.button--reviews-slider--small.btn-animation(href='#')
-                              span.btn-animation__text
-                                |Все отзывы
-                      .swiper-container.swiper-container--visible.swiper-container--slide-width-auto.swiper-container--slide-height-max.js.js--gel-reviews-slider
+                      .swiper-container.swiper-container--visible.swiper-container--slide-width-auto.swiper-container--slide-height-max.js.js--gel-reviews-slider.margin-bottom.margin-bottom--65
                         .swiper-wrapper
                           - for (let i = 0; i < 10; i++)
                             .swiper-slide
@@ -625,15 +625,6 @@ block content
                               +simple-arrow-svg.b__svg
                     .reviews-tabs__item.reviews-tabs__item--active
                       .b.b--reviews-slider-main-page.b--reviews-slider-spray-page
-                        .b__top.b__top--tabs
-                          .spray-page__slider-row
-                            .spray-page__slider-col
-                              h3.spray-page__slider-title
-                                |Отзывы
-                            .spray-page__slider-col
-                              a.button.button--reviews-slider.button--reviews-slider--small.btn-animation.spray-page__slider-mobile(href='#')
-                                span.btn-animation__text
-                                  |Все отзывы
                         .b__bottom
                           each slide in [1, 2, 3, 4]
                             .b__slide

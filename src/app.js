@@ -1853,6 +1853,27 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           tabs.eq($(this).index()).addClass('reviews-tabs__item--active')
         }
       })
+
+      $(window).on('load', updateHeight())
+      $(window).one('resize', handleResize())
+
+      // update height
+      function updateHeight() {
+        const item = reviewsTabs.find('.reviews-tabs__item')
+
+        $('.reviews-tabs__tabs').css('min-height', getMaxHeight(item.eq(0), item.eq(1)))
+
+        function getMaxHeight(a, b) {
+          return Math.max(a.height(), b.height())
+        }
+      }
+      function handleResize() {
+        setTimeout(() => {
+          updateHeight()
+
+          $(window).one('resize', handleResize)
+        })
+      }
     }
   })
 }
