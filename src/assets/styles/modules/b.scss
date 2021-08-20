@@ -285,23 +285,17 @@
     }
   }
 
-  // 
+  // main page заголовок + кнопки перед табами
   &--reviews-slider-container {
     #{$comp}__top {
       margin-bottom: 60px;
       @media (max-width: $breakpoint - 1px) {
         margin-bottom: 30px;
       }
-
-      // &--tabs {
-      //   @media (max-width: $breakpoint - 1px) {
-      //     margin-bottom: 84px;
-      //   }
-      // }
     }
     #{$comp}__top-row {
       display: flex;
-      @media (max-width: $breakpoint - 1px) {
+      @media (max-width: $breakpoint-m - 1px) {
         display: block;
       }
       justify-content: space-between;
@@ -312,6 +306,9 @@
       &:not(:first-child) {
         margin-left: calc(#{$col-width-d});
         @media (max-width: $breakpoint - 1px) {
+          margin-left: 0;
+        }
+        @media (max-width: $breakpoint-m - 1px) {
           margin-left: 0;
           margin-top: 30px;
         }
@@ -450,6 +447,10 @@
       &:nth-child(2) {
         @media (max-width: $breakpoint - 1px) {
           padding-right: 4px;
+          padding-left: calc(#{$col-width-m});
+        }
+        @media (max-width: $breakpoint-m - 1px) {
+          padding-left: 0;
         }
 
         width: calc(#{$col-width-d} * 12);
@@ -502,6 +503,9 @@
     #{$comp}__content {
       padding-top: 15px;
       height: 100%;
+      @media (max-width: $breakpoint-m - 1px) {
+        width: 100%;
+      }
 
       border-top: 1px solid $color-blue;
     }
@@ -531,6 +535,15 @@
         margin-top: 0;
         margin-right: 10px;
 
+        order: -1;
+      }
+    }
+    #{$comp}__content-bot {
+      @media (max-width: $breakpoint - 1px) {
+        margin-right: auto;
+      }
+      @media (max-width: $breakpoint-m - 1px) {
+        margin-right: 0;
         order: -1;
       }
     }

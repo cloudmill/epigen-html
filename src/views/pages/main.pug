@@ -446,7 +446,7 @@ block content
                   span.btn-animation__text
                     |Все статьи
               .page-gel.main-page__reviews(id='reviews' data-section='')
-                .page-gel__reviews
+                .page-gel__reviews.page-gel__reviews--main-page
                   .page-gel__reviews-layout
                   h3.main-page__title(data-aos='fade-up')
                     |отзывы
@@ -477,7 +477,7 @@ block content
                     .main-page__reviews-container
                       .main-page__reviews-tabs
                         .main-page__reviews-item.main-page__reviews-item--active
-                          .b.b--reviews-slider-main-page.b--reviews-slider-spray-page
+                          .b.b--reviews-slider-main-page
                             .b__bottom
                               each slide in [1, 2, 3, 4]
                                 .b__slide
@@ -537,9 +537,6 @@ block content
                                         .b__slide-bottom
                                           p.b__review
                                             |Спрей Эпиген Интим представляет собой эффективное и безопасное средство для лечения, профилактики генитальных вирусных инфекций, а гель предназначен для интимной гигиены на каждый день...
-                                          .b__link-link(data-aos='fade-up')
-                                            .b__link(data-button='5')
-                                              |Читать отзыв
                                       .b__slide-col
                                         .b__content-top
                                           .b__control
@@ -549,6 +546,10 @@ block content
                                             .b__control-item
                                               .b.b--btn-left-right-slider.b--right.btn-animation.btn-animation--icon(data-command-slider-arrow='next')
                                                 +simple-arrow-svg.b__svg
+                                        .b__content-bot
+                                          .b__link-link(data-aos='fade-up')
+                                            .b__link(data-button='5')
+                                              |Читать отзыв
                         .main-page__reviews-item
                           .swiper-container.swiper-container--visible.swiper-container--slide-width-auto.swiper-container--slide-height-max.js.js--gel-reviews-slider
                             .swiper-wrapper
@@ -572,7 +573,7 @@ block content
                                 .b.b--btn-left-right-slider.b--right.btn-animation.btn-animation--icon.js.js--gel-reviews-btn--next
                                   +simple-arrow-svg.b__svg
                       .main-page__reviews-link 
-                        a.button.button--reviews-slider.button--reviews-slider--small.btn-animation.spray-page__slider-desktop(href='#')
+                        a.button.button--reviews-slider.button--reviews-slider--small.btn-animation(href='#')
                           span.btn-animation__text
                             |Все отзывы
             +footer.page__footer

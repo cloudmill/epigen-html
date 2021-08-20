@@ -233,6 +233,10 @@
       width: calc(100% + (15px * 2));
     }
     overflow: hidden;
+
+    &--main-page {
+      padding: 60px 15px;
+    }
   }
   // card
   &__reviews-card {
