@@ -399,14 +399,14 @@ block content
                             +spray-use-2-svg
                           .spray-page__use-text
                             |ВПЧ
-                    li.spray-page__use-item(data-aos='fade-up')
+                    li.spray-page__use-item.spray-page__use-item--big(data-aos='fade-up')
                       .spray-page__use-card.spray-page__use-card--big
                         .spray-page__use-container
                           .spray-page__use-img
                             +spray-use-3-svg
                           .spray-page__use-text
                             |Бактериальный вагиноз, неспецифический вагинит
-                    li.spray-page__use-item(data-aos='fade-up')
+                    li.spray-page__use-item.spray-page__use-item--big(data-aos='fade-up')
                       .spray-page__use-card.spray-page__use-card--big
                         .spray-page__use-container
                           .spray-page__use-img
@@ -426,7 +426,7 @@ block content
                             +spray-use-6-svg
                           .spray-page__use-text
                             |При беременности
-              section.spray-page__section.margin-top.margin-top--l
+              section.spray-page__section.margin-top.margin-top--ll
                 .spray-page__content
                   .spray-page__content-layout(data-parallax='1')
                     +star-svg.spray-page__content-img
@@ -583,6 +583,15 @@ block content
               section.page-gel__reviews(id='reviews' data-section='')
                 .page-gel__reviews-layout
                 .reviews-tabs
+                  .page-gel__reviews-top.page-gel__reviews-top--tabs
+                    .page-gel__reviews-left
+                      h2.page-gel__reviews-title
+                        |Отзывы
+                    .page-gel__reviews-right
+                      .page-gel__reviews-links-item.page-gel__reviews-links-item--mobile
+                        a.button.button--reviews-slider.button--reviews-slider--small.btn-animation(href='#')
+                          span.btn-animation__text
+                            |Все отзывы
                   .reviews-tabs__buttons(data-aos='fade-up')
                     .spray-page__slider-categories
                       .spray-page__slider-item
@@ -593,16 +602,7 @@ block content
                           |Отзывы врачей
                   .reviews-tabs__tabs(data-aos='fade-up')
                     .reviews-tabs__item
-                      .page-gel__reviews-top.page-gel__reviews-top--tabs
-                        .page-gel__reviews-left
-                          h2.page-gel__reviews-title
-                            |Отзывы
-                        .page-gel__reviews-right
-                          .page-gel__reviews-links-item.page-gel__reviews-links-item--mobile
-                            a.button.button--reviews-slider.button--reviews-slider--small.btn-animation(href='#')
-                              span.btn-animation__text
-                                |Все отзывы
-                      .swiper-container.swiper-container--visible.swiper-container--slide-width-auto.swiper-container--slide-height-max.js.js--gel-reviews-slider
+                      .swiper-container.swiper-container--visible.swiper-container--slide-width-auto.swiper-container--slide-height-max.js.js--gel-reviews-slider.margin-bottom.margin-bottom--65
                         .swiper-wrapper
                           - for (let i = 0; i < 10; i++)
                             .swiper-slide
@@ -625,11 +625,6 @@ block content
                               +simple-arrow-svg.b__svg
                     .reviews-tabs__item.reviews-tabs__item--active
                       .b.b--reviews-slider-main-page.b--reviews-slider-spray-page
-                        .b__top.b__top--tabs
-                          .spray-page__slider-row
-                            .spray-page__slider-col
-                              h3.spray-page__slider-title
-                                |Отзывы
                         .b__bottom
                           each slide in [1, 2, 3, 4]
                             .b__slide
@@ -686,6 +681,12 @@ block content
                                         .b__desc
                                           span.b__desc-span
                                             |Ассистент кафедры акушерства и гинекологии ЛФ ФГБОУ ВО им. Н.И. Пирогова МЗ РФ, врач акушер-гинеколог высшей категории, к.м.н. (Москва).
+                                        .b__content-content 
+                                          p.b__review
+                                            |Спрей Эпиген Интим представляет собой эффективное и безопасное средство для лечения, профилактики генитальных вирусных инфекций, а гель предназначен для интимной гигиены на каждый день...
+                                          .b__link-link
+                                            .b__link(data-button='5')
+                                              |Читать отзыв
                                     .b__slide-bottom
                                       p.b__review
                                         |Спрей Эпиген Интим представляет собой эффективное и безопасное средство для лечения, профилактики генитальных вирусных инфекций, а гель предназначен для интимной гигиены на каждый день...

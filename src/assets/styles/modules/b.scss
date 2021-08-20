@@ -285,23 +285,17 @@
     }
   }
 
-  // 
+  // main page заголовок + кнопки перед табами
   &--reviews-slider-container {
     #{$comp}__top {
       margin-bottom: 60px;
       @media (max-width: $breakpoint - 1px) {
         margin-bottom: 30px;
       }
-
-      // &--tabs {
-      //   @media (max-width: $breakpoint - 1px) {
-      //     margin-bottom: 84px;
-      //   }
-      // }
     }
     #{$comp}__top-row {
       display: flex;
-      @media (max-width: $breakpoint - 1px) {
+      @media (max-width: $breakpoint-m - 1px) {
         display: block;
       }
       justify-content: space-between;
@@ -312,6 +306,9 @@
       &:not(:first-child) {
         margin-left: calc(#{$col-width-d});
         @media (max-width: $breakpoint - 1px) {
+          margin-left: 0;
+        }
+        @media (max-width: $breakpoint-m - 1px) {
           margin-left: 0;
           margin-top: 30px;
         }
@@ -450,6 +447,10 @@
       &:nth-child(2) {
         @media (max-width: $breakpoint - 1px) {
           padding-right: 4px;
+          padding-left: calc(#{$col-width-m});
+        }
+        @media (max-width: $breakpoint-m - 1px) {
+          padding-left: 0;
         }
 
         width: calc(#{$col-width-d} * 12);
@@ -502,6 +503,9 @@
     #{$comp}__content {
       padding-top: 15px;
       height: 100%;
+      @media (max-width: $breakpoint-m - 1px) {
+        width: 100%;
+      }
 
       border-top: 1px solid $color-blue;
     }
@@ -531,6 +535,19 @@
         margin-top: 0;
         margin-right: 10px;
 
+        order: -1;
+      }
+    }
+    #{$comp}__content-bot {
+      padding-left: calc(#{$col-width-d});
+      display: flex;
+      @media (max-width: $breakpoint - 1px) {
+        margin-right: auto;
+        padding-left: 0;
+        display: block;
+      }
+      @media (max-width: $breakpoint-m - 1px) {
+        margin-right: 0;
         order: -1;
       }
     }
@@ -658,10 +675,55 @@
   // модификатор слайдера отзывов с главной
   &--reviews-slider-spray-page {
 
+    #{$comp}__slide-row {
+      @media (max-width: $breakpoint - 1px) {
+        display: block;
+      }
+
+      &--desktop {
+        @media (max-width: $breakpoint - 1px) {
+          display: none;
+        }
+      }
+    }
+    #{$comp}__slide-col {
+
+      &:nth-child(1) {
+        @media (max-width: $breakpoint - 1px) {
+          margin-bottom: 30px;
+          width: 100%;
+        }
+        // @media (max-width: $breakpoint-m - 1px) {
+        //   margin-bottom: 30px;
+        // }
+      }
+
+      &:nth-child(2) {
+        @media (max-width: $breakpoint - 1px) {
+          padding-left: 0;
+
+          justify-content: flex-end;
+          width: 100%;
+        }
+      }
+    }
+    #{$comp}__slide-bottom {
+      @media (max-width: $breakpoint - 1px) {
+        display: none;
+      }
+      @media (max-width: $breakpoint-m - 1px) {
+        display: block;
+      }
+    }
+
+    #{$comp}__content {
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
+    }
     #{$comp}__content-row {
       height: auto;
     }
-
     #{$comp}__content-col {
       &:nth-child(1) {
         @media (min-width: $breakpoint) {
@@ -674,6 +736,21 @@
         }
       }
     }
+    #{$comp}__content-content {
+      @media (max-width: $breakpoint - 1px) {
+        padding-left: 63px;
+      }
+      @media (max-width: $breakpoint-m - 1px) {
+        display: none;
+      }
+    }
+
+    #{$comp}__desc {
+      @media (max-width: $breakpoint - 1px) {
+        max-width: 100%;
+      }
+    }
+
 
     #{$comp}__preview {
       align-items: flex-start;
@@ -681,27 +758,12 @@
 
     #{$comp}__review {
       @media (max-width: $breakpoint - 1px) {
+        margin-bottom: 30px;
+        max-width: 100%;
+      }
+      @media (max-width: $breakpoint-m - 1px) {
         margin-bottom: 15px;
       }
-    }
-
-    #{$comp}__slide-col {
-
-      &:nth-child(1) {
-        @media (max-width: $breakpoint - 1px) {
-          margin-bottom: 70px;
-        }
-        @media (max-width: $breakpoint-m - 1px) {
-          margin-bottom: 30px;
-        }
-      }
-
-      &:nth-child(2) {
-        @media (max-width: $breakpoint - 1px) {
-          justify-content: flex-end;
-        }
-      }
-
     }
 
     #{$comp}__link {
@@ -711,7 +773,7 @@
     }
 
     #{$comp}__bottom-row {
-      margin-top: 85px;
+      margin-top: 60px;
       padding-bottom: 2px;
 
       display: flex;

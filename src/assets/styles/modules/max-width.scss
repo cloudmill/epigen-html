@@ -7,10 +7,15 @@
   &--col {
     @each $col-count in (5, 7, 8, 9, 10, 11, 13) {
       &--#{$col-count} {
+        max-width: calc(#{$col-width-m} * 3);
         @media (min-width: $breakpoint) {
           max-width: calc(#{$col-width-d} * #{$col-count});
         }
+        @media (max-width: $breakpoint-m - 1px) {
+          max-width: none;
+        }
       }
     }
+    
   }
 }
