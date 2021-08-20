@@ -219,6 +219,32 @@
   &__links {
     margin-top: 30px;
   }
+  &__links-row {
+    display: flex;
+    @media (max-width: $breakpoint-m - 1px) {
+      display: block;
+    }
+  }
+  &__links-col {
+    width: calc(100% / 2);
+    @media (max-width: $breakpoint-m - 1px) {
+      width: auto;
+    }
+
+    &:nth-child(1) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      @media (max-width: $breakpoint-m - 1px) {
+        display: block;
+      }
+    }
+  }
+  &__links-list {
+    @media (max-width: $breakpoint-m - 1px) {
+      margin-top: 15px;
+    }
+  }
   &__links-item {
 
     &:not(:first-child) {
@@ -235,7 +261,18 @@
   }
 
   &__bottom {
-    margin-top: 30px;
+    margin-top: auto;
+    @media (max-width: $breakpoint-m - 1px) {
+      display: none;
+    }
+
+    &--m {
+      display: none;
+      @media (max-width: $breakpoint-m - 1px) {
+        display: block;
+        margin-top: 30px;
+      }
+    }
   }
   &__bottom-item {
     display: flex;
