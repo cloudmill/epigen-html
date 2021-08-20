@@ -32,10 +32,10 @@
 
   &__link {
     margin: 0 -4px;
-    padding: 4px 5px;
+    padding: 2px 5px;
     @media (max-width: $breakpoint-xl - 1px) {
       margin: 0 -3px;
-      padding: 3px 4px;
+      padding: 1px 4px;
     }
     @media (max-width: $breakpoint - 1px) {
       margin: 0 -2px;
