@@ -1,4 +1,6 @@
 .page-gel {
+  $comp: &;
+
   &__frame {
     position: absolute;
     $pad: 30px;
@@ -7,7 +9,7 @@
     }
 
     display: flex;
-    @media (max-width: $breakpoint - 1px) {
+    @media (max-width: $breakpoint-m - 1px) {
       display: none;
     }
     flex-direction: column;
@@ -31,28 +33,45 @@
   }
 
   &__mobile {
-    @media (max-width: $breakpoint - 1px) {
+    margin-top: 30px;
+    @media (max-width: $breakpoint-m - 1px) {
       margin-top: 15px;
+    }
 
+    display: none;
+    @media (max-width: $breakpoint - 1px) {
       display: block;
     }
-    display: none;
+
+    #{$comp}__frame-title {
+      display: none;
+      @media (max-width: $breakpoint-m - 1px) {
+        display: block;
+      }
+    }
   }
   &__mobile-wrapper {
     margin: 30px 0;
+
+    display: none;
+    @media (max-width: $breakpoint-m - 1px) {
+      display: block;
+    }
   }
   &__mobile-button {
     @media (max-width: $breakpoint - 1px) {
-      width: 50%;
+      width: 100%;
     }
     @media (max-width: $breakpoint-s - 1px) {
-      width: 100%;
     }
   }
 
   &__compound {
     margin-top: 140px;
     @media (max-width: $breakpoint - 1px) {
+      margin-top: 252px;
+    }
+    @media (max-width: $breakpoint-m - 1px) {
       margin-top: 309px;
     }
 
@@ -401,6 +420,13 @@
     justify-content: flex-end;
   }
 
+  &__reviews-mobile {
+    display: none;
+    @media (max-width: $breakpoint - 1px) {
+      display: flex;
+    }
+  }
+
   &__features {
     position: relative;
 
@@ -421,6 +447,9 @@
         margin-top: 508px;
       }
       @media (max-width: $breakpoint - 1px) {
+        margin-top: 297px;
+      }
+      @media (max-width: $breakpoint-m - 1px) {
         margin-top: 434px;
       }
     }
@@ -429,6 +458,9 @@
 
       margin-top: 165px;
       @media (max-width: $breakpoint - 1px) {
+        margin-top: 83px;
+      }
+      @media (max-width: $breakpoint-m - 1px) {
         margin-top: 265px;
       }
     }
@@ -437,6 +469,9 @@
 
       margin-top: 228px;
       @media (max-width: $breakpoint - 1px) {
+        margin-top: 63px;
+      }
+      @media (max-width: $breakpoint-m - 1px) {
         margin-top: 322px;
       }
     }
@@ -444,7 +479,19 @@
     &--side {
       padding-left: calc(#{$col-width-d} * 7);
       @media (max-width: $breakpoint - 1px) {
+        padding-left: calc(#{$col-width-m} * 3);
+      }
+      @media (max-width: $breakpoint-m - 1px) {
         padding-left: 0;
+      }
+
+      #{$comp}__features-title {
+        @media (max-width: $breakpoint - 1px) {
+          padding-right: 24px;
+        }
+        @media (max-width: $breakpoint-m - 1px) {
+          padding-right: 0;
+        }
       }
     }
   }
@@ -469,6 +516,10 @@
     @media (max-width: $breakpoint - 1px) {
       margin-top: 15px;
       padding-left: 0;
+      padding-right: 24px;
+    }
+    @media (max-width: $breakpoint-m - 1px) {
+      padding-right: 0;
     }
 
     @include fsl(20px, 140%);
@@ -504,13 +555,11 @@
     // }
   }
   &__features-wave-mobile {
-    position: absolute;
-    left: -197px;
-    top: 367px;
-
-    display: none;
-    @media (max-width: $breakpoint - 1px) {
-      display: block;
+    width: 757px;
+    height: 1242px;
+    @media (max-width: $breakpoint-m - 1px) {
+      width: auto;
+      height: auto;
     }
   }
   &__features-moon {
@@ -554,9 +603,18 @@
         left: calc(#{$col-width-d} * 12.5 - 379px);
       }
       @media (max-width: $breakpoint - 1px) {
-        left: 18px;
-        top: 519px;
+        top: 261px;
+        left: calc(#{$col-width-m} * 4 - 195px);
+      }
+      @media (max-width: $breakpoint-m - 1px) {
+        left: calc(((100vw - (15px * 2)) / 6) * 5 - 271px);
+        top: 527px;
         transform: translateX(0);
+      }
+
+      @media (max-width: $breakpoint - 1px) {
+        width: 33px;
+        height: 35px;
       }
     }
     &--purple {
@@ -573,11 +631,20 @@
       @media (max-width: $breakpoint-l - 1px) {
         left: calc(#{$col-width-d} * 12.5 - 492px);
       }
-      @media (max-width: $breakpoint - 1px) {
-        top: calc(100% + 10px);
-        left: calc(#{$col-width-m} * 3.7);
+      @media (max-width: $breakpoint-m - 1px) {
+        top: 1871px;
+        left: calc(#{$col-width-m} * 5 - 91px);
       }
       transform: translateX(-50%) rotate(-45deg);
+
+      @media (max-width: $breakpoint - 1px) {
+        display: none;
+      }
+      @media (max-width: $breakpoint-m - 1px) {
+        display: block;
+        width: 33px;
+        height: 35px;
+      }
 
       path {
         fill: $color-purple;
@@ -649,6 +716,9 @@
       top: 0;
       left: calc(#{$col-width-d} * 12.5);
       @media (max-width: $breakpoint - 1px) {
+        left: calc(#{$col-width-m} * 4);
+      }
+      @media (max-width: $breakpoint-m - 1px) {
         top: 225px;
         left: calc(#{$col-width-m} * 3);
       }
@@ -663,6 +733,10 @@
         left: calc(#{$col-width-d} * 5.5);
       }
       @media (max-width: $breakpoint - 1px) {
+        top: -32px;
+        left: calc(#{$col-width-m} * 1.5);
+      }
+      @media (max-width: $breakpoint-m - 1px) {
         top: 100%;
         left: calc(#{$col-width-m} * 3);
       }
@@ -673,8 +747,11 @@
       z-index: -1;
       top: -109px;
       left: calc(#{$col-width-d} * 13);
-      
       @media (max-width: $breakpoint - 1px) {
+        top: -23px;
+        left: calc(#{$col-width-m} * 4);
+      }
+      @media (max-width: $breakpoint-m - 1px) {
         top: calc(100% + 30px);
         left: calc(#{$col-width-m} * 3);
       }
@@ -685,10 +762,15 @@
       z-index: -1;
       top: -57px;
       left: calc((#{$col-width-d} * 3) + (#{$col-width-d} / 2));
-
       @media (max-width: $breakpoint - 1px) {
-        left: 50%;
-        top: calc(100% + 69px);
+        top: auto;
+        bottom: -20px;
+        left: calc((115px / 2) + 146px);
+      }
+      @media (max-width: $breakpoint-m - 1px) {
+        left: calc((115px / 2) + 347px);
+        top: calc(100% - 60px);
+        bottom: auto;
       }
     }
 
@@ -698,8 +780,13 @@
       top: -125px;
       left: calc(#{$col-width-d} / 2);
       @media (max-width: $breakpoint - 1px) {
-        top: calc(100% + 30px);
-        left: calc(#{$col-width-m} * 1.5);
+        left: 70px;
+        top: auto;
+        bottom: 85px;
+      }
+      @media (max-width: $breakpoint-m - 1px) {
+        left: calc(270px + 30px);
+        bottom: 14px;
       }
     }
 
@@ -709,10 +796,38 @@
       top: 125px;
       left: calc(#{$col-width-d} * 5);
       @media (max-width: $breakpoint - 1px) {
-        top: calc(100% + 172px);
-        left: auto;
-        right: calc(#{$col-width-m} * 1);
+        top: auto;
+        bottom: -40px;
+        left: calc(235px + (82px / 2));
+      }
+      @media (max-width: $breakpoint-m - 1px) {
+        top: calc(100% + 50px);
+        left: calc(426px + (82px / 2));
+        bottom: auto;
       }
     }
+  }
+
+  &__wave {
+    position: absolute;
+    top: 0;
+    left: calc(#{$col-width-m} * 4);
+    @media (max-width: $breakpoint-t - 1px) {
+      top: 142px;
+    }
+    @media (max-width: $breakpoint-m - 1px) {
+      left: calc(#{$col-width-m} * 5);
+      top: 367px;
+    }
+    transform: translateX(-50%);
+
+    display: none;
+    @media (max-width: $breakpoint - 1px) {
+      display: block;
+    }
+  }
+  &__wave-doctors {
+    position: absolute;
+    z-index: 1;
   }
 }

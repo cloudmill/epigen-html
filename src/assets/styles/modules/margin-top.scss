@@ -34,5 +34,11 @@
 
   &--95 {
     margin-top: 95px;
+    @media (max-width: $breakpoint - 1px) {
+      margin-top: 70px;
+    }
+    @media (max-width: $breakpoint-m - 1px) {
+      margin-top: 60px;
+    }
   }
 }
