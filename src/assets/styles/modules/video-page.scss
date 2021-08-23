@@ -27,7 +27,7 @@
     }
     &:nth-child(2) {
       @media (min-width: $breakpoint) {
-        width: calc(#{$col-width-d} * 6);
+        width: calc(#{$col-width-d} * 7);
       }
       @media (max-width: $breakpoint - 1px) {
         margin-top: 20px;
