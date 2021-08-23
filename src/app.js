@@ -488,16 +488,18 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     const form = $('[data-form]');
 
     if (form.length !== 0) {
-      const formButton = form.find('[data-form-button]');
 
-      formButton.on('click', function (event) {
-        event.preventDefault();
+      form.each(function() {
+        const formButton = $(this).find('[data-form-button]');
+        const formButtonId = formButton.data('form-button');
 
-        const formButtonId = $(this).data('form-button');
+        $(this).on('submit', (e) => {
+          e.preventDefault()  
 
-        $(`[data-form='${formButtonId}']`).attr('data-form-hidden', '');
-        $(`[data-response='${formButtonId}']`).attr('data-response-active', '');
-      });
+          $(`[data-form='${formButtonId}']`).attr('data-form-hidden', '');
+          $(`[data-response='${formButtonId}']`).attr('data-response-active', '');
+        })
+      })
 
       const response = $('[data-response]');
       const responseButton = response.find('[data-response-button]');

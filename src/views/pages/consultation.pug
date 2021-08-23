@@ -211,11 +211,11 @@ block content
                 |Задать вопрос врачу
               form.form(action="/")
                 label.form__item
-                  input.form__input(type="text" name="name")
+                  input.form__input(type="text" name="name" required='required')
                   span.form__placeholder
                     |Имя
                 label.form__item
-                  input.form__input(type="email" name="email")
+                  input.form__input(type="email" name="email" required='required')
                   span.form__placeholder
                     |E-mail
                 .form__item
@@ -231,7 +231,7 @@ block content
                         |Прикрепить файл
                   .checkbox
                     label.checkbox__label(for="checkbox-1")
-                      input.checkbox__input(type="checkbox" id="checkbox-1")
+                      input.checkbox__input(type="checkbox" id="checkbox-1" required='required')
                       .checkbox__box
                         +check-svg.checkbox__icon
                       .checkbox__text

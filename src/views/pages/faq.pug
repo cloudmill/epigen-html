@@ -178,7 +178,7 @@ block content
                           .form__inner
                             .checkbox(data-aos='fade-up')
                               label.checkbox__label(for="checkbox")
-                                input.checkbox__input(type="checkbox" id="checkbox")
+                                input.checkbox__input(type="checkbox" id="checkbox" required='required')
                                 .checkbox__box
                                   +check-svg.checkbox__icon
                                 .checkbox__text
@@ -223,13 +223,13 @@ block content
                   .form__inner
                     .checkbox
                       label.checkbox__label(for="checkbox-1")
-                        input.checkbox__input(type="checkbox" id="checkbox-1")
+                        input.checkbox__input(type="checkbox" id="checkbox-1" required='required')
                         .checkbox__box
                           +check-svg.checkbox__icon
                         .checkbox__text
                           |Согласен на обработку персональных данных в соответствии с #[a.checkbox__link(href="#") политикой конфиденциальности]
                   .form__button
-                    button.button.button--wide(type='' data-form-button='2')
+                    button.button.button--wide(type='submit' data-form-button='2')
                       |Отправить
               .mdl__response(data-response='2')
                 h3.mdl__form-title
