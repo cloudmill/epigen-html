@@ -130,13 +130,13 @@ block content
                               a.modal-aside__doc-link(href="#")
                                 |Положение о пользовании сайтом
                   +nav-page-d
-                .aside__bottom(data-aos='fade-up')
+                .aside__bottom(data-aos='fade-up' data-aos-delay='200')
                   .aside__text.aside__text--margin-bottom--default
                     |Эпиген Интим — линия средств для женского интимного здоровья на основе активированной глицирризиновой кислоты из экстракта корня солодки
                   +copyright-link(href='#')
                     |Компания «Инвар», 2021
         .row__col.row__col--main
-          .wwave(data-aos='fade-up')
+          .wwave(data-aos='fade-up' data-aos-delay="800")
             canvas.wwave__canvas(width = 0, height = 0)
           .page
             header.page__header
@@ -242,22 +242,41 @@ block content
                               .modal-mobile__choice-dropdown
                           .modal-mobile__links
                             .modal-mobile__container
-                              ul.modal-mobile__links-list
-                                li.modal-mobile__links-item
-                                  .panel__test(data-button='3')
-                                    +calendar-test-svg.panel__test-icon
-                                    .panel__test-text
-                                      |Пройти тест
-                                li.modal-mobile__links-item
-                                  .panel__consultation(data-button='6')
-                                    +consultation-svg.panel__consultation-svg
-                                    .panel__consultation-text
-                                      |Консультация эксперта
-                                each item in ['Где купить', 'Вопрос эксперту', 'Отзывы Спрей Эпиген ', 'Отзывы Гель Эпиген ', 'Видео с экспертами', 'Статьи экспертов', 'Вопрос-ответ', 'Специалистам',]
-                                  li.modal-mobile__links-item
-                                    a.modal-mobile__links-link(href="#")
-                                      |#{item}
-                        .modal-mobile__bottom
+                              .modal-mobile__links-row
+                                .modal-mobile__links-col
+                                  ul.modal-mobile__links-list
+                                    li.modal-mobile__links-item
+                                      .panel__test(data-button='3')
+                                        +calendar-test-svg.panel__test-icon
+                                        .panel__test-text
+                                          |Пройти тест
+                                    li.modal-mobile__links-item
+                                      .panel__consultation(data-button='6')
+                                        +consultation-svg.panel__consultation-svg
+                                        .panel__consultation-text
+                                          |Консультация эксперта
+                                  .modal-mobile__bottom
+                                    .modal-mobile__container
+                                      ul.modal-mobile__bottom-links
+                                        li.modal-mobile__bottom-item
+                                          a.modal-mobile__bottom-doc(href="#")
+                                            |Политика конфиденциальности
+                                        li.modal-mobile__bottom-item
+                                          a.modal-mobile__bottom-doc(href="#")
+                                            |Положение о пользовании сайтом
+                                        li.modal-mobile__bottom-item
+                                          .modal-mobile__bottom-text
+                                            span
+                                              |Сделано в&nbsp;
+                                            a.modal-mobile__bottom-link(href="#")
+                                              |CloudMill
+                                .modal-mobile__links-col
+                                  ul.modal-mobile__links-list
+                                    each item in ['Где купить', 'Вопрос эксперту', 'Отзывы Спрей Эпиген ', 'Отзывы Гель Эпиген ', 'Видео с экспертами', 'Статьи экспертов', 'Вопрос-ответ', 'Специалистам',]
+                                      li.modal-mobile__links-item
+                                        a.modal-mobile__links-link(href="#")
+                                          |#{item}
+                        .modal-mobile__bottom.modal-mobile__bottom--m
                           .modal-mobile__container
                             ul.modal-mobile__bottom-links
                               li.modal-mobile__bottom-item
@@ -274,7 +293,7 @@ block content
                                     |CloudMill
 
             main.page__main
-              .frame(data-aos='fade-up')
+              .frame(data-aos='fade-up' data-aos-delay='400')
                 img.frame__img(src='assets/images/frame.jpg')
                 .frame__btn.frame__btn--spray.plus-btn(data-button='1')
                   .plus-btn__border
@@ -446,7 +465,7 @@ block content
                   span.btn-animation__text
                     |Все статьи
               .page-gel.main-page__reviews(id='reviews' data-section='')
-                .page-gel__reviews
+                .page-gel__reviews.page-gel__reviews--main-page
                   .page-gel__reviews-layout
                   h3.main-page__title(data-aos='fade-up')
                     |отзывы
@@ -477,7 +496,7 @@ block content
                     .main-page__reviews-container
                       .main-page__reviews-tabs
                         .main-page__reviews-item.main-page__reviews-item--active
-                          .b.b--reviews-slider-main-page.b--reviews-slider-spray-page
+                          .b.b--reviews-slider-main-page
                             .b__bottom
                               each slide in [1, 2, 3, 4]
                                 .b__slide
@@ -499,6 +518,10 @@ block content
                                               .b__content-wrapper
                                                 p.b__review
                                                   |Спрей Эпиген Интим представляет собой эффективное и безопасное средство для лечения, профилактики генитальных вирусных инфекций, а гель предназначен для интимной гигиены на каждый день...
+                                            .b__content-bot
+                                              .b__bottom-col
+                                                .b__link(data-button='5')
+                                                  |Читать отзыв
                                           .b__content-col
                                             .b__content-top
                                               .b__preview
@@ -509,11 +532,6 @@ block content
                                                     |/4
                                                 .b__preview-image
                                                   img.b__preview-img(src='assets/images/reviews-slider-2.jpeg')
-                                        .b__bottom-row
-                                          .b__bottom-col
-                                            .b__link(data-button='5')
-                                              |Читать отзыв
-                                          .b__bottom-col 
                                             .b__control
                                               .b__control-item
                                                 .b.b--btn-left-right-slider.btn-animation.btn-animation--icon(data-command-slider-arrow='prev')
@@ -521,6 +539,9 @@ block content
                                               .b__control-item
                                                 .b.b--btn-left-right-slider.b--right.btn-animation.btn-animation--icon(data-command-slider-arrow='next')
                                                   +simple-arrow-svg.b__svg
+                                        .b__bottom-row
+                                          .b__bottom-col 
+                                            
                                   .b__slide-mobile
                                     .b__slide-row
                                       .b__slide-col
@@ -537,9 +558,6 @@ block content
                                         .b__slide-bottom
                                           p.b__review
                                             |Спрей Эпиген Интим представляет собой эффективное и безопасное средство для лечения, профилактики генитальных вирусных инфекций, а гель предназначен для интимной гигиены на каждый день...
-                                          .b__link-link(data-aos='fade-up')
-                                            .b__link(data-button='5')
-                                              |Читать отзыв
                                       .b__slide-col
                                         .b__content-top
                                           .b__control
@@ -549,6 +567,10 @@ block content
                                             .b__control-item
                                               .b.b--btn-left-right-slider.b--right.btn-animation.btn-animation--icon(data-command-slider-arrow='next')
                                                 +simple-arrow-svg.b__svg
+                                        .b__content-bot
+                                          .b__link-link(data-aos='fade-up')
+                                            .b__link(data-button='5')
+                                              |Читать отзыв
                         .main-page__reviews-item
                           .swiper-container.swiper-container--visible.swiper-container--slide-width-auto.swiper-container--slide-height-max.js.js--gel-reviews-slider
                             .swiper-wrapper
@@ -572,7 +594,7 @@ block content
                                 .b.b--btn-left-right-slider.b--right.btn-animation.btn-animation--icon.js.js--gel-reviews-btn--next
                                   +simple-arrow-svg.b__svg
                       .main-page__reviews-link 
-                        a.button.button--reviews-slider.button--reviews-slider--small.btn-animation.spray-page__slider-desktop(href='#')
+                        a.button.button--reviews-slider.button--reviews-slider--small.btn-animation(href='#')
                           span.btn-animation__text
                             |Все отзывы
             +footer.page__footer

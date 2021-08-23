@@ -332,8 +332,9 @@ block content
                       .category-item.category-item--purple.cursor.cursor--default
                         |Сделано в Испании
                 .page-gel__mobile-button(data-aos='fade-up')
-                  a.button.button--t.button--purple(href='#')
-                      |Где купить
+                  a.button.button--t.button--purple.btn-animation.btn-animation--purple(href='#')
+                      span.btn-animation__text
+                        |Где купить
               section.spray-page__section.margin-top.margin-top--l(id='gel' data-section='')
                 .spray-page__section-row
                   .spray-page__section-col
@@ -359,7 +360,15 @@ block content
                         img.page-gel__features-img-5(src="assets/images/gel-features-image-5.jpg", alt="")
                       .page-gel__layout-img-6(data-parallax='4')
                         img.page-gel__features-img-6(src="assets/images/gel-features-image-6.jpg", alt="")
-                  +gel-wave-mobile-svg.page-gel__features-wave-mobile
+                  .page-gel__wave
+                    +gel-wave-mobile-svg.page-gel__features-wave-mobile
+                    .page-gel__wave-doctors
+                      .page-gel__layout-img-4
+                        img.page-gel__features-img-4(src='assets/images/gel-features-image-4.jpg')
+                      .page-gel__layout-img-5(data-parallax='4')
+                        img.page-gel__features-img-5(src="assets/images/gel-features-image-5.jpg", alt="")
+                      .page-gel__layout-img-6(data-parallax='4')
+                        img.page-gel__features-img-6(src="assets/images/gel-features-image-6.jpg", alt="")
                   +moon-svg.page-gel__features-moon
                   +star-svg.page-gel__features-star.page-gel__features-star--blue
                   +star-svg.page-gel__features-star.page-gel__features-star--purple
@@ -416,7 +425,7 @@ block content
                         p.page-gel__compound-item-text
                           |Обладают противовоспалительным эффектом и неспецифическими противомикробными свойствами
               section.page-gel__method.spray-page__section.margin-top.margin-top--l(id='instruction' data-section='')
-                .spray-page__video
+                .spray-page__video.spray-page__video--gel
                   .spray-page__video-row
                     .spray-page__video-col
                       h3.spray-page__section-title.margin-botto.margin-bottom--m(data-aos='fade-up')
@@ -465,6 +474,10 @@ block content
                     .page-gel__reviews-btns-item
                       .b.b--btn-left-right-slider.b--right.js.js--gel-reviews-btn--next.btn-animation.btn-animation--icon
                         +simple-arrow-svg.b__svg
+                  .page-gel__reviews-mobile
+                    a.category-item.category-item--background--none.btn-animation(href='#')
+                      span.btn-animation__text
+                        |Все отзывы
                 .swiper-container.swiper-container--visible.swiper-container--slide-width-auto.swiper-container--slide-height-max.js.js--gel-reviews-slider
                   .swiper-wrapper
                     - for (let i = 0; i < 10; i++)
@@ -479,7 +492,7 @@ block content
                             a.page-gel__reviews-card-link(href='#')
                               |irecommend.ru
                 .page-gel__reviews-links
-                  .page-gel__reviews-links-item
+                  .page-gel__reviews-links-item.spray-page__slider-desktop
                     a.category-item.category-item--background--none.btn-animation(href='#')
                       span.btn-animation__text
                         |Все отзывы
