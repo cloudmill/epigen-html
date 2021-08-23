@@ -1350,6 +1350,46 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
   });
 }
 
+// parallax main page star/moon
+{
+  $(() => {
+    const parallaxItem = $('[data-parallax-main]')
+
+    if (parallaxItem.length !== 0) {
+      parallaxItem.each(function() {
+        const ths = $(this);
+        const parallaxElemOffset = ths.offset().top;
+        const parallaxId = ths.data('parallax-main')
+        const parallaxContainer = $('[data-parallax-container-main]')
+
+        $(window).on('scroll', function() {
+          const scrollPos = this.pageYOffset;
+          
+
+          if (scrollPos < parallaxContainer.offset().top &&
+            (scrollPos + $(window).height() / 2) > parallaxElemOffset) {
+              let parallax
+            
+              switch (parallaxId) {
+                case 'left':
+                  parallax = ((scrollPos + $(window).height() / 2) - parallaxElemOffset) * -0.1;
+                  break
+
+                case 'right':
+                  parallax = ((scrollPos + $(window).height() / 2) - parallaxElemOffset) * 0.1;
+                break
+              }
+
+            requestAnimationFrame(() => {
+              ths.css('transform', `translateX(${parallax}px)`);
+            })
+          }
+        });
+      })
+    }
+  })
+}
+
 // test sticky
 {
   $(() => {
