@@ -96,13 +96,13 @@ function showMore() {
     $(document).on("click", "[data-type=show_more_click]", function (e) {
         let thisObj = $(this),
             url = thisObj.attr("data-url"),
-            ids = [],
-            idsArr = thisObj.attr("data-ids"),
-            itemsContainer = $(document).find("[data-container=items]");
+            ids = [];
 
-        if (idsArr) {
-            ids = JSON.parse(idsArr);
-        }
+        $("[data-type=reviews-filter]").each(function () {
+            if ($(this).hasClass("border-link--active")) {
+                ids = JSON.parse($(this).attr("data-ids"));
+            }
+        });
 
         console.log("show more");
 
@@ -120,9 +120,12 @@ function showMore() {
                 },
             }).done(function (r) {
                 let responsePageNav = $(r).find("[data-type=show_more_click]"),
-                    itemsResponse = $(r).find("[data-type=item]");
+                    itemsResponse = $(r).find("[data-type=item]"),
+                    itemsContainer = $(document).find("[data-container=items]");
 
                 itemsContainer.append(itemsResponse);
+
+                console.log(responsePageNav);
 
 
                 if (responsePageNav) {
@@ -172,8 +175,10 @@ function revFilter() {
 }
 
 function revModal() {
-    $("[data-type=rev-modal]").on("click", function (e) {
+    $(document).on("click", "[data-type=rev-modal]", function (e) {
         e.preventDefault();
+
+        console.log('click revModal');
 
         let thisObj = $(this),
             name = thisObj.attr("data-name"),
