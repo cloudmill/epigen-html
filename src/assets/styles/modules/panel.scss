@@ -55,6 +55,12 @@
   &--modal-active {
     [data-modal-active] {
       transform: translate(0);
+
+      .animation {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: $transition-delay;
+      }
     }
 
     #{$comp}__col {

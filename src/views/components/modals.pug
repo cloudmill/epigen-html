@@ -273,13 +273,13 @@ mixin modal-header
         .panel-modal__col
           ul.panel-modal__list
             each item in ['Генитальный герпес (I и II типа)', 'ВПЧ', 'Применение при беременности', 'Молочница', 'Бактериальный вагиноз',]
-              li.panel-modal__item
+              li.panel-modal__item.animation
                 a.panel-modal__link(href="#")
                   |#{item}
         .panel-modal__col
           ul.panel-modal__list
             each item in ['ВПЧ', 'Молочница',]
-              li.panel-modal__item
+              li.panel-modal__item.animation
                 a.panel-modal__link(href="#")
                   |#{item}
   .panel-modal(data-modal-id='3')
@@ -288,13 +288,13 @@ mixin modal-header
         .panel-modal__col
           ul.panel-modal__list
             each item in ['Зуд', 'Жжение', 'Выделения, пузырьки', 'Пузырьки, язвочки', 'Болезненность, выделения',]
-              li.panel-modal__item
+              li.panel-modal__item.animation
                 a.panel-modal__link(href="#")
                   |#{item}
         .panel-modal__col
           ul.panel-modal__list
             each item in ['Болезненность при половом контакте', 'Боль внизу живота', 'Боль при мочеиспускании']
-              li.panel-modal__item
+              li.panel-modal__item.animation
                 a.panel-modal__link(href="#")
                   |#{item}
 
@@ -307,29 +307,29 @@ mixin modal-aside
             ul.modal-aside__nav-list
               .modal-aside__nav-col
                 each item in ['Где купить', 'Вопрос эксперту', 'Отзывы Спрей Эпиген ', 'Отзывы Гель Эпиген ',]
-                  li.modal-aside__nav-item
+                  li.modal-aside__nav-item.animation
                     a.modal-aside__nav-link(href="#")
                       |#{item}
               .modal-aside__nav-col
                 each item in ['Видео с экспертами', 'Статьи экспертов', 'Вопрос-ответ', 'Специалистам',]
-                  li.modal-aside__nav-item
+                  li.modal-aside__nav-item.animation
                     a.modal-aside__nav-link(href="#")
                       |#{item}
-          .modal-aside__corp
+          .modal-aside__corp.animation
             span
               |Сделано в&nbsp;
             a.modal-aside__corp-link(href="#")
               |CloudMill
         .modal-aside__col
           .modal-aside__col-item
-            +product-link.product-link--modal--aside(src='assets/images/spray-product.jpg')
+            +product-link.product-link--modal--aside.animation(src='assets/images/spray-product.jpg')
               |Спрей
-            .modal-aside__doc
+            .modal-aside__doc.animation
               a.modal-aside__doc-link(href="#")
                 |Политика конфиденциальности
           .modal-aside__col-item
-            +product-link.product-link--modal--aside.product-link--purple(src='assets/images/gel.jpg')
+            +product-link.product-link--modal--aside.product-link--purple.animation(src='assets/images/gel.jpg')
               |Гель
-            .modal-aside__doc
+            .modal-aside__doc.animation
               a.modal-aside__doc-link(href="#")
                 |Положение о пользовании сайтом

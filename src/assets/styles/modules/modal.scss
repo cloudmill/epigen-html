@@ -39,6 +39,12 @@
 
     #{$comp}-aside {
       transform: translate(0);
+
+      .animation {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: $transition-delay;
+      }
     }
 
     .header__menu {
@@ -217,7 +223,7 @@
   }
   &__choice-dropdown {
     padding: 0 15px;
-    
+
     display: none;
   }
 
