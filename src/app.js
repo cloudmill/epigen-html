@@ -1925,3 +1925,29 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     }
   })
 }
+
+// accordion mobile menu
+{
+  $(() => {
+    const menu = $('.modal-mobile')
+
+    if (menu.length !== 0) {
+      const menuButton = menu.find('.modal-mobile__choice-button')
+
+      menuButton.on('click', function() {
+        const menuSectionClicked = $(this).closest('.modal-mobile__choice')
+
+        if (menuSectionClicked.hasClass('modal-mobile__choice--active')) {
+          menuSectionClicked.find('.modal-mobile__choice-dropdown').slideUp(500)
+          menuSectionClicked.removeClass('modal-mobile__choice--active')
+        } else {
+          $('.modal-mobile__choice--active').find('.modal-mobile__choice-dropdown').slideUp(650)
+          $('.modal-mobile__choice--active').removeClass('modal-mobile__choice--active')
+
+          menuSectionClicked.find('.modal-mobile__choice-dropdown').slideDown(500)
+          menuSectionClicked.addClass('modal-mobile__choice--active')
+        }
+      })
+    }
+  })
+}
