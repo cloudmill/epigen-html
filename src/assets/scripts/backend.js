@@ -3,6 +3,7 @@ $(function () {
     test();
     showMore();
     revFilter();
+    revModal();
 });
 
 function testVozDiag() {
@@ -168,4 +169,23 @@ function revFilter() {
             console.log(a);
         });
     }
+}
+
+function revModal() {
+    $("[data-type=rev-modal]").on("click", function (e) {
+        e.preventDefault();
+
+        let thisObj = $(this),
+            name = thisObj.attr("data-name"),
+            text = thisObj.attr("data-text"),
+            img = thisObj.attr("data-img"),
+            post = thisObj.attr("data-post"),
+            sub = thisObj.attr("data-sub");
+
+        $(document).find("[data-type=rev-modal-img]").attr("src", img);
+        $(document).find("[data-type=rev-modal-name]").text(name);
+        $(document).find("[data-type=rev-modal-text]").html(text);
+        $(document).find("[data-type=rev-modal-post]").text(post);
+        $(document).find("[data-type=rev-modal-sub]").text(sub);
+    });
 }
