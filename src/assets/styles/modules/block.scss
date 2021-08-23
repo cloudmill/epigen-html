@@ -181,6 +181,12 @@
     margin-top: 60px;
     @media (max-width: $breakpoint - 1px) {
       margin-top: 30px;
+      position: absolute;
+      top: 285px;
+      left: 15px;
+    }
+    @media (max-width: $breakpoint-m - 1px) {
+      position: static;
     }
   }
 
@@ -259,6 +265,9 @@
   &__control-item {
     width: 173px;
     @media (max-width: $breakpoint - 1px) {
+      width: 158px;
+    }
+    @media (max-width: $breakpoint-m - 1px) {
       width: calc((100% - 10px) / 2);
     }
     flex-shrink: 0;
