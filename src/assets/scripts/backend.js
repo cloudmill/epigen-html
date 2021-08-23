@@ -2,6 +2,7 @@ $(function () {
     testVozDiag();
     test();
     showMore();
+    revFilter();
 });
 
 function testVozDiag() {
@@ -94,7 +95,13 @@ function showMore() {
     $(document).on("click", "[data-type=show_more_click]", function (e) {
         let thisObj = $(this),
             url = thisObj.attr("data-url"),
-            itemsContainer =  $(document).find("[data-container=items]");
+            ids = [],
+            idsArr = thisObj.attr("data-ids"),
+            itemsContainer = $(document).find("[data-container=items]");
+
+        if (idsArr) {
+            ids = JSON.parse(idsArr);
+        }
 
         console.log("show more");
 
@@ -108,15 +115,11 @@ function showMore() {
                 url: url,
                 data: {
                     ajax: 1,
+                    ids: ids,
                 },
             }).done(function (r) {
                 let responsePageNav = $(r).find("[data-type=show_more_click]"),
                     itemsResponse = $(r).find("[data-type=item]");
-
-                console.log(r);
-                console.log(responsePageNav);
-                console.log(itemsResponse);
-                console.log(itemsContainer);
 
                 itemsContainer.append(itemsResponse);
 
@@ -127,4 +130,42 @@ function showMore() {
             });
         }
     });
+}
+
+function revFilter() {
+    $("[data-type=reviews-filter]").on("click", function (e) {
+        e.preventDefault();
+        $("[data-type=reviews-filter]").each(function () {
+            $(this).removeClass("border-link--active");
+        });
+        $(this).toggleClass("border-link--active");
+
+        ajaxRevList();
+    });
+
+    function ajaxRevList() {
+        let ids = [],
+            revList = $("[data-type=rev-list]");
+
+        $("[data-type=reviews-filter]").each(function () {
+            if ($(this).hasClass("border-link--active")) {
+                ids = JSON.parse($(this).attr("data-ids"));
+            }
+        });
+
+        console.log(ids);
+
+        $.ajax({
+            method: "POST",
+            url: window.location.href,
+            data: {
+                ajax: 1,
+                ids: ids,
+            },
+        }).done(function (a) {
+            revList.html(a);
+
+            console.log(a);
+        });
+    }
 }
