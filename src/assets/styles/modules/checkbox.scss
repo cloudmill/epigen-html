@@ -4,7 +4,12 @@
   &__label {
     position: relative;
     display: flex;
-
+    @media (max-width: $breakpoint - 1px) {
+      align-items: center;
+    }
+    @media (max-width: $breakpoint-s - 1px) {
+      align-items: stretch;
+    }
     cursor: pointer;
   }
 
@@ -56,5 +61,21 @@
 
   &__link {
     color: $color-blue;
+  }
+
+  .parsley-error {
+    #{$comp}__box {
+      border-color: #F053BB;
+    }
+
+    #{$comp}__link {
+      color: #F053BB;
+    }
+
+    
+  }
+
+  .parsley-errors-list {
+    display: none;
   }
 }

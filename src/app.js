@@ -140,17 +140,20 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     const modal = $('[data-modal]');
 
     if (modal.length !== 0) {
-      const buttonModal = $('[data-button]');
 
-      buttonModal.each(function () {
-        const button = $(this);
-        const buttonId = button.data('button');
+      window.addEventListener('click', (e) => {
+        const buttonModal = $('[data-button]');
 
-        button.on('click', function () {
-          $(`[data-modal='${buttonId}']`).toggleClass('modal--active');
-          $('.body').toggleClass('body--hidden')
+        buttonModal.each(function () {
+          const button = $(this);
+          const buttonId = button.data('button');
+
+          if ($(e.target).closest(button).length) {
+            $(`[data-modal='${buttonId}']`).toggleClass('modal--active');
+            $('.body').toggleClass('body--hidden')
+          }
         });
-      });
+      })
 
       $(window).on('click', function (event) {
         const target = event.target;
@@ -485,16 +488,18 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     const form = $('[data-form]');
 
     if (form.length !== 0) {
-      const formButton = form.find('[data-form-button]');
 
-      formButton.on('click', function (event) {
-        event.preventDefault();
+      form.each(function() {
+        const formButton = $(this).find('[data-form-button]');
+        const formButtonId = formButton.data('form-button');
 
-        const formButtonId = $(this).data('form-button');
+        $(this).on('submit', (e) => {
+          e.preventDefault()  
 
-        $(`[data-form='${formButtonId}']`).attr('data-form-hidden', '');
-        $(`[data-response='${formButtonId}']`).attr('data-response-active', '');
-      });
+          $(`[data-form='${formButtonId}']`).attr('data-form-hidden', '');
+          $(`[data-response='${formButtonId}']`).attr('data-response-active', '');
+        })
+      })
 
       const response = $('[data-response]');
       const responseButton = response.find('[data-response-button]');
@@ -857,14 +862,12 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           if (modalActive.length !== 0) {
             panel.addClass('panel--modal-active')
             $('.body').css('overflow', 'hidden')
-            $('.row__col--main').css('position', 'relative')
             $('.row__col--main').css('z-index', '3')
           } else {
             panel.removeClass('panel--modal-active')
             $('.body').css('overflow', '')
 
             setTimeout (() => {
-              $('.row__col--main').css('position', '')
               $('.row__col--main').css('z-index', '')
             }, delay)
           }
@@ -1348,6 +1351,46 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       });
     };
   });
+}
+
+// parallax main page star/moon
+{
+  $(() => {
+    const parallaxItem = $('[data-parallax-main]')
+
+    if (parallaxItem.length !== 0) {
+      parallaxItem.each(function() {
+        const ths = $(this);
+        const parallaxElemOffset = ths.offset().top;
+        const parallaxId = ths.data('parallax-main')
+        const parallaxContainer = $('[data-parallax-container-main]')
+
+        $(window).on('scroll', function() {
+          const scrollPos = this.pageYOffset;
+          
+
+          if (scrollPos < parallaxContainer.offset().top &&
+            (scrollPos + $(window).height() / 2) > parallaxElemOffset) {
+              let parallax
+            
+              switch (parallaxId) {
+                case 'left':
+                  parallax = ((scrollPos + $(window).height() / 2) - parallaxElemOffset) * -0.1;
+                  break
+
+                case 'right':
+                  parallax = ((scrollPos + $(window).height() / 2) - parallaxElemOffset) * 0.1;
+                break
+              }
+
+            requestAnimationFrame(() => {
+              ths.css('transform', `translateX(${parallax}px)`);
+            })
+          }
+        });
+      })
+    }
+  })
 }
 
 // test sticky
@@ -1853,27 +1896,6 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           tabs.eq($(this).index()).addClass('reviews-tabs__item--active')
         }
       })
-
-      // update height
-      $(window).on('load', updateHeight())
-      $(window).one('resize', handleResize())
-
-      function updateHeight() {
-        const item = reviewsTabs.find('.reviews-tabs__item')
-
-        $('.reviews-tabs__tabs').css('min-height', getMaxHeight(item.eq(0), item.eq(1)))
-
-        function getMaxHeight(a, b) {
-          return Math.max(a.height(), b.height())
-        }
-      }
-      function handleResize() {
-        setTimeout(() => {
-          updateHeight()
-
-          $(window).one('resize', handleResize)
-        })
-      }
     }
   })
 }
@@ -1900,27 +1922,32 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           tabs.eq($(this).index()).addClass('main-page__reviews-item--active')
         }
       })
+    }
+  })
+}
 
-      // update height 
-      $(window).on('load', updateHeight())
-      $(window).one('resize', handleResize())
+// accordion mobile menu
+{
+  $(() => {
+    const menu = $('.modal-mobile')
 
-      function updateHeight() {
-        const item = reviews.find('.main-page__reviews-item')
+    if (menu.length !== 0) {
+      const menuButton = menu.find('.modal-mobile__choice-button')
 
-        $('.main-page__reviews-tabs').css('min-height', getMaxHeight(item.eq(0), item.eq(1)))
+      menuButton.on('click', function() {
+        const menuSectionClicked = $(this).closest('.modal-mobile__choice')
 
-        function getMaxHeight(a, b) {
-          return Math.max(a.height(), b.height())
+        if (menuSectionClicked.hasClass('modal-mobile__choice--active')) {
+          menuSectionClicked.find('.modal-mobile__choice-dropdown').slideUp(500)
+          menuSectionClicked.removeClass('modal-mobile__choice--active')
+        } else {
+          $('.modal-mobile__choice--active').find('.modal-mobile__choice-dropdown').slideUp(650)
+          $('.modal-mobile__choice--active').removeClass('modal-mobile__choice--active')
+
+          menuSectionClicked.find('.modal-mobile__choice-dropdown').slideDown(500)
+          menuSectionClicked.addClass('modal-mobile__choice--active')
         }
-      }
-      function handleResize() {
-        setTimeout(() => {
-          updateHeight()
-
-          $(window).one('resize', handleResize)
-        })
-      }
+      })
     }
   })
 }

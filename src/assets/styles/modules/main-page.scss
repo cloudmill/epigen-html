@@ -316,8 +316,12 @@
   }
   &__reviews-tabs {
     position: relative;
+    display: grid;
+    grid-template-areas: "z";
   }
   &__reviews-item {
+    grid-area: z;
+
     opacity: 0;
     pointer-events: none;
     transition: $transition;
@@ -325,13 +329,6 @@
     width: calc(#{$col-width-d} * 18);
     @media (max-width: $breakpoint - 1px) {
       width: calc(#{$col-width-m} * 6);
-    }
-
-    &:not(:first-child) {
-      padding-bottom: 0;
-      position: absolute;
-      top: 0;
-      left: 0;
     }
 
     &--active {
