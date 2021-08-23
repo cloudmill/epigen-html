@@ -30,6 +30,7 @@
     min-height: 300vh;
 }
 
+// main page звезда на волне
 .layout {
 
     &__star {
@@ -40,7 +41,12 @@
             top: calc(100vh + 50px);
             left: calc(#{$col-width-m} * 3.5 + 15px);
         }
-
+        @media (max-width: $breakpoint-s - 1px) {
+            top: 100vh;
+        }
+        @media (max-width: $breakpoint-xs - 1px) {
+            top: calc(100vh - 20px);
+        }
     }
 
     &__svg {

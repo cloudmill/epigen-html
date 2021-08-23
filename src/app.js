@@ -1853,27 +1853,6 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           tabs.eq($(this).index()).addClass('reviews-tabs__item--active')
         }
       })
-
-      // update height
-      $(window).on('load', updateHeight())
-      $(window).one('resize', handleResize())
-
-      function updateHeight() {
-        const item = reviewsTabs.find('.reviews-tabs__item')
-
-        $('.reviews-tabs__tabs').css('min-height', getMaxHeight(item.eq(0), item.eq(1)))
-
-        function getMaxHeight(a, b) {
-          return Math.max(a.height(), b.height())
-        }
-      }
-      function handleResize() {
-        setTimeout(() => {
-          updateHeight()
-
-          $(window).one('resize', handleResize)
-        })
-      }
     }
   })
 }
@@ -1900,27 +1879,6 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           tabs.eq($(this).index()).addClass('main-page__reviews-item--active')
         }
       })
-
-      // update height 
-      $(window).on('load', updateHeight())
-      $(window).one('resize', handleResize())
-
-      function updateHeight() {
-        const item = reviews.find('.main-page__reviews-item')
-
-        $('.main-page__reviews-tabs').css('min-height', getMaxHeight(item.eq(0), item.eq(1)))
-
-        function getMaxHeight(a, b) {
-          return Math.max(a.height(), b.height())
-        }
-      }
-      function handleResize() {
-        setTimeout(() => {
-          updateHeight()
-
-          $(window).one('resize', handleResize)
-        })
-      }
     }
   })
 }

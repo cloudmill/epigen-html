@@ -343,6 +343,7 @@
   // слайдер отзывов, главная
   &--reviews-slider-main-page {
     overflow: hidden;
+    height: 100%;
 
     #{$comp}__top {
       margin-bottom: 60px;
@@ -358,6 +359,7 @@
     }
     #{$comp}__bottom {
       display: flex;
+      height: 100%;
     }
 
     #{$comp}__top-row {
@@ -415,9 +417,11 @@
     }
 
     #{$comp}__slide-row {
+      height: 100%;
       display: flex;
       @media (max-width: $breakpoint-m - 1px) {
-        display: block;
+        flex-direction: column;
+        justify-content: space-between;
       }
       align-items: stretch;
 
@@ -479,6 +483,7 @@
       display: none;
       @media (max-width: $breakpoint - 1px) {
         display: block;
+        height: 100%;
       }
     }
     #{$comp}__slide-top {
@@ -677,7 +682,8 @@
 
     #{$comp}__slide-row {
       @media (max-width: $breakpoint - 1px) {
-        display: block;
+        flex-direction: column;
+        justify-content: space-between;
       }
 
       &--desktop {
@@ -717,6 +723,10 @@
     }
 
     #{$comp}__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
       @media (max-width: $breakpoint - 1px) {
         width: 100%;
       }
