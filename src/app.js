@@ -140,17 +140,20 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     const modal = $('[data-modal]');
 
     if (modal.length !== 0) {
-      const buttonModal = $('[data-button]');
 
-      buttonModal.each(function () {
-        const button = $(this);
-        const buttonId = button.data('button');
+      window.addEventListener('click', (e) => {
+        const buttonModal = $('[data-button]');
 
-        button.on('click', function () {
-          $(`[data-modal='${buttonId}']`).toggleClass('modal--active');
-          $('.body').toggleClass('body--hidden')
+        buttonModal.each(function () {
+          const button = $(this);
+          const buttonId = button.data('button');
+
+          if ($(e.target).closest(button).length) {
+            $(`[data-modal='${buttonId}']`).toggleClass('modal--active');
+            $('.body').toggleClass('body--hidden')
+          }
         });
-      });
+      })
 
       $(window).on('click', function (event) {
         const target = event.target;
