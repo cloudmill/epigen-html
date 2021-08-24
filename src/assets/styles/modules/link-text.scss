@@ -67,4 +67,8 @@
       color: $color-white;
     }
   }
+
+  &__span {
+    white-space: nowrap;
+  }
 }
