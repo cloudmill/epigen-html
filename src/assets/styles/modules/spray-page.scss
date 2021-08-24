@@ -718,6 +718,9 @@
       @media (max-width: $breakpoint - 1px) {
         padding-right: 24px;
       }
+      @media (max-width: $breakpoint-m - 1px) {
+        padding-right: 0;
+      }
     }
 
     &:nth-child(3) {
@@ -726,6 +729,9 @@
         padding-left: 0;
         padding-right: 24px;
       }
+      @media (max-width: $breakpoint-m - 1px) {
+        padding-right: 0;
+      }
     }
 
     &:not(:first-child) {
@@ -733,6 +739,9 @@
         margin-top: 30px;
 
         width: calc(100% / 2);
+      }
+      @media (max-width: $breakpoint-m - 1px) {
+        width: 100%;
       }
     }
   }
