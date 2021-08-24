@@ -9,6 +9,7 @@
   $animation-open-d: 'jf923f023';
   $animation-open-m: 'jf39gu34gh98';
   $animation-in-out-value: 1.75;
+  $animation-in-out-offset: 0.001;
   $animation-in: 'fj23f92032093f';
   $animation-out: 'fj3jg490032093f';
   $content-pad-left-d: 30px;
@@ -98,7 +99,7 @@
           transform: scale(#{$animation-in-out-value});
         }
         to {
-          transform: scale(1);
+          transform: scale(calc(1 + #{$animation-in-out-offset}));
         }
       }
 
@@ -144,6 +145,7 @@
     left: 0;
     right: 0;
 
+    transform: scale(calc(1 + #{$animation-in-out-offset}));
     background-repeat: no-repeat;
     background-position: left 90% bottom 30%;
     background-size: cover;

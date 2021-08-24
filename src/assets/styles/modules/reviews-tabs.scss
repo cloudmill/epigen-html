@@ -12,6 +12,15 @@
       left: 0;
       top: 58px;
     }
+    @media (max-width: $breakpoint-xs - 1px) {
+      padding: 0 15px;
+      margin-left: -15px;
+
+      display: flex;
+      width: calc(100% + 15px);
+      overflow-x: auto;
+      @include scrollbar-hidden;
+    }
   }
 
   &__tabs {
@@ -21,13 +30,6 @@
   }
 
   &__item {
-    @media (min-width: $breakpoint) {
-      display: flex;
-      justify-content: space-between;
-      flex-direction: column;
-      // height: 100%;
-    }
-
     grid-area: z;
 
     opacity: 0;

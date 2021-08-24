@@ -194,8 +194,17 @@
     }
   }
   &__expert-text {
+    &--xs {
+      display: none;
+      @media (max-width: $breakpoint-xs - 1px) {
+        display: block;
+      }
+    }
     &--mobile {
       @media (min-width: $breakpoint) {
+        display: none;
+      }
+      @media (max-width: $breakpoint-xs - 1px) {
         display: none;
       }
     }
