@@ -39,6 +39,7 @@
 
     &:hover {
       #{$comp}__button {
+        padding: 15px 0;
 
         &::before {
           transform: translate3d(0,0,0) scale3d(1,1,1);
@@ -52,11 +53,12 @@
         }
       }
       #{$comp}__burger {
-        height: 16px;
+
+        border-color: $color-white;
 
         &::before,
         &::after {
-          background-color: $color-white;
+          // background-color: $color-white;
         }
       }
     }
@@ -74,7 +76,7 @@
   }
   &__button {
     $size: 45px;
-
+    padding: 18px 0;
     position: relative;
 
     width: $size;
@@ -127,30 +129,31 @@
     z-index: 1;
 
     width: 20px;
-    height: 12px;
+    height: 100%;
 
-    transition: .35s $transition-timing-function;
+    border-top: 1px solid $color-blue;
+    border-bottom: 1px solid $color-blue;
+    // transition: .35s $transition-timing-function;
+    transition-property: border-color, height;
+    transition-timing-function: $transition-timing-function;
+    transition-duration: .35s;
 
     &::after,
     &::before {
       content: "";
       position: absolute;
       left: 50%;
+      top: 50%;
       transform-origin: 50% 50%;
-      transform: translate(-50%, 0);
+      transform: translate(-50%, -50%);
 
       width: 100%;
       height: 1px;
 
-      transition: .35s $transition-timing-function;
-      background-color: $color-blue;
-    }
-
-    &::before {
-      top: 0;
-    }
-    &::after {
-      bottom: 0;
+      transition-property: background-color, transform;
+      transition-timing-function: $transition-timing-function;
+      transition-duration: .35s;
+      background-color: transparent;
     }
   }
 }
