@@ -913,10 +913,12 @@
     }
   }
   &__slider-categories {
+    flex-shrink: 0;
     display: flex;
     @media (max-width: $breakpoint - 1px) {
       width: 100%;
     }
+    white-space: nowrap;
   }
   &__slider-item {
     &:not(:first-child) {
