@@ -106,6 +106,9 @@
 
   &__image {
     height: 260px;
+    @media (max-width: $breakpoint - 1px) {
+      height: 220px;
+    }
     display: flex;
     justify-content: center;
     overflow: hidden;
