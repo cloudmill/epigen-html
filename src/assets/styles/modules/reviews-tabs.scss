@@ -30,12 +30,6 @@
   }
 
   &__item {
-    @media (min-width: $breakpoint) {
-      display: flex;
-      justify-content: space-between;
-      flex-direction: column;
-    }
-
     grid-area: z;
 
     opacity: 0;

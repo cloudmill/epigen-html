@@ -949,7 +949,7 @@
     cursor: pointer;
   }
   &__slider-desktop {
-    display: block;
+    display: flex;
     @media (max-width: $breakpoint - 1px) {
       display: none;
     }
