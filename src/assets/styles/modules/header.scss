@@ -55,11 +55,6 @@
       #{$comp}__burger {
 
         border-color: $color-white;
-
-        &::before,
-        &::after {
-          // background-color: $color-white;
-        }
       }
     }
 

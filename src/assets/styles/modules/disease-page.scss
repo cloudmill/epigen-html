@@ -13,6 +13,16 @@
       #{$comp}__section-col {
         &:nth-child(1) {
           display: block;
+          @media (max-width: $breakpoint - 1px) {
+            display: none;
+          }
+          @media (max-width: $breakpoint-m - 1px) {
+            display: block;
+          }
+        }
+
+        &:nth-child(2) {
+          position: relative;
         }
       }
       #{$comp}__section-bot {
@@ -26,7 +36,7 @@
       }
       .specialists-page__content-wave {
         bottom: auto;
-        top: calc(100% + 30px);
+        top: 85px;
       }
     }
   }

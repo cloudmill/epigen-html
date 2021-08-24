@@ -1,0 +1,33 @@
+.disease-mobile {
+  @media (max-width: $breakpoint - 1px) {
+    display: flex;
+
+  }
+
+  &__col {
+    flex-shrink: 0;
+    &:nth-child(1) {
+      
+      @media (max-width: $breakpoint - 1px) {
+        margin-right: calc(#{$col-width-m});
+        width: calc(#{$col-width-m});
+      }
+      @media (max-width: $breakpoint-m - 1px) {
+        margin-right: 0;
+        width: auto;
+      }
+    }
+
+    &:nth-child(2) {
+      width: calc(#{$col-width-m} * 3);
+
+      display: none;
+      @media (max-width: $breakpoint - 1px) {
+        display: block;
+      }
+      @media (max-width: $breakpoint-m - 1px) {
+        display: none;
+      }
+    }
+  }
+}
