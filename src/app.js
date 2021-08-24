@@ -404,7 +404,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
           windowOffset = headerHeight + panelHeight;
         } else {
-          windowOffset = headerHeight;
+          windowOffset = headerHeight + 10;
         }
 
         $('html, body').animate({
