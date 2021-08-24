@@ -111,6 +111,17 @@
     }
   }
 
+  &__content-m {
+    @media (max-width: $breakpoint - 1px) {
+      padding-left: calc(#{$col-width-m});
+      width: calc(#{$col-width-m} * 5);
+    }
+    @media (max-width: $breakpoint-m - 1px) {
+      padding-left: 0;
+      width: auto;
+    }
+  }
+
   &__container-label {
     @media (min-width: $breakpoint) {
       padding-top: 3px;
