@@ -377,10 +377,11 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     let navLink;
 
     if (BREAKPOINT_MEDIA.matches) {
-      navLink = $('.nav-page-d--desktop').find('.nav-page-d__item')
+      navLink = $('.nav-page-d--desktop').find('.nav-page-d__link')
     } else {
-      navLink = $('.nav-page-d--mobile').find('.nav-page-d__item')
+      navLink = $('.nav-page-d--mobile').find('.nav-page-d__link')
     }
+    const items = $('.nav-page-d__item')
 
     let positions = [],
     currentActive = null,
@@ -391,11 +392,10 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
     function upadateOffset() {
       positions.length = 0
-      positions.splice()
       $('[data-section]').each(function(){
         positions.push({
           top: $(this).offset().top,
-          a: links.filter('[data-scroll="#'+$(this).attr('id')+'"]')
+          a: links.filter('[data-scroll="#'+$(this).attr('id')+'"]').closest('.nav-page-d__item')
         });
       });
 
@@ -428,7 +428,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
         if(positions[i].top - windowOffset < (winTop + windowOffset)){
           if(currentActive !== i){
             currentActive = i;
-            links.removeClass('nav-page-d__item--active');
+            items.removeClass('nav-page-d__item--active');
             positions[i].a.addClass('nav-page-d__item--active');
           }
           break;
@@ -437,7 +437,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     });
 
     // anchor scroll
-    navLink.on('click', function(event) {
+    $('[data-scroll]').on('click', function(event) {
       event.preventDefault();
 
       const elementId = $(this).data('scroll');
