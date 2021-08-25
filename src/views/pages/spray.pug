@@ -9,7 +9,7 @@ block grid-test
 include ../components/block.pug
 
 mixin nav-page-d
-  nav.nav-page-d(data-aos='fade-up')
+  nav.nav-page-d.nav-page-d--desktop(data-aos='fade-up')
     ul.nav-page-d__list
       -
         var items = [
@@ -97,7 +97,7 @@ mixin nav-page-m
         ]
       each item, index in items
         li.nav-page-d__item(class = ((index === 0) ? 'nav-page-d__item--active' : ''))
-          a.category-item.category-item--light-blue.category-item--background--white(href=item.href data-scroll=item.scroll)
+          a.category-item.category-item--light-blue.category-item--background--white.nav-page-d__link(href=item.href data-scroll=item.scroll)
             |!{item.title}
 
 mixin copyright-link

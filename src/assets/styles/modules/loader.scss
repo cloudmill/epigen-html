@@ -1,8 +1,8 @@
 .loader {
   // vars
-  $size-large: 366px;
-  $size-mid: 266px;
-  $size-small: 134px;
+  $size-large: 96px;
+  $size-mid: 70px;
+  $size-small: 36px;
   $animation: grow $transition-timing-function 3s infinite;
 
   position: fixed;
@@ -17,7 +17,7 @@
   justify-content: center;
 
   overflow: hidden;
-  background-color: #CDF5FA;
+  background-color: $color-blue-light;
   transition: height $transition 3.3s;
 
   &--hidden {
@@ -46,7 +46,7 @@
     width: $size-large;
     height: $size-large;
 
-    background-color: #7FE0EA;
+    background-color: $color-blue;
     animation: $animation;
   }
 
@@ -54,7 +54,7 @@
     width: $size-mid;
     height: $size-mid;
 
-    background-color: #90EFDF;
+    background-color: #91D9FF;
     animation: $animation .5s;
   }
 

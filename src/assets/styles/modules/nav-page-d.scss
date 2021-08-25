@@ -123,12 +123,15 @@
   }
 
   &__link {
-    @include fsl(14px, 120%);
-    color: $color-gray;
-    transition: $transition;
+   
+    @media (min-width: $breakpoint) {
+      @include fsl(14px, 120%);
+      color: $color-gray;
+      transition: $transition;
 
-    &:hover {
-      color: $color-blue;
+      &:hover {
+        color: $color-blue;
+      }
     }
   }
 }

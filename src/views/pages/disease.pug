@@ -7,7 +7,7 @@ include ../components/modals.pug
 block grid-test
 
 mixin nav-page-d
-  nav.nav-page-d
+  nav.nav-page-d.nav-page-d--desktop
     ul.nav-page-d__list(data-aos='fade-up')
       -
         var items = [
@@ -95,7 +95,7 @@ mixin nav-page-m
         ]
       each item, index in items
         li.nav-page-d__item(class = ((index === 0) ? 'nav-page-d__item--active' : ''))
-          a.category-item.category-item--light-blue.category-item--background--white(href=item.href data-scroll=item.scroll)
+          a.category-item.category-item--light-blue.category-item--background--white.nav-page-d__link(href=item.href data-scroll=item.scroll)
             |!{item.title}
 
 mixin copyright-link
@@ -183,8 +183,9 @@ block content
                       ul.disease-page__list
                         each item in ['Зуд', 'Жжение', 'Выделения, пузырьки ', 'Пузырьки, язвочки', 'Болезненность, выделения', 'Болезненность при половом контакте', 'Боль внизу живота', 'Боль при мочеиспускании', ]
                           li.disease-page__list-item
-                            .category-item
-                              |#{item}
+                            .category-item.btn-animation
+                              span.btn-animation__text 
+                                |#{item}
                   .panel__modals
                     +modal-mobile
             main.page__main
@@ -199,8 +200,9 @@ block content
                     ul.disease-page__list
                       each item in ['Зуд', 'Жжение', 'Выделения, пузырьки ', 'Пузырьки, язвочки', 'Болезненность, выделения', 'Болезненность при половом контакте', 'Боль внизу живота', 'Боль при мочеиспускании', ]
                         li.disease-page__list-item(data-aos='fade-up')
-                          .category-item
-                            |#{item}
+                          .category-item.btn-animation
+                            span.btn-animation__text 
+                              |#{item}
                 .disease-page__layout
                   .disease-page__layout-layout
 
