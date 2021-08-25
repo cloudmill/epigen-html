@@ -183,8 +183,9 @@ block content
                       ul.disease-page__list
                         each item in ['Зуд', 'Жжение', 'Выделения, пузырьки ', 'Пузырьки, язвочки', 'Болезненность, выделения', 'Болезненность при половом контакте', 'Боль внизу живота', 'Боль при мочеиспускании', ]
                           li.disease-page__list-item
-                            .category-item
-                              |#{item}
+                            .category-item.btn-animation
+                              span.btn-animation__text 
+                                |#{item}
                   .panel__modals
                     +modal-mobile
             main.page__main
@@ -199,8 +200,9 @@ block content
                     ul.disease-page__list
                       each item in ['Зуд', 'Жжение', 'Выделения, пузырьки ', 'Пузырьки, язвочки', 'Болезненность, выделения', 'Болезненность при половом контакте', 'Боль внизу живота', 'Боль при мочеиспускании', ]
                         li.disease-page__list-item(data-aos='fade-up')
-                          .category-item
-                            |#{item}
+                          .category-item.btn-animation
+                            span.btn-animation__text 
+                              |#{item}
                 .disease-page__layout
                   .disease-page__layout-layout
 
