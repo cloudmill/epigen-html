@@ -345,6 +345,7 @@ function search() {
       url: window.location.pathname,
       dataType: 'html',
       data: {
+        searchAjax: true,
         searchData: searchData,
       },
       success: function(r) {
