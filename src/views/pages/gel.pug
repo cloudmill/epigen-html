@@ -9,7 +9,7 @@ block grid-test
 include ../components/block
 
 mixin nav-page-d
-  nav.nav-page-d(class=attributes.class)
+  nav.nav-page-d.nav-page-d--desktop(class=attributes.class)
     ul.nav-page-d__list(data-aos='fade-up')
       -
         var items = [
@@ -28,11 +28,6 @@ mixin nav-page-d
             scroll: '#features',
             title: 'Преимущества',
           },
-          //- {
-          //-   href: '#',
-          //-   scroll: '#purpose',
-          //-   title: 'Назначение',
-          //- },
           {
             href: '#',
             scroll: '#structure',
@@ -43,11 +38,6 @@ mixin nav-page-d
             scroll: '#instruction',
             title: 'Инструкция',
           },
-          //- {
-          //-   href: '#',
-          //-   scroll: '#spray',
-          //-   title: 'Вопрос эксперту',
-          //- },
           {
             href: '#',
             scroll: '#reviews',
@@ -55,8 +45,8 @@ mixin nav-page-d
           },
         ]
       each item, index in items
-        li.nav-page-d__item(class = ((index === 0) ? 'nav-page-d__item--active' : ''))
-          a.nav-page-d__link(href=item.href data-scroll=item.scroll)
+        li.nav-page-d__item(class = ((index === 0) ? 'nav-page-d__item--active' : '') data-scroll=item.scroll)
+          a.nav-page-d__link(href=item.href)
             |!{item.title}
 
 mixin nav-page-m
@@ -79,11 +69,6 @@ mixin nav-page-m
             scroll: '#features',
             title: 'Преимущества',
           },
-          //- {
-          //-   href: '#',
-          //-   scroll: '#purpose',
-          //-   title: 'Назначение',
-          //- },
           {
             href: '#',
             scroll: '#structure',
@@ -94,11 +79,6 @@ mixin nav-page-m
             scroll: '#instruction',
             title: 'Инструкция',
           },
-          //- {
-          //-   href: '#',
-          //-   scroll: '#spray',
-          //-   title: 'Вопрос эксперту',
-          //- },
           {
             href: '#',
             scroll: '#reviews',
@@ -106,8 +86,8 @@ mixin nav-page-m
           },
         ]
       each item, index in items
-        li.nav-page-d__item(class = ((index === 0) ? 'nav-page-d__item--active' : ''))
-          a.category-item.category-item--light-blue.category-item--background--white(href=item.href data-scroll=item.scroll)
+        li.nav-page-d__item(class = ((index === 0) ? 'nav-page-d__item--active' : '') data-scroll=item.scroll)
+          a.category-item.category-item--light-blue.category-item--background--white(href=item.href)
             |!{item.title}
 
 mixin copyright-link
