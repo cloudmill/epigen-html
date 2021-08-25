@@ -116,7 +116,7 @@ function showMore() {
             thisObj.remove();
 
             $.ajax({
-                method: "POST",
+                method: "GET",
                 url: url,
                 data: {
                     ajax: 1,
