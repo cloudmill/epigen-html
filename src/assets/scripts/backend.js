@@ -5,6 +5,7 @@ $(function () {
     revFilter();
     revModal();
     specAlert();
+    forms();
 });
 
 function testVozDiag() {
@@ -236,4 +237,51 @@ function specAlert() {
 
         $("[data-type=spec-alert-close]").click();
     });
+}
+
+function forms() {
+  $(document).on('click', '[data-type=submit]', function () {
+    const thisObj = $(this);
+
+    let formContainer = thisObj.parents('[data-type=form-container]'),
+      contentType = 'application/x-www-form-urlencoded; charset=UTF-8',
+      processData = true,
+      data = {},
+      file = formContainer.find('[data-type=file]').length > 0 ? formContainer.find('[data-type=file]') : false;
+
+    if (file) {
+      data = new FormData();
+      contentType = false;
+      processData = false;
+      data.append('file', file[0].files[0]);
+    }
+
+    formContainer
+      .find(
+        '[data-type=get-field]'
+      )
+      .each(function() {
+        const field = $(this).data('field');
+        const val = $(this).val();
+
+        file ? data.append(field, val) : (data[field] = val);
+      });
+
+      $.ajax({
+        type: 'POST',
+        url: '/local/templates/main/include/ajax/forms.php',
+        dataType: 'json',
+        data: data,
+        contentType: contentType,
+        processData: processData,
+        success: function(r) {
+          if (r.success === true) {
+            formContainer.find('form').hide();
+            formContainer.find('[data-type=form-response]').show();
+          } else {
+            console.log(r.errors);
+          }
+        }
+      });
+  });
 }
