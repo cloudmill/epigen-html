@@ -5,6 +5,7 @@ $(function () {
     revFilter();
     revModal();
     specAlert();
+    subscribe();
 });
 
 function testVozDiag() {
@@ -219,7 +220,7 @@ function specAlert() {
     $(document).on("click", "[data-type=spec-alert-yes]", function (e) {
         e.preventDefault();
         let url = $(this).attr("data-url"),
-        alert = 'no';
+            alert = 'no';
 
         console.log('click spec alert yes');
 
@@ -235,5 +236,48 @@ function specAlert() {
         });
 
         $("[data-type=spec-alert-close]").click();
+    });
+}
+
+function subscribe() {
+    $(document).on("submit", "[data-type=js-form]", function (e) {
+        console.log("form subscribe");
+        e.preventDefault();
+
+        let form = $(this),
+            formResponse = form.siblings("[data-type=form-response]"),
+            url = form.attr("data-url"),
+            processData = true,
+            data = {};
+
+
+
+
+        form.find("[data-type=get-field]").each(function () {
+            let field = $(this).attr("data-uf"),
+                val = $(this).val();
+
+            data[field] = val;
+
+        });
+
+        console.log(data);
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            dataType: "json",
+            data: data,
+            success: function (r) {
+                console.log(r);
+                if (r == "exist") {
+                    $(document).find("[data-type=after-subscribe]").text("Данный E-mail уже подписан");
+                } else {
+                    if (r.success === true) {
+                        $(document).find("[data-type=after-subscribe]").text("Подписка успешно оформлена");
+                    }
+                }
+            },
+        });
     });
 }
