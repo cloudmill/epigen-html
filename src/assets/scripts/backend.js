@@ -6,6 +6,7 @@ $(function () {
     revModal();
     specAlert();
     forms();
+    search();
 });
 
 function testVozDiag() {
@@ -283,5 +284,34 @@ function forms() {
           }
         }
       });
+  });
+}
+
+function search() {
+  $(document).on('click', '[data-type=search-submit]', function () {
+    console.log('click');
+    const thisObj = $(this);
+
+    let container = thisObj.parents('[data-type=search-container]'),
+      itemsContainer = container.find('[data-container=items]'),
+      pageNav = container.siblings().filter('[data-type=show_more_click]'),
+      searchData = container.find('[data-type=search-data]').val();
+
+    if (searchData) {
+      $.ajax({
+        type: 'GET',
+        url: window.location.pathname,
+        dataType: 'html',
+        data: {
+          searchData: searchData,
+        },
+        success: function(r) {
+          itemsContainer.empty();
+          pageNav.remove();
+          itemsContainer.append($(r).filter('[data-container=items]'));
+          container.after($(r).filter('[data-type=show_more_click]'));
+        }
+      });
+    }
   });
 }
