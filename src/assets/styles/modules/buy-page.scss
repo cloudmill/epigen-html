@@ -15,23 +15,41 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    @media (max-width: $breakpoint-m - 1px) {
+      flex-direction: column;
+    }
 
     border: 1px solid $color-blue-light;
     border-radius: 10px 10px 0 0;
   }
   &__map-iframe {
     width: 100%;
+    min-width: 320px;
     height: calc(610px - #{$map-header-height});
 
+    @for $i from 320 through 354 {
+      @media (min-width: #{$i}px) and (max-width: #{$i}px) {
+        transform: scale(#{$i / 354});
+      }
+    }
+    transform-origin: left top;
     border: none;
     outline: none;
   }
-  &__map-text {}
+  &__map-text {
+    @media (max-width: $breakpoint-m - 1px) {
+      margin-top: 10px;
+      font-size: 12px;
+    }
+  }
   &__map-link {
-    position: absolute;
-    left: 44px;
+    height: 16px;
+    @media (min-width: $breakpoint-m) {
+      position: absolute;
+      left: 44px;
 
-    height: 32px;
+      height: 32px;
+    }
   }
   &__map-logo {}
 
