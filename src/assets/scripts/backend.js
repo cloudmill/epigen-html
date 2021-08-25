@@ -340,21 +340,19 @@ function search() {
       pageNav = container.siblings().filter('[data-type=show_more_click]'),
       searchData = container.find('[data-type=search-data]').val();
 
-    if (searchData) {
-      $.ajax({
-        type: 'GET',
-        url: window.location.pathname,
-        dataType: 'html',
-        data: {
-          searchData: searchData,
-        },
-        success: function(r) {
-          itemsContainer.empty();
-          pageNav.remove();
-          itemsContainer.append($(r).filter('[data-container=items]'));
-          container.after($(r).filter('[data-type=show_more_click]'));
-        }
-      });
-    }
+    $.ajax({
+      type: 'GET',
+      url: window.location.pathname,
+      dataType: 'html',
+      data: {
+        searchData: searchData,
+      },
+      success: function(r) {
+        itemsContainer.empty();
+        pageNav.remove();
+        itemsContainer.append($(r).filter('[data-container=items]').children());
+        container.after($(r).filter('[data-type=show_more_click]'));
+      }
+    });
   });
 }
