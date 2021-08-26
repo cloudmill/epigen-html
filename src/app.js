@@ -1158,7 +1158,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
         const resultWrapper = result.find('.test__form-wrapper')
         const resultEmail = result.find('.test__form-email')
 
-        $(document).on('submit', form, function(event) {
+        form.on('submit', function(event) {
           event.preventDefault()
 
           resultWrapper.addClass('test__form-wrapper--hidden')
