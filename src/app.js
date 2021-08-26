@@ -374,6 +374,8 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 // nav links
 {
   $(() => {
+    const FPS = 60
+
     let navLink;
 
     if (BREAKPOINT_MEDIA.matches) {
@@ -387,8 +389,10 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     currentActive = null,
     links = navLink;
 
+    
+    // update offset
     $(window).one('resize', handleResize)
-    $(window).on('load', upadateOffset())
+    $(window).on('load', upadateOffset)
 
     function upadateOffset() {
       positions.length = 0
@@ -407,9 +411,10 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
         upadateOffset()
 
         $(window).one('resize', handleResize)
-      }, 1000 / 15);
+      }, 1000 / FPS);
     }
 
+    // header offset + panel list(disease page)
     let windowOffset
 
     if ($('.panel__list').length !== 0) {
@@ -420,12 +425,15 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       windowOffset = $('.panel').height() + 10;
     }
 
+    // scroll active change
+    $(window).on('load', updateActive)
+    $(window).one('scroll', scrollHandler)
 
-    $(window).on('scroll',function() {
+    function updateActive() {
       const winTop = $(window).scrollTop()
 
       for(let i = 0; i < positions.length; i++){
-        if(positions[i].top - windowOffset < (winTop + windowOffset)){
+        if(positions[i].top - windowOffset < winTop + windowOffset){
           if(currentActive !== i){
             currentActive = i;
             items.removeClass('nav-page-d__item--active');
@@ -434,7 +442,20 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           break;
         }
       }
-    });
+
+      if (positions[positions.length - 1].top - windowOffset > winTop + windowOffset) {
+        items.removeClass('nav-page-d__item--active');
+        positions[positions.length - 1].a.addClass('nav-page-d__item--active')
+      }
+    }
+
+    function scrollHandler() {
+      setTimeout(() => {
+        updateActive()
+
+        $(window).one('scroll', scrollHandler)
+      }, 1000 / FPS);
+    }
 
     // anchor scroll
     $('[data-scroll]').on('click', function(event) {
