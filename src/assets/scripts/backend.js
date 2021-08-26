@@ -320,8 +320,8 @@ function forms() {
         processData: processData,
         success: function(r) {
           if (r.success === true) {
-            formContainer.find('form').hide();
-            formContainer.find('[data-type=form-response]').show();
+            formContainer.find('[data-type=request-form-container]').attr('data-form-hidden', true);
+            formContainer.find('[data-type=form-response]').attr('data-response-active', true);
           } else {
             console.log(r.errors);
           }
