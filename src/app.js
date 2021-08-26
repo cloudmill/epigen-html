@@ -1580,7 +1580,6 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       updateCanvasHeight()
 
       function handleResize() {
-        console.log(123)
 
         setTimeout(() => {
           updateCanvasHeight()
@@ -1687,10 +1686,16 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
         // debugger;
         paint(points_norm)
 
+        // star
+        const ANIMATION_STAR = 10 * Math.sin(((progress % DIST) / DIST) * Math.PI * 2)
+        const y = ($('.wwave').width() * aspect) / 100 * 56
+        $('.layout__star').css('transform', `translate(${144}px, ${y + ANIMATION_STAR}px)`)
+        
         progress += progress_delta
-
+        
         requestAnimationFrame(render)
       }
+
     })
   })
 }
