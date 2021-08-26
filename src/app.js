@@ -1947,3 +1947,31 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     }
   })
 }
+
+// map height on (window.width < 355)
+{
+  const frame = $('.buy-page__map-iframe')
+  if (frame.length) {
+    const map = $('.buy-page__map')
+
+    $(window).on('load', getHeight)
+    $(window).one('resize', updateHeight)
+
+    function getHeight() {
+      if ($(window).innerWidth() < 355) {
+        const height = frame.innerHeight() * ($(window).innerWidth() / 354)
+        map.css('height', height + 'px')
+      } else {
+        map.css('height', '')
+      }
+    }
+
+    function updateHeight() {
+      setTimeout(() => {
+        getHeight()
+
+        $(window).one('resize', updateHeight)
+      }, 1000 / 15);
+    }
+  }
+}
