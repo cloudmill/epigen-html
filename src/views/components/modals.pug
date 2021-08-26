@@ -153,6 +153,10 @@ mixin modal-test
                   .test__result-label
                     .link-text.link-text--s
                       |Для повышения эффективности лечения попробуйте спрей #[a.link-text__link(href='#') Эпиген Интим] . Он обладает противовоспалительным и местным иммуностимулирующим эффектом.
+                  .test__result-button 
+                    .button.button--wide.btn-animation.test__result-btn
+                      span.btn-animation__text
+                        |Пройти тест заново
                 .test__result-col
                   .test__form
                     .test__form-wrapper
@@ -161,7 +165,7 @@ mixin modal-test
                       form.form(action='/')
                         .test__form-item
                           label.form__item
-                            input.form__input(type="text" name="email" required='required')
+                            input.form__input(type="email" name="email" required='required')
                             span.form__placeholder
                               |E-mail
                         .test__form-item

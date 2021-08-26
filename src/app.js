@@ -1126,20 +1126,32 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
             }
           });
 
-          // result response
-          const resultResponse = result.find('.test__form-response')
-          const form = result.find('.form')
-          const formInput = form.find('.form__input')
-          const resultWrapper = result.find('.test__form-wrapper')
-          const resultEmail = result.find('.test__form-email')
+        })
 
-          $(document).on('submit', form, function(event) {
-            event.preventDefault()
+        // result response
+        const resultResponse = result.find('.test__form-response')
+        const form = result.find('.form')
+        const formInput = form.find('.form__input')
+        const resultWrapper = result.find('.test__form-wrapper')
+        const resultEmail = result.find('.test__form-email')
 
-            resultWrapper.addClass('test__form-wrapper--hidden')
-            resultResponse.addClass('test__form-response--active')
-            resultEmail.text(formInput.val())
-          })
+        $(document).on('submit', form, function(event) {
+          event.preventDefault()
+
+          resultWrapper.addClass('test__form-wrapper--hidden')
+          resultResponse.addClass('test__form-response--active')
+          resultEmail.text(formInput.val())
+        })
+
+        // test again
+        testResult.find('.test__result-btn').on('click', () => {
+          testContainer.removeClass('test__container--hidden')
+          testResult.removeClass('test__result--active')
+          question.eq(0).addClass('test__question--active')
+          dot.removeClass('test__dot--active')
+          dot.eq(0).addClass('test__dot--active')
+          index.text(1)
+          $(this).find('.test__options').eq(0).addClass('test__options--active')
         })
       })
     }
