@@ -104,44 +104,45 @@ block content
                       li.faq-page__item
                         +border-link(href='#')
                           |!{link}
-              ul.product-choice.product-choice--margin-bottom--default
-                li.product-choice__item(data-aos='fade-up')
-                  a.product-btn.product-btn--active(href='#')
-                    +spray-svg.product-btn__svg
-                    p.product-btn__text
-                      |Эпиген Интим
-                      br
-                      |Спрей
-                li.product-choice__item(data-aos='fade-up')
-                  a.product-btn(href='#')
-                    +gel-svg.product-btn__svg
-                    p.product-btn__text
-                      |Эпиген Интим
-                      br
-                      |Гель
-              ul.page-reviews__list
-                li.page-reviews__list-item(data-aos='fade-up')
-                  +review-card(source='irecommend.ru')
-                li.page-reviews__list-item(data-aos='fade-up')
-                  +review-card(image=2 caption='Врач акушер - гинеколог, врач УЗИ.' plus=true)
-                li.page-reviews__list-item(data-aos='fade-up')
-                  +review-card(image=1 caption='Врач акушер-гинеколог, гинеколог-эндокринолог, врач высшей категории, заместитель главного врача по медицинской части..' plus=true)
-                li.page-reviews__list-item(data-aos='fade-up')
-                  +review-card(source='wildberries.ru')
-                li.page-reviews__list-item(data-aos='fade-up')
-                  +review-card(image=3 caption='Врач акушер-гинеколог, гинеколог-эндокринолог, лучший врач корпорации' plus=true)
-                li.page-reviews__list-item(data-aos='fade-up')
-                  +review-card(image=2 caption='Врач акушер - гинеколог, врач УЗИ.' plus=true)
-                li.page-reviews__list-item(data-aos='fade-up')
-                  +review-card(source='irecommend.ru')
-                li.page-reviews__list-item(data-aos='fade-up')
-                  +review-card(image=4 caption='Акушер гинеколог, стаж 40 лет.' plus=true)
-              .button-show-wrapper
-                .button-show(data-aos='fade-up')
-                  .button-show__icon
-                    +btn-plus-svg.button-show__svg
-                  .button-show__text
-                    |показать еще
+              section.page-reviews__section
+                ul.product-choice.product-choice--margin-bottom--default
+                  li.product-choice__item(data-aos='fade-up')
+                    a.product-btn.product-btn--active(href='#')
+                      +spray-svg.product-btn__svg
+                      p.product-btn__text
+                        |Эпиген Интим
+                        br
+                        |Спрей
+                  li.product-choice__item(data-aos='fade-up')
+                    a.product-btn(href='#')
+                      +gel-svg.product-btn__svg
+                      p.product-btn__text
+                        |Эпиген Интим
+                        br
+                        |Гель
+                ul.page-reviews__list
+                  li.page-reviews__list-item(data-aos='fade-up')
+                    +review-card(source='irecommend.ru')
+                  li.page-reviews__list-item(data-aos='fade-up')
+                    +review-card(image=2 caption='Врач акушер - гинеколог, врач УЗИ.' plus=true)
+                  li.page-reviews__list-item(data-aos='fade-up')
+                    +review-card(image=1 caption='Врач акушер-гинеколог, гинеколог-эндокринолог, врач высшей категории, заместитель главного врача по медицинской части..' plus=true)
+                  li.page-reviews__list-item(data-aos='fade-up')
+                    +review-card(source='wildberries.ru')
+                  li.page-reviews__list-item(data-aos='fade-up')
+                    +review-card(image=3 caption='Врач акушер-гинеколог, гинеколог-эндокринолог, лучший врач корпорации' plus=true)
+                  li.page-reviews__list-item(data-aos='fade-up')
+                    +review-card(image=2 caption='Врач акушер - гинеколог, врач УЗИ.' plus=true)
+                  li.page-reviews__list-item(data-aos='fade-up')
+                    +review-card(source='irecommend.ru')
+                  li.page-reviews__list-item(data-aos='fade-up')
+                    +review-card(image=4 caption='Акушер гинеколог, стаж 40 лет.' plus=true)
+                .button-show-wrapper
+                  .button-show(data-aos='fade-up')
+                    .button-show__icon
+                      +btn-plus-svg.button-show__svg
+                    .button-show__text
+                      |показать еще
             +footer.page__footer
   .mdl
     .mdl__container
