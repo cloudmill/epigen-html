@@ -1320,7 +1320,7 @@
 											<div class="test__form">
 												<div class="test__form-wrapper">
 													<h4 class="test__form-title">Для получения результатов теста укажите E&#8209;mail</h4>
-													<form class="form" action="/">
+													<form class="form" action="/" data-form="5">
 														<div class="test__form-item"><label class="form__item"><input class="form__input" type="email" name="email" required="required" /><span class="form__placeholder">E-mail</span></label></div>
 														<div class="test__form-item"><button class="button button--wide btn-animation" type="submit"><span class="btn-animation__text">Отправить результаты теста на почту</span></button></div>
 													</form>
@@ -1388,8 +1388,8 @@
 							<div class="mdl__inner">
 								<div class="mdl__form">
 									<div class="mdl__form-container">
-										<h3 class="mdl__form-title">Задать вопрос врачу</h3>
-										<form class="form" action="/"><label class="form__item"><input class="form__input" name="name" /><span class="form__placeholder">Имя</span></label><label class="form__item"><input class="form__input" type="email" name="email" required="required" /><span class="form__placeholder">E-mail</span></label>
+										<form class="form" action="/" data-form="10">
+											<h3 class="mdl__form-title">Задать вопрос врачу</h3><label class="form__item"><input class="form__input" name="name" /><span class="form__placeholder">Имя</span></label><label class="form__item"><input class="form__input" type="email" name="email" required="required" /><span class="form__placeholder">E-mail</span></label>
 											<div class="form__item"><textarea class="form__textarea" name="message" placeholder="Сообщение" cols="30" rows="10"></textarea></div>
 											<div class="form__inner">
 												<div class="file"><input class="file__input" id="file" type="file" multiple="multiple" />
@@ -1407,11 +1407,11 @@
 														<div class="checkbox__text">Согласен на обработку персональных данных в соответствии с <a class="checkbox__link" href="#">политикой конфиденциальности</a></div>
 													</label></div>
 											</div>
-											<div class="form__button"><button class="button button--wide btn-animation" type="submit"><span class="btn-animation__text">Отправить</span></button></div>
+											<div class="form__button"><button class="button button--wide btn-animation" type="submit" data-form-button="10"><span class="btn-animation__text">Отправить</span></button></div>
 										</form>
-										<div class="mdl__response">
+										<div class="mdl__response" data-response="10">
 											<h3 class="mdl__form-title">Мы получили ваше сообщение и ответим на него в ближайшее время.</h3>
-											<div class="button button--wide btn-animation"><span class="btn-animation__text">Отправить еще</span></div>
+											<div class="button button--wide btn-animation" dat-response-button="10"><span class="btn-animation__text">Отправить еще</span></div>
 										</div>
 									</div>
 								</div>
