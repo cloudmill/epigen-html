@@ -187,9 +187,9 @@ mixin modal-consultation
           .mdl__inner
             .mdl__form
               .mdl__form-container
-                h3.mdl__form-title
-                  |Задать вопрос врачу
-                form.form(action="/")
+                form.form(action="/" data-form='10')
+                  h3.mdl__form-title
+                    |Задать вопрос врачу
                   label.form__item
                     input.form__input(type="text" name="name")
                     span.form__placeholder
@@ -217,13 +217,13 @@ mixin modal-consultation
                         .checkbox__text
                           |Согласен на обработку персональных данных в соответствии с #[a.checkbox__link(href="#") политикой конфиденциальности]
                   .form__button
-                    button.button.button--wide.btn-animation(type='submit')
+                    button.button.button--wide.btn-animation(type='submit' data-form-button='10')
                       span.btn-animation__text
                         |Отправить
-                .mdl__response
+                .mdl__response(data-response='10')
                   h3.mdl__form-title
                     |Мы получили ваше сообщение и ответим на него в ближайшее время.
-                  .button.button--wide.btn-animation
+                  .button.button--wide.btn-animation(dat-response-button='10')
                     span.btn-animation__text
                       |Отправить еще
           .mdl__close.mdl__interactive.button-close.btn-animation.btn-animation--icon(data-button='6')
