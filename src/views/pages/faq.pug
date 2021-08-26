@@ -157,45 +157,45 @@ block content
                       +btn-plus-svg.button-show__svg
                     .button-show__text
                       |показать еще
-                .faq-page__form
-                  .faq-page__form-row(data-form='1')
-                    .faq-page__form-col
-                      h3.faq-page__form-title(data-aos='fade-up')
-                        |Задать свой вопрос
-                    .faq-page__form-col
-                      form.form(action="/" data-type="feedback-form")
-                        label.form__item(data-aos='fade-up')
-                          input.form__input(type="text" name="name" required="required")
-                          span.form__placeholder
-                            |Имя
-                        label.form__item(data-aos='fade-up')
-                          input.form__input(type="email" name="email" required="required")
-                          span.form__placeholder
-                            |E-mail
-                        label.form__item(data-aos='fade-up')
-                          textarea.form__textarea(name="message" placeholder="Сообщение", cols="30", rows="10")
-                        .form__container
-                          .form__inner
-                            .checkbox(data-aos='fade-up')
-                              label.checkbox__label(for="checkbox")
-                                input.checkbox__input(type="checkbox" id="checkbox" required='required')
-                                .checkbox__box
-                                  +check-svg.checkbox__icon
-                                .checkbox__text
-                                  |Согласен на обработку персональных данных в соответствии с #[a.checkbox__link(href="#") политикой конфиденциальности]
-                          .form__button(data-aos='fade-up')
-                            button.button.button--wide.btn-animation(type='submit' data-form-button='1')
-                              span.btn-animation__text
-                                |Отправить
-                  .faq-page__response(data-response='1')
-                    .faq-page__response-row
-                      .faq-page__response-col
-                        h3.faq-page__response-title
-                          |Мы получили ваше сообщение и ответим на него в ближайшее время.
-                      .faq-page__response-col
-                        .faq-page__response-button
-                          .button.button--wide(data-response-button='1')
-                            |Отправить еще
+              section.faq-page__form.margin-top.margin-top--l
+                .faq-page__form-row(data-form='1')
+                  .faq-page__form-col
+                    h3.faq-page__form-title(data-aos='fade-up')
+                      |Задать свой вопрос
+                  .faq-page__form-col
+                    form.form(action="/" data-type="feedback-form")
+                      label.form__item(data-aos='fade-up')
+                        input.form__input(type="text" name="name" required="required")
+                        span.form__placeholder
+                          |Имя
+                      label.form__item(data-aos='fade-up')
+                        input.form__input(type="email" name="email" required="required")
+                        span.form__placeholder
+                          |E-mail
+                      label.form__item(data-aos='fade-up')
+                        textarea.form__textarea(name="message" placeholder="Сообщение", cols="30", rows="10")
+                      .form__container
+                        .form__inner
+                          .checkbox(data-aos='fade-up')
+                            label.checkbox__label(for="checkbox")
+                              input.checkbox__input(type="checkbox" id="checkbox" required='required')
+                              .checkbox__box
+                                +check-svg.checkbox__icon
+                              .checkbox__text
+                                |Согласен на обработку персональных данных в соответствии с #[a.checkbox__link(href="#") политикой конфиденциальности]
+                        .form__button(data-aos='fade-up')
+                          button.button.button--wide.btn-animation(type='submit' data-form-button='1')
+                            span.btn-animation__text
+                              |Отправить
+                .faq-page__response(data-response='1')
+                  .faq-page__response-row
+                    .faq-page__response-col
+                      h3.faq-page__response-title
+                        |Мы получили ваше сообщение и ответим на него в ближайшее время.
+                    .faq-page__response-col
+                      .faq-page__response-button
+                        .button.button--wide(data-response-button='1')
+                          |Отправить еще
 
 
             +footer.page__footer
