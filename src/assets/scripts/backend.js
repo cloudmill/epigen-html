@@ -8,6 +8,7 @@ $(function () {
     subscribe();
     forms();
     search();
+    filters();
 });
 
 function testVozDiag() {
@@ -353,6 +354,34 @@ function search() {
         pageNav.remove();
         itemsContainer.append($(r).filter('[data-container=items]').children());
         container.after($(r).filter('[data-type=show_more_click]'));
+      }
+    });
+  });
+}
+
+function filters() {
+  $(document).on('click', '[data-type=filter]', function (e) {
+    e.preventDefault();
+
+    const thisObj = $(this);
+
+    let container = thisObj.parents('body'),
+      itemsContainer = container.find('[data-container=items]'),
+      pageNav = container.find('[data-type=show_more_click');
+
+    container.find('[data-type=filter]').filter('.border-link--active').removeClass('border-link--active');
+    thisObj.addClass('border-link--active');
+
+    $.ajax({
+      type: 'GET',
+      url: window.location.pathname,
+      dataType: 'html',
+      data: thisObj.data('filter'),
+      success: function(r) {
+        itemsContainer.empty();
+        pageNav.remove();
+        itemsContainer.append($(r).find('[data-container=items]').children());
+        itemsContainer.after($(r).find('[data-type=show_more_click]'));
       }
     });
   });
