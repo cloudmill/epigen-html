@@ -2,9 +2,10 @@
   position: fixed;
   z-index: 500;
   top: 100%;
-  right: 0;
+  left: calc(#{$col-width-d} * 6 + 30px);
   @media (max-width: $breakpoint - 1px) {
     left: 0;
+    right: 0;
   }
   transform: translateY(0);
 

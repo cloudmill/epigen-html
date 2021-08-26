@@ -4,7 +4,7 @@
 
     position: relative;
     z-index: 0;
-    left: calc((#{$col-width-d} * 6 + 150px) * (-1));
+    left: calc((#{$col-width-d} * 6 + 30px + 114px) * (-1));
     top: 25vh;
     @media (max-width: $breakpoint - 1px) {
         // top: calc(722px + 64px);
@@ -35,8 +35,8 @@
 
     &__star {
         position: absolute;
-        top: 56vh;
-        left: 15px;
+        top: 0;
+        left: 0;
         @media (max-width: $breakpoint - 1px) {
             top: calc(100vh + 50px);
             left: calc(#{$col-width-m} * 3.5 + 15px);
