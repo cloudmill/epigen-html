@@ -1151,17 +1151,13 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
         })
 
         // result response
-        const resultResponse = result.find('.test__form-response')
         const form = result.find('.form')
         const formInput = form.find('.form__input')
-        const resultWrapper = result.find('.test__form-wrapper')
         const resultEmail = result.find('.test__form-email')
 
         form.on('submit', function(event) {
           event.preventDefault()
 
-          resultWrapper.addClass('test__form-wrapper--hidden')
-          resultResponse.addClass('test__form-response--active')
           resultEmail.text(formInput.val())
         })
 
@@ -1174,6 +1170,8 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           dot.eq(0).addClass('test__dot--active')
           index.text(1)
           $(this).find('.test__options').eq(0).addClass('test__options--active')
+          $(this).find('[data-form]').removeAttr('data-form-hidden')
+          $(this).find('[data-response]').removeAttr('data-response-active')
         })
       })
     }
@@ -1846,7 +1844,6 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 {
   $('body').css('overflow', 'hidden')
   $(window).on('load', function() {
-    console.log(1);
     if($('.main-page').length) {
       $('.loader').addClass('loader--hidden')
     } 
