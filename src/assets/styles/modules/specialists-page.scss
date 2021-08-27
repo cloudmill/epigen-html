@@ -38,7 +38,7 @@
   }
   &__article-row {
     display: flex;
-    @media (max-width: $breakpoint - 1px) {
+    @media (max-width: $breakpoint-m - 1px) {
       display: block;
     }
   }
@@ -47,17 +47,29 @@
 
     &:nth-child(1) {
       @media (max-width: $breakpoint - 1px) {
+        margin-right: calc(#{$col-width-m});
+      }
+      @media (max-width: $breakpoint-m - 1px) {
+        margin-right: 0;
         margin-bottom: 30px;
       }
 
       width: calc(#{$col-width-d} * 6);
       @media (max-width: $breakpoint - 1px) {
+        width: calc(#{$col-width-m});
+      }
+      @media (max-width: $breakpoint-m - 1px) {
         width: 100%;
       }
     }
     &:nth-child(2) {
       width: calc(#{$col-width-d} * 10);
       @media (max-width: $breakpoint - 1px) {
+        padding-right: 23px;
+        width: calc(#{$col-width-m} * 3);
+      }
+      @media (max-width: $breakpoint-m - 1px) {
+        padding-right: 0;
         width: 100%;
       }
     }
@@ -100,10 +112,9 @@
   }
 
   &__inner {
-    padding-left: calc(#{$col-width-d} * 3);
-    padding-right: calc(#{$col-width-d} * 2);
-    @media (max-width: $breakpoint - 1px) {
-      padding: 0;
+    @media (min-width: $breakpoint) {
+      padding-left: calc(#{$col-width-d} * 3);
+      padding-right: calc(#{$col-width-d} * 2);
     }
   }
 
@@ -203,9 +214,9 @@
   }
 
   &__wish {
-    padding-left: calc(#{$col-width-d} * 6);
-    @media (max-width: $breakpoint - 1px) {
-      padding-left: 0;
+    
+    @media (min-width: $breakpoint) {
+      padding-left: calc(#{$col-width-d} * 6);
     }
   }
   &__wish-container {
@@ -252,6 +263,7 @@
       display: flex;
 
       overflow-x: auto;
+      @include scrollbar-hidden;
     }
   }
   &__table-container {
