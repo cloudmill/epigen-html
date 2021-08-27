@@ -42,11 +42,18 @@ mixin accordion
             .accordion__spray
               .accordion__spray-row
                 .accordion__spray-col
-                  img.accordion__spray-img(src="assets/images/epigen-spray.jpg", alt="")
+                  if (attributes.gel)
+                    img.accordion__spray-img(src="assets/images/accordion-gel.jpg", alt="")
+                  else
+                    img.accordion__spray-img(src="assets/images/epigen-spray.jpg", alt="")
                 .accordion__spray-col
                   .accordion__spray-content
-                    h3.accordion__spray-title
-                      |Спрей#[br]Эпиген Интим
+                    if (attributes.gel)
+                      h3.accordion__spray-title
+                        |Гель#[br]Эпиген Интим
+                    else 
+                      h3.accordion__spray-title
+                        |Спрей#[br]Эпиген Интим
                     .accordion__spray-link
                       a.button.button--m.btn-animation(href="#")
                         span.btn-animation__text

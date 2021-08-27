@@ -213,11 +213,6 @@
 }
 
 
-[data-response-active] {
-  opacity: 1;
-  pointer-events: all;
-}
-
 .test {
   $comp: &;
 
@@ -752,5 +747,11 @@
   width: 100vw;
   height: 100vh;
   pointer-events: none;
+}
+
+
+[data-response-active] {
+  opacity: 1;
+  pointer-events: all;
 }
 

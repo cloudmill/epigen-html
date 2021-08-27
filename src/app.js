@@ -372,7 +372,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
 // nav links
 {
-  $(() => {
+  $(window).on('load', () => {
     if ($('.nav-page-d').length) {
       const FPS = 60
 
@@ -391,8 +391,8 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
       
       // update offset
+      upadateOffset()
       $(window).one('resize', handleResize)
-      $(window).on('load', upadateOffset)
 
       function upadateOffset() {
         positions.length = 0
@@ -426,7 +426,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       }
 
       // scroll active change
-      $(window).on('load', updateActive)
+      updateActive()
       $(window).one('scroll', scrollHandler)
 
       function updateActive() {
@@ -1151,17 +1151,13 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
         })
 
         // result response
-        const resultResponse = result.find('.test__form-response')
         const form = result.find('.form')
         const formInput = form.find('.form__input')
-        const resultWrapper = result.find('.test__form-wrapper')
         const resultEmail = result.find('.test__form-email')
 
         form.on('submit', function(event) {
           event.preventDefault()
 
-          resultWrapper.addClass('test__form-wrapper--hidden')
-          resultResponse.addClass('test__form-response--active')
           resultEmail.text(formInput.val())
         })
 
@@ -1174,6 +1170,8 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           dot.eq(0).addClass('test__dot--active')
           index.text(1)
           $(this).find('.test__options').eq(0).addClass('test__options--active')
+          $(this).find('[data-form]').removeAttr('data-form-hidden')
+          $(this).find('[data-response]').removeAttr('data-response-active')
         })
       })
     }
@@ -1574,6 +1572,9 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
         const wwaveWidth = wwaveComputedStyle.width.slice(0, -2)
 
         canvas[0].height = wwaveWidth * aspect + OFFSET * 2
+        wwave.css('height', wwaveWidth * aspect + 'px')
+        // console.log(canvas[0].height);
+        // console.log(wwaveWidth * aspect);
       }
 
       updateCanvasHeight()
@@ -1682,13 +1683,14 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
           points_norm.push(point_norm)
         })
-        // debugger;
+
         paint(points_norm)
 
         // star
         const ANIMATION_STAR = 10 * Math.sin(((progress % DIST) / DIST) * Math.PI * 2)
-        const y = ($('.wwave').width() * aspect) / 100 * 56
-        $('.layout__star').css('transform', `translate(${144}px, ${y + ANIMATION_STAR}px)`)
+        const STAR_COORD_Y = ($('.wwave').width() * aspect) / 100 * 56
+        // const STAR_COORD_X = 
+        $('.wwave__star').css('transform', `translateY(${ANIMATION_STAR}px)`)
         
         progress += progress_delta
         
@@ -1724,95 +1726,44 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
             const slidesActive = container.find('.b__frame--active')
             const activeTitle = col.find('.b__title--active')
 
-            switch(dataTarget) {
-              case 'prev':
-                if (slidesActive.prev().length !== 0) {
-                  slides.removeClass('b__frame--right b__frame--left')
-                  slidesTitle.removeClass('b__title--active')
-
-                  slidesActive.prev().addClass('b__frame--active b__frame--front')
-                  slidesActive.addClass('b__frame--right')
-
-                  setTimeout(() => {
-                    activeTitle.prev().addClass('b__title--active')
-                  }, DELAY);
-
-                  if (slidesActive.next().length !== 0) {
-                    slidesActive.next().addClass('b__frame--left')
-                  } else {
-                    slides.eq(0).addClass('b__frame--left')
-                  }
-                  setTimeout (() => {
-                    slidesActive.prev().removeClass('b__frame--front')
-                    slidesActive.removeClass('b__frame--active')
-                  }, DELAY)
-
-                  break
-                }
-
-                slides.removeClass('b__frame--right b__frame--left')
-                slidesTitle.removeClass('b__title--active')
-
-                slides.eq(slides.length - 1).addClass('b__frame--active b__frame--front')
-                slidesActive.next().addClass('b__frame--left')
-                slidesActive.addClass('b__frame--right')
-
-                setTimeout(() => {
-                  slidesTitle.eq(slides.length - 1).addClass('b__title--active')
-                }, DELAY);
-
-                setTimeout (() => {
-                  slides.eq(slides.length - 1).removeClass('b__frame--front')
-                  slidesActive.removeClass('b__frame--active')
-                }, DELAY)
-                break
-
-              case 'next':
-                if (slidesActive.next().length !== 0) {
-                  slides.removeClass('b__frame--right b__frame--left')
-                  slidesTitle.removeClass('b__title--active')
-
-                  slidesActive.next().addClass('b__frame--active b__frame--front')
-                  slidesActive.addClass('b__frame--left')
-
-                  setTimeout(() => {
-                    activeTitle.next().addClass('b__title--active')
-                  }, DELAY);
-
-                  if (slidesActive.prev().length !== 0) {
-                    slidesActive.prev().addClass('b__frame--right')
-                  } else {
-                    slides.eq(slides.length - 1).addClass('b__frame--right')
-                  }
-                  setTimeout (() => {
-                    slidesActive.next().removeClass('b__frame--front')
-                    slidesActive.removeClass('b__frame--active')
-                  }, DELAY)
-
-                  break
-                }
-
-                slides.removeClass('b__frame--right b__frame--left')
-                slidesTitle.removeClass('b__title--active')
-
-                slidesActive.addClass('b__frame--left')
-                slidesActive.prev().addClass('b__frame--right')
-                slides.eq(0).addClass('b__frame--active b__frame--front')
-
-                setTimeout(() => {
-                  slidesTitle.eq(0).addClass('b__title--active')
-                }, DELAY)
-
-                setTimeout (() => {
-                  slides.eq(0).removeClass('b__frame--front')
-                  slidesActive.removeClass('b__frame--active')
-                }, DELAY)
-                break
+            let delta
+            
+            if (dataTarget === 'prev') {
+              delta = -1
+            } else {
+              delta = 1
             }
+
+            const index = {
+              before: {},
+              after: {}
+            }
+
+            function getRealIndex(index, length) {
+              return (length + index) % length
+            }
+
+            index.before.active = slidesActive.index()
+            index.before.left = getRealIndex(index.before.active - 1, slides.length)
+            index.before.right = getRealIndex(index.before.active + 1, slides.length)
+
+            index.after.active = getRealIndex(index.before.active + delta, slides.length)
+            index.after.left = getRealIndex(index.after.active - 1, slides.length)
+            index.after.right = getRealIndex(index.after.active + 1, slides.length)
+
+            slides.removeClass('b__frame--left b__frame--right')
+            slidesTitle.removeClass('b__title--active')
+
+            slides.eq(index.after.left).addClass('b__frame--left')
+            slides.eq(index.after.right).addClass('b__frame--right')
+            slides.eq(index.after.active).addClass('b__frame--active b__frame--front')
 
             slider.css('pointer-events', 'none')
 
             setTimeout(() => {
+              slidesTitle.eq(index.after.active).addClass('b__title--active')
+              slides.eq(index.before.active).removeClass('b__frame--active')
+              slides.eq(index.after.active).removeClass('b__frame--front')
               slider.css('pointer-events', '')
             }, DELAY)
           })
@@ -1846,17 +1797,16 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 {
   $('body').css('overflow', 'hidden')
   $(window).on('load', function() {
-    console.log(1);
     if($('.main-page').length) {
       $('.loader').addClass('loader--hidden')
     } 
     $('body').css('overflow', '')
-
     AOS.init({
       once: true,
       offset: 0,
       duration: 1000,
     });
+    
   })
 }
 
