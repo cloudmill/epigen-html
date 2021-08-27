@@ -372,7 +372,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
 // nav links
 {
-  $(() => {
+  $(window).on('load', () => {
     if ($('.nav-page-d').length) {
       const FPS = 60
 
@@ -391,8 +391,8 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
       
       // update offset
+      upadateOffset()
       $(window).one('resize', handleResize)
-      $(window).on('load', upadateOffset)
 
       function upadateOffset() {
         positions.length = 0
@@ -426,7 +426,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       }
 
       // scroll active change
-      $(window).on('load', updateActive)
+      updateActive()
       $(window).one('scroll', scrollHandler)
 
       function updateActive() {
@@ -1848,12 +1848,12 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       $('.loader').addClass('loader--hidden')
     } 
     $('body').css('overflow', '')
-
     AOS.init({
       once: true,
       offset: 0,
       duration: 1000,
     });
+    
   })
 }
 
