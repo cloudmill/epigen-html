@@ -1,5 +1,5 @@
 mixin accordion
-  .accordion(class=(attributes.category ? undefiend : 'accordion--consultation'))
+  .accordion(class=attributes.class)
     .accordion__head
       .accordion__head-row
         if (attributes.name)
@@ -13,8 +13,11 @@ mixin accordion
             |#{attributes.caption}
         .accordion__head-col
           if (attributes.category)
-            .category-item.category-item--light-blue
-              |#{attributes.category}
+            .accordion__head-category 
+              - for (i = 0; i < attributes.tags; i++)
+                .accordion__head-item 
+                  .category-item.category-item--light-blue
+                    |#{attributes.category}
           .accordion__head-button
             +plus-svg.accordion__head-icon
     .accordion__body
