@@ -8,6 +8,8 @@ $(function () {
     subscribe();
     forms();
     search();
+    filters();
+    buy();
 });
 
 function testVozDiag() {
@@ -355,5 +357,48 @@ function search() {
         container.after($(r).filter('[data-type=show_more_click]'));
       }
     });
+  });
+}
+
+function filters() {
+  $(document).on('click', '[data-type=filter]', function (e) {
+    e.preventDefault();
+
+    const thisObj = $(this);
+
+    let container = thisObj.parents('body'),
+      itemsContainer = container.find('[data-container=items]'),
+      pageNav = container.find('[data-type=show_more_click');
+
+    container.find('[data-type=filter]').filter('.border-link--active').removeClass('border-link--active');
+    thisObj.addClass('border-link--active');
+
+    $.ajax({
+      type: 'GET',
+      url: window.location.pathname,
+      dataType: 'html',
+      data: thisObj.data('filter'),
+      success: function(r) {
+        itemsContainer.empty();
+        pageNav.remove();
+        itemsContainer.append($(r).find('[data-container=items]').children());
+        itemsContainer.after($(r).find('[data-type=show_more_click]'));
+      }
+    });
+  });
+}
+
+function buy() {
+  $(document).on('click', '[data-type=buy-tab]', function (e) {
+    e.preventDefault();
+
+    let container = $(this).parents('[data-type=buy-container]'),
+      id = $(this).data('id'),
+      iframeContainer = container.find('[data-type=iframe-container]');
+
+    container.find('[data-type=buy-tab]').filter('.product-btn--active').removeClass('product-btn--active');
+    $(this).addClass('product-btn--active');
+    iframeContainer.empty();
+    iframeContainer.append('<iframe class="buy-page__map-iframe" allow="geolocation" src="https://widget.uteka.ru/widgets/full/?productId='+ id +'" data-type="iframe-uteka"></iframe>')
   });
 }
