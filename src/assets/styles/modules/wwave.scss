@@ -2,9 +2,9 @@
     $comp: &;
     $offset: 100px;
 
-    position: relative;
+    position: absolute;
     z-index: 0;
-    left: calc((#{$col-width-d} * 6 + 30px + 114px) * (-1));
+    left: -120px;
     top: 25vh;
     @media (max-width: $breakpoint - 1px) {
         // top: calc(722px + 64px);
@@ -24,19 +24,11 @@
 
         width: calc(100% + (#{$offset} * 2));
     }
-}
-
-.qweqweqwe {
-    min-height: 300vh;
-}
-
-// main page звезда на волне
-.layout {
 
     &__star {
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 53%;
+        left: 144px;
         @media (max-width: $breakpoint - 1px) {
             top: calc(100vh + 50px);
             left: calc(#{$col-width-m} * 3.5 + 15px);
@@ -60,3 +52,10 @@
         }
     }
 }
+
+.qweqweqwe {
+    min-height: 300vh;
+}
+
+
+    
