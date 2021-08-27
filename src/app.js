@@ -359,12 +359,11 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     if ($('.accordion').length !== 0) {
       window.addEventListener('click', (e) => {
         const accordion = $('.accordion')
-        const target = $(e.target).closest(accordion)
+        const target = $(e.target)
 
-        if (target.length) {
-          const accordionButton = target.find('.accordion__head');
+        if (target.closest('.accordion__head').length) {
 
-          target.toggleClass('accordion--active');
+          target.closest(accordion).toggleClass('accordion--active');
         }
       })
     }
@@ -1845,33 +1844,19 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
 // loader
 {
+  $('body').css('overflow', 'hidden')
   $(window).on('load', function() {
-
-    $('body').css('overflow', 'hidden')
-
+    console.log(1);
     if($('.main-page').length) {
       $('.loader').addClass('loader--hidden')
-      setTimeout(() => {
-        $('body').css('overflow', '')
+    } 
+    $('body').css('overflow', '')
 
-        AOS.init({
-          once: true,
-          offset: 0,
-          duration: 1000,
-        });
-
-        if (process.env.NODE_ENV === 'production') { 
-          window.scrollTo(0, 0);
-        }
-      }, 3000);
-    } else {
-      $('body').css('overflow', '')
-      AOS.init({
-        once: true,
-        offset: 0,
-        duration: 1000,
-      });
-    }
+    AOS.init({
+      once: true,
+      offset: 0,
+      duration: 1000,
+    });
   })
 }
 
