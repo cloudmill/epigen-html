@@ -379,11 +379,21 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
       let navLink;
 
-      if (BREAKPOINT_MEDIA.matches) {
-        navLink = $('.nav-page-d--desktop').find('.nav-page-d__link')
-      } else {
-        navLink = $('.nav-page-d--mobile').find('.nav-page-d__link')
+      const mediaQuery = window.matchMedia(`(min-width: ${BREAKPOINT}px)`)
+
+      function mediaQueryChange() {
+        if (mediaQuery.matches) {
+          // desktop
+          navLink = $('.nav-page-d--desktop').find('.nav-page-d__link')
+        } else {
+          // mobile
+          navLink = $('.nav-page-d--mobile').find('.nav-page-d__link')
+        }
       }
+
+      mediaQueryChange()
+      mediaQuery.addListener(mediaQueryChange)
+
       const items = $('.nav-page-d__item')
 
       let positions = [],
@@ -689,25 +699,6 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
         }
       });
     }
-  });
-}
-
-// AOS
-{
-  $(() => {
-
-
-    // window.addEventListener('scroll', aosRefresh);
-
-    // function aosRefresh() {
-    //   const timeout = setTimeout(() => {
-    //     clearTimeout(timeout)
-    //     AOS.refresh();
-    //     window.addEventListener('scroll', aosRefresh);
-    //   }, 1000);
-
-    //   window.removeEventListener('scroll', aosRefresh);
-    // }
   });
 }
 
