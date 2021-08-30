@@ -54,6 +54,10 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
         } else {
           panels.removeClass('panel--hidden')
         }
+      } 
+
+      if (scrollTop < 1) {
+        panels.removeClass('panel--hidden')
       }
 
       scrollTop = newScrollTop

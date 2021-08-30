@@ -160,7 +160,7 @@
   }
   &__tabs-item {
     position: relative;
-
+    z-index: 0;
     flex-shrink: 0;
     overflow: hidden;
 
@@ -590,11 +590,8 @@
     left: 50%;
     bottom: -180px;
 
+    filter: blur(50px);
     transform: translateX(-50%);
-
-    path {
-      filter: blur(50px);
-    }
   }
   &__content-content {
     display: flex;
