@@ -64,19 +64,14 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 // cookies
 {
   let DELAY = 1000
-  const LOADER_DELAY = 3000
 
-  $(() => {
+  $(window).on('load', () => {
     const component = $('.cookies')
 
     if (component.length !== 0) {
       let isActive = false
 
       const btn = component.find('.cookies__btn')
-
-      if ($('.main-page').length) {
-        DELAY += LOADER_DELAY
-      }
 
       setTimeout(() => {
         component.addClass('cookies--active')
@@ -285,8 +280,9 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
     if (alert.length !== 0) {
       let isActive = false
-
       const btn = alert.find('.button-close')
+
+      $('.body').addClass('body--hidden')
 
       setTimeout(() => {
         alert.addClass('alert--active');
@@ -295,6 +291,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           if (event.target === alert[0]) {
             if (isActive) {
               alert.addClass('alert--disabled')
+              $('.body').removeClass('body--hidden')
             } else {
               isActive = true
             }
