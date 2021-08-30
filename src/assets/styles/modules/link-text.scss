@@ -43,7 +43,7 @@
       padding: 0 2px;
     }
 
-    display: inline-block;
+    display: inline-flex;
     height: 48px;
     @media (max-width: $breakpoint-xl - 1px) {
       height: 41px;
@@ -61,11 +61,6 @@
     color: $color-blue;
     white-space: nowrap;
     transition: $transition;
-
-    &:hover {
-      background-color: $color-blue;
-      color: $color-white;
-    }
   }
 
   &__span {

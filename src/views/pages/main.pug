@@ -106,9 +106,8 @@ block content
         .row__col.row__col--main
           .wwave(data-aos='fade-up' data-aos-delay="800")
             canvas.wwave__canvas(width = 0, height = 0)
-            .layout
-              .layout__star(data-parallax='1')
-                +star-svg.layout__svg
+            .wwave__star
+              +star-svg.wwave__svg
           .page
             header.page__header
               .panel.panel--nav
@@ -178,7 +177,7 @@ block content
                 br
                 |линия средств для женского интимного здоровья
 
-              ul.main-page__features(id='products' data-section='' data-parallax-container='1')
+              ul.main-page__features(id='products' data-section='')
                 li.main-page__features-item(data-aos='fade-up')
                   .main-page__features-text
                     |Произведено в Испании
@@ -195,11 +194,11 @@ block content
                 h3.main-page__title(data-aos='fade-up')
                   |Делимся экспертизой
                 p.link-text.main-page__expert-text.main-page__expert-text--xs(data-aos='fade-up')
-                  |Вы всегда можете задать вопрос нашим экспертам в #[a.link-text__link(href='#') специальном разделе] или найти ответы в наших #[a.link-text__link(href='#') статьях] и #[a.link-text__link(href='#') видео-публикациях]
+                  |Вы всегда можете задать вопрос нашим экспертам в #[a.link-text__link.btn-animation(href='#') #[span.btn-animation__text специальном разделе]] или найти ответы в наших #[a.link-text__link.btn-animation(href='#') #[span.btn-animation__text статьях]] и #[a.link-text__link.btn-animation(href='#') #[span.btn-animation__text видео-публикациях]]
                 p.link-text.main-page__expert-text.main-page__expert-text--mobile(data-aos='fade-up')
-                  |Вы всегда можете задать вопрос#[br]нашим экспертам в #[a.link-text__link(href='#') специальном]#[br]#[span.link-text__span #[a.link-text__link(href='#') разделе] или найти ответы в наших]#[br]#[a.link-text__link(href='#') статьях] и #[a.link-text__link(href='#') видео-публикациях]
+                  |Вы всегда можете задать вопрос#[br]нашим экспертам в #[a.link-text__link.btn-animation(href='#') #[span.btn-animation__text специальном]]#[br]#[span.link-text__span #[a.link-text__link.btn-animation(href='#') #[span.btn-animation__text разделе]] или найти ответы в наших]#[br]#[a.link-text__link.btn-animation(href='#') #[span.btn-animation__text статьях]] и #[a.link-text__link.btn-animation(href='#') #[span.btn-animation__text видео-публикациях]]
                 p.link-text.main-page__expert-text.main-page__expert-text--desktop(data-aos='fade-up')
-                  |Вы всегда можете задать вопрос нашим#[br]экспертам в #[a.link-text__link(href='#') специальном разделе]#[br]или найти ответы в наших #[a.link-text__link(href='#') статьях]#[br]и #[a.link-text__link(href='#') видео-публикациях]
+                  |Вы всегда можете задать вопрос нашим#[br]экспертам в #[a.link-text__link.btn-animation(href='#') #[span.btn-animation__text специальном разделе]]#[br]или найти ответы в наших #[a.link-text__link.btn-animation(href='#') #[span.btn-animation__text статьях]]#[br]и #[a.link-text__link.btn-animation(href='#') #[span.btn-animation__text видео-публикациях]]
                 img.main-page__expert-img(src='assets/images/main-expert.jpeg' data-aos='fade-up')
                 .main-page__expert-wave(data-aos='fade-up')
                   +wave-expert-svg.main-page__expert-svg

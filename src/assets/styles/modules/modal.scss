@@ -446,7 +446,7 @@
 
   width: calc((#{$col-width-d} * 18) + 30px);
   min-height: 620px;
-  transform: translateY(-100%);
+  transform: translateY(-110%);
 
   @media (max-width: $breakpoint - 1px) {
     display: none;
@@ -543,6 +543,3 @@
   }
 }
 
-.modal-reviews {
-
-}

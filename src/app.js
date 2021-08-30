@@ -54,6 +54,10 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
         } else {
           panels.removeClass('panel--hidden')
         }
+      } 
+
+      if (scrollTop < 1) {
+        panels.removeClass('panel--hidden')
       }
 
       scrollTop = newScrollTop
@@ -64,19 +68,14 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 // cookies
 {
   let DELAY = 1000
-  const LOADER_DELAY = 3000
 
-  $(() => {
+  $(window).on('load', () => {
     const component = $('.cookies')
 
     if (component.length !== 0) {
       let isActive = false
 
       const btn = component.find('.cookies__btn')
-
-      if ($('.main-page').length) {
-        DELAY += LOADER_DELAY
-      }
 
       setTimeout(() => {
         component.addClass('cookies--active')
@@ -285,8 +284,9 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
     if (alert.length !== 0) {
       let isActive = false
-
       const btn = alert.find('.button-close')
+
+      $('.body').addClass('body--hidden')
 
       setTimeout(() => {
         alert.addClass('alert--active');
@@ -295,6 +295,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           if (event.target === alert[0]) {
             if (isActive) {
               alert.addClass('alert--disabled')
+              $('.body').removeClass('body--hidden')
             } else {
               isActive = true
             }
@@ -378,11 +379,21 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
       let navLink;
 
-      if (BREAKPOINT_MEDIA.matches) {
-        navLink = $('.nav-page-d--desktop').find('.nav-page-d__link')
-      } else {
-        navLink = $('.nav-page-d--mobile').find('.nav-page-d__link')
+      const mediaQuery = window.matchMedia(`(min-width: ${BREAKPOINT}px)`)
+
+      function mediaQueryChange() {
+        if (mediaQuery.matches) {
+          // desktop
+          navLink = $('.nav-page-d--desktop').find('.nav-page-d__link')
+        } else {
+          // mobile
+          navLink = $('.nav-page-d--mobile').find('.nav-page-d__link')
+        }
       }
+
+      mediaQueryChange()
+      mediaQuery.addListener(mediaQueryChange)
+
       const items = $('.nav-page-d__item')
 
       let positions = [],
@@ -688,25 +699,6 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
         }
       });
     }
-  });
-}
-
-// AOS
-{
-  $(() => {
-
-
-    // window.addEventListener('scroll', aosRefresh);
-
-    // function aosRefresh() {
-    //   const timeout = setTimeout(() => {
-    //     clearTimeout(timeout)
-    //     AOS.refresh();
-    //     window.addEventListener('scroll', aosRefresh);
-    //   }, 1000);
-
-    //   window.removeEventListener('scroll', aosRefresh);
-    // }
   });
 }
 
@@ -1688,8 +1680,6 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
         // star
         const ANIMATION_STAR = 10 * Math.sin(((progress % DIST) / DIST) * Math.PI * 2)
-        const STAR_COORD_Y = ($('.wwave').width() * aspect) / 100 * 56
-        // const STAR_COORD_X = 
         $('.wwave__star').css('transform', `translateY(${ANIMATION_STAR}px)`)
         
         progress += progress_delta
@@ -1724,7 +1714,6 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           sliderControl.on('click', function() {
             const dataTarget = $(this).data('slider-arrow')
             const slidesActive = container.find('.b__frame--active')
-            const activeTitle = col.find('.b__title--active')
 
             let delta
             
