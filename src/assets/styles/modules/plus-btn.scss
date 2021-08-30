@@ -4,6 +4,7 @@
   position: relative;
   z-index: 0;
   transform: translate(-50%, -50%);
+  transform-origin: 50%;
 
   $size: 57px;
   width: $size;
@@ -15,9 +16,10 @@
   transition: $transition;
 
   &:hover {
-    $size: 71px;
-    width: $size;
-    height: $size;
+    // $size: 71px;
+    // width: $size;
+    // height: $size;
+    transform: translate(-50%, -50%) scale(1.25);
 
     #{$comp}__border {
       @keyframes rotate {
@@ -29,17 +31,17 @@
         }
       }
 
-      $size: 71px;
-      width: $size;
-      height: $size;
+      // $size: 71px;
+      // width: $size;
+      // height: $size;
 
-      animation: rotate 10s linear infinite forwards; // test
+      animation: 10s rotate linear infinite forwards; // test
     }
 
     #{$comp}__circle {
-      $size: 57px;
-      width: $size;
-      height: $size;
+      // $size: 57px;
+      // width: $size;
+      // height: $size;
 
       // background-color: $color-blue;
       &::before {
@@ -57,9 +59,9 @@
     #{$comp}__plus {
       transform: translate(-50%, -50%) rotate(-90deg);
 
-      $size: 24px;
-      width: $size;
-      height: $size;
+      // $size: 24px;
+      // width: $size;
+      // height: $size;
 
       &::before,
       &::after {
