@@ -1688,8 +1688,6 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
         // star
         const ANIMATION_STAR = 10 * Math.sin(((progress % DIST) / DIST) * Math.PI * 2)
-        const STAR_COORD_Y = ($('.wwave').width() * aspect) / 100 * 56
-        // const STAR_COORD_X = 
         $('.wwave__star').css('transform', `translateY(${ANIMATION_STAR}px)`)
         
         progress += progress_delta
@@ -1724,7 +1722,6 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           sliderControl.on('click', function() {
             const dataTarget = $(this).data('slider-arrow')
             const slidesActive = container.find('.b__frame--active')
-            const activeTitle = col.find('.b__title--active')
 
             let delta
             

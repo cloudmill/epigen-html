@@ -106,9 +106,8 @@ block content
         .row__col.row__col--main
           .wwave(data-aos='fade-up' data-aos-delay="800")
             canvas.wwave__canvas(width = 0, height = 0)
-            .layout
-              .layout__star(data-parallax='1')
-                +star-svg.layout__svg
+            .wwave__star
+              +star-svg.wwave__svg
           .page
             header.page__header
               .panel.panel--nav
@@ -178,7 +177,7 @@ block content
                 br
                 |линия средств для женского интимного здоровья
 
-              ul.main-page__features(id='products' data-section='' data-parallax-container='1')
+              ul.main-page__features(id='products' data-section='')
                 li.main-page__features-item(data-aos='fade-up')
                   .main-page__features-text
                     |Произведено в Испании
