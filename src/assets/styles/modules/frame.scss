@@ -15,19 +15,25 @@
   background-image: url('assets/images/frame.jpg');
   background-repeat: no-repeat;
   background-position: center center;
+  @media (max-width: $breakpoint-s - 1px) and (max-height: $breakpoint-lg) {
+    background-position: 45% center;
+  }
+  @media (max-width: $breakpoint-s - 1px) and (max-height: $breakpoint-md) {
+    background-position: 40% center;
+  }
   background-size: cover;
   border-radius: 10px;
 
   &--gel {
     background-image: url('assets/images/gel-promo.jpeg');
     background-position: 80% center;
-    @media (max-width: $breakpoint-m - 1px) and (max-height: $breakpoint-lg) {
+    @media (max-width: $breakpoint-s - 1px) and (max-height: $breakpoint-lg) {
       background-position: 85% center;
     }
-    @media (max-width: $breakpoint-m - 1px) and (max-height: $breakpoint-md) {
+    @media (max-width: $breakpoint-s - 1px) and (max-height: $breakpoint-md) {
       background-position: 90% center;
     }
-    @media (max-width: $breakpoint-m - 1px) and (max-height: $breakpoint-sm) {
+    @media (max-width: $breakpoint-s - 1px) and (max-height: $breakpoint-sm) {
       background-position: 100% center;
     }
 
@@ -43,6 +49,9 @@
   &--spray {
     background-image: url('assets/images/spray-frame.jpg');
     background-position: 90% center;
+    @media (max-width: $breakpoint-s - 1px) and (max-height: $breakpoint-lg) {
+      background-position: 100% center;
+    }
 
     @media (max-width: $breakpoint - 1px) {
       margin-top: 20px;
@@ -68,23 +77,41 @@
       top: 58%;
       left: 46%;
       @media (max-width: $breakpoint - 1px) {
-        left: 43%;
-        top: 57%;
+        // left: 43%;
+        // top: 57%;
+        left: 40%;
+        top: 55%;
       }
       @media (max-width: $breakpoint - 1px) and (orientation: landscape) {
         left: 45%;
+      }
+      @media (max-width: $breakpoint-s - 1px) and (max-height: $breakpoint-lg) {
+        left: 46%;
+        top: 55%;
+      }
+      @media (max-width: $breakpoint-s - 1px) and (max-height: $breakpoint-md) {
+        left: 49%;
       }
     }
     &--gel {
       top: 41%;
       left: 63%;
       @media (max-width: $breakpoint-s - 1px) {
-        left: 73%;
-        top: 37%;
+        // left: 73%;
+        // top: 37%;
+        left: 81%;
+        top: 34%
       }
       @media (max-width: $breakpoint - 1px) and (orientation: landscape) {
         left: 63%;
         top: 35%;
+      }
+      @media (max-width: $breakpoint-s - 1px) and (max-height: $breakpoint-lg) {
+        left: 79%;
+        top: 33%;
+      }
+      @media (max-width: $breakpoint-s - 1px) and (max-height: $breakpoint-sm) {
+        left: 76%;
       }
     }
   }
