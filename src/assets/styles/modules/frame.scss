@@ -7,6 +7,9 @@
     // 100 vh - высота шапки - отступ от шапки - отступ вниз - высота конетента внизу - отступ от низа экара
     height: calc(100vh - #{$panel-height} - 15px - 20px - 84px - 42px);
   }
+  @media (max-width: $breakpoint - 1px) and (orientation: landscape) {
+    height: 540px;
+  }
   overflow: hidden;
 
   background-image: url('assets/images/frame.jpg');
@@ -18,11 +21,23 @@
   &--gel {
     background-image: url('assets/images/gel-promo.jpeg');
     background-position: 80% center;
+    @media (max-width: $breakpoint-m - 1px) and (max-height: $breakpoint-lg) {
+      background-position: 85% center;
+    }
+    @media (max-width: $breakpoint-m - 1px) and (max-height: $breakpoint-md) {
+      background-position: 90% center;
+    }
+    @media (max-width: $breakpoint-m - 1px) and (max-height: $breakpoint-sm) {
+      background-position: 100% center;
+    }
 
     @media (max-width: $breakpoint - 1px) {
       margin-top: 20px;
       // 100 vh - высота шапки - отступ от шапки - отступ вниз - высота конетента внизу - отступ от низа экаран
       height: calc(100vh - #{$panel-height} - 20px - 15px - 159px - 42px);
+    }
+    @media (max-width: $breakpoint - 1px) and (orientation: landscape) {
+      height: 540px;
     }
   }
   &--spray {
@@ -33,6 +48,9 @@
       margin-top: 20px;
       // 100 vh - высота шапки - отступ от шапки - отступ вниз - высота конетента внизу - отступ от низа экаран
       height: calc(100vh - #{$panel-height} - 20px - 15px - 203px - 42px);
+    }
+    @media (max-width: $breakpoint - 1px) and (orientation: landscape) {
+      height: 540px;
     }
   }
 
@@ -50,6 +68,10 @@
       top: 58%;
       left: 46%;
       @media (max-width: $breakpoint - 1px) {
+        left: 43%;
+        top: 57%;
+      }
+      @media (max-width: $breakpoint - 1px) and (orientation: landscape) {
         left: 45%;
       }
     }
@@ -57,7 +79,12 @@
       top: 41%;
       left: 63%;
       @media (max-width: $breakpoint-s - 1px) {
-        left: 70%;
+        left: 73%;
+        top: 37%;
+      }
+      @media (max-width: $breakpoint - 1px) and (orientation: landscape) {
+        left: 63%;
+        top: 35%;
       }
     }
   }
