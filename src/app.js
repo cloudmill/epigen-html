@@ -1109,6 +1109,26 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
     if (test.length !== 0) {
 
+      const state = {
+        update: function(selector, id, name) {
+          selector.removeClass(name)
+          selector.eq(id).addClass(name)
+        },
+        toggleResult: function(container, result, isResult) {
+          if (isResult === false) {
+            container.addClass('test__container--hidden')
+            result.addClass('test__result--active')
+          } else {
+            container.removeClass('test__container--hidden')
+            result.removeClass('test__result--active')
+          }
+        },
+        responseHandler: function(selector) {
+          selector.find('[data-form]').removeAttr('data-form-hidden')
+          selector.find('[data-response]').removeAttr('data-response-active')
+        }
+      }
+
       test.each(function() {
         const testStep = $(this).find('.test__label')
         const dot = $(this).find('.test__dot')
@@ -1131,12 +1151,10 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
             dot.eq(stepNext.index()).addClass('test__dot--active')
             index.text(stepNext.index() + 1)
-            question.removeClass('test__question--active')
-            question.eq(stepNext.index()).addClass('test__question--active')
+            state.update(question, stepNext.index(), 'test__question--active')
 
             if (stepNext.index() === -1) {
-              testContainer.addClass('test__container--hidden')
-              testResult.addClass('test__result--active')
+              state.toggleResult(testContainer, testResult, false)
             }
           });
 
@@ -1155,15 +1173,13 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
         // test again
         testResult.find('.test__result-btn').on('click', () => {
-          testContainer.removeClass('test__container--hidden')
-          testResult.removeClass('test__result--active')
+          state.toggleResult(testContainer, testResult, true)
+          state.update(dot, 0, 'test__dot--active')
+
           question.eq(0).addClass('test__question--active')
-          dot.removeClass('test__dot--active')
-          dot.eq(0).addClass('test__dot--active')
           index.text(1)
           $(this).find('.test__options').eq(0).addClass('test__options--active')
-          $(this).find('[data-form]').removeAttr('data-form-hidden')
-          $(this).find('[data-response]').removeAttr('data-response-active')
+          state.responseHandler($(this))
         })
       })
     }
