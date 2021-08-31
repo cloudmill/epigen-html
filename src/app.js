@@ -1406,28 +1406,39 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
   $(() => {
     const sticky = $('.my-sticky')
 
-    if (sticky.length !== 0 && BREAKPOINT_MEDIA.matches) {
-      const container = $('.disease-page__spray-row')
+    if (sticky.length !== 0) {
+      const mediaQuery = window.matchMedia(`(min-width: ${BREAKPOINT}px)`);
+      function mediaQueryChange() {
+        let isMatches = false
+        if (mediaQuery.matches) {
+          isMatches = true
+          const container = $('.disease-page__spray-row')
+          if (sticky.height() < container.height()) {
+            $(window).on('scroll resize load', function () {
+              if (isMatches) {
+                const panel = $('.panel')
+                const containerOffset = container.offset().top
+                const scrollPos = this.pageYOffset;
 
-      if (sticky.height() < container.height()) {
-        $(window).on('scroll resize load', function () {
-          const panel = $('.panel')
-          const containerOffset = container.offset().top
-          const scrollPos = this.pageYOffset;
+                if ((scrollPos + panel.height()) > containerOffset) {
+                  sticky.addClass('my-sticky--fixed')
+                } else {
+                  sticky.removeClass('my-sticky--fixed')
+                }
 
-          if ((scrollPos + panel.height()) > containerOffset) {
-            sticky.addClass('my-sticky--fixed')
-          } else {
-            sticky.removeClass('my-sticky--fixed')
-          }
-
-          if ((sticky.height() + scrollPos + panel.height()) > (containerOffset + container.height())) {
-            sticky.addClass('my-sticky--bottom')
-          } else {
-            sticky.removeClass('my-sticky--bottom')
-          }
-        })
+                if ((sticky.height() + scrollPos + panel.height()) > (containerOffset + container.height())) {
+                  sticky.addClass('my-sticky--bottom')
+                } else {
+                  sticky.removeClass('my-sticky--bottom')
+                }
+              }
+            })
+          } 
+        } 
+        console.log(isMatches)
       }
+      mediaQueryChange();
+      mediaQuery.addListener(mediaQueryChange);
     }
   });
 }

@@ -551,14 +551,18 @@
   transition: $transition;
 
   &--fixed {
-    position: fixed;
-    top: 100px;
+    @media (min-width: $breakpoint) {
+      position: fixed;
+      top: 100px;
+    }
   }
 
   &--bottom {
-    position: absolute;
-    top: auto;
-    bottom: 0;
+    @media (min-width: $breakpoint) {
+      position: absolute;
+      top: auto;
+      bottom: 0;
+    }
   }
 }
 
