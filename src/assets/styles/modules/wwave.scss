@@ -7,14 +7,14 @@
     left: -120px;
     top: 25vh;
     @media (max-width: $breakpoint - 1px) {
-        top: calc(100vh - (102px - 36px));
+        // top: calc(100vh - (102px - 36px));
+        top: calc(100vh - 66px);
         left: -15px;
     }
 
     width: 100vw;
     @media (max-width: $breakpoint - 1px) {
-        // width: calc(100vw - 3px);
-
+        width: calc(100vw + 100px);
     }
 
     pointer-events: none;
