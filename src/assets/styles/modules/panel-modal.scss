@@ -14,7 +14,7 @@
   @media (max-width: $breakpoint-xl - 1px) {
     width: 100%;
   }
-  transform: translateY(-200%);
+  transform: translateY(-100%);
 
   pointer-events: all;
   transition: $transition;
