@@ -7,12 +7,14 @@
     left: -120px;
     top: 25vh;
     @media (max-width: $breakpoint - 1px) {
-        // top: calc(100vh - (102px - 36px));
         top: calc(100vh - 66px);
         left: -15px;
     }
 
-    width: 100vw;
+    width: calc(100vw + 150px);
+    @media (max-width: $breakpoint-xxl - 1px) {
+        width: 100vw;
+    }
     @media (max-width: $breakpoint - 1px) {
         width: calc(100vw + 100px);
     }
@@ -36,12 +38,6 @@
             top: 55%;
             left: calc(#{$col-width-m} * 3.5 + 15px);
         }
-        // @media (max-width: $breakpoint-s - 1px) {
-        //     top: 100vh;
-        // }
-        // @media (max-width: $breakpoint-xs - 1px) {
-        //     top: calc(100vh - 20px);
-        // }
     }
 
     &__svg {
