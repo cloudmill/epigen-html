@@ -295,11 +295,28 @@
     position: absolute;
     top: 39%;
     left: 8%;
+    @media (max-width: $breakpoint - 1px) {
+      bottom: -5px;
+      right: 79px;
+      top: auto;
+      left: auto;
+    }
+    @media (max-width: $breakpoint-m - 1px) {
+      right: 105px;
+    }
   }
   &__layout-star {
     position: absolute;
     top: 3%;
     left: 25%;
+    @media (max-width: $breakpoint - 1px) {
+      top: 42px;
+      left: 79px;
+    }
+    @media (max-width: $breakpoint-m - 1px) {
+      left: 44px;
+      top: 45px;
+    }
   }
 
   &__actual {}
