@@ -73,6 +73,9 @@
     &::before {
       top: auto;
     }
+    &::after {
+      transform: translate3d(0,-110%,0);
+    }
   }
 
   &--purple {
