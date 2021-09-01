@@ -1,0 +1,19 @@
+.my-sticky {
+
+  transition: $transition;
+
+  &--fixed {
+    @media (min-width: $breakpoint) {
+      position: fixed;
+      top: 100px;
+    }
+  }
+
+  &--bottom {
+    @media (min-width: $breakpoint) {
+      position: absolute;
+      top: auto;
+      bottom: 0;
+    }
+  }
+}
