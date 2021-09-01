@@ -21,7 +21,8 @@ mixin modal-mobile
               ul.modal-mobile__choice-list
                 each item in ['Зуд', 'Жжение', 'Выделения, пузырьки', 'Пузырьки, язвочки', 'Болезненность, выделения',]
                   li.modal-mobile__choice-item
-                    |#{item}
+                    a.modal-mobile__choice-link(href="#") 
+                      |#{item}
           .modal-mobile__choice
             .modal-mobile__choice-button
               .panel__choice-item(data-count='12')
@@ -31,7 +32,8 @@ mixin modal-mobile
               ul.modal-mobile__choice-list
                 each item in ['Генитальный герпес (I и II типа)', 'ВПЧ', 'Применение при беременности', 'Молочница', 'Бактериальный вагиноз',]
                   li.modal-mobile__choice-item
-                    |#{item}
+                    a.modal-mobile__choice-link(href="") 
+                      |#{item}
         .modal-mobile__links
           .modal-mobile__container
             .modal-mobile__links-row
