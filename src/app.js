@@ -2,7 +2,6 @@ import 'Styles/_app.scss'
 
 import Swiper from 'swiper/bundle';
 import Slider from 'scripts/slider.js';
-import Sticky from 'sticky-js';
 import AOS from 'aos';
 import 'parsleyjs';
 
