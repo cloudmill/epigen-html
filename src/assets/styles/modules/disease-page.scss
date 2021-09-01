@@ -543,25 +543,11 @@
   }
   &__spray-button {
     display: none;
-  }
-}
 
-.my-sticky {
-
-  transition: $transition;
-
-  &--fixed {
-    @media (min-width: $breakpoint) {
-      position: fixed;
-      top: 100px;
-    }
-  }
-
-  &--bottom {
-    @media (min-width: $breakpoint) {
-      position: absolute;
-      top: auto;
-      bottom: 0;
+    &--show {
+      .button-show__svg-stroke {
+        opacity: 0;
+      }
     }
   }
 }

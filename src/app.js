@@ -644,32 +644,46 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
   $(() => {
     const section = $('.disease-page__spray');
 
-    if (!BREAKPOINT_MEDIA.matches && section.length !== 0) {
+    if (section.length !== 0) {
       const height = 260;
       const sectionContent = section.find('.disease-page__content');
       const sectionButton = section.find('.disease-page__spray-button');
+      const btn = section.find('.button-show')
 
+      const mediaQuery = window.matchMedia(`(min-width: ${BREAKPOINT}px)`);
       let isClicked = false;
+      let isMatches
 
-      update();
+      function mediaQueryChange() {
+        (mediaQuery.matches) ? isMatches = true : isMatches = false
+        update();
+      }
+      mediaQueryChange();
+      mediaQuery.addListener(mediaQueryChange);
 
       function update() {
-        const sectionContentHeight = sectionContent.height();
+        if (!isMatches) {
+          const sectionContentHeight = sectionContent.height();
 
-        if (!isClicked) {
-          if (height < sectionContentHeight) {
-            section.addClass('disease-page__spray--crop');
-            sectionContent.css('max-height', height);
-          }
+          if (!isClicked) {
+            if (height < sectionContentHeight) {
+              section.addClass('disease-page__spray--crop');
+              sectionContent.css('max-height', height);
+            }
 
-          if (sectionContentHeight < height) {
-            section.removeClass('disease-page__spray--crop');
+            if (sectionContentHeight < height) {
+              section.removeClass('disease-page__spray--crop');
+              sectionContent.css('max-height', '');
+            }
+          } else {
             sectionContent.css('max-height', '');
           }
         } else {
+          section.removeClass('disease-page__spray--crop');
           sectionContent.css('max-height', '');
         }
       }
+
 
       function resize() {
         update();
@@ -681,12 +695,12 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
       $(window).one('resize', resize)
 
-
       sectionButton.on('click', function () {
         const buttonText = $(this).find('.button-show__text');
 
         buttonText.toggleText('подробнее', 'скрыть');
         sectionContent.toggleClass('disease-page__content--show');
+        $(this).toggleClass('disease-page__spray-button--show');
 
         (!isClicked) ? isClicked = true : isClicked = false;
 
@@ -698,15 +712,6 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           return this.text(this.text() == b ? a : b);
         }
       });
-    }
-  });
-}
-
-// sticky
-{
-  $(() => {
-    if ($('.sticky').length !== 0) {
-      const sticky = new Sticky('.sticky');
     }
   });
 }
@@ -1401,44 +1406,46 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
   })
 }
 
-// test sticky
+// my sticky
 {
   $(() => {
     const sticky = $('.my-sticky')
 
     if (sticky.length !== 0) {
       const mediaQuery = window.matchMedia(`(min-width: ${BREAKPOINT}px)`);
+      let isMatches
+
       function mediaQueryChange() {
-        let isMatches = false
-        if (mediaQuery.matches) {
-          isMatches = true
-          const container = $('.disease-page__spray-row')
-          if (sticky.height() < container.height()) {
-            $(window).on('scroll resize load', function () {
-              if (isMatches) {
-                const panel = $('.panel')
-                const containerOffset = container.offset().top
-                const scrollPos = this.pageYOffset;
-
-                if ((scrollPos + panel.height()) > containerOffset) {
-                  sticky.addClass('my-sticky--fixed')
-                } else {
-                  sticky.removeClass('my-sticky--fixed')
-                }
-
-                if ((sticky.height() + scrollPos + panel.height()) > (containerOffset + container.height())) {
-                  sticky.addClass('my-sticky--bottom')
-                } else {
-                  sticky.removeClass('my-sticky--bottom')
-                }
-              }
-            })
-          } 
-        } 
-        console.log(isMatches)
+        (mediaQuery.matches) ? isMatches = true : isMatches = false
       }
       mediaQueryChange();
       mediaQuery.addListener(mediaQueryChange);
+      const container = $('.disease-page__spray-row')
+      if (sticky.height() < container.height()) {
+        $(window).on('scroll resize load', function () {
+
+          if (isMatches) {
+            const panel = $('.panel')
+            const containerOffset = container.offset().top
+            const scrollPos = this.pageYOffset;
+
+            if ((scrollPos + panel.height()) > containerOffset) {
+              sticky.addClass('my-sticky--fixed')
+            } else {
+              sticky.removeClass('my-sticky--fixed')
+            }
+
+            if ((sticky.height() + scrollPos + panel.height()) > (containerOffset + container.height())) {
+              sticky.addClass('my-sticky--bottom')
+            } else {
+              sticky.removeClass('my-sticky--bottom')
+            }
+          } else {
+            sticky.removeClass('my-sticky--bottom')
+            sticky.removeClass('my-sticky--fixed')
+          }
+        })
+      } 
     }
   });
 }

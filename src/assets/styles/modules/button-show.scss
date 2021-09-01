@@ -46,6 +46,9 @@
   &__svg-border {
     transition: $transition;
   }
+  &__svg-stroke {
+    transition: $transition;
+  }
 }
 
 .button-show-wrapper {
