@@ -35,6 +35,7 @@
       z-index: 3;
       opacity: 1;
       pointer-events: auto;
+      visibility: visible;
     }
 
     #{$comp}-aside {
@@ -419,12 +420,9 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
-  // @media (max-width: $breakpoint - 1px) {
-  //   display: none;
-  // }
-
   pointer-events: none;
   opacity: 0;
+  visibility: hidden;
   transition: opacity $transition;
 
   &__container {
