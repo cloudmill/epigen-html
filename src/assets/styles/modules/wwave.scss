@@ -10,6 +10,9 @@
         top: calc(100vh - 66px);
         left: -15px;
     }
+    @media (max-width: $breakpoint-t - 1px) {
+        top: 676px;
+    }
 
     width: calc(100vw + 150px);
     @media (max-width: $breakpoint-xxl - 1px) {
