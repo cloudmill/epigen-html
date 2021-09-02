@@ -547,6 +547,7 @@
       padding-left: calc(#{$col-width-d});
       display: flex;
       @media (max-width: $breakpoint - 1px) {
+        padding-bottom: 6px;
         margin-right: auto;
         padding-left: 0;
         display: block;
@@ -795,6 +796,7 @@
 
       &:nth-child(1) {
         padding-left: calc(#{$col-width-d});
+        padding-bottom: 6px;
       }
     }
   }

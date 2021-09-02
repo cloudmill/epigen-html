@@ -394,8 +394,10 @@
     &--default {
       display: block;
       @media (max-width: $breakpoint - 1px) {
+        margin-bottom: 30px;
         // display: flex;
         width: 100%;
+        min-height: auto;
       }
 
       border: none;
@@ -417,7 +419,7 @@
   &__list-text {
     width: calc(#{$col-width-d} * 5);
     @media (max-width: $breakpoint - 1px) {
-      width: calc(#{$col-width-m} * 2);
+      width: calc(#{$col-width-m} * 3);
     }
     @media (max-width: $breakpoint-m - 1px) {
       width: 100%;

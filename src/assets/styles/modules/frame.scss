@@ -56,7 +56,7 @@
       height: calc(100vh - #{$panel-height} - 20px - 15px - 203px - 42px);
     }
     @media (max-width: $breakpoint-t - 1px) {
-      height: 540px;
+      height: 400px;
     }
     @media (max-width: $breakpoint-s - 1px) {
       height: 370px;
