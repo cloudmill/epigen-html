@@ -13,6 +13,12 @@
   overflow: hidden;
 
   background-image: url('assets/images/frame.jpg');
+  @media (max-width: $breakpoint-xxl - 1px) {
+    background-image: url('assets/images/frame-1680.jpg');
+  }
+  @media (max-width: $breakpoint - 1px) {
+    background-image: url('assets/images/frame-768.jpg');
+  }
   background-repeat: no-repeat;
   background-position: center center;
   @media (max-width: $breakpoint-s - 1px) and (max-height: $breakpoint-lg) {
@@ -48,9 +54,9 @@
   }
   &--spray {
     background-image: url('assets/images/spray-frame.jpg');
-    // @media (max-width: $breakpoint-s - 1px) {
-    //   background-image: url('assets/images/spray-frame-mobile.jpg');
-    // }
+    @media (max-width: $breakpoint-s - 1px) {
+      background-image: url('assets/images/spray-frame-mobile.jpg');
+    }
     background-position: 90% center;
     @media (max-width: $breakpoint-s - 1px) and (max-height: $breakpoint-lg) {
       background-position: 100% center;
@@ -97,9 +103,7 @@
       @media (max-width: $breakpoint-s - 1px) and (max-height: $breakpoint-md) {
         left: 49%;
       }
-      // @media (min-width: $breakpoint-m) and (max-height: $breakpoint-l) {
-      //   left: 43%;
-      // }
+      
     }
     &--gel {
       top: 34%;
@@ -123,7 +127,7 @@
       @media (max-width: $breakpoint-s - 1px) and (max-height: $breakpoint-sm) {
         left: 76%;
       }
-      @media (min-width: $breakpoint-m) and (max-height: $breakpoint-l) and (max-width: $breakpoint - 1px) {
+      @media (min-width: $breakpoint-m) and (min-height: $breakpoint-l) and (max-width: $breakpoint - 1px) {
         left: 70%;
       }
     }
