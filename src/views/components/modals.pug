@@ -18,18 +18,22 @@ mixin modal-mobile
                 |Симптомы
               +spoiler-arrow-svg.modal-mobile__choice-svg
             .modal-mobile__choice-dropdown
-              - for (i = 0; i < 4; i++)
-                .modal-mobile__choice-text 
-                  |Lorem ipsum dolor sit.
+              ul.modal-mobile__choice-list
+                each item in ['Зуд', 'Жжение', 'Выделения, пузырьки', 'Пузырьки, язвочки', 'Болезненность, выделения',]
+                  li.modal-mobile__choice-item
+                    a.modal-mobile__choice-link(href="#") 
+                      |#{item}
           .modal-mobile__choice
             .modal-mobile__choice-button
               .panel__choice-item(data-count='12')
                 |Заболевания
               +spoiler-arrow-svg.modal-mobile__choice-svg
             .modal-mobile__choice-dropdown
-              - for (i = 0; i < 4; i++)
-                .modal-mobile__choice-text 
-                  |Lorem ipsum dolor sit amet consectetur.
+              ul.modal-mobile__choice-list
+                each item in ['Генитальный герпес (I и II типа)', 'ВПЧ', 'Применение при беременности', 'Молочница', 'Бактериальный вагиноз',]
+                  li.modal-mobile__choice-item
+                    a.modal-mobile__choice-link(href="") 
+                      |#{item}
         .modal-mobile__links
           .modal-mobile__container
             .modal-mobile__links-row

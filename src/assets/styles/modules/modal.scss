@@ -226,6 +226,15 @@
 
     display: none;
   }
+  &__choice-list {
+    padding-bottom: 10px;
+  }
+  &__choice-item {
+    @include fsl(15px, 140%);
+    &:not(:first-child) {
+      margin-top: 5px;
+    }
+  }
 
   &__links {
     margin-top: 30px;
