@@ -859,16 +859,42 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           }
         });
 
-        $(window).on('click', event => {
-          // const isClickArea = $(event.target).closest(panel).length !== 0; ?
+        const mediaQuery = window.matchMedia(`(min-width: ${BREAKPOINT}px)`);
 
-          const isClickArea = ( // ?
-            // эл-ты panel
-            $(event.target).closest('.panel__wrapper').length !== 0
-            && $(event.target).closest('.panel__test').length === 0
-            // модальное окно
-            || $(event.target).closest('[data-modal-active]').length !== 0
-          );
+        $(window).on('click', event => {
+          
+          // const isClickArea = (
+            //   // эл-ты panel
+            //   $(event.target).closest('.panel__wrapper').length !== 0
+            //   && $(event.target).closest('.panel__test').length === 0
+            //   // модальное окно
+            //   || $(event.target).closest('[data-modal-active]').length !== 0
+            // );
+          let isClickArea
+            
+          function mediaQueryChange() {
+            if (mediaQuery.matches) {
+              isClickArea = ( 
+                // эл-ты panel
+                $(event.target).closest('.panel__wrapper').length !== 0
+                && $(event.target).closest('.panel__test').length === 0
+                // модальное окно
+                || $(event.target).closest('[data-modal-active]').length !== 0
+              );
+            } else {
+              isClickArea = ( 
+                // эл-ты panel
+                $(event.target).closest('.header').length !== 0
+                // модальное окно
+                || $(event.target).closest('[data-modal-active]').length !== 0
+                // модалки внутри меню
+                || $(event.target).closest('.modal-test').length !== 0
+                || $(event.target).closest('.mdl').length !== 0
+              );
+            }
+          }
+          mediaQueryChange();
+          mediaQuery.addListener(mediaQueryChange);
 
           if (!isClickArea) {
             state.change(null);
