@@ -107,6 +107,21 @@
         animation: #{$animation-out} $transition forwards;
       }
     }
+
+    &--close {
+      @keyframes frameClose {
+        from {
+          width: $width-m;
+        }
+        to {
+          width: 0;
+        }
+      }
+
+      @media (max-width: $breakpoint - 1px) {
+        
+      }animation: frameClose $transition;
+    }
   }
   &__slide {
     position: relative;

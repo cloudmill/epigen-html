@@ -1257,6 +1257,14 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
         let clickable = true
 
+        updateBlock()
+
+        function updateBlock() {
+          const activeFrame = block.find('.block__frame--front').height()
+          
+          block.css('height', `${activeFrame}px`)
+        }
+
         const frame = block.find('.block__frame')
         const background = block.find('.block__background')
 
@@ -1267,20 +1275,33 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
               setTimeout(() => {
                 frame.removeClass('block__frame--open')
                 frame.removeClass('block__frame--out')
+                frame.removeClass('block__frame--close')
 
                 setTimeout(() => {
                   clickable = true
                 })
               }, DURATION)
 
+              frame.eq(cur_index).addClass('block__frame--close')
+
               const new_index = 1 - cur_index
               cur_index = new_index
 
-              frame.toggleClass('block__frame--front')
-              frame.eq(new_index).addClass('block__frame--open')
-              frame.eq(new_index).addClass('block__frame--out')
+              const newFrame = frame.eq(new_index)
 
-              // hash
+              if (newFrame.height() > block.find('.block__frame--front').height()) {
+                block.css('height', `${newFrame.height()}px`)
+              } else {
+                setTimeout(() => {
+                  block.css('height', `${newFrame.height()}px`)
+                }, DURATION)
+              }
+
+              frame.toggleClass('block__frame--front')
+              newFrame.addClass('block__frame--open')
+              newFrame.addClass('block__frame--out')
+
+              // hash 
               const hash = $(this).data('hash')
 
               window.history.replaceState(null, '', hash)
@@ -1317,6 +1338,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
         setTimeout(() => {
           let maxHeight = 0
+          let minHeight = null
 
           const slideClone = blockClone.find('.block__slide')
 
@@ -1327,6 +1349,9 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
               if (this.offsetHeight > maxHeight) {
                 maxHeight = this.offsetHeight
               }
+              if (minHeight === null || this.offsetHeight < minHeight) {
+                minHeight = this.offsetHeight
+              } 
             })
 
             blockClone.remove()
@@ -1337,10 +1362,52 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           })
         })
       }
+      function getHeight(callback) {
+        const blockClone = block.clone()
+
+        blockClone[0].style.cssText = `
+          position: fixed;
+          top: 0;
+          left: 0;
+          transform: translateY(-100%);
+
+          pointer-events: none;
+
+          opacity: 0;
+        `
+
+        $(document.body).append(blockClone)
+
+        setTimeout(() => {
+          const arr = [] 
+
+          const slideClone = blockClone.find('.block__slide')
+
+          slideClone.css('height', '')
+
+          setTimeout(() => {
+            slideClone.each(function () {
+              arr.push($(this).height())
+            })
+
+            blockClone.remove()
+
+            // maxHeight = Math.max(maxHeight, MIN_HEIGHT)
+            callback(arr)
+          })
+        })
+      }
+      // function updateHeight() {
+      //   getMaxHeight(maxHeight => {
+      //     block.css('height', `${maxHeight}px`)
+      //     slide.css('height', `${maxHeight}px`)
+      //   })
+      // }
       function updateHeight() {
-        getMaxHeight(maxHeight => {
-          block.css('height', `${maxHeight}px`)
-          slide.css('height', `${maxHeight}px`)
+        getHeight(arr => {
+          slide.each(function(i) {
+            $(this).css('height', `${arr[i]}`)
+          })
         })
       }
       function handleResize() {
