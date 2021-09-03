@@ -39,7 +39,7 @@
 
     &:hover {
       #{$comp}__button {
-        padding: 15px 0;
+        // padding: 15px 0;
 
         &::before {
           transform: translate3d(0,0,0) scale3d(1,1,1);
@@ -52,9 +52,18 @@
           transition-timing-function: $transition-timing-function;
         }
       }
-      #{$comp}__burger {
+      #{$comp}__burger-span {
+        &::before,
+        &::after {
+          background: $color-white;
+        }
 
-        border-color: $color-white;
+        &::before {
+          transform: translate(-50%, -2px);
+        }
+        &::after {
+          transform: translate(-50%, 2px);
+        }
       }
     }
 
@@ -68,6 +77,7 @@
     margin-right: 15px;
 
     @include fsl(15px, 15px);
+    transition: $transition;
   }
   &__button {
     $size: 45px;
@@ -125,10 +135,14 @@
     z-index: 1;
 
     width: 20px;
-    height: 100%;
+    height: 9px;
 
-    border-top: 1px solid $color-blue;
-    border-bottom: 1px solid $color-blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    // border-top: 1px solid $color-blue;
+    // border-bottom: 1px solid $color-blue;
     // transition: .35s $transition-timing-function;
     transition-property: border-color, height;
     transition-timing-function: $transition-timing-function;
@@ -150,6 +164,33 @@
       transition-timing-function: $transition-timing-function;
       transition-duration: .35s;
       background-color: transparent;
+    }
+  }
+  &__burger-span {
+    width: 100%;
+    height: 100%;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
+      
+      width: 100%;
+      height: 1px;
+      
+      transition-property: background-color, transform;
+      transition-timing-function: $transition-timing-function;
+      transition-duration: .35s;
+      background: $color-blue;
+    }
+
+    &::before {
+      top: 0;
+    }
+    &::after {
+      bottom: 0;
     }
   }
 }

@@ -60,8 +60,7 @@
       .header__burger {
         height: 1px;
         
-        border-color: transparent;
-        transition-delay: .35s, 0s;
+        
 
         &::before {
           transform: translate(-50%, -50%) rotate(-45deg);
@@ -72,6 +71,15 @@
           transform: translate(-50%, -50%) rotate(-135deg);
           transition-delay: 0.35s, .5s;
           background-color: $color-white;
+        }
+      }
+      .header__burger-span {
+        
+        &::before,
+        &::after {
+          background: transparent;
+          transition-delay: .35s, 0s;
+          transform: translate(-50%, 0)
         }
       }
     }
