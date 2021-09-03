@@ -645,7 +645,6 @@
     #{$comp}__preview {
       display: flex;
       justify-content: flex-end;
-      align-items: flex-end;
     }
     #{$comp}__preview-image {
       overflow: hidden;
@@ -762,11 +761,6 @@
       @media (max-width: $breakpoint - 1px) {
         max-width: 100%;
       }
-    }
-
-
-    #{$comp}__preview {
-      align-items: flex-start;
     }
 
     #{$comp}__review {

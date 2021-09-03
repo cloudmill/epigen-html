@@ -107,7 +107,11 @@
     }
     transform: translateY(0);
 
-    width: calc(#{$panel-width});
+    @media (min-width: $breakpoint) {
+      margin-left: calc((#{$col-width-d} / 2) * (-1));
+      padding-left: calc(#{$col-width-d} / 2);
+    }
+    width: calc(#{$panel-width} + (#{$col-width-d} / 2) + 30px);
     height: $panel-height;
     @media (max-width: $breakpoint - 1px) {
       width: 100%;
