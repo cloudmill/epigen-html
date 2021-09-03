@@ -273,7 +273,8 @@
     }
     overflow: hidden;
 
-    &--main-page {
+    &--tabs {
+      padding: 30px $col-pad-d 30px calc(#{$col-width-d} / 2);
       @media (max-width: $breakpoint - 1px) {
         padding: 60px 15px;
       }
