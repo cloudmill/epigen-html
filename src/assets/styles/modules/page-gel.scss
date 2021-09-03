@@ -346,7 +346,13 @@
     @media (max-width: $breakpoint - 1px) {
       background-position: left -408px top -133px;
     }
-  }
+
+    &--main-page {
+      @media (max-width: $breakpoint - 1px) {
+        background-position: left -409px top -453px;
+      }
+    }
+  }    
   // top, grid
   &__reviews-top {
     margin-bottom: 60px;
