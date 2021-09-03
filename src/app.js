@@ -1464,6 +1464,14 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     const parallaxItem = $('[data-parallax-main]')
 
     if (parallaxItem.length !== 0) {
+      let parallaxStart 
+
+      if (navigator.userAgent.toLowerCase().match(/mac/)) {
+        parallaxStart = $(window).height()
+      } else {
+        parallaxStart = $(window).height() / 2
+      }
+
       parallaxItem.each(function() {
         const ths = $(this);
         const parallaxElemOffset = ths.offset().top;
@@ -1475,16 +1483,16 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           
 
           if (scrollPos < parallaxContainer.offset().top &&
-            (scrollPos + $(window).height() / 2) > parallaxElemOffset) {
+            (scrollPos + parallaxStart) > parallaxElemOffset) {
               let parallax
             
               switch (parallaxId) {
                 case 'left':
-                  parallax = ((scrollPos + $(window).height() / 2) - parallaxElemOffset) * -0.1;
+                  parallax = ((scrollPos + parallaxStart) - parallaxElemOffset) * -0.1;
                   break
 
                 case 'right':
-                  parallax = ((scrollPos + $(window).height() / 2) - parallaxElemOffset) * 0.1;
+                  parallax = ((scrollPos + parallaxStart) - parallaxElemOffset) * 0.1;
                 break
               }
 
