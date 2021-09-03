@@ -284,6 +284,9 @@
   &__reviews-card {
     width: calc(#{$col-width-d} * 8);
     @media (max-width: $breakpoint - 1px) {
+      width: 330px;
+    }
+    @media (max-width: $breakpoint-m - 1px) {
       width: calc(#{$col-width-m} * 6 - 15px);
     }
     height: 100%;

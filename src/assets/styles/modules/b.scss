@@ -41,7 +41,6 @@
 
   // "карусель" слайдер, на главной, десктоп
   &--carousel-slider-desktop {
-
     display: block;
 
     @media (max-width: $breakpoint - 1px) {
@@ -342,8 +341,10 @@
 
   // слайдер отзывов, главная
   &--reviews-slider-main-page {
+    @media (min-width: $breakpoint) {
+      height: 100%;
+    }
     overflow: hidden;
-    height: 100%;
 
     #{$comp}__top {
       margin-bottom: 60px;
@@ -547,10 +548,10 @@
       padding-left: calc(#{$col-width-d});
       display: flex;
       @media (max-width: $breakpoint - 1px) {
-        padding-bottom: 6px;
-        margin-right: auto;
+        // padding-bottom: 6px;
+        // margin-right: auto;
         padding-left: 0;
-        display: block;
+        align-items: center;
       }
       @media (max-width: $breakpoint-m - 1px) {
         margin-right: 0;
@@ -680,6 +681,7 @@
 
   // модификатор слайдера отзывов с главной
   &--reviews-slider-spray-page {
+    height: 100%;
 
     #{$comp}__slide-row {
       @media (max-width: $breakpoint - 1px) {

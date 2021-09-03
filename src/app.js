@@ -1893,6 +1893,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       const buttons = reviews.find('.product-choice__item')
       const tabs = reviews.find('.main-page__reviews-item')
       const link = reviews.find('.product-btn')
+      let isInit = false
 
       buttons.on('click', function() {
         const buttonLink = $(this).find('.product-btn')
@@ -1904,6 +1905,27 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           $(this).addClass('product-choice__item--active')
           buttonLink.addClass('product-btn--active')
           tabs.eq($(this).index()).addClass('main-page__reviews-item--active')
+        }
+
+        if ($(this).hasClass('js--slider-init')) {
+          if (!isInit) {
+            const swiperContainer = $('.js--main-reviews-slider')
+
+            const swiper = new Swiper(swiperContainer[0], {
+              slidesPerView: 'auto',
+              spaceBetween: 20,
+              loop: true,
+            })
+            console.log(1);
+
+            const btnPrev = $('.js--gel-reviews-btn--prev')
+            const btnNext = $('.js--gel-reviews-btn--next')
+
+            btnPrev.on('click', () => swiper.slidePrev())
+            btnNext.on('click', () => swiper.slideNext())
+
+            isInit = true
+          }
         }
       })
     }

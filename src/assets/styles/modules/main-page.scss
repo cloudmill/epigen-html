@@ -341,15 +341,21 @@
     position: relative;
   }
   &__reviews-tabs {
-    position: relative;
-    display: grid;
-    grid-template-areas: "z";
+    @media (min-width: $breakpoint) {
+      position: relative;
+      display: grid;
+      grid-template-areas: "z";
+    }
   }
   &__reviews-item {
-    grid-area: z;
+    display: none;
+    @media (min-width: $breakpoint) {
+      display: block;
 
-    opacity: 0;
-    pointer-events: none;
+      grid-area: z;
+      opacity: 0;
+      pointer-events: none;
+    }
     transition: $transition;
 
     width: calc(#{$col-width-d} * 18);
@@ -358,8 +364,11 @@
     }
 
     &--active {
-      opacity: 1;
-      pointer-events: all;
+      display: block;
+      @media (min-width: $breakpoint) {
+        opacity: 1;
+        pointer-events: all;
+      }
     }
   }
   &__reviews-link {
@@ -367,12 +376,20 @@
     bottom: 0;
     left: calc(#{$col-width-d} * 12);
     @media (max-width: $breakpoint - 1px) {
-      left: auto;
-      right: 0;
+      display: none;
     }
-    @media (max-width: $breakpoint-m - 1px) {
-      right: auto;
-      left: calc(#{$col-width-m} * 2);
+  }
+  &__reviews-bottom {
+    @media (max-width: $breakpoint - 1px) {
+      margin-top: 30px;
+      display: flex;
+      justify-content: flex-end;
+    }
+    
+  }
+  &__reviews-btn {
+    @media (min-width: $breakpoint) {
+      display: none;
     }
   }
 }

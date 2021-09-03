@@ -354,7 +354,7 @@ block content
                                   |Эпиген Интим
                                   br
                                   |Спрей
-                            li.product-choice__item
+                            li.product-choice__item.js.js--slider-init
                               .product-btn.product-btn--white
                                 +gel-svg.product-btn__svg
                                 p.product-btn__text
@@ -439,8 +439,11 @@ block content
                                           .b__link-link(data-aos='fade-up')
                                             .b__link(data-button='5')
                                               |Читать отзыв
+                                          a.button.button--reviews-slider.button--reviews-slider--small.btn-animation(href='#')
+                                            span.btn-animation__text
+                                              |Все отзывы
                         .main-page__reviews-item
-                          .swiper-container.swiper-container--visible.swiper-container--slide-width-auto.swiper-container--slide-height-max.js.js--gel-reviews-slider.margin-bottom.margin-bottom--65
+                          .swiper-container.swiper-container--visible.swiper-container--slide-width-auto.swiper-container--slide-height-max.js.js--main-reviews-slider
                             .swiper-wrapper
                               - for (let i = 0; i < 10; i++)
                                 .swiper-slide
@@ -453,14 +456,19 @@ block content
                                     .page-gel__reviews-card-bottom
                                       a.page-gel__reviews-card-link(href='#')
                                         |irecommend.ru
-                          .page-gel__reviews-bottom(data-aos='fade-up')
-                            .page-gel__reviews-btns
-                              .page-gel__reviews-btns-item
-                                .b.b--btn-left-right-slider.btn-animation.btn-animation--icon.js.js--gel-reviews-btn--prev
-                                  +simple-arrow-svg.b__svg
-                              .page-gel__reviews-btns-item
-                                .b.b--btn-left-right-slider.b--right.btn-animation.btn-animation--icon.js.js--gel-reviews-btn--next
-                                  +simple-arrow-svg.b__svg
+                          .main-page__reviews-bottom 
+                            .main-page__reviews-btn   
+                              a.button.button--reviews-slider.button--reviews-slider--small.btn-animation(href='#')
+                                span.btn-animation__text
+                                  |Все отзывы
+                            .page-gel__reviews-bottom(data-aos='fade-up')
+                              .page-gel__reviews-btns
+                                .page-gel__reviews-btns-item
+                                  .b.b--btn-left-right-slider.btn-animation.btn-animation--icon.js.js--gel-reviews-btn--prev
+                                    +simple-arrow-svg.b__svg
+                                .page-gel__reviews-btns-item
+                                  .b.b--btn-left-right-slider.b--right.btn-animation.btn-animation--icon.js.js--gel-reviews-btn--next
+                                    +simple-arrow-svg.b__svg
                       .main-page__reviews-link 
                         a.button.button--reviews-slider.button--reviews-slider--small.btn-animation(href='#')
                           span.btn-animation__text
