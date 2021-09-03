@@ -18,7 +18,7 @@
 
   overflow: hidden;
   background-color: $color-blue-light;
-  transition: height $transition;
+  transition: height 1s $transition-timing-function;
 
   &--hidden {
     height: 0;
