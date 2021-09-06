@@ -320,11 +320,12 @@ block content
               section.article-page__content.margin-top
                 .article-page__content-row
                   .article-page__content-col(data-aos='fade-up')
-                    .video
+                    .video.video--default
                       .video__container
                         .video__frame
-                          img.video__img(src="assets/images/video.jpg", alt="")
-                        .video__button
+                          video(id='video' poster='assets/svg/video.svg')
+                            source(src='https://epigen.ru/spray/about/uploads/gel1.mp4')
+                        .video__button(id='play')
                           .video__button-icon
                             +start-svg.video__button-svg
               section.specialists-page__inner.margin-top.specialists-page__content(id='pills' data-section='' data-aos='fade-up')
