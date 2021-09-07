@@ -10,7 +10,26 @@ $(function () {
     search();
     filters();
     buy();
+    cookies();
 });
+
+function cookies() {
+    $(document).on("click", "[data-type=cookies-btn-agr]", function (e) {
+        let url = $(this).attr("data-url");
+
+        console.log("cookies agr yes");
+
+        $.ajax({
+            method: "POST",
+            url: url,
+            data: {
+                cookies: 'Y',
+            },
+        }).done(function (r) {
+
+        });
+    });
+}
 
 function testVozDiag() {
     $(document).on("click", "[data-type=option]", function (e) {
