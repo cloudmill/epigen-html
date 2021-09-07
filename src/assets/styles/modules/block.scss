@@ -180,6 +180,10 @@
     }
     &--gel {
       background-image: url('assets/images/product-block-gel.jpg');
+      @media (max-width: $breakpoint-m - 1px) {
+        background-image: url('assets/images/product-block-gel-mobile.jpg');
+        
+      }
     }
   }
 
