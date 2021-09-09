@@ -1,5 +1,5 @@
 mixin review-card
-  a.review-card(href='#' class=(attributes.plus ? 'review-card--modal' : undefined))
+  a.review-card(href='#' class=(attributes.plus ? 'review-card--modal' : undefined) target= attributes.target)
     .review-card__top
       .review-card__top-row
         if (attributes.image)
