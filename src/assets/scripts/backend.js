@@ -200,23 +200,17 @@ function revFilter() {
 }
 
 function revModal() {
-    $(document).on("click", "[data-type=rev-modal]", function (e) {
+    $(document).on('click', '[data-type=rev-modal]', function (e) {
         e.preventDefault();
 
-        console.log('click revModal');
+        let body = $(this).parents('body'),
+          data = $(this).data('modal');
 
-        let thisObj = $(this),
-            name = thisObj.attr("data-name"),
-            text = thisObj.attr("data-text"),
-            img = thisObj.attr("data-img"),
-            post = thisObj.attr("data-post"),
-            sub = thisObj.attr("data-sub");
-
-        $(document).find("[data-type=rev-modal-img]").attr("src", img);
-        $(document).find("[data-type=rev-modal-name]").text(name);
-        $(document).find("[data-type=rev-modal-text]").html(text);
-        $(document).find("[data-type=rev-modal-post]").text(post);
-        $(document).find("[data-type=rev-modal-sub]").text(sub);
+        body.find('[data-type=rev-modal-name').text(data['name']);
+        body.find('[data-type=rev-modal-img').attr('src', data['img']);
+        body.find('[data-type=rev-modal-text').html(data['text']);
+        body.find('[data-type=rev-modal-post').text(data['position']);
+        body.find('[data-type=rev-modal-sub').text(data['title']);
     });
 }
 
