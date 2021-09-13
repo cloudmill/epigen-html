@@ -458,6 +458,12 @@
       display: block;
     }
   }
+  &__result-result {
+    
+  }
+  &__result-results {
+    display: none;
+  }
   &__result-container {
     padding: 40px calc(#{$col-width-d});
   }
@@ -754,4 +760,3 @@
   opacity: 1;
   pointer-events: all;
 }
-
