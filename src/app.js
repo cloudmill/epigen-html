@@ -1160,14 +1160,36 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       }
 
       test.each(function() {
-        const testStep = $(this).find('.test__label')
-        const dot = $(this).find('.test__dot')
-        const question = $(this).find('.test__question')
-        const index = $(this).find('.test__index')
+        const ths = $(this)
+        const testStep = ths.find('.test__label')
+        const dot = ths.find('.test__dot')
+        const question = ths.find('.test__question')
+        const index = ths.find('.test__index')
 
-        const testContainer = $(this).find('.test__container')
-        const testResult = $(this).find('.test__result')
-        const result = $(this).find('.test__form')
+        const testContainer = ths.find('.test__container')
+        const testResult = ths.find('.test__result')
+        const result = ths.find('.test__form')
+        const results = ths.find('.test__result-results')
+        const resultFirst = ths.find('.test__result-first')
+        const resultSecond = ths.find('.test__result-second')
+        const combination = []
+
+        function resultFirstMessage() {
+          const root = combination.slice(0, 1).join('')
+          const resultsMessage = results.find('.test__result-text')
+          
+          const clone = resultsMessage.eq(root - 1).clone()
+
+          resultFirst.append(clone)
+        }
+
+        function resultSecondMessage() {
+          const root = combination.slice(0, 2).join('')
+          const resultMessage = ths.find(`[data-result*="${root}"]`) 
+          const clone = resultMessage.clone()
+
+          resultSecond.append(clone)
+        }
 
         // options change
         testStep.each(function() {
@@ -1175,6 +1197,9 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           $(this).on('click', function() {
             const step = $(this).closest('.test__options')
             const stepNext = step.next()
+
+            combination.push($(this).index() + 1)
+            console.log(combination);
 
             step.removeClass('test__options--active')
             stepNext.addClass('test__options--active')
@@ -1185,6 +1210,8 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
             if (stepNext.index() === -1) {
               state.toggleResult(testContainer, testResult, false)
+              resultSecondMessage()
+              resultFirstMessage()
             }
           });
 
@@ -1205,6 +1232,10 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
         testResult.find('.test__result-btn').on('click', () => {
           state.toggleResult(testContainer, testResult, true)
           state.update(dot, 0, 'test__dot--active')
+
+          resultFirst.html('') 
+          resultSecond.html('') 
+          combination.length = 0
 
           question.eq(0).addClass('test__question--active')
           index.text(1)
