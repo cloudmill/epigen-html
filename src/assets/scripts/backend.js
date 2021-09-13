@@ -1,3 +1,5 @@
+import Swiper from "swiper";
+
 $(function () {
     testVozDiag();
     test();
@@ -11,6 +13,7 @@ $(function () {
     filters();
     buy();
     cookies();
+    reviewSlider();
 });
 
 function cookies() {
@@ -414,4 +417,46 @@ function buy() {
         iframeContainer.empty();
         iframeContainer.append('<iframe class="buy-page__map-iframe" allow="geolocation" src="https://widget.uteka.ru/widgets/full/?productId=' + id + '" data-type="iframe-uteka"></iframe>')
     });
+}
+
+function reviewSlider() {
+  $(document).on('click', '[data-type=tab-filter]', function (e) {
+    e.preventDefault();
+
+    const thisObj = $(this);
+
+    let container = thisObj.parents('[data-type=container]'),
+      itemsContainer = container.find('[data-type=items-container]'),
+      buttons = container.find('[data-type=tab-filter]'),
+      tabContainer = container.find('[data-type=tab-container]');
+
+    buttons.toggleClass('product-btn--active');
+    tabContainer.toggleClass('main-page__reviews-item--active');
+
+    if (!container.attr('init-slider')) {
+      itemsContainer.empty();
+
+      $.ajax({
+        type: 'GET',
+        url: window.location.pathname,
+        dataType: 'html',
+        data: thisObj.data('filter'),
+        success: function (r) {
+          itemsContainer.append($(r));
+
+          const swiper = new Swiper(container.find('[data-type=review-slider]')[0], {
+            slidesPerView: 'auto',
+            spaceBetween: 20,
+            loop: true,
+          });
+          console.log(1);
+
+          container.find('[data-type=btn-prev]').on('click', () => swiper.slidePrev());
+          container.find('[data-type=btn-next]').on('click', () => swiper.slideNext());
+
+          container.attr('init-slider', 1);
+        }
+      });
+    }
+  });
 }

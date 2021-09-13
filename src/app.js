@@ -53,7 +53,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
         } else {
           panels.removeClass('panel--hidden')
         }
-      } 
+      }
 
       if (scrollTop < 1) {
         panels.removeClass('panel--hidden')
@@ -399,7 +399,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       currentActive = null,
       links = navLink;
 
-      
+
       // update offset
       upadateOffset()
       $(window).one('resize', handleResize)
@@ -494,7 +494,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
         const formButtonId = formButton.data('form-button');
 
         $(this).on('submit', (e) => {
-          e.preventDefault()  
+          e.preventDefault()
 
           $(`[data-form='${formButtonId}']`).attr('data-form-hidden', '');
           $(`[data-response='${formButtonId}']`).attr('data-response-active', '');
@@ -862,7 +862,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
         const mediaQuery = window.matchMedia(`(min-width: ${BREAKPOINT}px)`);
 
         $(window).on('click', event => {
-          
+
           // const isClickArea = (
             //   // эл-ты panel
             //   $(event.target).closest('.panel__wrapper').length !== 0
@@ -871,10 +871,10 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
             //   || $(event.target).closest('[data-modal-active]').length !== 0
             // );
           let isClickArea
-            
+
           function mediaQueryChange() {
             if (mediaQuery.matches) {
-              isClickArea = ( 
+              isClickArea = (
                 // эл-ты panel
                 $(event.target).closest('.panel__wrapper').length !== 0
                 && $(event.target).closest('.panel__test').length === 0
@@ -882,7 +882,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
                 || $(event.target).closest('[data-modal-active]').length !== 0
               );
             } else {
-              isClickArea = ( 
+              isClickArea = (
                 // эл-ты panel
                 $(event.target).closest('.header').length !== 0
                 // модальное окно
@@ -1261,7 +1261,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
         function updateBlock() {
           const activeFrame = block.find('.block__frame--front').height()
-          
+
           block.css('height', `${activeFrame}px`)
         }
 
@@ -1301,7 +1301,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
               newFrame.addClass('block__frame--open')
               newFrame.addClass('block__frame--out')
 
-              // hash 
+              // hash
               const hash = $(this).data('hash')
 
               window.history.replaceState(null, '', hash)
@@ -1351,7 +1351,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
               }
               if (minHeight === null || this.offsetHeight < minHeight) {
                 minHeight = this.offsetHeight
-              } 
+              }
             })
 
             blockClone.remove()
@@ -1379,7 +1379,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
         $(document.body).append(blockClone)
 
         setTimeout(() => {
-          const arr = [] 
+          const arr = []
 
           const slideClone = blockClone.find('.block__slide')
 
@@ -1491,7 +1491,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     const parallaxItem = $('[data-parallax-main]')
 
     if (parallaxItem.length !== 0) {
-      let parallaxStart 
+      let parallaxStart
 
       if (navigator.userAgent.toLowerCase().match(/mac/)) {
         parallaxStart = $(window).height()
@@ -1507,12 +1507,12 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
         $(window).on('scroll', function() {
           const scrollPos = this.pageYOffset;
-          
+
 
           if (scrollPos < parallaxContainer.offset().top &&
             (scrollPos + parallaxStart) > parallaxElemOffset) {
               let parallax
-            
+
               switch (parallaxId) {
                 case 'left':
                   parallax = ((scrollPos + parallaxStart) - parallaxElemOffset) * -0.1;
@@ -1572,7 +1572,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
             sticky.removeClass('my-sticky--fixed')
           }
         })
-      } 
+      }
     }
   });
 }
@@ -1842,9 +1842,9 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
         // star
         const ANIMATION_STAR = 10 * Math.sin(((progress % DIST) / DIST) * Math.PI * 2)
         $('.wwave__star').css('transform', `translateY(${ANIMATION_STAR}px)`)
-        
+
         progress += progress_delta
-        
+
         requestAnimationFrame(render)
       }
 
@@ -1877,7 +1877,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
             const slidesActive = container.find('.b__frame--active')
 
             let delta
-            
+
             if (dataTarget === 'prev') {
               delta = -1
             } else {
@@ -1949,14 +1949,14 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
   $(window).on('load', function() {
     if($('.main-page').length) {
       $('.loader').addClass('loader--hidden')
-    } 
+    }
     $('body').css('overflow', '')
     AOS.init({
       once: true,
       offset: 0,
       duration: 1000,
     });
-    
+
   })
 }
 
@@ -1997,39 +1997,39 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       const link = reviews.find('.product-btn')
       let isInit = false
 
-      buttons.on('click', function() {
-        const buttonLink = $(this).find('.product-btn')
-        if (!$(this).hasClass('product-choice__item--active')) {
-          buttons.removeClass('product-choice__item--active')
-          link.removeClass('product-btn--active')
-          tabs.removeClass('main-page__reviews-item--active')
-
-          $(this).addClass('product-choice__item--active')
-          buttonLink.addClass('product-btn--active')
-          tabs.eq($(this).index()).addClass('main-page__reviews-item--active')
-        }
-
-        if ($(this).hasClass('js--slider-init')) {
-          if (!isInit) {
-            const swiperContainer = $('.js--main-reviews-slider')
-
-            const swiper = new Swiper(swiperContainer[0], {
-              slidesPerView: 'auto',
-              spaceBetween: 20,
-              loop: true,
-            })
-            console.log(1);
-
-            const btnPrev = $('.js--gel-reviews-btn--prev')
-            const btnNext = $('.js--gel-reviews-btn--next')
-
-            btnPrev.on('click', () => swiper.slidePrev())
-            btnNext.on('click', () => swiper.slideNext())
-
-            isInit = true
-          }
-        }
-      })
+      // buttons.on('click', function() {
+      //   const buttonLink = $(this).find('.product-btn')
+      //   if (!$(this).hasClass('product-choice__item--active')) {
+      //     buttons.removeClass('product-choice__item--active')
+      //     link.removeClass('product-btn--active')
+      //     tabs.removeClass('main-page__reviews-item--active')
+      //
+      //     $(this).addClass('product-choice__item--active')
+      //     buttonLink.addClass('product-btn--active')
+      //     tabs.eq($(this).index()).addClass('main-page__reviews-item--active')
+      //   }
+      //
+      //   if ($(this).hasClass('js--slider-init')) {
+      //     if (!isInit) {
+      //       const swiperContainer = $('.js--main-reviews-slider')
+      //
+      //       const swiper = new Swiper(swiperContainer[0], {
+      //         slidesPerView: 'auto',
+      //         spaceBetween: 20,
+      //         loop: true,
+      //       })
+      //       console.log(1);
+      //
+      //       const btnPrev = $('.js--gel-reviews-btn--prev')
+      //       const btnNext = $('.js--gel-reviews-btn--next')
+      //
+      //       btnPrev.on('click', () => swiper.slidePrev())
+      //       btnNext.on('click', () => swiper.slideNext())
+      //
+      //       isInit = true
+      //     }
+      //   }
+      // })
     }
   })
 }
