@@ -165,17 +165,20 @@
     background-repeat: no-repeat;
     background-position: left 90% bottom 30%;
     background-size: cover;
+    
 
     &--15 {
       background-image: url('assets/images/spray-page-1.jpg');
       @media (max-width: $breakpoint-m - 1px) {
         background-image: url('assets/images/spray-page-mobile-1.jpg');
+        background-color: #e7e7e7;
       }
     }
     &--60 {
       background-image: url('assets/images/spray-page-2.jpg');
       @media (max-width: $breakpoint-m - 1px) {
         background-image: url('assets/images/spray-page-mobile-2.jpg');
+        background-color: #e7e7e7;
       }
     }
     &--gel {
