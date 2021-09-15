@@ -761,8 +761,77 @@
   pointer-events: all;
 }
 
-cloudmill {
-  text-transform: uppercase;
-  font-size: 40px;
-  color: red;
+.content {
+
+  section {
+    margin-top: 60px;
+    @media (min-width: $breakpoint) {
+      margin-top: 100px;
+      padding-left: calc(#{$col-width-d} * 3);
+      padding-right: calc(#{$col-width-d} * 2);
+    }
+  }
+  
+  h3 {
+    margin-bottom: 40px;
+    @media (max-width: $breakpoint - 1px) {
+      margin-bottom: 20px;
+    }
+
+    color: $color-blue;
+    font-weight: 400;
+    @include fsl(25px, 120%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(18px);
+    }
+  }
+
+  p {
+    @media (min-width: $breakpoint) {
+      padding-left: calc(#{$col-width-d} * 3);
+    }
+
+    @include fsl(18px, 170%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(15px);
+    }
+
+    &:not(:first-child) {
+      margin-top: 30px;
+    }
+  }
+
+  article {
+    section {
+      padding: 0;
+
+      display: flex;
+      justify-content: space-between;
+    }
+
+    aside {
+      flex-shrink: 0;
+
+      width: calc((#{$col-width-d} * 5) + 5px);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
+    }
+
+    legend {
+      flex-shrink: 0;
+
+      width: calc(#{$col-width-d} * 12);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
+    }
+
+    p {
+      padding-left: 0;
+      @media (min-width: $breakpoint) {
+        padding-right: calc(#{$col-width-d} * 2);
+      }
+    }
+  }
 }
