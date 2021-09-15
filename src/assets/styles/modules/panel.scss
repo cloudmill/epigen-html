@@ -433,7 +433,7 @@
       padding-right: 30px;
     }
 
-    transform: translateY(-1px);
+    transform: translateY(10px);
     @media (max-width: $breakpoint - 1px) {
       transform: translateY(0);
       background-color: $color-aqua;
@@ -449,6 +449,21 @@
       width: calc(100% + 30px);
       overflow-x: auto;
       @include scrollbar-hidden;
+    }
+
+    @media (min-width: $breakpoint) {
+      
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: calc(100% - 1px);
+
+        height: 11px;
+
+        background: $color-white;
+      }
     }
 
     &--scroll {
