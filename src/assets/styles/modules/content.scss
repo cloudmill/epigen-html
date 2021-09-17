@@ -44,11 +44,6 @@
 
     p {
 
-      @include fsl(18px, 170%);
-      @media (max-width: $breakpoint - 1px) {
-        @include fsl(15px);
-      }
-
       &:first-child {
         padding-top: 0;
       }
@@ -147,7 +142,7 @@
     padding-right: calc(#{$col-width-d} * 2);
   }
 
-  @include fsl(15px);
+  @include fsl(15px, 170%);
 }
 
 .text-s {
@@ -157,7 +152,7 @@
     padding-right: calc(#{$col-width-d} * 2);
   }
 
-  @include fsl(13px);
+  @include fsl(13px, 170%);
 }
 
 .text-b {
@@ -178,8 +173,7 @@
     padding-left: calc(#{$col-width-d} * 3);
     padding-right: calc(#{$col-width-d} * 2);
   }
-  
-  @include fsl(13px);
+  @include fsl(13px, 170%);
   color: $color-gray;
 }
 
@@ -442,6 +436,8 @@
   @media (min-width: $breakpoint) {
     padding-right: calc(#{$col-width-d} * 2);
   }
+
+  @include fsl(18px, 170%);
 }
 
 .diagnostics {
