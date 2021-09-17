@@ -250,76 +250,68 @@ block content
                             .doctor-card__pos
                               |Врач акушер-гинеколог ФГБУ «НМИЦ эндокринологии» Минздрава России, к.м.н, доцент Кафедры акушерства, гинекологии и репродуктивной медицины РУДН
                   +wave-articles-svg.specialists-page__content-wave
-                  .specialists-page__content(data-aos='fade-up')
-                    p
+                  .content-article
+                    p.text
                       |Вагинальный кандидоз или молочница — одна из самых частых причин влагалищных выделений и зуда в области вульвы. По меньшей мере 75% женщин сталкивались с этим заболеванием хотя бы один раз в жизни. Всему виной — грибок Candida albicans. Он любит теплые места с нейтральной щелочной средой, поэтому обитает на слизистых во рту, кишечнике и влагалище, и обычно никак не мешает.
-                    p
+                    p.text
                       |Проблемы начинаются, когда количество грибка начинает возрастать и вытеснять нормальную микрофлору влагалища: появляется дискомфорт и выделения.
-                    p
+                    p.text
                       |Конкретной причины появления молочницы нет: у одних она появляется после длительного курса антибиотиков, у других — после праздничного ужина с кучей углеводов. Разбираемся, почему так происходит и как бороться с заболеванием.
               
-              section.specialists-page__inner.margin-top.specialists-page__content(id='reason' data-section data-aos='fade-up')
-                h3
-                  |Причины возникновения молочницы
-                .specialists-page__content-wrapper
-                  p
-                    |Чтобы грибки из рода Candida начали активно размножаться, нужны особые условия: должен изменится кислотно-щелочной баланс влагалища или снизиться иммунитет. Такие изменения подавляют нормальную микрофлору, а освободившееся место оперативно занимают грибки.
-                  p
-                    |Чтобы грибки из рода Candida начали активно размножаться, нужны особые условия: должен изменится кислотно-щелочной баланс влагалища или снизиться иммунитет. Такие изменения подавляют нормальную микрофлору, а освободившееся место оперативно занимают грибки.
-              section.specialists-page__inner.margin-top
-                .specialists-page__content(data-aos='fade-up')
+              .content
+                section.section(id='reason' data-section='')
                   h3
                     |Причины возникновения молочницы
-                .specialists-page__content-wrapper
-                  ul.reason-list.reason-list--big
+                  p.text
+                    |Чтобы грибки из рода Candida начали активно размножаться, нужны особые условия: должен изменится кислотно-щелочной баланс влагалища или снизиться иммунитет. Такие изменения подавляют нормальную микрофлору, а освободившееся место оперативно занимают грибки.
+                  p.text
+                    |Чтобы грибки из рода Candida начали активно размножаться, нужны особые условия: должен изменится кислотно-щелочной баланс влагалища или снизиться иммунитет. Такие изменения подавляют нормальную микрофлору, а освободившееся место оперативно занимают грибки.
+                section.section
+                  h3
+                    |Причины возникновения молочницы
+                  ul.list
                     each item in ['Прием антибиотиков широкого спектра действия', 'Несоблюдение интимной гигиены', 'Гормональный дисбаланс', 'Несоблюдение интимной гигиены', 'Гормональный дисбаланс', 'Нарушения иммунитета', 'Нарушения обмена веществ', 'Ношение тесного или синтетического белья', 'Частое использование прокладок', 'Прием гормональных контрацептивов', 'Большое количество углеводов в рационе', 'Химиотерапия', 'Беременность', ]
-                      li.reason-list__item(data-aos='fade-up')
-                        p.reason-list__text
-                          |#{item}
-                  .margin-top.specialists-page__content(data-aos='fade-up')
-                    p
-                      |Пусковым фактором для развития молочницы могут быть нарушения гормонального баланса. Кандидоз встречается примерно у 35 % беременных и у 30 % женщин с эндокринными заболеваниями.
-              section.article-page__section.margin-top
-                .article-page__section-layout(data-aos='fade-up')
-                  +star-svg.article-page__section-icon
-                  +moon-svg.article-page__section-img
-                .article-page__section-content
-                  h3.article-page__section-title(data-aos='fade-up')
-                    |Ощущаете дискомфорт в интимной зоне?
-                  .article-page__section-caption(data-aos='fade-up')
-                    |Пройдите тест и узнайте больше о решении данной проблемы
-                  .article-page__section-buttons
-                    .article-page__section-item(data-aos='fade-up')
-                      a.button.button--l.btn-animation(href="#")
-                        span.btn-animation__text
-                          |Пройти тест
-                    .article-page__section-item(data-aos='fade-up')
-                      a.button.button--l.button--purple.btn-animation.btn-animation--purple(href="#")
-                        span.btn-animation__text
-                          |Задать вопрос эксперту
-              section.specialists-page__inner.margin-top.specialists-page__content(id='symptoms' data-section='' data-aos='fade-up')
-                h3
-                  |Симптомы
-                .specialists-page__content-wrapper
-                  p
+                      li.item
+                        |#{item}
+                  p.text
+                    |Пусковым фактором для развития молочницы могут быть нарушения гормонального баланса. Кандидоз встречается примерно у 35 % беременных и у 30 % женщин с эндокринными заболеваниями.
+                section.article-section
+                  .article-page__section
+                    .article-page__section-layout(data-aos='fade-up')
+                      +star-svg.article-page__section-icon
+                      +moon-svg.article-page__section-img
+                    .article-page__section-content
+                      h3.article-page__section-title(data-aos='fade-up')
+                        |Ощущаете дискомфорт в интимной зоне?
+                      .article-page__section-caption(data-aos='fade-up')
+                        |Пройдите тест и узнайте больше о решении данной проблемы
+                      .article-page__section-buttons
+                        .article-page__section-item(data-aos='fade-up')
+                          a.button.button--l.btn-animation(href="#")
+                            span.btn-animation__text
+                              |Пройти тест
+                        .article-page__section-item(data-aos='fade-up')
+                          a.button.button--l.button--purple.btn-animation.btn-animation--purple(href="#")
+                            span.btn-animation__text
+                              |Задать вопрос эксперту
+                section.section(id='symptoms' data-section='')
+                  h3
+                    |Симптомы
+                  p.text
                     |Главный симптом молочницы у женщин — влагалищные выделения. Обычно они белые, густые и похожие на творог, но могут быть и прозрачными. Также возникает зуд, жжение и боль, которые усиливаются после принятия горячей ванны или душа. Кожа краснеет, отекает, постоянно чешется. Мочеиспускание и половой акт доставляют дискомфорт или болезненные ощущения.
-                  p
+                  p.text
                     |У мужчин признаки не такие явные, хотя их тоже может беспокоить зуд и покраснение половых органов. А на головке члена иногда появляется белый налет.
-              section.specialists-page__inner.margin-top.specialists-page__content(id='diagnostics' data-section='' data-aos='fade-up')
-                h3
-                  |Диагностика
-                .specialists-page__content-wrapper
-                  p
+                section.section(id='diagnostics' data-section='')
+                  h3
+                    |Диагностика
+                  p.text
                     |Медикаментозное лечение молочницы у женщин включает местные противогрибковые препараты в форме свечей или кремов и лекарства для приема внутрь. Иногда терапию дополняют иммуностимулирующими средствами.
-              section.specialists-page__inner.margin-top.specialists-page__content(id='funds' data-section='' data-aos='fade-up')
-                h3
-                  |Средства от молочницы
-                .specialists-page__content-wrapper
-                  p
+                section.section(id='funds' data-section='')
+                  h3
+                    |Средства от молочницы
+                  p.text
                     |Медикаментозное лечение молочницы у женщин включает местные противогрибковые препараты в форме свечей или кремов и лекарства для приема внутрь. Иногда терапию дополняют иммуностимулирующими средствами.
-              section.article-page__content.margin-top
-                .article-page__content-row
-                  .article-page__content-col(data-aos='fade-up')
+                  .content-video
                     .video.video--default
                       .video__container
                         .video__frame
@@ -327,88 +319,81 @@ block content
                             source(src='https://epigen.ru/spray/about/uploads/gel1.mp4')
                         .video__button(id='play')
                           .video__button-icon
-                            +start-svg.video__button-svg
-              section.specialists-page__inner.margin-top.specialists-page__content(id='pills' data-section='' data-aos='fade-up')
-                h3
-                  |Таблетки и капсулы
-                .specialists-page__content-wrapper
-                  p
+                            +start-svg.video__button-svgo
+                section.section(id='pills' data-section='')
+                  h3
+                    |Таблетки и капсулы
+                  p.text
                     |Для лечения вагинального кандидоза используют антимикотики — противогрибковые средства: флуконазол, кетоконазол, натамицин. Конкретное активное вещество выбирает врач, ориентируясь на течение молочницы, сопутствующие заболевания или возраст пациента.
-              section.specialists-page__inner.margin-top.specialists-page__content(id='candles' data-section='' data-aos='fade-up')
-                h3
-                  |Свечи
-                .specialists-page__content-wrapper
-                  p
+                section.section(id='candles' data-section='')
+                  h3
+                    |Свечи
+                  p.text
                     |Для лечения молочницы во время беременности чаще используются местные средства, а не системные — так риск негативного влияния на плод минимален.
-              section.disease-page__spray.margin-top(id='spray' data-section='')
-                .disease-page__spray-container
-                  .disease-page__spray-row
-                    .disease-page__spray-col
-                      h3.disease-page__spray-title.disease-page__spray-title--mobile(data-aos='fade-up')
-                        |Спрей Эпиген Интим
-                      .my-sticky
-                        .disease-page__spray-image(data-aos='fade-up')
-                          img(src="assets/images/epigen-spray.jpg", alt="")
-                        .disease-page__spray-buttons
-                          .disease-page__spray-item(data-aos='fade-up')
-                            a.button.button--wide.btn-animation(href="#")
-                              span.btn-animation__text
-                                |Подробнее
-                          .disease-page__spray-item(data-aos='fade-up')
-                            a.button.button--wide.button--purple.btn-animation.btn-animation--purple(href="#")
-                              span.btn-animation__text
-                                |Купить
-
-                    .disease-page__spray-col.specialists-page__content
-                          h3.disease-page__spray-title(data-aos='fade-up')
+                section.article-spray(id='spray' data-section='')
+                  .disease-page__spray
+                    .disease-page__spray-container
+                      .disease-page__spray-row
+                        .disease-page__spray-col
+                          h3.disease-page__spray-title.disease-page__spray-title--mobile(data-aos='fade-up')
                             |Спрей Эпиген Интим
-                          .disease-page__spray-column.disease-page__content(data-aos='fade-up')
-                            p
-                              |Терапия противогрибковыми препаратами может не оказать нужного эффекта, если кандидоз протекает в сочетании с вирусной инфекцией: вирусом папилломы человека, вирусом простого герпеса или цитомегаловирусом. При этом диагностируют их редко: расширенное ПЦР-исследование, которое позволяет их выявить, не входит в ОМС. В результате после лечения противогрибковыми препаратами вирус сохраняется и способствует поддержанию воспаления в области влагалища и шейки матки. Это может спровоцировать постоянные рецидивы кандидоза.
-                            p
-                              |Поэтому в случае частых рецидивов молочницы лечение противогрибковыми препаратами целесообразно дополнить спреем Эпиген Интим — противовирусным иммуностимулирующим препаратом. Он содержит активированную глицирризиновую кислоту, которую получают из экстракта корня солодки. Она обладает быстро устраняет зуд, уменьшает воспаление и повышает местный иммунитет — то, что нужно при лечении молочницы.
-                            p
-                              |Удобная конструкция насадки позволяет глубоко вводить препарат и равномерно орошать стенки влагалища, а распылитель четко дозирует средство. В отличие от многих свечей, Спрей Эпиген Интим не нужно хранить в холодильнике. Его можно брать с собой повсюду: на работу, в командировки или отпуск.
-                            p
-                              |Поскольку Спрей Эпиген Интим оказывает только местное воздействие, его можно использовать беременным и кормящим женщинам. Спрей совместим с другими лекарственными препаратами, поэтому его используют в составе комплексной терапии. При таком комплексном подходе противогрибковый препарат подавляет активный рост грибков, а спрей Эпиген Интим помогает скорее справиться с зудом, воспалением и жжением, а также повышает местный иммунитет. А в случае сопутствующего вирусоносительства снижает активность вирусов, предотвращая рецидивы.
-                            .disease-page__spray-gradient
-                  .disease-page__spray-wrapper
-                    .disease-page__spray-button(data-aos='fade-up')
-                      .button-show.button-show--default
-                        .button-show__icon
-                          +btn-plus-svg.button-show__svg
-                        .button-show__text
-                          |подробнее
-              section.specialists-page__inner.margin-top.specialists-page__content(id='treatment' data-section='' data-aos='fade-up')
-                h3
-                  |Лечение
-                .specialists-page__content-wrapper
-                  p
+                          .my-sticky
+                            .disease-page__spray-image(data-aos='fade-up')
+                              img(src="assets/images/epigen-spray.jpg", alt="")
+                            .disease-page__spray-buttons
+                              .disease-page__spray-item(data-aos='fade-up')
+                                a.button.button--wide.btn-animation(href="#")
+                                  span.btn-animation__text
+                                    |Подробнее
+                              .disease-page__spray-item(data-aos='fade-up')
+                                a.button.button--wide.button--purple.btn-animation.btn-animation--purple(href="#")
+                                  span.btn-animation__text
+                                    |Купить
+
+                        .disease-page__spray-col.specialists-page__content
+                              h3.disease-page__spray-title(data-aos='fade-up')
+                                |Спрей Эпиген Интим
+                              .disease-page__spray-column.disease-page__content(data-aos='fade-up')
+                                p
+                                  |Терапия противогрибковыми препаратами может не оказать нужного эффекта, если кандидоз протекает в сочетании с вирусной инфекцией: вирусом папилломы человека, вирусом простого герпеса или цитомегаловирусом. При этом диагностируют их редко: расширенное ПЦР-исследование, которое позволяет их выявить, не входит в ОМС. В результате после лечения противогрибковыми препаратами вирус сохраняется и способствует поддержанию воспаления в области влагалища и шейки матки. Это может спровоцировать постоянные рецидивы кандидоза.
+                                p
+                                  |Поэтому в случае частых рецидивов молочницы лечение противогрибковыми препаратами целесообразно дополнить спреем Эпиген Интим — противовирусным иммуностимулирующим препаратом. Он содержит активированную глицирризиновую кислоту, которую получают из экстракта корня солодки. Она обладает быстро устраняет зуд, уменьшает воспаление и повышает местный иммунитет — то, что нужно при лечении молочницы.
+                                p
+                                  |Удобная конструкция насадки позволяет глубоко вводить препарат и равномерно орошать стенки влагалища, а распылитель четко дозирует средство. В отличие от многих свечей, Спрей Эпиген Интим не нужно хранить в холодильнике. Его можно брать с собой повсюду: на работу, в командировки или отпуск.
+                                p
+                                  |Поскольку Спрей Эпиген Интим оказывает только местное воздействие, его можно использовать беременным и кормящим женщинам. Спрей совместим с другими лекарственными препаратами, поэтому его используют в составе комплексной терапии. При таком комплексном подходе противогрибковый препарат подавляет активный рост грибков, а спрей Эпиген Интим помогает скорее справиться с зудом, воспалением и жжением, а также повышает местный иммунитет. А в случае сопутствующего вирусоносительства снижает активность вирусов, предотвращая рецидивы.
+                                .disease-page__spray-gradient
+                      .disease-page__spray-wrapper
+                        .disease-page__spray-button(data-aos='fade-up')
+                          .button-show.button-show--default
+                            .button-show__icon
+                              +btn-plus-svg.button-show__svg
+                            .button-show__text
+                              |подробнее
+                section.section(id='treatment' data-section='')
+                  h3
+                    |Лечение
+                  p.text
                     |Если вы заметили первые признаки молочницы, обратиться к врачу и начать лечение стоит как можно скорее. Иначе рискуете запустить заболевание и получить хронический кандидоз, с которым бороться гораздо труднее.
-              section.article-page__content.margin-top
-                .article-page__content-row
-                  .article-page__content-col
-                    .article-page__content-layout(data-aos='fade-up')
-                      +quotes-svg.article-page__content-icon
-                      +quotes-svg.article-page__content-img
-                    .rail.rail--reverse(data-aos='fade-up')
-                    .article-page__content-container
-                      p.article-page__content-text(data-aos='fade-up')
+                section.section
+                  .quote
+                    .quote__container
+                      .rail.rail--reverse 
+                      .quote__quotes 
+                        +quotes-svg.quote__icon
+                        +quotes-svg.quote__img
+                      .quote__text 
                         |Лечение молочницы у женщин должно обязательно включать противогрибковый препарат, который действует на возбудителя заболевания. Правильное активное вещество поможет подобрать врач на основании результатов лабораторных анализов.
-                    .rail.rail--blue(data-aos='fade-up')
-              section.specialists-page__inner.margin-top(id='prevention' data-section='')
-                .specialists-page__content.margin-bottom.margin-bottom--m(data-aos='fade-up')
+                      .rail.rail--blue
+                section.section(id='prevention' data-section='')
                   h3
                     |Профилактика
-                  .specialists-page__content-wrapper
-                    p
-                      |Медикаментозное лечение молочницы у женщин включает местные противогрибковые препараты в форме свечей или кремов и лекарства для приема внутрь. Иногда терапию дополняют иммуностимулирующими средствами.
-                .specialists-page__content-wrapper
-                  ul.reason-list.reason-list--big
+                  p.text
+                    |Медикаментозное лечение молочницы у женщин включает местные противогрибковые препараты в форме свечей или кремов и лекарства для приема внутрь. Иногда терапию дополняют иммуностимулирующими средствами.
+                  ul.list
                     each item in ['Старайтесь носить нижнее белье из хлопка, а не синтетики', 'Не надевайте капроновые колготки в жару', 'Не находитесь долго в сыром купальнике: тепло и влага — рай для грибков', 'Следите за рационом: в нем должно быть много кисломолочных продуктов и мало сладкого и мучного', 'Не используйте ароматизированные туалетную бумагу и прокладки', 'Тщательно следите за гигиеной: подмывайтесь каждый день, пользуйтесь личной бритвой и отдельным полотенцем', 'Забудьте про спринцевание как про способ гигиены: процедура нарушает микросреду влагалища и провоцирует воспалительные процессы', ]
-                      li.reason-list__item(data-aos='fade-up')
-                        p.reason-list__text
-                          |#{item}
+                      li.item
+                        |#{item}
               section.specialists-page__bottom.margin-top
                 .specialists-page__bottom-row
                   .specialists-page__bottom-col
