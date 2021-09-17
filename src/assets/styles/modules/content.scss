@@ -1,0 +1,456 @@
+.content {
+
+  h3 {
+    padding: 40px 0 20px;
+
+    color: $color-blue;
+    font-weight: 400;
+    @include fsl(35px, 130%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(20px, 140%);
+    }
+
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+
+  p {
+
+    @include fsl(18px, 170%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(15px);
+    }
+
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+
+  .section {
+    padding-top: 40px;
+    @media (min-width: $breakpoint) {
+      padding-left: calc(#{$col-width-d} * 3);
+    }
+  }
+
+  .section-row {
+    padding-top: 40px;
+
+    display: flex;
+    @media (max-width: $breakpoint - 1px) {
+      display: block;
+    }
+    justify-content: space-between;
+  }
+
+  .section-col {
+    flex-shrink: 0;
+    &:nth-child(1) {
+      width: calc((#{$col-width-d} * 5) + 5px);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
+    }
+
+    &:nth-child(2) {
+      width: calc(#{$col-width-d} * 12);
+      @media (max-width: $breakpoint - 1px) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.text {
+  padding: 20px 0;
+  @media (min-width: $breakpoint) {
+    padding-left: calc(#{$col-width-d} * 3);
+    padding-right: calc(#{$col-width-d} * 2);
+  }
+
+  @include fsl(18px, 170%);
+  @media (max-width: $breakpoint - 1px) {
+    @include fsl(15px);
+  }
+}
+
+.text-m {
+  padding: 20px 0;
+  @media (min-width: $breakpoint) {
+    padding-left: calc(#{$col-width-d} * 3);
+    padding-right: calc(#{$col-width-d} * 2);
+  }
+
+  @include fsl(15px);
+}
+
+.text-s {
+  padding: 20px 0;
+  @media (min-width: $breakpoint) {
+    padding-left: calc(#{$col-width-d} * 3);
+    padding-right: calc(#{$col-width-d} * 2);
+  }
+
+  @include fsl(13px);
+}
+
+.text-b {
+  padding: 20px 0;
+  @media (min-width: $breakpoint) {
+    padding-left: calc(#{$col-width-d} * 3);
+    padding-right: calc(#{$col-width-d} * 2);
+  }
+
+  font-weight: 500;
+  color: $color-blue;
+  @include fsl(18px, 140%);
+}
+
+.text-gray {
+  padding: 20px 0;
+  @media (min-width: $breakpoint) {
+    padding-left: calc(#{$col-width-d} * 3);
+    padding-right: calc(#{$col-width-d} * 2);
+  }
+  
+  @include fsl(13px);
+  color: $color-gray;
+}
+
+.list {
+  padding: 40px 0;
+  @media (min-width: $breakpoint) {
+    padding-left: calc(#{$col-width-d} * 3);
+    padding-right: calc(#{$col-width-d} * 2);
+  }
+
+  .item {
+    padding-left: 27px;
+    position: relative;
+
+    @include fsl(18px, 170%);
+
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
+
+    &::before {
+      $size: 7px;
+
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+
+      width: $size;
+      height: $size;
+
+      border-radius: 50%;
+      background: $color-blue;
+    }
+  }
+}
+
+.list-num {
+  padding: 40px 0;
+  @media (min-width: $breakpoint) {
+    padding-left: calc(#{$col-width-d} * 3);
+    padding-right: calc(#{$col-width-d} * 2);
+  }
+
+  counter-reset: index;
+
+  .item {
+    padding-left: 30px;
+    position: relative;
+
+    counter-increment: index;
+    @include fsl(15px, 140%);
+
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
+
+    &::before {
+      content: counter(index) '.';
+      position: absolute;
+      left: 0;
+      top: 3px;
+
+      @include fsl(15px, 140%);
+      color: $color-blue;
+    }
+  }
+}
+
+.quote {
+  padding: 40px 0;
+  @media (min-width: $breakpoint) {
+    padding-left: calc(#{$col-width-d} * 3);
+  }
+  
+
+  &__container {
+    position: relative;
+  }
+
+  &__quotes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  &__icon {
+    position: absolute;
+    top: -20px;
+    left: calc(#{$col-width-d});
+    @media (max-width: $breakpoint - 1px) {
+      left: 15px;
+
+      width: 74px;
+      height: 60px;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    bottom: calc(11px + 30px);
+    right: calc(#{$col-width-d});
+    @media (max-width: $breakpoint - 1px) {
+      bottom: 30px;
+      right: 15px;
+    }
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+
+    width: 50px;
+    height: 41px;
+    @media (max-width: $breakpoint - 1px) {
+      width: 42px;
+      height: 34px;
+    }
+  }
+
+  &__text {
+    padding: 20px calc(((100vw - (30px * 2)) / 24));
+    position: relative;
+
+    text-align: center;
+    @include fsl(18px, 170%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(15px);
+    }
+  }
+}
+
+.table {
+  padding: 40px 0;
+  @media (max-width: $breakpoint - 1px) {
+    padding: 40px 20px;
+    margin-left: -15px;
+
+    width: calc(100% + (15px * 2));
+    display: flex;
+
+    overflow-x: auto;
+    @include scrollbar-hidden;
+  }
+
+  &__table {
+
+    width: 100%;
+    @media (max-width: $breakpoint - 1px) {
+      width: 1012px;
+      flex-shrink: 0;
+    }
+
+    border: 1px solid $color-blue-light;
+    border-bottom: none;
+    border-right: none;
+    border-radius: 10px;
+    border-spacing: 0;
+
+    th, td {
+      border-style: solid;
+      border-width: 0 1px 1px 0;
+      border-color: $color-blue-light;
+    }
+    td {
+      padding: 18px;
+
+      width: calc(#{$col-width-d} * 3);
+      @media (max-width: $breakpoint - 1px) {
+        width: calc(100% / 5);
+      }
+    }
+    tr:first-child {
+      td:last-child {
+        border-top-right-radius: 10px;
+      }
+    }
+    tr:last-child {
+      td:first-child {
+        border-bottom-left-radius: 10px;
+      }
+      td:last-child {
+        border-bottom-right-radius: 10px;
+      }
+    }
+  }
+
+  &__title {
+    font-weight: 500;
+    @include fsl(15px, 140%);
+  }
+
+  &__text {
+    text-align: center;
+    @include fsl(12px, 120%);
+  }
+
+  &__subtitle {
+    font-weight: 500;
+    @include fsl(12px, 120%);
+  }
+}
+
+.picture {
+  padding: 40px 0;
+  @media (min-width: $breakpoint) {
+    padding-left: calc(#{$col-width-d} * 3);
+  }
+
+  &__img {
+    position: relative;
+
+    img {
+      display: block;
+
+      border-radius: 10px;
+    }
+  }
+
+  &__label {
+    margin-top: 15px;
+
+    @include fsl(13px, 140%);
+    font-style: italic;
+  }
+}
+
+.article {
+  padding: 40px 0 20px;
+  @media (min-width: $breakpoint) {
+    padding-left: calc(#{$col-width-d} * 3);
+  }
+
+  &__container {
+    padding-bottom: 30px;
+
+    border-bottom: 1px solid $color-blue;
+
+    h4 {
+      font-weight: 400;
+      @include fsl(25px, 150%);
+      @media (max-width: $breakpoint - 1px) {
+        @include fsl(18px);
+      }
+    }
+
+    p {
+      margin-top: 15px;
+      padding-left: 0;
+
+      @include fsl(18px, 170%);
+      @media (max-width: $breakpoint - 1px) {
+        @include fsl(15px);
+      }
+    }
+  }
+}
+
+.section-text {
+  padding: 20px 0;
+  @media (min-width: $breakpoint) {
+    padding-right: calc(#{$col-width-d} * 2);
+  }
+}
+
+.diagnostics {
+  padding: 40px 0;
+  @media (max-width: $breakpoint - 1px) {
+
+    display: block;
+  }
+  display: flex;
+  justify-content: space-between;
+
+  &__text {
+    padding: 50px 30px;
+    @media (max-width: $breakpoint - 1px) {
+      padding: 50px 0;
+    }
+
+    position: relative;
+    width: calc((#{$col-width-d} * 12) / 2 - 10px);
+    @media (max-width: $breakpoint - 1px) {
+      width: 100%;
+    }
+    flex-shrink: 0;
+
+    @include fsl(18px, 170%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(15px);
+    }
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+
+      height: 30px;
+    }
+
+    &::before {
+      top: 0;
+
+      border: 1px solid $color-blue-light;
+      border-bottom: none;
+      border-radius: 10px 10px 0 0;
+    }
+
+    &::after {
+      bottom: 0;
+
+      border: 1px solid $color-blue;
+      border-top: none;
+      border-radius: 0 0 10px 10px;
+    }
+
+    &:not(:first-child) {
+      @media (max-width: $breakpoint - 1px) {
+        margin-top: 15px;
+      }
+    }
+  }
+}
+
+.article-spray {
+  padding: 40px 0;
+}
+
+.content-video {
+  padding: 40px 0;
+  @media (min-width: $breakpoint) {
+    padding-left: calc(#{$col-width-d} * 3);
+  }
+}
+
+.article-section {
+  padding: 40px 0;
+}
