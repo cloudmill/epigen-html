@@ -5,9 +5,9 @@
 
     color: $color-blue;
     font-weight: 400;
-    @include fsl(35px, 130%);
+    @include fsl(25px, 120%);
     @media (max-width: $breakpoint - 1px) {
-      @include fsl(20px, 140%);
+      @include fsl(18px);
     }
 
     &:first-child {
@@ -42,6 +42,13 @@
       display: block;
     }
     justify-content: space-between;
+
+    h3 {
+      @include fsl(35px, 130%);
+      @media (max-width: $breakpoint - 1px) {
+        @include fsl(20px, 140%);
+      }
+    }
   }
 
   .section-col {
