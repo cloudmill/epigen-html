@@ -382,21 +382,16 @@ block content
                   .section-col
                     p.section-text
                       |Постоянные рецидивы генитального герпеса оказывают негативное воздействие на иммунную систему человека, что может приводить к вторичному иммунодефициту. Заражение вирусом во время беременности может стать причиной прерывания беременности или преждевременных родов.
-              section.disease-page__section
-                .disease-page__content-row
-                  .disease-page__content-col.disease-page__content(data-aos='fade-up')
-                  .disease-page__content-col.specialists-page__content(data-aos='fade-up')
-                    .margin-top.rail.rail--reverse
-                    .specialists-page__wish-container
-                      p.specialists-page__wish-text
-                        |Во время обострения герпеса на слизистых — во рту, влагалище или прямой кишке — появляются язвы. Это повышает риск проникновения ВИЧ в организм. Если вы уже инфицированы генитальным герпесом, даже в случае отсутствия видимых проявлений время полового акта стоит использовать презервативы. В идеале со смазкой: так они реже рвутся и соскальзывают.
-                    .rail.rail--blue
-                .disease-page__content-row.margin-top
-                  .disease-page__content-col
-                  .disease-page__content-col(data-aos='fade-up')
-                    p.link-text.link-text--small
-                      |Если у вас остались вопросы, вы можете задать их на странице #[a.link-text__link.btn-animation(href="#") #[span.btn-animation__text консультация эксперта]]
-                .specialists-page__bottom.margin-top
+                    .indent
+                      .rail.rail--reverse
+                      .specialists-page__wish-container
+                        p.specialists-page__wish-text
+                          |Во время обострения герпеса на слизистых — во рту, влагалище или прямой кишке — появляются язвы. Это повышает риск проникновения ВИЧ в организм. Если вы уже инфицированы генитальным герпесом, даже в случае отсутствия видимых проявлений время полового акта стоит использовать презервативы. В идеале со смазкой: так они реже рвутся и соскальзывают.
+                      .rail.rail--blue
+                    .margin-top
+                      p.link-text.link-text--small
+                        |Если у вас остались вопросы, вы можете задать их на странице #[a.link-text__link.btn-animation(href="#") #[span.btn-animation__text консультация эксперта]]
+                section.specialists-page__bottom.margin-top
                     .specialists-page__bottom-row
                       .specialists-page__bottom-col
                         .specialists-page__bottom-container(data-aos='fade-up')
@@ -410,36 +405,36 @@ block content
                               span.btn-animation__text
                                 |Подробнее
                     .specialists-page__bottom-column(data-aos='fade-up')
-              section.slider-section.margin-top
-                .slider-section__row
-                  .slider-section__col
-                    h3.slider-section__title(data-aos='fade-up')
-                      |Статьи по теме
-                  .slider-section__col.b.b--reviews-slider-main-page
-                    .b__control
-                      .b__control-item(data-aos='fade-up')
-                        .b.b--btn-left-right-slider.btn-animation.btn-animation--icon(data-slider-button="2")
-                          +simple-arrow-svg.b__svg
-                      .b__control-item(data-aos='fade-up')
-                        .b.b--btn-left-right-slider.b--right.btn-animation.btn-animation--icon(data-slider-button="1")
-                          +simple-arrow-svg.b__svg
-                .slider.swiper-container(data-slider-id="1" data-slider-next="1" data-slider-prev="2" data-aos='fade-up')
-                  .swiper-wrapper.slider__wrapper
-                    - for (i = 0; i < 9; i++)
-                      .slider__item.swiper-slide
-                        a.card(href="#")
-                          .card__container
-                            img.card__img(src="assets/images/card-1.jpg", alt="")
-                            .card__label
-                              |Клинические рекомендации
-                          .card__row
-                            .card__doctor
-                              .card__avatar
-                                img.card__icon(src="assets/images/doctor.jpg", alt="")
-                              .card__name
-                                |Пустотина Ольга Анатольевна
-                          h3.card__title
-                            |Молочница: все, что нужно знать о заболевании
+                section.slider-section.margin-top
+                  .slider-section__row
+                    .slider-section__col
+                      h3.slider-section__title(data-aos='fade-up')
+                        |Статьи по теме
+                    .slider-section__col.b.b--reviews-slider-main-page
+                      .b__control
+                        .b__control-item(data-aos='fade-up')
+                          .b.b--btn-left-right-slider.btn-animation.btn-animation--icon(data-slider-button="2")
+                            +simple-arrow-svg.b__svg
+                        .b__control-item(data-aos='fade-up')
+                          .b.b--btn-left-right-slider.b--right.btn-animation.btn-animation--icon(data-slider-button="1")
+                            +simple-arrow-svg.b__svg
+                  .slider.swiper-container(data-slider-id="1" data-slider-next="1" data-slider-prev="2" data-aos='fade-up')
+                    .swiper-wrapper.slider__wrapper
+                      - for (i = 0; i < 9; i++)
+                        .slider__item.swiper-slide
+                          a.card(href="#")
+                            .card__container
+                              img.card__img(src="assets/images/card-1.jpg", alt="")
+                              .card__label
+                                |Клинические рекомендации
+                            .card__row
+                              .card__doctor
+                                .card__avatar
+                                  img.card__icon(src="assets/images/doctor.jpg", alt="")
+                                .card__name
+                                  |Пустотина Ольга Анатольевна
+                            h3.card__title
+                              |Молочница: все, что нужно знать о заболевании
 
             +footer.page__footer
   +modal-test 

@@ -263,7 +263,7 @@ block content
                 section.section
                   .article
                     .article__container
-                      h4
+                      .article__title
                         |Вопреки распространенному заблуждению, заразиться через сидение унитаза нельзя: вирус быстро погибает вне тела человека.
                 section.section-row(id='symptoms' data-section='')
                   .section-col
@@ -294,7 +294,7 @@ block content
                 section.section
                   .article
                     .article__container
-                      h4
+                      .article__title
                         |Поэтому, если вы беременны или планируете беременность, важно сдать анализ на наличие антител к вирусу простого герпеса.
                       p.section-text
                         |Он покажет были ли вы инфицированы им ранее. Также необходимо регулярно проводить обследования, проходить пренатальный скрининг. Не стесняйтесь врача: обязательно расскажите ему, если у вас были симптомы генитального герпеса или если диагноз уже подтверждали ранее.
@@ -366,34 +366,29 @@ block content
                   .section-col
                     p.section-text
                       |Постоянные рецидивы генитального герпеса оказывают негативное воздействие на иммунную систему человека, что может приводить к вторичному иммунодефициту. Заражение вирусом во время беременности может стать причиной прерывания беременности или преждевременных родов.
-                section.disease-page__section
-                  .disease-page__content-row
-                    .disease-page__content-col.disease-page__content(data-aos='fade-up')
-                    .disease-page__content-col.specialists-page__content(data-aos='fade-up')
-                      .margin-top.rail.rail--reverse
+                    .indent
+                      .rail.rail--reverse
                       .specialists-page__wish-container
                         p.specialists-page__wish-text
                           |Во время обострения герпеса на слизистых — во рту, влагалище или прямой кишке — появляются язвы. Это повышает риск проникновения ВИЧ в организм. Если вы уже инфицированы генитальным герпесом, даже в случае отсутствия видимых проявлений время полового акта стоит использовать презервативы. В идеале со смазкой: так они реже рвутся и соскальзывают.
                       .rail.rail--blue
-                  .disease-page__content-row.margin-top
-                    .disease-page__content-col
-                    .disease-page__content-col(data-aos='fade-up')
+                    .margin-top
                       p.link-text.link-text--small
                         |Если у вас остались вопросы, вы можете задать их на странице #[a.link-text__link.btn-animation(href="#") #[span.btn-animation__text консультация эксперта]]
-                  .specialists-page__bottom.margin-top
-                      .specialists-page__bottom-row
-                        .specialists-page__bottom-col
-                          .specialists-page__bottom-container(data-aos='fade-up')
-                            img.specialists-page__bottom-img(src="assets/images/epigen-spray.jpg", alt="")
-                        .specialists-page__bottom-col
-                          .specialists-page__bottom-content
-                            h3.specialists-page__bottom-title(data-aos='fade-up')
-                              |Спрей#[br]Эпиген Интим
-                            .specialists-page__bottom-btn(data-aos='fade-up')
-                              a.button.button--spray-article.btn-animation(href="#")
-                                span.btn-animation__text
-                                  |Подробнее
-                      .specialists-page__bottom-column(data-aos='fade-up')
+                section.specialists-page__bottom.margin-top
+                    .specialists-page__bottom-row
+                      .specialists-page__bottom-col
+                        .specialists-page__bottom-container(data-aos='fade-up')
+                          img.specialists-page__bottom-img(src="assets/images/epigen-spray.jpg", alt="")
+                      .specialists-page__bottom-col
+                        .specialists-page__bottom-content
+                          h3.specialists-page__bottom-title(data-aos='fade-up')
+                            |Спрей#[br]Эпиген Интим
+                          .specialists-page__bottom-btn(data-aos='fade-up')
+                            a.button.button--spray-article.btn-animation(href="#")
+                              span.btn-animation__text
+                                |Подробнее
+                    .specialists-page__bottom-column(data-aos='fade-up')
                 section.slider-section.margin-top
                   .slider-section__row
                     .slider-section__col
