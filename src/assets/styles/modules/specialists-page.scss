@@ -7,6 +7,14 @@
     }
   }
 
+  &__bottom {
+    margin-bottom: 80px;
+    @media (min-width: $breakpoint) {
+      margin-bottom: 185px;
+    }
+    
+  }
+
   &__article {
     position: relative;
   }
