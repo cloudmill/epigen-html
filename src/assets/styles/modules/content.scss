@@ -1,36 +1,57 @@
 .content {
 
-  h3 {
-    padding: 40px 0 20px;
-
-    color: $color-blue;
-    font-weight: 400;
-    @include fsl(25px, 120%);
-    @media (max-width: $breakpoint - 1px) {
-      @include fsl(18px);
-    }
-
-    &:first-child {
-      padding-top: 0;
-    }
-  }
-
-  p {
-
-    @include fsl(18px, 170%);
-    @media (max-width: $breakpoint - 1px) {
-      @include fsl(15px);
-    }
-
-    &:first-child {
-      padding-top: 0;
-    }
-  }
-
   .section {
     padding-top: 40px;
     @media (min-width: $breakpoint) {
       padding-left: calc(#{$col-width-d} * 3);
+    }
+
+    h2, h3, h4, h5 {
+      padding: 40px 0 20px;
+
+      color: $color-blue;
+      font-weight: 400;
+
+      &:first-child {
+        padding-top: 0;
+      }
+    }
+
+    h2 {
+      @include fsl(40px, 120%);
+      @media (max-width: $breakpoint - 1px) {
+        @include fsl(25px);
+      }
+    }
+
+    h3 {
+      @include fsl(35px, 130%);
+      @media (max-width: $breakpoint - 1px) {
+        @include fsl(20px, 140%);
+      }
+    }
+
+    h4 {
+      @include fsl(25px, 120%);
+      @media (max-width: $breakpoint - 1px) {
+        @include fsl(18px);
+      }
+    }
+
+    h5 {
+      @include fsl(20px);
+    }
+
+    p {
+
+      @include fsl(18px, 170%);
+      @media (max-width: $breakpoint - 1px) {
+        @include fsl(15px);
+      }
+
+      &:first-child {
+        padding-top: 0;
+      }
     }
   }
 
@@ -43,11 +64,40 @@
     }
     justify-content: space-between;
 
+    h2, h3, h4, h5 {
+      padding: 40px 0 20px;
+
+      color: $color-blue;
+      font-weight: 400;
+
+      &:first-child {
+        padding-top: 0;
+      }
+    }
+
+    h2 {
+      @include fsl(40px, 120%);
+      @media (max-width: $breakpoint - 1px) {
+        @include fsl(25px);
+      }
+    }
+
     h3 {
       @include fsl(35px, 130%);
       @media (max-width: $breakpoint - 1px) {
         @include fsl(20px, 140%);
       }
+    }
+
+    h4 {
+      @include fsl(25px, 120%);
+      @media (max-width: $breakpoint - 1px) {
+        @include fsl(18px);
+      }
+    }
+
+    h5 {
+      @include fsl(20px);
     }
   }
 
@@ -134,7 +184,7 @@
 }
 
 .list {
-  padding: 40px 0;
+  padding: 20px 0;
   @media (min-width: $breakpoint) {
     padding-left: calc(#{$col-width-d} * 3);
     padding-right: calc(#{$col-width-d} * 2);
@@ -169,7 +219,7 @@
 }
 
 .list-num {
-  padding: 40px 0;
+  padding: 20px 0;
   @media (min-width: $breakpoint) {
     padding-left: calc(#{$col-width-d} * 3);
     padding-right: calc(#{$col-width-d} * 2);

@@ -1,75 +1,76 @@
 mixin accordion
   .accordion(class=attributes.class)
-    .accordion__head
-      .accordion__head-row
-        if (attributes.name)
+    .accordion__container
+      .accordion__head
+        .accordion__head-row
+          if (attributes.name)
+            .accordion__head-col
+              .accordion__head-name
+                |#{attributes.name}
+              .accordion__head-date
+                |#{attributes.date}
           .accordion__head-col
-            .accordion__head-name
-              |#{attributes.name}
-            .accordion__head-date
-              |#{attributes.date}
-        .accordion__head-col
-          h3.accordion__head-title
-            |#{attributes.caption}
-        .accordion__head-col
-          if (attributes.category)
-            .accordion__head-category 
-              - for (i = 0; i < attributes.tags; i++)
-                .accordion__head-item 
-                  .category-item.category-item--light-blue
-                    |#{attributes.category}
-          .accordion__head-button
-            +plus-svg.accordion__head-icon
-    .accordion__body
-      .accordion__body-container
-        .accordion__body-row
-          .accordion__body-col
-            p.accordion__body-text
-              |Спрей Эпиген Интим применятся для профилактики рецидивов (повторного возникновения) различных генитальных вирусных инфекций (например, генитального герпеса, ВПЧ), профилактики состояний, сопровождающихся снижением местного иммунитета (например, молочницы, бактериального вагиноза). Возможно, Вы перенесли одно из указанных состояний, либо специалист принял решение о необходимости назначения Спрея Эпиген Интим на основании результатов исследований и анализов.
-            if (attributes.doctor)
-              .accordion__body-doctor
-                .doctor-card
-                  .doctor-card__row
-                    .doctor-card__col
-                      .doctor-card__frame.doctor-card__frame--size--s.doctor-card__frame--radius--left
-                        img(src="assets/images/doctor.jpg", alt="")
-                    .doctor-card__col
-                      .doctor-card__name
-                        |Бебнева Тамара Николаевна
-                      .doctor-card__pos
-                        |Врач акушер-гинеколог ФГБУ «НМИЦ эндокринологии» Минздрава России, к.м.н, доцент Кафедры акушерства, гинекологии и репродуктивной медицины РУДН
-          .accordion__body-col
-            .accordion__spray
-              .accordion__spray-row
-                .accordion__spray-col
-                  if (attributes.gel)
-                    img.accordion__spray-img(src="assets/images/accordion-gel.jpg", alt="")
-                  else
-                    img.accordion__spray-img(src="assets/images/epigen-spray.jpg", alt="")
-                .accordion__spray-col
-                  .accordion__spray-content
+            h3.accordion__head-title
+              |#{attributes.caption}
+          .accordion__head-col
+            if (attributes.category)
+              .accordion__head-category 
+                - for (i = 0; i < attributes.tags; i++)
+                  .accordion__head-item 
+                    .category-item.category-item--light-blue
+                      |#{attributes.category}
+            .accordion__head-button
+              +plus-svg.accordion__head-icon
+      .accordion__body
+        .accordion__body-container
+          .accordion__body-row
+            .accordion__body-col
+              p.accordion__body-text
+                |Спрей Эпиген Интим применятся для профилактики рецидивов (повторного возникновения) различных генитальных вирусных инфекций (например, генитального герпеса, ВПЧ), профилактики состояний, сопровождающихся снижением местного иммунитета (например, молочницы, бактериального вагиноза). Возможно, Вы перенесли одно из указанных состояний, либо специалист принял решение о необходимости назначения Спрея Эпиген Интим на основании результатов исследований и анализов.
+              if (attributes.doctor)
+                .accordion__body-doctor
+                  .doctor-card
+                    .doctor-card__row
+                      .doctor-card__col
+                        .doctor-card__frame.doctor-card__frame--size--s.doctor-card__frame--radius--left
+                          img(src="assets/images/doctor.jpg", alt="")
+                      .doctor-card__col
+                        .doctor-card__name
+                          |Бебнева Тамара Николаевна
+                        .doctor-card__pos
+                          |Врач акушер-гинеколог ФГБУ «НМИЦ эндокринологии» Минздрава России, к.м.н, доцент Кафедры акушерства, гинекологии и репродуктивной медицины РУДН
+            .accordion__body-col
+              .accordion__spray
+                .accordion__spray-row
+                  .accordion__spray-col
                     if (attributes.gel)
-                      h3.accordion__spray-title
-                        |Гель#[br]Эпиген Интим
-                    else 
-                      h3.accordion__spray-title
-                        |Спрей#[br]Эпиген Интим
-                    .accordion__spray-link
-                      a.button.button--m.btn-animation(href="#")
-                        span.btn-animation__text
-                          |Подробнее
-      .accordion__links
-        .accordion__links-container
-          .accordion__links-label
-            |Статьи на эту тему
-          ul.accordion__links-list
-            - for (i = 0; i < 3; i++)
-              li.accordion__links-item
-                a.accordion__link(href="#")
-                  .accordion__link-row
-                    .accordion__link-col
-                      .accordion__link-text
-                        |Спрей Эпиген Интим помогает не только при заболевнии
-                    .accordion__link-col
-                      .accordion__link-button
-                        +arrow-svg.accordion__link-icon
+                      img.accordion__spray-img(src="assets/images/accordion-gel.jpg", alt="")
+                    else
+                      img.accordion__spray-img(src="assets/images/epigen-spray.jpg", alt="")
+                  .accordion__spray-col
+                    .accordion__spray-content
+                      if (attributes.gel)
+                        h3.accordion__spray-title
+                          |Гель#[br]Эпиген Интим
+                      else 
+                        h3.accordion__spray-title
+                          |Спрей#[br]Эпиген Интим
+                      .accordion__spray-link
+                        a.button.button--m.btn-animation(href="#")
+                          span.btn-animation__text
+                            |Подробнее
+        .accordion__links
+          .accordion__links-container
+            .accordion__links-label
+              |Статьи на эту тему
+            ul.accordion__links-list
+              - for (i = 0; i < 3; i++)
+                li.accordion__links-item
+                  a.accordion__link(href="#")
+                    .accordion__link-row
+                      .accordion__link-col
+                        .accordion__link-text
+                          |Спрей Эпиген Интим помогает не только при заболевнии
+                      .accordion__link-col
+                        .accordion__link-button
+                          +arrow-svg.accordion__link-icon

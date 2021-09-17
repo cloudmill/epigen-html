@@ -1,10 +1,6 @@
 .accordion {
   $comp: &;
-  margin-top: 20px;
-
-  border: 1px solid $color-blue-light;
-  border-radius: 10px;
-  transition: $transition;
+  padding: 10px 0;
 
   &--consultation {
 
@@ -106,7 +102,10 @@
   }
 
   &:hover {
-    border-color: $color-blue;
+    
+    #{$comp}__container {
+      border-color: $color-blue;
+    }
 
     #{$comp}__head-button {
       background-color: $color-blue;
@@ -119,7 +118,10 @@
   }
 
   &--active {
-    border-color: $color-blue;
+    
+    #{$comp}__container {
+      border-color: $color-blue;
+    }
 
     #{$comp}__body {
       padding-bottom: 30px;
@@ -141,6 +143,12 @@
         stroke: $color-white;
       }
     }
+  }
+
+  &__container {
+    border: 1px solid $color-blue-light;
+    border-radius: 10px;
+    transition: $transition;
   }
 
   &__head {
