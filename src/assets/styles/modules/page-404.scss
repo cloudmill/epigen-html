@@ -32,7 +32,11 @@
     right: calc(#{$col-width-d} * 3 + 30px);
     @media (max-width: $breakpoint - 1px) {
       right: auto;
-      bottom: 22%;
+      left: 50%;
+      top: 50%;
+      // bottom: 22%;
+      bottom: auto;
+      transform: translate(-50%, -50%);
     }
   }
   &__404-img {
