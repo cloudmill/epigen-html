@@ -1886,6 +1886,12 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 // main page slider
 {
   $(() => {
+    const index = {
+      before: {
+        active: 0,
+      },
+      after: {}
+    }
     const DELAY = 500
 
     const slider = $('.b--carousel-slider-desktop')
@@ -1893,61 +1899,64 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     if (slider.length !== 0) {
       const sliderControl = slider.find('.b--btn-left-right-slider')
       const sliderCol = slider.find('.b__col')
+      const template = slider.find('.template')
+      const templateSlide = template.find('.b__frame')
+      const templateTitle = template.find('.b__title')
 
-      sliderCol.each(function() {
+      sliderCol.each(function(i) {
         const col = $(this)
-        const slidesContainer = col.find('.b__container')
-        const slidesTitle = col.find('.b__title')
+        const wrapper = col.find('.b__wrapper')
+        wrapper.append(templateTitle.eq(i).clone().addClass('b__title--active'))
+        const container = col.find('.b__container')
+        container.append(templateSlide.eq(i).clone().addClass('b__frame--active'))
+        
+        let num = 0
 
-        slidesContainer.each(function() {
-          const container = $(this)
+        sliderControl.on('click', function() {
+          const dataTarget = $(this).data('slider-arrow')
+          const slidesActive = container.find('.b__frame--active')
+          
+          index.before.active = getRealIndex(i + num, templateSlide.length)
+          index.before.left = getRealIndex(index.before.active - 1, templateSlide.length)
+          index.before.right = getRealIndex(index.before.active + 1, templateSlide.length)
+
+          function getRealIndex(index, length) {
+            return (length + index) % length
+          }
+          let delta
+
+          if (dataTarget === 'prev') {
+            num--
+            delta = -1
+            container.prepend(templateSlide.eq(index.before.left).clone().addClass('b__frame--left'))
+          } else {
+            delta = 1
+            num++
+            container.append(templateSlide.eq(index.before.right).clone().addClass('b__frame--right'))
+          }
+
+          index.after.active = getRealIndex(index.before.active + delta, templateSlide.length)
+
+          slider.css('pointer-events', 'none')
+          wrapper.append(templateTitle.eq(index.after.active).clone())
+          
+          const slidesTitle = col.find('.b__title')
           const slides = container.find('.b__frame')
 
-          sliderControl.on('click', function() {
-            const dataTarget = $(this).data('slider-arrow')
-            const slidesActive = container.find('.b__frame--active')
-
-            let delta
-
-            if (dataTarget === 'prev') {
-              delta = -1
-            } else {
-              delta = 1
-            }
-
-            const index = {
-              before: {},
-              after: {}
-            }
-
-            function getRealIndex(index, length) {
-              return (length + index) % length
-            }
-
-            index.before.active = slidesActive.index()
-            index.before.left = getRealIndex(index.before.active - 1, slides.length)
-            index.before.right = getRealIndex(index.before.active + 1, slides.length)
-
-            index.after.active = getRealIndex(index.before.active + delta, slides.length)
-            index.after.left = getRealIndex(index.after.active - 1, slides.length)
-            index.after.right = getRealIndex(index.after.active + 1, slides.length)
-
+          slidesTitle.removeClass('b__title--active')
+          
+          setTimeout(() => {
             slides.removeClass('b__frame--left b__frame--right')
-            slidesTitle.removeClass('b__title--active')
-
-            slides.eq(index.after.left).addClass('b__frame--left')
-            slides.eq(index.after.right).addClass('b__frame--right')
-            slides.eq(index.after.active).addClass('b__frame--active b__frame--front')
-
-            slider.css('pointer-events', 'none')
-
-            setTimeout(() => {
-              slidesTitle.eq(index.after.active).addClass('b__title--active')
-              slides.eq(index.before.active).removeClass('b__frame--active')
-              slides.eq(index.after.active).removeClass('b__frame--front')
-              slider.css('pointer-events', '')
-            }, DELAY)
+            slides.eq(slidesActive.index() + delta).addClass('b__frame--active b__frame--front')
           })
+
+          setTimeout(() => {
+            slidesTitle.eq(1).addClass('b__title--active')
+            slidesTitle.eq(0).remove()
+            slides.eq(slidesActive.index() + delta).removeClass('b__frame--front')
+            slides.eq(slidesActive.index()).remove()
+            slider.css('pointer-events', '')
+          }, DELAY)
         })
       })
     }
@@ -2117,4 +2126,11 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       }, 1000 / 15);
     }
   }
+}
+
+// slider
+{ 
+  $(() => {
+
+  })
 }

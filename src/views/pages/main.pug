@@ -223,6 +223,33 @@ block content
                         |Все статьи
                 .b.b--carousel-slider-desktop.b--carousel-slider-desktop-margin-top-in-main-page(data-aos='fade-up')
                   .b__bottom
+                    .template
+                      .template__slides
+                        a.b__frame(href='#')
+                          .b__slide
+                            img.b__img(src='assets/images/carousel-1.jpeg')
+                            span.b__label
+                              |Клинические рекомендации
+                        a.b__frame(href='#')
+                          .b__slide
+                            img.b__img(src='assets/images/carousel-2.jpeg')
+                            span.b__label
+                              |Обучение
+                        a.b__frame(href='#')
+                          .b__slide
+                            img.b__img(src='assets/images/carousel-3.jpeg')
+                            span.b__label
+                              |Исследования
+                      .template__titles 
+                        h3.b__title
+                          span.b__span
+                            |Миома матки: симптомы, лечение, профилактика
+                        h3.b__title
+                          span.b__span
+                            |Кровотечение при миоме
+                        h3.b__title
+                          span.b__span
+                            |Непроходимость маточных труб
                     .b__buttons
                       .b.b--btn-left-right-slider.b--left.b__btn.b__btn--left.btn-animation.btn-animation--icon(data-slider-arrow='prev')
                         +simple-arrow-svg.b__svg
@@ -231,85 +258,13 @@ block content
                     .b__row
                       .b__col
                         .b__container
-                          a.b__frame.b__frame--active(href='#')
-                            .b__slide
-                              img.b__img(src='assets/images/carousel-1.jpeg')
-                              span.b__label
-                                |Клинические рекомендации
-                          a.b__frame.b__frame--right(href='#')
-                            .b__slide
-                              img.b__img(src='assets/images/carousel-2.jpeg')
-                              span.b__label
-                                |Обучение
-                          a.b__frame.b__frame--left(href='#')
-                            .b__slide
-                              img.b__img(src='assets/images/carousel-3.jpeg')
-                              span.b__label
-                                |Исследования
                         .b__wrapper
-                          h3.b__title.b__title--active
-                            span.b__span
-                              |Миома матки: симптомы, лечение, профилактика
-                          h3.b__title
-                            span.b__span
-                              |Кровотечение при миоме
-                          h3.b__title
-                            span.b__span
-                              |Непроходимость маточных труб
                       .b__col
                         .b__container.b__container--big
-                          a.b__frame.b__frame--left(href='#')
-                            .b__slide
-                              img.b__img(src='assets/images/carousel-1.jpeg')
-                              span.b__label
-                                |Клинические рекомендации
-                          a.b__frame.b__frame--active(href='#')
-                            .b__slide
-                              img.b__img(src='assets/images/carousel-2.jpeg')
-                              span.b__label
-                                |Обучение
-                          a.b__frame.b__frame--right(href='#')
-                            .b__slide
-                              img.b__img(src='assets/images/carousel-3.jpeg')
-                              span.b__label
-                                |Исследования
                         .b__wrapper
-                          h3.b__title
-                            span.b__span
-                              |Миома матки: симптомы, лечение, профилактика
-                          h3.b__title.b__title--active
-                            span.b__span
-                              |Кровотечение при миоме
-                          h3.b__title
-                            span.b__span
-                              |Непроходимость маточных труб
                       .b__col
                         .b__container
-                          a.b__frame.b__frame--right(href="#") 
-                            .b__slide
-                              img.b__img(src='assets/images/carousel-1.jpeg')
-                              span.b__label
-                                |Клинические рекомендации
-                          a.b__frame.b__frame--left(href="#") 
-                            .b__slide
-                              img.b__img(src='assets/images/carousel-2.jpeg')
-                              span.b__label
-                                |Обучение
-                          a.b__frame.b__frame--active(href="#") 
-                            .b__slide
-                              img.b__img(src='assets/images/carousel-3.jpeg')
-                              span.b__label
-                                |Исследования
                         .b__wrapper
-                          h3.b__title
-                            span.b__span
-                              |Миома матки: симптомы, лечение, профилактика
-                          h3.b__title
-                            span.b__span
-                              |Кровотечение при миоме
-                          h3.b__title.b__title--active
-                            span.b__span
-                              |Непроходимость маточных труб
                 .b.b--carousel-slider-mobile.swiper-container(data-slider-id='2' data-aos='fade-up')
                   .swiper-wrapper
                     - for (i = 0; i < 3; i++)
