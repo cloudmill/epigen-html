@@ -17,7 +17,8 @@ $(function () {
 
 function cookies() {
     $(document).on("click", "[data-type=cookies-btn-agr]", function (e) {
-        let url = $(this).attr("data-url");
+        let url = $(this).attr("data-url"),
+        cookies = $(this).attr("data-cookies");
 
         console.log("cookies agr yes");
 
@@ -25,7 +26,7 @@ function cookies() {
             method: "POST",
             url: url,
             data: {
-                cookies: 'Y',
+                cookies: cookies,
             },
         }).done(function (r) {
 
