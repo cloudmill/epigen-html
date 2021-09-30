@@ -6,7 +6,6 @@ $(function () {
     showMore();
     revFilter();
     revModal();
-    specAlert();
     subscribe();
     forms();
     search();
@@ -214,48 +213,6 @@ function revModal() {
         body.find('[data-type=rev-modal-text').html(data['text']);
         body.find('[data-type=rev-modal-post').text(data['position']);
         body.find('[data-type=rev-modal-sub').text(data['title']);
-    });
-}
-
-function specAlert() {
-    $(document).on("click", "[data-type=spec-alert-no]", function (e) {
-        e.preventDefault();
-        let url = $(this).attr("data-url"),
-            alert = 'yes';
-
-        console.log('click spec alert no');
-
-        $.ajax({
-            method: "POST",
-            url: url,
-            data: {
-                ajax: 1,
-                alert: alert,
-            },
-        }).done(function (r) {
-            console.log($(r));
-            window.location.href = '/';
-        });
-    });
-    $(document).on("click", "[data-type=spec-alert-yes]", function (e) {
-        e.preventDefault();
-        let url = $(this).attr("data-url"),
-            alert = 'no';
-
-        console.log('click spec alert yes');
-
-        $.ajax({
-            method: "POST",
-            url: url,
-            data: {
-                ajax: 1,
-                alert: alert,
-            },
-        }).done(function (r) {
-            console.log($(r));
-        });
-
-        $("[data-type=spec-alert-close]").click();
     });
 }
 
