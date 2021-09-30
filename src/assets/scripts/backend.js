@@ -22,6 +22,10 @@ function cookies() {
 
         console.log("cookies agr yes");
 
+        if (cookies == 'spec_yes') {
+            $(document).find("[data-type=alert_block]").removeClass('alert--active');
+        }
+
         $.ajax({
             method: "POST",
             url: url,
