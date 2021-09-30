@@ -121,5 +121,12 @@
       @include fsl(11px);
     }
   }
+
+  &__form[data-form-hidden] {
+    .form-container__col {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
 }
 

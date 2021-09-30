@@ -125,7 +125,7 @@ block content
                 h2.buy-page__section-title.margin-top(data-aos='fade-up')
                   |Подпишитесь на рассылку и узнавайте об акциях и спецпредложениях интернет-аптек на продукцию Эпиген
                 .form-container.margin-top.margin-top--md
-                  .form-container__row(data-aos='fade-up')
+                  .form-container__row.buy-page__form(data-aos='fade-up' data-form='21')
                     .form-container__col
                       h3.form-container__title
                         |Подписаться на обновления
@@ -151,9 +151,19 @@ block content
                                   |Согласен на обработку персональных данных в соответствии с #[a.checkbox__link(href="#") политикой конфиденциальности]
                           .form__item.form__item--m
                             .form__button
-                              button.button.button--wide.btn-animation(type='submit')
+                              button.button.button--wide.btn-animation(type='submit' data-form-button='21')
                                 span.btn-animation__text
                                   |Отправить
+                  .form-response(data-response='21')
+                    .form-response__row 
+                      .form-response__col
+                        .form-response__title 
+                          |Вы успешно подписаны на рассылку Эпиген.
+                      .form-response__col
+                        .form-response__button 
+                          .button.button--wide.btn-animation(data-response-button='21')
+                            span.btn-animation__text
+                              |Отправить
                 .buy-page__warning.margin-top
                   p.buy-page__warning-text(data-aos='fade-up')
                     |Данные о наличии, ценах на товар, порядке и условиях приобретения предоставляются аптечной организацией, которая несет ответственность за достоверность информации. Владелец сайта не несет ответственности за содержание публикуемых прайс-листов аптек, информации, предоставленной на сайте аптечной организации, а также за ее действия. Информация на сайте не должна быть истолкована как призыв к неспециалистам самостоятельно приобретать или использовать описываемые товары. Информация предоставлена исключительно в информационных целях.

@@ -2127,10 +2127,3 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     }
   }
 }
-
-// slider
-{ 
-  $(() => {
-
-  })
-}
