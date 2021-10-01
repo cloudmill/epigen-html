@@ -11,7 +11,9 @@ $(() => {
 
 // vars
 const BREAKPOINT = 1280
+const BREAKPOINT_TABLE = 768
 const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
+
 
 
 // burger btn
@@ -518,10 +520,14 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 {
   $(window).on('load', () => { // ?
     const slider = $('[data-slider-id]');
-
+    
     if (slider.length !== 0) {
+      const mediaQuery = window.matchMedia(`(min-width: ${BREAKPOINT}px)`);
+      const mediaQueryTable = window.matchMedia(`(min-width: ${BREAKPOINT_TABLE}px)`);
+
       slider.each(function () {
         const slider_el = $(this);
+        const slider_slides = slider_el.find('.swiper-slide');
         const slider_id = slider_el.data('slider-id');
         const slider_prev_id = slider_el.data('slider-prev');
         const slider_next_id = slider_el.data('slider-next');
@@ -541,6 +547,8 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           },
         };
 
+        let slidesMaxLength = (mediaQuery.matches) ? 3 : (mediaQueryTable.matches) ? 2 : 1;
+
         // switch (slider_id) {
         //   case 1:
         //     slider_options = {
@@ -556,14 +564,18 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
         // }
 
-        const slider_swiper = new Swiper(slider_el[0], slider_options);
-
-        slider_prev.on('click', () => {
-          slider_swiper.slidePrev();
-        });
-        slider_next.on('click', () => {
-          slider_swiper.slideNext();
-        });
+        if (slider_slides.length <= slidesMaxLength) {
+          slider_el.closest('[data-slider-section]').addClass('slider-section-hidden')
+        } else {
+          const slider_swiper = new Swiper(slider_el[0], slider_options);
+  
+          slider_prev.on('click', () => {
+            slider_swiper.slidePrev();
+          });
+          slider_next.on('click', () => {
+            slider_swiper.slideNext();
+          });
+        }
       });
     }
   });
@@ -1286,6 +1298,9 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
         // let cur_index = 0
         let cur_index = window.location.hash === '#product1' ? 0 : 1
 
+        $('.block__control-item').eq(cur_index).find('.spray-page__tabs-item').addClass('spray-page__tabs-item--active')
+
+        console.log(cur_index);
         let clickable = true
 
         updateBlock()
@@ -1303,6 +1318,9 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           if (clickable) {
             if (!$(this).hasClass('spray-page__tabs-item--active')) {
               clickable = false
+              btn.removeClass('spray-page__tabs-item--active')
+              $(this).addClass('spray-page__tabs-item--active')
+
               setTimeout(() => {
                 frame.removeClass('block__frame--open')
                 frame.removeClass('block__frame--out')
@@ -1319,6 +1337,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
               cur_index = new_index
 
               const newFrame = frame.eq(new_index)
+              console.log(new_index);
 
               if (newFrame.height() > block.find('.block__frame--front').height()) {
                 block.css('height', `${newFrame.height()}px`)

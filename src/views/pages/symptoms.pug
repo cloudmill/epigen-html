@@ -389,7 +389,7 @@ block content
                               span.btn-animation__text
                                 |Подробнее
                     .specialists-page__bottom-column(data-aos='fade-up')
-                section.slider-section.margin-top
+                section.slider-section.margin-top(data-slider-section='')
                   .slider-section__row
                     .slider-section__col
                       h3.slider-section__title(data-aos='fade-up')
@@ -404,7 +404,7 @@ block content
                             +simple-arrow-svg.b__svg
                   .slider.swiper-container(data-slider-id="1" data-slider-next="1" data-slider-prev="2" data-aos='fade-up')
                     .swiper-wrapper.slider__wrapper
-                      - for (i = 0; i < 9; i++)
+                      - for (i = 0; i < 3; i++)
                         .slider__item.swiper-slide
                           a.card(href="#")
                             .card__container
