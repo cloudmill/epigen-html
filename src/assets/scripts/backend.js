@@ -129,7 +129,7 @@ function test() {
 
 function showMore() {
     $(document).on("click", "[data-type=show_more_click]", function (e) {
-        let thisObj = $(this),
+        let thisObj = $(document).find("[data-type=show_more_click]"),
             url = thisObj.attr("data-url"),
             ids = [];
 
@@ -231,9 +231,7 @@ function subscribe() {
         e.preventDefault();
 
         let form = $(this),
-            formResponse = form.siblings("[data-type=form-response]"),
             url = form.attr("data-url"),
-            processData = true,
             data = {};
 
 
@@ -268,7 +266,7 @@ function subscribe() {
     });
 }
 function forms() {
-    $(document).on('click', '[data-type=submit]', function () {
+    $(document).on('submit', '[data-type=js-form]', function () {
         const thisObj = $(this);
 
         let formContainer = thisObj.parents('[data-type=form-container]'),
