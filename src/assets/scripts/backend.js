@@ -54,9 +54,12 @@ function testVozDiag() {
 
         if (end == 'end') {
             $('.checkOption').each(function () {
+                
                 vozDiagArr.push($(this).attr("data-voz-diag"));
                 questionArr.push($(this).attr("data-question"));
                 answerArr.push($(this).find("[data-type=option_value]").text());
+
+                $(this).removeClass('checkOption');
             });
         }
 
