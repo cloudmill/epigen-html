@@ -13,6 +13,7 @@ $(function () {
     buy();
     cookies();
     reviewSlider();
+    clearTest();
 });
 
 function cookies() {
@@ -54,12 +55,7 @@ function testVozDiag() {
 
         if (end == 'end') {
             $('.checkOption').each(function () {
-                
                 vozDiagArr.push($(this).attr("data-voz-diag"));
-                questionArr.push($(this).attr("data-question"));
-                answerArr.push($(this).find("[data-type=option_value]").text());
-
-                $(this).removeClass('checkOption');
             });
         }
 
@@ -86,6 +82,15 @@ function testVozDiag() {
 
             });
         }
+    });
+}
+
+function clearTest() {
+    $(document).on("click", "[data-type=clear-test]", function (e) {
+        console.log('clear test ');
+        $('.checkOption').each(function () {
+            $(this).removeClass('checkOption');
+        });
     });
 }
 
