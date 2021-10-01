@@ -1286,6 +1286,9 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
         // let cur_index = 0
         let cur_index = window.location.hash === '#product1' ? 0 : 1
 
+        $('.block__control-item').eq(cur_index).find('.spray-page__tabs-item').addClass('spray-page__tabs-item--active')
+
+        console.log(cur_index);
         let clickable = true
 
         updateBlock()
@@ -1303,6 +1306,9 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           if (clickable) {
             if (!$(this).hasClass('spray-page__tabs-item--active')) {
               clickable = false
+              btn.removeClass('spray-page__tabs-item--active')
+              $(this).addClass('spray-page__tabs-item--active')
+
               setTimeout(() => {
                 frame.removeClass('block__frame--open')
                 frame.removeClass('block__frame--out')
@@ -1319,6 +1325,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
               cur_index = new_index
 
               const newFrame = frame.eq(new_index)
+              console.log(new_index);
 
               if (newFrame.height() > block.find('.block__frame--front').height()) {
                 block.css('height', `${newFrame.height()}px`)
