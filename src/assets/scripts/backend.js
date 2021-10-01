@@ -72,11 +72,12 @@ function testVozDiag() {
             }).done(function (r) {
 
                 arr = r.split('|');
+                
+                $(document).find("[data-type=voz_diag_desc]").empty();
+                $(document).find("[data-type=voz_diag_desc_2]").empty();
 
-
-
-                $(document).find("[data-type=voz_diag_name]").text(arr[0]);
-                $(document).find("[data-type=voz_diag_desc]").text(arr[1]);
+                $(document).find("[data-type=voz_diag_desc]").html(arr[1]);
+                $(document).find("[data-type=voz_diag_desc_2]").html(arr[2]);
 
             });
         }
