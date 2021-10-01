@@ -118,6 +118,10 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           if ($(e.target).closest(button).length) {
             $(`[data-modal='${buttonId}']`).toggleClass('modal--active');
             $('.body').toggleClass('body--hidden')
+            const container = $(`[data-modal='${buttonId}']`).find('[data-modal-container]')[0]
+            setTimeout(() => {
+              container.scrollTo(0, 0)
+            });
           }
         });
       })
