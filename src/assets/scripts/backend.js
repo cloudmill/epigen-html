@@ -6,7 +6,6 @@ $(function () {
     showMore();
     revFilter();
     revModal();
-    specAlert();
     subscribe();
     forms();
     search();
@@ -18,15 +17,20 @@ $(function () {
 
 function cookies() {
     $(document).on("click", "[data-type=cookies-btn-agr]", function (e) {
-        let url = $(this).attr("data-url");
+        let url = $(this).attr("data-url"),
+        cookies = $(this).attr("data-cookies");
 
         console.log("cookies agr yes");
+
+        if (cookies == 'spec_yes') {
+            $(document).find("[data-type=alert_block]").removeClass('alert--active');
+        }
 
         $.ajax({
             method: "POST",
             url: url,
             data: {
-                cookies: 'Y',
+                cookies: cookies,
             },
         }).done(function (r) {
 
@@ -68,11 +72,12 @@ function testVozDiag() {
             }).done(function (r) {
 
                 arr = r.split('|');
+                
+                $(document).find("[data-type=voz_diag_desc]").empty();
+                $(document).find("[data-type=voz_diag_desc_2]").empty();
 
-
-
-                $(document).find("[data-type=voz_diag_name]").text(arr[0]);
-                $(document).find("[data-type=voz_diag_desc]").text(arr[1]);
+                $(document).find("[data-type=voz_diag_desc]").html(arr[1]);
+                $(document).find("[data-type=voz_diag_desc_2]").html(arr[2]);
 
             });
         }
@@ -214,48 +219,6 @@ function revModal() {
         body.find('[data-type=rev-modal-text').html(data['text']);
         body.find('[data-type=rev-modal-post').text(data['position']);
         body.find('[data-type=rev-modal-sub').text(data['title']);
-    });
-}
-
-function specAlert() {
-    $(document).on("click", "[data-type=spec-alert-no]", function (e) {
-        e.preventDefault();
-        let url = $(this).attr("data-url"),
-            alert = 'yes';
-
-        console.log('click spec alert no');
-
-        $.ajax({
-            method: "POST",
-            url: url,
-            data: {
-                ajax: 1,
-                alert: alert,
-            },
-        }).done(function (r) {
-            console.log($(r));
-            window.location.href = '/';
-        });
-    });
-    $(document).on("click", "[data-type=spec-alert-yes]", function (e) {
-        e.preventDefault();
-        let url = $(this).attr("data-url"),
-            alert = 'no';
-
-        console.log('click spec alert yes');
-
-        $.ajax({
-            method: "POST",
-            url: url,
-            data: {
-                ajax: 1,
-                alert: alert,
-            },
-        }).done(function (r) {
-            console.log($(r));
-        });
-
-        $("[data-type=spec-alert-close]").click();
     });
 }
 
