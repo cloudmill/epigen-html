@@ -274,50 +274,55 @@ function subscribe() {
     });
 }
 function forms() {
-    $(document).on('submit', '[data-type=js-form]', function () {
-        const thisObj = $(this);
+  $('form').submit(function (e) {
+    e.preventDefault();
 
-        let formContainer = thisObj.parents('[data-type=form-container]'),
-            contentType = 'application/x-www-form-urlencoded; charset=UTF-8',
-            processData = true,
-            data = {},
-            file = formContainer.find('[data-type=file]').length > 0 ? formContainer.find('[data-type=file]') : false;
+    const thisObj = $(this);
 
-        if (file) {
-            data = new FormData();
-            contentType = false;
-            processData = false;
-            data.append('file', file[0].files[0]);
-        }
+    let formContainer = thisObj.parents('[data-type=form-container]'),
+      formHide = formContainer.find('[data-form]'),
+      formResponse = formContainer.find('[data-type=form-response]'),
+      responseMessage = formResponse.find('[data-type=response-message]'),
+      file = formContainer.find('[data-type=file]').length ? formContainer.find('[data-type=file]') : false,
+      contentType = file ? false : 'application/x-www-form-urlencoded; charset=UTF-8',
+      processData = file ? false : true,
+      data = file ? new FormData() : {};
 
-        formContainer
-            .find(
-                '[data-type=get-field]'
-            )
-            .each(function () {
-                const field = $(this).data('field');
-                const val = $(this).val();
+    if (file) {
+      data.append('file', file[0].files[0]);
+    }
 
-                file ? data.append(field, val) : (data[field] = val);
-            });
+    formContainer
+        .find(
+            '[data-type=get-field]'
+        )
+        .each(function () {
+            const field = $(this).data('field');
+            const val = $(this).val();
 
-        $.ajax({
-            type: 'POST',
-            url: '/local/templates/main/include/ajax/forms.php',
-            dataType: 'json',
-            data: data,
-            contentType: contentType,
-            processData: processData,
-            success: function (r) {
-                if (r.success === true) {
-                    formContainer.find('[data-type=request-form-container]').attr('data-form-hidden', true);
-                    formContainer.find('[data-type=form-response]').attr('data-response-active', true);
-                } else {
-                    console.log(r.errors);
-                }
-            }
+            file ? data.append(field, val) : (data[field] = val);
         });
+
+    formHide.attr('data-form-hidden', true);
+    formResponse.attr('data-response-active', true);
+
+    $.ajax({
+        type: 'POST',
+        url: '/local/templates/main/include/ajax/forms.php',
+        dataType: 'json',
+        data: data,
+        contentType: contentType,
+        processData: processData,
+        success: function(r) {
+          if (!r.success) {
+            responseMessage.text(r.message);
+          }
+        },
+        error: function(r) {
+          responseMessage.text(r);
+        }
     });
+  });
 }
 
 function search() {
