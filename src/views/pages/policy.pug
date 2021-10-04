@@ -6,6 +6,14 @@ include ../components/modals.pug
 //- block cookies
 block grid-test
 
+mixin copyright-link
+  a.copyright-link(href=attributes.href)
+    .copyright-link__mark
+      +copyright-svg.copyright-link__mark-svg
+    .copyright-link__text
+      block
+
+
 block content
   .policy-page
     .container
@@ -25,6 +33,9 @@ block content
                         .header__burger
                           span.header__burger-span
                   +modal-aside
+                .aside__bottom(data-aos='fade-up' data-aos-delay='200')
+                  +copyright-link(href='#')
+                    |Компания «Инвар», 2021
         .row__col.row__col--main
           .page
             header.page__header
