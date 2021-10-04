@@ -44,9 +44,7 @@ function testVozDiag() {
         let thisObj = $(this),
             url = thisObj.attr("data-url"),
             end = thisObj.attr("data-op-end"),
-            vozDiagArr = [],
-            questionArr = [],
-            answerArr = [];
+            vozDiagArr = [];
 
         console.log('check');
 
