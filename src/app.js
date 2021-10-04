@@ -625,6 +625,12 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
               files.splice(indexToRemove, 1);
             }
           });
+
+          $('[data-response-button]').on('click', function() {
+            files.length = 0
+            fileElement.remove()
+            console.log(files);
+          })
         });
       });
     }
@@ -2154,16 +2160,4 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       }, 1000 / 15);
     }
   }
-}
-
-{
-  $(() => {
-    const input = $('[data-file-input]')
-
-    input.each(function() {
-      $(this).on('change', function() {
-        console.log(this.files)
-      })
-    })
-  })
 }
