@@ -153,20 +153,20 @@ block content
                   .faq-page__form-col
                     form.form(action="/" data-type="feedback-form")
                       label.form__item(data-aos='fade-up')
-                        input.form__input(type="text" name="name" required="required")
+                        input.form__input(type="text" name="name" required="required" data-form-input='')
                         span.form__placeholder
                           |Имя
                       label.form__item(data-aos='fade-up')
-                        input.form__input(type="email" name="email" required="required")
+                        input.form__input(type="email" name="email" required="required" data-form-input='')
                         span.form__placeholder
                           |E-mail
                       label.form__item(data-aos='fade-up')
-                        textarea.form__textarea(name="message" placeholder="Сообщение", cols="30", rows="10")
+                        textarea.form__textarea(name="message" placeholder="Сообщение", cols="30", rows="10" data-form-input='')
                       .form__container
                         .form__inner
                           .checkbox(data-aos='fade-up')
                             label.checkbox__label(for="checkbox")
-                              input.checkbox__input(type="checkbox" id="checkbox" required='required')
+                              input.checkbox__input(type="checkbox" id="checkbox" required='required' data-form-checkbox='')
                               .checkbox__box
                                 +check-svg.checkbox__icon
                               .checkbox__text

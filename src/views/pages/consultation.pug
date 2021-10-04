@@ -205,15 +205,15 @@ block content
                 h3.mdl__form-title
                   |Задать вопрос врачу
                 label.form__item
-                  input.form__input(type="text" name="name" required='required')
+                  input.form__input(type="text" name="name" required='required' data-form-input='')
                   span.form__placeholder
                     |Имя
                 label.form__item
-                  input.form__input(type="email" name="email" required='required')
+                  input.form__input(type="email" name="email" required='required' data-form-input='')
                   span.form__placeholder
                     |E-mail
                 .form__item
-                  textarea.form__textarea(name="message" placeholder="Сообщение", cols="30", rows="10" required='')
+                  textarea.form__textarea(name="message" placeholder="Сообщение", cols="30", rows="10" required='' data-form-input='')
                 .form__inner
                   .file
                     input.file__input(id="file" type="file" multiple)
@@ -225,7 +225,7 @@ block content
                         |Прикрепить файл
                   .checkbox
                     label.checkbox__label(for="checkbox-1")
-                      input.checkbox__input(type="checkbox" id="checkbox-1" required='required')
+                      input.checkbox__input(type="checkbox" id="checkbox-1" required='required' data-form-checkbox='')
                       .checkbox__box
                         +check-svg.checkbox__icon
                       .checkbox__text

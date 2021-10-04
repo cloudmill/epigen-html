@@ -119,9 +119,11 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
             $(`[data-modal='${buttonId}']`).toggleClass('modal--active');
             $('.body').toggleClass('body--hidden')
             const container = $(`[data-modal='${buttonId}']`).find('[data-modal-container]')[0]
-            setTimeout(() => {
-              container.scrollTo(0, 0)
-            });
+            if (container) {
+              setTimeout(() => {
+                container.scrollTo(0, 0)
+              });
+            }
           }
         });
       })
@@ -505,17 +507,21 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           $(`[data-form='${formButtonId}']`).attr('data-form-hidden', '');
           $(`[data-response='${formButtonId}']`).attr('data-response-active', '');
         })
+
+        const response = $('[data-response]');
+        const responseButton = response.find('[data-response-button]');
+        const formInput = $(this).find('[data-form-input]')
+        const formCheckbox = $(this).find('[data-form-checkbox]')
+  
+        responseButton.on('click', function () {
+          const responseButtonId = $(this).data('response-button');
+  
+          $(`[data-form='${responseButtonId}']`).removeAttr('data-form-hidden');
+          $(`[data-response='${responseButtonId}']`).removeAttr('data-response-active');
+          formCheckbox.prop('checked', false)
+          formInput.val('')
+        });
       })
-
-      const response = $('[data-response]');
-      const responseButton = response.find('[data-response-button]');
-
-      responseButton.on('click', function () {
-        const responseButtonId = $(this).data('response-button');
-
-        $(`[data-form='${responseButtonId}']`).removeAttr('data-form-hidden');
-        $(`[data-response='${responseButtonId}']`).removeAttr('data-response-active');
-      });
     }
   });
 }
@@ -1215,7 +1221,6 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
             const stepNext = step.next()
 
             combination.push($(this).index() + 1)
-            console.log(combination);
 
             step.removeClass('test__options--active')
             stepNext.addClass('test__options--active')
@@ -1230,7 +1235,6 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
               resultFirstMessage()
             }
           });
-
         })
 
         // result response
@@ -1256,6 +1260,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           question.eq(0).addClass('test__question--active')
           index.text(1)
           $(this).find('.test__options').eq(0).addClass('test__options--active')
+          formInput.val('')
           state.responseHandler($(this))
         })
       })
@@ -2150,3 +2155,19 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     }
   }
 }
+
+// {
+//   $(() => {
+//     const button = $('[data-response-button]')
+//     const inputs = $('[data-form]').find('[data-form-input]')
+//     const checkbox = $('[data-form]').find('[data-form-checkbox]')
+
+//     button.on('click', function() {
+//       // checkbox.each(function() {
+//       //   $(this).prop('checked', false)
+//       // })
+//       checkbox.prop('checked', false)
+//       inputs.val('')
+//     })
+//   })
+// }

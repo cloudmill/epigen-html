@@ -214,15 +214,15 @@ mixin modal-consultation
                   h3.mdl__form-title
                     |Задать вопрос врачу
                   label.form__item
-                    input.form__input(type="text" name="name")
+                    input.form__input(type="text" name="name" data-form-input='')
                     span.form__placeholder
                       |Имя
                   label.form__item
-                    input.form__input(type="email" name="email" required='required')
+                    input.form__input(type="email" name="email" required='required' data-form-input='')
                     span.form__placeholder
                       |E-mail
                   .form__item
-                    textarea.form__textarea(name="message" placeholder="Сообщение", cols="30", rows="10" required='')
+                    textarea.form__textarea(name="message" placeholder="Сообщение", cols="30", rows="10" required='' data-form-input='')
                   .form__inner
                     .file
                       input.file__input(id="file" type="file" multiple)
