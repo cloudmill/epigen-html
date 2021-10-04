@@ -279,7 +279,8 @@ function forms() {
 
     const thisObj = $(this);
 
-    let formContainer = thisObj.parents('[data-type=form-container]'),
+    let url = thisObj.attr('action') ? thisObj.attr('action') : '/local/templates/main/include/ajax/forms.php',
+      formContainer = thisObj.parents('[data-type=form-container]'),
       formHide = formContainer.find('[data-form]'),
       formResponse = formContainer.find('[data-type=form-response]'),
       responseMessage = formResponse.find('[data-type=response-message]'),
@@ -308,7 +309,7 @@ function forms() {
 
     $.ajax({
         type: 'POST',
-        url: '/local/templates/main/include/ajax/forms.php',
+        url: url,
         dataType: 'json',
         data: data,
         contentType: contentType,
@@ -318,8 +319,8 @@ function forms() {
             responseMessage.text(r.message);
           }
         },
-        error: function(r) {
-          responseMessage.text(r);
+        error: function() {
+          responseMessage.text('Ошибка');
         }
     });
   });
