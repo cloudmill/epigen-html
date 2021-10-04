@@ -64,3 +64,13 @@
 
 
     
+.wwave-wrapper {
+    @media (max-width: $breakpoint-m - 1px) {
+        position: absolute;
+
+        height: 200vh;
+        width: 94vw;
+
+        overflow: hidden;
+    }
+}

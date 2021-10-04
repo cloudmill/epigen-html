@@ -53,5 +53,7 @@ input:-webkit-autofill:active{
 }
 
 main {
-  overflow: hidden;
+  @media (max-width: $breakpoint-m - 1px) {
+    overflow: hidden;
+  }
 }
