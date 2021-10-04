@@ -236,14 +236,16 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     }
 
     function open() {
-      state.isActive = true;
+      if (!state.isActive) {
+        state.isActive = true;
 
-      $('.mdl').addClass('mdl--active')
-      $('.body').addClass('body--hidden')
+        $('.mdl').addClass('mdl--active')
+        $('.body').addClass('body--hidden')
 
-      setTimeout(() => {
-        waitClose()
-      }, 0)
+        setTimeout(() => {
+          waitClose()
+        }, 0)
+      }
     }
 
     window.addEventListener('open-modal', function () {
