@@ -1,0 +1,92 @@
+extends ../layouts/master.pug
+
+include ../components/footer.pug
+include ../components/modals.pug
+
+//- block cookies
+block grid-test
+
+block content
+  .specialists-page
+    .container
+      .row
+        .row__col.row__col--aside.row__col--rail
+          .aside
+            .aside__inner
+              .aside__container
+                .aside__top.modal(data-modal='4')
+                  header.header.header--margin-bottom--default(data-aos='fade-up')
+                    a.header__logo(href='#')
+                      +logo-svg.header__logo-svg
+                    .header__menu(data-button='4')
+                      .header__text
+                        |Меню
+                      .header__button
+                        .header__burger
+                          span.header__burger-span
+                  +modal-aside
+        .row__col.row__col--main
+          .page
+            header.page__header
+              .panel.panel--nav
+                .panel__panel
+                  .panel__row
+                    .panel__col(data-aos='fade-up')
+                      .panel__inner
+                        .panel__product
+                          //- .panel__product-item--active
+                          a.panel__product-item(href='#')
+                            .panel__product-mark
+                            .panel__product-text
+                              |Спрей
+                          a.panel__product-item.panel__product-item--purple(href='#')
+                            .panel__product-mark
+                            .panel__product-text
+                              |Гель
+                    .panel__wrapper(data-aos='fade-up')
+                      .panel__wrapper-row
+                        .panel__wrapper-col
+                          .panel__inner
+                            a.panel__where-buy(href='#')
+                              |Где купить
+                            .panel__choice
+                              .panel__choice-item(data-count=8 data-modal-button='3')
+                                |Симптомы
+                              .panel__choice-item(data-count=12 data-modal-button='2')
+                                |Заболевания
+                        .panel__wrapper-col
+                          .panel__inner
+                            .panel__test(data-button='3')
+                              +calendar-test-svg.panel__test-icon
+                              .panel__test-text
+                                |Пройти тест
+                            a.panel__consultation(href="consultation.html") 
+                              +consultation-svg.panel__consultation-svg
+                              .panel__consultation-text
+                                |Консультация эксперта
+                      .panel__modals
+                        +modal-header
+                  .panel__mobile(data-aos='fade-up')
+                    header.header
+                      a.header__logo(href="#")
+                        +logo-svg.header__svg
+                      .header__menu(data-modal-button='1')
+                        .header__button
+                          .header__burger
+                            span.header__burger-span
+                  .panel__modals
+                    +modal-mobile
+            main.page__main
+              h2.title.title--md(data-aos='fade-up')
+                |Положение о пользовании сайтом							
+              .rail.rail--desctop(data-aos='fade-up')
+              .content
+                section.section
+                  p.text
+                    |Проведен сравнительный анализ результатов лечения 290 женщин в возрасте от 19 до 48 лет с неопухолевыми заболеваниями шейки матки, ассоциированными с вирусом папилломы человека. Установлено, что  использование  спрея  эпиген интим  при  традиционном  криолечении  доброкачественной  патологии шейки  матки  способствует  достоверному  сокращению  сроков  эпителизации,  увеличению  процента излеченных больных после одного сеанса криовоздействия и уменьшению количества рецидивов.
+                  p.text
+                    |Актуальность проблемы лечения доброкачественных заболеваний шейки матки обусловлена широкой распространенностью патологии шейки матки, которая встречается, по данным В.Н. Прилепской [8], у 10—15% женщин репродуктивного возраста. Кроме того, известно, что доброкачественные процессы могут предшествовать злокачественным новообразованиям шейки матки, заболеваемость которыми в настоящее время, согласно исследованиям В.И. Краснопольского, В.Н. Прилепской [5,7], не имеет тенденции к снижению.
+            +footer.page__footer
+  +modal-test
+  +modal-article
+  +modal-consultation
