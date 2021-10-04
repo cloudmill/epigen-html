@@ -2156,18 +2156,14 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
   }
 }
 
-// {
-//   $(() => {
-//     const button = $('[data-response-button]')
-//     const inputs = $('[data-form]').find('[data-form-input]')
-//     const checkbox = $('[data-form]').find('[data-form-checkbox]')
+{
+  $(() => {
+    const input = $('[data-file-input]')
 
-//     button.on('click', function() {
-//       // checkbox.each(function() {
-//       //   $(this).prop('checked', false)
-//       // })
-//       checkbox.prop('checked', false)
-//       inputs.val('')
-//     })
-//   })
-// }
+    input.each(function() {
+      $(this).on('change', function() {
+        console.log(this.files)
+      })
+    })
+  })
+}
