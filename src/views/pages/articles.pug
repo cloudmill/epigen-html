@@ -182,22 +182,22 @@ block content
                       form.form.form--follow(action="/" )
                         .form__row
                           label.form__item
-                            input.form__input(type="text" name="name" required='required')
+                            input.form__input(type="text" name="name" required='required' data-form-input='')
                             span.form__placeholder
                               |Имя
                           label.form__item
-                            input.form__input(type="email" name="email" required='required')
+                            input.form__input(type="email" name="email" required='required' data-form-input='')
                             span.form__placeholder
                               |E-mail
                         .form__row
                           .form__item.form__item--m
                             .checkbox
                               label.checkbox__label(for="checkbox")
-                                input.checkbox__input(type="checkbox" id="checkbox" required='required')
+                                input.checkbox__input(type="checkbox" id="checkbox" required='required' data-form-checkbox='')
                                 .checkbox__box
                                   +check-svg.checkbox__icon
                                 .checkbox__text
-                                  |Согласен на обработку персональных данных в соответствии с #[a.checkbox__link(href="#") политикой конфиденциальности]
+                                  |Согласен на обработку персональных данных в соответствии с #[a.checkbox__link(href="policy.html") политикой конфиденциальности]
                           .form__item.form__item--m
                             .form__button
                               button.button.button--wide.btn-animation(type='submit' data-form-button='1')

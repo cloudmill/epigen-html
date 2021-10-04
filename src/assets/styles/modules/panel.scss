@@ -109,6 +109,7 @@
   &__panel {
     position: fixed;
     @media (max-width: $breakpoint - 1px) {
+      z-index: 100;
       left: 0;
       right: 0;
     }

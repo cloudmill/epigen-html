@@ -115,10 +115,12 @@
 							</div>
 						</div>
 						<div class="row__col row__col--main">
-							<div class="wwave" data-aos="fade-up" data-aos-delay="800"><canvas class="wwave__canvas" width="0" height="0"></canvas>
-								<div class="wwave__star"><svg class="wwave__svg" xmlns="http://www.w3.org/2000/svg" width="46" height="47" viewBox="0 0 46 47" fill="none">
-										<path d="M26.8217 10.843C26.8217 10.843 23.1678 17.2667 23.0632 17.5393L6.59172 18.5158L20.1323 23.2201L11.206 36.8455L23.5661 26.798L31.8278 42.2308L27.893 22.4372L38.168 21.9497L27.9985 19.1068L28.7534 12.0385L29.1692 6.7761L26.8217 10.843Z" fill="#31AFF2"></path>
-									</svg></div>
+							<div class="wwave-wrapper">
+								<div class="wwave" data-aos="fade-up" data-aos-delay="800"><canvas class="wwave__canvas" width="0" height="0"></canvas>
+									<div class="wwave__star"><svg class="wwave__svg" xmlns="http://www.w3.org/2000/svg" width="46" height="47" viewBox="0 0 46 47" fill="none">
+											<path d="M26.8217 10.843C26.8217 10.843 23.1678 17.2667 23.0632 17.5393L6.59172 18.5158L20.1323 23.2201L11.206 36.8455L23.5661 26.798L31.8278 42.2308L27.893 22.4372L38.168 21.9497L27.9985 19.1068L28.7534 12.0385L29.1692 6.7761L26.8217 10.843Z" fill="#31AFF2"></path>
+										</svg></div>
+								</div>
 							</div>
 							<div class="page">
 								<header class="page__header">
@@ -1081,8 +1083,8 @@
 															</div>
 															<div class="footer__info">
 																<ul class="footer__doc">
-																	<li class="footer__doc-item"><a class="footer__doc-link" href="#">Политика конфиденциальности</a></li>
-																	<li class="footer__doc-item"><a class="footer__doc-link" href="#">Положение о пользовании сайтом</a></li>
+																	<li class="footer__doc-item"><a class="footer__doc-link" href="policy.html">Политика конфиденциальности</a></li>
+																	<li class="footer__doc-item"><a class="footer__doc-link" href="user-guide.html">Положение о пользовании сайтом</a></li>
 																</ul>
 																<p class="footer__dev"><span class="footer__dev-text">Сделано в&nbsp;</span><a class="footer__dev-text footer__dev-link" href="#">СloudMill</a></p>
 															</div>
@@ -1360,7 +1362,7 @@
 				<div class="mdl">
 					<div class="mdl__container">
 						<div class="mdl__content mdl__interactive">
-							<div class="mdl__article">
+							<div class="mdl__article" data-modal-container="">
 								<div class="mdl__article-container">
 									<div class="mdl__article-doctor">
 										<div class="mdl__article-row">
@@ -1404,8 +1406,8 @@
 								<div class="mdl__form">
 									<div class="mdl__form-container">
 										<form class="form" action="/" data-form="10">
-											<h3 class="mdl__form-title">Задать вопрос врачу</h3><label class="form__item"><input class="form__input" name="name" /><span class="form__placeholder">Имя</span></label><label class="form__item"><input class="form__input" type="email" name="email" required="required" /><span class="form__placeholder">E-mail</span></label>
-											<div class="form__item"><textarea class="form__textarea" name="message" placeholder="Сообщение" cols="30" rows="10"></textarea></div>
+											<h3 class="mdl__form-title">Задать вопрос врачу</h3><label class="form__item"><input class="form__input" name="name" data-form-input="" /><span class="form__placeholder">Имя</span></label><label class="form__item"><input class="form__input" type="email" name="email" required="required" data-form-input="" /><span class="form__placeholder">E-mail</span></label>
+											<div class="form__item"><textarea class="form__textarea" name="message" placeholder="Сообщение" cols="30" rows="10" required="" data-form-input=""></textarea></div>
 											<div class="form__inner">
 												<div class="file"><input class="file__input" id="file" type="file" multiple="multiple" />
 													<div class="file__container"></div><label class="file__label" for="file">
@@ -1419,7 +1421,7 @@
 														<div class="checkbox__box"><svg class="checkbox__icon" width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
 																<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
 															</svg></div>
-														<div class="checkbox__text">Согласен на обработку персональных данных в соответствии с <a class="checkbox__link" href="#">политикой конфиденциальности</a></div>
+														<div class="checkbox__text">Согласен на обработку персональных данных в соответствии с <a class="checkbox__link" href="policy.html">политикой конфиденциальности</a></div>
 													</label></div>
 											</div>
 											<div class="form__button"><button class="button button--wide btn-animation" type="submit" data-form-button="10"><span class="btn-animation__text">Отправить</span></button></div>

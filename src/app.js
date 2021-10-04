@@ -119,9 +119,11 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
             $(`[data-modal='${buttonId}']`).toggleClass('modal--active');
             $('.body').toggleClass('body--hidden')
             const container = $(`[data-modal='${buttonId}']`).find('[data-modal-container]')[0]
-            setTimeout(() => {
-              container.scrollTo(0, 0)
-            });
+            if (container) {
+              setTimeout(() => {
+                container.scrollTo(0, 0)
+              });
+            }
           }
         });
       })
@@ -234,15 +236,21 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     }
 
     function open() {
-      state.isActive = true;
+      if (!state.isActive) {
+        state.isActive = true;
 
-      $('.mdl').addClass('mdl--active')
-      $('.body').addClass('body--hidden')
+        $('.mdl').addClass('mdl--active')
+        $('.body').addClass('body--hidden')
 
-      setTimeout(() => {
-        waitClose()
-      }, 0)
+        setTimeout(() => {
+          waitClose()
+        }, 0)
+      }
     }
+
+    window.addEventListener('open-modal', function () {
+      open();
+    });
 
     function waitClose() {
       $(window).on('click', handleClick)
@@ -505,17 +513,21 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           $(`[data-form='${formButtonId}']`).attr('data-form-hidden', '');
           $(`[data-response='${formButtonId}']`).attr('data-response-active', '');
         })
+
+        const response = $('[data-response]');
+        const responseButton = response.find('[data-response-button]');
+        const formInput = $(this).find('[data-form-input]')
+        const formCheckbox = $(this).find('[data-form-checkbox]')
+
+        responseButton.on('click', function () {
+          const responseButtonId = $(this).data('response-button');
+
+          $(`[data-form='${responseButtonId}']`).removeAttr('data-form-hidden');
+          $(`[data-response='${responseButtonId}']`).removeAttr('data-response-active');
+          formCheckbox.prop('checked', false)
+          formInput.val('')
+        });
       })
-
-      const response = $('[data-response]');
-      const responseButton = response.find('[data-response-button]');
-
-      responseButton.on('click', function () {
-        const responseButtonId = $(this).data('response-button');
-
-        $(`[data-form='${responseButtonId}']`).removeAttr('data-form-hidden');
-        $(`[data-response='${responseButtonId}']`).removeAttr('data-response-active');
-      });
     }
   });
 }
@@ -524,7 +536,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 {
   $(window).on('load', () => { // ?
     const slider = $('[data-slider-id]');
-    
+
     if (slider.length !== 0) {
       const mediaQuery = window.matchMedia(`(min-width: ${BREAKPOINT}px)`);
       const mediaQueryTable = window.matchMedia(`(min-width: ${BREAKPOINT_TABLE}px)`);
@@ -572,7 +584,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           slider_el.closest('[data-slider-section]').addClass('slider-section-hidden')
         } else {
           const slider_swiper = new Swiper(slider_el[0], slider_options);
-  
+
           slider_prev.on('click', () => {
             slider_swiper.slidePrev();
           });
@@ -619,6 +631,12 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
               files.splice(indexToRemove, 1);
             }
           });
+
+          $('[data-response-button]').on('click', function() {
+            files.length = 0
+            fileElement.remove()
+            console.log(files);
+          })
         });
       });
     }
@@ -1193,7 +1211,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
         function resultFirstMessage() {
           const root = combination.slice(0, 1).join('')
           const resultsMessage = results.find('.test__result-text')
-          
+
           const clone = resultsMessage.eq(root - 1).clone()
 
           resultFirst.append(clone)
@@ -1201,7 +1219,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
         function resultSecondMessage() {
           const root = combination.slice(0, 2).join('')
-          const resultMessage = ths.find(`[data-result*="${root}"]`) 
+          const resultMessage = ths.find(`[data-result*="${root}"]`)
           const clone = resultMessage.clone()
 
           resultSecond.append(clone)
@@ -1215,7 +1233,6 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
             const stepNext = step.next()
 
             combination.push($(this).index() + 1)
-            console.log(combination);
 
             step.removeClass('test__options--active')
             stepNext.addClass('test__options--active')
@@ -1230,7 +1247,6 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
               resultFirstMessage()
             }
           });
-
         })
 
         // result response
@@ -1249,13 +1265,14 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           state.toggleResult(testContainer, testResult, true)
           state.update(dot, 0, 'test__dot--active')
 
-          resultFirst.html('') 
-          resultSecond.html('') 
+          resultFirst.html('')
+          resultSecond.html('')
           combination.length = 0
 
           question.eq(0).addClass('test__question--active')
           index.text(1)
           $(this).find('.test__options').eq(0).addClass('test__options--active')
+          formInput.val('')
           state.responseHandler($(this))
         })
       })
@@ -1932,13 +1949,13 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
         wrapper.append(templateTitle.eq(i).clone().addClass('b__title--active'))
         const container = col.find('.b__container')
         container.append(templateSlide.eq(i).clone().addClass('b__frame--active'))
-        
+
         let num = 0
 
         sliderControl.on('click', function() {
           const dataTarget = $(this).data('slider-arrow')
           const slidesActive = container.find('.b__frame--active')
-          
+
           index.before.active = getRealIndex(i + num, templateSlide.length)
           index.before.left = getRealIndex(index.before.active - 1, templateSlide.length)
           index.before.right = getRealIndex(index.before.active + 1, templateSlide.length)
@@ -1962,12 +1979,12 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
           slider.css('pointer-events', 'none')
           wrapper.append(templateTitle.eq(index.after.active).clone())
-          
+
           const slidesTitle = col.find('.b__title')
           const slides = container.find('.b__frame')
 
           slidesTitle.removeClass('b__title--active')
-          
+
           setTimeout(() => {
             slides.removeClass('b__frame--left b__frame--right')
             slides.eq(slidesActive.index() + delta).addClass('b__frame--active b__frame--front')

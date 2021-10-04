@@ -23,7 +23,7 @@
 							<div class="aside">
 								<div class="aside__inner">
 									<div class="aside__container">
-										<div class="aside__top modal" data-modal="4" data-aos="fade-up">
+										<div class="aside__top modal" data-modal="4">
 											<header class="header header--margin-bottom--default"><a class="header__logo" href="#"><svg class="header__logo-svg" xmlns="http://www.w3.org/2000/svg" width="101" height="44" viewBox="0 0 101 44" fill="none">
 														<path d="M35.911 43H101" stroke="#757575" stroke-width="0.408" stroke-miterlimit="4.04"></path>
 														<path fill-rule="evenodd" clip-rule="evenodd" d="M40.2562 27.6192L38.3283 37.5655H38.357L46.7737 27.5903H48.2124L45.6946 40.5062H43.9825L45.9248 30.5454H45.8673L37.4938 40.5494H36.0406L38.5585 27.6192" fill="#757575"></path>
@@ -553,8 +553,8 @@
 															</div>
 															<div class="footer__info">
 																<ul class="footer__doc">
-																	<li class="footer__doc-item"><a class="footer__doc-link" href="#">Политика конфиденциальности</a></li>
-																	<li class="footer__doc-item"><a class="footer__doc-link" href="#">Положение о пользовании сайтом</a></li>
+																	<li class="footer__doc-item"><a class="footer__doc-link" href="policy.html">Политика конфиденциальности</a></li>
+																	<li class="footer__doc-item"><a class="footer__doc-link" href="user-guide.html">Положение о пользовании сайтом</a></li>
 																</ul>
 																<p class="footer__dev"><span class="footer__dev-text">Сделано в&nbsp;</span><a class="footer__dev-text footer__dev-link" href="#">СloudMill</a></p>
 															</div>
@@ -798,8 +798,8 @@
 								<div class="mdl__form">
 									<div class="mdl__form-container">
 										<form class="form" action="/" data-form="10">
-											<h3 class="mdl__form-title">Задать вопрос врачу</h3><label class="form__item"><input class="form__input" name="name" /><span class="form__placeholder">Имя</span></label><label class="form__item"><input class="form__input" type="email" name="email" required="required" /><span class="form__placeholder">E-mail</span></label>
-											<div class="form__item"><textarea class="form__textarea" name="message" placeholder="Сообщение" cols="30" rows="10"></textarea></div>
+											<h3 class="mdl__form-title">Задать вопрос врачу</h3><label class="form__item"><input class="form__input" name="name" data-form-input="" /><span class="form__placeholder">Имя</span></label><label class="form__item"><input class="form__input" type="email" name="email" required="required" data-form-input="" /><span class="form__placeholder">E-mail</span></label>
+											<div class="form__item"><textarea class="form__textarea" name="message" placeholder="Сообщение" cols="30" rows="10" required="" data-form-input=""></textarea></div>
 											<div class="form__inner">
 												<div class="file"><input class="file__input" id="file" type="file" multiple="multiple" />
 													<div class="file__container"></div><label class="file__label" for="file">
@@ -813,7 +813,7 @@
 														<div class="checkbox__box"><svg class="checkbox__icon" width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
 																<path d="M1 4L4.00084 7L10 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
 															</svg></div>
-														<div class="checkbox__text">Согласен на обработку персональных данных в соответствии с <a class="checkbox__link" href="#">политикой конфиденциальности</a></div>
+														<div class="checkbox__text">Согласен на обработку персональных данных в соответствии с <a class="checkbox__link" href="policy.html">политикой конфиденциальности</a></div>
 													</label></div>
 											</div>
 											<div class="form__button"><button class="button button--wide btn-animation" type="submit" data-form-button="10"><span class="btn-animation__text">Отправить</span></button></div>

@@ -214,15 +214,15 @@ mixin modal-consultation
                   h3.mdl__form-title
                     |Задать вопрос врачу
                   label.form__item
-                    input.form__input(type="text" name="name")
+                    input.form__input(type="text" name="name" data-form-input='')
                     span.form__placeholder
                       |Имя
                   label.form__item
-                    input.form__input(type="email" name="email" required='required')
+                    input.form__input(type="email" name="email" required='required' data-form-input='')
                     span.form__placeholder
                       |E-mail
                   .form__item
-                    textarea.form__textarea(name="message" placeholder="Сообщение", cols="30", rows="10")
+                    textarea.form__textarea(name="message" placeholder="Сообщение", cols="30", rows="10" required='' data-form-input='')
                   .form__inner
                     .file
                       input.file__input(id="file" type="file" multiple)
@@ -238,7 +238,7 @@ mixin modal-consultation
                         .checkbox__box
                           +check-svg.checkbox__icon
                         .checkbox__text
-                          |Согласен на обработку персональных данных в соответствии с #[a.checkbox__link(href="#") политикой конфиденциальности]
+                          |Согласен на обработку персональных данных в соответствии с #[a.checkbox__link(href="policy.html") политикой конфиденциальности]
                   .form__button
                     button.button.button--wide.btn-animation(type='submit' data-form-button='10')
                       span.btn-animation__text

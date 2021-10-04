@@ -44,3 +44,16 @@ a {
 address {
   font-style: normal;
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+// main {
+//   @media (max-width: $breakpoint-m - 1px) {
+//     overflow: hidden;
+//   }
+// }

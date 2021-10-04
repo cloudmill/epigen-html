@@ -1,0 +1,78 @@
+.policy-page {
+
+  &__section {
+    margin-top: 30px;
+    @media (min-width: $breakpoint) {
+      padding-left: calc(#{$col-width-d} * 3);
+    }
+    p {
+      @media (min-width: $breakpoint) {
+        padding-left: calc(#{$col-width-d} * 3);
+        padding-right: calc(#{$col-width-d} * 2);
+      }
+
+      @include fsl(18px, 170%);
+      @media (max-width: $breakpoint - 1px) {
+        @include fsl(15px);
+      }
+      &:not(:first-child) {
+        margin-top: 30px;
+      }
+    }
+  }
+  
+  &__title {
+    margin-top: 30px;
+    @media (min-width: $breakpoint) {
+      padding-left: calc(#{$col-width-d} * 3);
+      padding-right: calc(#{$col-width-d} * 2);
+    }
+
+    font-weight: 400;
+    @include fsl(40px, 130%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(20px);
+    }
+  }
+  &__link {
+    color: $color-blue;
+  }
+  &__shout {
+    text-transform: uppercase;
+  }
+  &__list {
+    margin-top: 30px;
+    @media (min-width: $breakpoint) {
+      padding-left: calc(#{$col-width-d} * 3);
+      padding-right: calc(#{$col-width-d} * 2);
+    }
+    
+    li {
+      padding-left: 27px;
+      position: relative;
+
+      @include fsl(18px, 170%);
+
+      &:not(:first-child) {
+        margin-top: 10px;
+      }
+
+      &::before {
+        $size: 7px;
+
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+
+        width: $size;
+        height: $size;
+
+        border-radius: 50%;
+        background: $color-blue;
+      }
+    }
+  }
+}
+

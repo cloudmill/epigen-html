@@ -1,5 +1,8 @@
 .wrapper {
   min-width: 320px;
+  // @media (min-width: $breakpoint-m) {
+  //   overflow: hidden;
+  // }
   overflow: hidden;
   position: relative;
 }

@@ -155,6 +155,11 @@
       border-color: $color-pink;
       color: $color-pink;
     }
+    &#{$comp}__textarea {
+      @include placeholder {
+        color: $color-pink;
+      }
+    }
   }
 
   .parsley-errors-list {
