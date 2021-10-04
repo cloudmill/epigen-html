@@ -229,6 +229,8 @@ function revModal() {
         body.find('[data-type=rev-modal-text').html(data['text']);
         body.find('[data-type=rev-modal-post').text(data['position']);
         body.find('[data-type=rev-modal-sub').text(data['title']);
+
+        window.dispatchEvent(new CustomEvent('open-modal'));
     });
 }
 
@@ -290,6 +292,9 @@ function forms() {
       data = file ? new FormData() : {};
 
     if (file) {
+      $.each(file.files, function(key, input) {
+        data.append('file[]', input);
+      });
       data.append('file', file[0].files[0]);
     }
 
