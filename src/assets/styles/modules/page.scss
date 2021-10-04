@@ -1,4 +1,8 @@
 .page {
+  @media (max-width: $breakpoint - 1px) {
+    position: relative;
+    z-index: 2;
+  }
   &__header {
     @media (min-width: $breakpoint) {
       position: relative;
