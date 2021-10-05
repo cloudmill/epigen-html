@@ -88,4 +88,10 @@
     background-color: $color-blue;
     color: $color-white;
   }
+
+  &--xs {
+    @media (max-width: $breakpoint-xs - 1px) {
+      @include fsl(11px);
+    }
+  }
 }
