@@ -118,12 +118,12 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           if ($(e.target).closest(button).length) {
             $(`[data-modal='${buttonId}']`).toggleClass('modal--active');
             $('.body').toggleClass('body--hidden')
-            const container = $(`[data-modal='${buttonId}']`).find('[data-modal-container]')[0]
-            if (container) {
-              setTimeout(() => {
-                container.scrollTo(0, 0)
-              });
-            }
+            // const container = $(`[data-modal='${buttonId}']`).find('[data-modal-container]')[0]
+            // if (container) {
+            //   setTimeout(() => {
+            //     container.scrollTo(0, 0)
+            //   });
+            // }
           }
         });
       })
@@ -227,18 +227,23 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       $(triggers).on('click', handleClick)
 
       function handleClick() {
-        console.log('open click');
 
         $(triggers).off('click', handleClick)
 
         open()
+
+        const container = $('.mdl').find('[data-mdl-container]')[0]
+        if (container) {
+          setTimeout(() => {
+            container.scrollTo(0, 0)
+          });
+        }
       }
     }
 
     function open() {
       if (!state.isActive) {
         state.isActive = true;
-
         $('.mdl').addClass('mdl--active')
         $('.body').addClass('body--hidden')
 
