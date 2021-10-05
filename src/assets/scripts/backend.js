@@ -320,9 +320,7 @@ function forms() {
         contentType: contentType,
         processData: processData,
         success: function(r) {
-          if (!r.success) {
             responseMessage.text(r.message);
-          }
         },
         error: function() {
           responseMessage.text('Ошибка');
