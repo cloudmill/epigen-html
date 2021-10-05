@@ -209,7 +209,7 @@
 
   }
   &__bottom {
-    margin-top: 60px;
+    margin-top: 50px;
     @media (max-width: $breakpoint - 1px) {
       margin-top: 30px;
       position: absolute;
@@ -250,10 +250,10 @@
       margin-top: 406px;
       // margin-top: 330px;
     }
-    padding-left: calc(#{$col-width-d} * 3 - #{$content-pad-left-d});
-    width: calc(#{$col-width-d} * 9 - #{$content-pad-left-d});
+    margin-left: calc(#{$col-width-d} * 3);
+    width: calc(#{$col-width-d} * 6 + #{$content-pad-left-d});
     @media (max-width: $breakpoint - 1px) {
-      padding-left: 0;
+      margin-left: 0;
       width: 100%;
     }
   }
