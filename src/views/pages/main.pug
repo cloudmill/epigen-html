@@ -403,7 +403,7 @@ block content
                         .main-page__reviews-item
                           .swiper-container.swiper-container--visible.swiper-container--slide-width-auto.swiper-container--slide-height-max.js.js--main-reviews-slider
                             .swiper-wrapper
-                              - for (let i = 0; i < 10; i++)
+                              - for (let i = 0; i < 3; i++)
                                 .swiper-slide
                                   .page-gel__reviews-card
                                     .page-gel__reviews-card-top
@@ -412,8 +412,31 @@ block content
                                       p.page-gel__reviews-card-text
                                         |Купила я данное средство, прочитав изначально множество положительных отзывов на различных сайтах. Почему мой выбор пал на него? Несколько лет я пыталась найти своё средство для интимной гигиены, так как везде писали, что нельзя использовать обычный гель для душа или мыло...
                                     .page-gel__reviews-card-bottom
-                                      a.page-gel__reviews-card-link(href='#')
-                                        |irecommend.ru
+                                      a.page-gel__reviews-card-link(href='#' target='_blank')
+                                        .page-gel__reviews-card-container
+                                          img.page-gel__reviews-card-img(src="assets/images/irecommend.png", alt="")
+                                .swiper-slide
+                                  .page-gel__reviews-card
+                                    .page-gel__reviews-card-top
+                                      h3.page-gel__reviews-card-title
+                                        |Nadine Zakharova
+                                      p.page-gel__reviews-card-text
+                                        |Купила я данное средство, прочитав изначально множество положительных отзывов на различных сайтах. Почему мой выбор пал на него? Несколько лет я пыталась найти своё средство для интимной гигиены, так как везде писали, что нельзя использовать обычный гель для душа или мыло...
+                                    .page-gel__reviews-card-bottom
+                                      a.page-gel__reviews-card-link(href='#' target='_blank')
+                                        .page-gel__reviews-card-container
+                                          img.page-gel__reviews-card-img.page-gel__reviews-card-img--small(src="assets/images/wildberries.png", alt="")
+                                .swiper-slide
+                                  .page-gel__reviews-card
+                                    .page-gel__reviews-card-top
+                                      h3.page-gel__reviews-card-title
+                                        |Nadine Zakharova
+                                      p.page-gel__reviews-card-text
+                                        |Купила я данное средство, прочитав изначально множество положительных отзывов на различных сайтах. Почему мой выбор пал на него? Несколько лет я пыталась найти своё средство для интимной гигиены, так как везде писали, что нельзя использовать обычный гель для душа или мыло...
+                                    .page-gel__reviews-card-bottom
+                                      a.page-gel__reviews-card-link(href='#' target='_blank')
+                                        .page-gel__reviews-card-container
+                                          img.page-gel__reviews-card-img.page-gel__reviews-card-img--small(src="assets/images/ozon.png", alt="")
                           .main-page__reviews-bottom 
                             .main-page__reviews-btn   
                               a.button.button--reviews-slider.button--reviews-slider--small.btn-animation(href='#')

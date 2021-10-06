@@ -331,6 +331,19 @@
       @include fsl(13px);
     }
   }
+  &__reviews-card-container {
+    height: 18px;
+    display: flex;
+    align-items: center;
+  }
+  &__reviews-card-img {
+    height: 15px;
+    // display: block;
+
+    &--small {
+      height: 11px;
+    }
+  }
   // layout
   &__reviews-layout {
     position: absolute;
