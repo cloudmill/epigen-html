@@ -154,12 +154,20 @@
     }
   }
 
+  &__container {
+    height: 18px;
+    display: flex;
+    align-items: center;
+  }
+
   &__source {
     padding-top: 11px;
 
     border-top: 1px solid $color-blue-light;
-    @include fsl(13px, 140%);
-    color: $color-blue-dark;
+
+  }
+  &__source-img {
+    height: 11px;
   }
 
   &__btn {
