@@ -378,23 +378,30 @@
     @include fsl(13px, 120%);
   }
   &__links-list {
-    display: flex;
-    @media (max-width: $breakpoint - 1px) {
-      display: block;
+    @media (min-width: $breakpoint) {
+      margin-left: -15px;
+      margin-top: -15px;
+
+      display: flex;
+      flex-wrap: wrap;
     }
   }
   &__links-item {
-    width: calc((100% / 3) - 10px);
+    width: calc((100% / 3) - 15px);
     min-height: 146px;
     @media (max-width: $breakpoint - 1px) {
       width: 100%;
       min-height: auto;
     }
+    @media (min-width: $breakpoint) {
+      margin-top: 15px;
+      margin-left: 15px;
+    }
 
     &:not(:first-child) {
-      margin-left: 15px;
+      // margin-left: 15px;
       @media (max-width: $breakpoint - 1px) {
-        margin-left: 0;
+        // margin-left: 0;
         margin-top: 10px;
       }
     }

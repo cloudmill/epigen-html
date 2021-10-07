@@ -42,11 +42,10 @@ function cookies() {
 function testVozDiag() {
     $(document).on("click", "[data-type=option]", function (e) {
         let thisObj = $(this),
+            container = thisObj.parents('[data-type=container]'),
             url = thisObj.attr("data-url"),
             end = thisObj.attr("data-op-end"),
             vozDiagArr = [];
-
-        console.log('check');
 
         $(this).addClass('checkOption');
 
@@ -59,26 +58,23 @@ function testVozDiag() {
 
 
         if (end == 'end') {
-
-            $.ajax({
-                method: "POST",
-                url: url,
-                data: {
-                    vozDiagArr: vozDiagArr,
-                },
-            }).done(function (r) {
-
-                let arr = r.split('|');
-
-                console.log(arr);
-
-                $(document).find("[data-type=voz_diag_desc]").empty();
-                $(document).find("[data-type=voz_diag_desc_2]").empty();
-
-                $(document).find("[data-type=voz_diag_desc]").html(arr[1]);
-                $(document).find("[data-type=voz_diag_desc_2]").html(arr[2]);
-
-            });
+          $.ajax({
+            type: 'POST',
+            url: url,
+            dataType: 'json',
+            data: {
+              vozDiagArr: vozDiagArr,
+            },
+            success: function(r) {
+              if (r.success === true) {
+                for (let k in r.response) {
+                  container.find('[data-type=' + k + ']').html(r.response[k]);
+                }
+              }
+            },
+            error: function() {
+            }
+          });
         }
     });
 }
@@ -318,9 +314,7 @@ function forms() {
         contentType: contentType,
         processData: processData,
         success: function(r) {
-          if (!r.success) {
             responseMessage.text(r.message);
-          }
         },
         error: function() {
           responseMessage.text('Ошибка');

@@ -16,6 +16,10 @@
   }
 
   &--active {
+    @media (max-width: $breakpoint - 1px) {
+      position: relative;
+      z-index: 1000;
+    }
     &::before {
       background-color: rgba($color-black, 0.2);
       visibility: visible;

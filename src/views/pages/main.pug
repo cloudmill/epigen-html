@@ -202,7 +202,7 @@ block content
                   |Вы всегда можете задать вопрос#[br]нашим экспертам в #[a.link-text__link.btn-animation(href='#') #[span.btn-animation__text специальном]]#[br]#[span.link-text__span #[a.link-text__link.btn-animation(href='#') #[span.btn-animation__text разделе]] или найти ответы в наших]#[br]#[a.link-text__link.btn-animation(href='#') #[span.btn-animation__text статьях]] и #[a.link-text__link.btn-animation(href='#') #[span.btn-animation__text видео-публикациях]]
                 p.link-text.main-page__expert-text.main-page__expert-text--desktop(data-aos='fade-up')
                   |Вы всегда можете задать вопрос нашим#[br]экспертам в #[a.link-text__link.btn-animation(href='#') #[span.btn-animation__text специальном разделе]]#[br]или найти ответы в наших #[a.link-text__link.btn-animation(href='#') #[span.btn-animation__text статьях]]#[br]и #[a.link-text__link.btn-animation(href='#') #[span.btn-animation__text видео-публикациях]]
-                img.main-page__expert-img(src='assets/images/main-expert.jpeg' data-aos='fade-up')
+                img.main-page__expert-img(src='assets/images/main-expert.jpg' data-aos='fade-up')
                 .main-page__expert-wave(data-aos='fade-up')
                   +wave-expert-svg.main-page__expert-svg
                   .main-page__layout-moon(data-parallax-main='left')
@@ -346,7 +346,7 @@ block content
                                                   |Спрей Эпиген Интим представляет собой эффективное и безопасное средство для лечения, профилактики генитальных вирусных инфекций, а гель предназначен для интимной гигиены на каждый день...
                                             .b__content-bot
                                               .b__bottom-col
-                                                .b__link(data-button='5')
+                                                .b__link(data-mdl-open='')
                                                   |Читать отзыв
                                           .b__content-col
                                             .b__content-top
@@ -395,15 +395,15 @@ block content
                                                 +simple-arrow-svg.b__svg
                                         .b__content-bot
                                           .b__link-link(data-aos='fade-up')
-                                            .b__link(data-button='5')
+                                            .b__link.b__link--small(data-mdl-open='')
                                               |Читать отзыв
-                                          a.button.button--reviews-slider.button--reviews-slider--small.btn-animation(href='#')
+                                          a.button.button--reviews-slider.button--reviews-slider--small.button--xs.btn-animation(href='#')
                                             span.btn-animation__text
                                               |Все отзывы
                         .main-page__reviews-item
                           .swiper-container.swiper-container--visible.swiper-container--slide-width-auto.swiper-container--slide-height-max.js.js--main-reviews-slider
                             .swiper-wrapper
-                              - for (let i = 0; i < 10; i++)
+                              - for (let i = 0; i < 3; i++)
                                 .swiper-slide
                                   .page-gel__reviews-card
                                     .page-gel__reviews-card-top
@@ -412,8 +412,31 @@ block content
                                       p.page-gel__reviews-card-text
                                         |Купила я данное средство, прочитав изначально множество положительных отзывов на различных сайтах. Почему мой выбор пал на него? Несколько лет я пыталась найти своё средство для интимной гигиены, так как везде писали, что нельзя использовать обычный гель для душа или мыло...
                                     .page-gel__reviews-card-bottom
-                                      a.page-gel__reviews-card-link(href='#')
-                                        |irecommend.ru
+                                      a.page-gel__reviews-card-link(href='#' target='_blank')
+                                        .page-gel__reviews-card-container
+                                          img.page-gel__reviews-card-img(src="assets/images/irecommend.png", alt="")
+                                .swiper-slide
+                                  .page-gel__reviews-card
+                                    .page-gel__reviews-card-top
+                                      h3.page-gel__reviews-card-title
+                                        |Nadine Zakharova
+                                      p.page-gel__reviews-card-text
+                                        |Купила я данное средство, прочитав изначально множество положительных отзывов на различных сайтах. Почему мой выбор пал на него? Несколько лет я пыталась найти своё средство для интимной гигиены, так как везде писали, что нельзя использовать обычный гель для душа или мыло...
+                                    .page-gel__reviews-card-bottom
+                                      a.page-gel__reviews-card-link(href='#' target='_blank')
+                                        .page-gel__reviews-card-container
+                                          img.page-gel__reviews-card-img.page-gel__reviews-card-img--small(src="assets/images/wildberries.png", alt="")
+                                .swiper-slide
+                                  .page-gel__reviews-card
+                                    .page-gel__reviews-card-top
+                                      h3.page-gel__reviews-card-title
+                                        |Nadine Zakharova
+                                      p.page-gel__reviews-card-text
+                                        |Купила я данное средство, прочитав изначально множество положительных отзывов на различных сайтах. Почему мой выбор пал на него? Несколько лет я пыталась найти своё средство для интимной гигиены, так как везде писали, что нельзя использовать обычный гель для душа или мыло...
+                                    .page-gel__reviews-card-bottom
+                                      a.page-gel__reviews-card-link(href='#' target='_blank')
+                                        .page-gel__reviews-card-container
+                                          img.page-gel__reviews-card-img.page-gel__reviews-card-img--small(src="assets/images/ozon.png", alt="")
                           .main-page__reviews-bottom 
                             .main-page__reviews-btn   
                               a.button.button--reviews-slider.button--reviews-slider--small.btn-animation(href='#')
@@ -462,4 +485,4 @@ block content
           +cross-svg.button-close__svg
   +modal-test
   +modal-article
-  +modal-consultation
+  //- +modal-consultation

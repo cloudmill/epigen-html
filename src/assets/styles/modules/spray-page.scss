@@ -918,6 +918,18 @@
       width: 100%;
     }
     white-space: nowrap;
+
+    &--doctors {
+      #{$comp}__slider-item {
+        &:nth-child(1) {
+          display: none;
+        }
+
+        &:not(:first-child) {
+          margin-left: 0;
+        }
+      }
+    }
   }
   &__slider-item {
     &:not(:first-child) {
