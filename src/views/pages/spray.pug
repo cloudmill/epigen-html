@@ -498,15 +498,15 @@ block content
                           span.btn-animation__text
                             |Все отзывы
                   .reviews-tabs__buttons(data-aos='fade-up')
-                    .spray-page__slider-categories
-                      //- .spray-page__slider-item
+                    .spray-page__slider-categories.spray-page__slider-categories--doctors
+                      .spray-page__slider-item
                         .border-link
                           |Отзывы покупателей
-                      .spray-page__slider-item.spray-page__slider-item--active
+                      .spray-page__slider-item.spray-page__slider-item--active.margin-left-none
                         .border-link.border-link--active
                           |Отзывы врачей
                   .reviews-tabs__tabs
-                    //- .reviews-tabs__item
+                    .reviews-tabs__item.hidden
                       .swiper-container.swiper-container--visible.swiper-container--slide-width-auto.swiper-container--slide-height-max.js.js--gel-reviews-slider.margin-bottom.margin-bottom--65
                         .swiper-wrapper
                           - for (let i = 0; i < 10; i++)
