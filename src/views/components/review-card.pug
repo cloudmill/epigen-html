@@ -20,10 +20,11 @@ mixin review-card
             |Благодаря продуманному составу, Спрей Эпиген Интим – это препарат выбора для наружной терапии папилломавирусной инфекции и генитального герпеса.
     .review-card__bottom
       .review-card__bottom-row
-        if (attributes.source)
+        if (attributes.src)
           .review-card__bottom-col.review-card__bottom-col--width--100p.review-card__bottom-col--margin-right--default.review-card__bottom-inner.review-card__bottom-inner--source
-            p.review-card__source
-              |#{attributes.source}
+            .review-card__source
+              .review-card__container
+                img(src="assets/images/" + attributes.src , alt="" class=(attributes.small ? 'review-card__source-img' : ''))
         .review-card__bottom-col.review-card__bottom-inner.review-card__bottom-inner--btn
           button.review-card__btn
             if (attributes.plus)
