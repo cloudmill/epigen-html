@@ -53,6 +53,7 @@ function testVozDiag() {
         if (end == 'end') {
             $('.checkOption').each(function () {
                 vozDiagArr.push($(this).attr("data-voz-diag"));
+                $(this).removeClass('checkOption');
             });
         }
 
@@ -67,8 +68,11 @@ function testVozDiag() {
             },
             success: function(r) {
               if (r.success === true) {
-                for (let k in r.response) {
-                  container.find('[data-type=' + k + ']').html(r.response[k]);
+                container.find('[data-type=first-part]').html(r.response['first-part']);
+                if (r.response['second-part']) {
+                    container.find('[data-type=second-part]').html(r.response['second-part']);
+                }else{
+                    container.find('[data-type=second-part-class]').css('display','none');
                 }
               }
             },
