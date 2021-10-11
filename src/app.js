@@ -1208,27 +1208,27 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
         const testContainer = ths.find('.test__container')
         const testResult = ths.find('.test__result')
         const result = ths.find('.test__form')
-        const results = ths.find('.test__result-results')
-        const resultFirst = ths.find('.test__result-first')
-        const resultSecond = ths.find('.test__result-second')
-        const combination = []
+        // const results = ths.find('.test__result-results')
+        // const resultFirst = ths.find('.test__result-first')
+        // const resultSecond = ths.find('.test__result-second')
+        // const combination = []
 
-        function resultFirstMessage() {
-          const root = combination.slice(0, 1).join('')
-          const resultsMessage = results.find('.test__result-text')
+        // function resultFirstMessage() {
+        //   const root = combination.slice(0, 1).join('')
+        //   const resultsMessage = results.find('.test__result-text')
 
-          const clone = resultsMessage.eq(root - 1).clone()
+        //   const clone = resultsMessage.eq(root - 1).clone()
 
-          resultFirst.append(clone)
-        }
+        //   resultFirst.append(clone)
+        // }
 
-        function resultSecondMessage() {
-          const root = combination.slice(0, 2).join('')
-          const resultMessage = ths.find(`[data-result*="${root}"]`)
-          const clone = resultMessage.clone()
+        // function resultSecondMessage() {
+        //   const root = combination.slice(0, 2).join('')
+        //   const resultMessage = ths.find(`[data-result*="${root}"]`)
+        //   const clone = resultMessage.clone()
 
-          resultSecond.append(clone)
-        }
+        //   resultSecond.append(clone)
+        // }
 
         // options change
         testStep.each(function() {
@@ -1237,7 +1237,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
             const step = $(this).closest('.test__options')
             const stepNext = step.next()
 
-            combination.push($(this).index() + 1)
+            // combination.push($(this).index() + 1)
 
             step.removeClass('test__options--active')
             stepNext.addClass('test__options--active')
@@ -1248,8 +1248,8 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
             if (stepNext.index() === -1) {
               state.toggleResult(testContainer, testResult, false)
-              resultSecondMessage()
-              resultFirstMessage()
+              // resultSecondMessage()
+              // resultFirstMessage()
             }
           });
         })
@@ -1270,9 +1270,9 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           state.toggleResult(testContainer, testResult, true)
           state.update(dot, 0, 'test__dot--active')
 
-          resultFirst.html('')
-          resultSecond.html('')
-          combination.length = 0
+          // resultFirst.html('')
+          // resultSecond.html('')
+          // combination.length = 0
 
           question.eq(0).addClass('test__question--active')
           index.text(1)
