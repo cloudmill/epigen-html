@@ -137,6 +137,10 @@
   @media (max-width: $breakpoint - 1px) {
     @include fsl(15px);
   }
+
+  &:first-child {
+    padding-top: 0;
+  }
 }
 
 .text-m {
@@ -147,6 +151,10 @@
   }
 
   @include fsl(15px, 170%);
+
+  &:first-child {
+    padding-top: 0;
+  }
 }
 
 .text-s {
@@ -157,6 +165,10 @@
   }
 
   @include fsl(13px, 170%);
+
+  &:first-child {
+    padding-top: 0;
+  }
 }
 
 .text-b {
@@ -169,6 +181,10 @@
   font-weight: 500;
   color: $color-blue;
   @include fsl(18px, 140%);
+
+  &:first-child {
+    padding-top: 0;
+  }
 }
 
 .text-gray {
@@ -179,6 +195,10 @@
   }
   @include fsl(13px, 170%);
   color: $color-gray;
+
+  &:first-child {
+    padding-top: 0;
+  }
 }
 
 .list {
@@ -409,6 +429,20 @@
   @media (min-width: $breakpoint) {
     padding-left: calc(#{$col-width-d} * 3);
   }
+  
+  h4 {
+    padding: 40px 0 20px;
+
+    font-weight: 400;
+    @include fsl(25px, 150%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(18px);
+    }
+
+    &:first-child {
+      padding-top: 0;
+    }
+  }
 
   &__container {
     padding-bottom: 30px;
@@ -441,6 +475,10 @@
   }
 
   @include fsl(18px, 170%);
+
+  &:first-child {
+    padding-top: 0;
+  }
 }
 
 .diagnostics {
@@ -528,4 +566,10 @@
   &:first-child {
     padding-top: 0;
   }
+}
+
+.span {
+  font-weight: 500;
+  color: $color-blue;
+  font-style: italic;
 }
