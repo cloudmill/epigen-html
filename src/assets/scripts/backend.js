@@ -5,7 +5,6 @@ $(function () {
     test();
     showMore();
     revFilter();
-    revModal();
     subscribe();
     forms();
     search();
@@ -214,24 +213,6 @@ function revFilter() {
         });
     }
 }
-
-function revModal() {
-    $(document).on('click', '[data-type=rev-modal]', function (e) {
-        e.preventDefault();
-
-        let body = $(this).parents('body'),
-            data = $(this).data('modal');
-
-        body.find('[data-type=rev-modal-name').text(data['name']);
-        body.find('[data-type=rev-modal-img').attr('src', data['img']);
-        body.find('[data-type=rev-modal-text').html(data['text']);
-        body.find('[data-type=rev-modal-post').text(data['position']);
-        body.find('[data-type=rev-modal-sub').text(data['title']);
-
-        window.dispatchEvent(new CustomEvent('open-modal'));
-    });
-}
-
 
 function subscribe() {
     $(document).on("submit", "[data-type=js-form]", function (e) {
