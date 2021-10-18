@@ -208,28 +208,28 @@ block content
                                 |#{item}
                   .disease-page__layout
                     .disease-page__layout-layout
-
                     .disease-page__section-row.margin-top.margin-top--md
                       .disease-page__section-col
                         .disease-page__section-label(data-aos='fade-up')
                           |Автор статьи
-                        .disease-page__section-bot
-                          .disease-page__section-container
-                            .doctor-card.doctor-card--col(data-aos='fade-up')
-                              .doctor-card__row
-                                .doctor-card__col
-                                  .doctor-card__frame.doctor-card__frame--size--default.doctor-card__frame--radius--left
-                                    img(src="assets/images/doctor.jpg", alt="")
-                                .doctor-card__col
-                                  .doctor-card__name
-                                    |Бебнева Тамара Николаевна
-                                  .doctor-card__pos
-                                    |Врач акушер-гинеколог ФГБУ «НМИЦ эндокринологии» Минздрава России, к.м.н, доцент Кафедры акушерства, гинекологии и репродуктивной медицины РУДН
-                          .rail.rail--desktop(data-aos='fade-up')
                       .disease-page__section-col
-                        .specialists-page__content-container(data-aos='fade-up')
-                          +wave-articles-svg.specialists-page__content-wave
-                          img(src="assets/images/woman.jpg", alt="")
+                  .disease-page__section-row
+                    .disease-page__section-col
+                      .doctor-card(data-aos='fade-up')
+                        .doctor-card__row
+                          .doctor-card__col
+                            .doctor-card__frame.doctor-card__frame--size--default
+                              img(src="assets/images/doctor.jpg", alt="")
+                          .doctor-card__col
+                            .doctor-card__name
+                              |Бебнева Тамара Николаевна
+                            .doctor-card__pos
+                              |Врач акушер-гинеколог ФГБУ «НМИЦ эндокринологии» Минздрава России, к.м.н, доцент Кафедры акушерства, гинекологии и репродуктивной медицины РУДН
+                      .rail.rail--desktop(data-aos='fade-up')
+                    .disease-page__section-col
+                      .specialists-page__content-container(data-aos='fade-up')
+                        +wave-articles-svg.specialists-page__content-wave
+                        img(src="assets/images/woman.jpg", alt="")
                   .disease-page__content-row.margin-top.disease-page__content
                     .disease-page__content-col
                     .disease-page__content-col(data-aos='fade-up')
