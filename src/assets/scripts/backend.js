@@ -126,7 +126,7 @@ function test() {
             dataType: "json",
             data: data,
             success: function (r) {
-
+                $(document).find("[data-type=response-test]").text(r.message);
             },
         });
     });
