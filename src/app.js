@@ -134,6 +134,10 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
         if (target == $('.modal--active')[0]) {
           modal.removeClass('modal--active');
           $('.body').removeClass('body--hidden')
+
+          if ($('.video-page').length) {
+            modal.find('#video')[0].pause()
+          }
         }
       });
     }
