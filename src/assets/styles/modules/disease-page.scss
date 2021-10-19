@@ -55,6 +55,34 @@
         }
       }
     }
+
+    &--nocat {
+      #{$comp}__section-col {
+        &:nth-child(1) {
+          @media (max-width: $breakpoint - 1px) {
+            margin-bottom: 0;
+          }
+        }
+
+        &:nth-child(2) {
+          position: relative;
+          padding-top: 130px;
+          @media (min-width: $breakpoint) {
+            padding-top: 238px;
+          }
+        }
+      }
+      #{$comp}__section-bot {
+        @media (min-width: $breakpoint) {
+          margin-top: 60px;
+        }
+      }
+
+      .specialists-page__content-wave {
+        bottom: auto;
+        top: -5px;
+      }
+    }
   }
   &__section-col {
     flex-shrink: 0;

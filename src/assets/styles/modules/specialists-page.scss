@@ -33,15 +33,14 @@
       top: calc(100% + 20px);
       right: -71px;
     }
-    @media (max-width: $breakpoint-m - 1px) {
-      right: auto;
-      left: -15px;
-    }
 
-    width: calc(#{$col-width-d} * 13);
+    width: calc(#{$col-width-d} * 9 + 30px);
     @media (max-width: $breakpoint - 1px) {
       width: 446px;
-      height: 39px;
+      height: 89px;
+    }
+    @media (max-width: $breakpoint-m - 1px) {
+      width: 367px;
     }
   }
   &__article-row {
