@@ -143,6 +143,8 @@
       }
     }
     &:nth-child(2) {
+      display: flex;
+      justify-content: flex-end;
       @media (min-width: $breakpoint) {
         width: calc(#{$col-width-d} * 12);
       }
