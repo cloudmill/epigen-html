@@ -37,6 +37,22 @@
       .specialists-page__content-wave {
         bottom: auto;
         top: 85px;
+        
+        &--alt {
+          @media (max-width: $breakpoint - 1px) {
+            top: 125px;
+          }
+          @media (max-width: $breakpoint-m - 1px) {
+            right: auto;
+            left: -15px;
+          }
+          
+          width: calc(#{$col-width-d} * 13);
+          @media (max-width: $breakpoint - 1px) {
+            width: 446px;
+            height: 39px;
+          }
+        }
       }
     }
   }
@@ -51,9 +67,6 @@
       @media (max-width: $breakpoint - 1px) {
         width: 100%;
       }
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
     }
     &:nth-child(2) {
       width: calc(#{$col-width-d} * 12);
@@ -90,6 +103,25 @@
       overflow-x: auto;
       background-color: $color-aqua;
       @include scrollbar-hidden;
+    }
+  }
+  &__section-bot {
+    @media (min-width: $breakpoint) {
+      height: calc(100% - 30px);
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+    }
+
+    &--block {
+      display: block;
+      height: auto;
+    }
+
+    &--height {
+      @media (min-width: $breakpoint) {
+        height: 100%;
+      }
     }
   }
 
