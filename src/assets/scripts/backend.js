@@ -48,11 +48,11 @@ function testVozDiag() {
 
         $(this).addClass('checkOption');
 
+        
 
         if (end == 'end') {
             $('.checkOption').each(function () {
                 vozDiagArr.push($(this).attr("data-voz-diag"));
-                $(this).removeClass('checkOption');
             });
         }
 
