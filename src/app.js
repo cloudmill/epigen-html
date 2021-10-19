@@ -118,28 +118,26 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           if ($(e.target).closest(button).length) {
             $(`[data-modal='${buttonId}']`).toggleClass('modal--active');
             $('.body').toggleClass('body--hidden')
-            // const container = $(`[data-modal='${buttonId}']`).find('[data-modal-container]')[0]
-            // if (container) {
-            //   setTimeout(() => {
-            //     container.scrollTo(0, 0)
-            //   });
-            // }
+
+            if ($('.video-page').length) {
+              modal.find('#video')[0].pause()
+            }
           }
         });
-      })
 
-      $(window).on('click', function (event) {
-        const target = event.target;
+        const target = e.target;
 
         if (target == $('.modal--active')[0]) {
           modal.removeClass('modal--active');
           $('.body').removeClass('body--hidden')
 
-          if ($('.video-page').length) {
-            modal.find('#video')[0].pause()
+          const video = $(target).find('#video')[0]
+          
+          if (video) {
+            video.pause()
           }
         }
-      });
+      })
     }
   });
 }
