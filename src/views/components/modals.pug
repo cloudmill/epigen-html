@@ -274,34 +274,18 @@ mixin modal-article
 mixin modal-header
   .panel-modal(data-modal-id='2')
     .panel-modal__container
-      .panel-modal__row
-        .panel-modal__col
-          ul.panel-modal__list
-            each item in ['Генитальный герпес (I и II типа)', 'ВПЧ', 'Применение при беременности', 'Молочница', 'Бактериальный вагиноз',]
-              li.panel-modal__item.animation
-                a.panel-modal__link(href="#")
-                  |#{item}
-        .panel-modal__col
-          ul.panel-modal__list
-            each item in ['ВПЧ', 'Молочница',]
-              li.panel-modal__item.animation
-                a.panel-modal__link(href="#")
-                  |#{item}
+      ul.panel-modal__list
+        each item in ['Генитальный герпес (I и II типа)', 'ВПЧ', 'Применение при беременности', 'Молочница', 'Бактериальный вагиноз', 'ВПЧ', 'Молочница',]
+          li.panel-modal__item.animation
+            a.panel-modal__link(href="#")
+              |#{item}
   .panel-modal(data-modal-id='3')
     .panel-modal__container
-      .panel-modal__row
-        .panel-modal__col
-          ul.panel-modal__list
-            each item in ['Зуд', 'Жжение', 'Выделения, пузырьки', 'Пузырьки, язвочки', 'Болезненность, выделения',]
-              li.panel-modal__item.animation
-                a.panel-modal__link(href="#")
-                  |#{item}
-        .panel-modal__col
-          ul.panel-modal__list
-            each item in ['Болезненность при половом контакте', 'Боль внизу живота', 'Боль при мочеиспускании']
-              li.panel-modal__item.animation
-                a.panel-modal__link(href="#")
-                  |#{item}
+      ul.panel-modal__list
+        each item in ['Зуд', 'Жжение', 'Выделения, пузырьки', 'Пузырьки, язвочки', 'Болезненность, выделения', 'Болезненность при половом контакте', 'Боль внизу живота', 'Боль при мочеиспускании']
+          li.panel-modal__item.animation
+            a.panel-modal__link(href="#")
+              |#{item}
 
 mixin modal-aside 
   .modal-aside

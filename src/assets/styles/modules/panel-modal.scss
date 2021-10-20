@@ -30,20 +30,29 @@
     background-color: $color-white;
   }
 
-  &__row {
-    display: flex;
-  }
+  // &__row {
+  //   display: flex;
+  // }
 
   &__col {
     flex-shrink: 0;
     width: calc(#{$col-width-d} * 6);
   }
 
-  &__item {
+  &__list {
+    margin-top: -10px;
+    margin-left: -10px;
 
-    &:not(:first-child) {
-      margin-top: 10px;
-    }
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    margin-top: 10px;
+    margin-left: 10px;
+
+    flex-shrink: 0;
+    width: calc((100% / 2) - 10px);
   }
 
   &__link {
