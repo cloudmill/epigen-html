@@ -114,6 +114,16 @@
       @media (max-width: $breakpoint - 1px) {
         width: 100%;
       }
+
+      $items: '.article', '.text', '.text-m', '.text-s', '.text-b', '.text-gray', '.list', 'list-num', '.quote', '.picture', '.table', '.picture', '.article', '.indent';
+
+      @each $item in $items {
+        #{$item} {
+          @media (min-width: $breakpoint) {
+            padding-left: 0;
+          }
+        }
+      }
     }
   }
 }
