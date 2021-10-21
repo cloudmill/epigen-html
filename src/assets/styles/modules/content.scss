@@ -115,7 +115,7 @@
         width: 100%;
       }
 
-      $items: '.article', '.text', '.text-m', '.text-s', '.text-b', '.text-gray', '.list', 'list-num', '.quote', '.picture', '.table', '.picture', '.article', '.indent';
+      $items: '.article', '.text', '.text-m', '.text-s', '.text-b', '.text-gray', '.list', '.list-num', '.quote', '.picture', '.table', '.picture', '.article', '.indent';
 
       @each $item in $items {
         #{$item} {
