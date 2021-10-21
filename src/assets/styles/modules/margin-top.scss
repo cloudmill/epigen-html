@@ -41,4 +41,10 @@
       margin-top: 60px;
     }
   }
+
+  &--10 {
+    @media (max-width: $breakpoint-m) {
+      margin-top: 10px;
+    }
+  }
 }

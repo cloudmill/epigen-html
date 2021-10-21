@@ -13,6 +13,9 @@
     @media (max-width: $breakpoint-t - 1px) {
         top: 676px;
     }
+    @media (max-width: $breakpoint-s - 1px) {
+        top: 576px;
+    }
 
     width: calc(100vw + 150px);
     @media (max-width: $breakpoint-xxl - 1px) {

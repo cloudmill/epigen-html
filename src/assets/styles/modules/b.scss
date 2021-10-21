@@ -548,10 +548,8 @@
       padding-left: calc(#{$col-width-d});
       display: flex;
       @media (max-width: $breakpoint - 1px) {
-        // padding-bottom: 6px;
-        // margin-right: auto;
         padding-left: 0;
-        align-items: flex-end;
+        align-items: center;
       }
       @media (max-width: $breakpoint-m - 1px) {
         margin-right: 0;

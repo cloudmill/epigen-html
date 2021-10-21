@@ -452,6 +452,20 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  @media (max-width: $breakpoint-xs - 1px) {
+    transform: none;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    padding-top: 55px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: auto;
+  }
 
   pointer-events: none;
   opacity: 0;
@@ -474,6 +488,11 @@
       top: auto;
       right: 0;
       bottom: calc(100% + 10px);
+    }
+    @media (max-width: $breakpoint-xs - 1px) {
+      right: 15px;
+      top: 5px;
+      bottom: auto;
     }
   }
 }
