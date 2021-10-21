@@ -195,6 +195,9 @@
   &__wrapper-row {
     display: flex;
     justify-content: space-between;
+    @media (max-width: $breakpoint-xl - 1px) {
+      justify-content: space-around;
+    }
     height: 100%;
   }
   &__wrapper-col {
