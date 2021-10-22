@@ -115,7 +115,7 @@
         width: 100%;
       }
 
-      $items: '.article', '.text', '.text-m', '.text-s', '.text-b', '.text-gray', '.list', '.list-num', '.quote', '.picture', '.table', '.picture', '.article', '.indent';
+      $items: '.article', '.text', '.text-m', '.text-s', '.text-b', '.text-gray', '.list', '.list-num', '.quote', '.picture', '.table', '.picture', '.article', '.indent', '.diagnostics';
 
       @each $item in $items {
         #{$item} {
@@ -494,8 +494,9 @@
 
 .diagnostics {
   padding: 40px 0;
+  padding-left: calc(#{$col-width-d} * 3);
   @media (max-width: $breakpoint - 1px) {
-
+    padding-left: 0;
     display: block;
   }
   display: flex;
