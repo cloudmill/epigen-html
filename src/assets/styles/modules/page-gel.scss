@@ -609,6 +609,10 @@
     height: 1242px;
     @media (max-width: $breakpoint-m - 1px) {
       width: auto;
+      // height: auto;
+      height: 1412px;
+    }
+    @media (max-width: $breakpoint-sm - 1px) {
       height: auto;
     }
   }
@@ -657,9 +661,17 @@
         left: calc(#{$col-width-m} * 4 - 195px);
       }
       @media (max-width: $breakpoint-m - 1px) {
+        left: calc(((100vw - (15px * 2)) / 6) * 5 - 240px);
+        top: 377px;
+        transform: translateX(0);
+      }
+      @media (max-width: $breakpoint-sm - 1px) {
+        top: 400px;
+        left: calc(((100vw - (15px * 2)) / 6) * 5 - 270px);
+      }
+      @media (max-width: $breakpoint-ssm - 1px) {
         left: calc(((100vw - (15px * 2)) / 6) * 5 - 271px);
         top: 527px;
-        transform: translateX(0);
       }
 
       @media (max-width: $breakpoint - 1px) {
@@ -682,6 +694,14 @@
         left: calc(#{$col-width-d} * 12.5 - 492px);
       }
       @media (max-width: $breakpoint-m - 1px) {
+        top: 1561px;
+        left: calc(#{$col-width-m} * 5 - 68px);
+      }
+      @media (max-width: $breakpoint-sm - 1px) {
+        top: 1751px;
+        left: calc(((100vw - (15px * 2)) / 6) * 5 - 81px);
+      }
+      @media (max-width: $breakpoint-ssm - 1px) {
         top: 1871px;
         left: calc(#{$col-width-m} * 5 - 91px);
       }
@@ -769,6 +789,13 @@
         left: calc(#{$col-width-m} * 4);
       }
       @media (max-width: $breakpoint-m - 1px) {
+        top: 125px;
+        left: calc(#{$col-width-m} * 3);
+      }
+      @media (max-width: $breakpoint-s - 1px) {
+        top: 155px;
+      }
+      @media (max-width: $breakpoint-ssm - 1px) {
         top: 225px;
         left: calc(#{$col-width-m} * 3);
       }
@@ -818,6 +845,15 @@
         left: calc((115px / 2) + 146px);
       }
       @media (max-width: $breakpoint-m - 1px) {
+        left: calc((115px / 2) + 287px);
+        top: calc(100% - 60px);
+        bottom: auto;
+      }
+      @media (max-width: $breakpoint-sm - 1px) {
+        left: calc((115px / 2) + 307px);
+        top: calc(100% - 40px);
+      }
+      @media (max-width: $breakpoint-ssm - 1px) {
         left: calc((115px / 2) + 347px);
         top: calc(100% - 60px);
         bottom: auto;
@@ -835,6 +871,14 @@
         bottom: 85px;
       }
       @media (max-width: $breakpoint-m - 1px) {
+        left: calc(220px + 30px);
+        bottom: 14px;
+      }
+      @media (max-width: $breakpoint-sm - 1px) {
+        left: calc(220px + 70px);
+        bottom: 14px;
+      }
+      @media (max-width: $breakpoint-ssm - 1px) {
         left: calc(270px + 30px);
         bottom: 14px;
       }
@@ -851,6 +895,15 @@
         left: calc(235px + (82px / 2));
       }
       @media (max-width: $breakpoint-m - 1px) {
+        top: calc(100% + 20px);
+        left: calc(376px + (82px / 2));
+        bottom: auto;
+      }
+      @media (max-width: $breakpoint-sm - 1px) {
+        top: calc(100% + 30px);
+        left: calc(376px + (122px / 2));
+      }
+      @media (max-width: $breakpoint-ssm - 1px) {
         top: calc(100% + 50px);
         left: calc(426px + (82px / 2));
         bottom: auto;
@@ -866,6 +919,10 @@
       top: 142px;
     }
     @media (max-width: $breakpoint-m - 1px) {
+      left: calc(#{$col-width-m} * 5);
+      top: 240px;
+    }
+    @media (max-width: $breakpoint-ssm - 1px) {
       left: calc(#{$col-width-m} * 5);
       top: 367px;
     }

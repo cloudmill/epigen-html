@@ -53,6 +53,8 @@ $col-width-d: '((100vw - (#{$col-pad-d} * 2)) / #{$col-count-d})';
 
 // width
 $breakpoint-xs: 375px;
+$breakpoint-ssm: 385px;
+$breakpoint-sm: 440px;
 $breakpoint-s: 576px;
 $breakpoint-m: 768px;
 $breakpoint-m: 768px;
@@ -62,11 +64,6 @@ $breakpoint-l: 1366px;
 $breakpoint-ll: 1440px;
 $breakpoint-xl: 1680px;
 $breakpoint-xxl: 1920px;
-
-// height
-$breakpoint-sm: 600px;
-$breakpoint-md: 677px;
-$breakpoint-lg: 736px;
 
 
 
