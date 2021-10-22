@@ -21,6 +21,7 @@
 
   &__container {
     padding: calc(#{$panel-height} + 30px) calc(#{$col-width-d} + 30px) 60px calc(#{$col-width-d});
+    padding-left: calc(#{$col-width-d});
 
     width: calc(100% + 30px);
 
@@ -29,28 +30,21 @@
     background-color: $color-white;
   }
 
-  &__col {
-    flex-shrink: 0;
-    width: calc(#{$col-width-d} * 6);
-  }
-
-  &__list {
-    margin-top: -15px;
-    margin-left: -10px;
-
+  &__row {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+  }
+
+  &__col {
+    flex-shrink: 0;
+    width: calc(#{$col-width-d} * 5);
   }
 
   &__item {
-    margin-top: 15px;
-    margin-left: 10px;
 
-    flex-shrink: 0;
-    // width: calc((100% / 2) - 10px);
-    // width: 338px;
-    width: calc(#{$col-width-d} * 5)
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
   }
 
   &__link {
@@ -62,3 +56,5 @@
     }
   }
 }
+
+
