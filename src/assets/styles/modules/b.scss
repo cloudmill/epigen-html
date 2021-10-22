@@ -825,7 +825,7 @@
     justify-content: center;
     align-items: center;
 
-    border: 1px solid $color-blue;
+    // border: 1px solid $color-blue;
     border-radius: 50%;
     cursor: pointer;
 
@@ -948,4 +948,15 @@
 
 .template {
   display: none;
+}
+
+.border-span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  border: 1px solid $color-blue;
+  border-radius: 50%;
 }

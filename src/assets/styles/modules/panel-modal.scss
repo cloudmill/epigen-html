@@ -55,5 +55,10 @@
 
   &__link {
     @include fsl(15px, 140%);
+    transition: $transition;
+
+    &:hover {
+      color: $color-blue;
+    }
   }
 }
