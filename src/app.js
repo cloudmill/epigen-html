@@ -102,45 +102,55 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 }
 
 // modal
-// {
-//   $(() => {
-//     const modal = $('[data-modal]');
+{
+  $(() => {
+    const modal = $('[data-modal]');
 
-//     if (modal.length !== 0) {
+    if (modal.length !== 0) {
 
-//       window.addEventListener('click', (e) => {
-//         const buttonModal = $('[data-button]');
+      window.addEventListener('click', (e) => {
+        const buttonModal = $('[data-button]');
 
-//         buttonModal.each(function () {
-//           const button = $(this);
-//           const buttonId = button.data('button');
+        buttonModal.each(function () {
+          const button = $(this);
+          const buttonId = button.data('button');
 
-//           if ($(e.target).closest(button).length) {
-//             $(`[data-modal='${buttonId}']`).toggleClass('modal--active');
-//             $('.body').toggleClass('body--hidden')
+          if ($(e.target).closest(button).length) {
+            $(`[data-modal='${buttonId}']`).toggleClass('modal--active');
+            $('.body').toggleClass('body--hidden')
 
-//             if ($('.video-page').length) {
-//               modal.find('#video')[0].pause()
-//             }
-//           }
-//         });
+            const container = $(`[data-modal='${buttonId}']`).find('[data-mdl-container]')[0]
 
-//         const target = e.target;
+            console.log(container);
 
-//         if (target == $('.modal--active')[0]) {
-//           modal.removeClass('modal--active');
-//           $('.body').removeClass('body--hidden')
+            if (container) {
+              setTimeout(() => {
+                container.scrollTo(0, 0)
+              });
+            }
 
-//           const video = $(target).find('#video')[0]
-          
-//           if (video) {
-//             video.pause()
-//           }
-//         }
-//       })
-//     }
-//   });
-// }
+            if ($('.video-page').length) {
+              modal.find('#video')[0].pause()
+            }
+          }
+        });
+
+        const target = e.target;
+
+        if (target == $('.modal--active')[0]) {
+          modal.removeClass('modal--active');
+          $('.body').removeClass('body--hidden')
+
+          const video = $(target).find('#video')[0]
+
+          if (video) {
+            video.pause()
+          }
+        }
+      })
+    }
+  });
+}
 
 // crop text
 {
@@ -201,99 +211,99 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 }
 
 // mdl
-{
-  $(() => {
-    const triggers = [
-      '.review-card--modal',
-      '.button-modal',
-      '[data-mdl-open]',
-    ].join(', ')
+// {
+//   $(() => {
+//     const triggers = [
+//       '.review-card--modal',
+//       '.button-modal',
+//       '[data-mdl-open]',
+//     ].join(', ')
 
-    const state = {
-      isActive: checkActive(),
-    }
+//     const state = {
+//       isActive: checkActive(),
+//     }
 
-    if (!state.isActive) {
-      waitOpen()
-    }
+//     if (!state.isActive) {
+//       waitOpen()
+//     }
 
-    $(triggers).on('click', event => {
-      event.preventDefault()
-    })
+//     $(triggers).on('click', event => {
+//       event.preventDefault()
+//     })
 
-    function checkActive() {
-      return $('.mdl').hasClass('mdl--active')
-    }
+//     function checkActive() {
+//       return $('.mdl').hasClass('mdl--active')
+//     }
 
-    function waitOpen() {
-      $(triggers).on('click', handleClick)
+//     function waitOpen() {
+//       $(triggers).on('click', handleClick)
 
-      function handleClick() {
+//       function handleClick() {
 
-        $(triggers).off('click', handleClick)
+//         $(triggers).off('click', handleClick)
 
-        open()
+//         open()
 
-        const container = $('.mdl').find('[data-mdl-container]')[0]
-        if (container) {
-          setTimeout(() => {
-            container.scrollTo(0, 0)
-          });
-        }
-      }
-    }
+//         const container = $('.mdl').find('[data-mdl-container]')[0]
+//         if (container) {
+//           setTimeout(() => {
+//             container.scrollTo(0, 0)
+//           });
+//         }
+//       }
+//     }
 
-    function open() {
-      if (!state.isActive) {
-        state.isActive = true;
-        $('.mdl').addClass('mdl--active')
-        $('.body').addClass('body--hidden')
+//     function open() {
+//       if (!state.isActive) {
+//         state.isActive = true;
+//         $('.mdl').addClass('mdl--active')
+//         $('.body').addClass('body--hidden')
 
-        setTimeout(() => {
-          waitClose()
-        }, 0)
-      }
-    }
+//         setTimeout(() => {
+//           waitClose()
+//         }, 0)
+//       }
+//     }
 
-    window.addEventListener('open-modal', function () {
-      open();
-    });
+//     window.addEventListener('open-modal', function () {
+//       open();
+//     });
 
-    function waitClose() {
-      $(window).on('click', handleClick)
+//     function waitClose() {
+//       $(window).on('click', handleClick)
 
-      function handleClick(event) {
-        console.log('click close');
+//       function handleClick(event) {
+//         console.log('click close');
 
-        const clickTarget = $(event.target)
+//         const clickTarget = $(event.target)
 
-        const mdlClose = clickTarget.closest('.mdl__close')
-        const mdlContent = clickTarget.closest('.mdl__content')
-        const mdlFile = clickTarget.closest('.file__item')
+//         const mdlClose = clickTarget.closest('.mdl__close')
+//         const mdlContent = clickTarget.closest('.mdl__content')
+//         const mdlFile = clickTarget.closest('.file__item')
 
-        if (
-          mdlClose.length === 1
-          || mdlContent.length === 0 && mdlFile.length === 0
-        ) {
-          $(window).off('click', handleClick)
+//         if (
+//           mdlClose.length === 1
+//           || mdlContent.length === 0 && mdlFile.length === 0
+//         ) {
+//           $(window).off('click', handleClick)
 
-          close()
-        }
-      }
-    }
+//           close()
+//         }
+//       }
+//     }
 
-    function close() {
-      state.isActive = false
+//     function close() {
+//       state.isActive = false
 
-      $('.mdl').removeClass('mdl--active')
-      $('.body').removeClass('body--hidden')
+//       $('.mdl').removeClass('mdl--active')
+//       $('.body').removeClass('body--hidden')
 
-      setTimeout(() => {
-        waitOpen()
-      }, 0)
-    }
-  })
-}
+//       setTimeout(() => {
+//         waitOpen()
+//       }, 0)
+//     }
+//   })
+// }
 
 // alert specialists page
 {
@@ -417,8 +427,8 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       const items = $('.nav-page-d__item')
 
       let positions = [],
-      currentActive = null,
-      links = navLink;
+        currentActive = null,
+        links = navLink;
 
 
       // update offset
@@ -427,10 +437,10 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
       function upadateOffset() {
         positions.length = 0
-        $('[data-section]').each(function(){
+        $('[data-section]').each(function () {
           positions.push({
             top: $(this).offset().top,
-            a: links.filter('[data-scroll="#'+$(this).attr('id')+'"]').closest('.nav-page-d__item')
+            a: links.filter('[data-scroll="#' + $(this).attr('id') + '"]').closest('.nav-page-d__item')
           });
         });
 
@@ -463,9 +473,9 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       function updateActive() {
         const winTop = $(window).scrollTop()
 
-        for(let i = 0; i < positions.length; i++){
-          if(positions[i].top - windowOffset < winTop + windowOffset){
-            if(currentActive !== i){
+        for (let i = 0; i < positions.length; i++) {
+          if (positions[i].top - windowOffset < winTop + windowOffset) {
+            if (currentActive !== i) {
               currentActive = i;
               items.removeClass('nav-page-d__item--active');
               positions[i].a.addClass('nav-page-d__item--active');
@@ -489,7 +499,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       }
 
       // anchor scroll
-      $('[data-scroll]').on('click', function(event) {
+      $('[data-scroll]').on('click', function (event) {
         event.preventDefault();
 
         const elementId = $(this).data('scroll');
@@ -510,7 +520,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
     if (form.length !== 0) {
 
-      form.each(function() {
+      form.each(function () {
         const formButton = $(this).find('[data-form-button]');
         const formButtonId = formButton.data('form-button');
 
@@ -639,7 +649,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
             }
           });
 
-          $('[data-response-button]').on('click', function() {
+          $('[data-response-button]').on('click', function () {
             files.length = 0
             fileElement.remove()
             console.log(files);
@@ -894,7 +904,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
             panel.removeClass('panel--modal-active')
             $('.body').css('overflow', '')
 
-            setTimeout (() => {
+            setTimeout(() => {
               $('.row__col--main').css('z-index', '')
             }, delay)
           }
@@ -905,12 +915,12 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
         $(window).on('click', event => {
 
           // const isClickArea = (
-            //   // эл-ты panel
-            //   $(event.target).closest('.panel__wrapper').length !== 0
-            //   && $(event.target).closest('.panel__test').length === 0
-            //   // модальное окно
-            //   || $(event.target).closest('[data-modal-active]').length !== 0
-            // );
+          //   // эл-ты panel
+          //   $(event.target).closest('.panel__wrapper').length !== 0
+          //   && $(event.target).closest('.panel__test').length === 0
+          //   // модальное окно
+          //   || $(event.target).closest('[data-modal-active]').length !== 0
+          // );
           let isClickArea
 
           function mediaQueryChange() {
@@ -941,7 +951,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
             state.change(null);
             $('.body').css('overflow', '')
 
-            setTimeout (() => {
+            setTimeout(() => {
               $('.row__col--main').css('position', '')
               $('.row__col--main').css('z-index', '')
             }, delay)
@@ -1181,11 +1191,11 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     if (test.length !== 0) {
 
       const state = {
-        update: function(selector, id, name) {
+        update: function (selector, id, name) {
           selector.removeClass(name)
           selector.eq(id).addClass(name)
         },
-        toggleResult: function(container, result, isResult) {
+        toggleResult: function (container, result, isResult) {
           if (isResult === false) {
             container.addClass('test__container--hidden')
             result.addClass('test__result--active')
@@ -1194,13 +1204,13 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
             result.removeClass('test__result--active')
           }
         },
-        responseHandler: function(selector) {
+        responseHandler: function (selector) {
           selector.find('[data-form]').removeAttr('data-form-hidden')
           selector.find('[data-response]').removeAttr('data-response-active')
         }
       }
 
-      test.each(function() {
+      test.each(function () {
         const ths = $(this)
         const testStep = ths.find('.test__label')
         const dot = ths.find('.test__dot')
@@ -1233,9 +1243,9 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
         // }
 
         // options change
-        testStep.each(function() {
+        testStep.each(function () {
 
-          $(this).on('click', function() {
+          $(this).on('click', function () {
             const step = $(this).closest('.test__options')
             const stepNext = step.next()
 
@@ -1261,7 +1271,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
         const formInput = form.find('.form__input')
         const resultEmail = result.find('.test__form-email')
 
-        form.on('submit', function(event) {
+        form.on('submit', function (event) {
           event.preventDefault()
 
           resultEmail.text(formInput.val())
@@ -1483,7 +1493,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       // }
       function updateHeight() {
         getHeight(arr => {
-          slide.each(function(i) {
+          slide.each(function (i) {
             $(this).css('height', `${arr[i]}`)
           })
         })
@@ -1507,29 +1517,29 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     Parsley.addMessages('ru', {
       defaultMessage: "Некорректное значение.",
       type: {
-        email:        "Введите адрес электронной почты.",
-        url:          "Введите URL адрес.",
-        number:       "Введите число.",
-        integer:      "Введите целое число.",
-        digits:       "Введите только цифры.",
-        alphanum:     "Введите буквенно-цифровое значение."
+        email: "Введите адрес электронной почты.",
+        url: "Введите URL адрес.",
+        number: "Введите число.",
+        integer: "Введите целое число.",
+        digits: "Введите только цифры.",
+        alphanum: "Введите буквенно-цифровое значение."
       },
-      notblank:       "Это поле должно быть заполнено.",
-      required:       "Поле заполнено неверно",
-      pattern:        "Это значение некорректно.",
-      min:            "Это значение должно быть не менее чем %s.",
-      max:            "Это значение должно быть не более чем %s.",
-      range:          "Это значение должно быть от %s до %s.",
-      minlength:      "Это значение должно содержать не менее %s символов.",
-      maxlength:      "Это значение должно содержать не более %s символов.",
-      length:         "Это значение должно содержать от %s до %s символов.",
-      mincheck:       "Выберите не менее %s значений.",
-      maxcheck:       "Выберите не более %s значений.",
-      check:          "Выберите от %s до %s значений.",
-      equalto:        "Это значение должно совпадать."
-  });
+      notblank: "Это поле должно быть заполнено.",
+      required: "Поле заполнено неверно",
+      pattern: "Это значение некорректно.",
+      min: "Это значение должно быть не менее чем %s.",
+      max: "Это значение должно быть не более чем %s.",
+      range: "Это значение должно быть от %s до %s.",
+      minlength: "Это значение должно содержать не менее %s символов.",
+      maxlength: "Это значение должно содержать не более %s символов.",
+      length: "Это значение должно содержать от %s до %s символов.",
+      mincheck: "Выберите не менее %s значений.",
+      maxcheck: "Выберите не более %s значений.",
+      check: "Выберите от %s до %s значений.",
+      equalto: "Это значение должно совпадать."
+    });
 
-  Parsley.setLocale('ru');
+    Parsley.setLocale('ru');
   });
 }
 
@@ -1546,7 +1556,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
         const parallaxId = parallaxElem.data('parallax');
         const parallaxContainer = $(`[data-parallax-container='${parallaxId}']`)
 
-        $(window).on('scroll', function() {
+        $(window).on('scroll', function () {
           const scrollPos = this.pageYOffset;
 
           if (scrollPos < parallaxContainer.offset().top &&
@@ -1577,29 +1587,29 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
         parallaxStart = $(window).height() / 2
       }
 
-      parallaxItem.each(function() {
+      parallaxItem.each(function () {
         const ths = $(this);
         const parallaxElemOffset = ths.offset().top;
         const parallaxId = ths.data('parallax-main')
         const parallaxContainer = $('[data-parallax-container-main]')
 
-        $(window).on('scroll', function() {
+        $(window).on('scroll', function () {
           const scrollPos = this.pageYOffset;
 
 
           if (scrollPos < parallaxContainer.offset().top &&
             (scrollPos + parallaxStart) > parallaxElemOffset) {
-              let parallax
+            let parallax
 
-              switch (parallaxId) {
-                case 'left':
-                  parallax = ((scrollPos + parallaxStart) - parallaxElemOffset) * -0.1;
-                  break
-
-                case 'right':
-                  parallax = ((scrollPos + parallaxStart) - parallaxElemOffset) * 0.1;
+            switch (parallaxId) {
+              case 'left':
+                parallax = ((scrollPos + parallaxStart) - parallaxElemOffset) * -0.1;
                 break
-              }
+
+              case 'right':
+                parallax = ((scrollPos + parallaxStart) - parallaxElemOffset) * 0.1;
+                break
+            }
 
             requestAnimationFrame(() => {
               ths.css('transform', `translateX(${parallax}px)`);
@@ -1950,7 +1960,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       const templateSlide = template.find('.b__frame')
       const templateTitle = template.find('.b__title')
 
-      sliderCol.each(function(i) {
+      sliderCol.each(function (i) {
         const col = $(this)
         const wrapper = col.find('.b__wrapper')
         wrapper.append(templateTitle.eq(i).clone().addClass('b__title--active'))
@@ -1959,7 +1969,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
         let num = 0
 
-        sliderControl.on('click', function() {
+        sliderControl.on('click', function () {
           const dataTarget = $(this).data('slider-arrow')
           const slidesActive = container.find('.b__frame--active')
 
@@ -2016,11 +2026,11 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     const videoContainer = $('.video')
 
     if (videoContainer.length !== 0) {
-      videoContainer.each(function() {
+      videoContainer.each(function () {
         const video = $(this).find('#video')
         const play = $(this).find('#play')
 
-        play.on('click', function() {
+        play.on('click', function () {
           $(this).fadeOut('500')
           video.get(0).play()
           video.attr('controls', '')
@@ -2033,8 +2043,8 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 // loader
 {
   $('body').css('overflow', 'hidden')
-  $(window).on('load', function() {
-    if($('.main-page').length) {
+  $(window).on('load', function () {
+    if ($('.main-page').length) {
       $('.loader').addClass('loader--hidden')
     }
     $('body').css('overflow', '')
@@ -2057,7 +2067,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       const tabs = reviewsTabs.find('.reviews-tabs__item')
       const link = reviewsTabs.find('.border-link')
 
-      buttons.on('click', function() {
+      buttons.on('click', function () {
         const buttonLink = $(this).find('.border-link')
         if (!$(this).hasClass('spray-page__slider-item--active')) {
           buttons.removeClass('spray-page__slider-item--active')
@@ -2129,7 +2139,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     if (menu.length !== 0) {
       const menuButton = menu.find('.modal-mobile__choice-button')
 
-      menuButton.on('click', function() {
+      menuButton.on('click', function () {
         const menuSectionClicked = $(this).closest('.modal-mobile__choice')
 
         if (menuSectionClicked.hasClass('modal-mobile__choice--active')) {
