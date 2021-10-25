@@ -102,45 +102,45 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 }
 
 // modal
-{
-  $(() => {
-    const modal = $('[data-modal]');
+// {
+//   $(() => {
+//     const modal = $('[data-modal]');
 
-    if (modal.length !== 0) {
+//     if (modal.length !== 0) {
 
-      window.addEventListener('click', (e) => {
-        const buttonModal = $('[data-button]');
+//       window.addEventListener('click', (e) => {
+//         const buttonModal = $('[data-button]');
 
-        buttonModal.each(function () {
-          const button = $(this);
-          const buttonId = button.data('button');
+//         buttonModal.each(function () {
+//           const button = $(this);
+//           const buttonId = button.data('button');
 
-          if ($(e.target).closest(button).length) {
-            $(`[data-modal='${buttonId}']`).toggleClass('modal--active');
-            $('.body').toggleClass('body--hidden')
+//           if ($(e.target).closest(button).length) {
+//             $(`[data-modal='${buttonId}']`).toggleClass('modal--active');
+//             $('.body').toggleClass('body--hidden')
 
-            if ($('.video-page').length) {
-              modal.find('#video')[0].pause()
-            }
-          }
-        });
+//             if ($('.video-page').length) {
+//               modal.find('#video')[0].pause()
+//             }
+//           }
+//         });
 
-        const target = e.target;
+//         const target = e.target;
 
-        if (target == $('.modal--active')[0]) {
-          modal.removeClass('modal--active');
-          $('.body').removeClass('body--hidden')
+//         if (target == $('.modal--active')[0]) {
+//           modal.removeClass('modal--active');
+//           $('.body').removeClass('body--hidden')
 
-          const video = $(target).find('#video')[0]
+//           const video = $(target).find('#video')[0]
           
-          if (video) {
-            video.pause()
-          }
-        }
-      })
-    }
-  });
-}
+//           if (video) {
+//             video.pause()
+//           }
+//         }
+//       })
+//     }
+//   });
+// }
 
 // crop text
 {
