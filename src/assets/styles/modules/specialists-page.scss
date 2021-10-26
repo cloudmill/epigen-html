@@ -53,17 +53,15 @@
     flex-shrink: 0;
 
     &:nth-child(1) {
-      @media (max-width: $breakpoint - 1px) {
-        margin-right: calc(#{$col-width-m});
-      }
+      padding-right: 20px;
       @media (max-width: $breakpoint-m - 1px) {
-        margin-right: 0;
+        padding-right: 0;
         margin-bottom: 30px;
       }
 
       width: calc(#{$col-width-d} * 6);
       @media (max-width: $breakpoint - 1px) {
-        width: calc(#{$col-width-m});
+        width: calc(#{$col-width-m} * 2);
       }
       @media (max-width: $breakpoint-m - 1px) {
         width: 100%;
