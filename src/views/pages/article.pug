@@ -219,10 +219,10 @@ block content
               .rail.rail--desctop.rail--margin-bottom--default
               .content
                 section.disease-page__section-row
-                  .disease-page__section-col
+                  .disease-page__section-col.desktop
                     .disease-page__section-label(data-aos='fade-up')
                       |Автор статьи
-                  .disease-page__section-col
+                  .disease-page__section-col.desktop
                     .disease-page__section-content.margin-bottom.margin-bottom--m
                       .disease-page__section-label(data-aos='fade-up')
                         |категория
@@ -231,6 +231,8 @@ block content
                           |Молочница
                 section.disease-page__section-row
                   .disease-page__section-col(data-aos='fade-up')
+                    .disease-page__section-label.mobile
+                      |Автор статьи
                     .disease-page__section-bot.disease-page__section-bot--height
                       .doctor-card
                         .doctor-card__row
@@ -244,6 +246,12 @@ block content
                               |Врач акушер-гинеколог ФГБУ «НМИЦ эндокринологии» Минздрава России, к.м.н, доцент Кафедры акушерства, гинекологии и репродуктивной медицины РУДН
                       .rail.rail--desktop
                   .disease-page__section-col
+                    .mobile.margin-bottom.margin-bottom--15
+                      .disease-page__section-label(data-aos='fade-up')
+                        |категория
+                      .disease-page__section-category(data-aos='fade-up')
+                        .category-item.category-item--light-blue.category-item--background--white
+                          |Молочница
                     .specialists-page__content-container(data-aos='fade-up')
                       +wave-articles-svg.specialists-page__content-wave
                       img(src="assets/images/woman.jpg", alt="")
