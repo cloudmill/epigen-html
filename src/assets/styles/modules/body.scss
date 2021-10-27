@@ -1,6 +1,13 @@
 .body {
+  
+  
+}
 
-  &--hidden {
+
+html.hidden {
+  overflow: hidden;
+  
+  body {
     overflow: hidden;
   }
 }
