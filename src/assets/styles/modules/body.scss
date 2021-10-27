@@ -1,7 +1,13 @@
 .body {
   
-  &--hidden {
-    position: relative;
+  
+}
+
+
+html.hidden {
+  overflow: hidden;
+  
+  body {
     overflow: hidden;
   }
 }
