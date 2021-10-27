@@ -897,9 +897,11 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           if (modalActive.length !== 0) {
             panel.addClass('panel--modal-active')
             $('.body').css('overflow', 'hidden')
+            $('html').css('overflow', 'hidden')
             $('.row__col--main').css('z-index', '3')
           } else {
             panel.removeClass('panel--modal-active')
+            $('html').css('overflow', '')
             $('.body').css('overflow', '')
 
             setTimeout(() => {
@@ -948,6 +950,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           if (!isClickArea) {
             state.change(null);
             $('.body').css('overflow', '')
+            $('html').css('overflow', '')
 
             setTimeout(() => {
               $('.row__col--main').css('position', '')
