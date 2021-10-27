@@ -464,7 +464,7 @@ block content
                             |Все отзывы
             +footer.page__footer
   .modal(data-modal='1')
-    .modal-product
+    .modal-product(data-modal-outside='')
       .modal-product__container
         .modal-product__top
           img.modal-product__img(src="assets/images/spray-product.jpg", alt="")
@@ -474,11 +474,11 @@ block content
               |Спрей Эпиген Интим
             p.modal-product__text
               |Оригинальный лекарственный препарат для лечения и профилактики различных заболеваний интимной зоны
-      .modal-product__button
-        .button-close.btn-animation.btn-animation--icon(data-button='1')
-          +cross-svg.button-close__svg
+        .modal-product__button
+          .button-close.btn-animation.btn-animation--icon(data-button='1')
+            +cross-svg.button-close__svg
   .modal(data-modal='2')
-    .modal-product
+    .modal-product(data-modal-outside='')
       .modal-product__container
         .modal-product__top
           img.modal-product__img(src="assets/images/gel.jpg", alt="")
@@ -488,9 +488,9 @@ block content
               |Гель Эпиген Интим
             p.modal-product__text
               |Единственный гель для интимной гигиены с уникальным сочетанием двух активных компонентов — активированной глицирризиновой и молочной кислоты
-      .modal-product__button
-        .button-close.btn-animation.btn-animation--icon(data-button='2')
-          +cross-svg.button-close__svg
+        .modal-product__button
+          .button-close.btn-animation.btn-animation--icon(data-button='2')
+            +cross-svg.button-close__svg
   +modal-test
   +modal-article
   //- +modal-consultation

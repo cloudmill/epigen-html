@@ -135,9 +135,11 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
         const target = e.target;
 
-        if (target == $('.modal--active')[0]) {
+        console.log(target);
+        if (target == $('[data-modal-outside]')[0]) {
           modal.removeClass('modal--active');
           $('.body').removeClass('body--hidden')
+
 
           const video = $(target).find('#video')[0]
 
@@ -897,11 +899,11 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           if (modalActive.length !== 0) {
             panel.addClass('panel--modal-active')
             $('.body').css('overflow', 'hidden')
-            $('html').css('overflow', 'hidden')
+            // $('html').css('overflow', 'hidden')
             $('.row__col--main').css('z-index', '3')
           } else {
             panel.removeClass('panel--modal-active')
-            $('html').css('overflow', '')
+            // $('html').css('overflow', '')
             $('.body').css('overflow', '')
 
             setTimeout(() => {
@@ -950,7 +952,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
           if (!isClickArea) {
             state.change(null);
             $('.body').css('overflow', '')
-            $('html').css('overflow', '')
+            // $('html').css('overflow', '')
 
             setTimeout(() => {
               $('.row__col--main').css('position', '')
