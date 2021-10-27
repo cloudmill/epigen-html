@@ -1,13 +1,8 @@
 .body {
   
-  
-}
-
-
-html.hidden {
-  overflow: hidden;
-  
-  body {
+  &--hidden {
     overflow: hidden;
   }
 }
+
+
