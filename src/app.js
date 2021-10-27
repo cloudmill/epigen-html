@@ -135,7 +135,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
         const target = e.target;
 
-        if (target == $('[data-modal-outside]')[0]) {
+        if (target == $('.modal--active')[0]) {
           modal.removeClass('modal--active');
           $('.body').removeClass('body--hidden')
 
