@@ -117,7 +117,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
           if ($(e.target).closest(button).length) {
             $(`[data-modal='${buttonId}']`).toggleClass('modal--active');
-            $('html').toggleClass('hidden')
+            $('.body').toggleClass('body--hidden')
 
             const container = $(`[data-modal='${buttonId}']`).find('[data-mdl-container]')[0]
 
@@ -137,7 +137,7 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
         if (target == $('[data-modal-outside]')[0]) {
           modal.removeClass('modal--active');
-          $('html').removeClass('hidden')
+          $('.body').removeClass('body--hidden')
 
           const video = $(target).find('#video')[0]
 
