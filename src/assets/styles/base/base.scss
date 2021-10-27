@@ -17,14 +17,11 @@ button:active, button:focus {outline: none;}
 button::-moz-focus-inner {border: 0;}
 
 html {
-  height: 100%;
-  min-height: 100vh;
   font-size: $fs;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 body {
-  min-height: 100vh;
   @include f-main();
   color: $color-black;
 }
@@ -54,9 +51,3 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active{
   -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
-
-// main {
-//   @media (max-width: $breakpoint-m - 1px) {
-//     overflow: hidden;
-//   }
-// }
