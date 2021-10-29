@@ -179,15 +179,7 @@ block content
                             span.header__burger-span
                     +nav-page-m
                   .panel__list
-                    .disease-page__container(data-aos='fade-up')
-                      .disease-page__container-label 
-                        |Возможные заболевания
-                      ul.disease-page__list
-                        each item in ['Генитальный герпес (I и II типа)', 'Применение при беременности', 'Молочница', 'Бактериальный вагиноз', 'ВПЧ', 'Молочница', ]
-                          li.disease-page__list-item
-                            .category-item.btn-animation
-                              span.btn-animation__text 
-                                |#{item}
+                    
                   .panel__modals
                     +modal-mobile
             main.page__main
@@ -198,10 +190,17 @@ block content
                 section.disease-page__section
                   .disease-page__section-list
                     .disease-page__container(data-list='')
-                      .disease-page__container-label(data-aos='fade-up')
-                        |Возможные заболевания
+                      .disease-page__container-col
+                        .disease-page__container-label(data-aos='fade-up')
+                          |Возможные симптомы
+                        .disease-page__container-button(data-list-button='')
+                          .button-show.button-show--default
+                            .button-show__icon
+                              +btn-plus-svg.button-show__svg
+                            .button-show__text
+                              |показать еще
                       ul.disease-page__list
-                        each item in ['Генитальный герпес (I и II типа)', 'Применение при беременности', 'Молочница', 'Бактериальный вагиноз', 'ВПЧ', 'Молочница', ]
+                        each item in ['Зуд', 'Жжение', 'Выделения, пузырьки ', 'Пузырьки, язвочки', 'Болезненность, выделения', 'Болезненность при половом контакте', 'Боль внизу живота', 'Боль при мочеиспускании', 'Выделения, пузырьки ', ]
                           li.disease-page__list-item(data-aos='fade-up')
                             .category-item.btn-animation
                               span.btn-animation__text 

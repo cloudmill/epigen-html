@@ -2179,3 +2179,54 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     }
   }
 }
+
+// disease/symptoms fixed list
+{
+  $(() => {
+
+    const container = $('[data-list]')
+
+    if (container.length) {
+      const list = container.find('.disease-page__list')
+
+      checkHeight()
+      cloneList()
+
+      function checkHeight() {
+        const item = container.find('.disease-page__list-item').height() + 5
+
+        if (item * 2 < list.height()) {
+          let isCroped = true
+
+          $('[data-list-button]').addClass('showed')
+          list.css('height', `${item * 2}px`)
+
+          $(window).on('click', (e) => {
+            const target = $(e.target).closest('[data-list-button]')
+
+            if (target.length) {
+              const lists = $('.disease-page__list')
+              const buttonText = $('[data-list]').find('.button-show__text')
+
+              if (isCroped) {
+                lists.css('height', 'auto')
+                buttonText.text('скрыть')
+              } else {
+                lists.css('height', `${item * 2}px`)
+                buttonText.text('показать еще')
+              }
+              isCroped = !isCroped
+            }
+          })
+        }
+      }
+
+      function cloneList() {
+        const panelList = $('.panel__list')
+        const clone = container.clone()
+
+        panelList.append(clone)
+      }
+    }
+  })
+}
