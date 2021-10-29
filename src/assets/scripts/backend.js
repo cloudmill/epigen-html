@@ -88,6 +88,7 @@ function testVozDiag() {
                 container.find('[data-type=first-part]').html(r.response['first-part']);
                 if (r.response['second-part']) {
                     container.find('[data-type=second-part]').html(r.response['second-part']);
+                    container.find('[data-type=second-part-class]').css('display','block');
                 }else{
                     container.find('[data-type=second-part-class]').css('display','none');
                 }
