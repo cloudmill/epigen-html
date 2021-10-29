@@ -340,12 +340,53 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
   });
 }
 
-// disease page scroll
+// disease/symptoms fixed list
 {
   $(() => {
     const list = $('[data-list]');
 
     if (list.length !== 0) {
+      const itemList = list.find('.disease-page__list')
+      const item = list.find('.disease-page__list-item').height() + 5
+      let isCroped = true
+
+      checkHeight()
+      cloneList()
+
+      function checkHeight() {
+
+        if (item * 2 < itemList.height()) {
+
+          $('[data-list-button]').addClass('showed')
+          itemList.css('height', `${item * 2}px`)
+
+          $(window).on('click', (e) => {
+            const target = $(e.target).closest('[data-list-button]')
+
+            if (target.length) {
+              const lists = $('.disease-page__list')
+              const buttonText = $('[data-list]').find('.button-show__text')
+
+              if (isCroped) {
+                lists.css('height', 'auto')
+                buttonText.text('скрыть')
+              } else {
+                lists.css('height', `${item * 2}px`)
+                buttonText.text('показать еще')
+              }
+              isCroped = !isCroped
+            }
+          })
+        }
+      }
+
+      function cloneList() {
+        const panelList = $('.panel__list')
+        const clone = list.clone()
+
+        panelList.append(clone)
+      }
+
       const listOffset = list.offset().top - 10;
       const panelHeight = $('.panel__panel').height();
 
@@ -354,6 +395,11 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
         if (BREAKPOINT_MEDIA.matches) {
           if (scrollPos > listOffset) {
+            if (!isCroped) {
+              isCroped = !isCroped
+              $('.disease-page__list').css('height', `${item * 2}px`)
+              $('[data-list]').find('.button-show__text').text('показать еще')
+            }
             list.addClass('disease-page__container--hidden')
             $('.panel__list').addClass('panel__list--scroll');
           }
@@ -2178,55 +2224,4 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
       }, 1000 / 15);
     }
   }
-}
-
-// disease/symptoms fixed list
-{
-  $(() => {
-
-    const container = $('[data-list]')
-
-    if (container.length) {
-      const list = container.find('.disease-page__list')
-
-      checkHeight()
-      cloneList()
-
-      function checkHeight() {
-        const item = container.find('.disease-page__list-item').height() + 5
-
-        if (item * 2 < list.height()) {
-          let isCroped = true
-
-          $('[data-list-button]').addClass('showed')
-          list.css('height', `${item * 2}px`)
-
-          $(window).on('click', (e) => {
-            const target = $(e.target).closest('[data-list-button]')
-
-            if (target.length) {
-              const lists = $('.disease-page__list')
-              const buttonText = $('[data-list]').find('.button-show__text')
-
-              if (isCroped) {
-                lists.css('height', 'auto')
-                buttonText.text('скрыть')
-              } else {
-                lists.css('height', `${item * 2}px`)
-                buttonText.text('показать еще')
-              }
-              isCroped = !isCroped
-            }
-          })
-        }
-      }
-
-      function cloneList() {
-        const panelList = $('.panel__list')
-        const clone = container.clone()
-
-        panelList.append(clone)
-      }
-    }
-  })
 }
