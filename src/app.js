@@ -346,39 +346,60 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     const list = $('[data-list]');
 
     if (list.length !== 0) {
-      const itemList = list.find('.disease-page__list')
       const item = list.find('.disease-page__list-item').height() + 5
       let isCroped = true
+      let isMatches
 
-      checkHeight()
-      cloneList()
+      const mediaQuery = window.matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
-      function checkHeight() {
+      function mediaQueryChange() {
 
-        if (item * 2 < itemList.height()) {
+        if (mediaQuery.matches) {
+          isMatches = true
+          const lists = $('.disease-page__list')
 
-          $('[data-list-button]').addClass('showed')
-          itemList.css('height', `${item * 2}px`)
+          checkHeight()
 
-          $(window).on('click', (e) => {
-            const target = $(e.target).closest('[data-list-button]')
+          function checkHeight() {
 
-            if (target.length) {
-              const lists = $('.disease-page__list')
-              const buttonText = $('[data-list]').find('.button-show__text')
-
-              if (isCroped) {
-                lists.css('height', 'auto')
-                buttonText.text('скрыть')
-              } else {
-                lists.css('height', `${item * 2}px`)
-                buttonText.text('показать еще')
-              }
-              isCroped = !isCroped
+            if (item * 2 < lists.height()) {
+    
+              $('[data-list-button]').addClass('showed')
+              lists.css('height', `${item * 2}px`)
             }
-          })
+          }
+        } else {
+          isMatches = false
+          $('.disease-page__list').css('height', 'auto')
+          $('[data-list]').find('.button-show__text').text('показать еще')
+          isCroped = true
         }
       }
+
+      cloneList()
+      mediaQueryChange()
+      mediaQuery.addListener(mediaQueryChange)
+
+      $(window).on('click', (e) => {
+        if (isMatches) {
+
+          const target = $(e.target).closest('[data-list-button]')
+          
+          if (target.length) {
+            const lists = $('.disease-page__list')
+            const buttonText = $('[data-list]').find('.button-show__text')
+
+            if (isCroped) {
+              lists.css('height', 'auto')
+              buttonText.text('скрыть')
+            } else {
+              lists.css('height', `${item * 2}px`)
+              buttonText.text('показать еще')
+            }
+            isCroped = !isCroped
+          }
+        }
+      })
 
       function cloneList() {
         const panelList = $('.panel__list')

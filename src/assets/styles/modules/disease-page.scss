@@ -186,7 +186,9 @@
     display: none;
 
     &.showed {
-      display: flex;
+      @media (min-width: $breakpoint) {
+        display: flex;
+      }
     }
   }
   &__content-m {
