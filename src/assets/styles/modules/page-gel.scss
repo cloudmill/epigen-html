@@ -577,6 +577,29 @@
       @include fsl(15px);
     }
   }
+  &__features-label {
+    margin-top: 15px;
+    padding-left: calc(#{$col-width-d});
+    @media (max-width: $breakpoint - 1px) {
+      margin-top: 10px;
+      padding-left: 0;
+      padding-right: 24px;
+    }
+    @media (max-width: $breakpoint-m - 1px) {
+      padding-right: 0;
+    }
+
+    max-width: 440px;
+    @media (max-width: $breakpoint - 1px) {
+      max-width: 296px;
+    }
+
+    color: $color-gray;
+    @include fsl(13px, 140%);
+    @media (max-width: $breakpoint - 1px) {
+      @include fsl(11px);
+    }
+  }
   &__features-layout {
     position: absolute;
     z-index: -1;
