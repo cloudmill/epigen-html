@@ -116,7 +116,7 @@
     transform: translateY(0);
 
     @media (min-width: $breakpoint) {
-      margin-left: calc((#{$col-width-d} / 2) * (-1));
+      margin-left: calc((#{$col-width-d} / 2 - 2px) * (-1));
       padding-left: calc(#{$col-width-d} / 2);
     }
     width: calc(#{$panel-width} + (#{$col-width-d} / 2) + 30px);
