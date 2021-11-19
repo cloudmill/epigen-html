@@ -117,8 +117,7 @@ function test() {
 
         let form = $(this),
             url = form.attr("data-url"),
-            questionArr = [],
-            answerArr = [],
+            vozDiagArr = [],
             data = {};
 
 
@@ -129,14 +128,11 @@ function test() {
         });
 
         $('.checkOption').each(function () {
-            questionArr.push($(this).attr("data-question"));
-            answerArr.push($(this).find("[data-type=option_value]").text());
+            vozDiagArr.push($(this).attr("data-voz-diag"));
         });
 
-        data['question'] = questionArr;
-        data['answer'] = answerArr;
-
         data['test_email'] = 'Y';
+        data['vozDiagArr'] = vozDiagArr;
         console.log(data);
 
         $.ajax({
