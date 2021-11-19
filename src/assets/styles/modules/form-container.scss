@@ -181,8 +181,8 @@
     }
   }
   &__col {
-    flex-shrink: 0;
     &:nth-child(1) {
+      flex-shrink: 0;
       width: 100%;
       @media (min-width: $breakpoint) {
         width: calc(#{$col-width-d} * 7);
