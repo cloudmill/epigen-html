@@ -66,7 +66,7 @@ function testVozDiag() {
 
         $(this).addClass('checkOption');
 
-        
+
 
         if (end == 'end') {
             $('.checkOption').each(function () {
@@ -384,13 +384,12 @@ function buy() {
         e.preventDefault();
 
         let container = $(this).parents('[data-type=buy-container]'),
-            id = $(this).data('id'),
-            iframeContainer = container.find('[data-type=iframe-container]');
+            iframe = container.find('[data-type=iframe-uteka]');
 
         container.find('[data-type=buy-tab]').filter('.product-btn--active').removeClass('product-btn--active');
         $(this).addClass('product-btn--active');
-        iframeContainer.empty();
-        iframeContainer.append('<iframe class="buy-page__map-iframe" allow="geolocation" src="https://widget.uteka.ru/widgets/full/?productId=' + id + '" data-type="iframe-uteka"></iframe>')
+
+        iframe.toggle();
     });
 }
 
