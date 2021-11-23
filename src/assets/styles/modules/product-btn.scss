@@ -73,36 +73,42 @@
   }
 
   &:hover {
-    #{$comp}__svg {
-      .spray-svg__background {
-        fill: $color-blue;
-      }
-
-      .spray-svg__line {
-        &--stroke {
-          stroke: $color-white;
+    @media (min-width: $breakpoint) {
+      #{$comp}__svg {
+        .spray-svg__background {
+          fill: $color-blue;
         }
-        &--fill {
-          fill: $color-white;
+  
+        .spray-svg__line {
+          &--stroke {
+            stroke: $color-white;
+          }
+          &--fill {
+            fill: $color-white;
+          }
         }
       }
-    }
-
-    #{$comp}__text {
-      color: $color-white;
-      animation: MoveScaleUpInitial 0.3s forwards, MoveScaleUpEnd 0.3s forwards 0.3s;
+  
+      #{$comp}__text {
+        color: $color-white;
+        animation: MoveScaleUpInitial 0.3s forwards, MoveScaleUpEnd 0.3s forwards 0.3s;
+      }
     }
   }
 
   &:hover::after {
-    transform: translate3d(0,0,0);
-    transition-duration: 0.05s;
-    transition-delay: 0.4s;
-    transition-timing-function: $transition-timing-function;
+    @media (min-width: $breakpoint) {
+      transform: translate3d(0,0,0);
+      transition-duration: 0.05s;
+      transition-delay: 0.4s;
+      transition-timing-function: $transition-timing-function;
+    }
   }
   &:hover::before {
-    transform: translate3d(0,0,0) scale3d(1,1,1);
-    transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);
+    @media (min-width: $breakpoint) {
+      transform: translate3d(0,0,0) scale3d(1,1,1);
+      transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);
+    }
   }
 
   &--white {
