@@ -310,14 +310,14 @@ mixin modal-aside
         .modal-aside__col
           nav.modal-aside__nav
             ul.modal-aside__nav-list
-              .modal-aside__nav-col
+              li.modal-aside__nav-col
                 each item in ['Где купить', 'Вопрос эксперту', 'Отзывы Спрей Эпиген ', 'Отзывы Гель Эпиген ',]
-                  li.modal-aside__nav-item.animation
+                  .modal-aside__nav-item.animation
                     a.modal-aside__nav-link(href="#")
                       |#{item}
-              .modal-aside__nav-col
+              li.modal-aside__nav-col
                 each item in ['Видео с экспертами', 'Статьи экспертов', 'Вопрос-ответ', 'Специалистам',]
-                  li.modal-aside__nav-item.animation
+                  .modal-aside__nav-item.animation
                     a.modal-aside__nav-link(href="#")
                       |#{item}
           .modal-aside__corp.animation

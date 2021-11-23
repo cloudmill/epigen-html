@@ -22,7 +22,7 @@ mixin footer
             .footer__block-col
               nav.footer__nav
                 ul.footer__nav-list
-                  .footer__nav-col
+                  li.footer__nav-col
                     -
                       var items = [
                         'Где купить',
@@ -31,10 +31,10 @@ mixin footer
                         'Видео с экспертами',
                       ]
                     each item in items
-                      li.footer__nav-item
+                      .footer__nav-item
                         a.footer__nav-link(href="#")
                           |!{item}
-                  .footer__nav-col
+                  li.footer__nav-col
                     -
                       var items = [
                         'Статьи экспертов',
@@ -42,7 +42,7 @@ mixin footer
                         'Специалистам',
                       ]
                     each item in items
-                      li.footer__nav-item
+                      .footer__nav-item
                         a.footer__nav-link(href="#")
                           |!{item}
             .footer__block-col
