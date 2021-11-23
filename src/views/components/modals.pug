@@ -104,7 +104,7 @@ mixin modal-test
               .test__col
                 .test__options.test__options--active
                   each item in ['Обильные выделения без неприятного запаха', 'Выделения с неприятным запахом', 'Болезненные пузырьки в интимной зоне, превращающиеся в язвы', 'Безболезненные папилломы, узелки, наросты или бородавки в интимной зоне', 'Что-то другое, не указанное выше']
-                    label.test__label(for="#")
+                    label.test__label
                       input.test__radio(type="radio" name='question-1')
                       .test__icon
                         +check-svg
@@ -112,7 +112,7 @@ mixin modal-test
                         |#{item}
                 .test__options
                   each item in ['Беспокоят впервые', 'Уже случалось ранее', 'Беспокоят периодически 1-2 раза в год', 'Беспокоят периодически 3-4 раза в год', 'После лечения вскоре снова обостряется']
-                    label.test__label(for="#")
+                    label.test__label
                       input.test__radio(type="radio" name='question-2')
                       .test__icon
                         +check-svg
@@ -120,7 +120,7 @@ mixin modal-test
                         |#{item}
                 .test__options
                   each item in ['Не считаю нужным обращаться к врачу', 'Более 3 лет назад', 'Более 1 года назад', 'В этом году', 'Обращалась к гинекологу когда возникла данная проблема']
-                    label.test__label(for="#")
+                    label.test__label
                       input.test__radio(type="radio" name='question-3')
                       .test__icon
                         +check-svg
@@ -128,7 +128,7 @@ mixin modal-test
                         |#{item}
                 .test__options
                   each item in ['Пока ничего не делала, только наблюдала', 'Использовала средства народной медицины', 'Лечилась тем, что посоветовал фармацевт в аптеке', 'Лечилась лекарствами, которые советовали в интернете', 'Лечилась тем, что назначил врач гинеколог']
-                    label.test__label(for="#")
+                    label.test__label
                       input.test__radio(type="radio" name='question-4')
                       .test__icon
                         +check-svg
@@ -136,7 +136,7 @@ mixin modal-test
                         |#{item}
                 .test__options
                   each item in ['Да, удалось', 'Нет, не удалось', 'Лечение помогло, но не в полной мере', 'Пока не лечилась', 'Лечиться не планирую, интересуюсь ради любопытства']
-                    label.test__label(for="#")
+                    label.test__label
                       input.test__radio(type="radio" name='question-5')
                       .test__icon
                         +check-svg
