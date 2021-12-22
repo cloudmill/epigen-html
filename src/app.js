@@ -2246,3 +2246,20 @@ const BREAKPOINT_MEDIA = matchMedia(`(min-width: ${BREAKPOINT}px)`)
     }
   }
 }
+
+// map frame showdown
+{
+  $(() => {
+    const mapContainer = $('.buy-page__container')
+
+    if (mapContainer.length) {
+      const buttons = $('.product-btn')
+
+      buttons.one('click', function(e) {
+        e.preventDefault()
+        
+        mapContainer.addClass('active')
+      })
+    }
+  })
+}

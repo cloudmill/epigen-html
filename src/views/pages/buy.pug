@@ -93,9 +93,12 @@ block content
                 |Где купить
               .rail.rail--margin-bottom--default.rail--desctop
               section.buy-page__section
+                .buy-page__title(data-aos='fade-up')
+                  |Выберите форму выпуска для заказа в аптеке
                 ul.product-choice.product-choice--margin-bottom--default
                   li.product-choice__item(data-aos='fade-up')
-                    a.product-btn.product-btn--active(href='#')
+                    a.product-btn(href='#')
+                      //- .product-btn--active
                       +spray-svg.product-btn__svg
                       p.product-btn__text
                         |Эпиген Интим
@@ -108,14 +111,16 @@ block content
                         |Эпиген Интим
                         br
                         |Гель
-                .buy-page__map-header(data-aos='fade-up')
-                  a.buy-page__map-link(href='#')
-                    img.buy-page__map-logo(src='https://widget.uteka.ru/static/img/widgets/logo-light.svg')
-                  p.buy-page__map-text
-                    |Выберите аптеку и сделайте заказ
-                .buy-page__map(data-aos='fade-up')
-                  //- img(src="assets/images/map.jpg", alt="")
-                  iframe.buy-page__map-iframe(allow="geolocation" src="https://widget.uteka.ru/widgets/full/?productId=99949")
+                .buy-page__container(data-aos='fade-up')
+                  .buy-page__map-header
+                    a.buy-page__map-link(href='#')
+                      img.buy-page__map-logo(src='https://widget.uteka.ru/static/img/widgets/logo-light.svg')
+                    p.buy-page__map-text
+                      |Выберите аптеку и сделайте заказ
+                  .buy-page__map
+                    iframe.buy-page__map-iframe(allow="geolocation" src="https://widget.uteka.ru/widgets/full/?productId=99949")
+                .buy-page__title(data-aos='fade-up')
+                  |Также можно заказать на сайтах партнеров
                 .buy-page__partners
                   ul.buy-page__partners-list
                     each partner in ['ozon', 'yandex-market', 'wildberries', 'zdravcity', 'apteka', 'sberapteka']

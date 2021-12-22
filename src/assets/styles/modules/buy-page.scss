@@ -53,6 +53,29 @@
   }
   &__map-logo {}
 
+  &__title {
+    margin-bottom: 30px;
+    @media (max-width: ($breakpoint - 1px)) {
+      margin-bottom: 15px;
+
+      @include fsl(20px, 130%);
+    }
+    @include fsl(35px, 130%);
+  }
+
+  &__container {
+    margin-bottom: 60px;
+    @media (max-width: ($breakpoint - 1px)) {
+      margin-bottom: 30px;
+    }
+
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+
   &__partners {
     margin-top: 30px;
   }
@@ -101,6 +124,9 @@
     justify-content: center;
   }
 
+  &__section {
+    margin-top: 60px;
+  }
   &__section-title {
     width: calc(#{$col-width-d} * 12);
     @media (max-width: $breakpoint - 1px) {
