@@ -383,13 +383,18 @@ function buy() {
     $(document).on('click', '[data-type=buy-tab]', function (e) {
         e.preventDefault();
 
-        let container = $(this).parents('[data-type=buy-container]'),
-            iframe = container.find('[data-type=iframe-uteka]');
+        const thisObj = $(this),
+            container = thisObj.parents('[data-type=buy-container]'),
+            iframeElem = container.find('[data-type=iframe-uteka]');
 
         container.find('[data-type=buy-tab]').filter('.product-btn--active').removeClass('product-btn--active');
-        $(this).addClass('product-btn--active');
+        thisObj.addClass('product-btn--active');
 
-        iframe.toggle();
+        if (iframeElem.is(':visible')) {
+          iframeElem.hide();
+        }
+
+        container.find(`[data-frame=${thisObj.data('frame')}]`).show();
     });
 }
 
