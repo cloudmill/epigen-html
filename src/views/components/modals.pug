@@ -2,89 +2,90 @@
 mixin modal-mobile
   .modal-mobile.modal-mobile--height--100vh-60p(data-modal-id='1')
     .modal-mobile__inner
-      .modal-mobile__container
-        .modal-mobile__products
-          .modal-mobile__products-item
-            +product-link.product-link--modal--mobile(src='assets/images/spray-product.jpg')
-              |Спрей
-          .modal-mobile__products-item
-            +product-link.product-link--modal--mobile.product-link--purple(src='assets/images/gel.jpg')
-              |Гель
-      .panel.panel--modal
-        .panel__choice
-          .modal-mobile__choice
-            .modal-mobile__choice-button
-              .panel__choice-item(data-count='8')
-                |Симптомы
-              +spoiler-arrow-svg.modal-mobile__choice-svg
-            .modal-mobile__choice-dropdown
-              ul.modal-mobile__choice-list
-                each item in ['Зуд', 'Жжение', 'Выделения, пузырьки', 'Пузырьки, язвочки', 'Болезненность, выделения',]
-                  li.modal-mobile__choice-item
-                    a.modal-mobile__choice-link(href="#") 
-                      |#{item}
-          .modal-mobile__choice
-            .modal-mobile__choice-button
-              .panel__choice-item(data-count='12')
-                |Заболевания
-              +spoiler-arrow-svg.modal-mobile__choice-svg
-            .modal-mobile__choice-dropdown
-              ul.modal-mobile__choice-list
-                each item in ['Генитальный герпес (I и II типа)', 'ВПЧ', 'Применение при беременности', 'Молочница', 'Бактериальный вагиноз',]
-                  li.modal-mobile__choice-item
-                    a.modal-mobile__choice-link(href="") 
-                      |#{item}
-        .modal-mobile__links
-          .modal-mobile__container
-            .modal-mobile__links-row
-              .modal-mobile__links-col
-                ul.modal-mobile__links-list
-                  li.modal-mobile__links-item
-                    .panel__test(data-button='3')
-                      +calendar-test-svg.panel__test-icon
-                      .panel__test-text
-                        |Пройти тест
-                  li.modal-mobile__links-item
-                    .panel__consultation(data-button='6')
-                      +consultation-svg.panel__consultation-svg
-                      .panel__consultation-text
-                        |Консультация эксперта
-                .modal-mobile__bottom
-                  .modal-mobile__container
-                    ul.modal-mobile__bottom-links
-                      li.modal-mobile__bottom-item
-                        a.modal-mobile__bottom-doc(href="#")
-                          |Политика конфиденциальности
-                      li.modal-mobile__bottom-item
-                        a.modal-mobile__bottom-doc(href="#")
-                          |Положение о пользовании сайтом
-                      li.modal-mobile__bottom-item
-                        .modal-mobile__bottom-text
-                          span
-                            |Сделано в&nbsp;
-                          a.modal-mobile__bottom-link(href="#")
-                            |CloudMill
-              .modal-mobile__links-col
-                ul.modal-mobile__links-list
-                  each item in ['Где купить', 'Вопрос эксперту', 'Отзывы Спрей Эпиген ', 'Отзывы Гель Эпиген ', 'Видео с экспертами', 'Статьи экспертов', 'Вопрос-ответ', 'Специалистам',]
-                    li.modal-mobile__links-item
-                      a.modal-mobile__links-link(href="#")
-                        |#{item}
-      .modal-mobile__bottom.modal-mobile__bottom--m
+      .modal-mobile__wrapper
         .modal-mobile__container
-          ul.modal-mobile__bottom-links
-            li.modal-mobile__bottom-item
-              a.modal-mobile__bottom-doc(href="#")
-                |Политика конфиденциальности
-            li.modal-mobile__bottom-item
-              a.modal-mobile__bottom-doc(href="#")
-                |Положение о пользовании сайтом
-            li.modal-mobile__bottom-item
-              .modal-mobile__bottom-text
-                span
-                  |Сделано в&nbsp;
-                a.modal-mobile__bottom-link(href="#")
-                  |CloudMill
+          .modal-mobile__products
+            .modal-mobile__products-item
+              +product-link.product-link--modal--mobile(src='assets/images/spray-product.jpg')
+                |Спрей
+            .modal-mobile__products-item
+              +product-link.product-link--modal--mobile.product-link--purple(src='assets/images/gel.jpg')
+                |Гель
+        .panel.panel--modal
+          .panel__choice
+            .modal-mobile__choice
+              .modal-mobile__choice-button
+                .panel__choice-item(data-count='8')
+                  |Симптомы
+                +spoiler-arrow-svg.modal-mobile__choice-svg
+              .modal-mobile__choice-dropdown
+                ul.modal-mobile__choice-list
+                  each item in ['Зуд', 'Жжение', 'Выделения, пузырьки', 'Пузырьки, язвочки', 'Болезненность, выделения',]
+                    li.modal-mobile__choice-item
+                      a.modal-mobile__choice-link(href="#") 
+                        |#{item}
+            .modal-mobile__choice
+              .modal-mobile__choice-button
+                .panel__choice-item(data-count='12')
+                  |Заболевания
+                +spoiler-arrow-svg.modal-mobile__choice-svg
+              .modal-mobile__choice-dropdown
+                ul.modal-mobile__choice-list
+                  each item in ['Генитальный герпес (I и II типа)', 'ВПЧ', 'Применение при беременности', 'Молочница', 'Бактериальный вагиноз',]
+                    li.modal-mobile__choice-item
+                      a.modal-mobile__choice-link(href="") 
+                        |#{item}
+          .modal-mobile__links
+            .modal-mobile__container
+              .modal-mobile__links-row
+                .modal-mobile__links-col
+                  ul.modal-mobile__links-list
+                    li.modal-mobile__links-item
+                      .panel__test(data-button='3')
+                        +calendar-test-svg.panel__test-icon
+                        .panel__test-text
+                          |Пройти тест
+                    li.modal-mobile__links-item
+                      .panel__consultation(data-button='6')
+                        +consultation-svg.panel__consultation-svg
+                        .panel__consultation-text
+                          |Консультация эксперта
+                  .modal-mobile__bottom
+                    .modal-mobile__container
+                      ul.modal-mobile__bottom-links
+                        li.modal-mobile__bottom-item
+                          a.modal-mobile__bottom-doc(href="#")
+                            |Политика конфиденциальности
+                        li.modal-mobile__bottom-item
+                          a.modal-mobile__bottom-doc(href="#")
+                            |Положение о пользовании сайтом
+                        li.modal-mobile__bottom-item
+                          .modal-mobile__bottom-text
+                            span
+                              |Сделано в&nbsp;
+                            a.modal-mobile__bottom-link(href="#")
+                              |CloudMill
+                .modal-mobile__links-col
+                  ul.modal-mobile__links-list
+                    each item in ['Где купить', 'Вопрос эксперту', 'Отзывы Спрей Эпиген ', 'Отзывы Гель Эпиген ', 'Видео с экспертами', 'Статьи экспертов', 'Вопрос-ответ', 'Специалистам',]
+                      li.modal-mobile__links-item
+                        a.modal-mobile__links-link(href="#")
+                          |#{item}
+        .modal-mobile__bottom.modal-mobile__bottom--m
+          .modal-mobile__container
+            ul.modal-mobile__bottom-links
+              li.modal-mobile__bottom-item
+                a.modal-mobile__bottom-doc(href="#")
+                  |Политика конфиденциальности
+              li.modal-mobile__bottom-item
+                a.modal-mobile__bottom-doc(href="#")
+                  |Положение о пользовании сайтом
+              li.modal-mobile__bottom-item
+                .modal-mobile__bottom-text
+                  span
+                    |Сделано в&nbsp;
+                  a.modal-mobile__bottom-link(href="#")
+                    |CloudMill
 
 mixin modal-test 
   .modal(data-modal='3')
