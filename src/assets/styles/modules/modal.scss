@@ -191,7 +191,7 @@
 
   display: none;
   @media (max-width: $breakpoint - 1px) {
-    display: block;
+    display: flex;
   }
   width: calc((#{$col-width-m} * 6) + (15px * 2));
   transform: translate(100%, 0);
@@ -220,6 +220,7 @@
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    justify-content: flex-start;
   }
 
   &__container {
@@ -470,7 +471,7 @@
     top: 0;
     bottom: 0;
 
-    padding-top: 55px;
+    padding-top: 65px;
 
     display: flex;
     align-items: flex-start;
@@ -502,7 +503,7 @@
     }
     @media (max-width: $breakpoint-m - 1px) {
       right: 15px;
-      top: 5px;
+      top: 10px;
       bottom: auto;
     }
   }
