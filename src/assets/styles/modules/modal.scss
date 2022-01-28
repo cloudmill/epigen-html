@@ -187,7 +187,14 @@
   $comp: &;
 
   position: fixed;
-  top: 100%;
+  z-index: 3;
+  // top: 100%;
+  top: 0;
+  left: 0;
+  margin-top: 64px;
+
+  width: 100%;
+  height: calc(100% - 64px);
 
   display: none;
   @media (max-width: $breakpoint - 1px) {
@@ -201,10 +208,14 @@
   transition: $transition;
   background-color: $color-white;
 
-  &--height {
-    &--100vh-60p {
-      height: calc(100vh - 60px);
-    }
+  // &--height {
+  //   &--100vh-60p {
+  //     height: calc(100vh - 60px);
+  //   }
+  // }
+
+  &[data-modal-active] {
+    transform: none;
   }
 
   &__inner {

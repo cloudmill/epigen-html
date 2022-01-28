@@ -694,7 +694,7 @@
       }
       @media (max-width: $breakpoint-ssm - 1px) {
         left: calc(((100vw - (15px * 2)) / 6) * 5 - 271px);
-        top: 527px;
+        top: 577px;
       }
 
       @media (max-width: $breakpoint - 1px) {
@@ -725,7 +725,7 @@
         left: calc(((100vw - (15px * 2)) / 6) * 5 - 81px);
       }
       @media (max-width: $breakpoint-ssm - 1px) {
-        top: 1871px;
+        top: 1921px;
         left: calc(#{$col-width-m} * 5 - 91px);
       }
       transform: translateX(-50%) rotate(-45deg);
@@ -947,7 +947,7 @@
     }
     @media (max-width: $breakpoint-ssm - 1px) {
       left: calc(#{$col-width-m} * 5);
-      top: 367px;
+      top: 417px;
     }
     transform: translateX(-50%);
 
