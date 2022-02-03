@@ -9,7 +9,6 @@ $(function () {
     forms();
     search();
     filters();
-    buy();
     cookies();
     reviewSlider();
     clearTest();
@@ -376,25 +375,6 @@ function filters() {
                 itemsContainer.after($(r).find('[data-type=show_more_click]'));
             }
         });
-    });
-}
-
-function buy() {
-    $(document).on('click', '[data-type=buy-tab]', function (e) {
-        e.preventDefault();
-
-        const thisObj = $(this),
-            container = thisObj.parents('[data-type=buy-container]'),
-            iframeElem = container.find('[data-type=iframe-uteka]');
-
-        container.find('[data-type=buy-tab]').filter('.product-btn--active').removeClass('product-btn--active');
-        thisObj.addClass('product-btn--active');
-
-        if (iframeElem.is(':visible')) {
-          iframeElem.hide();
-        }
-
-        container.find(`[data-frame=${thisObj.data('frame')}]`).show();
     });
 }
 
